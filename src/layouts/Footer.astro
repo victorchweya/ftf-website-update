@@ -1,8 +1,108 @@
 ---
+import Button from "../components/Button.astro";
 
+const exploreLinks = [
+	{ href: "/kenyan-buyers", label: "Kenyan Buyers" },
+	{ href: "/global-buys", label: "Global Buyers" },
+	{ href: "/careers", label: "Careers" },
+	{ href: "/contact-us", label: "Contact Us" },
+	{ href: "/faqs", label: "FAQs" },
+];
 ---
 
-<footer
-	class="bg-white border-t border-slate-200 px-6 py-5 text-center text-sm text-slate-500">
-	<p>© {new Date().getFullYear()} FTF</p>
+<footer class="bg-green-500 px-6 py-12 text-white md:px-16 md:py-14">
+	<div class="mx-auto grid max-w-7xl gap-12 lg:grid-cols-3">
+		<section class="space-y-6">
+			<div class="space-y-3">
+				<h2 class="text-xl leading-8 tracking-[0.03em]">Quick Actions</h2>
+				<p class="max-w-sm text-base font-light leading-7 tracking-[0.03em] text-green-100">
+					Buy or Sell produce that makes sense for your business and the planet
+				</p>
+			</div>
+			<div class="space-y-4">
+				<Button
+					isLink
+					href="/sell-with-us"
+					variant="none"
+					size="md"
+					class="bg-green-50 px-6 text-base font-normal leading-7 tracking-[0.03em] text-green-500 hover:bg-green-100 focus:ring-green-50">
+					Sell With Us
+				</Button>
+				<br />
+				<Button
+					isLink
+					href="/contact-us"
+					variant="secondary"
+					size="md"
+					class="px-6 text-base font-normal leading-7 tracking-[0.03em] text-green-50">
+					Log In
+				</Button>
+			</div>
+		</section>
+
+		<section>
+			<h2 class="text-xl leading-8 tracking-[0.03em]">Explore</h2>
+			<nav class="mt-3 flex flex-col items-start" aria-label="Footer navigation">
+				{
+					exploreLinks.map((item) => (
+						<a
+							href={item.href}
+							class="rounded-full px-2 py-1 text-base leading-7 tracking-[0.03em] transition-colors duration-150 hover:text-yellow-300">
+							{item.label}
+						</a>
+					))
+				}
+			</nav>
+		</section>
+
+		<section class="space-y-7">
+			<div class="space-y-3">
+				<h2 class="text-xl leading-8 tracking-[0.03em]">Get more information</h2>
+				<p class="text-base font-light leading-7 tracking-[0.03em] text-green-100">
+					Contact us in any of these channels
+				</p>
+			</div>
+			<div class="space-y-5 text-base font-light leading-7 tracking-[0.03em]">
+				<a href="mailto:info@farmtofeedkenya.com" class="flex gap-4 hover:text-yellow-300">
+					<span class="pi pi-envelope mt-1 text-xl"></span>
+					<span>info@farmtofeedkenya.com</span>
+				</a>
+				<a href="tel:+254795851756" class="flex gap-4 hover:text-yellow-300">
+					<span class="pi pi-phone mt-1 text-xl"></span>
+					<span>+254 795 851 756</span>
+				</a>
+				<p class="flex gap-4">
+					<span class="pi pi-map-marker mt-1 text-xl"></span>
+					<span>Tilisi Business Park, Kiambu, Kenya</span>
+				</p>
+			</div>
+		</section>
+	</div>
+
+	<div class="mx-auto mt-16 grid max-w-7xl gap-10 lg:grid-cols-[0.22fr_1fr] lg:items-end">
+		<a href="/" class="flex items-center gap-3 text-white" aria-label="Farm to Feed home">
+			<span class="flex h-14 w-5 flex-col gap-1">
+				<span class="h-4 w-5 rounded-full bg-white"></span>
+				<span class="h-4 w-5 rounded-full bg-white"></span>
+				<span class="h-4 w-5 rounded-full bg-white"></span>
+			</span>
+			<span class="leading-none">
+				<span class="block text-xl font-semibold tracking-[-0.03em]">farm</span>
+				<span class="block text-xl font-semibold tracking-[-0.03em]">to feed</span>
+			</span>
+		</a>
+
+		<div>
+			<p class="font-serif text-4xl leading-tight tracking-[0.03em] text-yellow-300 md:text-6xl">
+				Shaping the Future of Food
+			</p>
+			<div class="mt-8 flex flex-col gap-4 text-base leading-7 tracking-[0.03em] md:flex-row md:items-center md:justify-between">
+				<div class="flex gap-4">
+					<a href="/privacy-policy" class="hover:text-yellow-300">Privacy Policy</a>
+					<a href="/cookie-policy" class="hover:text-yellow-300">Cookie Policy</a>
+				</div>
+				<p>&copy;{new Date().getFullYear()} All right reserved</p>
+			</div>
+		</div>
+	</div>
 </footer>
