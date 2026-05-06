@@ -1,13 +1,8 @@
 ---
-import Layout from "../layouts/Layout.astro";
+import FigmaPageLayout from "../layouts/FigmaPageLayout.astro";
+import Impact from "../react/figma/pages/Impact";
 ---
 
-<Layout title="Our Impact">
-	<section class="space-y-4">
-		<h1 class="text-3xl font-bold">Our Impact</h1>
-		<p>
-			See the positive changes we are making in communities, markets, and
-			the supply chain.
-		</p>
-	</section>
-</Layout>
+<FigmaPageLayout title="Our Impact">
+	<Impact client:load />
+</FigmaPageLayout>

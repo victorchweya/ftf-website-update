@@ -1,10 +1,8 @@
 ---
-import Layout from "../layouts/Layout.astro";
+import FigmaPageLayout from "../layouts/FigmaPageLayout.astro";
+import Careers from "../react/figma/pages/Careers";
 ---
 
-<Layout title="Careers">
-	<section class="space-y-4">
-		<h1 class="text-3xl font-bold">Careers</h1>
-		<p>Explore open roles and learn how to join our growing team.</p>
-	</section>
-</Layout>
+<FigmaPageLayout title="Careers">
+	<Careers client:load />
+</FigmaPageLayout>

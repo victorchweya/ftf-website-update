@@ -1,13 +1,8 @@
 ---
-import Layout from "../layouts/Layout.astro";
+import FigmaPageLayout from "../layouts/FigmaPageLayout.astro";
+import SellWithUs from "../react/figma/pages/SellWithUs";
 ---
 
-<Layout title="Sell With Us">
-	<section class="space-y-4">
-		<h1 class="text-3xl font-bold">Sell With Us</h1>
-		<p>
-			Discover how sellers can join our platform, grow their audience, and
-			sell with confidence.
-		</p>
-	</section>
-</Layout>
+<FigmaPageLayout title="Sell With Us">
+	<SellWithUs client:load />
+</FigmaPageLayout>
