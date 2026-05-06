@@ -1,11 +1,80 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import Layout from "../layouts/Layout.astro";
+import Button from "../components/Button.astro";
 ---
 
-<Layout>
-	<Welcome />
+<Layout title="Home">
+	<section>
+		<h1>Welcome to the FTF site</h1>
+		<p>
+			This is a minimal Astro starter with a shared layout for header,
+			navigation, and footer.
+		</p>
+	</section>
+
+	<section class="mt-12">
+		<h2 class="text-2xl font-bold mb-6">Button Components</h2>
+
+		<div class="space-y-8">
+			<div>
+				<h3 class="text-lg font-semibold mb-4">Variants</h3>
+				<div class="flex flex-wrap gap-4">
+					<Button variant="primary" size="base">Primary Button</Button
+					>
+					<Button variant="secondary" size="base"
+						>Secondary Button</Button
+					>
+					<Button variant="muted" size="base">Muted Button</Button>
+				</div>
+			</div>
+
+			<div>
+				<h3 class="text-lg font-semibold mb-4">Sizes</h3>
+				<div class="flex flex-wrap items-center gap-4">
+					<Button variant="primary" size="xs">XS</Button>
+					<Button variant="primary" size="sm">SM</Button>
+					<Button variant="primary" size="base">Base</Button>
+					<Button variant="primary" size="md">MD</Button>
+					<Button variant="primary" size="lg">LG</Button>
+				</div>
+			</div>
+
+			<div>
+				<h3 class="text-lg font-semibold mb-4">Icon buttons</h3>
+				<div class="flex flex-wrap gap-4 items-center">
+					<Button variant="primary" size="base">
+						<span slot="left-icon" class="pi pi-check text-base"
+						></span>
+						Save
+					</Button>
+					<Button variant="secondary" size="base">
+						<span slot="left-icon" class="pi pi-send text-base"
+						></span>
+						Send
+					</Button>
+					<Button variant="muted" size="base">
+						<span
+							slot="left-icon"
+							class="pi pi-info-circle text-base"></span>
+						Info
+					</Button>
+				</div>
+			</div>
+
+			<div>
+				<h3 class="text-lg font-semibold mb-4">As Links</h3>
+				<div class="flex flex-wrap gap-4">
+					<Button variant="primary" size="base" isLink href="/about"
+						>About Page</Button
+					>
+					<Button
+						variant="secondary"
+						size="base"
+						isLink
+						href="/contact">Contact Us</Button
+					>
+				</div>
+			</div>
+		</div>
+	</section>
 </Layout>

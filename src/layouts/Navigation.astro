@@ -1,0 +1,29 @@
+---
+const navItems = [
+	{ href: "/", label: "Home" },
+	{ href: "/kenyan-buyers", label: "Kenyan Buyers" },
+	{ href: "/global-buys", label: "Global Buys" },
+	{ href: "/sell-with-us", label: "Sell With Us" },
+	{ href: "/our-impact", label: "Our Impact" },
+	{ href: "/our-story", label: "Our Story" },
+	{ href: "/our-team", label: "Our Team" },
+	{ href: "/news-events", label: "News & Events" },
+	{ href: "/careers", label: "Careers" },
+	{ href: "/contact-us", label: "Contact Us" },
+	{ href: "/faqs", label: "FAQs" },
+];
+---
+
+<nav
+	class="flex items-center gap-6 text-sm font-medium text-slate-600"
+	aria-label="Primary navigation">
+	{
+		navItems.map((item) => (
+			<a
+				href={item.href}
+				class="transition-colors duration-150 hover:text-slate-900">
+				{item.label}
+			</a>
+		))
+	}
+</nav>

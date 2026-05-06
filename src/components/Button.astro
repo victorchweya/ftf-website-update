@@ -1,0 +1,144 @@
+---
+const {
+	variant = "primary",
+	size = "base",
+	onlyIconSize,
+	iconOnly = false,
+	gap,
+	isLink = false,
+	class: className,
+	...rest
+} = Astro.props;
+
+const variantKey = variant as keyof typeof variantClass;
+const sizeKey = size as keyof typeof sizes;
+const iconSizeKey = (onlyIconSize || size) as keyof typeof iconSizes;
+const gapKey = gap as keyof typeof gapMap | undefined;
+
+const primaryClass = [
+	// light
+	"text-white",
+	"bg-green-500",
+	"hover:bg-green-600",
+	"focus:ring-green-500",
+];
+
+const secondaryClass = [
+	// light
+	"text-white",
+	"bg-orange-500",
+	"hover:bg-orange-400",
+	"focus:ring-orange-500",
+];
+
+const mutedClass = [
+	// light
+	"text-neutral-900",
+	"bg-neutral-100",
+	"hover:bg-neutral-200",
+	"focus:ring-neutral-100",
+];
+
+// Size
+const sizes = {
+	xxs: ["h-8", "px-3", "text-xs"],
+	xs: ["h-9", "px-3", "text-xs"],
+	sm: ["h-10", "px-4", "text-xs"],
+	base: ["h-11", "px-4", "text-sm"],
+	md: ["h-12", "px-4", "text-base"],
+	lg: ["h-14", "px-5", "text-lg"],
+	xl: ["h-16", "px-6", "text-lg"],
+};
+
+// Icon size
+const iconSizes = {
+	xxs: ["w-8", "h-8", "text-xs"],
+	xs: ["w-9", "h-9", "text-xs"],
+	sm: ["w-10", "h-10", "text-sm"],
+	base: ["w-11", "h-11", "text-base"],
+	md: ["w-12", "h-12", "text-base"],
+	lg: ["w-14", "h-14", "text-lg"],
+	xl: ["w-16", "h-16", "text-lg"],
+};
+
+// Gaps
+const gapMap = {
+	xs: ["gap-2"],
+	sm: ["gap-4"],
+	base: ["gap-8"],
+	md: ["gap-10"],
+	lg: ["gap-12"],
+};
+
+const variantClass = {
+	primary: primaryClass,
+	secondary: secondaryClass,
+	muted: mutedClass,
+	none: [],
+};
+
+const iconSizeClass = iconSizes[iconSizeKey] || [];
+const sizeClass = iconOnly ? iconSizeClass : sizes[sizeKey] || [];
+const gapClass = !iconOnly && gapKey ? gapMap[gapKey] : [];
+const additionalClasses = className ? className.split(" ") : [];
+const chosenVariant = variantKey;
+
+const baseClass = [
+	"inline-flex",
+	"items-center",
+	"justify-center",
+	"gap-2",
+	"font-medium",
+	"transition-all",
+	"rounded-full",
+	"duration-300",
+	"focus:ring-2",
+	"focus:ring-offset-1",
+	"focus:ring-offset-white",
+];
+---
+
+{
+	isLink ? (
+		<a
+			href={rest.href}
+			class:list={[
+				...baseClass,
+				...(variantClass[chosenVariant] || []),
+				...sizeClass,
+				...gapClass,
+				...additionalClasses,
+			]}
+			{...rest}>
+			{iconOnly ? (
+				<slot name="icon" />
+			) : (
+				<>
+					<slot name="left-icon" />
+					<slot />
+					<slot name="right-icon" />
+				</>
+			)}
+		</a>
+	) : (
+		<button
+			class:list={[
+				...baseClass,
+				...(variantClass[chosenVariant] || []),
+				...sizeClass,
+				...gapClass,
+				...additionalClasses,
+			]}
+			{...rest}>
+			{iconOnly ? (
+				<slot name="icon" />
+			) : (
+				<>
+					<slot name="left-icon" />
+					<slot />
+					<slot name="right-icon" />
+				</>
+			)}
+		</button>
+	)
+}
