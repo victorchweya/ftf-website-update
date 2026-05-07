@@ -711,7 +711,7 @@ function Frame1() {
   );
 }
 
-function Frame41() {
+export function Frame41() {
   return (
     <div className="content-stretch flex flex-[1_0_0] flex-col gap-[56px] items-center min-w-px relative">
       <Layer />
@@ -746,7 +746,7 @@ function Frame2() {
   );
 }
 
-function Frame44() {
+export function Frame44() {
   return (
     <div className="content-stretch flex flex-[1_0_0] flex-col gap-[56px] items-center min-w-px relative">
       <Layer1 />
@@ -781,7 +781,7 @@ function Frame3() {
   );
 }
 
-function Frame46() {
+export function Frame46() {
   return (
     <div className="content-stretch flex flex-[1_0_0] flex-col gap-[56px] items-center min-w-px relative">
       <Layer2 />
@@ -816,7 +816,7 @@ function Frame4() {
   );
 }
 
-function Frame47() {
+export function Frame47() {
   return (
     <div className="content-stretch flex flex-[1_0_0] flex-col gap-[56px] h-[564.912px] items-center min-w-px relative">
       <Layer3 />
@@ -918,7 +918,7 @@ function Frame51() {
   );
 }
 
-function Frame50() {
+export function Frame50() {
   return (
     <div className="bg-[#f7f7f7] flex-[1_0_0] min-w-px relative rounded-[30px]">
       <div className="content-stretch flex flex-col gap-[27px] items-start p-[48px] relative size-full">
@@ -1007,7 +1007,7 @@ function Frame53() {
   );
 }
 
-function Frame52() {
+export function Frame52() {
   return (
     <div className="bg-[#f7f7f7] flex-[1_0_0] min-w-px relative rounded-[30px]">
       <div className="content-stretch flex flex-col gap-[27px] items-start p-[48px] relative size-full">
@@ -1095,7 +1095,7 @@ function Frame55() {
   );
 }
 
-function Frame54() {
+export function Frame54() {
   return (
     <div className="bg-[#f7f7f7] flex-[1_0_0] min-w-px relative rounded-[30px]">
       <div className="content-stretch flex flex-col gap-[27px] items-start p-[48px] relative size-full">
@@ -1211,7 +1211,7 @@ function Frame63() {
   );
 }
 
-function Frame62() {
+export function Frame62() {
   return (
     <div className="bg-white flex-[1_0_0] min-w-px relative rounded-[30px]">
       <div aria-hidden="true" className="absolute border border-[#f7f7f7] border-solid inset-0 pointer-events-none rounded-[30px]" />
@@ -1256,7 +1256,7 @@ function Frame66() {
   );
 }
 
-function Frame65() {
+export function Frame65() {
   return (
     <div className="bg-white flex-[1_0_0] min-w-px relative rounded-[30px]">
       <div aria-hidden="true" className="absolute border border-[#f7f7f7] border-solid inset-0 pointer-events-none rounded-[30px]" />
@@ -1347,7 +1347,7 @@ function Frame72() {
   );
 }
 
-function Frame69() {
+export function Frame69() {
   return (
     <div className="bg-white flex-[1_0_0] min-w-px relative rounded-[30px]">
       <div aria-hidden="true" className="absolute border border-[#f7f7f7] border-solid inset-0 pointer-events-none rounded-[30px]" />
@@ -1399,7 +1399,7 @@ function Frame75() {
   );
 }
 
-function Frame74() {
+export function Frame74() {
   return (
     <div className="bg-white flex-[1_0_0] min-w-px relative rounded-[30px]">
       <div aria-hidden="true" className="absolute border border-[#f7f7f7] border-solid inset-0 pointer-events-none rounded-[30px]" />
@@ -1441,7 +1441,7 @@ function Frame79() {
   );
 }
 
-function Frame78() {
+export function Frame78() {
   return (
     <div className="bg-white flex-[1_0_0] min-w-px relative rounded-[30px]">
       <div aria-hidden="true" className="absolute border border-[#f7f7f7] border-solid inset-0 pointer-events-none rounded-[30px]" />
@@ -1487,7 +1487,7 @@ function Frame82() {
   );
 }
 
-function Frame81() {
+export function Frame81() {
   return (
     <div className="bg-white flex-[1_0_0] min-w-px relative rounded-[30px]">
       <div aria-hidden="true" className="absolute border border-[#f7f7f7] border-solid inset-0 pointer-events-none rounded-[30px]" />

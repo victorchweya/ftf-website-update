@@ -2059,7 +2059,7 @@ function Wireframe1() {
   );
 }
 
-function Order4() {
+export function Order4() {
   return (
     <div className="content-stretch flex items-start p-[12px] relative rounded-[40px] shrink-0" data-name="order">
       <div aria-hidden="true" className="absolute border border-[#dae2b6] border-solid inset-0 pointer-events-none rounded-[40px]" />
@@ -2283,7 +2283,7 @@ function Group32() {
   );
 }
 
-function Frame6() {
+export function Frame6() {
   return (
     <div className="h-[323px] relative shrink-0 w-[640px]">
       <div className="absolute flex inset-0 items-center justify-center" style={{ containerType: "size" }}>
@@ -2325,7 +2325,7 @@ function Frame6() {
   );
 }
 
-function Order5() {
+export function Order5() {
   return (
     <div className="content-stretch flex items-start p-[12px] relative rounded-[40px] shrink-0" data-name="order">
       <div aria-hidden="true" className="absolute border border-[#747c50] border-solid inset-0 pointer-events-none rounded-[40px]" />

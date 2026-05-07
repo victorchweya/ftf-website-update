@@ -248,7 +248,7 @@ function TeamCta() {
   );
 }
 
-function Frame39() {
+export function Frame39() {
   return (
     <div className="h-[198.445px] relative shrink-0 w-[203.707px]">
       <div className="absolute left-[-48px] mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[48px_42.919px] mask-size-[203.707px_198.445px] size-[300px] top-[-42.92px]" style={{ maskImage: `url('${imgClaireVanEnkFounderManagingDirector}')` }} data-name="Claire van Enk - Founder _ Managing Director">
@@ -276,7 +276,7 @@ function Frame52() {
   );
 }
 
-function Frame38() {
+export function Frame38() {
   return (
     <div className="h-[198.445px] relative shrink-0 w-[203.707px]">
       <div className="absolute left-[-39px] mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[39px_37.919px] mask-size-[203.707px_198.445px] size-[300px] top-[-37.92px]" style={{ maskImage: `url('${imgAnoukBoertienCoFounderDirectorOfProductAndSustainability}')` }} data-name="Anouk Boertien - co-founder _ Director of Product and Sustainability">
@@ -304,7 +304,7 @@ function Frame51() {
   );
 }
 
-function Frame37() {
+export function Frame37() {
   return (
     <div className="h-[198.445px] relative shrink-0 w-[203.707px]">
       <div className="absolute left-[-40.71px] mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[40.707px_51px] mask-size-[203.707px_198.445px] size-[300px] top-[-51px]" style={{ maskImage: `url('${imgAnoukBoertienCoFounderDirectorOfProductAndSustainability}')` }} data-name="Zara Benosa - director business development">
@@ -332,7 +332,7 @@ function Frame50() {
   );
 }
 
-function Frame40() {
+export function Frame40() {
   return (
     <div className="h-[198.445px] relative shrink-0 w-[203.707px]">
       <div className="absolute h-[278.91px] left-[-63px] mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[63px_5.919px] mask-size-[203.707px_198.445px] top-[-5.92px] w-[300px]" style={{ maskImage: `url('${imgClaireVanEnkFounderManagingDirector}')` }} data-name="Christine Kiraithe Pentinga - Director Operations">
@@ -373,7 +373,7 @@ function Frame65() {
   );
 }
 
-function Frame41() {
+export function Frame41() {
   return (
     <div className="h-[198.445px] relative shrink-0 w-[203.707px]">
       <div className="absolute h-[295.007px] left-[-48.15px] mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[48.146px_18.445px] mask-size-[203.707px_198.445px] top-[-18.45px] w-[300px]" style={{ maskImage: `url('${imgAnoukBoertienCoFounderDirectorOfProductAndSustainability}')` }} data-name="Lucy Wainaina - Finance officer">
@@ -401,7 +401,7 @@ function Frame54() {
   );
 }
 
-function Frame42() {
+export function Frame42() {
   return (
     <div className="h-[198.445px] relative shrink-0 w-[203.707px]">
       <div className="absolute h-[286.938px] left-[-39px] mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[39px_15.919px] mask-size-[203.707px_198.445px] top-[-15.92px] w-[300px]" style={{ maskImage: `url('${imgAnoukBoertienCoFounderDirectorOfProductAndSustainability}')` }} data-name="David Chege - Lead Supply Hub Coordinator">
@@ -431,7 +431,7 @@ function Frame55() {
   );
 }
 
-function Frame43() {
+export function Frame43() {
   return (
     <div className="h-[198.445px] relative shrink-0 w-[203.707px]">
       <div className="absolute h-[287.983px] left-[-33px] mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[33px_45px] mask-size-[203.707px_198.445px] top-[-45px] w-[300px]" style={{ maskImage: `url('${imgClaireVanEnkFounderManagingDirector}')` }} data-name="Stella Mbungu - Sales and Customer Care Manager">
@@ -461,7 +461,7 @@ function Frame56() {
   );
 }
 
-function Frame44() {
+export function Frame44() {
   return (
     <div className="h-[198.445px] relative shrink-0 w-[203.707px]">
       <div className="absolute left-[-48px] mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[48px_31.919px] mask-size-[203.707px_198.445px] size-[300px] top-[-31.92px]" style={{ maskImage: `url('${imgClaireVanEnkFounderManagingDirector}')` }} data-name="Samuel Mburu - Sourcing lead">
@@ -626,7 +626,7 @@ function Group1() {
   );
 }
 
-function Frame25() {
+export function Frame25() {
   return (
     <div className="content-stretch flex flex-col gap-[32px] items-center justify-center relative shrink-0 w-full">
       <div className="flex h-[95.935px] items-center justify-center relative shrink-0 w-[120.059px]" style={{ "--transform-inner-width": "1185", "--transform-inner-height": "21" } as React.CSSProperties}>
@@ -666,7 +666,7 @@ function Group2() {
   );
 }
 
-function Frame28() {
+export function Frame28() {
   return (
     <div className="content-stretch flex flex-col gap-[32px] items-center justify-center relative shrink-0 w-full">
       <div className="flex h-[70.107px] items-center justify-center relative shrink-0 w-[125.126px]" style={{ "--transform-inner-width": "1185", "--transform-inner-height": "21" } as React.CSSProperties}>
@@ -707,7 +707,7 @@ function Group3() {
   );
 }
 
-function Frame24() {
+export function Frame24() {
   return (
     <div className="content-stretch flex flex-col gap-[32px] items-center justify-center relative shrink-0 w-full">
       <div className="flex h-[89.25px] items-center justify-center relative shrink-0 w-[66.023px]" style={{ "--transform-inner-width": "1185", "--transform-inner-height": "21" } as React.CSSProperties}>
@@ -777,7 +777,7 @@ function Group6() {
   );
 }
 
-function Frame33() {
+export function Frame33() {
   return (
     <div className="content-stretch flex flex-col gap-[32px] items-center justify-center relative shrink-0 w-full">
       <div className="flex h-[98.173px] items-center justify-center leading-[0] relative shrink-0 w-[81.455px]" style={{ "--transform-inner-width": "1185", "--transform-inner-height": "21" } as React.CSSProperties}>
@@ -815,7 +815,7 @@ function Group5() {
   );
 }
 
-function Frame49() {
+export function Frame49() {
   return (
     <div className="content-stretch flex flex-col gap-[32px] items-center justify-center relative shrink-0 w-full">
       <div className="flex h-[104.873px] items-center justify-center relative shrink-0 w-[90.704px]" style={{ "--transform-inner-width": "1185", "--transform-inner-height": "21" } as React.CSSProperties}>

@@ -403,7 +403,7 @@ function Frame32() {
   );
 }
 
-function Frame29() {
+export function Frame29() {
   return (
     <div className="bg-[#dae2b6] content-stretch flex flex-col gap-[27px] items-start p-[48px] relative rounded-[30px] shrink-0 w-[733px]">
       <Frame31 />
@@ -494,7 +494,7 @@ function Frame62() {
   );
 }
 
-function Frame33() {
+export function Frame33() {
   return (
     <div className="bg-[#ebc194] content-stretch flex flex-col gap-[27px] items-start p-[48px] relative rounded-[30px] shrink-0 w-[515px]">
       <Frame37 />
@@ -629,7 +629,7 @@ function Frame43() {
   );
 }
 
-function Frame41() {
+export function Frame41() {
   return (
     <div className="bg-[#f9ecbd] content-stretch flex flex-col gap-[27px] items-start p-[48px] relative rounded-[30px] shrink-0 w-[733px]">
       <Frame42 />
@@ -701,7 +701,7 @@ function Frame46() {
   );
 }
 
-function Frame44() {
+export function Frame44() {
   return (
     <div className="bg-[#dabacc] content-stretch flex flex-col gap-[27px] items-start p-[48px] relative rounded-[30px] shrink-0 w-[515px]">
       <Frame45 />
@@ -779,7 +779,7 @@ function Frame49() {
   );
 }
 
-function Frame48() {
+export function Frame48() {
   return (
     <div className="bg-[#bac1f5] content-stretch flex h-[422px] items-center justify-between p-[48px] relative rounded-[30px] shrink-0 w-[1276px]">
       <Frame49 />
@@ -953,7 +953,7 @@ function Group6() {
   );
 }
 
-function Frame51() {
+export function Frame51() {
   return (
     <div className="absolute bg-[#fefcf5] content-stretch flex flex-col h-[347px] items-start justify-between left-[80px] overflow-clip px-[32px] py-[48px] rounded-[40px] top-[366px] w-[405px]">
       <Group6 />
@@ -977,7 +977,7 @@ function Group8() {
   );
 }
 
-function Frame52() {
+export function Frame52() {
   return (
     <div className="absolute bg-[#fefcf5] content-stretch flex flex-col h-[331px] items-start justify-between left-[80px] overflow-clip px-[32px] py-[48px] rounded-[40px] top-[838px] w-[405px]">
       <Group8 />
@@ -1001,7 +1001,7 @@ function Group9() {
   );
 }
 
-function Frame53() {
+export function Frame53() {
   return (
     <div className="absolute bg-[#fefcf5] content-stretch flex flex-col h-[347px] items-start justify-between left-[calc(33.33%+46px)] overflow-clip px-[32px] py-[48px] rounded-[40px] top-[366px] w-[396px]">
       <Group9 />
@@ -1025,7 +1025,7 @@ function Group10() {
   );
 }
 
-function Frame54() {
+export function Frame54() {
   return (
     <div className="absolute bg-[#fefcf5] content-stretch flex flex-col h-[440px] items-start justify-between left-[calc(33.33%+46px)] overflow-clip px-[32px] py-[48px] rounded-[40px] top-[839px] w-[396px]">
       <Group10 />
@@ -1049,7 +1049,7 @@ function Group11() {
   );
 }
 
-function Frame55() {
+export function Frame55() {
   return (
     <div className="absolute bg-[#fefcf5] content-stretch flex flex-col h-[428px] items-start justify-between left-[calc(66.67%+3px)] overflow-clip px-[32px] py-[48px] rounded-[40px] top-[366px] w-[397px]">
       <Group11 />
@@ -1073,7 +1073,7 @@ function Group12() {
   );
 }
 
-function Frame56() {
+export function Frame56() {
   return (
     <div className="absolute bg-[#fefcf5] content-stretch flex flex-col h-[550px] items-start justify-between leading-[0] left-[calc(66.67%+3px)] overflow-clip px-[32px] py-[48px] rounded-[40px] top-[838px] w-[397px]">
       <Group12 />

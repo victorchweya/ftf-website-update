@@ -314,7 +314,7 @@ function Group30() {
   );
 }
 
-function Frame26() {
+export function Frame26() {
   return (
     <div className="content-stretch flex flex-col gap-[32px] items-start justify-center relative shrink-0">
       <Group30 />
@@ -374,7 +374,7 @@ function Group31() {
   );
 }
 
-function Frame27() {
+export function Frame27() {
   return (
     <div className="content-stretch flex flex-col gap-[32px] items-start justify-center relative shrink-0">
       <Group31 />
@@ -434,7 +434,7 @@ function Group32() {
   );
 }
 
-function Frame31() {
+export function Frame31() {
   return (
     <div className="content-stretch flex flex-col gap-[32px] items-start justify-center relative shrink-0">
       <Group32 />
@@ -512,7 +512,7 @@ function Group33() {
   );
 }
 
-function Frame35() {
+export function Frame35() {
   return (
     <div className="content-stretch flex flex-col gap-[32px] items-start justify-center relative shrink-0">
       <Group33 />
@@ -570,7 +570,7 @@ function Group34() {
   );
 }
 
-function Frame43() {
+export function Frame43() {
   return (
     <div className="content-stretch flex flex-col gap-[32px] items-start justify-center relative shrink-0">
       <Group34 />
@@ -1276,7 +1276,7 @@ function Frame4() {
   );
 }
 
-function Group22() {
+export function Group22() {
   return (
     <div className="grid-cols-[max-content] grid-rows-[max-content] inline-grid place-items-start relative shrink-0">
       <div className="col-1 flex h-[396px] items-center justify-center ml-0 mt-0 relative row-1 w-[640px]">
@@ -1347,7 +1347,7 @@ function Frame5() {
   );
 }
 
-function Group24() {
+export function Group24() {
   return (
     <div className="grid-cols-[max-content] grid-rows-[max-content] inline-grid place-items-start relative shrink-0">
       <div className="col-1 flex h-[396px] items-center justify-center ml-0 mt-0 relative row-1 w-[640px]">
@@ -1418,7 +1418,7 @@ function Frame6() {
   );
 }
 
-function Group23() {
+export function Group23() {
   return (
     <div className="grid-cols-[max-content] grid-rows-[max-content] inline-grid place-items-start relative shrink-0">
       <div className="col-1 flex h-[422px] items-center justify-center ml-0 mt-0 relative row-1 w-[640px]">
