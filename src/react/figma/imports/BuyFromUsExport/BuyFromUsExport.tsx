@@ -687,7 +687,7 @@ function Frame40() {
 
 function Layer() {
   return (
-    <div className="h-[240px] overflow-clip relative shrink-0 w-[271px]" data-name="Layer_1">
+    <div className="h-[220px] overflow-clip relative shrink-0 w-[248px] md:h-[240px] md:w-[271px]" data-name="Layer_1">
       <div className="absolute inset-[0_5.14%_0_8.39%]" data-name="Vector">
         <svg className="absolute block inset-0 size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 234.337 239.996">
           <path d={svgPaths.p8a71c80} fill="var(--fill-0, #5B3711)" id="Vector" />
@@ -713,7 +713,7 @@ function Frame1() {
 
 export function Frame41() {
   return (
-    <div className="content-stretch flex flex-[1_0_0] flex-col gap-[56px] items-center min-w-px relative">
+    <div className="content-stretch flex flex-col gap-[32px] items-center relative w-full lg:gap-[56px]">
       <Layer />
       <Frame1 />
     </div>
@@ -722,7 +722,7 @@ export function Frame41() {
 
 function Layer1() {
   return (
-    <div className="h-[240px] overflow-clip relative shrink-0 w-[271px]" data-name="Layer_1">
+    <div className="h-[220px] overflow-clip relative shrink-0 w-[248px] md:h-[240px] md:w-[271px]" data-name="Layer_1">
       <div className="absolute inset-[0_5.14%_0_8.39%]" data-name="Vector">
         <svg className="absolute block inset-0 size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 234.337 239.996">
           <path d={svgPaths.p8a71c80} fill="var(--fill-0, #C2CE86)" id="Vector" />
@@ -748,7 +748,7 @@ function Frame2() {
 
 export function Frame44() {
   return (
-    <div className="content-stretch flex flex-[1_0_0] flex-col gap-[56px] items-center min-w-px relative">
+    <div className="content-stretch flex flex-col gap-[32px] items-center relative w-full lg:gap-[56px]">
       <Layer1 />
       <Frame2 />
     </div>
@@ -757,7 +757,7 @@ export function Frame44() {
 
 function Layer2() {
   return (
-    <div className="h-[240px] overflow-clip relative shrink-0 w-[271px]" data-name="Layer_1">
+    <div className="h-[220px] overflow-clip relative shrink-0 w-[248px] md:h-[240px] md:w-[271px]" data-name="Layer_1">
       <div className="absolute inset-[0_5.14%_0_8.39%]" data-name="Vector">
         <svg className="absolute block inset-0 size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 234.337 239.996">
           <path d={svgPaths.p8a71c80} fill="var(--fill-0, #D78228)" id="Vector" />
@@ -783,7 +783,7 @@ function Frame3() {
 
 export function Frame46() {
   return (
-    <div className="content-stretch flex flex-[1_0_0] flex-col gap-[56px] items-center min-w-px relative">
+    <div className="content-stretch flex flex-col gap-[32px] items-center relative w-full lg:gap-[56px]">
       <Layer2 />
       <Frame3 />
     </div>
@@ -792,7 +792,7 @@ export function Frame46() {
 
 function Layer3() {
   return (
-    <div className="h-[240px] overflow-clip relative shrink-0 w-[271px]" data-name="Layer_1">
+    <div className="h-[220px] overflow-clip relative shrink-0 w-[248px] md:h-[240px] md:w-[271px]" data-name="Layer_1">
       <div className="absolute inset-[0_5.14%_0_8.39%]" data-name="Vector">
         <svg className="absolute block inset-0 size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 234.337 239.996">
           <path d={svgPaths.p8a71c80} fill="var(--fill-0, #824266)" id="Vector" />
@@ -913,17 +913,17 @@ function Frame51() {
   return (
     <div className="content-stretch flex flex-col gap-[32px] items-start justify-center relative shrink-0">
       <Group29 />
-      <p className="font-['Fraunces',serif] font-normal leading-[normal] not-italic relative shrink-0 text-[#0f251b] text-[24px] tracking-[0.72px] whitespace-nowrap">Food Safety</p>
+      <p className="font-['Fraunces',serif] font-normal leading-[normal] not-italic relative shrink-0 text-[#0f251b] text-[24px] tracking-[0.72px]">Food Safety</p>
     </div>
   );
 }
 
 export function Frame50() {
   return (
-    <div className="bg-[#f7f7f7] flex-[1_0_0] min-w-px relative rounded-[30px]">
-      <div className="content-stretch flex flex-col gap-[27px] items-start p-[48px] relative size-full">
+    <div className="bg-[#f7f7f7] relative rounded-[30px] w-full lg:flex-1">
+      <div className="content-stretch flex flex-col gap-[27px] items-start p-[32px] md:p-[48px] relative size-full">
         <Frame51 />
-        <p className="font-['Rubik',sans-serif] font-normal leading-[1.68] min-w-full not-italic relative shrink-0 text-[#1e4a35] text-[16px] tracking-[0.48px] w-[min-content]">Strict processing and quality control standards applied across the chain. Fully HACCP and ISO standard compliant.</p>
+        <p className="font-['Rubik',sans-serif] font-normal leading-[1.68] not-italic relative shrink-0 text-[#1e4a35] text-[16px] tracking-[0.48px] w-full">Strict processing and quality control standards applied across the chain. Fully HACCP and ISO standard compliant.</p>
       </div>
     </div>
   );
@@ -1002,17 +1002,17 @@ function Frame53() {
   return (
     <div className="content-stretch flex flex-col gap-[32px] items-start justify-center relative shrink-0">
       <Group30 />
-      <p className="font-['Fraunces',serif] font-normal leading-[normal] not-italic relative shrink-0 text-[#0f251b] text-[24px] tracking-[0.72px] whitespace-nowrap">{`Sensory & Taste`}</p>
+      <p className="font-['Fraunces',serif] font-normal leading-[normal] not-italic relative shrink-0 text-[#0f251b] text-[24px] tracking-[0.72px]">{`Sensory & Taste`}</p>
     </div>
   );
 }
 
 export function Frame52() {
   return (
-    <div className="bg-[#f7f7f7] flex-[1_0_0] min-w-px relative rounded-[30px]">
-      <div className="content-stretch flex flex-col gap-[27px] items-start p-[48px] relative size-full">
+    <div className="bg-[#f7f7f7] relative rounded-[30px] w-full lg:flex-1">
+      <div className="content-stretch flex flex-col gap-[27px] items-start p-[32px] md:p-[48px] relative size-full">
         <Frame53 />
-        <p className="font-['Rubik',sans-serif] font-normal leading-[1.68] min-w-full not-italic relative shrink-0 text-[#1e4a35] text-[16px] tracking-[0.48px] w-[min-content]">Every batch is meticulously selected for its optimal flavour profile, vibrant aroma, and rich, natural colour.</p>
+        <p className="font-['Rubik',sans-serif] font-normal leading-[1.68] not-italic relative shrink-0 text-[#1e4a35] text-[16px] tracking-[0.48px] w-full">Every batch is meticulously selected for its optimal flavour profile, vibrant aroma, and rich, natural colour.</p>
       </div>
     </div>
   );
@@ -1090,17 +1090,17 @@ function Frame55() {
   return (
     <div className="content-stretch flex flex-col gap-[32px] items-start justify-center relative shrink-0">
       <Group31 />
-      <p className="font-['Fraunces',serif] font-normal leading-[normal] not-italic relative shrink-0 text-[#0f251b] text-[24px] tracking-[0.72px] whitespace-nowrap">Traceability</p>
+      <p className="font-['Fraunces',serif] font-normal leading-[normal] not-italic relative shrink-0 text-[#0f251b] text-[24px] tracking-[0.72px]">Traceability</p>
     </div>
   );
 }
 
 export function Frame54() {
   return (
-    <div className="bg-[#f7f7f7] flex-[1_0_0] min-w-px relative rounded-[30px]">
-      <div className="content-stretch flex flex-col gap-[27px] items-start p-[48px] relative size-full">
+    <div className="bg-[#f7f7f7] relative rounded-[30px] w-full lg:flex-1">
+      <div className="content-stretch flex flex-col gap-[27px] items-start p-[32px] md:p-[48px] relative size-full">
         <Frame55 />
-        <p className="font-['Rubik',sans-serif] font-normal leading-[1.68] min-w-full not-italic relative shrink-0 text-[#1e4a35] text-[16px] tracking-[0.48px] w-[min-content]">Our digital sourcing systems allow every single ingredient to be accurately traced directly back to its farm of origin.</p>
+        <p className="font-['Rubik',sans-serif] font-normal leading-[1.68] not-italic relative shrink-0 text-[#1e4a35] text-[16px] tracking-[0.48px] w-full">Our digital sourcing systems allow every single ingredient to be accurately traced directly back to its farm of origin.</p>
       </div>
     </div>
   );
@@ -1195,7 +1195,7 @@ function Group15() {
 
 function Frame64() {
   return (
-    <div className="content-stretch flex flex-[1_0_0] flex-col gap-[27px] items-start min-w-px not-italic relative">
+    <div className="content-stretch flex flex-col gap-[20px] sm:gap-[27px] items-start not-italic relative w-full sm:flex-1">
       <p className="font-['Fraunces',serif] font-normal leading-[normal] relative shrink-0 text-[#0f251b] text-[24px] tracking-[0.72px] w-full">Climate-resilient crops</p>
       <p className="font-['Rubik',sans-serif] font-normal leading-[1.68] relative shrink-0 text-[#1e4a35] text-[16px] tracking-[0.48px] w-full">Suited to changing weather patterns, ensuring reliable yield and environmental harmony.</p>
     </div>
@@ -1204,7 +1204,7 @@ function Frame64() {
 
 function Frame63() {
   return (
-    <div className="content-stretch flex gap-[27px] items-center relative shrink-0 w-full">
+    <div className="content-stretch flex flex-col gap-[20px] items-start relative shrink-0 w-full sm:flex-row sm:gap-[27px] sm:items-center">
       <Group15 />
       <Frame64 />
     </div>
@@ -1213,7 +1213,7 @@ function Frame63() {
 
 export function Frame62() {
   return (
-    <div className="bg-white flex-[1_0_0] min-w-px relative rounded-[30px]">
+    <div className="bg-white relative rounded-[30px] w-full lg:flex-1">
       <div aria-hidden="true" className="absolute border border-[#f7f7f7] border-solid inset-0 pointer-events-none rounded-[30px]" />
       <div className="content-stretch flex flex-col items-start px-[24px] py-[34px] relative size-full">
         <Frame63 />
@@ -1240,7 +1240,7 @@ function Group7() {
 
 function Frame67() {
   return (
-    <div className="content-stretch flex flex-[1_0_0] flex-col gap-[27px] items-start min-w-px not-italic relative">
+    <div className="content-stretch flex flex-col gap-[20px] sm:gap-[27px] items-start not-italic relative w-full sm:flex-1">
       <p className="font-['Fraunces',serif] font-normal leading-[normal] relative shrink-0 text-[#0f251b] text-[24px] tracking-[0.72px] w-full">Sustainable farming</p>
       <p className="font-['Rubik',sans-serif] font-normal leading-[1.68] relative shrink-0 text-[#1e4a35] text-[16px] tracking-[0.48px] w-full">Practices that actively protect soil health and minimize harmful chemical inputs.</p>
     </div>
@@ -1249,7 +1249,7 @@ function Frame67() {
 
 function Frame66() {
   return (
-    <div className="content-stretch flex gap-[27px] items-center relative shrink-0 w-full">
+    <div className="content-stretch flex flex-col gap-[20px] items-start relative shrink-0 w-full sm:flex-row sm:gap-[27px] sm:items-center">
       <Group7 />
       <Frame67 />
     </div>
@@ -1258,7 +1258,7 @@ function Frame66() {
 
 export function Frame65() {
   return (
-    <div className="bg-white flex-[1_0_0] min-w-px relative rounded-[30px]">
+    <div className="bg-white relative rounded-[30px] w-full lg:flex-1">
       <div aria-hidden="true" className="absolute border border-[#f7f7f7] border-solid inset-0 pointer-events-none rounded-[30px]" />
       <div className="flex flex-col justify-center size-full">
         <div className="content-stretch flex flex-col items-start justify-center px-[24px] py-[34px] relative size-full">
@@ -1271,7 +1271,7 @@ export function Frame65() {
 
 function Frame61() {
   return (
-    <div className="content-stretch flex gap-[32px] items-center relative shrink-0 w-full">
+    <div className="content-stretch flex flex-col gap-[32px] items-stretch relative shrink-0 w-full lg:flex-row lg:items-center">
       <Frame62 />
       <Frame65 />
     </div>
@@ -1331,7 +1331,7 @@ function Group16() {
 
 function Frame73() {
   return (
-    <div className="content-stretch flex flex-[1_0_0] flex-col gap-[27px] items-start min-w-px not-italic relative">
+    <div className="content-stretch flex flex-col gap-[20px] sm:gap-[27px] items-start not-italic relative w-full sm:flex-1">
       <p className="font-['Fraunces',serif] font-normal leading-[normal] relative shrink-0 text-[#0f251b] text-[24px] tracking-[0.72px] w-full">Food loss reduction</p>
       <p className="font-['Rubik',sans-serif] font-normal leading-[1.68] relative shrink-0 text-[#1e4a35] text-[16px] tracking-[0.48px] w-full">Directly connecting surplus and imperfect harvests to viable processing markets.</p>
     </div>
@@ -1340,7 +1340,7 @@ function Frame73() {
 
 function Frame72() {
   return (
-    <div className="content-stretch flex gap-[27px] items-center relative shrink-0 w-full">
+    <div className="content-stretch flex flex-col gap-[20px] items-start relative shrink-0 w-full sm:flex-row sm:gap-[27px] sm:items-center">
       <Group16 />
       <Frame73 />
     </div>
@@ -1349,7 +1349,7 @@ function Frame72() {
 
 export function Frame69() {
   return (
-    <div className="bg-white flex-[1_0_0] min-w-px relative rounded-[30px]">
+    <div className="bg-white relative rounded-[30px] w-full lg:flex-1">
       <div aria-hidden="true" className="absolute border border-[#f7f7f7] border-solid inset-0 pointer-events-none rounded-[30px]" />
       <div className="content-stretch flex flex-col items-start px-[24px] py-[34px] relative size-full">
         <Frame72 />
@@ -1383,7 +1383,7 @@ function Capa1() {
 
 function Frame76() {
   return (
-    <div className="content-stretch flex flex-[1_0_0] flex-col gap-[27px] items-start min-w-px not-italic relative">
+    <div className="content-stretch flex flex-col gap-[20px] sm:gap-[27px] items-start not-italic relative w-full sm:flex-1">
       <p className="font-['Fraunces',serif] font-normal leading-[normal] relative shrink-0 text-[#0f251b] text-[24px] tracking-[0.72px] w-full">Farmer income increase</p>
       <p className="font-['Rubik',sans-serif] font-normal leading-[1.68] relative shrink-0 text-[#1e4a35] text-[16px] tracking-[0.48px] w-full">Providing better, more consistent market access and fairer pricing structures.</p>
     </div>
@@ -1392,7 +1392,7 @@ function Frame76() {
 
 function Frame75() {
   return (
-    <div className="content-stretch flex gap-[27px] items-center relative shrink-0 w-full">
+    <div className="content-stretch flex flex-col gap-[20px] items-start relative shrink-0 w-full sm:flex-row sm:gap-[27px] sm:items-center">
       <Capa1 />
       <Frame76 />
     </div>
@@ -1401,7 +1401,7 @@ function Frame75() {
 
 export function Frame74() {
   return (
-    <div className="bg-white flex-[1_0_0] min-w-px relative rounded-[30px]">
+    <div className="bg-white relative rounded-[30px] w-full lg:flex-1">
       <div aria-hidden="true" className="absolute border border-[#f7f7f7] border-solid inset-0 pointer-events-none rounded-[30px]" />
       <div className="content-stretch flex flex-col items-start px-[24px] py-[34px] relative size-full">
         <Frame75 />
@@ -1412,7 +1412,7 @@ export function Frame74() {
 
 function Frame68() {
   return (
-    <div className="content-stretch flex gap-[32px] items-center relative shrink-0 w-full">
+    <div className="content-stretch flex flex-col gap-[32px] items-stretch relative shrink-0 w-full lg:flex-row lg:items-center">
       <Frame69 />
       <Frame74 />
     </div>
@@ -1421,7 +1421,7 @@ function Frame68() {
 
 function Frame80() {
   return (
-    <div className="content-stretch flex flex-[1_0_0] flex-col gap-[27px] items-start min-w-px not-italic relative">
+    <div className="content-stretch flex flex-col gap-[20px] sm:gap-[27px] items-start not-italic relative w-full sm:flex-1">
       <p className="font-['Fraunces',serif] font-normal leading-[normal] relative shrink-0 text-[#0f251b] text-[24px] tracking-[0.72px] w-full">Nutritious foods</p>
       <p className="font-['Rubik',sans-serif] font-normal leading-[1.68] relative shrink-0 text-[#1e4a35] text-[16px] tracking-[0.48px] w-full">Supporting healthier global diets with nutrient-dense, high-quality ingredients.</p>
     </div>
@@ -1430,7 +1430,7 @@ function Frame80() {
 
 function Frame79() {
   return (
-    <div className="content-stretch flex gap-[27px] items-center relative shrink-0 w-full">
+    <div className="content-stretch flex flex-col gap-[20px] items-start relative shrink-0 w-full sm:flex-row sm:gap-[27px] sm:items-center">
       <div className="h-[72px] relative shrink-0 w-[74px]" data-name="Vector">
         <svg className="absolute block inset-0 size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 74 72">
           <path d={svgPaths.p21688400} fill="var(--fill-0, #AC6820)" id="Vector" />
@@ -1443,7 +1443,7 @@ function Frame79() {
 
 export function Frame78() {
   return (
-    <div className="bg-white flex-[1_0_0] min-w-px relative rounded-[30px]">
+    <div className="bg-white relative rounded-[30px] w-full lg:flex-1">
       <div aria-hidden="true" className="absolute border border-[#f7f7f7] border-solid inset-0 pointer-events-none rounded-[30px]" />
       <div className="content-stretch flex flex-col items-start px-[24px] py-[34px] relative size-full">
         <Frame79 />
@@ -1471,7 +1471,7 @@ function IsolationMode4() {
 
 function Frame83() {
   return (
-    <div className="content-stretch flex flex-[1_0_0] flex-col gap-[27px] items-start min-w-px not-italic relative">
+    <div className="content-stretch flex flex-col gap-[20px] sm:gap-[27px] items-start not-italic relative w-full sm:flex-1">
       <p className="font-['Fraunces',serif] font-normal leading-[normal] relative shrink-0 text-[#0f251b] text-[24px] tracking-[0.72px] w-full">Stable ingredients</p>
       <p className="font-['Rubik',sans-serif] font-normal leading-[1.68] relative shrink-0 text-[#1e4a35] text-[16px] tracking-[0.48px] w-full">Processing highly perishable raw crops into stable, long-lasting export ingredients</p>
     </div>
@@ -1480,7 +1480,7 @@ function Frame83() {
 
 function Frame82() {
   return (
-    <div className="content-stretch flex gap-[27px] items-center relative shrink-0 w-full">
+    <div className="content-stretch flex flex-col gap-[20px] items-start relative shrink-0 w-full sm:flex-row sm:gap-[27px] sm:items-center">
       <IsolationMode4 />
       <Frame83 />
     </div>
@@ -1489,7 +1489,7 @@ function Frame82() {
 
 export function Frame81() {
   return (
-    <div className="bg-white flex-[1_0_0] min-w-px relative rounded-[30px]">
+    <div className="bg-white relative rounded-[30px] w-full lg:flex-1">
       <div aria-hidden="true" className="absolute border border-[#f7f7f7] border-solid inset-0 pointer-events-none rounded-[30px]" />
       <div className="content-stretch flex flex-col items-start px-[24px] py-[34px] relative size-full">
         <Frame82 />
@@ -1500,7 +1500,7 @@ export function Frame81() {
 
 function Frame77() {
   return (
-    <div className="content-stretch flex gap-[32px] items-center relative shrink-0 w-full">
+    <div className="content-stretch flex flex-col gap-[32px] items-stretch relative shrink-0 w-full lg:flex-row lg:items-center">
       <Frame78 />
       <Frame81 />
     </div>

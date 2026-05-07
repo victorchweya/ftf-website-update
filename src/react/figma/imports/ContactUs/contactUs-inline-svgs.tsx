@@ -49,7 +49,7 @@ export function ContactUsSvg02() {
 
 export function ContactUsSvg03() {
 	return (
-		<svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 1752.73 315.384">
+		<svg className="block size-full" fill="none" preserveAspectRatio="xMinYMid meet" viewBox="0 0 1752.73 315.384">
 		          <g id="Frame 82">
 		            <path d={svgPaths.p77577f0} fill="var(--fill-0, #85A687)" id="Vector" />
 		            <path d={svgPaths.p1fb4e300} fill="var(--fill-0, #85A687)" id="Vector_2" />

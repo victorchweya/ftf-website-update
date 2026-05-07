@@ -2285,7 +2285,7 @@ function Group32() {
 
 export function Frame6() {
   return (
-    <div className="h-[323px] relative shrink-0 w-[640px]">
+    <div className="h-[323px] relative shrink-0 w-full max-w-[640px]">
       <div className="absolute flex inset-0 items-center justify-center" style={{ containerType: "size" }}>
         <div className="-rotate-180 -scale-x-100 flex-none h-[100cqh] w-[100cqw]">
           <div className="relative size-full" data-name="Vector">

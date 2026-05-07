@@ -1,7 +1,39 @@
 import { Link } from "./Link";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { ContentContainer } from "./layout/ContentContainer";
 import svgPaths from "../imports/Home/svg-6p5pyqd5kw";
+
+const DROPDOWN_DELAY_MS = 160;
+
+function useDropdownDelay() {
+  const [isOpen, setIsOpen] = useState(false);
+  const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  const clearDropdownTimeout = () => {
+    if (timeoutRef.current) {
+      clearTimeout(timeoutRef.current);
+      timeoutRef.current = null;
+    }
+  };
+
+  const openDropdown = () => {
+    clearDropdownTimeout();
+    timeoutRef.current = setTimeout(() => {
+      setIsOpen(true);
+    }, DROPDOWN_DELAY_MS);
+  };
+
+  const closeDropdown = () => {
+    clearDropdownTimeout();
+    timeoutRef.current = setTimeout(() => {
+      setIsOpen(false);
+    }, DROPDOWN_DELAY_MS);
+  };
+
+  useEffect(() => clearDropdownTimeout, []);
+
+  return { closeDropdown, isOpen, openDropdown };
+}
 
 function Group() {
   return (
@@ -32,14 +64,14 @@ function Group() {
 }
 
 function AboutUs() {
-  const [isOpen, setIsOpen] = useState(false);
+  const { closeDropdown, isOpen, openDropdown } = useDropdownDelay();
 
   return (
     <div
       className="content-stretch flex gap-[2px] items-center justify-center p-[8px] relative shrink-0 cursor-pointer"
       data-name="about-us"
-      onMouseEnter={() => setIsOpen(true)}
-      onMouseLeave={() => setIsOpen(false)}
+      onMouseEnter={openDropdown}
+      onMouseLeave={closeDropdown}
     >
       <p className="font-['Rubik',sans-serif] font-normal leading-[24px] not-italic relative shrink-0 text-[16px] text-black text-center whitespace-nowrap">Buy from us</p>
       <div className="overflow-clip relative shrink-0 size-[20px]" data-name="chevron-down">
@@ -88,14 +120,14 @@ function Solution() {
 }
 
 function AboutUs1() {
-  const [isOpen, setIsOpen] = useState(false);
+  const { closeDropdown, isOpen, openDropdown } = useDropdownDelay();
 
   return (
     <div
       className="content-stretch flex gap-[2px] items-center justify-center p-[8px] relative shrink-0 cursor-pointer"
       data-name="about-us"
-      onMouseEnter={() => setIsOpen(true)}
-      onMouseLeave={() => setIsOpen(false)}
+      onMouseEnter={openDropdown}
+      onMouseLeave={closeDropdown}
     >
       <p className="font-['Rubik',sans-serif] font-normal leading-[24px] not-italic relative shrink-0 text-[16px] text-black text-center whitespace-nowrap">About us</p>
       <div className="overflow-clip relative shrink-0 size-[20px]" data-name="chevron-down">
@@ -143,7 +175,7 @@ function Order() {
 
 function Frame() {
   return (
-    <div className="content-stretch flex gap-[25px] items-center relative shrink-0">
+    <div className="content-stretch hidden md:flex gap-[25px] items-center relative shrink-0">
       <AboutUs />
       <Sell />
       <Solution />
@@ -157,7 +189,7 @@ export function Header() {
   return (
     <div className="absolute left-0 right-0 top-[32px] z-30" data-name="header">
       <ContentContainer size="wide" className="px-4 sm:px-6 lg:px-10">
-        <div className="bg-[#fefcf5] content-stretch flex items-center justify-between px-[32px] py-[20px] relative rounded-[54px] shrink-0 w-full" data-name="header">
+        <div className="bg-[#fefcf5] content-stretch flex items-center justify-between px-[20px] py-[20px] relative rounded-[54px] shrink-0 w-full sm:px-[32px]" data-name="header">
         <Link to="/">
           <Group />
         </Link>

@@ -378,7 +378,7 @@ function Frame31() {
 
 function Frame1() {
   return (
-    <div className="content-stretch flex flex-col gap-[24px] h-full items-start justify-end relative shrink-0 w-[128px]">
+    <div className="content-stretch flex flex-col gap-[16px] md:gap-[24px] h-full items-start justify-end relative shrink-0 w-full sm:w-[128px]">
       <p className="font-['Fraunces',serif] font-normal leading-[normal] relative shrink-0 text-[#1e4a35] text-[48px] tracking-[1.44px] w-full">235</p>
       <p className="font-['Rubik',sans-serif] font-normal leading-[1.68] relative shrink-0 text-[#0f251b] text-[16px] tracking-[0.48px] w-full">Farmers Trained</p>
     </div>
@@ -387,7 +387,7 @@ function Frame1() {
 
 function Frame2() {
   return (
-    <div className="content-stretch flex flex-col gap-[24px] h-full items-start justify-end relative shrink-0 w-[115px]">
+    <div className="content-stretch flex flex-col gap-[16px] md:gap-[24px] h-full items-start justify-end relative shrink-0 w-full sm:w-[115px]">
       <p className="font-['Fraunces',serif] font-normal leading-[normal] relative shrink-0 text-[#1e4a35] text-[48px] tracking-[1.44px] w-full">1094</p>
       <p className="font-['Rubik',sans-serif] font-normal leading-[1.68] relative shrink-0 text-[#0f251b] text-[16px] tracking-[0.48px] w-full">Jobs Created</p>
     </div>
@@ -396,7 +396,7 @@ function Frame2() {
 
 function Frame32() {
   return (
-    <div className="content-stretch flex gap-[32px] h-[160px] items-start not-italic relative shrink-0">
+    <div className="content-stretch flex flex-col gap-[24px] h-auto items-start not-italic relative shrink-0 sm:flex-row sm:gap-[32px]">
       <Frame1 />
       <Frame2 />
     </div>
@@ -405,9 +405,9 @@ function Frame32() {
 
 export function Frame29() {
   return (
-    <div className="bg-[#dae2b6] content-stretch flex flex-col gap-[27px] items-start p-[48px] relative rounded-[30px] shrink-0 w-[733px]">
+    <div className="bg-[#dae2b6] content-stretch flex flex-col gap-[27px] items-start p-[32px] md:p-[48px] relative rounded-[30px] w-full lg:flex-[1.42_1_0]">
       <Frame31 />
-      <p className="font-['Rubik',sans-serif] font-normal leading-[1.68] min-w-full not-italic relative shrink-0 text-[16px] text-black tracking-[0.48px] w-[min-content]">We strengthen farmer capabilities and local employment to build resilient livelihoods across the supply chain.</p>
+      <p className="font-['Rubik',sans-serif] font-normal leading-[1.68] not-italic relative shrink-0 text-[16px] text-black tracking-[0.48px] w-full">We strengthen farmer capabilities and local employment to build resilient livelihoods across the supply chain.</p>
       <Frame32 />
     </div>
   );
@@ -446,14 +446,14 @@ function Frame37() {
   return (
     <div className="content-stretch flex flex-col gap-[24px] items-start justify-center relative shrink-0">
       <Layer1 />
-      <p className="font-['Fraunces',serif] font-normal leading-[normal] not-italic relative shrink-0 text-[#0f251b] text-[24px] tracking-[0.72px] whitespace-nowrap">Provide Reliable Market Access</p>
+      <p className="font-['Fraunces',serif] font-normal leading-[normal] not-italic relative shrink-0 text-[#0f251b] text-[24px] tracking-[0.72px]">Provide Reliable Market Access</p>
     </div>
   );
 }
 
 function Frame3() {
   return (
-    <div className="content-stretch flex flex-col gap-[24px] h-full items-start justify-end not-italic relative shrink-0 w-[190px]">
+    <div className="content-stretch flex flex-col gap-[16px] md:gap-[24px] h-full items-start justify-end not-italic relative shrink-0 w-full sm:w-[190px]">
       <p className="font-['Fraunces',serif] font-normal leading-[normal] relative shrink-0 text-[#1e4a35] text-[48px] tracking-[1.44px] w-full">+294%</p>
       <p className="font-['Rubik',sans-serif] font-normal leading-[1.68] relative shrink-0 text-[#0f251b] text-[16px] tracking-[0.48px] w-full">Farmer Income Increase</p>
     </div>
@@ -470,7 +470,7 @@ function Frame38() {
 
 function Frame4() {
   return (
-    <div className="content-stretch flex flex-col gap-[24px] h-full items-start justify-end not-italic relative shrink-0 w-[192px]">
+    <div className="content-stretch flex flex-col gap-[16px] md:gap-[24px] h-full items-start justify-end not-italic relative shrink-0 w-full sm:w-[192px]">
       <p className="font-['Fraunces',serif] font-normal leading-[normal] relative shrink-0 text-[#1e4a35] text-[48px] tracking-[1.44px] w-full">$100</p>
       <p className="font-['Rubik',sans-serif] font-normal leading-[1.68] relative shrink-0 text-[#0f251b] text-[16px] tracking-[0.48px] w-full">Total Income to Farmers</p>
     </div>
@@ -487,7 +487,7 @@ function Frame39() {
 
 function Frame62() {
   return (
-    <div className="content-stretch flex gap-[32px] items-start relative shrink-0">
+    <div className="content-stretch flex flex-col gap-[24px] items-start relative shrink-0 sm:flex-row sm:gap-[32px]">
       <Frame38 />
       <Frame39 />
     </div>
@@ -496,9 +496,9 @@ function Frame62() {
 
 export function Frame33() {
   return (
-    <div className="bg-[#ebc194] content-stretch flex flex-col gap-[27px] items-start p-[48px] relative rounded-[30px] shrink-0 w-[515px]">
+    <div className="bg-[#ebc194] content-stretch flex flex-col gap-[27px] items-start p-[32px] md:p-[48px] relative rounded-[30px] w-full lg:flex-1">
       <Frame37 />
-      <p className="font-['Rubik',sans-serif] font-normal leading-[1.68] min-w-full not-italic relative shrink-0 text-[16px] text-black tracking-[0.48px] w-[min-content]">We provide reliable market access that reduces risk and stabilises farmer income.</p>
+      <p className="font-['Rubik',sans-serif] font-normal leading-[1.68] not-italic relative shrink-0 text-[16px] text-black tracking-[0.48px] w-full">We provide reliable market access that reduces risk and stabilises farmer income.</p>
       <Frame62 />
     </div>
   );
@@ -587,14 +587,14 @@ function Frame42() {
   return (
     <div className="content-stretch flex flex-col gap-[24px] items-start justify-center relative shrink-0">
       <Layer2 />
-      <p className="font-['Fraunces',serif] font-normal leading-[normal] not-italic relative shrink-0 text-[#0f251b] text-[24px] tracking-[0.72px] whitespace-nowrap">Build Zero-Waste Supply Chains</p>
+      <p className="font-['Fraunces',serif] font-normal leading-[normal] not-italic relative shrink-0 text-[#0f251b] text-[24px] tracking-[0.72px]">Build Zero-Waste Supply Chains</p>
     </div>
   );
 }
 
 function Frame5() {
   return (
-    <div className="content-stretch flex flex-col gap-[24px] h-full items-start justify-end relative shrink-0 w-[102px]">
+    <div className="content-stretch flex flex-col gap-[16px] md:gap-[24px] h-full items-start justify-end relative shrink-0 w-full sm:w-[102px]">
       <p className="font-['Fraunces',serif] font-normal leading-[normal] relative shrink-0 text-[#1e4a35] text-[48px] tracking-[1.44px] w-full">1M</p>
       <p className="font-['Rubik',sans-serif] font-normal leading-[1.68] relative shrink-0 text-[#0f251b] text-[16px] tracking-[0.48px] w-full">KGs Rescued</p>
     </div>
@@ -603,7 +603,7 @@ function Frame5() {
 
 function Frame6() {
   return (
-    <div className="content-stretch flex flex-col gap-[24px] h-full items-start justify-end relative shrink-0 w-[172px]">
+    <div className="content-stretch flex flex-col gap-[16px] md:gap-[24px] h-full items-start justify-end relative shrink-0 w-full sm:w-[172px]">
       <p className="font-['Fraunces',serif] font-normal leading-[normal] relative shrink-0 text-[#1e4a35] text-[48px] tracking-[1.44px] w-full">2,410</p>
       <p className="font-['Rubik',sans-serif] font-normal leading-[1.68] relative shrink-0 text-[#0f251b] text-[16px] tracking-[0.48px] w-full">{` tonnes CO2e avoided`}</p>
     </div>
@@ -612,7 +612,7 @@ function Frame6() {
 
 function Frame7() {
   return (
-    <div className="content-stretch flex flex-col gap-[24px] h-full items-start justify-end relative shrink-0 w-[226px]">
+    <div className="content-stretch flex flex-col gap-[16px] md:gap-[24px] h-full items-start justify-end relative shrink-0 w-full sm:w-[226px]">
       <p className="font-['Fraunces',serif] font-normal leading-[normal] relative shrink-0 text-[#1e4a35] text-[48px] tracking-[1.44px] w-full">66M</p>
       <p className="font-['Rubik',sans-serif] font-normal leading-[1.68] relative shrink-0 text-[#0f251b] text-[16px] tracking-[0.48px] w-full">{` blue water wastage avoided`}</p>
     </div>
@@ -621,7 +621,7 @@ function Frame7() {
 
 function Frame43() {
   return (
-    <div className="content-stretch flex gap-[32px] h-[160px] items-start not-italic relative shrink-0">
+    <div className="content-stretch flex flex-col gap-[24px] h-auto items-start not-italic relative shrink-0 sm:flex-row sm:flex-wrap sm:gap-[32px]">
       <Frame5 />
       <Frame6 />
       <Frame7 />
@@ -631,9 +631,9 @@ function Frame43() {
 
 export function Frame41() {
   return (
-    <div className="bg-[#f9ecbd] content-stretch flex flex-col gap-[27px] items-start p-[48px] relative rounded-[30px] shrink-0 w-[733px]">
+    <div className="bg-[#f9ecbd] content-stretch flex flex-col gap-[27px] items-start p-[32px] md:p-[48px] relative rounded-[30px] w-full lg:flex-[1.42_1_0]">
       <Frame42 />
-      <p className="font-['Rubik',sans-serif] font-normal leading-[1.68] min-w-full not-italic relative shrink-0 text-[#1e4a35] text-[16px] tracking-[0.48px] w-[min-content]">We reduce food loss by keeping more of the harvest in the human food supply chain.</p>
+      <p className="font-['Rubik',sans-serif] font-normal leading-[1.68] not-italic relative shrink-0 text-[#1e4a35] text-[16px] tracking-[0.48px] w-full">We reduce food loss by keeping more of the harvest in the human food supply chain.</p>
       <Frame43 />
     </div>
   );
@@ -679,14 +679,14 @@ function Frame45() {
   return (
     <div className="content-stretch flex flex-col gap-[24px] items-start justify-center relative shrink-0">
       <Layer3 />
-      <p className="font-['Fraunces',serif] font-normal leading-[normal] not-italic relative shrink-0 text-[#0f251b] text-[24px] tracking-[0.72px] whitespace-nowrap">Create Climate-Friendly Products</p>
+      <p className="font-['Fraunces',serif] font-normal leading-[normal] not-italic relative shrink-0 text-[#0f251b] text-[24px] tracking-[0.72px]">Create Climate-Friendly Products</p>
     </div>
   );
 }
 
 function Frame8() {
   return (
-    <div className="content-stretch flex flex-col gap-[24px] h-full items-start justify-end not-italic relative shrink-0 w-[249px]">
+    <div className="content-stretch flex flex-col gap-[16px] md:gap-[24px] h-full items-start justify-end not-italic relative shrink-0 w-full sm:w-[249px]">
       <p className="font-['Fraunces',serif] font-normal leading-[normal] relative shrink-0 text-[#1e4a35] text-[48px] tracking-[1.44px] w-full">6 Month</p>
       <p className="font-['Rubik',sans-serif] font-normal leading-[1.68] relative shrink-0 text-[#0f251b] text-[16px] tracking-[0.48px] w-full">{` Shelf life extension on average`}</p>
     </div>
@@ -703,9 +703,9 @@ function Frame46() {
 
 export function Frame44() {
   return (
-    <div className="bg-[#dabacc] content-stretch flex flex-col gap-[27px] items-start p-[48px] relative rounded-[30px] shrink-0 w-[515px]">
+    <div className="bg-[#dabacc] content-stretch flex flex-col gap-[27px] items-start p-[32px] md:p-[48px] relative rounded-[30px] w-full lg:flex-1">
       <Frame45 />
-      <p className="font-['Rubik',sans-serif] font-normal leading-[1.68] min-w-full not-italic relative shrink-0 text-[#1e4a35] text-[16px] tracking-[0.48px] w-[min-content]">We strengthen climate resilience by developing value-added pathways for underutilised crops.</p>
+      <p className="font-['Rubik',sans-serif] font-normal leading-[1.68] not-italic relative shrink-0 text-[#1e4a35] text-[16px] tracking-[0.48px] w-full">We strengthen climate resilience by developing value-added pathways for underutilised crops.</p>
       <Frame46 />
     </div>
   );
@@ -765,25 +765,25 @@ function Frame50() {
   return (
     <div className="content-stretch flex flex-col gap-[24px] items-start justify-center relative shrink-0">
       <Layer4 />
-      <p className="font-['Fraunces',serif] font-normal leading-[normal] not-italic relative shrink-0 text-[24px] text-black tracking-[0.72px] whitespace-nowrap">Unlock Demand and Global Reach</p>
+      <p className="font-['Fraunces',serif] font-normal leading-[normal] not-italic relative shrink-0 text-[24px] text-black tracking-[0.72px]">Unlock Demand and Global Reach</p>
     </div>
   );
 }
 
 function Frame49() {
   return (
-    <div className="content-stretch flex flex-col gap-[27px] items-start relative shrink-0">
+    <div className="content-stretch flex flex-col gap-[27px] items-start relative shrink-0 w-full lg:max-w-[405px]">
       <Frame50 />
-      <p className="font-['Rubik',sans-serif] font-normal leading-[1.68] not-italic relative shrink-0 text-[16px] text-black tracking-[0.48px] w-[405px]">We unlock regional and global demand for locally produced ingredients.</p>
+      <p className="font-['Rubik',sans-serif] font-normal leading-[1.68] not-italic relative shrink-0 text-[16px] text-black tracking-[0.48px] w-full">We unlock regional and global demand for locally produced ingredients.</p>
     </div>
   );
 }
 
 export function Frame48() {
   return (
-    <div className="bg-[#bac1f5] content-stretch flex h-[422px] items-center justify-between p-[48px] relative rounded-[30px] shrink-0 w-[1276px]">
+    <div className="bg-[#bac1f5] content-stretch flex flex-col gap-[32px] min-h-[422px] items-start justify-between overflow-hidden p-[32px] md:p-[48px] relative rounded-[30px] w-full lg:flex-row lg:items-center">
       <Frame49 />
-      <div className="absolute flex h-[283.283px] items-center justify-center left-[641px] top-[108px] w-[594.766px]" style={{ "--transform-inner-width": "1185", "--transform-inner-height": "21" } as React.CSSProperties}>
+      <div className="absolute hidden h-[283.283px] items-center justify-center left-[50%] top-[108px] w-[594.766px] lg:flex" style={{ "--transform-inner-width": "1185", "--transform-inner-height": "21" } as React.CSSProperties}>
         <div className="flex-none rotate-[91.75deg]">
           <div className="h-[586.926px] relative w-[265.468px]" data-name="Vector">
             <svg className="absolute block inset-0 size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 265.468 586.926">
@@ -792,7 +792,7 @@ export function Frame48() {
           </div>
         </div>
       </div>
-      <div className="flex h-[351px] items-center justify-center relative shrink-0 w-[681px]" style={{ "--transform-inner-width": "1185", "--transform-inner-height": "685" } as React.CSSProperties}>
+      <div className="flex h-[240px] items-center justify-center relative shrink-0 w-full max-w-[681px] md:h-[320px] lg:h-[351px] lg:w-[681px]" style={{ "--transform-inner-width": "1185", "--transform-inner-height": "685" } as React.CSSProperties}>
         <div className="-rotate-90 flex-none">
           <div className="h-[681px] relative w-[351px]" data-name="Vector">
             <img alt="" className="absolute block inset-0 max-w-none size-full" height="681" src={imgVector1} width="351" />
@@ -955,9 +955,9 @@ function Group6() {
 
 export function Frame51() {
   return (
-    <div className="absolute bg-[#fefcf5] content-stretch flex flex-col h-[347px] items-start justify-between left-[80px] overflow-clip px-[32px] py-[48px] rounded-[40px] top-[366px] w-[405px]">
+    <div className="bg-[#fefcf5] content-stretch flex flex-col gap-[32px] items-start justify-between min-h-[347px] overflow-clip px-[24px] py-[32px] rounded-[30px] w-full md:px-[32px] md:py-[48px] md:rounded-[40px]">
       <Group6 />
-      <p className="font-['Rubik',sans-serif] font-normal leading-[1.68] min-w-full not-italic relative shrink-0 text-[#1e4a35] text-[16px] tracking-[0.48px] w-[min-content]">Through market acces, we generate additional income for smallholder farmers, who make up a large proportion of the rural poor and often live on less than $2 a day.</p>
+      <p className="font-['Rubik',sans-serif] font-normal leading-[1.68] not-italic relative shrink-0 text-[#1e4a35] text-[16px] tracking-[0.48px] w-full">Through market acces, we generate additional income for smallholder farmers, who make up a large proportion of the rural poor and often live on less than $2 a day.</p>
     </div>
   );
 }
@@ -979,9 +979,9 @@ function Group8() {
 
 export function Frame52() {
   return (
-    <div className="absolute bg-[#fefcf5] content-stretch flex flex-col h-[331px] items-start justify-between left-[80px] overflow-clip px-[32px] py-[48px] rounded-[40px] top-[838px] w-[405px]">
+    <div className="bg-[#fefcf5] content-stretch flex flex-col gap-[32px] items-start justify-between min-h-[331px] overflow-clip px-[24px] py-[32px] rounded-[30px] w-full md:px-[32px] md:py-[48px] md:rounded-[40px]">
       <Group8 />
-      <p className="font-['Rubik',sans-serif] font-normal leading-[1.68] min-w-full not-italic relative shrink-0 text-[#1e4a35] text-[16px] tracking-[0.48px] w-[min-content]">Our growth and diversification strategy creates additional job and growth opportunities for young Kenyans.</p>
+      <p className="font-['Rubik',sans-serif] font-normal leading-[1.68] not-italic relative shrink-0 text-[#1e4a35] text-[16px] tracking-[0.48px] w-full">Our growth and diversification strategy creates additional job and growth opportunities for young Kenyans.</p>
     </div>
   );
 }
@@ -1003,9 +1003,9 @@ function Group9() {
 
 export function Frame53() {
   return (
-    <div className="absolute bg-[#fefcf5] content-stretch flex flex-col h-[347px] items-start justify-between left-[calc(33.33%+46px)] overflow-clip px-[32px] py-[48px] rounded-[40px] top-[366px] w-[396px]">
+    <div className="bg-[#fefcf5] content-stretch flex flex-col gap-[32px] items-start justify-between min-h-[347px] overflow-clip px-[24px] py-[32px] rounded-[30px] w-full md:px-[32px] md:py-[48px] md:rounded-[40px]">
       <Group9 />
-      <p className="font-['Rubik',sans-serif] font-normal leading-[1.68] min-w-full not-italic relative shrink-0 text-[#1e4a35] text-[16px] tracking-[0.48px] w-[min-content]">We contribute to food security by increasing the availability of safe and nutritious food through more efficient and sustainable agricultural supply chains.</p>
+      <p className="font-['Rubik',sans-serif] font-normal leading-[1.68] not-italic relative shrink-0 text-[#1e4a35] text-[16px] tracking-[0.48px] w-full">We contribute to food security by increasing the availability of safe and nutritious food through more efficient and sustainable agricultural supply chains.</p>
     </div>
   );
 }
@@ -1027,9 +1027,9 @@ function Group10() {
 
 export function Frame54() {
   return (
-    <div className="absolute bg-[#fefcf5] content-stretch flex flex-col h-[440px] items-start justify-between left-[calc(33.33%+46px)] overflow-clip px-[32px] py-[48px] rounded-[40px] top-[839px] w-[396px]">
+    <div className="bg-[#fefcf5] content-stretch flex flex-col gap-[32px] items-start justify-between min-h-[440px] overflow-clip px-[24px] py-[32px] rounded-[30px] w-full md:px-[32px] md:py-[48px] md:rounded-[40px]">
       <Group10 />
-      <p className="font-['Rubik',sans-serif] font-normal leading-[1.68] min-w-full not-italic relative shrink-0 text-[#1e4a35] text-[16px] tracking-[0.48px] w-[min-content]">We prevent food loss by creating market demand for the full harvest, including produce that does not meet traditional buyer requirements. By keeping more edible produce in the human food system, we reduce waste and improve resource efficiency across the supply chain.</p>
+      <p className="font-['Rubik',sans-serif] font-normal leading-[1.68] not-italic relative shrink-0 text-[#1e4a35] text-[16px] tracking-[0.48px] w-full">We prevent food loss by creating market demand for the full harvest, including produce that does not meet traditional buyer requirements. By keeping more edible produce in the human food system, we reduce waste and improve resource efficiency across the supply chain.</p>
     </div>
   );
 }
@@ -1051,9 +1051,9 @@ function Group11() {
 
 export function Frame55() {
   return (
-    <div className="absolute bg-[#fefcf5] content-stretch flex flex-col h-[428px] items-start justify-between left-[calc(66.67%+3px)] overflow-clip px-[32px] py-[48px] rounded-[40px] top-[366px] w-[397px]">
+    <div className="bg-[#fefcf5] content-stretch flex flex-col gap-[32px] items-start justify-between min-h-[428px] overflow-clip px-[24px] py-[32px] rounded-[30px] w-full md:px-[32px] md:py-[48px] md:rounded-[40px]">
       <Group11 />
-      <p className="font-['Rubik',sans-serif] font-normal leading-[1.68] min-w-full not-italic relative shrink-0 text-[#1e4a35] text-[16px] tracking-[0.48px] w-[min-content]">We remove barriers to market access, giving women — who form the majority of smallholder farmers — more time to invest in their businesses or education. We have also made gender diversity commitments across our workforce, leadership, governance, and supplier ecosystem.</p>
+      <p className="font-['Rubik',sans-serif] font-normal leading-[1.68] not-italic relative shrink-0 text-[#1e4a35] text-[16px] tracking-[0.48px] w-full">We remove barriers to market access, giving women — who form the majority of smallholder farmers — more time to invest in their businesses or education. We have also made gender diversity commitments across our workforce, leadership, governance, and supplier ecosystem.</p>
     </div>
   );
 }
@@ -1075,9 +1075,9 @@ function Group12() {
 
 export function Frame56() {
   return (
-    <div className="absolute bg-[#fefcf5] content-stretch flex flex-col h-[550px] items-start justify-between leading-[0] left-[calc(66.67%+3px)] overflow-clip px-[32px] py-[48px] rounded-[40px] top-[838px] w-[397px]">
+    <div className="bg-[#fefcf5] content-stretch flex flex-col gap-[32px] items-start justify-between leading-[0] min-h-[550px] overflow-clip px-[24px] py-[32px] rounded-[30px] w-full md:px-[32px] md:py-[48px] md:rounded-[40px]">
       <Group12 />
-      <div className="font-['Rubik',sans-serif] font-normal min-w-full not-italic relative shrink-0 text-[#1e4a35] text-[16px] tracking-[0.48px] w-[min-content]">
+      <div className="font-['Rubik',sans-serif] font-normal not-italic relative shrink-0 text-[#1e4a35] text-[16px] tracking-[0.48px] w-full">
         <p className="leading-[1.68] mb-0">We avoid greenhouse gas emissions in two ways:</p>
         <ul className="list-disc">
           <li className="mb-0 ms-[24px]">
