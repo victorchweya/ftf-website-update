@@ -1,5 +1,6 @@
 import { Header } from "../components/Header";
 import { Footer } from "../components/Footer";
+import { ContentContainer } from "../components/layout/ContentContainer";
 import svgPaths from "../imports/OurStory-1/svg-2nclsq0k1o";
 import imgVector from "../../../assets/figma/2323e524d9afb2d6161a19dc81f55fde5ed1f6f3.png?url";
 import imgVector1 from "../../../assets/figma/1445945fb3fdd936a2a7b50c5b33170ef7d53aa9.png?url";
@@ -49,8 +50,12 @@ function Wireframe1() {
   return (
     <div className="min-h-[600px] md:min-h-[700px] lg:h-[737px] overflow-clip relative shrink-0 w-full" data-name="Wireframe - 53">
       <Header />
-      <p className="absolute font-['Fraunces',serif] font-normal leading-[normal] left-[calc(8.33%+70px)] not-italic text-[#0f251b] text-[56px] top-[268px] tracking-[1.68px] w-[570px]">Farm to Feed began with a simple but urgent idea</p>
-      <p className="absolute font-['Rubik',sans-serif] font-normal leading-[1.68] left-[calc(50%+81px)] not-italic text-[#1e4a35] text-[16px] top-[272px] tracking-[0.48px] w-[279px]">{`Tackling food loss in Kenya's fresh produce supply chain. We introduced grade rescue to the Nairobi market, creating a pathway for vegetables that might otherwise go to waste.`}</p>
+      <ContentContainer size="wide" className="h-full !px-0">
+        <div className="relative h-full">
+          <p className="absolute font-['Fraunces',serif] font-normal leading-[normal] left-[110px] not-italic text-[#0f251b] text-[56px] top-[268px] tracking-[1.68px] w-[570px]">Farm to Feed began with a simple but urgent idea</p>
+          <p className="absolute font-['Rubik',sans-serif] font-normal leading-[1.68] left-[calc(50%+81px)] not-italic text-[#1e4a35] text-[16px] top-[272px] tracking-[0.48px] w-[279px]">{`Tackling food loss in Kenya's fresh produce supply chain. We introduced grade rescue to the Nairobi market, creating a pathway for vegetables that might otherwise go to waste.`}</p>
+        </div>
+      </ContentContainer>
       <div className="-translate-x-1/2 absolute flex h-[572.259px] items-center justify-center left-[calc(50%-0.5px)] top-[511px] w-[1477px]" style={{ "--transform-inner-width": "1185", "--transform-inner-height": "1481" } as React.CSSProperties}>
         <div className="-rotate-90 flex-none">
           <div className="h-[1477px] relative w-[572.259px]" data-name="Vector">
@@ -245,12 +250,16 @@ function Wireframe() {
           </div>
         </div>
       </div>
-      <p className="-translate-x-1/2 absolute font-['Fraunces',serif] font-normal leading-[normal] left-[calc(25%+360px)] not-italic text-[#0f251b] text-[40px] text-center top-[444px] tracking-[1.2px] w-[592px]">{` Connecting production to dependable demand...`}</p>
-      <div className="-translate-x-1/2 absolute font-['Rubik',sans-serif] font-normal leading-[0] left-[calc(25%+360px)] not-italic text-[#0f251b] text-[16px] text-center top-[577px] tracking-[0.48px] w-[592px] whitespace-pre-wrap">
+      <ContentContainer size="wide" className="h-full !px-0">
+        <div className="relative h-full">
+      <p className="-translate-x-1/2 absolute font-['Fraunces',serif] font-normal leading-[normal] left-1/2 not-italic text-[#0f251b] text-[40px] text-center top-[444px] tracking-[1.2px] w-[592px]">{` Connecting production to dependable demand...`}</p>
+      <div className="-translate-x-1/2 absolute font-['Rubik',sans-serif] font-normal leading-[0] left-1/2 not-italic text-[#0f251b] text-[16px] text-center top-[577px] tracking-[0.48px] w-[592px] whitespace-pre-wrap">
         <p className="leading-[1.68] mb-0">{`As we worked alongside our customers and farmers, we quickly learned that food loss is one part of a much larger challenge. Farmers needed more than a solution for imperfect produce. They needed reliable market access for their full harvest.   `}</p>
         <p className="leading-[1.68]">{`Since those early days, Farm to Feed has grown into a trusted off taker and partner for farmers, helping to address one of Kenya’s most persistent agricultural bottlenecks: connecting production to dependable demand. `}</p>
       </div>
       <Frame28 />
+        </div>
+      </ContentContainer>
       <div className="-translate-x-1/2 -translate-y-1/2 absolute h-[601px] left-[33.5px] top-[calc(50%+266px)] w-[441px]" data-name="Vector">
         <img alt="" className="absolute block inset-0 max-w-none size-full" height="601" src={imgVector2} width="441" />
       </div>
@@ -718,17 +727,21 @@ function Frame20() {
 function Wireframe2() {
   return (
     <div className="bg-white min-h-[500px] md:min-h-[580px] lg:h-[609px] overflow-clip relative shrink-0 w-full" data-name="Wireframe - 54">
-      <div className="absolute flex h-[87px] items-center justify-center left-[33.26%] right-[33.06%] top-[282px]" style={{ containerType: "size" }}>
-        <div className="flex-none h-[100cqw] rotate-90 w-[100cqh]">
-          <div className="relative size-full" data-name="Vector">
-            <svg className="absolute block inset-0 size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 87 485">
-              <path d={svgPaths.p75ace80} fill="var(--fill-0, #EFF6EF)" id="Vector" />
-            </svg>
+      <ContentContainer size="wide" className="h-full !px-0">
+        <div className="relative h-full">
+          <div className="-translate-x-1/2 absolute flex h-[87px] items-center justify-center left-1/2 top-[282px] w-[485px]" style={{ containerType: "size" }}>
+            <div className="flex-none h-[100cqw] rotate-90 w-[100cqh]">
+              <div className="relative size-full" data-name="Vector">
+                <svg className="absolute block inset-0 size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 87 485">
+                  <path d={svgPaths.p75ace80} fill="var(--fill-0, #EFF6EF)" id="Vector" />
+                </svg>
+              </div>
+            </div>
           </div>
+          <Frame16 />
+          <Frame20 />
         </div>
-      </div>
-      <Frame16 />
-      <Frame20 />
+      </ContentContainer>
     </div>
   );
 }
@@ -949,8 +962,16 @@ function Story() {
           </div>
         </div>
       </div>
-      <p className="-translate-x-1/2 absolute font-['Fraunces',serif] font-normal leading-[normal] left-[calc(25%+360px)] not-italic text-[56px] text-black text-center top-[96px] tracking-[1.68px] w-[544px]">Our story</p>
-      <p className="-translate-x-1/2 absolute font-['Fraunces',serif] font-normal leading-[1.68] left-[calc(25%+360px)] not-italic text-[16px] text-black text-center top-[701px] tracking-[0.48px] whitespace-nowrap">Slide the carrot across the timeline or tap to learn about our journey</p>
+      <ContentContainer size="wide" className="h-full !px-0">
+        <div className="relative h-full">
+          <p className="-translate-x-1/2 absolute font-['Fraunces',serif] font-normal leading-[normal] left-1/2 not-italic text-[56px] text-black text-center top-[96px] tracking-[1.68px] w-[544px]">Our story</p>
+          <p className="-translate-x-1/2 absolute font-['Fraunces',serif] font-normal leading-[1.68] left-1/2 not-italic text-[16px] text-black text-center top-[701px] tracking-[0.48px] whitespace-nowrap">Slide the carrot across the timeline or tap to learn about our journey</p>
+          <div className="-translate-x-1/2 absolute h-[65px] left-1/2 top-[574.08px] w-[607px]" data-name="slider">
+            <SliderField />
+            <Note />
+          </div>
+        </div>
+      </ContentContainer>
       <div className="absolute flex h-[572.259px] items-center justify-center left-[-29px] top-[906px] w-[1477px]" style={{ "--transform-inner-width": "1185", "--transform-inner-height": "21" } as React.CSSProperties}>
         <div className="-rotate-90 -scale-y-100 flex-none">
           <div className="h-[1477px] relative w-[572.259px]" data-name="Vector">
@@ -962,10 +983,6 @@ function Story() {
       </div>
       <Frame19 />
       <Group8 />
-      <div className="-translate-x-1/2 absolute h-[65px] left-[calc(50%+0.5px)] top-[574.08px] w-[607px]" data-name="slider">
-        <SliderField />
-        <Note />
-      </div>
       <Group14 />
     </div>
   );

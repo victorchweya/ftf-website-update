@@ -1,5 +1,6 @@
 import { Header } from "../components/Header";
 import { Footer } from "../components/Footer";
+import { ContentContainer } from "../components/layout/ContentContainer";
 import svgPaths from "../imports/FaQs/svg-af2ylmx84r";
 
 function Group1() {
@@ -25,7 +26,7 @@ function Order1() {
 
 function Frame15() {
   return (
-    <div className="absolute content-stretch flex flex-col gap-[16px] items-start left-[82px] top-[829px]">
+    <div className="absolute content-stretch flex flex-col gap-[16px] items-start left-[2px] top-[829px]">
       <p className="font-['Rubik',sans-serif] font-medium leading-[normal] not-italic relative shrink-0 text-[#0f251b] text-[20px] tracking-[0.6px] whitespace-nowrap">Have more questions?</p>
       <Order1 />
     </div>
@@ -190,7 +191,7 @@ function FaqCard5() {
 
 function Frame14() {
   return (
-    <div className="absolute content-stretch flex flex-col gap-px items-start left-[calc(25%+49px)] top-[546px] w-[951px]">
+    <div className="absolute content-stretch flex flex-col gap-px items-start left-[329px] top-[546px] w-[951px]">
       <FaqCard />
       <FaqCard1 />
       <FaqCard2 />
@@ -251,7 +252,7 @@ function Sell2() {
 
 function Frame21() {
   return (
-    <div className="absolute content-stretch flex gap-[25px] items-center left-[calc(25%+48px)] py-[24px] top-[405px] w-[1280px]">
+    <div className="absolute content-stretch flex gap-[25px] items-center left-[329px] py-[24px] top-[405px] w-[951px]">
       <div aria-hidden="true" className="absolute border-[#dfeddf] border-b border-dashed inset-0 pointer-events-none" />
       <Solution1 />
       <Order2 />
@@ -266,15 +267,19 @@ function Wireframe() {
     <div className="bg-[#fefcf5] min-h-[900px] md:min-h-[1200px] lg:min-h-[1442px] overflow-clip relative shrink-0 w-full" data-name="Wireframe - 53">
       <Header />
       <Group1 />
-      <p className="absolute font-['Fraunces',serif] font-normal leading-[normal] left-[calc(25%+49px)] not-italic text-[#0f251b] text-[56px] top-[216px] tracking-[1.68px] w-[544px]">Frequently asked questions</p>
-      <Frame15 />
-      <Frame14 />
+      <ContentContainer size="wide" className="h-full !px-0">
+        <div className="relative h-full min-h-[900px] md:min-h-[1200px] lg:min-h-[1442px]">
+          <p className="absolute font-['Fraunces',serif] font-normal leading-[normal] left-[329px] not-italic text-[#0f251b] text-[56px] top-[216px] tracking-[1.68px] w-[544px]">Frequently asked questions</p>
+          <Frame15 />
+          <Frame14 />
+          <Frame21 />
+        </div>
+      </ContentContainer>
       <div className="absolute flex h-[620.8px] items-center justify-center left-[-21.25%] right-[76.15%] top-[150.83px]" style={{ containerType: "size" }}>
         <div className="flex-none h-[100cqw] rotate-90 w-[100cqh]">
           <Group2 />
         </div>
       </div>
-      <Frame21 />
     </div>
   );
 }

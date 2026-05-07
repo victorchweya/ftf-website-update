@@ -1,5 +1,6 @@
 import { Header } from "../components/Header";
 import { Footer } from "../components/Footer";
+import { ContentContainer } from "../components/layout/ContentContainer";
 import svgPaths from "../imports/ContactUs-1/svg-n26o6nsh2k";
 import imgMap from "../../../assets/figma/768034251e290c5f148f0125d9e404698150a7ed.png?url";
 import imgPegmanOffscreen2X from "../../../assets/figma/747a27fe416ebfaf57b25beae190a98036e77d0e.png?url";
@@ -342,7 +343,7 @@ function Tab1() {
 
 function Content() {
   return (
-    <div className="absolute content-stretch flex flex-col gap-[40px] items-start left-[calc(25%+64px)] top-[513px] w-[247px]" data-name="Content">
+    <div className="absolute content-stretch flex flex-col gap-[40px] items-start left-[calc(25%+24px)] top-[513px] w-[247px]" data-name="Content">
       <Tab />
       <Tab1 />
     </div>
@@ -481,7 +482,7 @@ function Group1() {
 
 function Content5() {
   return (
-    <div className="-translate-x-1/2 absolute content-stretch flex flex-col gap-[64px] h-[462px] items-start left-[calc(75%-50px)] top-[513px] w-[592px]" data-name="Content">
+    <div className="-translate-x-1/2 absolute content-stretch flex flex-col gap-[64px] h-[462px] items-start left-[calc(75%-10px)] top-[513px] w-[592px]" data-name="Content">
       <GoogleMapsMockup />
       <Group1 />
     </div>
@@ -501,10 +502,14 @@ function Contact() {
       </div>
       <Frame14 />
       <Group3 />
-      <p className="absolute font-['Fraunces',serif] font-normal leading-[normal] left-[calc(25%+64px)] not-italic text-[56px] text-black top-[246px] tracking-[1.68px] w-[544px]">Contact us</p>
-      <p className="absolute font-['Rubik',sans-serif] font-normal leading-[1.68] left-[calc(25%+64px)] not-italic text-[20px] text-black top-[319px] tracking-[0.6px] w-[664px]">Our team works round the clock to respond to all incoming queries.</p>
-      <Content />
-      <Content5 />
+      <ContentContainer size="wide" className="h-full !px-0">
+        <div className="relative h-full">
+          <p className="absolute font-['Fraunces',serif] font-normal leading-[normal] left-[calc(25%+24px)] not-italic text-[56px] text-black top-[246px] tracking-[1.68px] w-[544px]">Contact us</p>
+          <p className="absolute font-['Rubik',sans-serif] font-normal leading-[1.68] left-[calc(25%+24px)] not-italic text-[20px] text-black top-[319px] tracking-[0.6px] w-[664px]">Our team works round the clock to respond to all incoming queries.</p>
+          <Content />
+          <Content5 />
+        </div>
+      </ContentContainer>
     </div>
   );
 }

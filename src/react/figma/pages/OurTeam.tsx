@@ -1,5 +1,6 @@
 import { Header } from "../components/Header";
 import { Footer } from "../components/Footer";
+import { ContentContainer } from "../components/layout/ContentContainer";
 import svgPaths from "../imports/OurTeam/svg-jwjuc7xr3o";
 import imgTeamphoto1 from "../../../assets/figma/242cf24e7f30319a88573a80a38537cb6654b299.png?url";
 import imgClaireVanEnkFounderManagingDirector1 from "../../../assets/figma/6f453f6615e2a5e3c0a7bdac13d8a20d314621aa.png?url";
@@ -62,7 +63,11 @@ function Wireframe3() {
   return (
     <div className="bg-[#fcfdf9] min-h-[500px] md:min-h-[600px] lg:min-h-[742px] overflow-clip relative shrink-0 w-full" data-name="Wireframe - 53">
       <Header />
-      <Frame59 />
+      <ContentContainer size="wide" className="!px-0">
+        <div className="relative min-h-[600px] md:min-h-[750px] lg:min-h-[900px]">
+          <Frame59 />
+        </div>
+      </ContentContainer>
       <div className="absolute flex h-[506.262px] items-center justify-center right-[-302.73px] top-[226px] w-[594.002px]" style={{ "--transform-inner-width": "1185", "--transform-inner-height": "21" } as React.CSSProperties}>
         <div className="-rotate-90 flex-none">
           <Group7 />
@@ -115,19 +120,23 @@ function Frame23() {
 function TeamCta() {
   return (
     <div className="bg-[#f3f5e7] min-h-[600px] md:min-h-[750px] lg:min-h-[900px] overflow-clip relative rounded-bl-[40px] rounded-br-[40px] shrink-0 w-full" data-name="Team CTA">
-      <Frame36 />
-      <Frame23 />
-      <p className="absolute font-['Fraunces',serif] font-normal leading-[0] left-[112px] not-italic text-[0px] text-white top-[142px] tracking-[1.44px] w-[605px]">
-        <span className="leading-[normal] text-[#1e4a35] text-[48px]">
-          Global in perspective
-          <br aria-hidden="true" />
-          Local in expertise
-          <br aria-hidden="true" />
-          United by
-        </span>
-        <span className="leading-[normal] text-[48px]">{` `}</span>
-        <span className="font-['Fraunces',serif] font-normal italic leading-[normal] text-[#d78228] text-[48px]">impact</span>
-      </p>
+      <ContentContainer size="wide" className="h-full !px-0">
+        <div className="relative h-full">
+          <Frame36 />
+          <Frame23 />
+          <p className="absolute font-['Fraunces',serif] font-normal leading-[0] left-[32px] not-italic text-[0px] text-white top-[142px] tracking-[1.44px] w-[605px]">
+            <span className="leading-[normal] text-[#1e4a35] text-[48px]">
+              Global in perspective
+              <br aria-hidden="true" />
+              Local in expertise
+              <br aria-hidden="true" />
+              United by
+            </span>
+            <span className="leading-[normal] text-[48px]">{` `}</span>
+            <span className="font-['Fraunces',serif] font-normal italic leading-[normal] text-[#d78228] text-[48px]">impact</span>
+          </p>
+        </div>
+      </ContentContainer>
       <div className="absolute flex h-[572.259px] items-center justify-center left-[-13px] top-[-486px] w-[1477px]" style={{ "--transform-inner-width": "1185", "--transform-inner-height": "21" } as React.CSSProperties}>
         <div className="flex-none rotate-90">
           <div className="h-[1477px] relative w-[572.259px]" data-name="Vector">
@@ -485,8 +494,12 @@ function Frame35() {
 function Wireframe1() {
   return (
     <div className="bg-white min-h-[800px] md:min-h-[1000px] lg:min-h-[1177px] overflow-clip relative shrink-0 w-full" data-name="Wireframe - 31">
-      <Frame63 />
-      <Frame1 />
+      <ContentContainer size="wide" className="h-full !px-0">
+        <div className="relative h-full">
+          <Frame63 />
+          <Frame1 />
+        </div>
+      </ContentContainer>
       <Frame35 />
     </div>
   );
@@ -810,7 +823,11 @@ function Frame58() {
 function Wireframe() {
   return (
     <div className="bg-[#122c20] min-h-[800px] md:min-h-[1000px] lg:min-h-[1234px] overflow-clip relative shrink-0 w-full" data-name="Wireframe - 11">
-      <Frame45 />
+      <ContentContainer size="wide" className="h-full !px-0">
+        <div className="relative h-full">
+          <Frame45 />
+        </div>
+      </ContentContainer>
       <Order2 />
       <Frame58 />
     </div>
@@ -1263,7 +1280,7 @@ function Frame2() {
 
 function Cta() {
   return (
-    <div className="-translate-y-1/2 absolute bg-[#4c352b] h-[520px] left-[7.78%] overflow-clip right-[7.78%] rounded-[40px] top-[calc(50%-32px)]" data-name="CTA">
+    <div className="bg-[#4c352b] h-[520px] max-w-[1216px] overflow-clip relative rounded-[40px] w-full" data-name="CTA">
       <Capa />
       <Frame2 />
     </div>
@@ -1274,7 +1291,9 @@ function Wireframe2() {
   return (
     <div className="bg-[#122c20] min-h-[500px] md:min-h-[600px] lg:min-h-[696px] overflow-clip relative rounded-bl-[40px] rounded-br-[40px] shrink-0 w-full" data-name="Wireframe - 36">
       <Group9 />
-      <Cta />
+      <ContentContainer size="wide" className="flex justify-center pt-[56px]">
+        <Cta />
+      </ContentContainer>
     </div>
   );
 }
