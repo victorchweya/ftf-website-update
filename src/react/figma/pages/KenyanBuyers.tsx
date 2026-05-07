@@ -79,15 +79,15 @@ function Frame21() {
 	return (
 		<div className="content-stretch flex flex-col gap-[40px] items-start relative shrink-0">
 			<Objects />
-			<p className="font-['Fraunces',serif] font-normal leading-[0] not-italic relative shrink-0 text-[#0f251b] text-[0px] tracking-[1.92px] w-[519px]">
-				<span className="leading-[1.12] text-[64px]">
+			<p className="font-['Fraunces',serif] font-normal leading-tight not-italic relative shrink-0 text-[#0f251b] text-4xl md:text-5xl lg:text-6xl tracking-wide w-[519px]">
+				<span className="leading-tight">
 					Good produce,
 					<br aria-hidden="true" />
 				</span>
-				<span className="leading-[1.12] text-[#1e4a35] text-[64px]">
+				<span className="leading-tight text-[#1e4a35]">
 					good margins,
 				</span>
-				<span className="leading-[1.12] text-[64px]">
+				<span className="leading-tight">
 					<br aria-hidden="true" />
 					even better environment
 				</span>
@@ -469,7 +469,7 @@ function Frame79() {
 	);
 }
 
-function Wireframe3() {
+function LocalBuyerHeroSection() {
 	return (
 		<div
 			className="bg-[#f9ecbd] min-h-[600px] md:min-h-[800px] lg:h-[926px] overflow-clip relative shrink-0 w-full"
@@ -1084,7 +1084,7 @@ function Frame81() {
 
 function Frame38() {
 	return (
-		<div className="absolute content-stretch flex flex-col gap-[64px] items-center left-1/2 -translate-x-1/2 top-[164px] w-[calc(100%-2.5rem)] sm:w-[calc(100%-4rem)] lg:w-[calc(100%-5rem)] max-w-[1280px]">
+		<div className="content-stretch flex flex-col gap-[64px] items-center relative w-full max-w-[1280px]">
 			<Frame37 />
 			<Frame81 />
 		</div>
@@ -1094,7 +1094,7 @@ function Frame38() {
 function Order2() {
 	return (
 		<div
-			className="absolute bg-black content-stretch flex items-start left-[calc(41.67%+6px)] px-[16px] py-[8px] rounded-[40px] top-[1649px]"
+			className="bg-black content-stretch flex items-start px-[16px] py-[8px] rounded-[40px] relative"
 			data-name="order">
 			<p className="font-['Rubik',sans-serif] font-normal leading-[1.68] not-italic relative shrink-0 text-[#eee] text-[16px] text-center tracking-[0.48px] whitespace-nowrap">
 				Learn More
@@ -1103,10 +1103,10 @@ function Order2() {
 	);
 }
 
-function Wireframe() {
+function LocalBuyerProductSection() {
 	return (
 		<div
-			className="bg-white min-h-[600px] md:min-h-[900px] lg:h-[1068px] overflow-clip relative shrink-0 w-full"
+			className="bg-white min-h-[600px] md:min-h-[900px] overflow-clip relative shrink-0 w-full"
 			data-name="Wireframe - 11">
 			<div
 				className="absolute flex inset-[-13.58%_-0.63%_91.95%_-3.75%] items-center justify-center"
@@ -1127,8 +1127,10 @@ function Wireframe() {
 					</div>
 				</div>
 			</div>
-			<Frame38 />
-			<Order2 />
+			<ContentContainer size="wide" className="relative z-10 flex flex-col items-center gap-12 pt-[164px] pb-[120px]">
+				<Frame38 />
+				<Order2 />
+			</ContentContainer>
 		</div>
 	);
 }
@@ -1420,11 +1422,39 @@ function Sell5() {
 	);
 }
 
+const partnerProductCategories = [
+	["Dairy", "Cereals, grains & pulses", "Tea & Coffee"],
+	["spices", "Snacks"],
+];
+
+function ProductCategoryChip({ label }: { label: string }) {
+	return (
+		<div className="bg-[#122c20] content-stretch flex items-start px-[16px] py-[8px] relative rounded-[40px] shrink-0">
+			<div
+				aria-hidden="true"
+				className="absolute border border-[#0f251b] border-solid inset-0 pointer-events-none rounded-[40px]"
+			/>
+			<p className="font-['Rubik',sans-serif] font-normal leading-[1.68] relative shrink-0 text-[#f7f7f7] text-[16px] text-center tracking-[0.48px] whitespace-nowrap">
+				{label}
+			</p>
+		</div>
+	);
+}
+
 function Frame50() {
 	return (
-		<div className="content-stretch flex gap-[16px] items-start relative shrink-0">
-			<Sell4 />
-			<Sell5 />
+		<div className="content-stretch flex flex-col gap-[12px] items-start relative shrink-0 w-full">
+			{partnerProductCategories.map((row, index) => (
+				<div
+					className={`content-stretch flex items-start relative shrink-0 ${
+						index === 0 ? "gap-[12px]" : "gap-[16px]"
+					}`}
+					key={index}>
+					{row.map((category) => (
+						<ProductCategoryChip key={category} label={category} />
+					))}
+				</div>
+			))}
 		</div>
 	);
 }
@@ -1432,7 +1462,6 @@ function Frame50() {
 function Frame48() {
 	return (
 		<div className="content-stretch flex flex-col gap-[12px] items-start relative shrink-0 w-full">
-			<Frame49 />
 			<Frame50 />
 		</div>
 	);
@@ -1975,7 +2004,7 @@ function Frame51() {
 	);
 }
 
-function Wireframe2() {
+function LocalBuyerContactSection() {
 	return (
 		<div
 			className="bg-[#0f251b] min-h-[600px] md:min-h-[900px] lg:h-[1085px] overflow-clip relative shrink-0 w-full"
@@ -3551,6 +3580,65 @@ function Frame72() {
 	);
 }
 
+const localBuyerHowItWorksSteps = [
+	{
+		body: "Our Sales team is ready to speak with you",
+		color: "#8C98EE",
+		textColor: "#e6e6e6",
+		title: "Connect with sales",
+	},
+	{
+		body: "Explore our wide range of fresh and dry products online",
+		color: "#A35380",
+		textColor: "#e6e6e6",
+		title: "Browse the shop",
+	},
+	{
+		body: "Select your delivery window and checkout your cart",
+		color: "#85A687",
+		textColor: "#e6e6e6",
+		title: "Place Order",
+	},
+	{
+		body: "Receive fresh, high quality ingredients directly to your doorstep",
+		color: "#EBC194",
+		textColor: "#2b1a08",
+		title: "Enjoy Delivery",
+	},
+];
+
+function LocalBuyerStepCard({
+	body,
+	color,
+	index,
+	textColor,
+	title,
+}: {
+	body: string;
+	color: string;
+	index: number;
+	textColor: string;
+	title: string;
+}) {
+	return (
+		<div className="content-stretch flex gap-[16px] items-start relative">
+			<div
+				className="flex size-[40px] shrink-0 items-center justify-center rounded-full font-['Rubik',sans-serif] text-[16px] font-medium tracking-[0.48px]"
+				style={{ backgroundColor: color, color: textColor }}>
+				{index + 1}
+			</div>
+			<div className="content-stretch flex flex-col gap-[16px] items-start not-italic relative shrink-0 w-[204px]">
+				<p className="font-['Fraunces',serif] font-normal leading-[normal] relative shrink-0 text-[#0f251b] text-[20px] tracking-[0.6px] w-full">
+					{title}
+				</p>
+				<p className="font-['Rubik',sans-serif] font-normal leading-[1.68] relative shrink-0 text-[#1e4a35] text-[14px] tracking-[0.42px] w-full">
+					{body}
+				</p>
+			</div>
+		</div>
+	);
+}
+
 function Design() {
 	return (
 		<div className="h-[82.59px] relative w-[122.18px]" data-name="Design">
@@ -3626,12 +3714,12 @@ function Design2() {
 	);
 }
 
-function Wireframe1() {
+function LocalBuyerHowItWorksSection() {
 	return (
 		<div
-			className="bg-white min-h-[600px] md:min-h-[800px] lg:h-[887px] overflow-clip relative shrink-0 w-full"
+			className="bg-white min-h-[600px] md:min-h-[800px] overflow-clip relative shrink-0 w-full"
 			data-name="Wireframe - 42">
-			<ContentContainer size="wide" className="relative z-10">
+			<ContentContainer size="wide" className="relative z-10 pb-[120px]">
 				<div className="mx-auto max-w-[592px] pt-[151px] text-center">
 					<p className="font-['Fraunces',serif] font-normal leading-[normal] not-italic text-[#0f251b] text-[48px] tracking-[1.44px] w-full">
 						How does it work?
@@ -3641,15 +3729,16 @@ function Wireframe1() {
 						delivered to you
 					</p>
 				</div>
-				<div className="relative h-[520px] mt-[56px]">
+				<div className="relative mt-[56px]">
 					<Group8 />
 					<Group35 />
 					<Group9 />
 					<Group36 />
-					<Frame67 />
-					<Frame68 />
-					<Frame69 />
-					<Frame72 />
+					<div className="relative z-10 grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+					{localBuyerHowItWorksSteps.map((step, index) => (
+						<LocalBuyerStepCard key={step.title} index={index} {...step} />
+					))}
+					</div>
 					<div
 						className="absolute flex h-[145.923px] items-center justify-center left-[190px] top-[12px] w-[143.362px]"
 						style={
@@ -4270,12 +4359,14 @@ function Order5() {
 	);
 }
 
+const localBuyerTestimonialControls = [Order4, Frame6, Order5];
+
 function Frame75() {
 	return (
-		<div className="-translate-x-1/2 -translate-y-1/2 absolute content-stretch flex gap-[40px] items-center justify-center left-1/2 max-w-[1280px] top-[calc(50%+112.5px)] w-[calc(100%-2.5rem)] sm:w-[calc(100%-4rem)] lg:w-[calc(100%-5rem)]">
-			<Order4 />
-			<Frame6 />
-			<Order5 />
+		<div className="content-stretch flex gap-[40px] items-center justify-center relative w-full">
+			{localBuyerTestimonialControls.map((Control) => (
+				<Control key={Control.name} />
+			))}
 		</div>
 	);
 }
@@ -4802,15 +4893,17 @@ function Capa7() {
 	);
 }
 
-function Testimonial() {
+function LocalBuyerTestimonialsSection() {
 	return (
 		<div
-			className="bg-[#f3f5e7] min-h-[600px] md:min-h-[750px] lg:h-[840px] overflow-clip relative rounded-bl-[40px] rounded-br-[40px] shrink-0 w-full"
+			className="bg-[#f3f5e7] min-h-[600px] md:min-h-[750px] overflow-clip relative rounded-bl-[40px] rounded-br-[40px] shrink-0 w-full"
 			data-name="Testimonial">
-			<p className="-translate-x-1/2 absolute font-['Fraunces',serif] font-normal leading-[normal] left-1/2 not-italic text-[#0f251b] text-[48px] text-center top-[184px] tracking-[1.44px] w-[800px]">
-				Hear from businesses making an impact with Farm to Feed.
-			</p>
-			<Frame75 />
+			<ContentContainer size="wide" className="relative z-10 flex flex-col items-center gap-[80px] pt-[184px] pb-[120px]">
+				<p className="font-['Fraunces',serif] font-normal leading-[normal] not-italic text-[#0f251b] text-[48px] text-center tracking-[1.44px] w-[800px] max-w-full">
+					Hear from businesses making an impact with Farm to Feed.
+				</p>
+				<Frame75 />
+			</ContentContainer>
 			<div
 				className="absolute flex h-[137.947px] items-center justify-center left-[calc(75%+23.37px)] top-[231.07px] w-[206.385px]"
 				style={
@@ -5013,11 +5106,11 @@ export default function KenyanBuyers() {
 		<div
 			className="bg-white content-stretch flex flex-col items-start relative w-full"
 			data-name="Buy from us - local">
-			<Wireframe3 />
-			<Wireframe />
-			<Wireframe2 />
-			<Wireframe1 />
-			<Testimonial />
+			<LocalBuyerHeroSection />
+			<LocalBuyerProductSection />
+			<LocalBuyerContactSection />
+			<LocalBuyerHowItWorksSection />
+			<LocalBuyerTestimonialsSection />
 			<Footer />
 		</div>
 	);

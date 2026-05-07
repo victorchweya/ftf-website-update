@@ -15,14 +15,14 @@ import { BorderTopKenyanBuyersSvg } from "../imports/BuyFromUsLocal-1/border-top
 function Frame23() {
 	return (
 		<div className="content-stretch flex flex-col gap-[40px] items-center not-italic relative shrink-0 text-center">
-			<p className="font-['Fraunces',serif] font-normal leading-[0] max-w-[688px] relative shrink-0 text-[0px] text-black tracking-[1.92px] w-full">
-				<span className="leading-[normal] text-[#0f251b] text-[64px]">
+			<p className="font-['Fraunces',serif] font-normal leading-normal max-w-[688px] relative shrink-0 text-4xl md:text-5xl lg:text-6xl text-black tracking-wide w-full">
+				<span className="leading-normal text-[#0f251b]">
 					Global sourcing for
 				</span>
-				<span className="leading-[normal] text-[64px]">
+				<span className="leading-normal">
 					<br aria-hidden="true" />
 				</span>
-				<span className="leading-[normal] text-[#1e4a35] text-[64px]">
+				<span className="leading-normal text-[#1e4a35]">
 					Kenyan ingredients
 				</span>
 			</p>
@@ -122,7 +122,7 @@ function Solution() {
 	);
 }
 
-function Wireframe3() {
+function GlobalBuyerHeroSection() {
 	return (
 		<div
 			className="bg-[#4c352b] min-h-[600px] md:min-h-[800px] lg:h-[926px] overflow-clip relative shrink-0 w-full"
@@ -264,7 +264,7 @@ function Frame31() {
 	);
 }
 
-function Wireframe5() {
+function IngredientsOriginSection() {
 	return (
 		<div
 			className="bg-[#4c352b] min-h-[500px] md:min-h-[650px] lg:h-[759px] overflow-clip relative shrink-0 w-full"
@@ -925,7 +925,7 @@ function Order2() {
 	);
 }
 
-function Wireframe() {
+function PartnerInFlavourSection() {
 	return (
 		<div
 			className="bg-white min-h-[600px] md:min-h-[750px] lg:h-[876px] overflow-clip relative shrink-0 w-full"
@@ -1209,13 +1209,14 @@ function Frame47() {
 	);
 }
 
+const exportProductCards = [Frame41, Frame44, Frame46, Frame47];
+
 function Frame56() {
 	return (
 		<div className="content-stretch flex gap-[32px] items-start relative w-full">
-			<Frame41 />
-			<Frame44 />
-			<Frame46 />
-			<Frame47 />
+			{exportProductCards.map((ProductCard) => (
+				<ProductCard key={ProductCard.name} />
+			))}
 		</div>
 	);
 }
@@ -1237,7 +1238,7 @@ function Frame59() {
 	);
 }
 
-function Wireframe4() {
+function SourcingProcessSection() {
 	return (
 		<div
 			className="bg-white min-h-[700px] md:min-h-[1100px] lg:min-h-[1360px] overflow-visible relative shrink-0 w-full"
@@ -1664,12 +1665,14 @@ function Frame54() {
 	);
 }
 
+const qualityCards = [Frame50, Frame52, Frame54];
+
 function Frame49() {
 	return (
 		<div className="content-stretch flex gap-[32px] items-start relative shrink-0 w-full">
-			<Frame50 />
-			<Frame52 />
-			<Frame54 />
+			{qualityCards.map((QualityCard) => (
+				<QualityCard key={QualityCard.name} />
+			))}
 		</div>
 	);
 }
@@ -1703,7 +1706,7 @@ function Order3() {
 	);
 }
 
-function Wireframe6() {
+function QualitySection() {
 	return (
 		<div
 			className="bg-[#dae2b6] min-h-[500px] md:min-h-[600px] lg:h-[717px] overflow-clip relative shrink-0 w-full"
@@ -2259,12 +2262,24 @@ function Frame77() {
 	);
 }
 
+const impactPrincipleRows = [
+	[Frame62, Frame65],
+	[Frame69, Frame74],
+	[Frame78, Frame81],
+];
+
 function Frame60() {
 	return (
 		<div className="content-stretch flex flex-col gap-[32px] items-start relative shrink-0 w-full">
-			<Frame61 />
-			<Frame68 />
-			<Frame77 />
+			{impactPrincipleRows.map((row, index) => (
+				<div
+					className="content-stretch flex gap-[32px] items-center relative shrink-0 w-full"
+					key={index}>
+					{row.map((Card) => (
+						<Card key={Card.name} />
+					))}
+				</div>
+			))}
 		</div>
 	);
 }
@@ -2277,7 +2292,7 @@ function Frame58() {
 	);
 }
 
-function Wireframe7() {
+function ImpactPrinciplesSection() {
 	return (
 		<div
 			className="bg-[#dae2b6] min-h-[700px] md:min-h-[950px] lg:h-[1120px] overflow-clip relative shrink-0 w-full"
@@ -2578,7 +2593,7 @@ function Frame84() {
 
 function Frame5() {
 	return (
-		<div className="-translate-x-1/2 -translate-y-1/2 absolute content-stretch flex flex-col gap-[40px] items-center left-1/2 rounded-[40px] top-1/2 w-full">
+		<div className="content-stretch flex flex-col gap-[40px] items-center relative rounded-[40px] w-full z-10">
 			<p className="font-['Fraunces',serif] font-normal leading-[normal] not-italic relative shrink-0 text-[#f9ecbd] text-[48px] text-center tracking-[1.44px] w-[800px]">
 				Ready to source differently?
 			</p>
@@ -2596,10 +2611,10 @@ function Frame5() {
 	);
 }
 
-function Wireframe2() {
+function GlobalBuyerCtaArtwork() {
 	return (
 		<div
-			className="bg-[#4c352b] h-[520px] overflow-clip relative rounded-[40px] w-full max-w-[1216px]"
+			className="bg-[#4c352b] min-h-[520px] overflow-clip relative rounded-[40px] w-full max-w-[1216px] flex items-center justify-center p-10"
 			data-name="Wireframe - 37">
 			<Frame21 />
 			<Frame18 />
@@ -2635,13 +2650,13 @@ function Group34() {
 	);
 }
 
-function Wireframe1() {
+function GlobalBuyerCtaSection() {
 	return (
 		<div
 			className="bg-[#dae2b6] min-h-[400px] md:min-h-[480px] lg:h-[536px] relative shrink-0 w-full"
 			data-name="Wireframe - 36">
 			<ContentContainer size="wide" className="flex justify-center pt-2">
-				<Wireframe2 />
+				<GlobalBuyerCtaArtwork />
 			</ContentContainer>
 			<Group34 />
 		</div>
@@ -2791,13 +2806,13 @@ export default function GlobalBuyers() {
 		<div
 			className="bg-white content-stretch flex flex-col items-start relative w-full"
 			data-name="Buy from us - export">
-			<Wireframe3 />
-			<Wireframe5 />
-			<Wireframe />
-			<Wireframe4 />
-			<Wireframe6 />
-			<Wireframe7 />
-			<Wireframe1 />
+			<GlobalBuyerHeroSection />
+			<IngredientsOriginSection />
+			<PartnerInFlavourSection />
+			<SourcingProcessSection />
+			<QualitySection />
+			<ImpactPrinciplesSection />
+			<GlobalBuyerCtaSection />
 			<Footer />
 		</div>
 	);

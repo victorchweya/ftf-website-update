@@ -20,11 +20,11 @@ function Frame24() {
 	return (
 		<div className="content-stretch flex flex-col gap-[32px] md:gap-[64px] items-center relative shrink-0 px-4">
 			<Objects />
-			<div className="font-['Fraunces',serif] font-normal leading-[1.2] md:leading-[0] not-italic relative shrink-0 text-black text-center tracking-[1.92px] w-full ">
-				<p className="leading-[1.2] md:leading-[normal] mb-0 text-[#0f251b] text-[32px] md:text-[48px] lg:text-[64px]">
+			<div className="font-['Fraunces',serif] font-normal leading-tight md:leading-normal not-italic relative shrink-0 text-black text-center tracking-wide w-full ">
+				<p className="leading-tight md:leading-normal mb-0 text-[#0f251b] text-4xl md:text-5xl lg:text-6xl">
 					Making farming
 				</p>
-				<p className="leading-[1.2] md:leading-[normal] text-[#1e4a35] text-[32px] md:text-[48px] lg:text-[64px]">
+				<p className="leading-tight md:leading-normal text-[#1e4a35] text-4xl md:text-5xl lg:text-6xl">
 					Fair and Rewarding
 				</p>
 			</div>
@@ -175,7 +175,7 @@ function Frame36() {
 	);
 }
 
-function Wireframe3() {
+function SupplierHeroSection() {
 	return (
 		<div
 			className="bg-white min-h-[600px] md:h-[1034px] overflow-clip relative shrink-0 w-full"
@@ -184,7 +184,7 @@ function Wireframe3() {
 				<Frame25 />
 			</ContentContainer>
 			<div
-				className="absolute h-[400px] md:h-[601px] -left-[100px] md:-left-[150px] top-[calc(50%-150px)] md:top-[calc(50%-163.5px)] w-[300px] md:w-[441px] opacity-30 md:opacity-100"
+				className="absolute h-[400px] md:h-[601px] -left-[100px] md:-left-[150px] top-[calc(20%-150px)] md:top-[calc(20%-163.5px)] w-[300px] md:w-[441px] opacity-30 md:opacity-100"
 				data-name="Vector">
 				<img
 					alt=""
@@ -194,7 +194,7 @@ function Wireframe3() {
 					width="441"
 				/>
 			</div>
-			<div className="absolute flex h-[400px] md:h-[601px] items-center justify-center -right-[100px] md:-right-[150px] top-[calc(50%-150px)] md:top-[calc(50%-60.5px)] w-[300px] md:w-[441px] opacity-30 md:opacity-100">
+			<div className="absolute flex h-[400px] md:h-[601px] items-center justify-center -right-[100px] md:-right-[150px] top-[calc(20%-150px)] md:top-[calc(20%-60.5px)] w-[300px] md:w-[441px] opacity-30 md:opacity-100">
 				<div className="-scale-y-100 flex-none rotate-180">
 					<div
 						className="h-[601px] relative w-[441px]"
@@ -685,19 +685,70 @@ function Frame42() {
 	);
 }
 
-function Frame33() {
+const offeringRows = [
+	[
+		{
+			Header: Frame26,
+			body: "Since 2020, we have been giving farmers consistent market access for all fresh value chains.",
+		},
+		{
+			Header: Frame27,
+			body: "We pay within three days of accepting the produce.",
+		},
+		{
+			Header: Frame31,
+			body: "Whether grade 1, 2 or imperfect, we buy all your product grades, as long as they are fresh.",
+		},
+	],
+	[
+		{
+			Header: Frame35,
+			body: "We work with our FTF aggregators, making us the most reliable partner, also for small quantities.",
+		},
+		{
+			Header: Frame43,
+			body: "Our mobile app gives you full transparency into all your orders, including your transaction history.",
+		},
+	],
+];
+
+function OfferingCard({
+	body,
+	Header,
+}: {
+	body: string;
+	Header: () => React.ReactNode;
+}) {
 	return (
-		<div className="content-stretch flex gap-[32px] items-start relative shrink-0 w-full">
-			<Frame34 />
-			<Frame42 />
+		<div className="bg-[#fbfafa] flex-[1_0_0] min-w-px relative rounded-[30px]">
+			<div className="content-stretch flex flex-col gap-[27px] items-start p-[48px] relative size-full">
+				<Header />
+				<p className="font-['Rubik',sans-serif] font-normal leading-[1.68] min-w-full relative shrink-0 text-[#1e4a35] text-[16px] tracking-[0.48px] w-[min-content]">
+					{body}
+				</p>
+			</div>
 		</div>
 	);
 }
 
-function Frame41() {
+function OfferingGrid() {
 	return (
-		<div className="content-stretch flex flex-col items-start max-w-[842px] relative shrink-0 w-full">
-			<Frame33 />
+		<div className="content-stretch flex flex-col gap-[32px] items-center relative w-full">
+			<Frame39 />
+			<div className="content-stretch flex flex-col items-start relative shrink-0 w-full">
+				<div className="content-stretch flex gap-[32px] items-start relative shrink-0 w-full">
+					{offeringRows[0].map((offering) => (
+						<OfferingCard key={offering.body} {...offering} />
+					))}
+				</div>
+			</div>
+			<div className="content-stretch flex flex-col items-start max-w-[842px] relative shrink-0 w-full">
+				<div className="content-stretch flex gap-[32px] items-start relative shrink-0 w-full">
+					{offeringRows[1].map((offering) => (
+						<OfferingCard key={offering.body} {...offering} />
+					))}
+				</div>
+			</div>
 		</div>
 	);
 }
@@ -705,9 +756,7 @@ function Frame41() {
 function Frame38() {
 	return (
 		<div className="content-stretch flex flex-col gap-[32px] items-center relative w-full">
-			<Frame39 />
-			<Frame40 />
-			<Frame41 />
+			<OfferingGrid />
 		</div>
 	);
 }
@@ -724,7 +773,7 @@ function Order1() {
 	);
 }
 
-function Wireframe4() {
+function OfferingSection() {
 	return (
 		<div
 			className="bg-white h-[1000px] overflow-clip relative shrink-0 w-full"
@@ -2087,31 +2136,47 @@ function Capa2() {
 	);
 }
 
-function Wireframe2() {
+const supplierProcessSteps = [
+	{
+		body: "Farm to Feed sources and rescues fresh produce from our farmer networks.",
+	},
+	{
+		body: "Place your order on our website, choose between our offering of first grade and odd-shaped produce",
+	},
+	{
+		body: "All produce gets sorted and graded in our warehouse, making sure you receive top quality",
+	},
+	{
+		body: "We deliver your produce to your doorstep in your specified delivery window. You can also collect your produce from our warehouse",
+	},
+];
+
+function SupplierProcessStep({ body, index }: { body: string; index: number }) {
+	return (
+		<div className="flex gap-4 rounded-[24px] bg-white/90 p-5 shadow-sm">
+			<div className="flex size-10 shrink-0 items-center justify-center rounded-full bg-[#1e4a35] font-['Rubik',sans-serif] text-sm font-semibold text-white">
+				{index + 1}
+			</div>
+			<p className="font-['Rubik',sans-serif] font-normal leading-[1.68] not-italic text-[14px] text-black tracking-[0.42px]">
+				{body}
+			</p>
+		</div>
+	);
+}
+
+function SupplierHowItWorksSection() {
 	return (
 		<div
-			className="bg-white h-[777px] overflow-clip relative shrink-0 w-full"
+			className="bg-white min-h-[777px] overflow-clip relative shrink-0 w-full"
 			data-name="Wireframe - 42">
-			<ContentContainer size="wide">
-				<div className="relative h-[777px]">
+			<ContentContainer size="wide" className="py-[96px]">
+				<div className="relative min-h-[585px]">
 					<Frame44 />
-					<p className="absolute font-['Rubik',sans-serif] font-normal leading-[1.68] left-[52px] not-italic text-[14px] text-black top-[580px] tracking-[0.42px] w-[204px]">
-						Farm to Feed sources and rescues fresh produce from our
-						farmer networks.
-					</p>
-					<p className="absolute font-['Rubik',sans-serif] font-normal leading-[1.68] left-[calc(41.67%+6px)] not-italic text-[14px] text-black top-[218px] tracking-[0.42px] w-[204px]">
-						Place your order on our website, choose between our
-						offering of first grade and odd-shaped produce
-					</p>
-					<p className="absolute font-['Rubik',sans-serif] font-normal leading-[1.68] left-[calc(41.67%+54px)] not-italic text-[14px] text-black top-[581px] tracking-[0.42px] w-[233px]">
-						All produce gets sorted and graded in our warehouse,
-						making sure you receive top quality
-					</p>
-					<p className="absolute font-['Rubik',sans-serif] font-normal leading-[1.68] left-[calc(75%+44px)] not-italic text-[14px] text-black top-[451px] tracking-[0.42px] w-[204px]">
-						We deliver your produce to your doorstep in your
-						specified delivery window. You can also collect your
-						produce from our warehouse
-					</p>
+					<div className="relative z-10 grid gap-6 pt-[170px] md:grid-cols-2 lg:grid-cols-4">
+						{supplierProcessSteps.map((step, index) => (
+							<SupplierProcessStep key={step.body} index={index} {...step} />
+						))}
+					</div>
 					<div
 						className="absolute flex h-[148.815px] items-center justify-center left-[141px] top-[331.01px] w-[829.172px]"
 						style={
@@ -2877,12 +2942,14 @@ function Group23() {
 	);
 }
 
+const supplierStories = [Group22, Group24, Group23];
+
 function Frame48() {
 	return (
-		<div className="absolute content-stretch flex gap-[32px] items-center justify-center leading-[0] left-[-160px] top-[394px]">
-			<Group22 />
-			<Group24 />
-			<Group23 />
+		<div className="content-stretch flex flex-wrap gap-[32px] items-center justify-center leading-[0] relative">
+			{supplierStories.map((StoryCard) => (
+				<StoryCard key={StoryCard.name} />
+			))}
 		</div>
 	);
 }
@@ -3203,10 +3270,10 @@ function Capa6() {
 	);
 }
 
-function Testimonial() {
+function SupplierStoriesSection() {
 	return (
 		<div
-			className="bg-[#f3f5e7] h-[840px] overflow-clip relative shrink-0 w-full"
+			className="bg-[#f3f5e7] min-h-[840px] overflow-clip relative shrink-0 w-full"
 			data-name="Testimonial">
 			<div
 				className="absolute flex h-[307.61px] items-center justify-center left-[31px] top-[160px] w-[332.171px]"
@@ -3220,8 +3287,8 @@ function Testimonial() {
 					<Capa3 />
 				</div>
 			</div>
-			<ContentContainer size="wide" className="relative h-full">
-				<div className="-translate-x-1/2 absolute font-['Fraunces',serif] font-normal leading-[0] left-1/2 not-italic text-[#0f251b] text-[48px] text-center top-[184px] tracking-[1.44px] w-[769px] whitespace-pre-wrap">
+			<ContentContainer size="wide" className="relative z-10 flex flex-col items-center gap-[104px] pt-[184px] pb-[120px]">
+				<div className="font-['Fraunces',serif] font-normal leading-[0] not-italic text-[#0f251b] text-[48px] text-center tracking-[1.44px] w-[769px] max-w-full whitespace-pre-wrap">
 					<p className="leading-[normal] mb-0">{`Discover how farmers `}</p>
 					<p className="leading-[normal]">
 						are transforming communities
@@ -3273,48 +3340,6 @@ function Testimonial() {
 				</div>
 			</div>
 			<Capa6 />
-		</div>
-	);
-}
-
-function Group17() {
-	return (
-		<div
-			className="absolute inset-[128.33%_-30.32%_-71.69%_117.9%]"
-			data-name="Group">
-			<svg
-				className="absolute block inset-0 size-full"
-				fill="none"
-				preserveAspectRatio="none"
-				viewBox="0 0 178.892 301.376">
-				<g id="Group">
-					<path
-						d={svgPaths.p3a327100}
-						fill="var(--fill-0, #F1D3AF)"
-						id="Vector"
-					/>
-					<path
-						d={svgPaths.pfca0100}
-						fill="var(--fill-0, #FFF5DF)"
-						id="Vector_2"
-					/>
-					<path
-						d={svgPaths.p2d92d500}
-						fill="var(--fill-0, #FFF5DF)"
-						id="Vector_3"
-					/>
-					<path
-						d={svgPaths.p2ac95030}
-						fill="var(--fill-0, #FFF5DF)"
-						id="Vector_4"
-					/>
-					<path
-						d={svgPaths.p2f120f80}
-						fill="var(--fill-0, #FFF5DF)"
-						id="Vector_5"
-					/>
-				</g>
-			</svg>
 		</div>
 	);
 }
@@ -3667,7 +3692,7 @@ function GetItOnGooglePlayBadgeWebColorEnglish1() {
 
 function Frame1() {
 	return (
-		<div className="-translate-x-1/2 -translate-y-1/2 absolute content-stretch flex flex-col gap-[40px] items-center left-1/2 rounded-[40px] top-1/2">
+		<div className="content-stretch flex flex-col gap-[40px] items-center relative rounded-[40px] z-10">
 			<p className="font-['Fraunces',serif] font-normal leading-[normal] not-italic relative shrink-0 text-[#f9ecbd] text-[48px] text-center tracking-[1.44px] w-[800px]">
 				Do you have questions?
 			</p>
@@ -3691,10 +3716,10 @@ function Frame1() {
 	);
 }
 
-function Wireframe1() {
+function SupplierCtaArtwork() {
 	return (
 		<div
-			className="bg-[#4c352b] h-[520px] max-w-[1216px] overflow-clip relative rounded-[40px] w-full"
+			className="bg-[#4c352b] min-h-[520px] max-w-[1216px] overflow-clip relative rounded-[40px] w-full flex items-center justify-center p-10"
 			data-name="Wireframe - 38">
 			<Frame23 />
 			<Frame20 />
@@ -3705,16 +3730,15 @@ function Wireframe1() {
 	);
 }
 
-function Wireframe() {
+function SupplierCtaSection() {
 	return (
 		<div
 			className="bg-white h-[695px] relative shrink-0 w-full"
 			data-name="Wireframe - 36">
-			<Group17 />
 			<ContentContainer
 				size="wide"
 				className="flex justify-center pt-[87px]">
-				<Wireframe1 />
+				<SupplierCtaArtwork />
 			</ContentContainer>
 		</div>
 	);
@@ -3863,11 +3887,11 @@ export default function SellWithUs() {
 		<div
 			className="bg-white content-stretch flex flex-col items-center relative w-full min-h-screen"
 			data-name="Sell with us">
-			<Wireframe3 />
-			<Wireframe4 />
-			<Wireframe2 />
-			<Testimonial />
-			<Wireframe />
+			<SupplierHeroSection />
+			<OfferingSection />
+			<SupplierHowItWorksSection />
+			<SupplierStoriesSection />
+			<SupplierCtaSection />
 			<Footer />
 		</div>
 	);

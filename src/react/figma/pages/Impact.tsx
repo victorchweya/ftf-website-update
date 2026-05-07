@@ -22,6 +22,16 @@ import { BackgroundBottomImpactSvg } from "../imports/Impact/background-bottom-i
 import { Header } from "../components/Header";
 import { Footer } from "../components/Footer";
 import { ContentContainer } from "../components/layout/ContentContainer";
+import { ResponsiveGrid } from "../components/layout/ResponsiveGrid";
+import { SectionShell } from "../components/layout/SectionShell";
+
+const indirectSdgIcons = [
+	{ label: "Quality education", src: imgEWeb041 },
+	{ label: "Gender equality", src: imgEWeb05 },
+	{ label: "Affordable and clean energy", src: imgEWeb07 },
+	{ label: "Decent work and economic growth", src: imgEWeb08 },
+	{ label: "Life on land", src: imgEWeb15 },
+];
 
 function Group13() {
 	return (
@@ -66,9 +76,9 @@ function Group13() {
 function Frame21() {
 	return (
 		<div className="content-stretch flex flex-col gap-[40px] items-start relative shrink-0">
-			<div className="font-['Fraunces',serif] font-normal leading-[0] relative shrink-0 text-[#0f251b] text-[64px] tracking-[1.92px] w-[519px] whitespace-pre-wrap">
-				<p className="leading-[1.12] mb-0">{`Building `}</p>
-				<p className="leading-[1.12]">
+			<div className="font-['Fraunces',serif] font-normal leading-tight relative shrink-0 text-[#0f251b] text-4xl md:text-5xl lg:text-6xl tracking-wide w-[519px] whitespace-pre-wrap">
+				<p className="leading-tight mb-0">{`Building `}</p>
+				<p className="leading-tight">
 					resilient
 					<br aria-hidden="true" />
 					food systems
@@ -85,7 +95,7 @@ function Frame21() {
 
 function Frame22() {
 	return (
-		<div className="absolute content-stretch flex flex-col gap-[40px] items-start left-0 not-italic top-[246px]">
+		<div className="content-stretch flex flex-col gap-[40px] items-start not-italic relative">
 			<Frame21 />
 			<p className="font-['Rubik',sans-serif] font-normal leading-[1.68] relative shrink-0 text-[#1e4a35] text-[16px] tracking-[0.48px] w-[515px]">
 				At the same time, up to 50% of fresh produce in Sub-Saharan
@@ -289,17 +299,17 @@ function Frame28() {
 
 function Frame27() {
 	return (
-		<div className="absolute content-stretch flex flex-col gap-[64px] items-end left-[calc(50%+16px)] top-[323px] w-[624px]">
+		<div className="content-stretch flex flex-col gap-[64px] items-end relative w-full">
 			<Frame25 />
 			<Frame28 />
 		</div>
 	);
 }
 
-function Wireframe2() {
+function ImpactHeroSection() {
 	return (
 		<div
-			className="bg-[#eddde6] h-[986px] overflow-clip relative shrink-0 w-full"
+			className="bg-[#eddde6] min-h-[986px] overflow-clip relative shrink-0 w-full"
 			data-name="Wireframe - 53">
 			<div
 				className="absolute flex h-[620.8px] items-center justify-center left-[79.24%] right-[-24.34%] top-[157px]"
@@ -308,8 +318,8 @@ function Wireframe2() {
 					<Group13 />
 				</div>
 			</div>
-			<ContentContainer size="wide" className="h-full">
-				<div className="relative h-full">
+			<ContentContainer size="wide" className="pt-[246px] pb-[128px]">
+				<div className="grid gap-[80px] lg:grid-cols-[minmax(0,515px)_minmax(0,624px)] lg:items-start lg:justify-between">
 					<Frame22 />
 					<Frame27 />
 				</div>
@@ -1463,12 +1473,26 @@ function Frame47() {
 	);
 }
 
-function Frame34() {
+const impactPillarRows = [
+	[Frame29, Frame33],
+	[Frame41, Frame44],
+	[Frame48],
+];
+
+function ImpactPillarGrid() {
 	return (
 		<div className="content-stretch flex flex-col gap-[32px] items-start relative shrink-0 w-full">
-			<Frame30 />
-			<Frame40 />
-			<Frame47 />
+			{impactPillarRows.map((row, index) => (
+				<div
+					className={`content-stretch flex gap-[32px] relative shrink-0 w-full ${
+						index === 2 ? "items-center justify-center" : "items-center"
+					}`}
+					key={index}>
+					{row.map((PillarCard) => (
+						<PillarCard key={PillarCard.name} />
+					))}
+				</div>
+			))}
 		</div>
 	);
 }
@@ -1477,12 +1501,12 @@ function Frame36() {
 	return (
 		<div className="content-stretch flex flex-col gap-[32px] items-center relative w-full">
 			<Frame35 />
-			<Frame34 />
+			<ImpactPillarGrid />
 		</div>
 	);
 }
 
-function Wireframe1() {
+function ImpactPillarsSection() {
 	return (
 		<div
 			className="bg-white h-[1971px] overflow-clip relative shrink-0 w-full"
@@ -1546,7 +1570,7 @@ function Order1() {
 
 function Frame61() {
 	return (
-		<div className="absolute content-stretch flex flex-col gap-[43px] items-start left-0 top-[112px] w-[568px]">
+		<div className="content-stretch flex flex-col gap-[43px] items-start relative max-w-[568px]">
 			<p className="font-['Fraunces',serif] font-normal leading-[normal] not-italic relative shrink-0 text-[#0f251b] text-[40px] tracking-[1.2px] w-[488px]">
 				Impact that travels from farm level to customer counter
 			</p>
@@ -1564,11 +1588,11 @@ function Frame61() {
 
 function Frame23() {
 	return (
-		<div className="absolute bg-[#f9ecbd] bottom-0 h-[651px] left-0 overflow-clip rounded-tl-[40px] rounded-tr-[40px] w-full">
-			<ContentContainer size="wide" className="h-full">
-				<div className="relative h-full">
+		<div className="bg-[#f9ecbd] min-h-[651px] overflow-clip rounded-tl-[40px] rounded-tr-[40px] w-full">
+			<ContentContainer size="wide" className="py-[112px]">
+				<div className="grid gap-12 lg:grid-cols-[568px_minmax(0,1fr)] lg:items-center">
 					<div
-						className="absolute flex h-[525.083px] items-center justify-center left-[638.18px] top-[144.34px] w-[619.918px]"
+						className="absolute hidden lg:flex h-[525.083px] items-center justify-center left-[638.18px] top-[144.34px] w-[619.918px]"
 						style={
 							{
 								"--transform-inner-width": "1185",
@@ -1595,7 +1619,7 @@ function Frame23() {
 					</div>
 					<Frame61 />
 					<div
-						className="absolute flex h-[500px] items-center justify-center left-[664px] top-[89px] w-[615px]"
+						className="relative flex h-[360px] md:h-[500px] items-center justify-center w-full"
 						style={
 							{
 								"--transform-inner-width": "1185",
@@ -1622,10 +1646,10 @@ function Frame23() {
 	);
 }
 
-function Wireframe() {
+function ImpactReportCtaSection() {
 	return (
 		<div
-			className="bg-white h-[651px] overflow-clip relative shrink-0 w-full"
+			className="bg-white overflow-clip relative shrink-0 w-full"
 			data-name="Wireframe - 10">
 			<Frame23 />
 		</div>
@@ -1720,7 +1744,7 @@ function Group6() {
 
 function Frame51() {
 	return (
-		<div className="absolute bg-[#fefcf5] content-stretch flex flex-col h-[347px] items-start justify-between left-0 overflow-clip px-[32px] py-[48px] rounded-[40px] top-[366px] w-[405px]">
+		<div className="bg-[#fefcf5] content-stretch flex flex-col gap-8 min-h-[347px] items-start justify-between overflow-clip px-[32px] py-[48px] rounded-[40px] w-full">
 			<Group6 />
 			<p className="font-['Rubik',sans-serif] font-normal leading-[1.68] min-w-full not-italic relative shrink-0 text-[#1e4a35] text-[16px] tracking-[0.48px] w-[min-content]">
 				Through market acces, we generate additional income for
@@ -1766,7 +1790,7 @@ function Group8() {
 
 function Frame52() {
 	return (
-		<div className="absolute bg-[#fefcf5] content-stretch flex flex-col h-[331px] items-start justify-between left-0 overflow-clip px-[32px] py-[48px] rounded-[40px] top-[838px] w-[405px]">
+		<div className="bg-[#fefcf5] content-stretch flex flex-col gap-8 min-h-[331px] items-start justify-between overflow-clip px-[32px] py-[48px] rounded-[40px] w-full">
 			<Group8 />
 			<p className="font-['Rubik',sans-serif] font-normal leading-[1.68] min-w-full not-italic relative shrink-0 text-[#1e4a35] text-[16px] tracking-[0.48px] w-[min-content]">
 				Our growth and diversification strategy creates additional job
@@ -1811,7 +1835,7 @@ function Group9() {
 
 function Frame53() {
 	return (
-		<div className="absolute bg-[#fefcf5] content-stretch flex flex-col h-[347px] items-start justify-between left-[calc(33.33%+19px)] overflow-clip px-[32px] py-[48px] rounded-[40px] top-[366px] w-[396px]">
+		<div className="bg-[#fefcf5] content-stretch flex flex-col gap-8 min-h-[347px] items-start justify-between overflow-clip px-[32px] py-[48px] rounded-[40px] w-full">
 			<Group9 />
 			<p className="font-['Rubik',sans-serif] font-normal leading-[1.68] min-w-full not-italic relative shrink-0 text-[#1e4a35] text-[16px] tracking-[0.48px] w-[min-content]">
 				We contribute to food security by increasing the availability of
@@ -1857,7 +1881,7 @@ function Group10() {
 
 function Frame54() {
 	return (
-		<div className="absolute bg-[#fefcf5] content-stretch flex flex-col h-[440px] items-start justify-between left-[calc(33.33%+19px)] overflow-clip px-[32px] py-[48px] rounded-[40px] top-[839px] w-[396px]">
+		<div className="bg-[#fefcf5] content-stretch flex flex-col gap-8 min-h-[440px] items-start justify-between overflow-clip px-[32px] py-[48px] rounded-[40px] w-full">
 			<Group10 />
 			<p className="font-['Rubik',sans-serif] font-normal leading-[1.68] min-w-full not-italic relative shrink-0 text-[#1e4a35] text-[16px] tracking-[0.48px] w-[min-content]">
 				We prevent food loss by creating market demand for the full
@@ -1905,7 +1929,7 @@ function Group11() {
 
 function Frame55() {
 	return (
-		<div className="absolute bg-[#fefcf5] content-stretch flex flex-col h-[428px] items-start justify-between left-[calc(66.67%+30px)] overflow-clip px-[32px] py-[48px] rounded-[40px] top-[366px] w-[397px]">
+		<div className="bg-[#fefcf5] content-stretch flex flex-col gap-8 min-h-[428px] items-start justify-between overflow-clip px-[32px] py-[48px] rounded-[40px] w-full">
 			<Group11 />
 			<p className="font-['Rubik',sans-serif] font-normal leading-[1.68] min-w-full not-italic relative shrink-0 text-[#1e4a35] text-[16px] tracking-[0.48px] w-[min-content]">
 				We remove barriers to market access, giving women — who form the
@@ -1953,7 +1977,7 @@ function Group12() {
 
 function Frame56() {
 	return (
-		<div className="absolute bg-[#fefcf5] content-stretch flex flex-col h-[550px] items-start justify-between leading-[0] left-[calc(66.67%+30px)] overflow-clip px-[32px] py-[48px] rounded-[40px] top-[838px] w-[397px]">
+		<div className="bg-[#fefcf5] content-stretch flex flex-col gap-8 min-h-[550px] items-start justify-between leading-[0] overflow-clip px-[32px] py-[48px] rounded-[40px] w-full">
 			<Group12 />
 			<div className="font-['Rubik',sans-serif] font-normal min-w-full not-italic relative shrink-0 text-[#1e4a35] text-[16px] tracking-[0.48px] w-[min-content]">
 				<p className="leading-[1.68] mb-0">
@@ -2005,54 +2029,20 @@ function Group16() {
 	);
 }
 
-function Frame57() {
+function IndirectSdgIconList() {
 	return (
 		<div className="content-stretch flex gap-[16px] items-start relative shrink-0">
-			<div
-				className="relative rounded-[4px] shrink-0 size-[89px]"
-				data-name="E_WEB_04 1">
-				<img
-					alt=""
-					className="absolute inset-0 max-w-none object-cover pointer-events-none rounded-[4px] size-full"
-					src={imgEWeb041}
-				/>
-			</div>
-			<div
-				className="relative rounded-[4px] shrink-0 size-[89px]"
-				data-name="E_WEB_05">
-				<img
-					alt=""
-					className="absolute inset-0 max-w-none object-cover pointer-events-none rounded-[4px] size-full"
-					src={imgEWeb05}
-				/>
-			</div>
-			<div
-				className="relative rounded-[4px] shrink-0 size-[89px]"
-				data-name="E_WEB_07">
-				<img
-					alt=""
-					className="absolute inset-0 max-w-none object-cover pointer-events-none rounded-[4px] size-full"
-					src={imgEWeb07}
-				/>
-			</div>
-			<div
-				className="relative rounded-[4px] shrink-0 size-[89px]"
-				data-name="E_WEB_08">
-				<img
-					alt=""
-					className="absolute inset-0 max-w-none object-cover pointer-events-none rounded-[4px] size-full"
-					src={imgEWeb08}
-				/>
-			</div>
-			<div
-				className="relative rounded-[4px] shrink-0 size-[89px]"
-				data-name="E_WEB_15">
-				<img
-					alt=""
-					className="absolute inset-0 max-w-none object-cover pointer-events-none rounded-[4px] size-full"
-					src={imgEWeb15}
-				/>
-			</div>
+			{indirectSdgIcons.map((icon) => (
+				<div
+					className="relative rounded-[4px] shrink-0 size-[89px]"
+					key={icon.label}>
+					<img
+						alt={icon.label}
+						className="absolute inset-0 max-w-none object-cover pointer-events-none rounded-[4px] size-full"
+						src={icon.src}
+					/>
+				</div>
+			))}
 		</div>
 	);
 }
@@ -2060,20 +2050,22 @@ function Frame57() {
 function SdgExtras() {
 	return (
 		<div
-			className="absolute content-stretch flex flex-col gap-[26px] items-start left-0 top-[1335px]"
+			className="content-stretch flex flex-col gap-[26px] items-start relative"
 			data-name="sdg-extras">
 			<p className="font-['Rubik',sans-serif] font-normal leading-[normal] not-italic relative shrink-0 text-[18px] text-black tracking-[0.54px] whitespace-nowrap">
 				Farm to feed indirectly contributes to:
 			</p>
-			<Frame57 />
+			<IndirectSdgIconList />
 		</div>
 	);
 }
 
-function Wireframe3() {
+const sdgTargetCards = [Frame51, Frame52, Frame53, Frame54, Frame55, Frame56];
+
+function SdgMetricsSection() {
 	return (
-		<div
-			className="bg-[#f9ecbd] h-[1591px] overflow-clip relative shrink-0 w-full"
+		<SectionShell
+			className="bg-[#f9ecbd] overflow-clip relative shrink-0 w-full pt-[96px] pb-[140px]"
 			data-name="Wireframe - 54">
 			<div
 				className="absolute flex h-[620.8px] items-center justify-center left-[77.85%] right-[-22.95%] top-[129px]"
@@ -2082,27 +2074,26 @@ function Wireframe3() {
 					<Group14 />
 				</div>
 			</div>
-			<ContentContainer size="wide" className="h-full">
-				<div className="relative h-full">
-					<p className="absolute font-['Fraunces',serif] font-normal leading-[normal] left-0 not-italic text-[#0f251b] text-[40px] top-[96px] tracking-[1.2px] w-[737px]">
+			<div className="relative flex flex-col gap-[64px]">
+				<div className="flex max-w-[737px] flex-col gap-8">
+					<p className="font-['Fraunces',serif] font-normal leading-[normal] not-italic text-[#0f251b] text-[40px] tracking-[1.2px] w-full">
 						Our impact metrics align directly with the SDG targets
 					</p>
-					<Frame51 />
-					<Frame52 />
-					<Frame53 />
-					<Frame54 />
-					<Frame55 />
-					<Frame56 />
-					<p className="absolute font-['Rubik',sans-serif] font-normal leading-[1.68] left-0 not-italic text-[#1e4a35] text-[20px] top-[226px] tracking-[0.6px] w-[624px]">
+					<p className="font-['Rubik',sans-serif] font-normal leading-[1.68] not-italic text-[#1e4a35] text-[20px] tracking-[0.6px] w-full max-w-[624px]">
 						In line with the GRI reporting standards, this provides
 						transparency and accountability throughout the supply
 						chain.
 					</p>
-					<SdgExtras />
 				</div>
-			</ContentContainer>
+				<ResponsiveGrid columns={3} className="items-start">
+					{sdgTargetCards.map((SdgCard) => (
+						<SdgCard key={SdgCard.name} />
+					))}
+				</ResponsiveGrid>
+				<SdgExtras />
+			</div>
 			<Group16 />
-		</div>
+		</SectionShell>
 	);
 }
 
@@ -2111,10 +2102,10 @@ export default function Impact() {
 		<div
 			className="bg-white content-stretch flex flex-col items-center relative w-full min-h-screen"
 			data-name="Impact">
-			<Wireframe2 />
-			<Wireframe1 />
-			<Wireframe />
-			<Wireframe3 />
+			<ImpactHeroSection />
+			<ImpactPillarsSection />
+			<ImpactReportCtaSection />
+			<SdgMetricsSection />
 			<Footer />
 		</div>
 	);

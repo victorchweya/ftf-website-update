@@ -39,8 +39,8 @@ function Frame1() {
 
 function Frame17() {
 	return (
-		<div className="-translate-x-1/2 -translate-y-1/2 absolute content-stretch flex flex-col gap-[30px] items-center left-1/2 max-w-[666px] not-italic text-center top-[calc(50%-271px)] w-[calc(100%-2.5rem)] sm:w-[calc(100%-4rem)] lg:w-[calc(100%-5rem)]">
-			<p className="font-['Fraunces',serif] font-normal leading-[normal] max-w-[544px] relative shrink-0 text-[#1e4a35] text-[64px] tracking-[1.92px] w-full">
+		<div className="content-stretch flex flex-col gap-[30px] items-center max-w-[666px] not-italic text-center relative w-full">
+			<p className="font-['Fraunces',serif] font-normal leading-normal max-w-[544px] relative shrink-0 text-[#1e4a35] text-4xl md:text-5xl lg:text-6xl tracking-wide w-full">
 				Shaping the Future of Food
 			</p>
 			<p className="font-['Rubik',sans-serif] font-normal leading-[1.68] min-w-full relative shrink-0 text-[#d78228] text-[20px] tracking-[0.6px] w-[min-content]">
@@ -528,7 +528,7 @@ function Group27() {
 
 function Frame31() {
 	return (
-		<div className="-translate-x-1/2 absolute content-stretch flex gap-[64px] items-center justify-center leading-[0] left-1/2 max-w-[1280px] top-[692px] w-[calc(100%-2.5rem)] sm:w-[calc(100%-4rem)] lg:w-[calc(100%-5rem)]">
+		<div className="content-stretch flex flex-col lg:flex-row gap-[64px] items-center justify-center leading-[0] relative max-w-[1280px] w-full">
 			<Group28 />
 			<Group26 />
 			<Group27 />
@@ -539,7 +539,7 @@ function Frame31() {
 function Hero() {
 	return (
 		<div
-			className="bg-[#fbf3e9] h-[1162px] overflow-clip relative shrink-0 w-full"
+			className="bg-[#fbf3e9] min-h-[1162px] overflow-clip relative shrink-0 w-full"
 			data-name="Hero">
 			<div
 				className="absolute flex inset-[-15.06%_-30.49%_16.27%_-44.65%] items-center justify-center"
@@ -558,8 +558,10 @@ function Hero() {
 			</div>
 			<Header />
 			<Frame1 />
-			<Frame17 />
-			<Frame31 />
+			<ContentContainer size="wide" className="relative z-10 flex flex-col items-center gap-[190px] pt-[214px] pb-[120px]">
+				<Frame17 />
+				<Frame31 />
+			</ContentContainer>
 		</div>
 	);
 }
@@ -578,7 +580,7 @@ function Order4() {
 
 function Frame32() {
 	return (
-		<div className="-translate-x-1/2 absolute content-stretch flex flex-col gap-[52px] items-center left-1/2 max-w-[1052px] top-[101px] w-[calc(100%-2.5rem)] sm:w-[calc(100%-4rem)] lg:w-[calc(100%-5rem)]">
+		<div className="content-stretch flex flex-col gap-[52px] items-center max-w-[1052px] relative w-full">
 			<div className="font-['Fraunces',serif] font-normal leading-[0] min-w-full not-italic relative shrink-0 text-[#0f251b] text-[40px] text-center tracking-[1.2px] w-[min-content]">
 				<p className="leading-[normal] mb-0">
 					At Farm to Feed, we believe a better food system starts with
@@ -613,7 +615,7 @@ function Frame32() {
 function StorySection() {
 	return (
 		<div
-			className="bg-[#fbf3e9] h-[755px] overflow-clip relative shrink-0 w-full"
+			className="bg-[#fbf3e9] min-h-[755px] overflow-clip relative shrink-0 w-full"
 			data-name="Wireframe - 11">
 			<div
 				className="absolute flex inset-[86.19%_-14.03%_-53.63%_-20.21%] items-center justify-center"
@@ -634,7 +636,9 @@ function StorySection() {
 					</div>
 				</div>
 			</div>
-			<Frame32 />
+			<ContentContainer size="wide" className="relative z-10 flex justify-center pt-[101px] pb-[112px]">
+				<Frame32 />
+			</ContentContainer>
 		</div>
 	);
 }
@@ -894,7 +898,7 @@ function LearnMoreButton() {
 
 function SupplyChainCta() {
 	return (
-		<div className="-translate-x-1/2 absolute content-stretch flex flex-col gap-[64px] items-center left-1/2 max-w-[822px] top-[615px] w-[calc(100%-2.5rem)] sm:w-[calc(100%-4rem)] lg:w-[calc(100%-5rem)]">
+		<div className="content-stretch flex flex-col gap-[64px] items-center relative max-w-[822px] w-full">
 			<p className="font-['Fraunces',serif] font-normal leading-[normal] min-w-full not-italic relative shrink-0 text-[#0f251b] text-[40px] text-center tracking-[1.2px] w-[min-content]">
 				We produce excellence for all actors in the supply chain, from
 				farmer to customer
@@ -4199,13 +4203,15 @@ function Layer() {
 function SupplyChainExcellenceSection() {
 	return (
 		<div
-			className="bg-white h-[887px] overflow-clip relative shrink-0 w-full"
+			className="bg-white min-h-[887px] overflow-clip relative shrink-0 w-full"
 			data-name="Wireframe - 10">
 			<BackgroundBottomSvg
 				className="absolute inset-x-0 top-0 w-full max-w-none pointer-events-none select-none"
 				fill="#DAE2B6"
 			/>
-			<SupplyChainCta />
+			<ContentContainer size="wide" className="relative z-10 flex justify-center pt-[615px]">
+				<SupplyChainCta />
+			</ContentContainer>
 			<Layer />
 		</div>
 	);

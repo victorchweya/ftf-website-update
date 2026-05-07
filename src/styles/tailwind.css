@@ -74,6 +74,11 @@
 }
 
 @theme {
+	--font-sans:
+		"Rubik", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+		"Segoe UI", sans-serif;
+	--font-serif: "Fraunces", ui-serif, Georgia, "Times New Roman", serif;
+
 	/* PRIMARY - GREEN */
 	--color-green-50: #f0f6f3;
 	--color-green-100: #dfeddf;

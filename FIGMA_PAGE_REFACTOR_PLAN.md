@@ -4,13 +4,13 @@
 
 Turn raw Figma-generated React pages into readable, maintainable frontend code while preserving the current design as closely as possible.
 
-This plan should be applied first to:
+The Home page has already been refactored enough to act as the reference pattern:
 
 ```text
-src/react/figma/imports/Home/Home.tsx
+src/react/figma/pages/Home.tsx
 ```
 
-After the Home page cleanup pattern is proven, reuse the same approach for the remaining Figma-exported pages.
+Use Home as the working example for the remaining Figma-exported pages. The next phase of this plan should focus on all non-home pages, keeping the same visual design while replacing generated Figma layer structure with readable section components, data arrays, shared layout primitives, and extracted decorative assets where useful.
 
 ## Current Problem
 
@@ -352,9 +352,21 @@ Acceptance criteria:
 - Decorative assets are hidden from assistive technology.
 - Section headings are understandable.
 
-## Recommended Home Refactor Order
+## Home Reference Pattern
 
-Use `Home.tsx` as the first example and refactor in this order:
+Home is now the baseline for the rest of the site. Treat these pieces as the reference:
+
+- `ContentContainer` for the page content rail.
+- Semantic section names such as `StorySection`, `SupplyChainBenefitsSection`, `ImpactSection`, and `NewsSection`.
+- Data-driven repeated content such as news cards and impact stat cards.
+- Decorative SVGs/assets separated from content where practical.
+- Canonical Tailwind text utilities for hero heading scale, such as `text-4xl md:text-5xl lg:text-6xl`.
+
+Do not restart the refactor from the raw Home import. Use the maintained page component in `src/react/figma/pages/Home.tsx` as the model.
+
+## Completed Home Refactor Notes
+
+The Home cleanup was originally planned in this order:
 
 1. Create or reuse shared primitives:
    - `ContentContainer`
@@ -392,13 +404,556 @@ Use `Home.tsx` as the first example and refactor in this order:
    - Delete old `Frame*`, `Group*`, `Content*` functions after their sections are replaced.
    - Delete unused imports and assets only when confirmed unused.
 
-Acceptance criteria:
+Acceptance criteria for Home:
 
 - The Home page builds after each step.
 - Each refactored section has meaningful component names.
 - The visual design remains close to the current page.
 
-## Applying This Plan To Other Pages
+## Full Site Page Refactor Plan
+
+Track every React Figma page in one backlog, including Home. Each page should be left buildable after every section-level change.
+
+Current React Figma pages in scope:
+
+| Page | File | Route |
+| --- | --- | --- |
+| Home | `src/react/figma/pages/Home.tsx` | `/` |
+| FAQs | `src/react/figma/pages/FAQs.tsx` | `/faqs` |
+| Contact Us | `src/react/figma/pages/ContactUs.tsx` | `/contact-us` |
+| Careers | `src/react/figma/pages/Careers.tsx` | `/careers` |
+| News and Events | `src/react/figma/pages/NewsAndEvents.tsx` | `/news-events` |
+| Our Story | `src/react/figma/pages/OurStory.tsx` | `/our-story` |
+| Our Team | `src/react/figma/pages/OurTeam.tsx` | `/our-team` |
+| Our Impact | `src/react/figma/pages/Impact.tsx` | `/our-impact` |
+| Sell With Us | `src/react/figma/pages/SellWithUs.tsx` | `/sell-with-us` |
+| Kenyan Buyers | `src/react/figma/pages/KenyanBuyers.tsx` | `/kenyan-buyers` |
+| Global Buyers | `src/react/figma/pages/GlobalBuyers.tsx` | `/global-buys` |
+
+Recommended order:
+
+1. Reference page:
+   - `Home.tsx`
+
+2. Smaller informational pages:
+   - `FAQs.tsx`
+   - `ContactUs.tsx`
+   - `Careers.tsx`
+   - `NewsAndEvents.tsx`
+
+3. Brand/story pages:
+   - `OurStory.tsx`
+   - `OurTeam.tsx`
+   - `Impact.tsx`
+
+4. Buyer/seller product pages:
+   - `SellWithUs.tsx`
+   - `KenyanBuyers.tsx`
+   - `GlobalBuyers.tsx`
+
+This order starts with the completed reference page, then moves from smaller pages to pages with more generated illustrations and complex absolute-positioned content.
+
+## Execution Roadmap
+
+Use this as the working backlog for the next refactor passes. Home is included as Phase 0 because it is the reference implementation for the rest of the site.
+
+| Phase | Page | Priority | Current state | Main refactor outcome | Status |
+| --- | --- | --- | --- | --- | --- |
+| 0 | `Home.tsx` | High | Refactored into the reference page pattern with shared container, semantic sections, and data-driven repeated content | Keep as baseline; only do final polish if later shared patterns require it | Done |
+| 1 | `FAQs.tsx` | High | Uses shared header/footer and content container; FAQ rows are now data-driven | Data-driven FAQ list with semantic section names | Done |
+| 1 | `ContactUs.tsx` | High | Uses shared content container; contact details are now data-driven while map/decorative layers remain intact | Data-driven contact methods and semantic map/contact sections | Done |
+| 1 | `NewsAndEvents.tsx` | Medium | Placeholder page now uses shared `ContentContainer`, semantic sections, and `newsEvents` data | Shared `ContentContainer`, semantic sections, ready data structure | Done |
+| 1 | `Careers.tsx` | Low | Uses semantic `<main>`, shared `ContentContainer`, and a future-ready `careerOpenings` data structure | Confirm semantic `<main>` and future-ready openings structure | Done |
+| 2 | `OurStory.tsx` | High | Top-level sections, timeline milestones, vision/mission principles, and platform steps are data-driven | Story sections, timeline, and principles converted to semantic/data-driven code | Done |
+| 2 | `OurTeam.tsx` | High | Top-level sections, team filters, team member rows, and values cards are data-driven | Data-driven team members, filters, values, and CTA sections | Done |
+| 2 | `Impact.tsx` | High | Top-level sections, impact pillar groups, SDG card groups, and indirect SDG icons are data-driven | Data-driven impact pillars, stats, SDG targets, semantic sections | Done |
+| 3 | `SellWithUs.tsx` | High | Top-level sections, offering cards, supplier process steps, and supplier story card grouping are data-driven | Data-driven offerings, supplier steps, stories, CTA | Done |
+| 3 | `KenyanBuyers.tsx` | High | Top-level sections, partner product category chips, how-it-works step groups, and testimonial controls are data-driven | Semantic local buyer sections and data-driven products/process/testimonials | Done |
+| 3 | `GlobalBuyers.tsx` | High | Top-level sections, export product cards, quality cards, and impact principle groups are map-driven | Semantic global buyer sections and data-driven cards/quality/impact content | Done |
+
+### Per-Page Execution Loop
+
+For each page in the roadmap:
+
+1. Snapshot the current route visually before changing the page.
+2. Rename the outer page sections first, without changing layout.
+3. Extract content data arrays for repeated cards or lists.
+4. Replace duplicated generated components with one reusable component.
+5. Move decorative SVGs or large reusable art out only after the section is stable.
+6. Run `npm run build`.
+7. Review desktop, tablet, and mobile.
+8. Remove unused generated functions and imports.
+9. Mark the page as done in the roadmap table.
+
+### Shared Refactor Tasks
+
+These tasks should happen as patterns repeat across pages:
+
+- Create or standardize `PrimaryButton` if CTAs keep repeating the same class strings.
+- Create a shared `FilterChips` component if FAQ/team filters remain across pages.
+- Create a shared `SectionHeading` only if it reduces duplication without hiding page-specific typography.
+- Keep hero headings on canonical Tailwind classes, currently `text-4xl md:text-5xl lg:text-6xl`.
+- Keep page content on `ContentContainer`; avoid `!px-0` unless matching a full-width tool/card is intentional.
+- Keep decorative full-bleed art outside `ContentContainer`.
+- Keep workflow illustrations inside `ContentContainer` when they explain the section content.
+
+### Phase 0 Deliverables
+
+Phase 0 is complete when:
+
+- `Home.tsx` is the maintained reference page.
+- Home uses shared `Header`, `Footer`, and `ContentContainer`.
+- Major Home sections have semantic component names.
+- Repeated Home content is data-driven where practical.
+- Hero heading scale uses canonical Tailwind classes.
+- Build passes.
+
+### Phase 1 Deliverables
+
+Phase 1 is complete when:
+
+- `FAQs.tsx` has `faqItems` and one reusable FAQ item component.
+- `ContactUs.tsx` has data-driven contact groups and semantic contact/map components.
+- `NewsAndEvents.tsx` uses `ContentContainer` and a future-ready `newsEvents` array.
+- `Careers.tsx` is confirmed semantic and ready for future openings.
+- Build passes after each page.
+
+### Phase 2 Deliverables
+
+Phase 2 is complete when:
+
+- `OurStory.tsx` has semantic story sections and data-driven timeline/principle content.
+- `OurTeam.tsx` has data-driven team members and values.
+- `Impact.tsx` has data-driven pillars, stats, and SDG targets.
+- Visual alignment remains consistent with the footer/content rail.
+- Build passes after each page.
+
+### Phase 3 Deliverables
+
+Phase 3 is complete when:
+
+- `SellWithUs.tsx` has data-driven offering cards, process steps, and stories.
+- `KenyanBuyers.tsx` has semantic buyer sections and data-driven product/process/testimonial content.
+- `GlobalBuyers.tsx` has semantic buyer sections and data-driven sourcing/quality/impact cards.
+- Product/process illustrations are classified correctly as content or decoration.
+- Build passes after each page.
+
+### Home
+
+File:
+
+```text
+src/react/figma/pages/Home.tsx
+```
+
+Target outline:
+
+```tsx
+export default function Home() {
+  return (
+    <div className="bg-white">
+      <Header />
+      <main>
+        <HeroSection />
+        <StorySection />
+        <SupplyChainBenefitsSection />
+        <ImpactSection />
+        <NewsSection />
+      </main>
+      <Footer />
+    </div>
+  );
+}
+```
+
+Current state:
+
+- Acts as the reference page for the rest of the migration.
+- Uses the shared `Header`, `Footer`, and `ContentContainer`.
+- Has semantic sections and data-driven repeated content for the completed pass.
+- Uses canonical hero heading classes.
+
+Remaining polish only if needed:
+
+1. Revisit Home after Phases 2 and 3 reveal shared patterns worth extracting.
+2. Extract any repeated CTA/button pattern into a shared component only when it is used across multiple pages.
+3. Keep Home visually stable as the baseline for comparing the rest of the site.
+
+Acceptance criteria:
+
+- Home remains the visual and structural reference.
+- No later shared cleanup regresses Home alignment, heading scale, or image behavior.
+
+### FAQs
+
+File:
+
+```text
+src/react/figma/pages/FAQs.tsx
+```
+
+Target outline:
+
+```tsx
+export default function FAQs() {
+  return (
+    <main className="bg-white">
+      <FaqHeroSection />
+      <FaqListSection />
+      <Footer />
+    </main>
+  );
+}
+```
+
+Refactor steps:
+
+1. Rename `Wireframe` to `FaqPage`.
+2. Extract the title, filter bar, FAQ list, and contact CTA into semantic components.
+3. Convert `FaqCard`, `FaqCard1`, etc. into a `faqItems` array and one `FaqItem` component.
+4. Convert filter chips into a `faqFilters` array if they remain visible.
+5. Keep the left illustration and bottom divider as decorative components.
+
+Acceptance criteria:
+
+- FAQ questions are easy to edit in one data array.
+- The filter bar and FAQ list align to the shared `ContentContainer`.
+- Decorative assets remain full-bleed and `aria-hidden`.
+
+### Contact Us
+
+File:
+
+```text
+src/react/figma/pages/ContactUs.tsx
+```
+
+Target outline:
+
+```tsx
+export default function ContactUs() {
+  return (
+    <main className="bg-white">
+      <ContactSection />
+      <Footer />
+    </main>
+  );
+}
+```
+
+Refactor steps:
+
+1. Rename `Contact` to `ContactSection`.
+2. Extract contact methods into a `contactGroups` or `contactItems` array.
+3. Replace generated names such as `Content`, `Content5`, `Tab`, and `FeatureText` with semantic names.
+4. Keep `GoogleMapsMockup` as a named component, but move map controls into smaller components only if that improves readability.
+5. Separate decorative wave and illustration from real contact content.
+
+Acceptance criteria:
+
+- Phone, email, and channel text can be edited from one data structure.
+- Map content remains aligned with the contact details.
+- Decorative shapes do not affect the content container alignment.
+
+### Careers
+
+File:
+
+```text
+src/react/figma/pages/Careers.tsx
+```
+
+Current state:
+
+- Already relatively clean compared with raw Figma exports.
+- Uses shared `ContentContainer`.
+
+Refactor steps:
+
+1. Ensure the top-level wrapper is a semantic `<main>`.
+2. Keep `HeroSection` or introduce it if the page grows.
+3. Reuse shared button/link primitives when openings or job cards are added.
+4. If job listings are introduced, use a `careerOpenings` array and `CareerOpeningCard`.
+
+Acceptance criteria:
+
+- Page remains simple and readable.
+- Hero typography matches the canonical hero scale.
+
+### News And Events
+
+File:
+
+```text
+src/react/figma/pages/NewsAndEvents.tsx
+```
+
+Current state:
+
+- Already simple, but it should use the shared content/container conventions.
+
+Target outline:
+
+```tsx
+export default function NewsAndEvents() {
+  return (
+    <main className="bg-white">
+      <NewsEventsHeroSection />
+      <NewsEventsListSection />
+      <Footer />
+    </main>
+  );
+}
+```
+
+Refactor steps:
+
+1. Replace ad hoc `max-w-[1280px] mx-auto` with `ContentContainer`.
+2. Extract the placeholder area into `NewsEventsListSection`.
+3. When real content exists, use a `newsEvents` array and a reusable card.
+
+Acceptance criteria:
+
+- Page follows the same layout primitives as the rest of the React Figma pages.
+- Hero typography uses canonical Tailwind classes.
+
+### Our Story
+
+File:
+
+```text
+src/react/figma/pages/OurStory.tsx
+```
+
+Target outline:
+
+```tsx
+export default function OurStory() {
+  return (
+    <main className="bg-white">
+      <StoryHeroSection />
+      <OriginSection />
+      <PlatformSection />
+      <TimelineSection />
+      <Footer />
+    </main>
+  );
+}
+```
+
+Refactor steps:
+
+1. Rename `Wireframe1`, `Wireframe`, `Wireframe2`, and `Story` to content-based section names.
+2. Extract vision and mission cards into a `storyPrinciples` array.
+3. Extract platform steps into a `platformSteps` array.
+4. Turn timeline milestones into `timelineItems`.
+5. Keep carrot/produce/timeline illustrations as clearly named decorative or content components depending on use.
+
+Acceptance criteria:
+
+- Timeline content is data-driven.
+- Vision/mission content is editable without hunting through `Frame*` functions.
+- Decorative side produce remains outside the content flow.
+
+### Our Team
+
+File:
+
+```text
+src/react/figma/pages/OurTeam.tsx
+```
+
+Target outline:
+
+```tsx
+export default function OurTeam() {
+  return (
+    <main className="bg-white">
+      <TeamHeroSection />
+      <TeamPhotoSection />
+      <TeamMembersSection />
+      <ValuesSection />
+      <CareersCtaSection />
+      <Footer />
+    </main>
+  );
+}
+```
+
+Refactor steps:
+
+1. Rename generated sections to semantic section names.
+2. Convert team member cards into a `teamMembers` array and one `TeamMemberCard`.
+3. Convert filter chips into a `teamFilters` array if they remain interactive or visible.
+4. Convert values cards into a `values` array and one `ValueCard`.
+5. Move repeated photo-mask SVG logic into reusable components only if it reduces complexity.
+
+Acceptance criteria:
+
+- Team member information is data-driven.
+- Value cards are data-driven.
+- The CTA and team photo section remain visually aligned to the shared content container.
+
+### Our Impact
+
+File:
+
+```text
+src/react/figma/pages/Impact.tsx
+```
+
+Target outline:
+
+```tsx
+export default function Impact() {
+  return (
+    <main className="bg-white">
+      <ImpactHeroSection />
+      <ImpactPillarsSection />
+      <ImpactReportCtaSection />
+      <SdgMetricsSection />
+      <Footer />
+    </main>
+  );
+}
+```
+
+Refactor steps:
+
+1. Rename raw sections such as `Wireframe2`, `Wireframe1`, `Wireframe`, and `Wireframe3`.
+2. Extract impact pillar cards into an `impactPillars` array.
+3. Extract stats into arrays per pillar where useful.
+4. Extract SDG cards into an `sdgTargets` array and indirect SDG icons into `indirectSdgTargets`.
+5. Keep the full-bleed yellow/green section backgrounds and decorative crops outside the content container.
+6. Ensure content and footer both use the same `ContentContainer` padding; do not override it with `!px-0` unless there is a deliberate visual reason.
+
+Acceptance criteria:
+
+- SDG content aligns with the footer rail.
+- Pillar cards and SDG cards are data-driven.
+- Decorative shapes remain separate from content.
+
+### Sell With Us
+
+File:
+
+```text
+src/react/figma/pages/SellWithUs.tsx
+```
+
+Target outline:
+
+```tsx
+export default function SellWithUs() {
+  return (
+    <main className="bg-white">
+      <SupplierHeroSection />
+      <OfferingSection />
+      <SupplierHowItWorksSection />
+      <SupplierStoriesSection />
+      <SupplierCtaSection />
+      <Footer />
+    </main>
+  );
+}
+```
+
+Refactor steps:
+
+1. Rename generated page sections to semantic section names.
+2. Convert offering cards into `offeringItems`.
+3. Treat the How It Works illustrations as real content, not decorative background.
+4. Convert How It Works steps into `supplierSteps`, keeping the visual diagram intact.
+5. Extract testimonial cards into `supplierStories` if they are repeated.
+
+Acceptance criteria:
+
+- How It Works content, labels, and illustrations live inside the content container.
+- Offering cards are data-driven.
+- Generated names are mostly removed from maintained code.
+
+### Kenyan Buyers
+
+File:
+
+```text
+src/react/figma/pages/KenyanBuyers.tsx
+```
+
+Target outline:
+
+```tsx
+export default function KenyanBuyers() {
+  return (
+    <main className="bg-white">
+      <LocalBuyerHeroSection />
+      <MarketAccessSection />
+      <ProductGradesSection />
+      <LocalBuyerHowItWorksSection />
+      <TestimonialsSection />
+      <BuyerCtaSection />
+      <Footer />
+    </main>
+  );
+}
+```
+
+Refactor steps:
+
+1. Rename major `Wireframe*` sections by purpose.
+2. Extract product/grade cards into arrays.
+3. Extract How It Works steps into data while preserving the content illustration.
+4. Treat map, produce, and process artwork as content when it explains the workflow.
+5. Convert testimonials into data-driven cards.
+
+Acceptance criteria:
+
+- Product grades and process steps are easy to edit.
+- Meaningful process illustrations remain contained with their labels.
+- Large decorative backgrounds remain full-bleed.
+
+### Global Buyers
+
+File:
+
+```text
+src/react/figma/pages/GlobalBuyers.tsx
+```
+
+Target outline:
+
+```tsx
+export default function GlobalBuyers() {
+  return (
+    <main className="bg-white">
+      <GlobalBuyerHeroSection />
+      <IngredientsOriginSection />
+      <PartnerInFlavourSection />
+      <SourcingProcessSection />
+      <QualitySection />
+      <ImpactPrinciplesSection />
+      <GlobalBuyerCtaSection />
+      <Footer />
+    </main>
+  );
+}
+```
+
+Refactor steps:
+
+1. Rename generated sections to buyer-focused semantic names.
+2. Convert cards for quality, sourcing, and impact principles into arrays.
+3. Extract repeated buttons and CTAs into shared primitives if the class strings repeat across pages.
+4. Move reusable decorative waves/crop illustrations out of the page file when they are too noisy.
+5. Keep product and ingredient visuals in the content container when they explain the section.
+
+Acceptance criteria:
+
+- Buyer value propositions and cards are data-driven.
+- Hero/form content aligns with shared container conventions.
+- Decorative backgrounds do not drive page layout.
+
+## Applying This Plan To Any Remaining Page
 
 For each page:
 

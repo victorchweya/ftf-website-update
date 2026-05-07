@@ -1,9 +1,35 @@
 import { Header } from "../components/Header";
 import { Footer } from "../components/Footer";
-import { ContentContainer } from "../components/layout/ContentContainer";
+import { SectionHeader } from "../components/layout/SectionHeader";
+import { SectionShell } from "../components/layout/SectionShell";
 import svgPaths from "../imports/ContactUs-1/svg-n26o6nsh2k";
 import imgMap from "../../../assets/figma/768034251e290c5f148f0125d9e404698150a7ed.png?url";
 import imgPegmanOffscreen2X from "../../../assets/figma/747a27fe416ebfaf57b25beae190a98036e77d0e.png?url";
+
+const phoneContact = {
+  title: "Phone no.",
+  helper: "Call us or send a WhatsApp message to",
+  links: ["+254 795851756"],
+};
+
+const inquiryContacts = [
+  {
+    helper: "For general inquiries, send an email to",
+    links: ["info@farmtofeedkenya.com"],
+  },
+  {
+    helper: "For local purchases, send an email  or call us",
+    links: ["sales@farmtofeedkenya.com", "+254 795851756"],
+  },
+  {
+    helper: "For exports, send an email to",
+    links: ["exports@farmtofeedkenya.com"],
+  },
+  {
+    helper: "For farmers, reach out via phone or whatsapp",
+    links: ["+254 723 740 537"],
+  },
+];
 
 function Group2() {
   return (
@@ -58,8 +84,8 @@ function Capa() {
 
 function Frame14() {
   return (
-    <div className="absolute h-[312px] left-[-81px] top-[1259px] w-[1717px]">
-      <div className="absolute inset-[-1.08%_0_0_-2.08%]">
+    <div className="absolute inset-x-0 top-[1259px] h-[312px] w-full">
+      <div className="absolute inset-0">
         <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 1752.73 315.384">
           <g id="Frame 82">
             <path d={svgPaths.p77577f0} fill="var(--fill-0, #85A687)" id="Vector" />
@@ -350,6 +376,50 @@ function Content() {
   );
 }
 
+function ContactLink({ children }: { children: string }) {
+  return (
+    <div className="content-stretch flex gap-[8px] items-center justify-center relative shrink-0">
+      <p className="font-['Rubik',sans-serif] font-medium leading-[30px] relative shrink-0 text-[#1e4a35] text-[16px] whitespace-nowrap">
+        {children}
+      </p>
+    </div>
+  );
+}
+
+function ContactDetailBlock({ helper, links }: { helper: string; links: string[] }) {
+  return (
+    <div className="content-stretch flex flex-col gap-[8px] items-start relative shrink-0 w-full">
+      <p className="font-['Rubik',sans-serif] font-normal leading-[24px] min-w-full relative shrink-0 text-[#8c8c8c] text-[16px] w-[min-content]">
+        {helper}
+      </p>
+      {links.map((link) => (
+        <ContactLink key={link}>{link}</ContactLink>
+      ))}
+    </div>
+  );
+}
+
+function ContactDetails() {
+  return (
+    <div className="content-stretch flex flex-col gap-[40px] items-start relative w-full max-w-[320px]" data-name="Contact details">
+      <div className="content-stretch flex flex-col gap-[8px] items-start relative shrink-0 w-full">
+        <p className="font-['Rubik',sans-serif] font-medium leading-[30px] relative shrink-0 text-[#0f251b] text-[16px] w-full">
+          {phoneContact.title}
+        </p>
+        <ContactDetailBlock helper={phoneContact.helper} links={phoneContact.links} />
+      </div>
+      <div className="content-stretch flex flex-col gap-[16px] items-start relative shrink-0 w-full">
+        <p className="font-['Rubik',sans-serif] font-medium leading-[30px] relative shrink-0 text-[#0f251b] text-[16px] w-full">
+          General inquiries
+        </p>
+        {inquiryContacts.map((contact) => (
+          <ContactDetailBlock key={contact.helper} helper={contact.helper} links={contact.links} />
+        ))}
+      </div>
+    </div>
+  );
+}
+
 function GoogleLogo() {
   return (
     <div className="absolute bottom-[2px] h-[26px] left-[6px] w-[66px]" data-name="Google logo">
@@ -435,7 +505,7 @@ function MapTypeButtonGroup() {
 
 function GoogleMapsMockup() {
   return (
-    <div className="bg-white flex-[1_0_0] min-h-px overflow-clip relative w-full" data-name="_Google maps mockup">
+    <div className="bg-white flex-[1_0_0] min-h-[360px] md:min-h-[462px] overflow-clip relative w-full" data-name="_Google maps mockup">
       <div className="absolute inset-[-64.07%_-68.92%_-43.72%_-47.3%]" data-name="Map">
         <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgMap} />
       </div>
@@ -482,7 +552,7 @@ function Group1() {
 
 function Content5() {
   return (
-    <div className="-translate-x-1/2 absolute content-stretch flex flex-col gap-[64px] h-[462px] items-start left-[calc(75%-10px)] top-[513px] w-[592px]" data-name="Content">
+    <div className="content-stretch flex flex-col gap-[64px] h-[462px] items-start relative w-full" data-name="Content">
       <GoogleMapsMockup />
       <Group1 />
     </div>
@@ -492,7 +562,7 @@ function Content5() {
 
 function Contact() {
   return (
-    <div className="bg-[#fefcf5] min-h-[800px] md:min-h-[1200px] lg:h-[1498px] overflow-clip relative rounded-bl-[40px] rounded-br-[40px] shrink-0 w-full" data-name="Contact">
+    <div className="bg-[#fefcf5] min-h-[800px] md:min-h-[1200px] lg:min-h-[1498px] overflow-clip relative rounded-bl-[40px] rounded-br-[40px] shrink-0 w-full" data-name="Contact">
       <Header />
       <Group2 />
       <div className="absolute flex h-[589px] items-center justify-center left-[80px] top-[698px] w-[265px]">
@@ -502,14 +572,23 @@ function Contact() {
       </div>
       <Frame14 />
       <Group3 />
-      <ContentContainer size="wide" className="h-full !px-0">
-        <div className="relative h-full">
-          <p className="absolute font-['Fraunces',serif] font-normal leading-[normal] left-[calc(25%+24px)] not-italic text-[56px] text-black top-[246px] tracking-[1.68px] w-[544px]">Contact us</p>
-          <p className="absolute font-['Rubik',sans-serif] font-normal leading-[1.68] left-[calc(25%+24px)] not-italic text-[20px] text-black top-[319px] tracking-[0.6px] w-[664px]">Our team works round the clock to respond to all incoming queries.</p>
-          <Content />
+      <SectionShell
+        className="pt-[246px] pb-[260px]"
+        containerClassName="grid gap-[72px] lg:grid-cols-[minmax(0,1fr)_minmax(420px,592px)]"
+        size="wide"
+      >
+        <div className="flex flex-col gap-[118px]">
+          <SectionHeader
+            className="max-w-[664px]"
+            description="Our team works round the clock to respond to all incoming queries."
+            title="Contact us"
+          />
+          <ContactDetails />
+        </div>
+        <div className="pt-0 lg:pt-[267px]">
           <Content5 />
         </div>
-      </ContentContainer>
+      </SectionShell>
     </div>
   );
 }
