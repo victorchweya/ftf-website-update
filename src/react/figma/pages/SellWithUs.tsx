@@ -207,7 +207,9 @@ export default function SellWithUs() {
 							<div className="flex flex-col items-start relative shrink-0 w-full">
 								<div className="flex flex-col gap-8 items-start relative shrink-0 w-full lg:flex-row">
 									{offeringRows[0].map((offering) => (
-										<div className="bg-[#fbfafa] relative rounded-[30px] w-full lg:flex-1">
+										<div
+											className="bg-[#fbfafa] relative rounded-[30px] w-full lg:flex-1"
+											key={offering.body}>
 											<div className="flex flex-col gap-[27px] items-start p-[28px] md:p-[48px] relative size-full">
 												<offering.Header />
 												<p
@@ -222,7 +224,9 @@ export default function SellWithUs() {
 							<div className="flex flex-col items-start max-w-[842px] relative shrink-0 w-full">
 								<div className="flex flex-col gap-8 items-start relative shrink-0 w-full md:flex-row">
 									{offeringRows[1].map((offering) => (
-										<div className="bg-[#fbfafa] relative rounded-[30px] w-full md:flex-1">
+										<div
+											className="bg-[#fbfafa] relative rounded-[30px] w-full md:flex-1"
+											key={offering.body}>
 											<div className="flex flex-col gap-[27px] items-start p-[28px] md:p-[48px] relative size-full">
 												<offering.Header />
 												<p
