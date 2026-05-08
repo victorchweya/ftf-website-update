@@ -42,6 +42,10 @@ type NewsAndEventsProps = {
 	newsEvents?: NewsEvent[];
 };
 
+function isExternalUrl(href?: string) {
+	return href ? /^https?:\/\//.test(href) : false;
+}
+
 export default function NewsAndEvents({ newsEvents: cmsNewsEvents }: NewsAndEventsProps) {
 	const displayNewsEvents = cmsNewsEvents?.length ? cmsNewsEvents : newsEvents;
 
@@ -84,7 +88,9 @@ export default function NewsAndEvents({ newsEvents: cmsNewsEvents }: NewsAndEven
 										</div>
 										<a
 											className="flex gap-2 items-center justify-center relative shrink-0"
-											href={item.href ?? "/news-events"}>
+											href={item.href ?? "/news-events"}
+											rel={isExternalUrl(item.href) ? "noreferrer" : undefined}
+											target={isExternalUrl(item.href) ? "_blank" : undefined}>
 											<span
 												className={`${typeStyles.body} leading-normal not-italic relative shrink-0 text-[#916f96] whitespace-nowrap`}>
 												Read more

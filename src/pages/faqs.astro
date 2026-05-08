@@ -5,8 +5,10 @@ import { getCollection } from "astro:content";
 
 const faqItems = (await getCollection("faqs", ({ data }) => data.published))
 	.sort((a, b) => a.data.number - b.data.number)
-	.map(({ body, data, id }) => ({
+	.map(({ body, data, id, rendered }) => ({
 		answer: body?.trim() ?? "",
+		answerHtml: rendered?.html ?? "",
+		category: data.category,
 		question: data.question,
 		slug: id,
 	}));

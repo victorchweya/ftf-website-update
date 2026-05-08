@@ -1,5 +1,6 @@
 ---
 question: "Does Farm to Feed charge a subscription fee?"
+category: general
 number: 9
 published: true
 ---

@@ -1,5 +1,6 @@
 ---
 question: "How do you measure your environmental impact?"
+category: general
 number: 3
 published: true
 ---

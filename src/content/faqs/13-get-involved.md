@@ -1,5 +1,6 @@
 ---
 question: "How can I get involved with Farm to Feed?"
+category: general
 number: 13
 published: true
 ---

@@ -1,5 +1,6 @@
 ---
 question: "What is the effect of food loss and waste on the environment?"
+category: general
 number: 1
 published: true
 ---

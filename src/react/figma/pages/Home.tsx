@@ -104,6 +104,10 @@ type HomeProps = {
 	testimonials?: Testimonial[];
 };
 
+function isExternalUrl(href?: string) {
+	return href ? /^https?:\/\//.test(href) : false;
+}
+
 export default function Home({
 	impactMetrics: cmsImpactMetrics,
 	newsItems: cmsNewsItems,
@@ -645,7 +649,9 @@ export default function Home({
 										</div>
 										<a
 											className="flex gap-2 items-center justify-center relative shrink-0"
-											href={item.href ?? "/news-events"}>
+											href={item.href ?? "/news-events"}
+											rel={isExternalUrl(item.href) ? "noreferrer" : undefined}
+											target={isExternalUrl(item.href) ? "_blank" : undefined}>
 											<span
 												className={`${typeStyles.body} leading-normal not-italic relative shrink-0 text-[#916f96] whitespace-nowrap`}>
 												Read more

@@ -1,5 +1,6 @@
 ---
 question: "How do I register on the platform?"
+category: buyers
 number: 12
 published: true
 ---

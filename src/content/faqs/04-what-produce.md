@@ -1,5 +1,6 @@
 ---
 question: "What produce does Farm to Feed sell?"
+category: buyers
 number: 4
 published: true
 ---

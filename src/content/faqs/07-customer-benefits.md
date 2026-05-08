@@ -1,5 +1,6 @@
 ---
 question: "How do I as a customer benefit from purchasing from Farm to Feed?"
+category: buyers
 number: 7
 published: true
 ---

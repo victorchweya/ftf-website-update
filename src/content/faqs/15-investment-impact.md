@@ -1,5 +1,6 @@
 ---
 question: "What is the impact of investing in Farm to Feed?"
+category: general
 number: 15
 published: true
 ---
