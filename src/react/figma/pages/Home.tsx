@@ -1,6 +1,9 @@
+import { useEffect, useRef, useState } from "react";
 import heroHomeImage from "../imports/Home/hero-home.png?url";
 import supplyChainImage from "../imports/Home/supply-chain.svg?url";
 import imgVector1 from "../../../assets/figma/c2c2df3bbbb24de92cb6c214b6dae6d9ec8411a0.png?url";
+import imgSupplyChainBusiness from "../../../assets/figma/bde7cbc7ab76e8ddecbaf7d4c120dd2f2e62a08a.png?url";
+import imgSupplyChainFoodSystems from "../../../assets/figma/69ef415b99d59a8e413a8dec8a5799dcd5f264d5.png?url";
 import imgPlaceholderImage from "../../../assets/figma/2dcd35f0969168b49576839a28be093481c42f9f.png?url";
 import imgPlaceholderImage1 from "../../../assets/figma/df46db7e24c63bd9580267e4b92a177fae0edc68.png?url";
 import imgPlaceholderImage2 from "../../../assets/figma/456b5ca63fec37944e95e90951a499a07680e2bd.png?url";
@@ -23,17 +26,22 @@ const supplyChainBenefits = [
 		title: "Better Markets for Farmers",
 		description:
 			"We connect farmers to reliable buyers, turning harvests into stable income and reducing unnecessary food loss.",
-		active: true,
+		image: imgVector1,
+		imageAlt: "Produce being loaded for market delivery",
 	},
 	{
 		title: "Better Sourcing for Businesses",
 		description:
 			"Hotels, caterers, processors, and global buyers access quality produce and ingredients with full transparency and consistent supply.",
+		image: imgSupplyChainBusiness,
+		imageAlt: "Fresh vegetables handed over in a commercial kitchen",
 	},
 	{
 		title: "Better Food Systems for Everyone",
 		description:
 			"By efficiently matching supply and demand, we ensure more food is consumed rather than wasted. Food systems will shape our planet's future, with Africa leading the way. At Farm to Feed, we create the infrastructure for a more inclusive, resilient, and waste-free future.",
+		image: imgSupplyChainFoodSystems,
+		imageAlt: "Fresh ingredients arranged on a chopping board",
 	},
 ];
 
@@ -56,6 +64,54 @@ const newsItems: NewsItem[] = [
 ];
 
 export default function Home() {
+	const supplyChainSectionRef = useRef<HTMLDivElement>(null);
+	const frameRef = useRef<number | null>(null);
+	const [activeBenefitIndex, setActiveBenefitIndex] = useState(0);
+
+	useEffect(() => {
+		const updateActiveBenefit = () => {
+			const section = supplyChainSectionRef.current;
+
+			if (!section || window.innerWidth < 1024) {
+				setActiveBenefitIndex(0);
+				return;
+			}
+
+			const rect = section.getBoundingClientRect();
+			const scrollDistance = section.offsetHeight - window.innerHeight;
+			const rawProgress = scrollDistance > 0 ? -rect.top / scrollDistance : 0;
+			const progress = Math.min(Math.max(rawProgress, 0), 1);
+			const nextIndex = Math.min(
+				Math.floor(progress * supplyChainBenefits.length),
+				supplyChainBenefits.length - 1,
+			);
+
+			setActiveBenefitIndex(nextIndex);
+		};
+
+		const requestUpdate = () => {
+			if (frameRef.current !== null) return;
+
+			frameRef.current = window.requestAnimationFrame(() => {
+				frameRef.current = null;
+				updateActiveBenefit();
+			});
+		};
+
+		updateActiveBenefit();
+		window.addEventListener("scroll", requestUpdate, { passive: true });
+		window.addEventListener("resize", requestUpdate);
+
+		return () => {
+			window.removeEventListener("scroll", requestUpdate);
+			window.removeEventListener("resize", requestUpdate);
+
+			if (frameRef.current !== null) {
+				window.cancelAnimationFrame(frameRef.current);
+			}
+		};
+	}, []);
+
 	return (
 		<main
 			className="bg-[#fbf3e9] flex flex-col items-center relative w-full min-h-screen"
@@ -274,43 +330,79 @@ export default function Home() {
 			</div>
 			{/* Supply chain benefits */}
 			<div
-				className={`${sectionSpacing.default} bg-olive-200 overflow-clip relative shrink-0 w-full`}
+				ref={supplyChainSectionRef}
+				className="bg-olive-200 relative shrink-0 w-full lg:h-[300vh]"
 				data-name="Layout / 28 /">
-				<ContentContainer size="wide">
+				<ContentContainer
+					size="wide"
+					className={`${sectionSpacing.default} lg:sticky lg:top-0 lg:flex lg:min-h-screen lg:items-center`}>
 					<div
 						className="flex flex-col lg:flex-row gap-12 lg:gap-20 items-center w-full"
 						data-name="SupplyChainBenefitsContent">
 						<div
 							className="flex flex-col gap-8 md:gap-10 lg:gap-12 w-full lg:w-[579px]"
 							data-name="SupplyChainBenefitList">
-							{supplyChainBenefits.map((benefit) => (
-								<article
-									key={benefit.title}
-									className={`border-l-2 pl-5 md:pl-8 ${
-										benefit.active
-											? "border-green-500"
-											: "border-transparent"
-									}`}>
-									<h3
-										className={`${typeStyles.featureTitle} font-medium text-green-800`}>
-										{benefit.title}
-									</h3>
-									<p className="mt-4 text-green-500">
-										{benefit.description}
-									</p>
-								</article>
-							))}
+							{supplyChainBenefits.map((benefit, index) => {
+								const isActive = index === activeBenefitIndex;
+
+								return (
+									<article
+										key={benefit.title}
+										className={`lg:border-l-2 lg:pl-8 lg:transition-[border-color,opacity] lg:duration-300 ${
+											isActive
+												? "lg:border-green-500 lg:opacity-100"
+												: "lg:border-transparent lg:opacity-70"
+										}`}>
+										<h3
+											className={`${typeStyles.featureTitle} font-medium text-green-800 lg:transition-colors lg:duration-300 ${
+												isActive
+													? "lg:text-green-800"
+													: "lg:text-green-700"
+											}`}>
+											{benefit.title}
+										</h3>
+										<p
+											className={`mt-4 text-green-500 lg:transition-colors lg:duration-300 ${
+												isActive
+													? "lg:text-green-500"
+													: "lg:text-green-600"
+											}`}>
+											{benefit.description}
+										</p>
+										<img
+											alt={benefit.imageAlt}
+											className="mt-8 block aspect-[517/552] w-full object-contain sm:mx-auto sm:w-[80%] lg:hidden"
+											height="552"
+											src={benefit.image}
+											width="517"
+										/>
+									</article>
+								);
+							})}
 						</div>
 						<figure
-							className="relative aspect-[517/552] w-full max-w-[517px] shrink-0 sm:w-[80%] lg:w-[517px]"
+							className="relative hidden aspect-[517/552] w-full max-w-[517px] shrink-0 sm:w-[80%] lg:block lg:w-[517px]"
 							data-name="Vector">
-							<img
-								alt=""
-								className="absolute inset-0 block size-full object-contain"
-								height="552"
-								src={imgVector1}
-								width="517"
-							/>
+							{supplyChainBenefits.map((benefit, index) => {
+								const isActive = index === activeBenefitIndex;
+
+								return (
+									<img
+										key={benefit.title}
+										alt={isActive ? benefit.imageAlt : ""}
+										aria-hidden={!isActive}
+										className={`absolute inset-0 block size-full object-contain transition-opacity duration-500 ease-out ${
+											isActive ? "opacity-100" : "opacity-0"
+										}`}
+										height="552"
+										src={benefit.image}
+										width="517"
+									/>
+								);
+							})}
+							<figcaption className="sr-only">
+								{supplyChainBenefits[activeBenefitIndex].imageAlt}
+							</figcaption>
 						</figure>
 					</div>
 				</ContentContainer>
