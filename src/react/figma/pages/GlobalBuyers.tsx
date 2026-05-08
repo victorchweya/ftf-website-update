@@ -16,6 +16,7 @@ import {
 } from "../imports/BuyFromUsExport/BuyFromUsExport";
 import { Header } from "../components/Header";
 import { Footer } from "../components/Footer";
+import { Button } from "../components/Button";
 import { ContentContainer } from "../components/layout/ContentContainer";
 
 import imgVector from "../../../assets/figma/717c282573f6a51e2b10095e5f55c11d4d2af63b.png?url";
@@ -96,14 +97,13 @@ export default function GlobalBuyers() {
 										className={`flex-[1_0_0] ${typeStyles.body} leading-normal min-w-px not-italic pr-[220px] relative text-[#808080]`}>
 										email@example.com
 									</p>
-									<div
-										className="absolute bg-green-500 flex items-start justify-center px-6 py-3 right-[9px] rounded-[40px] top-[9px]"
+									<Button
+										type="button"
+										size="lg"
+										className="absolute right-[9px] top-[9px] text-[#eee]"
 										data-name="order">
-										<p
-											className={`${typeStyles.body} not-italic relative shrink-0 text-[#eee] text-center whitespace-nowrap`}>
-											Reach out to our team
-										</p>
-									</div>
+										Reach out to our team
+									</Button>
 								</div>
 								<div
 									aria-hidden="true"
@@ -656,14 +656,14 @@ export default function GlobalBuyers() {
 											className={`flex-[1_0_0] ${typeStyles.body} leading-normal min-w-px not-italic pr-[220px] relative text-[#808080]`}>
 											email@example.com
 										</p>
-										<div
-											className="absolute bg-orange-500 flex items-start justify-center px-6 py-3 right-[9px] rounded-[40px] top-[9px]"
+										<Button
+											type="button"
+											variant="secondary"
+											size="lg"
+											className="absolute right-[9px] top-[9px] text-[#f7f7f7]"
 											data-name="order">
-											<p
-												className={`${typeStyles.body} not-italic relative shrink-0 text-[#f7f7f7] text-center whitespace-nowrap`}>
-												Reach out to our team
-											</p>
-										</div>
+											Reach out to our team
+										</Button>
 									</div>
 									<div
 										aria-hidden="true"

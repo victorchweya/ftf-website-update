@@ -7,6 +7,7 @@ import {
 } from "../imports/BuyFromUsLocal/BuyFromUsLocal";
 import { Header } from "../components/Header";
 import { Footer } from "../components/Footer";
+import { Button } from "../components/Button";
 import { ContentContainer } from "../components/layout/ContentContainer";
 import svgPaths from "../imports/BuyFromUsLocal-1/svg-d7gbia4w81";
 import browseIcon from "../imports/BuyFromUsLocal/browse.svg?url";
@@ -345,18 +346,13 @@ export default function KenyanBuyers() {
 												</div>
 											</div>
 										</div>
-										<div
-											className="bg-green-500 relative rounded-[40px] shrink-0 w-full"
+										<Button
+											type="button"
+											size="md"
+											className="relative shrink-0 w-full text-[#eee]"
 											data-name="order">
-											<div className="flex flex-row justify-center size-full">
-												<div className="flex items-start justify-center px-4 py-[11px] relative size-full">
-													<p
-														className={`${typeStyles.body} not-italic relative shrink-0 text-[#eee] text-center whitespace-nowrap`}>
-														Get in touch
-													</p>
-												</div>
-											</div>
-										</div>
+											Get in touch
+										</Button>
 									</div>
 								</div>
 							</div>
@@ -843,14 +839,14 @@ export default function KenyanBuyers() {
 														</span>
 													</p>
 												</div>
-												<div
-													className="bg-orange-500 flex items-start px-4 py-2 relative rounded-[40px] shrink-0"
+												<Button
+													href="/contact-us"
+													variant="secondary"
+													size="sm"
+													className="relative shrink-0 text-[#eee]"
 													data-name="order">
-													<p
-														className={`${typeStyles.body} not-italic relative shrink-0 text-[#eee] text-center whitespace-nowrap`}>
-														Contact Sales
-													</p>
-												</div>
+													Contact Sales
+												</Button>
 											</div>
 										</div>
 									</div>

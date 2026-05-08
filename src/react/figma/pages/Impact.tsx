@@ -35,6 +35,7 @@ import {
 import { BackgroundBottomImpactSvg } from "../imports/Impact/background-bottom-impact";
 import { Header } from "../components/Header";
 import { Footer } from "../components/Footer";
+import { Button } from "../components/Button";
 import { ContentContainer } from "../components/layout/ContentContainer";
 import { ResponsiveGrid } from "../components/layout/ResponsiveGrid";
 import { SectionShell } from "../components/layout/SectionShell";
@@ -299,14 +300,13 @@ export default function Impact() {
 									system that positions Africa as a leader in
 									the production of sustainable ingredients.
 								</p>
-								<div
-									className="bg-green-500 flex items-start mb-[32px] px-6 py-3 relative rounded-[40px] shrink-0 lg:mb-0"
+								<Button
+									href="/reports/impact-report-2025.pdf"
+									size="lg"
+									className="relative mb-[32px] shrink-0 text-white lg:mb-0"
 									data-name="order">
-									<p
-										className={`${typeStyles.body} not-italic relative shrink-0 text-center text-white whitespace-nowrap`}>
-										Read Impact Report 2025
-									</p>
-								</div>
+									Read Impact Report 2025
+								</Button>
 							</div>
 							<div
 								className="relative flex h-[360px] md:h-[500px] items-center justify-center w-full"
