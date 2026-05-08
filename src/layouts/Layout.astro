@@ -4,7 +4,7 @@ import Navigation from "./Navigation.astro";
 import Footer from "./Footer.astro";
 import "primeicons/primeicons.css";
 import "../styles/tailwind.css";
-const { title = "FTF Website", description = "FTF Website" } = Astro.props;
+const { title = "Farm to Feed", description = "Farm to Feed" } = Astro.props;
 ---
 
 <!doctype html>
@@ -12,20 +12,11 @@ const { title = "FTF Website", description = "FTF Website" } = Astro.props;
 	<Header title={title} description={description} />
 
 	<body>
-		<div
-			class="min-h-screen grid grid-rows-[auto_1fr_auto] bg-slate-50 text-slate-900">
-			<header
-				class="site-header bg-white border-b border-slate-200 px-6 py-5">
-				<div class="brand">
-					<a href="/" class="text-slate-950 font-bold text-lg">FTF</a>
-				</div>
-				<Navigation />
-			</header>
-
-			<main class="site-main mx-auto w-full max-w-5xl px-6 py-10">
+		<div class="min-h-screen">
+			<Navigation />
+			<main class="site-main w-full overflow-hidden">
 				<slot />
 			</main>
-
 			<Footer />
 		</div>
 	</body>

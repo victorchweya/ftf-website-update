@@ -1,7 +1,12 @@
 ---
-import FigmaPageLayout from "../layouts/FigmaPageLayout.astro";
-import NewsAndEvents from "../react/figma/pages/NewsAndEvents";
 import { getCollection } from "astro:content";
+import Layout from "../layouts/Layout.astro";
+import SectionShell from "../components/layout/SectionShell.astro";
+import { sectionSpacing, typeStyles } from "../lib/figmaStyles";
+import imgPlaceholderImage from "../assets/figma/2dcd35f0969168b49576839a28be093481c42f9f.png?url";
+import imgPlaceholderImage1 from "../assets/figma/df46db7e24c63bd9580267e4b92a177fae0edc68.png?url";
+import imgPlaceholderImage2 from "../assets/figma/456b5ca63fec37944e95e90951a499a07680e2bd.png?url";
+import * as HomeSvgs from "../lib/figmaMarkup/home";
 
 const dateFormatter = new Intl.DateTimeFormat("en-GB", {
 	day: "2-digit",
@@ -9,7 +14,28 @@ const dateFormatter = new Intl.DateTimeFormat("en-GB", {
 	year: "numeric",
 });
 
-const newsEvents = (await getCollection("news", ({ data }) => data.published))
+const defaultNewsEvents = [
+	{
+		date: "09 Jan 2026",
+		image: imgPlaceholderImage,
+		title: "Farm to Feed has published their first Impact Report",
+		href: "/news-events",
+	},
+	{
+		date: "09 Jan 2026",
+		image: imgPlaceholderImage1,
+		title: "Farm to Feed Wins Global Startup Award and Secures New Investment",
+		href: "/news-events",
+	},
+	{
+		date: "09 Jan 2026",
+		image: imgPlaceholderImage2,
+		title: "Farm to Feed Expands Operations to New Region",
+		href: "/news-events",
+	},
+];
+
+const cmsNewsEvents = (await getCollection("news", ({ data }) => data.published))
 	.sort((a, b) => b.data.date.getTime() - a.data.date.getTime())
 	.map(({ body, data, id }) => ({
 		date: dateFormatter.format(data.date),
@@ -19,8 +45,67 @@ const newsEvents = (await getCollection("news", ({ data }) => data.published))
 		title: data.title,
 		slug: id,
 	}));
+
+const displayNewsEvents = cmsNewsEvents.length ? cmsNewsEvents : defaultNewsEvents;
+
+function isExternalUrl(href?: string) {
+	return href ? /^https?:\/\//.test(href) : false;
+}
 ---
 
-<FigmaPageLayout title="News & Events">
-	<NewsAndEvents newsEvents={newsEvents} client:load />
-</FigmaPageLayout>
+<Layout title="News & Events">
+	<div class="relative w-full bg-yellow-100">
+		<div>
+			<SectionShell
+				class={`${sectionSpacing.default} bg-yellow-100`}
+				containerClass="pt-24"
+				size="wide"
+				spacing="none">
+				<div class="flex flex-col gap-16 lg:gap-[88px] items-start max-w-[1280px] relative shrink-0 w-full">
+					<h1 class={`${typeStyles.heroTitleLarge} max-w-[720px] relative shrink-0 text-green-900`}>
+						Read the latest from Farm to Feed
+					</h1>
+					<div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3 relative shrink-0 w-full">
+						{
+							displayNewsEvents.map((item) => (
+								<article class="flex flex-col items-start min-w-px overflow-clip relative rounded-[32px]">
+									<div class="aspect-[405/270] relative shrink-0 w-full">
+										<img
+											alt={item.title}
+											class="absolute inset-0 max-w-none object-cover pointer-events-none size-full"
+											src={item.image}
+										/>
+									</div>
+									<div class="flex flex-col gap-6 items-start py-6 md:py-[32px] relative shrink-0 w-full">
+										<div class="flex flex-col gap-4 items-start relative shrink-0 w-full">
+											<p class={`${typeStyles.caption} not-italic relative shrink-0 text-green-500 whitespace-nowrap`}>
+												{item.date}
+											</p>
+											<h2 class={`${typeStyles.cardTitleSmall} not-italic relative shrink-0 text-[#0f251b] md:text-2xl w-full`}>
+												{item.title}
+											</h2>
+										</div>
+										<a
+											class="flex gap-2 items-center justify-center relative shrink-0"
+											href={item.href ?? "/news-events"}
+											rel={isExternalUrl(item.href) ? "noreferrer" : undefined}
+											target={isExternalUrl(item.href) ? "_blank" : undefined}>
+											<span class={`${typeStyles.body} leading-normal not-italic relative shrink-0 text-[#916f96] whitespace-nowrap`}>
+												Read more
+											</span>
+											<span class="overflow-clip relative shrink-0 size-6">
+												<span class="absolute inset-[25.72%_36.66%_25.88%_35.46%]">
+													<Fragment set:html={HomeSvgs.NewsSvg01} />
+												</span>
+											</span>
+										</a>
+									</div>
+								</article>
+							))
+						}
+					</div>
+				</div>
+			</SectionShell>
+		</div>
+	</div>
+</Layout>

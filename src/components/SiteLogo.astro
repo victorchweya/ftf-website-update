@@ -1,0 +1,75 @@
+---
+import svgPaths from "../lib/homeSvgPaths";
+
+const { tone = "dark", class: className = "" } = Astro.props;
+const isLight = tone === "light";
+---
+
+{
+	isLight ? (
+		<span class:list={["relative block h-[56.919px] w-[110.949px]", className]} aria-hidden="true" data-name="farm-to-feed-logo">
+			<span class="absolute h-[56.919px] left-0 top-0 w-[16.705px]" data-name="icon">
+				<svg class="absolute block inset-0 size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 16.7045 56.919">
+					<g id="icon">
+						<path d={svgPaths.p327cfc80} fill="var(--fill-0, white)" id="Vector" />
+						<path d={svgPaths.p37a93280} fill="var(--fill-0, white)" id="Vector_2" />
+						<path d={svgPaths.p39e4ca80} fill="var(--fill-0, white)" id="Vector_3" />
+					</g>
+				</svg>
+			</span>
+			<span class="absolute h-[23.963px] left-[20.94px] top-[4.33px] w-[71.124px]" data-name="farm">
+				<svg class="absolute block inset-0 size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 71.1241 23.9628">
+					<g id="farm">
+						<path d={svgPaths.p14292330} fill="var(--fill-0, white)" id="Vector" />
+						<path d={svgPaths.p14096500} fill="var(--fill-0, white)" id="Vector_2" />
+						<path d={svgPaths.p2cdc8200} fill="var(--fill-0, white)" id="Vector_3" />
+						<path d={svgPaths.p28d95800} fill="var(--fill-0, white)" id="Vector_4" />
+					</g>
+				</svg>
+			</span>
+			<span class="absolute h-[24.417px] left-[46.17px] top-[32.5px] w-[64.778px]" data-name="feed">
+				<svg class="absolute block inset-0 size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 64.778 24.4172">
+					<g id="feed">
+						<path d={svgPaths.p15a67c90} fill="var(--fill-0, white)" id="Vector" />
+						<path d={svgPaths.p1cff6200} fill="var(--fill-0, white)" id="Vector_2" />
+						<path d={svgPaths.p33c73580} fill="var(--fill-0, white)" id="Vector_3" />
+						<path d={svgPaths.p329c2300} fill="var(--fill-0, white)" id="Vector_4" />
+					</g>
+				</svg>
+			</span>
+			<span class="absolute h-[24.364px] left-[21.08px] top-[32.55px] w-[20.999px]" data-name="to + underline">
+				<svg class="absolute block inset-0 size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 20.9995 24.3642">
+					<g id="Group 123">
+						<path d={svgPaths.p3bdeac80} fill="var(--fill-0, white)" id="Vector" />
+						<path d={svgPaths.p15288800} fill="var(--fill-0, white)" id="Vector_2" />
+						<path d={svgPaths.p6f55900} fill="var(--fill-0, white)" id="Vector_3" />
+					</g>
+				</svg>
+			</span>
+		</span>
+	) : (
+		<span class:list={["relative block h-[22px] w-[150px] shrink-0 sm:h-[28px] sm:w-[191.825px]", className]} aria-hidden="true" data-name="Group">
+			<svg class="absolute block inset-0 size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 191.825 28">
+				<g id="Group">
+					<path d={svgPaths.p28a9e600} fill="var(--fill-0, #D78228)" id="Vector" />
+					<g id="Group_2">
+						<path d={svgPaths.p37f90d80} fill="var(--fill-0, #1E4A35)" id="Vector_2" />
+						<path d={svgPaths.p58cea30} fill="var(--fill-0, #1E4A35)" id="Vector_3" />
+						<path d={svgPaths.p3f498b00} fill="var(--fill-0, #1E4A35)" id="Vector_4" />
+						<path d={svgPaths.p3e62fe80} fill="var(--fill-0, #1E4A35)" id="Vector_5" />
+					</g>
+					<g id="Group_3">
+						<path d={svgPaths.p2ad99b00} fill="var(--fill-0, #1E4A35)" id="Vector_6" />
+						<path d={svgPaths.p27a70e00} fill="var(--fill-0, #1E4A35)" id="Vector_7" />
+						<path d={svgPaths.p2e3d2848} fill="var(--fill-0, #1E4A35)" id="Vector_8" />
+						<path d={svgPaths.pafe1b00} fill="var(--fill-0, #1E4A35)" id="Vector_9" />
+					</g>
+					<g id="Group_4">
+						<path d={svgPaths.p342b9a80} fill="var(--fill-0, #1E4A35)" id="Vector_10" />
+						<path d={svgPaths.p1e055500} fill="var(--fill-0, #1E4A35)" id="Vector_11" />
+					</g>
+				</g>
+			</svg>
+		</span>
+	)
+}

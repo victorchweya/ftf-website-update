@@ -1,29 +1,197 @@
 ---
-const navItems = [
-	{ href: "/", label: "Home" },
-	{ href: "/kenyan-buyers", label: "Kenyan Buyers" },
-	{ href: "/global-buys", label: "Global Buys" },
-	{ href: "/sell-with-us", label: "Sell With Us" },
-	{ href: "/our-impact", label: "Our Impact" },
-	{ href: "/our-story", label: "Our Story" },
-	{ href: "/our-team", label: "Our Team" },
-	{ href: "/news-events", label: "News & Events" },
-	{ href: "/careers", label: "Careers" },
-	{ href: "/contact-us", label: "Contact Us" },
-	{ href: "/faqs", label: "FAQs" },
-];
+import Button from "../components/Button.astro";
+import ContentContainer from "../components/layout/ContentContainer.astro";
+import SiteLogo from "../components/SiteLogo.astro";
+import { typeStyles } from "../lib/figmaStyles";
+
+const navTextClass = `${typeStyles.nav} not-italic relative shrink-0 text-black text-center whitespace-nowrap`;
+const navTriggerClass =
+	"flex gap-[2px] items-center justify-center p-2 relative shrink-0 cursor-pointer";
+const dropdownItemClass = `block px-4 py-2 ${typeStyles.dropdown} text-black hover:bg-[#fefcf5] transition-colors`;
+const mobileLinkClass = `${typeStyles.nav} block rounded-2xl px-4 py-3 text-left text-[#0f251b] transition-colors hover:bg-green-50`;
+const mobileSubLinkClass = `${typeStyles.dropdown} block rounded-xl px-4 py-2 text-left text-green-500 transition-colors hover:bg-green-50`;
+const dropdownClass =
+	"absolute top-full left-0 mt-1 invisible opacity-0 pointer-events-none bg-white rounded-lg shadow-lg border border-gray-200 py-2 min-w-[200px] z-50 transition-opacity duration-150 group-hover:visible group-hover:opacity-100 group-hover:pointer-events-auto group-focus-within:visible group-focus-within:opacity-100 group-focus-within:pointer-events-auto";
+
+const loginUrl = "https://shop.farmtofeedkenya.com/auth/login";
 ---
 
-<nav
-	class="flex items-center gap-6 text-sm font-medium text-slate-600"
-	aria-label="Primary navigation">
-	{
-		navItems.map((item) => (
-			<a
-				href={item.href}
-				class="transition-colors duration-150 hover:text-slate-900">
-				{item.label}
+<div class="absolute left-0 right-0 top-[24px] z-50 md:top-[32px]" data-ftf-header data-name="header">
+	<ContentContainer size="wide" class="px-4 sm:px-6 lg:px-10">
+		<div
+			class="bg-[#fefcf5] flex items-center justify-between px-[18px] py-[16px] relative rounded-[54px] shrink-0 w-full sm:px-[32px] sm:py-[20px]"
+			data-name="header">
+			<a href="/" aria-label="Farm to Feed home">
+				<SiteLogo />
 			</a>
-		))
-	}
-</nav>
+
+			<nav class="hidden lg:flex gap-[25px] items-center relative shrink-0" aria-label="Primary navigation">
+				<div aria-controls="desktop-buy-menu" aria-expanded="false" class={`${navTriggerClass} group`} data-name="about-us" role="button" tabindex="0">
+					<p class={navTextClass}>Buy from us</p>
+					<div class="overflow-clip relative shrink-0 size-5" data-name="chevron-down">
+						<div class="absolute bottom-[37.5%] left-1/4 right-1/4 top-[37.5%]" data-name="Icon">
+							<div class="absolute inset-[-20%_-10%]">
+								<svg class="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 12 7">
+									<path d="M1 1L6 6L11 1" id="Icon" stroke="var(--stroke-0, black)" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" />
+								</svg>
+							</div>
+						</div>
+					</div>
+					<div class={dropdownClass} id="desktop-buy-menu">
+						<a href="/kenyan-buyers" class={dropdownItemClass}>Kenyan Buyers</a>
+						<a href="/global-buys" class={dropdownItemClass}>Global Buyers</a>
+					</div>
+				</div>
+
+				<a href="/sell-with-us" class="flex items-start p-2 relative shrink-0" data-name="sell">
+					<p class={navTextClass}> Sell with us</p>
+				</a>
+
+				<a href="/our-impact" class="flex items-start p-2 relative shrink-0" data-name="solution">
+					<p class={navTextClass}>Our Impact</p>
+				</a>
+
+				<div aria-controls="desktop-about-menu" aria-expanded="false" class={`${navTriggerClass} group`} data-name="about-us" role="button" tabindex="0">
+					<p class={navTextClass}>About us</p>
+					<div class="overflow-clip relative shrink-0 size-5" data-name="chevron-down">
+						<div class="absolute bottom-[37.5%] left-1/4 right-1/4 top-[37.5%]" data-name="Icon">
+							<div class="absolute inset-[-20%_-10%]">
+								<svg class="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 12 7">
+									<path d="M1 1L6 6L11 1" id="Icon" stroke="var(--stroke-0, black)" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" />
+								</svg>
+							</div>
+						</div>
+					</div>
+					<div class={dropdownClass} id="desktop-about-menu">
+						<a href="/our-story" class={dropdownItemClass}>Our Story</a>
+						<a href="/our-team" class={dropdownItemClass}>Our Team</a>
+						<a href="/news-events" class={dropdownItemClass}>News and Events</a>
+					</div>
+				</div>
+
+				<Button href={loginUrl} rel="noreferrer" target="_blank" variant="secondary" size="sm" class="relative shrink-0 text-[#eee]" data-name="order">
+					Log In
+				</Button>
+			</nav>
+
+			<button
+				aria-controls="mobile-header-menu"
+				aria-expanded="false"
+				aria-label="Open navigation"
+				class="lg:hidden inline-flex size-10 shrink-0 items-center justify-center rounded-full bg-green-50 text-green-500 transition-colors hover:bg-green-100 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 focus:ring-offset-[#fefcf5]"
+				data-mobile-menu-toggle
+				type="button">
+				<span class="relative block size-6" aria-hidden="true">
+					<span data-mobile-menu-line="top" class="absolute left-1/2 top-1/2 h-0.5 w-5 -translate-x-1/2 rounded-full bg-green-500 transition-transform duration-200 -translate-y-[7px]"></span>
+					<span data-mobile-menu-line="middle" class="absolute left-1/2 top-1/2 h-0.5 w-5 -translate-x-1/2 -translate-y-1/2 rounded-full bg-green-500 transition-opacity duration-200 opacity-100"></span>
+					<span data-mobile-menu-line="bottom" class="absolute left-1/2 top-1/2 h-0.5 w-5 -translate-x-1/2 rounded-full bg-green-500 transition-transform duration-200 translate-y-[7px]"></span>
+				</span>
+			</button>
+		</div>
+
+		<nav
+			aria-label="Mobile navigation"
+			class="hidden lg:hidden mt-2 overflow-hidden rounded-[28px] border border-green-100 bg-[#fefcf5] p-3 shadow-xl shadow-green-900/10"
+			data-mobile-header-menu
+			id="mobile-header-menu">
+			<div class="flex flex-col gap-1">
+				<button aria-controls="mobile-buy-menu" aria-expanded="false" class={`${mobileLinkClass} flex w-full items-center justify-between`} data-mobile-submenu-toggle="mobile-buy-menu" type="button">
+					<span>Buy from us</span>
+					<span class="relative size-5 shrink-0 transition-transform duration-200" aria-hidden="true">
+						<svg class="absolute inset-0 size-full" fill="none" viewBox="0 0 20 20">
+							<path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" />
+						</svg>
+					</span>
+				</button>
+				<div class="hidden ml-3 flex-col border-l border-green-100 pl-3" id="mobile-buy-menu">
+					<a href="/kenyan-buyers" class={mobileSubLinkClass}>Kenyan Buyers</a>
+					<a href="/global-buys" class={mobileSubLinkClass}>Global Buyers</a>
+				</div>
+				<a href="/sell-with-us" class={mobileLinkClass}>Sell with us</a>
+				<a href="/our-impact" class={mobileLinkClass}>Our Impact</a>
+				<button aria-controls="mobile-about-menu" aria-expanded="false" class={`${mobileLinkClass} flex w-full items-center justify-between`} data-mobile-submenu-toggle="mobile-about-menu" type="button">
+					<span>About us</span>
+					<span class="relative size-5 shrink-0 transition-transform duration-200" aria-hidden="true">
+						<svg class="absolute inset-0 size-full" fill="none" viewBox="0 0 20 20">
+							<path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" />
+						</svg>
+					</span>
+				</button>
+				<div class="hidden ml-3 flex-col border-l border-green-100 pl-3" id="mobile-about-menu">
+					<a href="/our-story" class={mobileSubLinkClass}>Our Story</a>
+					<a href="/our-team" class={mobileSubLinkClass}>Our Team</a>
+					<a href="/news-events" class={mobileSubLinkClass}>News and Events</a>
+				</div>
+				<Button href={loginUrl} rel="noreferrer" target="_blank" variant="secondary" size="sm" class="mt-3 w-full text-[#eee]">
+					Log In
+				</Button>
+			</div>
+		</nav>
+	</ContentContainer>
+
+	<script is:inline>
+		(() => {
+			const initHeader = (header) => {
+				if (header.dataset.ftfHeaderReady === "true") return;
+				header.dataset.ftfHeaderReady = "true";
+
+				const menuToggle = header.querySelector("[data-mobile-menu-toggle]");
+				const menu = header.querySelector("[data-mobile-header-menu]");
+				const topLine = header.querySelector('[data-mobile-menu-line="top"]');
+				const middleLine = header.querySelector('[data-mobile-menu-line="middle"]');
+				const bottomLine = header.querySelector('[data-mobile-menu-line="bottom"]');
+
+				const setMenuOpen = (isOpen) => {
+					if (!menuToggle || !menu) return;
+					menuToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+					menuToggle.setAttribute("aria-label", isOpen ? "Close navigation" : "Open navigation");
+					menu.classList.toggle("hidden", !isOpen);
+
+					topLine?.classList.toggle("-translate-y-[7px]", !isOpen);
+					topLine?.classList.toggle("-translate-y-1/2", isOpen);
+					topLine?.classList.toggle("rotate-45", isOpen);
+
+					middleLine?.classList.toggle("opacity-100", !isOpen);
+					middleLine?.classList.toggle("opacity-0", isOpen);
+
+					bottomLine?.classList.toggle("translate-y-[7px]", !isOpen);
+					bottomLine?.classList.toggle("-translate-y-1/2", isOpen);
+					bottomLine?.classList.toggle("-rotate-45", isOpen);
+				};
+
+				menuToggle?.addEventListener("click", () => {
+					const isOpen = menuToggle.getAttribute("aria-expanded") === "true";
+					setMenuOpen(!isOpen);
+				});
+
+				header.querySelectorAll("[data-mobile-submenu-toggle]").forEach((toggle) => {
+					const menuId = toggle.getAttribute("data-mobile-submenu-toggle");
+					const submenu = menuId ? header.querySelector("#" + CSS.escape(menuId)) : null;
+					const chevron = toggle.querySelector(".transition-transform");
+
+					toggle.addEventListener("click", () => {
+						const isOpen = toggle.getAttribute("aria-expanded") === "true";
+						toggle.setAttribute("aria-expanded", isOpen ? "false" : "true");
+						submenu?.classList.toggle("hidden", isOpen);
+						submenu?.classList.toggle("flex", !isOpen);
+						chevron?.classList.toggle("rotate-180", !isOpen);
+					});
+				});
+
+				menu?.querySelectorAll("a").forEach((link) => {
+					link.addEventListener("click", () => setMenuOpen(false));
+				});
+			};
+
+			const initAllHeaders = () => {
+				document.querySelectorAll("[data-ftf-header]").forEach(initHeader);
+			};
+
+			if (document.readyState === "loading") {
+				document.addEventListener("DOMContentLoaded", initAllHeaders, { once: true });
+			} else {
+				initAllHeaders();
+			}
+		})();
+	</script>
+</div>

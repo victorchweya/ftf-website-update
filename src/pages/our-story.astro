@@ -1,8 +1,8 @@
 ---
-import FigmaPageLayout from "../layouts/FigmaPageLayout.astro";
-import OurStory from "../react/figma/pages/OurStory";
+import Layout from "../layouts/Layout.astro";
+import { pageHtml } from "../lib/figmaMarkup/ourStoryPage";
 ---
 
-<FigmaPageLayout title="Our Story">
-	<OurStory client:load />
-</FigmaPageLayout>
+<Layout title="Our Story">
+	<Fragment set:html={pageHtml} />
+</Layout>

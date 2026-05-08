@@ -1,0 +1,18 @@
+---
+const {
+	columns = 3,
+	class: className = "",
+} = Astro.props;
+
+const columnClasses = {
+	2: "md:grid-cols-2",
+	3: "md:grid-cols-2 lg:grid-cols-3",
+	4: "sm:grid-cols-2 lg:grid-cols-4",
+};
+
+const columnClass = columnClasses[columns as keyof typeof columnClasses] ?? columnClasses[3];
+---
+
+<div class:list={["grid grid-cols-1 gap-8", columnClass, className]}>
+	<slot />
+</div>
