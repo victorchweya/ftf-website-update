@@ -1,9 +1,5 @@
 import * as GlobalBuyersSvgs from "../imports/BuyFromUsExport/globalBuyers-inline-svgs";
 import {
-	Frame41,
-	Frame44,
-	Frame46,
-	Frame47,
 	Frame50,
 	Frame52,
 	Frame54,
@@ -22,17 +18,90 @@ import { ContentContainer } from "../components/layout/ContentContainer";
 import imgVector from "../../../assets/figma/717c282573f6a51e2b10095e5f55c11d4d2af63b.png?url";
 import imgVector1 from "../../../assets/figma/69ef415b99d59a8e413a8dec8a5799dcd5f264d5.png?url";
 import imgRectangle5 from "../../../assets/figma/0d1e68422d4b415bcfddf55f3e0d18a4ba2ed80d.png?url";
+import imgSpices from "../imports/BuyFromUsExport/25704180dcc4cc91ab753bd9eb6baf0244da1ebe.png?url";
+import imgPowerPowder from "../imports/BuyFromUsExport/f87aa6ae2ee84a1666110e8791cbbd3f5e6134a2.png?url";
+import imgFruitFlakes from "../imports/BuyFromUsExport/e315ff9f01b131cfc069e9c39ccb5f8df600054e.png?url";
+import imgFlour from "../imports/BuyFromUsExport/505e0484d3766a8be242767e13dd74d89ee9ebfe.png?url";
 
 import { BorderTopKenyanBuyersSvg } from "../imports/BuyFromUsLocal-1/border-top-kenyan-buyers";
 import { sectionSpacing } from "../components/layout/spacing";
 import { typeStyles } from "../components/layout/typography";
-const exportProductCards = [Frame41, Frame44, Frame46, Frame47];
+const exportProductCards = [
+	{
+		body: "Single-origin chilis, herbs, aromatics and more.\nUsed for stand-alone seasonings, blends, and creating high quality flavour profiles for a wide range of formulations.",
+		color: "#5B3711",
+		image: imgSpices,
+		imageClassName: "inset-[8%_0_9%_0]",
+		title: "Flavours + Spices",
+	},
+	{
+		body: "Leafy greens, roots, botanicals, and superfood ingredients.\nIdeal for boosting nutrition, adding natural colour, and enhancing flavour in food, beverage, and nutraceutical applications.",
+		color: "#C2CE86",
+		image: imgPowerPowder,
+		imageClassName: "inset-[8%_-10%_6%_5%]",
+		title: "Power Powders",
+	},
+	{
+		body: "Crispy, tart tropical fruit flakes for snacks, cereals, dairy products and more.\nNatural sweetness, vibrant colour, no added sugar.",
+		color: "#D78228",
+		image: imgFruitFlakes,
+		imageClassName: "inset-[19%_0_18%_23%]",
+		title: "Fruitful Flakes",
+	},
+	{
+		body: "Clean-label flours made from fruits, tubers, and vegetables.\nSuitable for grain-free and gluten-free formulations, baking, thickening, and functional ingredient development.",
+		color: "#824266",
+		image: imgFlour,
+		imageClassName: "inset-[-6%_0_-6%_0]",
+		title: "Flours Free of Grain & Gluten",
+	},
+];
 const qualityCards = [Frame50, Frame52, Frame54];
 const impactPrincipleRows = [
 	[Frame62, Frame65],
 	[Frame69, Frame74],
 	[Frame78, Frame81],
 ];
+
+function ExportProductCard({
+	body,
+	color,
+	image,
+	imageClassName,
+	title,
+}: (typeof exportProductCards)[number]) {
+	return (
+		<article className="flex flex-col items-center gap-8 text-center lg:gap-12">
+			<div className="relative h-[220px] w-[248px] overflow-hidden md:h-[240px] md:w-[271px]">
+				<div
+					className="absolute inset-[0_5.14%_0_8.39%]"
+					style={{
+						backgroundColor: color,
+						borderRadius: "45% 55% 49% 51% / 48% 44% 56% 52%",
+					}}
+				/>
+				<div className={`absolute ${imageClassName}`}>
+					<img
+						alt=""
+						className="block size-full object-contain"
+						src={image}
+					/>
+				</div>
+			</div>
+			<div className="flex flex-col gap-5 items-center w-full">
+				<h3
+					className={`${typeStyles.cardTitle} not-italic text-[#0f251b] text-center w-full`}>
+					{title}
+				</h3>
+				<p
+					className={`${typeStyles.body} whitespace-pre-line text-green-500 text-center w-full`}>
+					{body}
+				</p>
+			</div>
+		</article>
+	);
+}
+
 export default function GlobalBuyers() {
 	return (
 		<div
@@ -451,8 +520,8 @@ export default function GlobalBuyers() {
 						</p>
 					</div>
 					<div className="grid gap-10 relative w-full sm:grid-cols-2 lg:grid-cols-4 lg:gap-8">
-						{exportProductCards.map((ProductCard) => (
-							<ProductCard key={ProductCard.name} />
+						{exportProductCards.map((productCard) => (
+							<ExportProductCard key={productCard.title} {...productCard} />
 						))}
 					</div>
 					{/* <div className="flex flex-col gap-8 items-center max-w-[1052px] not-italic relative text-center w-full">
