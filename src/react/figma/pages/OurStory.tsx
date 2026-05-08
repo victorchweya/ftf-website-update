@@ -1,3 +1,4 @@
+import { useRef, useState } from "react";
 import * as OurStorySvgs from "../imports/OurStory/ourStory-inline-svgs";
 import { Header } from "../components/Header";
 import { Footer } from "../components/Footer";
@@ -8,25 +9,28 @@ import imgVector3 from "../../../assets/figma/7033551c0dc4ae4878b1a9ef568e37660c
 import ourStoryDivider from "../imports/OurStory-1/ourstorydivider.png?url";
 import { sectionSpacing } from "../components/layout/spacing";
 import { typeStyles } from "../components/layout/typography";
-const timelineMilestones = [
+const storySlides = [
 	{
 		label: "Then",
+		body: "In April 2020, Farm to Feed started as a COVID food relief effort. We bought farmers' produce that was at risk of going to waste and donated to food insecure communities who were made more vulnerable at the height of the pandemic.",
 		width: 34,
 		zIndex: 4,
-		active: true,
 	},
 	{
 		label: "2020",
+		body: "We catered to ten reliable charities and provided additional income for up to 400 smallholder farmers. We soon realized that the problem of food loss was only exacerbated by the pandemic but existed before and will long outlast it.",
 		width: 36,
 		zIndex: 3,
 	},
 	{
 		label: "2021",
+		body: "A few months later, we developed and piloted our scalable model with the purpose of transforming our food systems for the better.",
 		width: 33,
 		zIndex: 2,
 	},
 	{
 		label: "Now",
+		body: "We now boast a network of thousands of farmers across Kenya and deliver up to 15,000 kgs of fresh food each week. And we're just getting started!",
 		width: 30,
 		zIndex: 1,
 	},
@@ -61,6 +65,47 @@ const platformSteps = [
 	},
 ];
 export default function OurStory() {
+	const [activeStoryIndex, setActiveStoryIndex] = useState(0);
+	const isTimelineDraggingRef = useRef(false);
+	const timelineMilestonesRef = useRef<HTMLDivElement>(null);
+	const activeStory = storySlides[activeStoryIndex] ?? storySlides[0];
+
+	const updateStoryFromPointer = (clientX: number) => {
+		const milestonesElement = timelineMilestonesRef.current;
+
+		if (!milestonesElement) {
+			return;
+		}
+
+		const { left, width } = milestonesElement.getBoundingClientRect();
+		const progress = Math.min(Math.max((clientX - left) / width, 0), 1);
+		const storyIndex = Math.round(progress * (storySlides.length - 1));
+
+		setActiveStoryIndex(storyIndex);
+	};
+
+	const startTimelineDrag = (event: React.PointerEvent<HTMLDivElement>) => {
+		isTimelineDraggingRef.current = true;
+		event.currentTarget.setPointerCapture(event.pointerId);
+		updateStoryFromPointer(event.clientX);
+	};
+
+	const updateTimelineDrag = (event: React.PointerEvent<HTMLDivElement>) => {
+		if (!isTimelineDraggingRef.current) {
+			return;
+		}
+
+		updateStoryFromPointer(event.clientX);
+	};
+
+	const stopTimelineDrag = (event: React.PointerEvent<HTMLDivElement>) => {
+		isTimelineDraggingRef.current = false;
+
+		if (event.currentTarget.hasPointerCapture(event.pointerId)) {
+			event.currentTarget.releasePointerCapture(event.pointerId);
+		}
+	};
+
 	return (
 		<div
 			className="bg-white flex flex-col items-start relative w-full"
@@ -72,7 +117,8 @@ export default function OurStory() {
 				<Header />
 				<ContentContainer size="wide" className="h-full ">
 					<div className="relative grid w-full min-h-[540px] max-w-[913px] mt-20 mx-auto items-center gap-8 md:grid-cols-[minmax(0,570px)_279px] md:gap-16">
-						<p className={`${typeStyles.heroTitleLarge} not-italic text-green-800`}>
+						<p
+							className={`${typeStyles.heroTitleLarge}  text-green-800`}>
 							Farm to Feed began with a simple but urgent idea
 						</p>
 						<p className="font-normal leading-copy not-italic text-green-500 text-lg tracking-body">{`Tackling food loss in Kenya's fresh produce supply chain. We introduced grade rescue to the Nairobi market, creating a pathway for vegetables that might otherwise go to waste.`}</p>
@@ -98,8 +144,10 @@ export default function OurStory() {
 				data-name="Wireframe - 10">
 				<ContentContainer size="wide" className="h-full">
 					<div className="relative flex h-full flex-col items-center min-h-[540px] max-w-[760px] mt-20 mx-auto gap-8 md:gap-16">
-						<p className={`${typeStyles.sectionTitle} not-italic text-[#0f251b] text-center w-full max-w-148`}>{` Connecting production to dependable demand...`}</p>
-						<div className={`${typeStyles.body} mt-[24px] md:mt-[55px] leading-zero not-italic text-[#0f251b] text-center w-full max-w-148 whitespace-pre-wrap`}>
+						<p
+							className={`${typeStyles.sectionTitle} not-italic text-[#0f251b] text-center w-full max-w-148`}>{` Connecting production to dependable demand...`}</p>
+						<div
+							className={`${typeStyles.body} mt-[24px] md:mt-[55px] leading-zero not-italic text-[#0f251b] text-center w-full max-w-148 whitespace-pre-wrap`}>
 							<p className="leading-copy mb-0">{`As we worked alongside our customers and farmers, we quickly learned that food loss is one part of a much larger challenge. Farmers needed more than a solution for imperfect produce. They needed reliable market access for their full harvest.   `}</p>
 							<p className="leading-copy">{`Since those early days, Farm to Feed has grown into a trusted off taker and partner for farmers, helping to address one of Kenya’s most persistent agricultural bottlenecks: connecting production to dependable demand. `}</p>
 						</div>
@@ -153,10 +201,12 @@ export default function OurStory() {
 											</div>
 										)}
 										<div className="flex flex-col gap-6 items-center not-italic relative shrink-0 text-center w-full">
-											<p className={`${typeStyles.body} relative shrink-0 text-[#85a687] whitespace-nowrap`}>
+											<p
+												className={`${typeStyles.body} relative shrink-0 text-[#85a687] whitespace-nowrap`}>
 												{principle.label}
 											</p>
-											<p className={`${typeStyles.cardTitle} relative shrink-0 text-[#0f251b] w-full`}>
+											<p
+												className={`${typeStyles.cardTitle} relative shrink-0 text-[#0f251b] w-full`}>
 												{principle.body}
 											</p>
 										</div>
@@ -195,9 +245,9 @@ export default function OurStory() {
 			</div>
 			{/* Platform */}
 			<div
-				className="bg-white min-h-[500px] md:min-h-[580px] overflow-clip relative shrink-0 w-full"
+				className="bg-white min-h-[500px] md:min-h-[580px] overflow-clip relative shrink-0 w-full mb-24"
 				data-name="Wireframe - 54">
-				<ContentContainer size="wide" className={sectionSpacing.compact}>
+				<ContentContainer size="wide">
 					<div className="relative flex flex-col items-center gap-16 md:gap-[124px]">
 						<div
 							className="absolute hidden md:flex h-[87px] items-center justify-center left-1/2 -translate-x-1/2 top-58 w-[485px]"
@@ -213,7 +263,8 @@ export default function OurStory() {
 							</div>
 						</div>
 						<div className="flex flex-col items-center relative w-full max-w-[758px]">
-							<p className={`${typeStyles.sectionTitle} not-italic relative shrink-0 text-[#030806] text-center w-full`}>
+							<p
+								className={`${typeStyles.sectionTitle} not-italic relative shrink-0 text-[#030806] text-center w-full`}>
 								Farm to Feed is the tech-enabled platform
 							</p>
 						</div>
@@ -689,10 +740,12 @@ export default function OurStory() {
 											</div>
 										)}
 										<div className="flex flex-col gap-6 items-start not-italic relative shrink-0 text-black text-center w-full">
-											<p className={`${typeStyles.cardTitle} relative shrink-0 w-full`}>
+											<p
+												className={`${typeStyles.cardTitle} relative shrink-0 w-full`}>
 												{step.title}
 											</p>
-											<p className={`${typeStyles.body} relative shrink-0 w-full`}>
+											<p
+												className={`${typeStyles.body} relative shrink-0 w-full`}>
 												{step.body}
 											</p>
 										</div>
@@ -707,92 +760,55 @@ export default function OurStory() {
 			<div
 				className="min-h-[600px] md:min-h-[750px] overflow-clip relative shrink-0 w-full"
 				data-name="Story">
-				<div
-					className="absolute hidden inset-[71.22%_6.63%_7.22%_86.89%] md:block"
-					data-name="Vector">
-					<OurStorySvgs.OurStorySvg49 />
-				</div>
-				<div
-					className="absolute hidden inset-[43.84%_80.63%_7.26%_5.76%] md:block"
-					data-name="Vector">
-					<OurStorySvgs.OurStorySvg50 />
-				</div>
-				<div
-					className="absolute hidden inset-[82%_4.72%_4.1%_91.42%] items-center justify-center md:flex"
-					style={{
-						containerType: "size",
-					}}>
-					<div className="-scale-x-100 flex-none h-[100cqh] w-[100cqw]">
-						<div className="relative size-full" data-name="Vector">
-							<OurStorySvgs.OurStorySvg51 />
-						</div>
-					</div>
-				</div>
-				<ContentContainer size="wide" className={sectionSpacing.default}>
+				<ContentContainer size="wide" className="relative z-10 pb-64">
 					<div className="relative flex flex-col items-center gap-16">
-						<p className={`${typeStyles.heroTitleLarge} not-italic text-black text-center w-full max-w-[544px]`}>
+						<p
+							className={`${typeStyles.heroTitleLarge}  text-green-800 text-center w-full max-w-[544px]`}>
 							Our story
 						</p>
-						<p className={`${typeStyles.body} not-italic text-black text-center`}>
+						<p
+							className={`${typeStyles.body} not-italic text-black text-center`}>
 							Slide the carrot across the timeline or tap to learn
 							about our journey
 						</p>
 						<div
-							className="relative flex flex-col items-center gap-[80px] w-full"
+							className="relative flex flex-col items-center gap-20 w-full"
 							data-name="slider">
 							<div
 								className="relative h-[65px] w-full max-w-[607px]"
-								data-name="slider-field">
+								data-name="slider-field"
+								onPointerCancel={stopTimelineDrag}
+								onPointerDown={startTimelineDrag}
+								onPointerMove={updateTimelineDrag}
+								onPointerUp={stopTimelineDrag}
+								style={{ touchAction: "none" }}>
 								<div
 									className="absolute h-[32px] left-0 right-0 top-[3px]"
 									data-name="slider-base">
 									<OurStorySvgs.OurStorySvg52 />
 								</div>
 								<div
-									className="-translate-x-1/2 absolute flex isolate items-start justify-between left-[calc(50%-4px)] top-0 w-[82%] max-w-[499px]"
-									data-name="milestones">
-									{timelineMilestones.map((milestone) =>
-										milestone.active ? (
-											<div
-												className="flex flex-col gap-[5px] items-center relative shrink-0"
-												data-name="slider-btn"
-												style={{
-													width: milestone.width,
-													zIndex: milestone.zIndex,
-												}}>
-												{
-													<>
-														<div className="bg-[#4c352b] h-[36px] relative rounded-[8px] shrink-0 w-[3px]" />
-														<p className={`${typeStyles.caption} font-normal not-italic relative shrink-0 text-black whitespace-nowrap`}>
-															{milestone.label}
-														</p>
-														{milestone.active ? (
-															<div
-																className="absolute flex h-[111.341px] items-center justify-center left-[-12.98px] top-[-31.63px] w-[51.555px]"
-																style={
-																	{
-																		"--transform-inner-width":
-																			"1185",
-																		"--transform-inner-height":
-																			"21",
-																	} as React.CSSProperties
-																}>
-																<div className="flex-none rotate-[12.37deg]">
-																	<div
-																		className="h-[107.586px] relative w-[29.19px]"
-																		data-name="Capa_1">
-																		<OurStorySvgs.OurStorySvg45 />
-																	</div>
-																</div>
-															</div>
-														) : null}
-													</>
-												}
-											</div>
-										) : (
+									className="-translate-x-1/2 absolute z-20 flex isolate items-start justify-between left-[calc(50%-4px)] top-0 w-[82%] max-w-[499px]"
+									data-name="milestones"
+									ref={timelineMilestonesRef}>
+									{storySlides.map((milestone, index) => {
+										const isActive =
+											index === activeStoryIndex;
+
+										return (
 											<button
-												className="cursor-pointer flex flex-col gap-[5px] items-center relative shrink-0"
+												aria-current={
+													isActive
+														? "step"
+														: undefined
+												}
+												aria-label={`Show ${milestone.label} story`}
+												className="cursor-pointer flex flex-col gap-[5px] items-center relative shrink-0 rounded-[8px] bg-transparent p-0 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#747c50]"
 												data-name="milestone"
+												key={milestone.label}
+												onClick={() =>
+													setActiveStoryIndex(index)
+												}
 												style={{
 													width: milestone.width,
 													zIndex: milestone.zIndex,
@@ -801,11 +817,13 @@ export default function OurStory() {
 												{
 													<>
 														<div className="bg-[#4c352b] h-[36px] relative rounded-[8px] shrink-0 w-[3px]" />
-														<p className={`${typeStyles.caption} font-normal not-italic relative shrink-0 text-black whitespace-nowrap`}>
+														<p
+															className={`${typeStyles.caption} font-normal not-italic relative shrink-0 text-black whitespace-nowrap`}>
 															{milestone.label}
 														</p>
-														{milestone.active ? (
+														{isActive ? (
 															<div
+																aria-hidden="true"
 																className="absolute flex h-[111.341px] items-center justify-center left-[-12.98px] top-[-31.63px] w-[51.555px]"
 																style={
 																	{
@@ -827,12 +845,26 @@ export default function OurStory() {
 													</>
 												}
 											</button>
-										),
-									)}
+										);
+									})}
 								</div>
+								<input
+									aria-label="Story timeline"
+									className="pointer-events-none absolute inset-x-[9%] top-0 z-10 h-[65px] cursor-pointer opacity-0"
+									max={storySlides.length - 1}
+									min={0}
+									onChange={(event) =>
+										setActiveStoryIndex(
+											Number(event.currentTarget.value),
+										)
+									}
+									step={1}
+									type="range"
+									value={activeStoryIndex}
+								/>
 							</div>
 							<div
-									className="flex flex-col items-center justify-center mx-auto p-6 md:p-[40px] relative w-full max-w-[560px]"
+								className="flex flex-col items-center justify-center mx-auto p-6 md:p-[40px] relative w-full max-w-[560px]"
 								data-name="Note">
 								<div
 									className="absolute flex inset-[0_0.24px_0_0] items-center justify-center"
@@ -849,43 +881,21 @@ export default function OurStory() {
 										</div>
 									</div>
 								</div>
-								<p className={`${typeStyles.bodyLarge} min-h-[204px] not-italic relative shrink-0 text-black text-center w-full max-w-[467px]`}>
-									In April 2020, Farm to Feed started as a
-									COVID-19 food relief effort – we bought
-									farmers' produce that was at risk of going
-									to waste and donated to food insecure
-									communities who were made more vulnerable at
-									the height of the pandemic
+								<p
+									aria-live="polite"
+									className={`${typeStyles.bodyLarge} min-h-[204px] not-italic relative shrink-0 text-black text-center w-full max-w-[467px]`}>
+									{activeStory.body}
 								</p>
 							</div>
 						</div>
 					</div>
 				</ContentContainer>
-				<div
-					className="absolute hidden h-[572.259px] items-center justify-center left-[-29px] top-[906px] w-[1477px] lg:flex"
-					style={
-						{
-							"--transform-inner-width": "1185",
-							"--transform-inner-height": "21",
-						} as React.CSSProperties
-					}>
-					<div className="-rotate-90 -scale-y-100 flex-none">
-						<div
-							className="h-[1477px] relative w-[572.259px]"
-							data-name="Vector">
-							<OurStorySvgs.OurStorySvg54 />
-						</div>
-					</div>
-				</div>
-				<div className="absolute hidden inset-x-0 top-[720px] h-[447.28px] w-full lg:block">
-					<OurStorySvgs.OurStorySvg55 />
-				</div>
-				<div className="absolute hidden h-[237.142px] left-[calc(75%+17.66px)] top-[105.35px] w-[238.742px] lg:block">
-					<OurStorySvgs.OurStorySvg56 />
-				</div>
-				<div className="absolute inset-[95.35%_0_-0.05%_0]">
-					<OurStorySvgs.OurStorySvg57 />
-				</div>
+				<img
+					alt=""
+					aria-hidden="true"
+					className="pointer-events-none absolute inset-x-0 bottom-[-28px] z-0 w-full select-none"
+					src="/ourstory-hero.svg"
+				/>
 			</div>
 			{/* Footer */}
 			<Footer />

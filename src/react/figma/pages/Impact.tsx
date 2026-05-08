@@ -84,11 +84,14 @@ export default function Impact() {
 						</div>
 					</div>
 				</div>
-				<ContentContainer size="wide" className="pt-[246px] pb-[128px]">
-					<div className="grid gap-[80px] lg:grid-cols-[minmax(0,515px)_minmax(0,624px)] lg:items-start lg:justify-between">
+				<ContentContainer
+					size="wide"
+					className="pt-[170px] pb-[96px] md:pt-[220px] md:pb-[128px]">
+					<div className="grid gap-12 lg:grid-cols-[minmax(0,515px)_minmax(0,624px)] lg:items-start lg:justify-between lg:gap-[80px]">
 						<div className="flex flex-col gap-10 items-start not-italic relative">
 							<div className="flex flex-col gap-10 items-start relative shrink-0">
-								<div className={`${typeStyles.heroTitleLarge} relative shrink-0 text-[#0f251b] w-[519px] whitespace-pre-wrap`}>
+								<div
+									className={`${typeStyles.heroTitleLarge} relative shrink-0 text-[#0f251b] w-full max-w-[519px] whitespace-pre-wrap`}>
 									<p className="leading-tight mb-0">{`Building `}</p>
 									<p className="leading-tight">
 										resilient
@@ -96,14 +99,16 @@ export default function Impact() {
 										food systems
 									</p>
 								</div>
-								<p className={`${typeStyles.bodyLead} relative shrink-0 text-green-500 w-[515px]`}>
+								<p
+									className={`${typeStyles.bodyLead} relative shrink-0 text-green-500 w-full max-w-[515px]`}>
 									Agriculture is the backbone of Kenya’s rural
 									economy, yet 7.2 million smallholder farmers
 									remain economically vulnerable due to
 									fragmented markets and unreliable payments.
 								</p>
 							</div>
-							<p className={`${typeStyles.body} relative shrink-0 text-green-500 w-[515px]`}>
+							<p
+								className={`${typeStyles.body} relative shrink-0 text-green-500 w-full max-w-[515px]`}>
 								At the same time, up to 50% of fresh produce in
 								Sub-Saharan Africa is lost between harvest and
 								market. With Africa’s population projected to
@@ -118,13 +123,15 @@ export default function Impact() {
 									aria-hidden="true"
 									className="absolute border border-[#f7f7f7] border-solid inset-0 pointer-events-none rounded-[30px]"
 								/>
-								<div className="flex flex-col gap-[27px] items-start px-[32px] py-[48px] relative size-full">
-									<div className="flex items-center relative shrink-0">
-										<p className={`${typeStyles.cardTitle} not-italic relative shrink-0 text-black w-[210px]`}>
+								<div className="flex flex-col gap-[27px] items-start px-6 py-8 relative size-full md:px-[32px] md:py-[48px]">
+									<div className="flex items-center relative shrink-0 w-full">
+										<p
+											className={`${typeStyles.cardTitle} not-italic relative shrink-0 text-black w-full`}>
 											Why
 										</p>
 									</div>
-									<p className={`${typeStyles.body} min-w-full not-italic relative shrink-0 text-black w-min`}>
+									<p
+										className={`${typeStyles.body} not-italic relative shrink-0 text-black w-full`}>
 										Inefficient supply chains cause
 										significant food loss, leading to lost
 										income, avoidable emissions, and wasted
@@ -156,13 +163,15 @@ export default function Impact() {
 									aria-hidden="true"
 									className="absolute border border-[#f7f7f7] border-solid inset-0 pointer-events-none rounded-[30px]"
 								/>
-								<div className="flex flex-col gap-[27px] items-start px-[32px] py-[48px] relative size-full">
-									<div className="flex items-center relative shrink-0">
-										<p className={`${typeStyles.cardTitle} not-italic relative shrink-0 text-black w-[210px]`}>
+								<div className="flex flex-col gap-[27px] items-start px-6 py-8 relative size-full md:px-[32px] md:py-[48px]">
+									<div className="flex items-center relative shrink-0 w-full">
+										<p
+											className={`${typeStyles.cardTitle} not-italic relative shrink-0 text-black w-full`}>
 											How
 										</p>
 									</div>
-									<p className={`${typeStyles.body} min-w-full not-italic relative shrink-0 text-black w-min`}>
+									<p
+										className={`${typeStyles.body} not-italic relative shrink-0 text-black w-full`}>
 										Farm to Feed builds structured,
 										transparent, and demand-driven supply
 										chains. Using digital tools, farmer
@@ -218,15 +227,19 @@ export default function Impact() {
 						</div>
 					</div>
 				</div>
-				<ContentContainer size="wide" className="pt-[180px] pb-30 md:pt-[220px] lg:pt-[277px]">
+				<ContentContainer
+					size="wide"
+					className="pt-[180px] pb-30 md:pt-[220px] lg:pt-[277px]">
 					<div className="flex flex-col gap-8 items-center relative w-full">
-						<div className="flex flex-col gap-8 items-center max-w-[1052px] not-italic relative shrink-0 text-center w-full">
-							<p className={`${typeStyles.sectionTitle} relative shrink-0 text-[#0f251b] w-full`}>
+						<div className="hidden flex-col gap-8 items-center max-w-[1052px] not-italic relative shrink-0 text-center w-full md:flex">
+							<p
+								className={`${typeStyles.sectionTitle} relative shrink-0 text-[#0f251b] w-full`}>
 								Our strategy is built on the conviction that
 								food systems only work when farmers, markets,
 								and the environment are strengthened together.
 							</p>
-							<p className={`${typeStyles.body} relative shrink-0 text-green-500 w-full`}>
+							<p
+								className={`${typeStyles.body} relative shrink-0 text-orange-500 w-full`}>
 								We translate this approach into five integrated
 								pillars
 							</p>
@@ -250,7 +263,9 @@ export default function Impact() {
 				className="bg-white overflow-clip relative shrink-0 w-full"
 				data-name="Wireframe - 10">
 				<div className="bg-yellow-200 min-h-[651px] overflow-clip rounded-tl-[40px] rounded-tr-[40px] w-full">
-					<ContentContainer size="wide" className={sectionSpacing.default}>
+					<ContentContainer
+						size="wide"
+						className={sectionSpacing.default}>
 						<div className="grid gap-12 lg:grid-cols-[568px_minmax(0,1fr)] lg:items-center">
 							<div
 								className="absolute hidden lg:flex h-[525.083px] items-center justify-center left-[638.18px] top-[144.34px] w-[619.918px]"
@@ -269,11 +284,13 @@ export default function Impact() {
 								</div>
 							</div>
 							<div className="flex flex-col gap-[43px] items-start relative max-w-[568px]">
-								<p className={`${typeStyles.sectionTitle} not-italic relative shrink-0 text-[#0f251b] w-[488px]`}>
+								<p
+									className={`${typeStyles.sectionTitle} not-italic relative shrink-0 text-[#0f251b] w-[488px]`}>
 									Impact that travels from farm level to
 									customer counter
 								</p>
-								<p className={`${typeStyles.bodyLead} min-w-full not-italic relative shrink-0 text-green-500 w-min`}>
+								<p
+									className={`${typeStyles.bodyLead} min-w-full not-italic relative shrink-0 text-green-500 w-min`}>
 									At Farm to Feed, we create impact throughout
 									the supply chain, from farm level to
 									customer counter. Our long-term outcomes
@@ -285,7 +302,8 @@ export default function Impact() {
 								<div
 									className="bg-green-500 flex items-start mb-[32px] px-6 py-3 relative rounded-[40px] shrink-0 lg:mb-0"
 									data-name="order">
-									<p className={`${typeStyles.body} not-italic relative shrink-0 text-center text-white whitespace-nowrap`}>
+									<p
+										className={`${typeStyles.body} not-italic relative shrink-0 text-center text-white whitespace-nowrap`}>
 										Read Impact Report 2025
 									</p>
 								</div>
@@ -318,8 +336,7 @@ export default function Impact() {
 			</div>
 			{/* SDG metrics */}
 			<SectionShell
-				className="bg-yellow-200 overflow-clip relative shrink-0 w-full"
-				spacing="roomy"
+				className="bg-yellow-200 overflow-clip relative shrink-0 w-full pb-24"
 				data-name="Wireframe - 54">
 				<div
 					className="absolute hidden h-[620.8px] items-center justify-center left-[77.85%] right-[-22.95%] top-[129px] lg:flex"
@@ -334,11 +351,13 @@ export default function Impact() {
 				</div>
 				<div className="relative z-10 flex flex-col gap-12 md:gap-16">
 					<div className="flex max-w-[737px] flex-col gap-8">
-						<p className={`${typeStyles.sectionTitle} not-italic text-[#0f251b] w-full`}>
+						<p
+							className={`${typeStyles.sectionTitle} not-italic text-[#0f251b] w-full`}>
 							Our impact metrics align directly with the SDG
 							targets
 						</p>
-						<p className={`${typeStyles.bodyLarge} not-italic text-green-500 w-full max-w-[624px]`}>
+						<p
+							className={`${typeStyles.bodyLarge} not-italic text-green-500 w-full max-w-[624px]`}>
 							In line with the GRI reporting standards, this
 							provides transparency and accountability throughout
 							the supply chain.
@@ -352,7 +371,8 @@ export default function Impact() {
 					<div
 						className="flex flex-col gap-[26px] items-start relative"
 						data-name="sdg-extras">
-						<p className={`${typeStyles.bodyLarge} leading-normal not-italic relative shrink-0 text-black`}>
+						<p
+							className={`${typeStyles.bodyLarge} leading-normal not-italic relative shrink-0 text-black`}>
 							Farm to feed indirectly contributes to:
 						</p>
 						<div className="grid grid-cols-3 gap-4 relative shrink-0 sm:grid-cols-5">
@@ -370,10 +390,8 @@ export default function Impact() {
 						</div>
 					</div>
 				</div>
-				<div className="absolute inset-[97.49%_0_0_0]">
-					<ImpactSvgs.ImpactSvg08 />
-				</div>
 			</SectionShell>
+
 			{/* Footer */}
 			<Footer />
 		</div>

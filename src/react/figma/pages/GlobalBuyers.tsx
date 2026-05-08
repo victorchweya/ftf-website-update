@@ -17,15 +17,11 @@ import {
 import { Header } from "../components/Header";
 import { Footer } from "../components/Footer";
 import { ContentContainer } from "../components/layout/ContentContainer";
-import svgPaths from "../imports/BuyFromUsExport/svg-mjzb241toc";
+
 import imgVector from "../../../assets/figma/717c282573f6a51e2b10095e5f55c11d4d2af63b.png?url";
 import imgVector1 from "../../../assets/figma/69ef415b99d59a8e413a8dec8a5799dcd5f264d5.png?url";
 import imgRectangle5 from "../../../assets/figma/0d1e68422d4b415bcfddf55f3e0d18a4ba2ed80d.png?url";
-import imgRectangle from "../../../assets/figma/25704180dcc4cc91ab753bd9eb6baf0244da1ebe.png?url";
-import imgRectangle1 from "../../../assets/figma/f87aa6ae2ee84a1666110e8791cbbd3f5e6134a2.png?url";
-import imgRectangle2 from "../../../assets/figma/e315ff9f01b131cfc069e9c39ccb5f8df600054e.png?url";
-import imgRectangle3 from "../../../assets/figma/505e0484d3766a8be242767e13dd74d89ee9ebfe.png?url";
-import { imgGroup } from "../imports/BuyFromUsExport/svg-9eed1";
+
 import { BorderTopKenyanBuyersSvg } from "../imports/BuyFromUsLocal-1/border-top-kenyan-buyers";
 import { sectionSpacing } from "../components/layout/spacing";
 import { typeStyles } from "../components/layout/typography";
@@ -43,7 +39,7 @@ export default function GlobalBuyers() {
 			data-name="Buy from us - export">
 			{/* Hero */}
 			<div
-				className="bg-[#4c352b] min-h-[600px] md:min-h-[800px] lg:min-h-[926px] overflow-clip relative shrink-0 w-full"
+				className="bg-[#4C352B] min-h-[600px] md:min-h-[800px] lg:min-h-[926px] overflow-clip relative shrink-0 w-full"
 				data-name="Wireframe - 40">
 				<div
 					className="absolute flex inset-[-19.8%_-5.56%_0_-41.25%] items-center justify-center"
@@ -62,12 +58,11 @@ export default function GlobalBuyers() {
 						</div>
 					</div>
 				</div>
-				<ContentContainer
-					size="wide"
-					className="pt-[180px] pb-30 md:pt-53.5">
+				<ContentContainer size="wide" className="pt-20 pb-30 md:pt-44">
 					<div className="flex flex-col gap-10 items-center relative">
 						<div className="flex flex-col gap-10 items-center not-italic relative shrink-0 text-center">
-							<p className={`${typeStyles.heroTitleLarge} max-w-[688px] relative shrink-0 text-black w-full`}>
+							<p
+								className={`${typeStyles.heroTitleLarge} max-w-[688px] relative shrink-0 text-black w-full`}>
 								<span className="leading-normal text-[#0f251b]">
 									Global sourcing for
 								</span>
@@ -78,7 +73,8 @@ export default function GlobalBuyers() {
 									Kenyan ingredients
 								</span>
 							</p>
-							<p className={`${typeStyles.bodyLead} max-w-[488px] relative shrink-0 text-green-500 w-full`}>
+							<p
+								className={`${typeStyles.bodyLead} max-w-[488px] relative shrink-0 text-green-500 w-full`}>
 								Connect directly with reliable, sustainable
 								supply chains. From our farmers to your
 								processing facilities worldwide.
@@ -96,13 +92,15 @@ export default function GlobalBuyers() {
 											<GlobalBuyersSvgs.GlobalBuyersSvg01 />
 										</div>
 									</div>
-									<p className={`flex-[1_0_0] ${typeStyles.body} leading-normal min-w-px not-italic pr-[220px] relative text-[#808080]`}>
+									<p
+										className={`flex-[1_0_0] ${typeStyles.body} leading-normal min-w-px not-italic pr-[220px] relative text-[#808080]`}>
 										email@example.com
 									</p>
 									<div
 										className="absolute bg-green-500 flex items-start justify-center px-6 py-3 right-[9px] rounded-[40px] top-[9px]"
 										data-name="order">
-										<p className={`${typeStyles.body} not-italic relative shrink-0 text-[#eee] text-center whitespace-nowrap`}>
+										<p
+											className={`${typeStyles.body} not-italic relative shrink-0 text-[#eee] text-center whitespace-nowrap`}>
 											Reach out to our team
 										</p>
 									</div>
@@ -174,16 +172,20 @@ export default function GlobalBuyers() {
 					<div className="grid gap-12 lg:grid-cols-2 lg:items-start">
 						<div className="flex flex-col gap-10 items-start not-italic relative w-full max-w-[525px]">
 							<div className="flex flex-col gap-10 items-start relative shrink-0">
-								<p className={`${typeStyles.body} relative shrink-0 text-orange-500 whitespace-nowrap`}>
+								<p
+									className={`${typeStyles.body} relative shrink-0 text-orange-500 whitespace-nowrap`}>
 									Kenya Grows It
 								</p>
-								<div className={`${typeStyles.heroTitleLarge} leading-zero relative shrink-0 text-[#c2ce86] w-full max-w-[519px] whitespace-pre-wrap`}>
+								<div
+									className={`${typeStyles.heroTitleLarge} leading-zero relative shrink-0 text-[#c2ce86] w-full max-w-[519px] whitespace-pre-wrap`}>
 									<p className="leading-normal mb-0">{`Where great ingredients `}</p>
 									<p className="leading-normal">begin</p>
 								</div>
-								<p className={`${typeStyles.bodyLead} relative shrink-0 text-white w-full max-w-[515px]`}>{`Kenya's diverse climates and fertile soils produce a rich variety of herbs, spices, fruits, and vegetables year-round. Yet much of this agricultural bounty leaves the country with little processing or value addition`}</p>
+								<p
+									className={`${typeStyles.bodyLead} relative shrink-0 text-white w-full max-w-[515px]`}>{`Kenya's diverse climates and fertile soils produce a rich variety of herbs, spices, fruits, and vegetables year-round. Yet much of this agricultural bounty leaves the country with little processing or value addition.`}</p>
 							</div>
-							<p className={`${typeStyles.body} relative shrink-0 text-white w-full max-w-[515px]`}>
+							<p
+								className={`${typeStyles.body} relative shrink-0 text-white w-full max-w-[515px]`}>
 								Farm to Feed works with farmers and local
 								processors to bring Kenyan ingredients to global
 								markets — while ensuring more value stays where
@@ -226,16 +228,17 @@ export default function GlobalBuyers() {
 			<div
 				className="bg-white min-h-[600px] md:min-h-[750px] overflow-clip relative shrink-0 w-full"
 				data-name="Wireframe - 11">
-				<ContentContainer
-					size="wide"
-					className={sectionSpacing.roomy}>
+				<ContentContainer size="wide" className="pt-48 pb-24">
 					<div className="flex flex-col gap-8 items-center relative w-full">
 						<div className="flex flex-col gap-8 items-center max-w-[1052px] not-italic relative shrink-0 text-center w-full">
-							<p className={`${typeStyles.body} font-medium relative shrink-0 text-orange-500 w-full max-w-[718px]`}>{` We Source It`}</p>
-							<p className={`${typeStyles.heroTitle} relative shrink-0 text-[#0f251b] w-full`}>
+							<p
+								className={`${typeStyles.body} font-medium relative shrink-0 text-orange-500 w-full max-w-[718px]  -mb-5`}>{` We Source It`}</p>
+							<p
+								className={`${typeStyles.heroTitle} relative shrink-0 text-[#0f251b] w-full`}>
 								Your Partner in Flavour
 							</p>
-							<p className={`${typeStyles.body} relative shrink-0 text-green-500 w-full max-w-[718px]`}>
+							<p
+								className={`${typeStyles.body} relative shrink-0 text-green-500 w-full max-w-[718px]`}>
 								With its rich agricultural diversity, Kenya
 								offers exceptional potential for ingredient
 								sourcing. We supply what you need.
@@ -295,7 +298,8 @@ export default function GlobalBuyers() {
 													</div>
 												</div>
 											</div>
-											<p className={`${typeStyles.cardTitle} not-italic relative shrink-0 text-black text-center whitespace-nowrap`}>
+											<p
+												className={`${typeStyles.cardTitle} not-italic relative shrink-0 text-black text-center whitespace-nowrap`}>
 												Single origin
 											</p>
 										</div>
@@ -338,7 +342,8 @@ export default function GlobalBuyers() {
 													</div>
 												</div>
 											</div>
-											<p className={`${typeStyles.cardTitle} not-italic relative shrink-0 text-black text-center whitespace-nowrap`}>
+											<p
+												className={`${typeStyles.cardTitle} not-italic relative shrink-0 text-black text-center whitespace-nowrap`}>
 												Sustainably sourced
 											</p>
 										</div>
@@ -357,7 +362,8 @@ export default function GlobalBuyers() {
 											<div className="h-38.5 relative shrink-0 w-39.5">
 												<GlobalBuyersSvgs.GlobalBuyersSvg13 />
 											</div>
-											<p className={`${typeStyles.cardTitle} not-italic relative shrink-0 text-black text-center whitespace-nowrap`}>
+											<p
+												className={`${typeStyles.cardTitle} not-italic relative shrink-0 text-black text-center whitespace-nowrap`}>
 												Traceable to farmers
 											</p>
 										</div>
@@ -395,7 +401,8 @@ export default function GlobalBuyers() {
 													</div>
 												</div>
 											</div>
-											<p className={`${typeStyles.cardTitle} not-italic relative shrink-0 text-black text-center whitespace-nowrap`}>
+											<p
+												className={`${typeStyles.cardTitle} not-italic relative shrink-0 text-black text-center whitespace-nowrap`}>
 												Local value addition
 											</p>
 										</div>
@@ -405,11 +412,7 @@ export default function GlobalBuyers() {
 						</div>
 					</div>
 				</ContentContainer>
-				<div className="hidden" data-name="order">
-					<p className={`${typeStyles.body} not-italic relative shrink-0 text-[#eee] text-center whitespace-nowrap`}>
-						Learn More
-					</p>
-				</div>
+
 				<div
 					className="absolute flex inset-[-16.55%_-0.63%_90.18%_-3.75%] items-center justify-center"
 					style={{
@@ -428,15 +431,18 @@ export default function GlobalBuyers() {
 				data-name="Wireframe - 42">
 				<ContentContainer
 					size="wide"
-					className={`flex flex-col items-center gap-[80px] ${sectionSpacing.default}`}>
+					className={`flex flex-col items-center gap-[80px] py-2`}>
 					<div className="flex flex-col gap-8 items-center max-w-[1052px] not-italic relative text-center w-full">
-						<p className={`${typeStyles.body} font-medium relative shrink-0 text-orange-500 w-full max-w-[718px]`}>
+						<p
+							className={`${typeStyles.body} font-medium relative shrink-0 text-orange-500 w-full max-w-[718px] -mb-5`}>
 							We Connect It
 						</p>
-						<p className={`${typeStyles.heroTitle} relative shrink-0 text-[#0f251b] w-full`}>
+						<p
+							className={`${typeStyles.heroTitle} relative shrink-0 text-[#0f251b] w-full`}>
 							From Kenyan farms to global buyers
 						</p>
-						<p className={`${typeStyles.body} relative shrink-0 text-green-500 w-full max-w-[718px]`}>
+						<p
+							className={`${typeStyles.body} relative shrink-0 text-green-500 w-full max-w-[718px]`}>
 							We build demand-driven supply chains. Our model
 							matches your ingredient needs with reliable supply
 							from our trusted network. We offer different product
@@ -449,18 +455,21 @@ export default function GlobalBuyers() {
 							<ProductCard key={ProductCard.name} />
 						))}
 					</div>
-					<div className="flex flex-col gap-8 items-center max-w-[1052px] not-italic relative text-center w-full">
-						<p className={`${typeStyles.body} font-medium relative shrink-0 text-orange-500 w-full max-w-[718px]`}>
+					{/* <div className="flex flex-col gap-8 items-center max-w-[1052px] not-italic relative text-center w-full">
+						<p
+							className={`${typeStyles.body} font-medium relative shrink-0 text-orange-500 w-full max-w-[718px]`}>
 							Global Readiness
 						</p>
-						<p className={`${typeStyles.heroTitle} relative shrink-0 text-[#0f251b] w-full`}>
+						<p
+							className={`${typeStyles.heroTitle} relative shrink-0 text-[#0f251b] w-full`}>
 							Our Export Ready Products
 						</p>
-						<p className={`${typeStyles.body} relative shrink-0 text-green-500 w-full max-w-[718px]`}>
+						<p
+							className={`${typeStyles.body} relative shrink-0 text-green-500 w-full max-w-[718px]`}>
 							Our current batch is processed, certified, and ready
 							for immediate global shipment to your facility.
 						</p>
-					</div>
+					</div> */}
 				</ContentContainer>
 			</div>
 			{/* Quality */}
@@ -472,13 +481,16 @@ export default function GlobalBuyers() {
 					className={sectionSpacing.default}>
 					<div className="flex flex-col gap-8 items-center relative w-full">
 						<div className="flex flex-col gap-8 items-center max-w-[1052px] not-italic relative shrink-0 text-center w-full">
-							<p className={`${typeStyles.body} font-medium relative shrink-0 text-orange-500 w-full max-w-[718px]`}>
+							<p
+								className={`${typeStyles.body} font-medium relative shrink-0 text-orange-500 w-full max-w-[718px]`}>
 								You Receive It
 							</p>
-							<p className={`${typeStyles.heroTitle} relative shrink-0 text-[#0f251b] w-full`}>
+							<p
+								className={`${typeStyles.heroTitle} relative shrink-0 text-[#0f251b] w-full`}>
 								Quality You Can Trust
 							</p>
-							<p className={`${typeStyles.body} relative shrink-0 text-green-500 w-full max-w-[718px]`}>
+							<p
+								className={`${typeStyles.body} relative shrink-0 text-green-500 w-full max-w-[718px]`}>
 								We work closely with farmers and processors to
 								ensure ingredients meet international quality
 								standards.
@@ -494,7 +506,8 @@ export default function GlobalBuyers() {
 					</div>
 				</ContentContainer>
 				<div className="hidden" data-name="order">
-					<p className={`${typeStyles.body} not-italic relative shrink-0 text-[#eee] text-center whitespace-nowrap`}>
+					<p
+						className={`${typeStyles.body} not-italic relative shrink-0 text-[#eee] text-center whitespace-nowrap`}>
 						Learn More
 					</p>
 				</div>
@@ -511,13 +524,16 @@ export default function GlobalBuyers() {
 					size="wide"
 					className={`flex flex-col gap-16 md:gap-[96px] ${sectionSpacing.default}`}>
 					<div className="flex flex-col gap-8 items-start max-w-[737px] not-italic relative w-full">
-						<p className={`${typeStyles.caption} relative shrink-0 text-orange-500 w-full max-w-[624px]`}>
+						<p
+							className={`${typeStyles.caption} relative shrink-0 text-orange-500 w-full max-w-[624px]`}>
 							You bring it to the World
 						</p>
-						<p className={`${typeStyles.heroTitle} relative shrink-0 text-[#0f251b] w-full`}>
+						<p
+							className={`${typeStyles.heroTitle} relative shrink-0 text-[#0f251b] w-full`}>
 							Sourcing that strengthens the food system.
 						</p>
-						<p className={`${typeStyles.bodyLead} relative shrink-0 text-green-500 text-lg md:text-xl w-full max-w-[624px]`}>
+						<p
+							className={`${typeStyles.bodyLead} relative shrink-0 text-green-500 text-lg md:text-xl w-full max-w-[624px]`}>
 							Our ingredients contribute to a more resilient and
 							sustainable global food system. We operate on six
 							core impact principles.
@@ -610,10 +626,12 @@ export default function GlobalBuyers() {
 							</div>
 						</div>
 						<div className="flex flex-col gap-10 items-center relative rounded-[40px] w-full z-10">
-							<p className={`${typeStyles.heroTitle} not-italic relative shrink-0 text-yellow-200 text-center w-full max-w-[800px]`}>
+							<p
+								className={`${typeStyles.heroTitle} not-italic relative shrink-0 text-yellow-200 text-center w-full max-w-[800px]`}>
 								Ready to source differently?
 							</p>
-							<div className={`${typeStyles.bodyLead} leading-zero not-italic relative shrink-0 text-center text-white w-full max-w-148 whitespace-pre-wrap`}>
+							<div
+								className={`${typeStyles.bodyLead} leading-zero not-italic relative shrink-0 text-center text-white w-full max-w-148 whitespace-pre-wrap`}>
 								<p className="leading-copy mb-0">{`Farm to Feed partners with global buyers looking for reliable sourcing, transparent supply chains, and ingredients that deliver both quality and impact. `}</p>
 								<p>
 									<span className="leading-copy text-orange-500">
@@ -634,13 +652,15 @@ export default function GlobalBuyers() {
 												<GlobalBuyersSvgs.GlobalBuyersSvg21 />
 											</div>
 										</div>
-										<p className={`flex-[1_0_0] ${typeStyles.body} leading-normal min-w-px not-italic pr-[220px] relative text-[#808080]`}>
+										<p
+											className={`flex-[1_0_0] ${typeStyles.body} leading-normal min-w-px not-italic pr-[220px] relative text-[#808080]`}>
 											email@example.com
 										</p>
 										<div
 											className="absolute bg-orange-500 flex items-start justify-center px-6 py-3 right-[9px] rounded-[40px] top-[9px]"
 											data-name="order">
-											<p className={`${typeStyles.body} not-italic relative shrink-0 text-[#f7f7f7] text-center whitespace-nowrap`}>
+											<p
+												className={`${typeStyles.body} not-italic relative shrink-0 text-[#f7f7f7] text-center whitespace-nowrap`}>
 												Reach out to our team
 											</p>
 										</div>

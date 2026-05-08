@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import * as SellWithUsSvgs from "../imports/SellWithUs/sellWithUs-inline-svgs";
 import {
 	Frame26,
@@ -9,6 +10,7 @@ import {
 	Group24,
 	Group23,
 } from "../imports/SellWithUs-3/SellWithUs";
+import { Order4, Order5 } from "../imports/BuyFromUsLocal/BuyFromUsLocal";
 import svgPaths from "../imports/SellWithUs-3/svg-q1xyqaotrq";
 import imgVector from "../../../assets/figma/cacf4fb7f428c5409ba62d0f3bbae7888dd7f455.png?url";
 import imgVector1 from "../../../assets/figma/4e759b9c5633458b4d75d12bad0d3db64761078b.png?url";
@@ -59,15 +61,65 @@ const supplierProcessSteps = [
 		body: "We deliver your produce to your doorstep in your specified delivery window. You can also collect your produce from our warehouse",
 	},
 ];
-const supplierStories = [Group22, Group24, Group23];
+const supplierStories = [
+	{
+		id: "peter",
+		StoryCard: Group22,
+	},
+	{
+		id: "jane-training",
+		StoryCard: Group24,
+	},
+	{
+		id: "jane-market-access",
+		StoryCard: Group23,
+	},
+	{
+		id: "supplier-community-impact",
+		StoryCard: Group24,
+	},
+];
+
 export default function SellWithUs() {
+	const [activeStoryIndex, setActiveStoryIndex] = useState(1);
+
+	const getStoryAtOffset = (offset: number) => {
+		const storyCount = supplierStories.length;
+		const storyIndex =
+			(activeStoryIndex + offset + storyCount) % storyCount;
+
+		return supplierStories[storyIndex];
+	};
+
+	const showPreviousStory = () => {
+		setActiveStoryIndex((currentIndex) =>
+			currentIndex === 0 ? supplierStories.length - 1 : currentIndex - 1,
+		);
+	};
+
+	const showNextStory = () => {
+		setActiveStoryIndex(
+			(currentIndex) => (currentIndex + 1) % supplierStories.length,
+		);
+	};
+
+	useEffect(() => {
+		const autoplayTimer = window.setInterval(() => {
+			showNextStory();
+		}, 3000);
+
+		return () => {
+			window.clearInterval(autoplayTimer);
+		};
+	}, [activeStoryIndex]);
+
 	return (
 		<div
-			className="bg-white flex flex-col items-center relative w-full min-h-screen"
+			className="bg-olive-100 flex flex-col items-center relative w-full min-h-screen"
 			data-name="Sell with us">
 			{/* Hero */}
 			<div
-				className="bg-white min-h-[600px] md:min-h-[1034px] overflow-clip relative shrink-0 w-full"
+				className="bg-olive-100 min-h-[600px] md:min-h-[1034px] overflow-clip relative shrink-0 w-full"
 				data-name="Wireframe - 44">
 				<ContentContainer
 					size="wide"
@@ -78,7 +130,8 @@ export default function SellWithUs() {
 								className="absolute h-[36px] left-[6px] top-[124px] w-[633px]"
 								data-name="objects"
 							/>
-							<div className={`${typeStyles.heroTitleLarge} not-italic relative shrink-0 text-black text-center w-full`}>
+							<div
+								className={`${typeStyles.heroTitleLarge} not-italic relative shrink-0 text-black text-center w-full`}>
 								<p className="mb-0 text-[#0f251b]">
 									Making farming
 								</p>
@@ -86,7 +139,8 @@ export default function SellWithUs() {
 									Fair and Rewarding
 								</p>
 							</div>
-							<div className={`${typeStyles.body} not-italic relative shrink-0 text-green-500 text-sm md:text-base text-center w-full max-w-[656px]`}>
+							<div
+								className={`${typeStyles.body} not-italic relative shrink-0 text-green-500 text-sm md:text-base text-center w-full max-w-[656px]`}>
 								<p className="leading-copy mb-0">{`We want to keep your hard work in the human food chain, making sure nothing goes to waste. With us, it's easy to access the market and sell your entire harvest -including the odd-shaped and surplus produce- at fair price.`}</p>
 								<p className="leading-copy">
 									{` `}
@@ -136,16 +190,16 @@ export default function SellWithUs() {
 			<div
 				className="bg-white overflow-clip relative shrink-0 w-full"
 				data-name="Wireframe - 55">
-				<ContentContainer
-					size="wide"
-					className="pt-[120px] pb-[96px] md:pt-[180px] lg:pt-[234px] lg:pb-30">
+				<ContentContainer size="wide" className="py-24">
 					<div className="flex flex-col gap-8 items-center relative w-full">
 						<div className="flex flex-col gap-8 items-center relative w-full">
 							<div className="flex flex-col gap-8 items-center max-w-[1052px] not-italic relative shrink-0 text-center w-full">
-								<p className={`${typeStyles.heroTitle} relative shrink-0 text-[#0f251b] w-full`}>
+								<p
+									className={`${typeStyles.heroTitle} relative shrink-0 text-[#0f251b] w-full`}>
 									Our Offering
 								</p>
-								<p className={`${typeStyles.body} relative shrink-0 text-green-500 w-full`}>
+								<p
+									className={`${typeStyles.body} relative shrink-0 text-orange-500 w-full`}>
 									Farmers who supply to Farm to Feed enjoy:
 								</p>
 							</div>
@@ -155,7 +209,8 @@ export default function SellWithUs() {
 										<div className="bg-[#fbfafa] relative rounded-[30px] w-full lg:flex-1">
 											<div className="flex flex-col gap-[27px] items-start p-[28px] md:p-[48px] relative size-full">
 												<offering.Header />
-												<p className={`${typeStyles.body} relative shrink-0 text-green-500 w-full`}>
+												<p
+													className={`${typeStyles.body} relative shrink-0 text-green-500 w-full`}>
 													{offering.body}
 												</p>
 											</div>
@@ -169,7 +224,8 @@ export default function SellWithUs() {
 										<div className="bg-[#fbfafa] relative rounded-[30px] w-full md:flex-1">
 											<div className="flex flex-col gap-[27px] items-start p-[28px] md:p-[48px] relative size-full">
 												<offering.Header />
-												<p className={`${typeStyles.body} relative shrink-0 text-green-500 w-full`}>
+												<p
+													className={`${typeStyles.body} relative shrink-0 text-green-500 w-full`}>
 													{offering.body}
 												</p>
 											</div>
@@ -183,279 +239,23 @@ export default function SellWithUs() {
 				<div
 					className="absolute bg-black flex items-start left-[calc(41.67%+6px)] px-4 py-2 rounded-[40px] top-[1649px]"
 					data-name="order">
-					<p className={`${typeStyles.body} not-italic relative shrink-0 text-[#eee] text-center whitespace-nowrap`}>
+					<p
+						className={`${typeStyles.body} not-italic relative shrink-0 text-[#eee] text-center whitespace-nowrap`}>
 						Learn More
 					</p>
 				</div>
 			</div>
 			{/* How it works */}
 			<div
-				className="bg-white min-h-[777px] overflow-clip relative shrink-0 w-full"
+				className="bg-white  overflow-clip relative shrink-0 w-full"
 				data-name="Wireframe - 42">
-				<ContentContainer size="wide" className={sectionSpacing.default}>
+				<ContentContainer size="wide" className="pb-24">
 					<div className="relative lg:min-h-[585px]">
 						<div className="flex flex-col items-center max-w-[1052px] w-full mx-auto lg:-translate-x-1/2 lg:absolute lg:left-1/2 lg:top-[75px]">
-							<p className={`${typeStyles.heroTitle} not-italic relative shrink-0 text-[#0f251b] text-center w-full`}>
+							<p
+								className={`${typeStyles.heroTitle} not-italic relative shrink-0 text-[#0f251b] text-center w-full`}>
 								How Does it Work
 							</p>
-						</div>
-						<div className="relative z-10 grid gap-6 pt-[48px] md:grid-cols-2 lg:grid-cols-4 lg:pt-[170px]">
-							{supplierProcessSteps.map((step, index) => (
-								<div className="flex gap-4 rounded-[24px] bg-white/90 p-5 shadow-sm">
-									<div className={`${typeStyles.caption} flex size-10 shrink-0 items-center justify-center rounded-full bg-green-500 font-semibold text-white`}>
-										{index + 1}
-									</div>
-									<p className={`${typeStyles.caption} font-normal not-italic text-black`}>
-										{step.body}
-									</p>
-								</div>
-							))}
-						</div>
-						<div
-							className="absolute hidden h-[148.815px] items-center justify-center left-[141px] top-[331.01px] w-[829.172px] lg:flex"
-							style={
-								{
-									"--transform-inner-width": "1185",
-									"--transform-inner-height": "21",
-								} as React.CSSProperties
-							}>
-							<div className="flex-none rotate-90">
-								<div
-									className="h-[829.172px] relative w-[148.815px]"
-									data-name="Vector">
-									<SellWithUsSvgs.SellWithUsSvg02 />
-								</div>
-							</div>
-						</div>
-						<div className="absolute hidden h-[198.445px] left-[calc(16.67%+93px)] top-[218px] w-[203.707px] lg:block">
-							<SellWithUsSvgs.SellWithUsSvg03 />
-						</div>
-						<div className="absolute hidden h-[198.445px] left-[calc(41.67%+54px)] top-[365.92px] w-[203.707px] lg:block">
-							<SellWithUsSvgs.SellWithUsSvg04 />
-						</div>
-						<div className="absolute hidden lg:contents left-[calc(66.67%+15px)] top-[248px]">
-							<div
-								className="absolute h-[198.445px] left-[calc(66.67%+15px)] top-[248px] w-[203.707px]"
-								data-name="Vector">
-								<SellWithUsSvgs.SellWithUsSvg05 />
-							</div>
-							<div
-								className="absolute inset-[34.62%_25.83%_60.49%_72.29%]"
-								data-name="Vector">
-								<SellWithUsSvgs.SellWithUsSvg06 />
-							</div>
-							<div
-								className="absolute contents inset-[40.12%_23.05%_47.84%_69.07%]"
-								data-name="Group">
-								<div
-									className="absolute inset-[44.69%_25.25%_54.61%_74.6%]"
-									data-name="Vector">
-									<SellWithUsSvgs.SellWithUsSvg07 />
-								</div>
-								<div
-									className="absolute inset-[45.45%_23.95%_53.88%_75.98%]"
-									data-name="Vector">
-									<SellWithUsSvgs.SellWithUsSvg08 />
-								</div>
-								<div
-									className="absolute inset-[44.23%_25.03%_54.82%_74.79%]"
-									data-name="Vector">
-									<SellWithUsSvgs.SellWithUsSvg09 />
-								</div>
-								<div
-									className="absolute inset-[43.85%_23.67%_55.23%_75.79%]"
-									data-name="Vector">
-									<SellWithUsSvgs.SellWithUsSvg10 />
-								</div>
-								<div
-									className="absolute inset-[44.85%_23.74%_49.5%_74.59%]"
-									data-name="Vector">
-									<SellWithUsSvgs.SellWithUsSvg11 />
-								</div>
-								<div
-									className="absolute inset-[42.94%_23.59%_49.26%_74.47%]"
-									data-name="Vector">
-									<SellWithUsSvgs.SellWithUsSvg12 />
-								</div>
-								<div
-									className="absolute inset-[44.08%_24.94%_54.6%_74.52%]"
-									data-name="Vector">
-									<SellWithUsSvgs.SellWithUsSvg13 />
-								</div>
-								<div
-									className="absolute inset-[45.09%_23.87%_53.6%_75.59%]"
-									data-name="Vector">
-									<SellWithUsSvgs.SellWithUsSvg14 />
-								</div>
-								<div
-									className="absolute inset-[46.21%_23.99%_52.75%_75.41%]"
-									data-name="Vector">
-									<SellWithUsSvgs.SellWithUsSvg15 />
-								</div>
-								<div
-									className="absolute inset-[45.1%_25.28%_54.03%_74.35%]"
-									data-name="Vector">
-									<SellWithUsSvgs.SellWithUsSvg16 />
-								</div>
-								<div
-									className="absolute inset-[45.78%_25.51%_53.39%_74.27%]"
-									data-name="Vector">
-									<SellWithUsSvgs.SellWithUsSvg17 />
-								</div>
-								<div
-									className="absolute inset-[46.32%_25.75%_53.24%_74.17%]"
-									data-name="Vector">
-									<SellWithUsSvgs.SellWithUsSvg18 />
-								</div>
-								<div
-									className="absolute inset-[46.44%_27.01%_50.41%_71.62%]"
-									data-name="Vector">
-									<SellWithUsSvgs.SellWithUsSvg19 />
-								</div>
-								<div
-									className="absolute h-[80px] left-[calc(75%-59px)] top-[319px] w-[35px]"
-									data-name="Vector">
-									<SellWithUsSvgs.SellWithUsSvg20 />
-								</div>
-								<div
-									className="absolute inset-[46.88%_27.48%_51.23%_72.15%]"
-									data-name="Vector">
-									<SellWithUsSvgs.SellWithUsSvg21 />
-								</div>
-								<div
-									className="absolute inset-[46.58%_27.35%_50.8%_72.18%]"
-									data-name="Vector">
-									<SellWithUsSvgs.SellWithUsSvg22 />
-								</div>
-								<div
-									className="absolute inset-[46.67%_27.19%_51.16%_72.35%]"
-									data-name="Vector">
-									<SellWithUsSvgs.SellWithUsSvg23 />
-								</div>
-								<div
-									className="absolute inset-[47.55%_27.88%_50.89%_71.69%]"
-									data-name="Vector">
-									<SellWithUsSvgs.SellWithUsSvg24 />
-								</div>
-								<div
-									className="absolute inset-[46.63%_27.58%_51.06%_71.99%]"
-									data-name="Vector">
-									<SellWithUsSvgs.SellWithUsSvg25 />
-								</div>
-								<div
-									className="absolute inset-[47.52%_27.61%_50.83%_71.9%]"
-									data-name="Vector">
-									<SellWithUsSvgs.SellWithUsSvg26 />
-								</div>
-								<div
-									className="absolute inset-[40.12%_26.08%_48.42%_71.86%]"
-									data-name="Vector">
-									<SellWithUsSvgs.SellWithUsSvg27 />
-								</div>
-								<div
-									className="absolute inset-[42.8%_26.6%_49.96%_72.25%]"
-									data-name="Vector">
-									<SellWithUsSvgs.SellWithUsSvg28 />
-								</div>
-								<div
-									className="absolute inset-[49.23%_25.2%_49.89%_74.55%]"
-									data-name="Vector">
-									<SellWithUsSvgs.SellWithUsSvg29 />
-								</div>
-								<div
-									className="absolute inset-[49.31%_24.79%_50.24%_74.84%]"
-									data-name="Vector">
-									<SellWithUsSvgs.SellWithUsSvg30 />
-								</div>
-								<div
-									className="absolute inset-[49.79%_24.54%_50.2%_75.46%]"
-									data-name="Vector">
-									<SellWithUsSvgs.SellWithUsSvg31 />
-								</div>
-								<div
-									className="absolute flex inset-[43.21%_23.89%_49.39%_73.96%] items-center justify-center"
-									style={{
-										containerType: "size",
-									}}>
-									<div className="-scale-x-100 flex-none h-[100cqh] w-[100cqw]">
-										<div className="relative size-full">
-											<SellWithUsSvgs.SellWithUsSvg32 />
-										</div>
-									</div>
-								</div>
-								<div
-									className="absolute inset-[42.66%_27.67%_50.29%_69.5%]"
-									data-name="Vector">
-									<SellWithUsSvgs.SellWithUsSvg33 />
-								</div>
-								<div
-									className="absolute inset-[43.72%_28.96%_55.72%_70.53%]"
-									data-name="Vector">
-									<SellWithUsSvgs.SellWithUsSvg34 />
-								</div>
-								<div
-									className="absolute inset-[44.26%_29.72%_55.36%_70.06%]"
-									data-name="Vector">
-									<SellWithUsSvgs.SellWithUsSvg35 />
-								</div>
-								<div
-									className="absolute inset-[44.71%_29.92%_54.8%_69.72%]"
-									data-name="Vector">
-									<SellWithUsSvgs.SellWithUsSvg36 />
-								</div>
-								<div
-									className="absolute inset-[44.78%_28.44%_51.03%_70.19%]"
-									data-name="Vector">
-									<SellWithUsSvgs.SellWithUsSvg37 />
-								</div>
-								<div
-									className="absolute inset-[43.98%_27.88%_52.09%_70.93%]"
-									data-name="Vector">
-									<SellWithUsSvgs.SellWithUsSvg38 />
-								</div>
-								<div
-									className="absolute flex inset-[41.7%_24.86%_50.49%_72.29%] items-center justify-center"
-									style={{
-										containerType: "size",
-									}}>
-									<div className="flex-none h-[hypot(27.6394cqw,89.8061cqh)] rotate-[-11.76deg] w-[hypot(72.3606cqw,-10.1939cqh)]">
-										<div className="relative size-full">
-											<SellWithUsSvgs.SellWithUsSvg39 />
-										</div>
-									</div>
-								</div>
-								<div
-									className="absolute inset-[46.2%_27.16%_51.98%_72.36%]"
-									data-name="Vector">
-									<SellWithUsSvgs.SellWithUsSvg40 />
-								</div>
-								<div
-									className="absolute inset-[45.57%_23.54%_48.87%_69.5%]"
-									data-name="Vector">
-									<SellWithUsSvgs.SellWithUsSvg41 />
-								</div>
-								<div
-									className="absolute flex inset-[48.72%_23.05%_47.84%_69.07%] items-center justify-center"
-									style={{
-										containerType: "size",
-									}}>
-									<div className="-scale-x-100 flex-none h-[hypot(0.759955cqw,83.7893cqh)] rotate-[-2.2deg] w-[hypot(-99.24cqw,16.2107cqh)]">
-										<div
-											className="relative size-full"
-											data-name="Vector">
-											<SellWithUsSvgs.SellWithUsSvg42 />
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div className="absolute hidden h-[198.445px] left-[52px] top-[355px] w-[203.707px] lg:block">
-							<SellWithUsSvgs.SellWithUsSvg43 />
-						</div>
-						<div
-							className="absolute hidden h-[18.79px] left-[calc(50%+35px)] top-[426px] w-[26.57px] lg:block"
-							data-name="Capa_1">
-							<SellWithUsSvgs.SellWithUsSvg44 />
 						</div>
 					</div>
 				</ContentContainer>
@@ -561,20 +361,75 @@ export default function SellWithUs() {
 				<ContentContainer
 					size="wide"
 					className={`relative z-10 flex flex-col items-center gap-[56px] md:gap-[104px] ${sectionSpacing.default}`}>
-					<div className={`${typeStyles.sectionTitleLarge} not-italic text-[#0f251b] text-center w-full max-w-[769px] whitespace-pre-wrap`}>
+					<div
+						className={`${typeStyles.sectionTitleLarge} not-italic text-[#0f251b] text-center w-full max-w-[769px] whitespace-pre-wrap`}>
 						<p className="leading-normal mb-0">{`Discover how farmers `}</p>
 						<p className="leading-normal">
 							are transforming communities
 						</p>
 					</div>
-					<div className="flex flex-wrap gap-8 items-center justify-center leading-zero relative w-full">
-						{supplierStories.map((StoryCard) => (
-							<div
-								className="relative h-[220px] w-[320px] overflow-visible sm:h-[300px] sm:w-[480px] md:h-auto md:w-auto [&>*]:origin-top-left [&>*]:scale-50 sm:[&>*]:scale-75 md:[&>*]:scale-100"
-								key={StoryCard.name}>
-								<StoryCard />
+					<div className="relative">
+						<div className="relative w-screen overflow-hidden pb-4 pt-2">
+							<div className="relative hidden h-[438px] leading-zero md:block">
+								{[-1, 0, 1].map((offset) => {
+									const story = getStoryAtOffset(offset);
+									const StoryCard = story.StoryCard;
+									const storyLeft =
+										offset === 0
+											? "50%"
+											: offset < 0
+												? "-320px"
+												: "calc(100% - 320px)";
+									const storyTransform =
+										offset === 0
+											? "translateX(-50%)"
+											: "none";
+
+									return (
+										<div
+											aria-hidden={offset !== 0}
+											className={`absolute top-0 h-[422px] w-[640px] overflow-visible transition-transform duration-300 [&>*]:origin-top-left [&>*]:scale-100 ${offset === 0 ? "" : "hidden lg:block"}`}
+											key={`${story.id}-${offset}`}
+											style={{
+												left: storyLeft,
+												transform: storyTransform,
+											}}>
+											<StoryCard />
+										</div>
+									);
+								})}
 							</div>
-						))}
+							<div className="flex justify-center leading-zero md:hidden">
+								{(() => {
+									const story = getStoryAtOffset(0);
+									const StoryCard = story.StoryCard;
+
+									return (
+										<div
+											className="relative h-[230px] w-[320px] overflow-visible [&>*]:origin-top-left [&>*]:scale-50"
+											key={story.id}>
+											<StoryCard />
+										</div>
+									);
+								})()}
+							</div>
+						</div>
+						<div className="relative z-20 mt-2 flex items-center justify-center gap-4">
+							<button
+								aria-label="Show previous farmer story"
+								className="group rounded-[40px] bg-transparent border-0 p-0 transition-transform duration-200 hover:-translate-y-0.5 focus-visible:-translate-y-0.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#747c50]"
+								onClick={showPreviousStory}
+								type="button">
+								<Order4 />
+							</button>
+							<button
+								aria-label="Show next farmer story"
+								className="group rounded-[40px] bg-transparent border-0 p-0 transition-transform duration-200 hover:-translate-y-0.5 focus-visible:-translate-y-0.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#747c50]"
+								onClick={showNextStory}
+								type="button">
+								<Order5 />
+							</button>
+						</div>
 					</div>
 				</ContentContainer>
 				<div
@@ -722,10 +577,12 @@ export default function SellWithUs() {
 							</div>
 						</div>
 						<div className="flex flex-col gap-10 items-center relative rounded-[40px] z-10">
-							<p className={`${typeStyles.sectionTitleLarge} not-italic relative shrink-0 text-yellow-200 text-center w-full max-w-[800px]`}>
+							<p
+								className={`${typeStyles.sectionTitleLarge} not-italic relative shrink-0 text-yellow-200 text-center w-full max-w-[800px]`}>
 								Do you have questions?
 							</p>
-							<div className={`${typeStyles.bodyLarge} not-italic relative shrink-0 text-center text-white w-full max-w-148 whitespace-pre-wrap`}>
+							<div
+								className={`${typeStyles.bodyLarge} not-italic relative shrink-0 text-center text-white w-full max-w-148 whitespace-pre-wrap`}>
 								<p className="mb-0">
 									<span className="leading-copy">{`Do you have questions or would like to register as a farmer with us? Download the Farm to Feed Supplier App from the `}</span>
 									<span className="[text-decoration-skip-ink:none] decoration-solid leading-copy underline">
@@ -735,7 +592,8 @@ export default function SellWithUs() {
 								</p>
 								<p>
 									<span className="leading-copy">{` `}</span>
-									<span className={`${typeStyles.body} [text-decoration-skip-ink:none] decoration-solid font-medium not-italic text-orange-500 underline`}>
+									<span
+										className={`${typeStyles.body} [text-decoration-skip-ink:none] decoration-solid font-medium not-italic text-orange-500 underline`}>
 										0723 740 537
 									</span>
 								</p>
