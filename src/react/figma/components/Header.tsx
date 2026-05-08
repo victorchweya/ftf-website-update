@@ -296,7 +296,7 @@ function Order() {
 
 function Frame() {
 	return (
-		<div className="hidden md:flex gap-[25px] items-center relative shrink-0">
+		<div className="hidden lg:flex gap-[25px] items-center relative shrink-0">
 			<AboutUs />
 			<Sell />
 			<Solution />
@@ -322,7 +322,7 @@ function MobileMenu({
 	return (
 		<nav
 			aria-label="Mobile navigation"
-			className="md:hidden mt-2 overflow-hidden rounded-[28px] border border-green-100 bg-[#fefcf5] p-3 shadow-xl shadow-green-900/10"
+			className="lg:hidden mt-2 overflow-hidden rounded-[28px] border border-green-100 bg-[#fefcf5] p-3 shadow-xl shadow-green-900/10"
 			id="mobile-header-menu">
 			<div className="flex flex-col gap-1">
 				<button
@@ -438,7 +438,7 @@ export function Header() {
 						aria-controls="mobile-header-menu"
 						aria-expanded={isMobileMenuOpen}
 						aria-label={isMobileMenuOpen ? "Close navigation" : "Open navigation"}
-						className="md:hidden inline-flex size-10 shrink-0 items-center justify-center rounded-full bg-green-50 text-green-500 transition-colors hover:bg-green-100 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 focus:ring-offset-[#fefcf5]"
+						className="lg:hidden inline-flex size-10 shrink-0 items-center justify-center rounded-full bg-green-50 text-green-500 transition-colors hover:bg-green-100 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 focus:ring-offset-[#fefcf5]"
 						onClick={() => setIsMobileMenuOpen((isOpen) => !isOpen)}
 						type="button">
 						<MenuIcon isOpen={isMobileMenuOpen} />
