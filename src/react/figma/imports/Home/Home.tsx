@@ -114,21 +114,21 @@ function Header() {
 }
 
 function Frame1() {
-  return <div className="absolute h-[201px] left-[calc(8.33%+149px)] top-[592px] w-[217px]" />;
+  return <div className="absolute h-50.25 left-[calc(8.33%+149px)] top-148 w-54.25" />;
 }
 
 function Frame17() {
   return (
-    <div className="-translate-x-1/2 -translate-y-1/2 absolute content-stretch flex flex-col gap-[30px] items-center left-1/2 not-italic text-center top-[calc(50%-271px)] w-[666px]">
+    <div className="-translate-x-1/2 -translate-y-1/2 absolute content-stretch flex flex-col gap-7.5 items-center left-1/2 not-italic text-center top-[calc(50%-271px)] w-[666px]">
       <p className="font-['Fraunces',serif] font-normal leading-[normal] relative shrink-0 text-[#1e4a35] text-[64px] tracking-[1.92px] w-[544px]">Shaping the Future of Food</p>
-      <p className="font-['Rubik',sans-serif] font-normal leading-[1.68] min-w-full relative shrink-0 text-[#d78228] text-[20px] tracking-[0.6px] w-[min-content]">Connecting farmers, markets, and ingredients through smarter supply chains.</p>
+      <p className="font-['Rubik',sans-serif] font-normal leading-[1.68] min-w-full relative shrink-0 text-[#d78228] text-[20px] tracking-[0.6px] w-min">Connecting farmers, markets, and ingredients through smarter supply chains.</p>
     </div>
   );
 }
 
 function Order1() {
   return (
-    <div className="bg-[#1e4a35] col-1 content-stretch flex items-start ml-[99px] mt-[367px] px-[16px] py-[8px] relative rounded-[40px] row-1" data-name="order">
+    <div className="bg-[#1e4a35] col-1 content-stretch flex items-start ml-24.75 mt-91.75 px-[16px] py-[8px] relative rounded-[40px] row-1" data-name="order">
       <p className="font-['Rubik',sans-serif] font-normal leading-[1.68] not-italic relative shrink-0 text-[#eee] text-[16px] text-center tracking-[0.48px] whitespace-nowrap">Sell with us</p>
     </div>
   );
@@ -136,7 +136,7 @@ function Order1() {
 
 function Group35() {
   return (
-    <div className="h-[154px] relative shrink-0 w-[158px]">
+    <div className="h-38.5 relative shrink-0 w-39.5">
       <svg className="absolute block inset-0 size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 158 154">
         <g id="Group 302">
           <path d={svgPaths.p1ed68a00} fill="var(--fill-0, #707ABE)" id="Vector" />
@@ -162,14 +162,14 @@ function Frame25() {
         <p className="leading-[normal] mb-0 whitespace-pre">{`For Kenyan `}</p>
         <p className="leading-[normal] whitespace-pre">Farmers</p>
       </div>
-      <p className="font-['Rubik',sans-serif] font-normal leading-[1.68] min-w-full relative shrink-0 text-[#1e4a35] text-[16px] tracking-[0.48px] w-[min-content]">The future of food starts with you</p>
+      <p className="font-['Rubik',sans-serif] font-normal leading-[1.68] min-w-full relative shrink-0 text-[#1e4a35] text-[16px] tracking-[0.48px] w-min">The future of food starts with you</p>
     </div>
   );
 }
 
 function Frame26() {
   return (
-    <div className="col-1 content-stretch flex flex-col gap-[48px] items-center ml-[46px] mt-0 relative row-1 w-[217px]">
+    <div className="col-1 content-stretch flex flex-col gap-12 items-center ml-11.5 mt-0 relative row-1 w-54.25">
       <Group35 />
       <Frame25 />
     </div>
@@ -179,7 +179,7 @@ function Frame26() {
 function Group28() {
   return (
     <div className="grid-cols-[max-content] grid-rows-[max-content] inline-grid place-items-start relative shrink-0">
-      <div className="col-1 h-[298px] ml-0 mt-[93px] relative row-1 w-[303px]" data-name="Vector">
+      <div className="col-1 h-74.5 ml-0 mt-23.25 relative row-1 w-75.75" data-name="Vector">
         <div className="absolute inset-[-1.34%_-7.92%_-14.77%_-7.92%]">
           <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 351 346">
             <g filter="url(#filter0_d_1_1595)" id="Vector">
@@ -209,7 +209,7 @@ function Group28() {
 
 function Order2() {
   return (
-    <div className="bg-[#1e4a35] col-1 content-stretch flex items-start ml-[83px] mt-[363px] px-[16px] py-[8px] relative rounded-[40px] row-1" data-name="order">
+    <div className="bg-[#1e4a35] col-1 content-stretch flex items-start ml-20.75 mt-90.75 px-[16px] py-[8px] relative rounded-[40px] row-1" data-name="order">
       <p className="font-['Rubik',sans-serif] font-normal leading-[1.68] not-italic relative shrink-0 text-[16px] text-center text-white tracking-[0.48px] whitespace-nowrap">Buy from us</p>
     </div>
   );
@@ -217,7 +217,7 @@ function Order2() {
 
 function Group1() {
   return (
-    <div className="col-1 h-[154px] ml-0 mt-0 relative row-1 w-[158.083px]" data-name="Group">
+    <div className="col-1 h-38.5 ml-0 mt-0 relative row-1 w-[158.083px]" data-name="Group">
       <svg className="absolute block inset-0 size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 158.083 154">
         <g id="Group">
           <path d={svgPaths.p1d721980} fill="var(--fill-0, #85A687)" id="Vector" />
@@ -262,14 +262,14 @@ function Frame28() {
         <p className="leading-[normal] mb-0 whitespace-pre">{`For Kenyan `}</p>
         <p className="leading-[normal] whitespace-pre">Buyers</p>
       </div>
-      <p className="font-['Rubik',sans-serif] font-normal leading-[1.68] min-w-full relative shrink-0 text-[#1e4a35] text-[16px] tracking-[0.48px] w-[min-content]">The future of food, delivered to you</p>
+      <p className="font-['Rubik',sans-serif] font-normal leading-[1.68] min-w-full relative shrink-0 text-[#1e4a35] text-[16px] tracking-[0.48px] w-min">The future of food, delivered to you</p>
     </div>
   );
 }
 
 function Frame27() {
   return (
-    <div className="col-1 content-stretch flex flex-col gap-[48px] items-center ml-[46px] mt-0 relative row-1 w-[217px]">
+    <div className="col-1 content-stretch flex flex-col gap-12 items-center ml-11.5 mt-0 relative row-1 w-54.25">
       <Group33 />
       <Frame28 />
     </div>
@@ -279,7 +279,7 @@ function Frame27() {
 function Group26() {
   return (
     <div className="grid-cols-[max-content] grid-rows-[max-content] inline-grid place-items-start relative shrink-0">
-      <div className="col-1 h-[298px] ml-0 mt-[86px] relative row-1 w-[303px]" data-name="Vector">
+      <div className="col-1 h-74.5 ml-0 mt-21.5 relative row-1 w-75.75" data-name="Vector">
         <div className="absolute inset-[-1.34%_-7.92%_-14.77%_-7.92%]">
           <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 351 346">
             <g filter="url(#filter0_d_1_1595)" id="Vector">
@@ -309,7 +309,7 @@ function Group26() {
 
 function Order3() {
   return (
-    <div className="bg-[#1e4a35] col-1 content-stretch flex items-start ml-[92px] mt-[366px] px-[16px] py-[8px] relative rounded-[40px] row-1" data-name="order">
+    <div className="bg-[#1e4a35] col-1 content-stretch flex items-start ml-23 mt-91.5 px-[16px] py-[8px] relative rounded-[40px] row-1" data-name="order">
       <p className="font-['Rubik',sans-serif] font-normal leading-[1.68] not-italic relative shrink-0 text-[16px] text-center text-white tracking-[0.48px] whitespace-nowrap">Learn more</p>
     </div>
   );
@@ -317,7 +317,7 @@ function Order3() {
 
 function Group34() {
   return (
-    <div className="h-[154px] relative shrink-0 w-[158px]">
+    <div className="h-38.5 relative shrink-0 w-39.5">
       <svg className="absolute block inset-0 size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 158 154">
         <g id="Group 301">
           <path d={svgPaths.p1ed68a00} fill="var(--fill-0, #E0AF62)" id="Vector" />
@@ -340,14 +340,14 @@ function Frame30() {
         <p className="leading-[normal] mb-0 whitespace-pre">{`For Global `}</p>
         <p className="leading-[normal] whitespace-pre">Buyers</p>
       </div>
-      <p className="font-['Rubik',sans-serif] font-normal leading-[1.68] min-w-full relative shrink-0 text-[#1e4a35] text-[16px] tracking-[0.48px] w-[min-content]">The future of food, supplied from Kenya</p>
+      <p className="font-['Rubik',sans-serif] font-normal leading-[1.68] min-w-full relative shrink-0 text-[#1e4a35] text-[16px] tracking-[0.48px] w-min">The future of food, supplied from Kenya</p>
     </div>
   );
 }
 
 function Frame29() {
   return (
-    <div className="col-1 content-stretch flex flex-col gap-[48px] items-center ml-[46px] mt-0 relative row-1 w-[217px]">
+    <div className="col-1 content-stretch flex flex-col gap-12 items-center ml-11.5 mt-0 relative row-1 w-54.25">
       <Group34 />
       <Frame30 />
     </div>
@@ -357,7 +357,7 @@ function Frame29() {
 function Group27() {
   return (
     <div className="grid-cols-[max-content] grid-rows-[max-content] inline-grid place-items-start relative shrink-0">
-      <div className="col-1 h-[298px] ml-0 mt-[93px] relative row-1 w-[303px]" data-name="Vector">
+      <div className="col-1 h-74.5 ml-0 mt-23.25 relative row-1 w-75.75" data-name="Vector">
         <div className="absolute inset-[-1.34%_-7.92%_-14.77%_-7.92%]">
           <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 351 346">
             <g filter="url(#filter0_d_1_1595)" id="Vector">
@@ -426,7 +426,7 @@ function Order4() {
 function Frame32() {
   return (
     <div className="absolute content-stretch flex flex-col gap-[52px] items-center left-[calc(8.33%+74px)] top-[101px] w-[1052px]">
-      <div className="font-['Fraunces',serif] font-normal leading-[0] min-w-full not-italic relative shrink-0 text-[#0f251b] text-[40px] text-center tracking-[1.2px] w-[min-content]">
+      <div className="font-['Fraunces',serif] font-normal leading-[0] min-w-full not-italic relative shrink-0 text-[#0f251b] text-[40px] text-center tracking-[1.2px] w-min">
         <p className="leading-[normal] mb-0">At Farm to Feed, we believe a better food system starts with a better supply chain. One that works for</p>
         <p className="leading-[normal]">farmers, businesses, and the planet alike.</p>
       </div>
@@ -553,7 +553,7 @@ function Content() {
       <TabsMenu />
       <div className="absolute flex h-[555.649px] items-center justify-center left-[699.82px] top-[61.68px] w-[574.366px]" style={{ "--transform-inner-width": "1185", "--transform-inner-height": "21" } as React.CSSProperties}>
         <div className="flex-none rotate-[9.87deg]">
-          <div className="h-[477px] relative w-[500px]" data-name="Vector">
+          <div className="h-119.25 relative w-125" data-name="Vector">
             <svg className="absolute block inset-0 size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 500 477">
               <path d={svgPaths.p33e26280} fill="var(--fill-0, #C2CE86)" id="Vector" />
             </svg>
@@ -569,7 +569,7 @@ function Content() {
 
 function Container() {
   return (
-    <div className="content-stretch flex flex-col items-center max-w-[1280px] relative shrink-0 w-full" data-name="Container">
+    <div className="content-stretch flex flex-col items-center max-w-7xl relative shrink-0 w-full" data-name="Container">
       <Content />
     </div>
   );
@@ -594,7 +594,7 @@ function Order5() {
 function Frame33() {
   return (
     <div className="-translate-x-1/2 absolute content-stretch flex flex-col gap-[64px] items-center left-1/2 top-[615px] w-[822px]">
-      <p className="font-['Fraunces',serif] font-normal leading-[normal] min-w-full not-italic relative shrink-0 text-[#0f251b] text-[40px] text-center tracking-[1.2px] w-[min-content]">We produce excellence for all actors in the supply chain, from farmer to customer</p>
+      <p className="font-['Fraunces',serif] font-normal leading-[normal] min-w-full not-italic relative shrink-0 text-[#0f251b] text-[40px] text-center tracking-[1.2px] w-min">We produce excellence for all actors in the supply chain, from farmer to customer</p>
       <Order5 />
     </div>
   );
@@ -602,7 +602,7 @@ function Frame33() {
 
 function Group3() {
   return (
-    <div className="absolute inset-[24.59%_86.35%_27.46%_8.17%] mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[0px_0px] mask-size-[70.215px_156.009px]" style={{ maskImage: `url('${imgGroup}')` }} data-name="Group">
+    <div className="absolute inset-[24.59%_86.35%_27.46%_8.17%] mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-[0px_0px] mask-size-[70.215px_156.009px]" style={{ maskImage: `url('${imgGroup}')` }} data-name="Group">
       <div className="absolute inset-[0_0_-0.25%_0]">
         <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 70.2154 156.219">
           <g id="Group">
@@ -743,39 +743,39 @@ function ClipPathGroup3() {
 function Group6() {
   return (
     <div className="absolute contents inset-[2.62%_41.87%_38.68%_40.9%]" data-name="Group">
-      <div className="absolute inset-[2.62%_41.87%_40.49%_40.9%] mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[-6.938px_-0.116px] mask-size-[227.536px_186.368px]" style={{ maskImage: `url('${imgVector2}')` }} data-name="Vector">
+      <div className="absolute inset-[2.62%_41.87%_40.49%_40.9%] mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-[-6.938px_-0.116px] mask-size-[227.536px_186.368px]" style={{ maskImage: `url('${imgVector2}')` }} data-name="Vector">
         <svg className="absolute block inset-0 size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 220.598 184.902">
           <path d={svgPaths.p1a98fd80} fill="var(--fill-0, #4C352B)" id="Vector" />
         </svg>
       </div>
       <ClipPathGroup2 />
       <ClipPathGroup3 />
-      <div className="absolute inset-[51.93%_51.55%_39.86%_45.67%] mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[-67.979px_-160.37px] mask-size-[227.536px_186.368px]" style={{ maskImage: `url('${imgVector2}')` }} data-name="Vector">
+      <div className="absolute inset-[51.93%_51.55%_39.86%_45.67%] mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-[-67.979px_-160.37px] mask-size-[227.536px_186.368px]" style={{ maskImage: `url('${imgVector2}')` }} data-name="Vector">
         <svg className="absolute block inset-0 size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 35.6622 26.7116">
           <path d={svgPaths.p19d2af80} fill="var(--fill-0, #4C352B)" id="Vector" />
         </svg>
       </div>
-      <div className="absolute inset-[51.93%_48.83%_39.86%_48.69%] mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[-106.659px_-160.37px] mask-size-[227.536px_186.368px]" style={{ maskImage: `url('${imgVector2}')` }} data-name="Vector">
+      <div className="absolute inset-[51.93%_48.83%_39.86%_48.69%] mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-[-106.659px_-160.37px] mask-size-[227.536px_186.368px]" style={{ maskImage: `url('${imgVector2}')` }} data-name="Vector">
         <svg className="absolute block inset-0 size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 31.7885 26.7116">
           <path d={svgPaths.p1805ed80} fill="var(--fill-0, #4C352B)" id="Vector" />
         </svg>
       </div>
-      <div className="absolute inset-[43.71%_50.45%_48.07%_46.47%] mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[-78.24px_-133.656px] mask-size-[227.536px_186.368px]" style={{ maskImage: `url('${imgVector2}')` }} data-name="Vector">
+      <div className="absolute inset-[43.71%_50.45%_48.07%_46.47%] mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-[-78.24px_-133.656px] mask-size-[227.536px_186.368px]" style={{ maskImage: `url('${imgVector2}')` }} data-name="Vector">
         <svg className="absolute block inset-0 size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 39.4109 26.7116">
           <path d={svgPaths.p2ff3d580} fill="var(--fill-0, #4C352B)" id="Vector" />
         </svg>
       </div>
-      <div className="absolute inset-[43.71%_51.77%_52.71%_47.76%] mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[-94.77px_-133.674px] mask-size-[227.536px_186.368px]" style={{ maskImage: `url('${imgVector2}')` }} data-name="Vector">
+      <div className="absolute inset-[43.71%_51.77%_52.71%_47.76%] mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-[-94.77px_-133.674px] mask-size-[227.536px_186.368px]" style={{ maskImage: `url('${imgVector2}')` }} data-name="Vector">
         <svg className="absolute block inset-0 size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 5.98903 11.6349">
           <path d={svgPaths.p1e04aff0} fill="var(--fill-0, #F5DF91)" id="Vector" />
         </svg>
       </div>
-      <div className="absolute inset-[51.95%_52.87%_44.47%_46.66%] mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[-80.73px_-160.461px] mask-size-[227.536px_186.368px]" style={{ maskImage: `url('${imgVector2}')` }} data-name="Vector">
+      <div className="absolute inset-[51.95%_52.87%_44.47%_46.66%] mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-[-80.73px_-160.461px] mask-size-[227.536px_186.368px]" style={{ maskImage: `url('${imgVector2}')` }} data-name="Vector">
         <svg className="absolute block inset-0 size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 5.97122 11.6349">
           <path d={svgPaths.p314ea500} fill="var(--fill-0, #F5DF91)" id="Vector" />
         </svg>
       </div>
-      <div className="absolute inset-[51.95%_49.93%_44.72%_49.6%] mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[-118.347px_-160.463px] mask-size-[227.536px_186.368px]" style={{ maskImage: `url('${imgVector2}')` }} data-name="Vector">
+      <div className="absolute inset-[51.95%_49.93%_44.72%_49.6%] mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-[-118.347px_-160.463px] mask-size-[227.536px_186.368px]" style={{ maskImage: `url('${imgVector2}')` }} data-name="Vector">
         <svg className="absolute block inset-0 size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 5.97122 10.7917">
           <path d={svgPaths.p3d7e0700} fill="var(--fill-0, #F5DF91)" id="Vector" />
         </svg>
@@ -857,39 +857,39 @@ function ClipPathGroup6() {
 function Group13() {
   return (
     <div className="absolute contents inset-[32.63%_34.01%_39.32%_57.76%]" data-name="Group">
-      <div className="absolute inset-[32.63%_34.01%_40.18%_57.76%] mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[-3.316px_-0.056px] mask-size-[108.75px_89.073px] opacity-50" style={{ maskImage: `url('${imgVector3}')` }} data-name="Vector">
+      <div className="absolute inset-[32.63%_34.01%_40.18%_57.76%] mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-[-3.316px_-0.056px] mask-size-[108.75px_89.073px] opacity-50" style={{ maskImage: `url('${imgVector3}')` }} data-name="Vector">
         <svg className="absolute block inset-0 size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 105.431 88.3701">
           <path d={svgPaths.p39cd4b40} fill="var(--fill-0, #4C352B)" id="Vector" />
         </svg>
       </div>
       <ClipPathGroup5 />
       <ClipPathGroup6 />
-      <div className="absolute inset-[56.19%_38.63%_39.88%_60.04%] mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[-32.491px_-76.646px] mask-size-[108.75px_89.073px] opacity-50" style={{ maskImage: `url('${imgVector3}')` }} data-name="Vector">
+      <div className="absolute inset-[56.19%_38.63%_39.88%_60.04%] mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-[-32.491px_-76.646px] mask-size-[108.75px_89.073px] opacity-50" style={{ maskImage: `url('${imgVector3}')` }} data-name="Vector">
         <svg className="absolute block inset-0 size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 17.0434 12.7658">
           <path d={svgPaths.pd9ef900} fill="var(--fill-0, #4C352B)" id="Vector" />
         </svg>
       </div>
-      <div className="absolute inset-[56.19%_37.33%_39.88%_61.48%] mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[-50.976px_-76.646px] mask-size-[108.75px_89.073px] opacity-50" style={{ maskImage: `url('${imgVector3}')` }} data-name="Vector">
+      <div className="absolute inset-[56.19%_37.33%_39.88%_61.48%] mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-[-50.976px_-76.646px] mask-size-[108.75px_89.073px] opacity-50" style={{ maskImage: `url('${imgVector3}')` }} data-name="Vector">
         <svg className="absolute block inset-0 size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 15.1936 12.7658">
           <path d={svgPaths.p2fbb9700} fill="var(--fill-0, #4C352B)" id="Vector" />
         </svg>
       </div>
-      <div className="absolute inset-[52.27%_38.11%_43.81%_60.42%] mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[-37.394px_-63.88px] mask-size-[108.75px_89.073px] opacity-50" style={{ maskImage: `url('${imgVector3}')` }} data-name="Vector">
+      <div className="absolute inset-[52.27%_38.11%_43.81%_60.42%] mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-[-37.394px_-63.88px] mask-size-[108.75px_89.073px] opacity-50" style={{ maskImage: `url('${imgVector3}')` }} data-name="Vector">
         <svg className="absolute block inset-0 size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 18.8352 12.7658">
           <path d={svgPaths.p11033e00} fill="var(--fill-0, #4C352B)" id="Vector" />
         </svg>
       </div>
-      <div className="absolute inset-[52.27%_38.74%_46.02%_61.04%] mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[-45.293px_-63.889px] mask-size-[108.75px_89.073px] opacity-50" style={{ maskImage: `url('${imgVector3}')` }} data-name="Vector">
+      <div className="absolute inset-[52.27%_38.74%_46.02%_61.04%] mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-[-45.293px_-63.889px] mask-size-[108.75px_89.073px] opacity-50" style={{ maskImage: `url('${imgVector3}')` }} data-name="Vector">
         <svg className="absolute block inset-0 size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 2.8629 5.56091">
           <path d={svgPaths.p561a880} fill="var(--fill-0, #F5DF91)" id="Vector" />
         </svg>
       </div>
-      <div className="absolute inset-[56.21%_39.26%_42.08%_60.51%] mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[-38.583px_-76.693px] mask-size-[108.75px_89.073px] opacity-50" style={{ maskImage: `url('${imgVector3}')` }} data-name="Vector">
+      <div className="absolute inset-[56.21%_39.26%_42.08%_60.51%] mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-[-38.583px_-76.693px] mask-size-[108.75px_89.073px] opacity-50" style={{ maskImage: `url('${imgVector3}')` }} data-name="Vector">
         <svg className="absolute block inset-0 size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 2.85396 5.56091">
           <path d={svgPaths.p32bcefc0} fill="var(--fill-0, #F5DF91)" id="Vector" />
         </svg>
       </div>
-      <div className="absolute inset-[56.21%_37.86%_42.2%_61.92%] mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[-56.562px_-76.693px] mask-size-[108.75px_89.073px] opacity-50" style={{ maskImage: `url('${imgVector3}')` }} data-name="Vector">
+      <div className="absolute inset-[56.21%_37.86%_42.2%_61.92%] mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-[-56.562px_-76.693px] mask-size-[108.75px_89.073px] opacity-50" style={{ maskImage: `url('${imgVector3}')` }} data-name="Vector">
         <svg className="absolute block inset-0 size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 2.85396 5.15717">
           <path d={svgPaths.p235d2dc0} fill="var(--fill-0, #F5DF91)" id="Vector" />
         </svg>
@@ -1242,7 +1242,7 @@ function Group22() {
 
 function Layer() {
   return (
-    <div className="-translate-x-1/2 absolute h-[325px] left-[calc(50%+0.5px)] overflow-clip top-[232px] w-[1281px]" data-name="Layer_1">
+    <div className="-translate-x-1/2 absolute h-81.25 left-[calc(50%+0.5px)] overflow-clip top-58 w-320.25" data-name="Layer_1">
       <ClipPathGroup />
       <div className="absolute inset-[53.72%_55.28%_16.46%_8.74%]" data-name="Vector">
         <svg className="absolute block inset-0 size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 460.933 96.9156">
@@ -1657,7 +1657,7 @@ function Wireframe() {
 
 function Capa1() {
   return (
-    <div className="col-1 h-[48px] ml-0 mt-0 relative row-1 w-[84px]" data-name="Capa_1">
+    <div className="col-1 h-12 ml-0 mt-0 relative row-1 w-21" data-name="Capa_1">
       <svg className="absolute block inset-0 size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 84 48">
         <g clipPath="url(#clip0_1_1146)" id="Capa_1">
           <path d={svgPaths.p530e700} fill="var(--fill-0, #4C352B)" id="Vector" />
@@ -1679,7 +1679,7 @@ function Capa1() {
 
 function Group31() {
   return (
-    <div className="col-1 grid-cols-[max-content] grid-rows-[max-content] inline-grid ml-[21px] mt-[33px] place-items-start relative row-1">
+    <div className="col-1 grid-cols-[max-content] grid-rows-[max-content] inline-grid ml-5.25 mt-8.25 place-items-start relative row-1">
       <Capa1 />
     </div>
   );
@@ -1701,8 +1701,8 @@ function Group23() {
 function Frame2() {
   return (
     <div className="content-stretch flex flex-col gap-[24px] items-start not-italic relative shrink-0 w-full">
-      <p className="font-['Fraunces',serif] font-normal leading-[normal] relative shrink-0 text-[#4c352b] text-[64px] tracking-[1.92px] w-full">1K</p>
-      <p className="font-['Rubik',sans-serif] font-normal leading-[1.68] relative shrink-0 text-[#7b6a62] text-[16px] tracking-[0.48px] w-full">tonnes of CO2e avoided</p>
+      <p className="font-['Fraunces',serif] font-normal leading-[normal] relative shrink-0 text-brown-800 text-[64px] tracking-[1.92px] w-full">1K</p>
+      <p className="font-['Rubik',sans-serif] font-normal leading-[1.68] relative shrink-0 text-brown-500 text-[16px] tracking-[0.48px] w-full">tonnes of CO2e avoided</p>
     </div>
   );
 }
@@ -1783,8 +1783,8 @@ function Group24() {
 function Frame3() {
   return (
     <div className="content-stretch flex flex-col gap-[24px] items-start not-italic relative shrink-0 w-full">
-      <p className="font-['Fraunces',serif] font-normal leading-[normal] relative shrink-0 text-[#4c352b] text-[64px] tracking-[1.92px] w-full">920K</p>
-      <p className="font-['Rubik',sans-serif] font-normal leading-[1.68] relative shrink-0 text-[#7b6a62] text-[16px] tracking-[0.48px] w-full">KG of food saved</p>
+      <p className="font-['Fraunces',serif] font-normal leading-[normal] relative shrink-0 text-brown-800 text-[64px] tracking-[1.92px] w-full">920K</p>
+      <p className="font-['Rubik',sans-serif] font-normal leading-[1.68] relative shrink-0 text-brown-500 text-[16px] tracking-[0.48px] w-full">KG of food saved</p>
     </div>
   );
 }
@@ -1827,8 +1827,8 @@ function Group25() {
 function Frame4() {
   return (
     <div className="content-stretch flex flex-col gap-[24px] items-start not-italic relative shrink-0 w-full">
-      <p className="font-['Fraunces',serif] font-normal leading-[normal] relative shrink-0 text-[#4c352b] text-[64px] tracking-[1.92px] w-full">37%</p>
-      <p className="font-['Rubik',sans-serif] font-normal leading-[1.68] relative shrink-0 text-[#7b6a62] text-[16px] tracking-[0.48px] w-full">increase in farmers’ incomes</p>
+      <p className="font-['Fraunces',serif] font-normal leading-[normal] relative shrink-0 text-brown-800 text-[64px] tracking-[1.92px] w-full">37%</p>
+      <p className="font-['Rubik',sans-serif] font-normal leading-[1.68] relative shrink-0 text-brown-500 text-[16px] tracking-[0.48px] w-full">increase in farmers’ incomes</p>
     </div>
   );
 }
@@ -1861,7 +1861,7 @@ function Frame18() {
       <Frame19 />
       <Frame20 />
       <Frame21 />
-      <p className="absolute font-['Fraunces',serif] font-normal leading-[1.42] left-[calc(8.33%+3px)] not-italic text-[#4c352b] text-[32px] top-[325px] tracking-[0.96px] w-[368px]">By keeping food in the human food supply chain, we have an impact on various levels:</p>
+      <p className="absolute font-['Fraunces',serif] font-normal leading-[1.42] left-[calc(8.33%+3px)] not-italic text-brown-800 text-[32px] top-[325px] tracking-[0.96px] w-[368px]">By keeping food in the human food supply chain, we have an impact on various levels:</p>
       <div className="absolute flex h-[982px] items-center justify-center left-[-12px] top-[-876px] w-[1504px]" style={{ "--transform-inner-width": "1185", "--transform-inner-height": "21" } as React.CSSProperties}>
         <div className="-rotate-90 -scale-y-100 flex-none">
           <div className="h-[1504px] relative w-[982px]" data-name="Vector">
@@ -1898,7 +1898,7 @@ function Content4() {
 
 function SectionTitle() {
   return (
-    <div className="content-stretch flex flex-[1_0_0] flex-col gap-[16px] items-start max-w-[768px] min-w-px relative" data-name="Section Title">
+    <div className="content-stretch flex flex-[1_0_0] flex-col gap-[16px] items-start max-w-3xl min-w-px relative" data-name="Section Title">
       <TaglineWrapper />
       <Content4 />
     </div>
@@ -1973,7 +1973,7 @@ function Content5() {
 
 function Card() {
   return (
-    <div className="content-stretch flex flex-[1_0_0] flex-col items-start min-w-px overflow-clip relative rounded-[32px]" data-name="Card">
+    <div className="content-stretch flex flex-[1_0_0] flex-col items-start min-w-px overflow-clip relative rounded-4xl" data-name="Card">
       <div className="aspect-[405.3333435058594/270] relative shrink-0 w-full" data-name="Placeholder Image">
         <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgPlaceholderImage} />
       </div>
@@ -2033,7 +2033,7 @@ function Content8() {
 
 function Card1() {
   return (
-    <div className="content-stretch flex flex-[1_0_0] flex-col items-start min-w-px overflow-clip relative rounded-[32px]" data-name="Card">
+    <div className="content-stretch flex flex-[1_0_0] flex-col items-start min-w-px overflow-clip relative rounded-4xl" data-name="Card">
       <div className="aspect-[405.3333435058594/270] relative shrink-0 w-full" data-name="Placeholder Image">
         <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgPlaceholderImage1} />
       </div>
@@ -2093,7 +2093,7 @@ function Content11() {
 
 function Card2() {
   return (
-    <div className="content-stretch flex flex-[1_0_0] flex-col items-start min-w-px overflow-clip relative rounded-[32px]" data-name="Card">
+    <div className="content-stretch flex flex-[1_0_0] flex-col items-start min-w-px overflow-clip relative rounded-4xl" data-name="Card">
       <div className="aspect-[405.3333435058594/270] relative shrink-0 w-full" data-name="Placeholder Image">
         <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgPlaceholderImage2} />
       </div>
@@ -2114,7 +2114,7 @@ function Row() {
 
 function Container1() {
   return (
-    <div className="content-stretch flex flex-col gap-[80px] items-start max-w-[1280px] relative shrink-0 w-full" data-name="Container">
+    <div className="content-stretch flex flex-col gap-[80px] items-start max-w-7xl relative shrink-0 w-full" data-name="Container">
       <Title />
       <Row />
     </div>

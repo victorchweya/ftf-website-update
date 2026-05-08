@@ -78,6 +78,35 @@
 		"Rubik", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
 		"Segoe UI", sans-serif;
 	--font-serif: "Fraunces", ui-serif, Georgia, "Times New Roman", serif;
+	--leading-zero: 0;
+	--leading-display: 1.05;
+	--leading-heading: 1.2;
+	--leading-callout: 1.42;
+	--leading-copy: 1.68;
+	--leading-contact: 30px;
+	--text-ui-xs: 12px;
+	--text-caption: 14px;
+	--text-body: 16px;
+	--text-body-lg: 18px;
+	--text-body-xl: 20px;
+	--text-card-title: 22px;
+	--text-subtitle: 24px;
+	--text-callout: 28px;
+	--text-section-sm: 32px;
+	--text-section-md: 36px;
+	--text-section: 40px;
+	--text-section-lg: 48px;
+	--text-display: 56px;
+	--text-display-lg: 64px;
+	--text-display-xl: 72px;
+	--tracking-caption: 0.42px;
+	--tracking-body: 0.48px;
+	--tracking-body-lg: 0.6px;
+	--tracking-card: 0.72px;
+	--tracking-section: 1.2px;
+	--tracking-section-lg: 1.44px;
+	--tracking-display: 1.68px;
+	--tracking-display-lg: 1.92px;
 
 	/* PRIMARY - GREEN */
 	--color-green-50: #f0f6f3;

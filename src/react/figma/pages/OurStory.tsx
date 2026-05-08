@@ -6,6 +6,8 @@ import svgPaths from "../imports/OurStory-1/svg-2nclsq0k1o";
 import imgVector2 from "../../../assets/figma/36ea9060f2458caafd0233795659d47afa93c78f.png?url";
 import imgVector3 from "../../../assets/figma/7033551c0dc4ae4878b1a9ef568e37660c0ce0a8.png?url";
 import ourStoryDivider from "../imports/OurStory-1/ourstorydivider.png?url";
+import { sectionSpacing } from "../components/layout/spacing";
+import { typeStyles } from "../components/layout/typography";
 const timelineMilestones = [
 	{
 		label: "Then",
@@ -61,7 +63,7 @@ const platformSteps = [
 export default function OurStory() {
 	return (
 		<div
-			className="bg-white content-stretch flex flex-col items-start relative w-full"
+			className="bg-white flex flex-col items-start relative w-full"
 			data-name="Our Story">
 			{/* Hero */}
 			<div
@@ -69,11 +71,11 @@ export default function OurStory() {
 				data-name="Wireframe - 53">
 				<Header />
 				<ContentContainer size="wide" className="h-full ">
-					<div className="relative grid w-full min-h-[540px] max-w-[913px] mt-20 mx-auto items-center gap-8 md:grid-cols-[minmax(0,570px)_279px] md:gap-[64px]">
-						<p className="font-serif font-normal leading-tight not-italic text-green-800 text-3xl md:text-5xl lg:text-6xl ">
+					<div className="relative grid w-full min-h-[540px] max-w-[913px] mt-20 mx-auto items-center gap-8 md:grid-cols-[minmax(0,570px)_279px] md:gap-16">
+						<p className={`${typeStyles.heroTitleLarge} not-italic text-green-800`}>
 							Farm to Feed began with a simple but urgent idea
 						</p>
-						<p className="font-normal leading-[1.68] not-italic text-green-500 text-lg tracking-[0.48px]">{`Tackling food loss in Kenya's fresh produce supply chain. We introduced grade rescue to the Nairobi market, creating a pathway for vegetables that might otherwise go to waste.`}</p>
+						<p className="font-normal leading-copy not-italic text-green-500 text-lg tracking-body">{`Tackling food loss in Kenya's fresh produce supply chain. We introduced grade rescue to the Nairobi market, creating a pathway for vegetables that might otherwise go to waste.`}</p>
 					</div>
 				</ContentContainer>
 
@@ -95,17 +97,17 @@ export default function OurStory() {
 				className="bg-white overflow-clip relative shrink-0 w-full"
 				data-name="Wireframe - 10">
 				<ContentContainer size="wide" className="h-full">
-					<div className="relative flex h-full flex-col items-center min-h-[540px] max-w-[760px] mt-20 mx-auto gap-8 md:gap-[64px]">
-						<p className="font-serif font-normal leading-[normal] not-italic text-[#0f251b] text-[32px] md:text-[40px] text-center tracking-[1.2px] w-full max-w-[592px]">{` Connecting production to dependable demand...`}</p>
-						<div className="mt-[24px] md:mt-[55px] font-sans font-normal leading-[0] not-italic text-[#0f251b] text-[16px] text-center tracking-[0.48px] w-full max-w-[592px] whitespace-pre-wrap">
-							<p className="leading-[1.68] mb-0">{`As we worked alongside our customers and farmers, we quickly learned that food loss is one part of a much larger challenge. Farmers needed more than a solution for imperfect produce. They needed reliable market access for their full harvest.   `}</p>
-							<p className="leading-[1.68]">{`Since those early days, Farm to Feed has grown into a trusted off taker and partner for farmers, helping to address one of Kenya’s most persistent agricultural bottlenecks: connecting production to dependable demand. `}</p>
+					<div className="relative flex h-full flex-col items-center min-h-[540px] max-w-[760px] mt-20 mx-auto gap-8 md:gap-16">
+						<p className={`${typeStyles.sectionTitle} not-italic text-[#0f251b] text-center w-full max-w-148`}>{` Connecting production to dependable demand...`}</p>
+						<div className={`${typeStyles.body} mt-[24px] md:mt-[55px] leading-zero not-italic text-[#0f251b] text-center w-full max-w-148 whitespace-pre-wrap`}>
+							<p className="leading-copy mb-0">{`As we worked alongside our customers and farmers, we quickly learned that food loss is one part of a much larger challenge. Farmers needed more than a solution for imperfect produce. They needed reliable market access for their full harvest.   `}</p>
+							<p className="leading-copy">{`Since those early days, Farm to Feed has grown into a trusted off taker and partner for farmers, helping to address one of Kenya’s most persistent agricultural bottlenecks: connecting production to dependable demand. `}</p>
 						</div>
-						<div className=" content-stretch flex flex-col gap-12 mb-24 items-center md:flex-row md:gap-16 md:mb-40 ">
+						<div className=" flex flex-col gap-12 mb-24 items-center md:flex-row md:gap-16 md:mb-40 ">
 							{storyPrinciples.map((principle) => (
 								<div className="grid-cols-[max-content] grid-rows-[max-content] inline-grid place-items-start relative shrink-0">
 									<div
-										className="col-1 h-[336px] ml-0 relative row-1 w-[303px]"
+										className="col-1 h-[336px] ml-0 relative row-1 w-75.75"
 										data-name="Vector"
 										style={{
 											marginTop: principle.cardTop,
@@ -114,9 +116,9 @@ export default function OurStory() {
 											<OurStorySvgs.OurStorySvg47 />
 										</div>
 									</div>
-									<div className="col-1 content-stretch flex flex-col gap-[48px] items-center ml-[46px] mt-0 relative row-1 w-[217px]">
+									<div className="col-1 flex flex-col gap-12 items-center ml-11.5 mt-0 relative row-1 w-54.25">
 										{principle.icon === "vision" ? (
-											<div className="grid-cols-[max-content] grid-rows-[max-content] inline-grid leading-[0] place-items-start relative shrink-0">
+											<div className="grid-cols-[max-content] grid-rows-[max-content] inline-grid leading-zero place-items-start relative shrink-0">
 												<div
 													className="col-1 h-[124px] ml-0 mt-0 relative row-1 w-[127.288px]"
 													data-name="Group">
@@ -129,7 +131,7 @@ export default function OurStory() {
 												</div>
 											</div>
 										) : (
-											<div className="grid-cols-[max-content] grid-rows-[max-content] inline-grid leading-[0] place-items-start relative shrink-0">
+											<div className="grid-cols-[max-content] grid-rows-[max-content] inline-grid leading-zero place-items-start relative shrink-0">
 												<div className="col-1 flex h-[124px] items-center justify-center ml-0 mt-0 relative row-1 w-[127.221px]">
 													<div className="-scale-y-100 flex-none rotate-180">
 														<div
@@ -150,11 +152,11 @@ export default function OurStory() {
 												</div>
 											</div>
 										)}
-										<div className="content-stretch flex flex-col gap-[24px] items-center not-italic relative shrink-0 text-center w-full">
-											<p className="font-['Rubik',sans-serif] font-normal leading-[1.68] relative shrink-0 text-[#85a687] text-[16px] tracking-[0.48px] whitespace-nowrap">
+										<div className="flex flex-col gap-6 items-center not-italic relative shrink-0 text-center w-full">
+											<p className={`${typeStyles.body} relative shrink-0 text-[#85a687] whitespace-nowrap`}>
 												{principle.label}
 											</p>
-											<p className="font-['Fraunces',serif] font-normal leading-normal relative shrink-0 text-[#0f251b] text-[24px] tracking-[0.72px] w-full">
+											<p className={`${typeStyles.cardTitle} relative shrink-0 text-[#0f251b] w-full`}>
 												{principle.body}
 											</p>
 										</div>
@@ -195,10 +197,10 @@ export default function OurStory() {
 			<div
 				className="bg-white min-h-[500px] md:min-h-[580px] overflow-clip relative shrink-0 w-full"
 				data-name="Wireframe - 54">
-				<ContentContainer size="wide" className="py-[50px]">
-					<div className="relative flex flex-col items-center gap-[64px] md:gap-[124px]">
+				<ContentContainer size="wide" className={sectionSpacing.compact}>
+					<div className="relative flex flex-col items-center gap-16 md:gap-[124px]">
 						<div
-							className="absolute hidden md:flex h-[87px] items-center justify-center left-1/2 -translate-x-1/2 top-[232px] w-[485px]"
+							className="absolute hidden md:flex h-[87px] items-center justify-center left-1/2 -translate-x-1/2 top-58 w-[485px]"
 							style={{
 								containerType: "size",
 							}}>
@@ -210,15 +212,15 @@ export default function OurStory() {
 								</div>
 							</div>
 						</div>
-						<div className="content-stretch flex flex-col items-center relative w-full max-w-[758px]">
-							<p className="font-['Fraunces',serif] font-normal leading-[normal] not-italic relative shrink-0 text-[#030806] text-[32px] md:text-[40px] text-center tracking-[1.2px] w-full">
+						<div className="flex flex-col items-center relative w-full max-w-[758px]">
+							<p className={`${typeStyles.sectionTitle} not-italic relative shrink-0 text-[#030806] text-center w-full`}>
 								Farm to Feed is the tech-enabled platform
 							</p>
 						</div>
-						<div className="content-stretch flex flex-col md:flex-row gap-[48px] md:gap-[32px] items-center md:items-start relative w-full max-w-[952px]">
+						<div className="flex flex-col md:flex-row gap-12 md:gap-8 items-center md:items-start relative w-full max-w-[952px]">
 							{platformSteps.map((step) =>
 								!step.title || !step.body ? (
-									<div className="content-stretch flex flex-col items-center pt-[25px] relative w-full md:flex-[1_0_0] md:min-w-px">
+									<div className="flex flex-col items-center pt-[25px] relative w-full md:flex-[1_0_0] md:min-w-px">
 										{step.illustration === "farmers" ? (
 											<div className="h-[198.445px] relative shrink-0 w-[203.707px]">
 												<OurStorySvgs.OurStorySvg05 />
@@ -228,7 +230,7 @@ export default function OurStory() {
 												<OurStorySvgs.OurStorySvg06 />
 											</div>
 										) : (
-											<div className="grid-cols-[max-content] grid-rows-[max-content] inline-grid leading-[0] place-items-start relative shrink-0">
+											<div className="grid-cols-[max-content] grid-rows-[max-content] inline-grid leading-zero place-items-start relative shrink-0">
 												<div
 													className="col-1 h-[198.445px] ml-0 mt-0 relative row-1 w-[203.707px]"
 													data-name="Vector">
@@ -453,7 +455,7 @@ export default function OurStory() {
 										)}
 									</div>
 								) : (
-									<div className="content-stretch flex flex-col gap-[32px] items-center relative w-full md:flex-[1_0_0] md:min-w-px md:gap-[56px]">
+									<div className="flex flex-col gap-8 items-center relative w-full md:flex-[1_0_0] md:min-w-px md:gap-14">
 										{step.illustration === "farmers" ? (
 											<div className="h-[198.445px] relative shrink-0 w-[203.707px]">
 												<OurStorySvgs.OurStorySvg05 />
@@ -463,7 +465,7 @@ export default function OurStory() {
 												<OurStorySvgs.OurStorySvg06 />
 											</div>
 										) : (
-											<div className="grid-cols-[max-content] grid-rows-[max-content] inline-grid leading-[0] place-items-start relative shrink-0">
+											<div className="grid-cols-[max-content] grid-rows-[max-content] inline-grid leading-zero place-items-start relative shrink-0">
 												<div
 													className="col-1 h-[198.445px] ml-0 mt-0 relative row-1 w-[203.707px]"
 													data-name="Vector">
@@ -686,11 +688,11 @@ export default function OurStory() {
 												</div>
 											</div>
 										)}
-										<div className="content-stretch flex flex-col gap-[24px] items-start not-italic relative shrink-0 text-black text-center w-full">
-											<p className="font-['Fraunces',serif] font-normal leading-normal relative shrink-0 text-[24px] tracking-[0.72px] w-full">
+										<div className="flex flex-col gap-6 items-start not-italic relative shrink-0 text-black text-center w-full">
+											<p className={`${typeStyles.cardTitle} relative shrink-0 w-full`}>
 												{step.title}
 											</p>
-											<p className="font-['Rubik',sans-serif] font-normal leading-[1.68] relative shrink-0 text-[16px] tracking-[0.48px] w-full">
+											<p className={`${typeStyles.body} relative shrink-0 w-full`}>
 												{step.body}
 											</p>
 										</div>
@@ -726,12 +728,12 @@ export default function OurStory() {
 						</div>
 					</div>
 				</div>
-				<ContentContainer size="wide" className="py-[96px]">
-					<div className="relative flex flex-col items-center gap-[64px]">
-						<p className="font-['Fraunces',serif] font-normal leading-[normal] not-italic text-[40px] md:text-[56px] text-black text-center tracking-[1.68px] w-full max-w-[544px]">
+				<ContentContainer size="wide" className={sectionSpacing.default}>
+					<div className="relative flex flex-col items-center gap-16">
+						<p className={`${typeStyles.heroTitleLarge} not-italic text-black text-center w-full max-w-[544px]`}>
 							Our story
 						</p>
-						<p className="font-['Fraunces',serif] font-normal leading-[1.68] not-italic text-[16px] text-black text-center tracking-[0.48px]">
+						<p className={`${typeStyles.body} not-italic text-black text-center`}>
 							Slide the carrot across the timeline or tap to learn
 							about our journey
 						</p>
@@ -747,12 +749,12 @@ export default function OurStory() {
 									<OurStorySvgs.OurStorySvg52 />
 								</div>
 								<div
-									className="-translate-x-1/2 absolute content-stretch flex isolate items-start justify-between left-[calc(50%-4px)] top-0 w-[82%] max-w-[499px]"
+									className="-translate-x-1/2 absolute flex isolate items-start justify-between left-[calc(50%-4px)] top-0 w-[82%] max-w-[499px]"
 									data-name="milestones">
 									{timelineMilestones.map((milestone) =>
 										milestone.active ? (
 											<div
-												className="content-stretch flex flex-col gap-[5px] items-center relative shrink-0"
+												className="flex flex-col gap-[5px] items-center relative shrink-0"
 												data-name="slider-btn"
 												style={{
 													width: milestone.width,
@@ -761,7 +763,7 @@ export default function OurStory() {
 												{
 													<>
 														<div className="bg-[#4c352b] h-[36px] relative rounded-[8px] shrink-0 w-[3px]" />
-														<p className="font-['Rubik',sans-serif] font-normal leading-[1.68] not-italic relative shrink-0 text-[14px] text-black tracking-[0.42px] whitespace-nowrap">
+														<p className={`${typeStyles.caption} font-normal not-italic relative shrink-0 text-black whitespace-nowrap`}>
 															{milestone.label}
 														</p>
 														{milestone.active ? (
@@ -789,7 +791,7 @@ export default function OurStory() {
 											</div>
 										) : (
 											<button
-												className="content-stretch cursor-pointer flex flex-col gap-[5px] items-center relative shrink-0"
+												className="cursor-pointer flex flex-col gap-[5px] items-center relative shrink-0"
 												data-name="milestone"
 												style={{
 													width: milestone.width,
@@ -799,7 +801,7 @@ export default function OurStory() {
 												{
 													<>
 														<div className="bg-[#4c352b] h-[36px] relative rounded-[8px] shrink-0 w-[3px]" />
-														<p className="font-['Rubik',sans-serif] font-normal leading-[1.68] not-italic relative shrink-0 text-[14px] text-black tracking-[0.42px] whitespace-nowrap">
+														<p className={`${typeStyles.caption} font-normal not-italic relative shrink-0 text-black whitespace-nowrap`}>
 															{milestone.label}
 														</p>
 														{milestone.active ? (
@@ -830,7 +832,7 @@ export default function OurStory() {
 								</div>
 							</div>
 							<div
-									className="content-stretch flex flex-col items-center justify-center mx-auto p-[24px] md:p-[40px] relative w-full max-w-[560px]"
+									className="flex flex-col items-center justify-center mx-auto p-6 md:p-[40px] relative w-full max-w-[560px]"
 								data-name="Note">
 								<div
 									className="absolute flex inset-[0_0.24px_0_0] items-center justify-center"
@@ -847,7 +849,7 @@ export default function OurStory() {
 										</div>
 									</div>
 								</div>
-								<p className="font-['Rubik',sans-serif] font-normal min-h-[204px] leading-[1.68] not-italic relative shrink-0 text-[16px] md:text-[20px] text-black text-center tracking-[0.6px] w-full max-w-[467px]">
+								<p className={`${typeStyles.bodyLarge} min-h-[204px] not-italic relative shrink-0 text-black text-center w-full max-w-[467px]`}>
 									In April 2020, Farm to Feed started as a
 									COVID-19 food relief effort – we bought
 									farmers' produce that was at risk of going

@@ -212,7 +212,7 @@ function Button1() {
 function Frame18() {
   return (
     <div className="content-stretch flex flex-col gap-[8px] items-start relative shrink-0 w-full">
-      <p className="font-['Rubik',sans-serif] font-normal leading-[24px] min-w-full not-italic relative shrink-0 text-[#8c8c8c] text-[16px] w-[min-content]">For general inquiries, send an email to</p>
+      <p className="font-['Rubik',sans-serif] font-normal leading-[24px] min-w-full not-italic relative shrink-0 text-[#8c8c8c] text-[16px] w-min">For general inquiries, send an email to</p>
       <Button1 />
     </div>
   );
@@ -245,7 +245,7 @@ function ButtonBase3() {
 function TextAndSupportingText2() {
   return (
     <div className="content-stretch flex flex-col gap-[8px] items-start relative shrink-0 w-full" data-name="Text and supporting text">
-      <p className="font-['Rubik',sans-serif] font-normal leading-[24px] min-w-full not-italic relative shrink-0 text-[#8c8c8c] text-[16px] w-[min-content] whitespace-pre-wrap">{`For local purchases, send an email  or call us`}</p>
+      <p className="font-['Rubik',sans-serif] font-normal leading-[24px] min-w-full not-italic relative shrink-0 text-[#8c8c8c] text-[16px] w-min whitespace-pre-wrap">{`For local purchases, send an email  or call us`}</p>
       <Button2 />
       <ButtonBase3 />
     </div>
@@ -271,7 +271,7 @@ function Button3() {
 function TextAndSupportingText3() {
   return (
     <div className="content-stretch flex flex-col gap-[8px] items-start relative shrink-0 w-full" data-name="Text and supporting text">
-      <p className="font-['Rubik',sans-serif] font-normal leading-[24px] min-w-full not-italic relative shrink-0 text-[#8c8c8c] text-[16px] w-[min-content]">For exports, send an email to</p>
+      <p className="font-['Rubik',sans-serif] font-normal leading-[24px] min-w-full not-italic relative shrink-0 text-[#8c8c8c] text-[16px] w-min">For exports, send an email to</p>
       <Button3 />
     </div>
   );
@@ -296,7 +296,7 @@ function Button4() {
 function TextAndSupportingText4() {
   return (
     <div className="content-stretch flex flex-col gap-[8px] items-start relative shrink-0 w-full" data-name="Text and supporting text">
-      <p className="font-['Rubik',sans-serif] font-normal leading-[24px] min-w-full not-italic relative shrink-0 text-[#8c8c8c] text-[16px] w-[min-content]">For farmers, reach out via phone or whatsapp</p>
+      <p className="font-['Rubik',sans-serif] font-normal leading-[24px] min-w-full not-italic relative shrink-0 text-[#8c8c8c] text-[16px] w-min">For farmers, reach out via phone or whatsapp</p>
       <Button4 />
     </div>
   );

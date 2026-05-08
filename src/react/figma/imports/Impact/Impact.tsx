@@ -222,7 +222,7 @@ function Frame25() {
       <div aria-hidden="true" className="absolute border border-[#f7f7f7] border-solid inset-0 pointer-events-none rounded-[30px]" />
       <div className="content-stretch flex flex-col gap-[27px] items-start px-[32px] py-[48px] relative size-full">
         <Frame24 />
-        <p className="font-['Rubik',sans-serif] font-normal leading-[1.68] min-w-full not-italic relative shrink-0 text-[16px] text-black tracking-[0.48px] w-[min-content]">Inefficient supply chains cause significant food loss, leading to lost income, avoidable emissions, and wasted resources. African produce remains under-utilised globally.</p>
+        <p className="font-['Rubik',sans-serif] font-normal leading-[1.68] min-w-full not-italic relative shrink-0 text-[16px] text-black tracking-[0.48px] w-min">Inefficient supply chains cause significant food loss, leading to lost income, avoidable emissions, and wasted resources. African produce remains under-utilised globally.</p>
         <Group18 />
       </div>
     </div>
@@ -262,7 +262,7 @@ function Frame28() {
       <div aria-hidden="true" className="absolute border border-[#f7f7f7] border-solid inset-0 pointer-events-none rounded-[30px]" />
       <div className="content-stretch flex flex-col gap-[27px] items-start px-[32px] py-[48px] relative size-full">
         <Frame26 />
-        <p className="font-['Rubik',sans-serif] font-normal leading-[1.68] min-w-full not-italic relative shrink-0 text-[16px] text-black tracking-[0.48px] w-[min-content]">Farm to Feed builds structured, transparent, and demand-driven supply chains. Using digital tools, farmer training, and value addition, we create consistent markets for farmers while improving supply chain efficiency, extending product shelf life, and reducing environmental impact.</p>
+        <p className="font-['Rubik',sans-serif] font-normal leading-[1.68] min-w-full not-italic relative shrink-0 text-[16px] text-black tracking-[0.48px] w-min">Farm to Feed builds structured, transparent, and demand-driven supply chains. Using digital tools, farmer training, and value addition, we create consistent markets for farmers while improving supply chain efficiency, extending product shelf life, and reducing environmental impact.</p>
         <Group17 />
       </div>
     </div>
@@ -306,7 +306,7 @@ function Frame35() {
 
 function Group1() {
   return (
-    <div className="absolute inset-[0_0.02%_-0.01%_0.02%] mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[-0.013px_0px] mask-size-[84.529px_79.847px]" style={{ maskImage: `url('${imgGroup}')` }} data-name="Group">
+    <div className="absolute inset-[0_0.02%_-0.01%_0.02%] mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-[-0.013px_0px] mask-size-[84.529px_79.847px]" style={{ maskImage: `url('${imgGroup}')` }} data-name="Group">
       <svg className="absolute block inset-0 size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 84.9734 80.0067">
         <g id="Group">
           <path clipRule="evenodd" d={svgPaths.p1ac6a5f0} fill="var(--fill-0, black)" fillRule="evenodd" id="Vector" />
@@ -415,7 +415,7 @@ export function Frame29() {
 
 function Group2() {
   return (
-    <div className="absolute inset-[0_0_0.68%_0.07%] mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[-0.059px_0px] mask-size-[78.606px_80px]" style={{ maskImage: `url('${imgGroup1}')` }} data-name="Group">
+    <div className="absolute inset-[0_0_0.68%_0.07%] mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-[-0.059px_0px] mask-size-[78.606px_80px]" style={{ maskImage: `url('${imgGroup1}')` }} data-name="Group">
       <svg className="absolute block inset-0 size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 78.9437 79.4541">
         <g id="Group">
           <path d={svgPaths.p3bd69400} fill="var(--fill-0, black)" id="Vector" />
@@ -515,7 +515,7 @@ function Frame30() {
 
 function Group3() {
   return (
-    <div className="absolute inset-[0.8%_0.36%_0_1.1%] mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[-0.822px_-0.643px] mask-size-[75px_79.933px]" style={{ maskImage: `url('${imgGroup2}')` }} data-name="Group">
+    <div className="absolute inset-[0.8%_0.36%_0_1.1%] mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-[-0.822px_-0.643px] mask-size-[75px_79.933px]" style={{ maskImage: `url('${imgGroup2}')` }} data-name="Group">
       <svg className="absolute block inset-0 size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 73.9099 79.3571">
         <g id="Group">
           <path d={svgPaths.p11666000} fill="var(--fill-0, black)" id="Vector" />
@@ -641,7 +641,7 @@ export function Frame41() {
 
 function Group4() {
   return (
-    <div className="absolute inset-[1.55%_0.51%_0.46%_0.21%] mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[-0.204px_-1.237px] mask-size-[97px_80px]" style={{ maskImage: `url('${imgGroup3}')` }} data-name="Group">
+    <div className="absolute inset-[1.55%_0.51%_0.46%_0.21%] mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-[-0.204px_-1.237px] mask-size-[97px_80px]" style={{ maskImage: `url('${imgGroup3}')` }} data-name="Group">
       <svg className="absolute block inset-0 size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 96.3012 78.3968">
         <g id="Group">
           <path d={svgPaths.p39c4e300} fill="var(--fill-0, black)" id="Vector" />
@@ -722,7 +722,7 @@ function Frame40() {
 
 function Group5() {
   return (
-    <div className="absolute inset-[-0.01%_0.64%_-0.02%_0] mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[0px_0.007px] mask-size-[88px_79.9px]" style={{ maskImage: `url('${imgGroup4}')` }} data-name="Group">
+    <div className="absolute inset-[-0.01%_0.64%_-0.02%_0] mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-[0px_0.007px] mask-size-[88px_79.9px]" style={{ maskImage: `url('${imgGroup4}')` }} data-name="Group">
       <svg className="absolute block inset-0 size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 87.4333 80.02">
         <g id="Group">
           <path d={svgPaths.p431c700} fill="var(--fill-0, black)" id="Vector" />
@@ -875,7 +875,7 @@ function Frame61() {
   return (
     <div className="absolute content-stretch flex flex-col gap-[43px] items-start left-[79px] top-[112px] w-[568px]">
       <p className="font-['Fraunces',serif] font-normal leading-[normal] not-italic relative shrink-0 text-[#0f251b] text-[40px] tracking-[1.2px] w-[488px]">Impact that travels from farm level to customer counter</p>
-      <p className="font-['Rubik',sans-serif] font-normal leading-[1.68] min-w-full not-italic relative shrink-0 text-[#1e4a35] text-[20px] tracking-[0.6px] w-[min-content]">At Farm to Feed, we create impact throughout the supply chain, from farm level to customer counter. Our long-term outcomes lead to prosperous farmers, strong communities, and a climate-resilient food system that positions Africa as a leader in the production of sustainable ingredients.</p>
+      <p className="font-['Rubik',sans-serif] font-normal leading-[1.68] min-w-full not-italic relative shrink-0 text-[#1e4a35] text-[20px] tracking-[0.6px] w-min">At Farm to Feed, we create impact throughout the supply chain, from farm level to customer counter. Our long-term outcomes lead to prosperous farmers, strong communities, and a climate-resilient food system that positions Africa as a leader in the production of sustainable ingredients.</p>
       <Order1 />
     </div>
   );
@@ -896,7 +896,7 @@ function Frame23() {
       <Frame61 />
       <div className="absolute flex h-[500px] items-center justify-center left-[744px] top-[89px] w-[615px]" style={{ "--transform-inner-width": "1185", "--transform-inner-height": "619" } as React.CSSProperties}>
         <div className="-rotate-90 flex-none">
-          <div className="h-[615px] relative w-[500px]" data-name="Vector">
+          <div className="h-[615px] relative w-125" data-name="Vector">
             <img alt="" className="absolute block inset-0 max-w-none size-full" height="615" src={imgVector2} width="500" />
           </div>
         </div>

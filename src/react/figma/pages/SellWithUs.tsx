@@ -17,6 +17,8 @@ import { BottomLandscapeSvg } from "../imports/SellWithUs-3/bottom-landscape";
 import { Header } from "../components/Header";
 import { Footer } from "../components/Footer";
 import { ContentContainer } from "../components/layout/ContentContainer";
+import { sectionSpacing } from "../components/layout/spacing";
+import { typeStyles } from "../components/layout/typography";
 const offeringRows = [
 	[
 		{
@@ -61,7 +63,7 @@ const supplierStories = [Group22, Group24, Group23];
 export default function SellWithUs() {
 	return (
 		<div
-			className="bg-white content-stretch flex flex-col items-center relative w-full min-h-screen"
+			className="bg-white flex flex-col items-center relative w-full min-h-screen"
 			data-name="Sell with us">
 			{/* Hero */}
 			<div
@@ -69,24 +71,24 @@ export default function SellWithUs() {
 				data-name="Wireframe - 44">
 				<ContentContainer
 					size="wide"
-					className="pt-[170px] pb-[120px] md:pt-[260px]">
-					<div className="content-stretch flex flex-col gap-[40px] items-center relative">
-						<div className="content-stretch flex flex-col gap-[32px] md:gap-[64px] items-center relative shrink-0 px-4">
+					className="pt-[170px] pb-30 md:pt-[260px]">
+					<div className="flex flex-col gap-10 items-center relative">
+						<div className="flex flex-col gap-8 md:gap-16 items-center relative shrink-0 px-4">
 							<div
 								className="absolute h-[36px] left-[6px] top-[124px] w-[633px]"
 								data-name="objects"
 							/>
-							<div className="font-['Fraunces',serif] font-normal leading-tight md:leading-normal not-italic relative shrink-0 text-black text-center tracking-wide w-full ">
-								<p className="leading-tight md:leading-normal mb-0 text-[#0f251b] text-4xl md:text-5xl lg:text-6xl">
+							<div className={`${typeStyles.heroTitleLarge} not-italic relative shrink-0 text-black text-center w-full`}>
+								<p className="mb-0 text-[#0f251b]">
 									Making farming
 								</p>
-								<p className="leading-tight md:leading-normal text-[#1e4a35] text-4xl md:text-5xl lg:text-6xl">
+								<p className="text-green-500">
 									Fair and Rewarding
 								</p>
 							</div>
-							<div className="font-['Rubik',sans-serif] font-normal leading-[1.68] not-italic relative shrink-0 text-[#1e4a35] text-[14px] md:text-[16px] text-center tracking-[0.48px] w-full max-w-[656px]">
-								<p className="leading-[1.68] mb-0">{`We want to keep your hard work in the human food chain, making sure nothing goes to waste. With us, it's easy to access the market and sell your entire harvest -including the odd-shaped and surplus produce- at fair price.`}</p>
-								<p className="leading-[1.68]">
+							<div className={`${typeStyles.body} not-italic relative shrink-0 text-green-500 text-sm md:text-base text-center w-full max-w-[656px]`}>
+								<p className="leading-copy mb-0">{`We want to keep your hard work in the human food chain, making sure nothing goes to waste. With us, it's easy to access the market and sell your entire harvest -including the odd-shaped and surplus produce- at fair price.`}</p>
+								<p className="leading-copy">
 									{` `}
 									<br aria-hidden="true" />
 									Throughout Kenya, we are the buyer of choice
@@ -136,24 +138,24 @@ export default function SellWithUs() {
 				data-name="Wireframe - 55">
 				<ContentContainer
 					size="wide"
-					className="pt-[120px] pb-[96px] md:pt-[180px] lg:pt-[234px] lg:pb-[120px]">
-					<div className="content-stretch flex flex-col gap-[32px] items-center relative w-full">
-						<div className="content-stretch flex flex-col gap-[32px] items-center relative w-full">
-							<div className="content-stretch flex flex-col gap-[32px] items-center max-w-[1052px] not-italic relative shrink-0 text-center w-full">
-								<p className="font-['Fraunces',serif] font-normal leading-[normal] relative shrink-0 text-[#0f251b] text-[36px] md:text-[48px] lg:text-[56px] tracking-[1.68px] w-full">
+					className="pt-[120px] pb-[96px] md:pt-[180px] lg:pt-[234px] lg:pb-30">
+					<div className="flex flex-col gap-8 items-center relative w-full">
+						<div className="flex flex-col gap-8 items-center relative w-full">
+							<div className="flex flex-col gap-8 items-center max-w-[1052px] not-italic relative shrink-0 text-center w-full">
+								<p className={`${typeStyles.heroTitle} relative shrink-0 text-[#0f251b] w-full`}>
 									Our Offering
 								</p>
-								<p className="font-['Rubik',sans-serif] font-normal leading-[1.68] relative shrink-0 text-[#1e4a35] text-[16px] tracking-[0.48px] w-full">
+								<p className={`${typeStyles.body} relative shrink-0 text-green-500 w-full`}>
 									Farmers who supply to Farm to Feed enjoy:
 								</p>
 							</div>
-							<div className="content-stretch flex flex-col items-start relative shrink-0 w-full">
-								<div className="content-stretch flex flex-col gap-[32px] items-start relative shrink-0 w-full lg:flex-row">
+							<div className="flex flex-col items-start relative shrink-0 w-full">
+								<div className="flex flex-col gap-8 items-start relative shrink-0 w-full lg:flex-row">
 									{offeringRows[0].map((offering) => (
 										<div className="bg-[#fbfafa] relative rounded-[30px] w-full lg:flex-1">
-											<div className="content-stretch flex flex-col gap-[27px] items-start p-[28px] md:p-[48px] relative size-full">
+											<div className="flex flex-col gap-[27px] items-start p-[28px] md:p-[48px] relative size-full">
 												<offering.Header />
-												<p className="font-['Rubik',sans-serif] font-normal leading-[1.68] relative shrink-0 text-[#1e4a35] text-[16px] tracking-[0.48px] w-full">
+												<p className={`${typeStyles.body} relative shrink-0 text-green-500 w-full`}>
 													{offering.body}
 												</p>
 											</div>
@@ -161,13 +163,13 @@ export default function SellWithUs() {
 									))}
 								</div>
 							</div>
-							<div className="content-stretch flex flex-col items-start max-w-[842px] relative shrink-0 w-full">
-								<div className="content-stretch flex flex-col gap-[32px] items-start relative shrink-0 w-full md:flex-row">
+							<div className="flex flex-col items-start max-w-[842px] relative shrink-0 w-full">
+								<div className="flex flex-col gap-8 items-start relative shrink-0 w-full md:flex-row">
 									{offeringRows[1].map((offering) => (
 										<div className="bg-[#fbfafa] relative rounded-[30px] w-full md:flex-1">
-											<div className="content-stretch flex flex-col gap-[27px] items-start p-[28px] md:p-[48px] relative size-full">
+											<div className="flex flex-col gap-[27px] items-start p-[28px] md:p-[48px] relative size-full">
 												<offering.Header />
-												<p className="font-['Rubik',sans-serif] font-normal leading-[1.68] relative shrink-0 text-[#1e4a35] text-[16px] tracking-[0.48px] w-full">
+												<p className={`${typeStyles.body} relative shrink-0 text-green-500 w-full`}>
 													{offering.body}
 												</p>
 											</div>
@@ -179,9 +181,9 @@ export default function SellWithUs() {
 					</div>
 				</ContentContainer>
 				<div
-					className="absolute bg-black content-stretch flex items-start left-[calc(41.67%+6px)] px-[16px] py-[8px] rounded-[40px] top-[1649px]"
+					className="absolute bg-black flex items-start left-[calc(41.67%+6px)] px-4 py-2 rounded-[40px] top-[1649px]"
 					data-name="order">
-					<p className="font-['Rubik',sans-serif] font-normal leading-[1.68] not-italic relative shrink-0 text-[#eee] text-[16px] text-center tracking-[0.48px] whitespace-nowrap">
+					<p className={`${typeStyles.body} not-italic relative shrink-0 text-[#eee] text-center whitespace-nowrap`}>
 						Learn More
 					</p>
 				</div>
@@ -190,20 +192,20 @@ export default function SellWithUs() {
 			<div
 				className="bg-white min-h-[777px] overflow-clip relative shrink-0 w-full"
 				data-name="Wireframe - 42">
-				<ContentContainer size="wide" className="py-[96px]">
+				<ContentContainer size="wide" className={sectionSpacing.default}>
 					<div className="relative lg:min-h-[585px]">
-						<div className="content-stretch flex flex-col items-center max-w-[1052px] w-full mx-auto lg:-translate-x-1/2 lg:absolute lg:left-1/2 lg:top-[75px]">
-							<p className="font-['Fraunces',serif] font-normal leading-[normal] not-italic relative shrink-0 text-[#0f251b] text-[36px] md:text-[48px] lg:text-[56px] text-center tracking-[1.68px] w-full">
+						<div className="flex flex-col items-center max-w-[1052px] w-full mx-auto lg:-translate-x-1/2 lg:absolute lg:left-1/2 lg:top-[75px]">
+							<p className={`${typeStyles.heroTitle} not-italic relative shrink-0 text-[#0f251b] text-center w-full`}>
 								How Does it Work
 							</p>
 						</div>
 						<div className="relative z-10 grid gap-6 pt-[48px] md:grid-cols-2 lg:grid-cols-4 lg:pt-[170px]">
 							{supplierProcessSteps.map((step, index) => (
 								<div className="flex gap-4 rounded-[24px] bg-white/90 p-5 shadow-sm">
-									<div className="flex size-10 shrink-0 items-center justify-center rounded-full bg-[#1e4a35] font-['Rubik',sans-serif] text-sm font-semibold text-white">
+									<div className={`${typeStyles.caption} flex size-10 shrink-0 items-center justify-center rounded-full bg-green-500 font-semibold text-white`}>
 										{index + 1}
 									</div>
-									<p className="font-['Rubik',sans-serif] font-normal leading-[1.68] not-italic text-[14px] text-black tracking-[0.42px]">
+									<p className={`${typeStyles.caption} font-normal not-italic text-black`}>
 										{step.body}
 									</p>
 								</div>
@@ -489,7 +491,7 @@ export default function SellWithUs() {
 										className="absolute contents inset-[46.94%_-0.01%_5.53%_67.34%]"
 										data-name="Clip path group">
 										<div
-											className="absolute inset-[48.28%_18.79%_8.68%_66.58%] mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[-1.17px_-0.16px] mask-size-[122.51px_118.116px]"
+											className="absolute inset-[48.28%_18.79%_8.68%_66.58%] mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-[-1.17px_-0.16px] mask-size-[122.51px_118.116px]"
 											style={{
 												maskImage: `url('${imgGroup}')`,
 											}}
@@ -558,14 +560,14 @@ export default function SellWithUs() {
 				</div>
 				<ContentContainer
 					size="wide"
-					className="relative z-10 flex flex-col items-center gap-[56px] pt-[120px] pb-[96px] md:gap-[104px] md:pt-[184px] md:pb-[120px]">
-					<div className="font-['Fraunces',serif] font-normal leading-[0] not-italic text-[#0f251b] text-[36px] md:text-[48px] text-center tracking-[1.44px] w-full max-w-[769px] whitespace-pre-wrap">
-						<p className="leading-[normal] mb-0">{`Discover how farmers `}</p>
-						<p className="leading-[normal]">
+					className={`relative z-10 flex flex-col items-center gap-[56px] md:gap-[104px] ${sectionSpacing.default}`}>
+					<div className={`${typeStyles.sectionTitleLarge} not-italic text-[#0f251b] text-center w-full max-w-[769px] whitespace-pre-wrap`}>
+						<p className="leading-normal mb-0">{`Discover how farmers `}</p>
+						<p className="leading-normal">
 							are transforming communities
 						</p>
 					</div>
-					<div className="content-stretch flex flex-wrap gap-[32px] items-center justify-center leading-[0] relative w-full">
+					<div className="flex flex-wrap gap-8 items-center justify-center leading-zero relative w-full">
 						{supplierStories.map((StoryCard) => (
 							<div
 								className="relative h-[220px] w-[320px] overflow-visible sm:h-[300px] sm:w-[480px] md:h-auto md:w-auto [&>*]:origin-top-left [&>*]:scale-50 sm:[&>*]:scale-75 md:[&>*]:scale-100"
@@ -654,9 +656,9 @@ export default function SellWithUs() {
 				data-name="Wireframe - 36">
 				<ContentContainer
 					size="wide"
-					className="flex justify-center py-[72px] md:pt-[87px] md:pb-[88px]">
+					className={`flex justify-center ${sectionSpacing.cta}`}>
 					<div
-						className="bg-[#4c352b] min-h-[520px] max-w-[1216px] overflow-clip relative rounded-[32px] md:rounded-[40px] w-full flex items-center justify-center p-[28px] md:p-10"
+						className="bg-[#4c352b] min-h-[520px] max-w-[1216px] overflow-clip relative rounded-4xl md:rounded-[40px] w-full flex items-center justify-center p-[28px] md:p-10"
 						data-name="Wireframe - 38">
 						<div className="absolute h-[265.41px] left-[calc(83.33%-80.33px)] opacity-28 top-[328px] w-[361.514px]">
 							<div
@@ -719,21 +721,21 @@ export default function SellWithUs() {
 								</div>
 							</div>
 						</div>
-						<div className="content-stretch flex flex-col gap-[40px] items-center relative rounded-[40px] z-10">
-							<p className="font-['Fraunces',serif] font-normal leading-[normal] not-italic relative shrink-0 text-[#f9ecbd] text-[36px] md:text-[48px] text-center tracking-[1.44px] w-full max-w-[800px]">
+						<div className="flex flex-col gap-10 items-center relative rounded-[40px] z-10">
+							<p className={`${typeStyles.sectionTitleLarge} not-italic relative shrink-0 text-yellow-200 text-center w-full max-w-[800px]`}>
 								Do you have questions?
 							</p>
-							<div className="font-['Rubik',sans-serif] font-normal leading-[0] not-italic relative shrink-0 text-[16px] md:text-[20px] text-center text-white tracking-[0.6px] w-full max-w-[592px] whitespace-pre-wrap">
+							<div className={`${typeStyles.bodyLarge} not-italic relative shrink-0 text-center text-white w-full max-w-148 whitespace-pre-wrap`}>
 								<p className="mb-0">
-									<span className="leading-[1.68]">{`Do you have questions or would like to register as a farmer with us? Download the Farm to Feed Supplier App from the `}</span>
-									<span className="[text-decoration-skip-ink:none] decoration-solid leading-[1.68] underline">
+									<span className="leading-copy">{`Do you have questions or would like to register as a farmer with us? Download the Farm to Feed Supplier App from the `}</span>
+									<span className="[text-decoration-skip-ink:none] decoration-solid leading-copy underline">
 										Google Play Store
 									</span>
-									<span className="leading-[1.68]">{` or contact our sourcing team:`}</span>
+									<span className="leading-copy">{` or contact our sourcing team:`}</span>
 								</p>
 								<p>
-									<span className="leading-[1.68]">{` `}</span>
-									<span className="[text-decoration-skip-ink:none] decoration-solid font-['Rubik',sans-serif] font-medium leading-[1.68] not-italic text-[#d78228] underline">
+									<span className="leading-copy">{` `}</span>
+									<span className={`${typeStyles.body} [text-decoration-skip-ink:none] decoration-solid font-medium not-italic text-orange-500 underline`}>
 										0723 740 537
 									</span>
 								</p>

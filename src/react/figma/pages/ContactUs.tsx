@@ -7,6 +7,7 @@ import svgPaths from "../imports/ContactUs-1/svg-n26o6nsh2k";
 import imgMap from "../../../assets/figma/768034251e290c5f148f0125d9e404698150a7ed.png?url";
 import imgPegmanOffscreen2X from "../../../assets/figma/747a27fe416ebfaf57b25beae190a98036e77d0e.png?url";
 import contactBottomLandscape from "../imports/ContactUs/contact-bg-02.svg?url";
+import { typeStyles } from "../components/layout/typography";
 const phoneContact = {
   title: "Phone no.",
   helper: "Call us or send a WhatsApp message to",
@@ -26,7 +27,7 @@ const inquiryContacts = [{
   links: ["+254 723 740 537"]
 }];
 export default function ContactUs() {
-  return <div className="bg-white content-stretch flex flex-col items-start relative w-full" data-name="Contact Us">
+  return <div className="bg-white flex flex-col items-start relative w-full" data-name="Contact Us">
       {/* Contact */}<div className="bg-[#fefcf5] min-h-[800px] overflow-clip relative rounded-bl-[40px] rounded-br-[40px] shrink-0 w-full" data-name="Contact">
       <Header />
       <div className="absolute inset-[0_0_69.41%_0]">
@@ -47,35 +48,35 @@ export default function ContactUs() {
       <div className="absolute h-[140px] left-[-48px] top-[128px] w-[143px] opacity-45 md:h-[200px] md:left-[72px] md:top-[144.34px] md:w-[204px] md:opacity-70 lg:h-[244.47px] lg:left-[138.87px] lg:w-[249.332px] lg:opacity-100">
       <ContactUsSvgs.ContactUsSvg04 />
     </div>
-      <SectionShell className="pt-[180px] pb-[160px] md:pt-[220px] md:pb-[220px] lg:pt-[246px] lg:pb-[260px]" containerClassName="grid gap-[72px] lg:grid-cols-[minmax(0,1fr)_minmax(420px,592px)]" size="wide">
-        <div className="flex flex-col gap-[64px] md:gap-[118px] lg:pl-[120px] xl:pl-[160px]">
+      <SectionShell containerClassName="grid gap-[72px] lg:grid-cols-[minmax(0,1fr)_minmax(420px,592px)]" size="wide" spacing="hero">
+        <div className="flex flex-col gap-16 md:gap-[118px] lg:pl-[120px] xl:pl-[160px]">
           <SectionHeader className="max-w-[664px]" description="Our team works round the clock to respond to all incoming queries." title="Contact us" />
-          <div className="content-stretch flex flex-col gap-[40px] items-start relative w-full max-w-[520px] lg:max-w-[320px]" data-name="Contact details">
-      <div className="content-stretch flex flex-col gap-[8px] items-start relative shrink-0 w-full">
-        <p className="font-['Rubik',sans-serif] font-medium leading-[30px] relative shrink-0 text-[#0f251b] text-[16px] w-full">
+          <div className="flex flex-col gap-10 items-start relative w-full max-w-[520px] lg:max-w-[320px]" data-name="Contact details">
+      <div className="flex flex-col gap-2 items-start relative shrink-0 w-full">
+        <p className={`${typeStyles.body} font-medium leading-contact relative shrink-0 text-[#0f251b] w-full`}>
           {phoneContact.title}
         </p>
-        <div className="content-stretch flex flex-col gap-[8px] items-start relative shrink-0 w-full">
-      <p className="font-['Rubik',sans-serif] font-normal leading-[24px] relative shrink-0 text-[#8c8c8c] text-[16px] w-full">
+        <div className="flex flex-col gap-2 items-start relative shrink-0 w-full">
+      <p className={`${typeStyles.body} relative shrink-0 text-[#8c8c8c] w-full`}>
         {phoneContact.helper}
       </p>
-      {phoneContact.links.map(link => <div className="content-stretch flex gap-[8px] items-center justify-center relative shrink-0">
-      <p className="font-['Rubik',sans-serif] font-medium leading-[30px] relative shrink-0 text-[#1e4a35] text-[16px] break-words">
+      {phoneContact.links.map(link => <div className="flex gap-2 items-center justify-center relative shrink-0">
+      <p className={`${typeStyles.body} font-medium leading-contact relative shrink-0 text-green-500 break-words`}>
         {link}
       </p>
     </div>)}
     </div>
       </div>
-      <div className="content-stretch flex flex-col gap-[16px] items-start relative shrink-0 w-full">
-        <p className="font-['Rubik',sans-serif] font-medium leading-[30px] relative shrink-0 text-[#0f251b] text-[16px] w-full">
+      <div className="flex flex-col gap-4 items-start relative shrink-0 w-full">
+        <p className={`${typeStyles.body} font-medium leading-contact relative shrink-0 text-[#0f251b] w-full`}>
           General inquiries
         </p>
-        {inquiryContacts.map(contact => <div className="content-stretch flex flex-col gap-[8px] items-start relative shrink-0 w-full">
-      <p className="font-['Rubik',sans-serif] font-normal leading-[24px] relative shrink-0 text-[#8c8c8c] text-[16px] w-full">
+        {inquiryContacts.map(contact => <div className="flex flex-col gap-2 items-start relative shrink-0 w-full">
+      <p className={`${typeStyles.body} relative shrink-0 text-[#8c8c8c] w-full`}>
         {contact.helper}
       </p>
-      {contact.links.map(link => <div className="content-stretch flex gap-[8px] items-center justify-center relative shrink-0">
-      <p className="font-['Rubik',sans-serif] font-medium leading-[30px] relative shrink-0 text-[#1e4a35] text-[16px] break-words">
+      {contact.links.map(link => <div className="flex gap-2 items-center justify-center relative shrink-0">
+      <p className={`${typeStyles.body} font-medium leading-contact relative shrink-0 text-green-500 break-words`}>
         {link}
       </p>
     </div>)}
@@ -84,7 +85,7 @@ export default function ContactUs() {
     </div>
         </div>
         <div className="pt-0 lg:pt-[267px]">
-          <div className="content-stretch flex flex-col gap-[64px] h-[340px] items-start relative w-full sm:h-[400px] md:h-[462px]" data-name="Content">
+          <div className="flex flex-col gap-16 h-[340px] items-start relative w-full sm:h-[400px] md:h-[462px]" data-name="Content">
       <div className="bg-white flex-[1_0_0] min-h-[340px] overflow-clip relative w-full sm:min-h-[400px] md:min-h-[462px]" data-name="_Google maps mockup">
       <div className="absolute inset-[-64.07%_-68.92%_-43.72%_-47.3%]" data-name="Map">
         <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgMap} />
@@ -98,14 +99,14 @@ export default function ContactUs() {
         <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgPegmanOffscreen2X} />
       </div>
     </div>
-      <div className="absolute h-[53px] right-[8px] top-[8px] w-[28px]" data-name="Zoom control buttons">
+      <div className="absolute h-[53px] right-[8px] top-2 w-[28px]" data-name="Zoom control buttons">
       <div className="absolute inset-[-3.77%_-10.71%_-7.55%_-10.71%]">
         <ContactUsSvgs.ContactUsSvg06 />
       </div>
     </div>
-      <div className="absolute h-[29px] left-[8px] top-[8px] w-[94px]" data-name="Map type button group">
+      <div className="absolute h-[29px] left-[8px] top-2 w-[94px]" data-name="Map type button group">
       <div className="absolute bg-white inset-0 rounded-[2px] shadow-[0px_1px_3px_0px_rgba(0,0,0,0.2)]" data-name="Rectangle" />
-      <p className="absolute font-['Roboto:Regular',sans-serif] font-normal inset-[27.59%_8.51%_27.59%_48.94%] leading-[normal] text-[#565656] text-[11px] whitespace-nowrap" style={{
+      <p className="absolute font-['Roboto:Regular',sans-serif] font-normal inset-[27.59%_8.51%_27.59%_48.94%] leading-normal text-[#565656] text-[11px] whitespace-nowrap" style={{
                   fontVariationSettings: "'wdth' 100"
                 }}>
         Satellite
@@ -121,7 +122,7 @@ export default function ContactUs() {
           </div>
         </div>
       </div>
-      <p className="absolute font-['Roboto:Medium',sans-serif] font-medium inset-[27.59%_68.09%_27.59%_8.51%] leading-[normal] text-[11px] text-black whitespace-nowrap" style={{
+      <p className="absolute font-['Roboto:Medium',sans-serif] font-medium inset-[27.59%_68.09%_27.59%_8.51%] leading-normal text-[11px] text-black whitespace-nowrap" style={{
                   fontVariationSettings: "'wdth' 100"
                 }}>
         Map

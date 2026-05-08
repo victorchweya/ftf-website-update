@@ -13,6 +13,8 @@ import imgPegmanOffscreen2X from "../../../assets/figma/747a27fe416ebfaf57b25bea
 import { imgGroup } from "../imports/BuyFromUsLocal-1/svg-efcb2";
 import { BorderBottomKenyanBuyersSvg } from "../imports/BuyFromUsLocal-1/border-bottom-kenyan-buyers";
 import { BorderTopKenyanBuyersSvg } from "../imports/BuyFromUsLocal-1/border-top-kenyan-buyers";
+import { sectionSpacing } from "../components/layout/spacing";
+import { typeStyles } from "../components/layout/typography";
 const partnerProductCategories = [
 	["Dairy", "Cereals, grains & pulses", "Tea & Coffee"],
 	["spices", "Snacks"],
@@ -47,11 +49,11 @@ const localBuyerTestimonialControls = [Order4, Frame6, Order5];
 export default function KenyanBuyers() {
 	return (
 		<div
-			className="bg-white content-stretch flex flex-col items-start relative w-full"
+			className="bg-white flex flex-col items-start relative w-full"
 			data-name="Buy from us - local">
 			{/* Hero */}
 			<div
-				className="bg-[#f9ecbd] min-h-[600px] md:min-h-[800px] lg:min-h-[926px] overflow-clip relative shrink-0 w-full"
+				className="bg-yellow-200 min-h-[600px] md:min-h-[800px] lg:min-h-[926px] overflow-clip relative shrink-0 w-full"
 				data-name="Wireframe - 53">
 				<div
 					className="absolute hidden md:flex h-[400px] lg:h-[620.8px] items-center justify-center right-[-10%] lg:right-[-24.34%] lg:left-[79.24%] top-[200px] md:top-[352px] opacity-50 lg:opacity-100"
@@ -67,21 +69,21 @@ export default function KenyanBuyers() {
 				<Header />
 				<ContentContainer
 					size="wide"
-					className="pt-[160px] pb-[96px] md:pt-[211px] md:pb-[120px]">
+					className="pt-[160px] pb-[96px] md:pt-[211px] md:pb-30">
 					<div className="grid gap-12 items-center lg:grid-cols-[minmax(0,1fr)_minmax(0,563px)]">
-						<div className="content-stretch flex flex-col gap-[40px] items-start relative">
-							<div className="content-stretch flex flex-col gap-[40px] items-start relative shrink-0">
+						<div className="flex flex-col gap-10 items-start relative">
+							<div className="flex flex-col gap-10 items-start relative shrink-0">
 								<div
 									className="absolute hidden h-[14px] left-0 top-[130.5px] w-[443px] md:block"
 									data-name="objects">
 									<KenyanBuyersSvgs.KenyanBuyersSvg02 />
 								</div>
-								<p className="font-['Fraunces',serif] font-normal leading-tight not-italic relative shrink-0 text-[#0f251b] text-4xl md:text-5xl lg:text-6xl tracking-wide w-full max-w-[519px]">
+								<p className={`${typeStyles.heroTitleLarge} not-italic relative shrink-0 text-[#0f251b] w-full max-w-[519px]`}>
 									<span className="leading-tight">
 										Good produce,
 										<br aria-hidden="true" />
 									</span>
-									<span className="leading-tight text-[#1e4a35]">
+									<span className="leading-tight text-green-500">
 										good margins,
 									</span>
 									<span className="leading-tight">
@@ -89,11 +91,11 @@ export default function KenyanBuyers() {
 										even better environment
 									</span>
 								</p>
-								<p className="font-['Rubik',sans-serif] font-medium italic leading-[1.68] relative shrink-0 text-[#d78228] text-[20px] tracking-[0.6px] w-full max-w-[515px]">{`"Mboga bora, faida bora, mazingira bora zaidi"`}</p>
+								<p className={`${typeStyles.bodyLead} font-medium italic relative shrink-0 text-orange-500 w-full max-w-[515px]`}>{`"Mboga bora, faida bora, mazingira bora zaidi"`}</p>
 							</div>
-							<div className="font-['Rubik',sans-serif] font-normal leading-[0] not-italic relative shrink-0 text-[#1e4a35] text-[16px] tracking-[0.48px] w-full max-w-[515px] whitespace-pre-wrap">
+							<div className={`${typeStyles.body} leading-zero not-italic relative shrink-0 text-green-500 w-full max-w-[515px] whitespace-pre-wrap`}>
 								<p className="mb-0">
-									<span className="leading-[1.68]">
+									<span className="leading-copy">
 										Built with farmers at the centre, our
 										solution brings oddly good products to
 										businesses, retailers, schools, feeding
@@ -102,75 +104,75 @@ export default function KenyanBuyers() {
 										less waste — all in one smarter supply
 										chain.
 									</span>
-									<span className="font-['Rubik',sans-serif] font-medium leading-[1.68] not-italic">{` `}</span>
+									<span className="font-sans font-medium leading-copy not-italic">{` `}</span>
 								</p>
-								<p className="leading-[1.68] mb-0">​</p>
-								<p className="font-['Rubik',sans-serif] font-medium leading-[1.68]">
+								<p className="leading-copy mb-0">​</p>
+								<p className="font-sans font-medium leading-copy">
 									Ready to bite into freshness?
 								</p>
 							</div>
 						</div>
-						<div className="content-stretch flex flex-col items-center relative shrink-0 w-full max-w-[563px]">
+						<div className="flex flex-col items-center relative shrink-0 w-full max-w-[563px]">
 							<div className="bg-white relative rounded-[30px] shrink-0 w-full">
 								<div
 									aria-hidden="true"
 									className="absolute border border-[#f7f7f7] border-solid inset-0 pointer-events-none rounded-[30px]"
 								/>
-								<div className="content-stretch flex flex-col gap-[32px] items-start p-[24px] md:p-[40px] relative size-full">
-									<div className="content-stretch flex flex-col gap-[32px] items-start relative shrink-0 w-full">
-										<div className="content-stretch flex items-center relative shrink-0">
-											<p className="font-['Rubik',sans-serif] font-medium leading-[normal] not-italic relative shrink-0 text-[#0f251b] text-[24px] tracking-[0.72px] w-[210px]">
+								<div className="flex flex-col gap-8 items-start p-6 md:p-[40px] relative size-full">
+									<div className="flex flex-col gap-8 items-start relative shrink-0 w-full">
+										<div className="flex items-center relative shrink-0">
+											<p className={`${typeStyles.cardTitle} font-medium not-italic relative shrink-0 text-[#0f251b] w-[210px]`}>
 												Buy from us
 											</p>
 										</div>
-										<p className="font-['Rubik',sans-serif] font-normal leading-[1.68] not-italic relative shrink-0 text-[#1e4a35] text-[16px] tracking-[0.48px] w-full">
+										<p className={`${typeStyles.body} not-italic relative shrink-0 text-green-500 w-full`}>
 											Fill out the form and our sales team
 											will contact you shortly.
 										</p>
 									</div>
-									<div className="content-stretch flex flex-col gap-[24px] items-start relative shrink-0 w-full">
+									<div className="flex flex-col gap-6 items-start relative shrink-0 w-full">
 										<div
-											className="content-stretch flex items-start relative shrink-0 w-full"
+											className="flex items-start relative shrink-0 w-full"
 											data-name="Inputs">
 											<div
-												className="content-stretch flex flex-col gap-[8px] items-start relative w-full sm:flex-[1_0_0] sm:min-w-px"
+												className="flex flex-col gap-2 items-start relative w-full sm:flex-[1_0_0] sm:min-w-px"
 												data-name="Input">
-												<p className="font-['Rubik',sans-serif] font-medium leading-[1.5] not-italic relative shrink-0 text-[#0f251b] text-[12px] w-full">
+												<p className={`${typeStyles.caption} not-italic relative shrink-0 text-[#0f251b] w-full`}>
 													Your Name *
 												</p>
 												<div
-													className="bg-[#fbfafa] h-[48px] relative rounded-[35px] shrink-0 w-full"
+													className="bg-[#fbfafa] h-12 relative rounded-[35px] shrink-0 w-full"
 													data-name="Text input">
 													<div
 														aria-hidden="true"
 														className="absolute border border-[#e6e6e6] border-solid inset-[-1px] pointer-events-none rounded-[36px]"
 													/>
 													<div className="flex flex-row items-center size-full">
-														<div className="content-stretch flex items-center p-[12px] relative size-full" />
+														<div className="flex items-center p-[12px] relative size-full" />
 													</div>
 												</div>
 											</div>
 										</div>
 										<div
-											className="content-stretch flex flex-col gap-[16px] items-start relative shrink-0 w-full sm:flex-row"
+											className="flex flex-col gap-4 items-start relative shrink-0 w-full sm:flex-row"
 											data-name="Inputs">
 											<div
-												className="content-stretch flex flex-col gap-[8px] items-start relative w-full sm:flex-[1_0_0] sm:min-w-px"
+												className="flex flex-col gap-2 items-start relative w-full sm:flex-[1_0_0] sm:min-w-px"
 												data-name="Input">
-												<p className="font-['Rubik',sans-serif] font-medium leading-[1.5] not-italic relative shrink-0 text-[#0f251b] text-[12px] w-full">
+												<p className={`${typeStyles.caption} not-italic relative shrink-0 text-[#0f251b] w-full`}>
 													Your Email *
 												</p>
 												<div
-													className="bg-[#fbfafa] h-[48px] relative rounded-[24px] shrink-0 w-full"
+													className="bg-[#fbfafa] h-12 relative rounded-[24px] shrink-0 w-full"
 													data-name="Text input">
 													<div
 														aria-hidden="true"
 														className="absolute border border-[#e6e6e6] border-solid inset-[-1px] pointer-events-none rounded-[25px]"
 													/>
 													<div className="flex flex-row items-center size-full">
-														<div className="content-stretch flex gap-[8px] items-center p-[12px] relative size-full">
+														<div className="flex gap-2 items-center p-[12px] relative size-full">
 															<div
-																className="overflow-clip relative shrink-0 size-[24px]"
+																className="overflow-clip relative shrink-0 size-6"
 																data-name="credit_card">
 																<div
 																	className="absolute left-[4px] size-[16px] top-[4px]"
@@ -178,7 +180,7 @@ export default function KenyanBuyers() {
 																	<KenyanBuyersSvgs.KenyanBuyersSvg03 />
 																</div>
 															</div>
-															<p className="flex-[1_0_0] font-['Rubik',sans-serif] font-normal leading-[1.5] min-w-px not-italic relative text-[#808080] text-[14px]">
+															<p className={`flex-[1_0_0] ${typeStyles.caption} font-normal min-w-px not-italic relative text-[#808080]`}>
 																email@example.com
 															</p>
 														</div>
@@ -186,68 +188,68 @@ export default function KenyanBuyers() {
 												</div>
 											</div>
 											<div
-												className="content-stretch flex flex-col gap-[8px] items-start relative w-full sm:flex-[1_0_0] sm:min-w-px"
+												className="flex flex-col gap-2 items-start relative w-full sm:flex-[1_0_0] sm:min-w-px"
 												data-name="Input">
-												<p className="font-['Rubik',sans-serif] font-medium leading-[1.5] not-italic relative shrink-0 text-[#0f251b] text-[12px] w-full">
+												<p className={`${typeStyles.caption} not-italic relative shrink-0 text-[#0f251b] w-full`}>
 													Phone Number *
 												</p>
 												<div
-													className="bg-[#fbfafa] h-[48px] relative rounded-[24px] shrink-0 w-full"
+													className="bg-[#fbfafa] h-12 relative rounded-[24px] shrink-0 w-full"
 													data-name="Text input">
 													<div
 														aria-hidden="true"
 														className="absolute border border-[#e6e6e6] border-solid inset-[-1px] pointer-events-none rounded-[25px]"
 													/>
 													<div className="flex flex-row items-center size-full">
-														<div className="content-stretch flex items-center p-[12px] relative size-full" />
+														<div className="flex items-center p-[12px] relative size-full" />
 													</div>
 												</div>
 											</div>
 										</div>
 										<div
-											className="content-stretch flex flex-col gap-[16px] items-start relative shrink-0 w-full sm:flex-row"
+											className="flex flex-col gap-4 items-start relative shrink-0 w-full sm:flex-row"
 											data-name="Inputs">
 											<div
-												className="content-stretch flex flex-col gap-[8px] items-start relative w-full sm:flex-[1_0_0] sm:min-w-px"
+												className="flex flex-col gap-2 items-start relative w-full sm:flex-[1_0_0] sm:min-w-px"
 												data-name="Input">
-												<p className="font-['Rubik',sans-serif] font-medium leading-[1.5] not-italic relative shrink-0 text-[#0f251b] text-[12px] w-full">
+												<p className={`${typeStyles.caption} not-italic relative shrink-0 text-[#0f251b] w-full`}>
 													Company Name *
 												</p>
 												<div
-													className="bg-[#fbfafa] h-[48px] relative rounded-[24px] shrink-0 w-full"
+													className="bg-[#fbfafa] h-12 relative rounded-[24px] shrink-0 w-full"
 													data-name="Text input">
 													<div
 														aria-hidden="true"
 														className="absolute border border-[#e6e6e6] border-solid inset-[-1px] pointer-events-none rounded-[25px]"
 													/>
 													<div className="flex flex-row items-center size-full">
-														<div className="content-stretch flex items-center p-[12px] relative size-full" />
+														<div className="flex items-center p-[12px] relative size-full" />
 													</div>
 												</div>
 											</div>
 											<div
-												className="content-stretch flex flex-col gap-[8px] items-start relative w-full sm:flex-[1_0_0] sm:min-w-px"
+												className="flex flex-col gap-2 items-start relative w-full sm:flex-[1_0_0] sm:min-w-px"
 												data-name="Input">
-												<p className="font-['Rubik',sans-serif] font-medium leading-[1.5] not-italic relative shrink-0 text-[#0f251b] text-[12px] w-full">
+												<p className={`${typeStyles.caption} not-italic relative shrink-0 text-[#0f251b] w-full`}>
 													Job Title
 												</p>
 												<div
-													className="bg-[#fbfafa] h-[48px] relative rounded-[24px] shrink-0 w-full"
+													className="bg-[#fbfafa] h-12 relative rounded-[24px] shrink-0 w-full"
 													data-name="Text input">
 													<div
 														aria-hidden="true"
 														className="absolute border border-[#e6e6e6] border-solid inset-[-1px] pointer-events-none rounded-[25px]"
 													/>
 													<div className="flex flex-row items-center size-full">
-														<div className="content-stretch flex items-center p-[12px] relative size-full" />
+														<div className="flex items-center p-[12px] relative size-full" />
 													</div>
 												</div>
 											</div>
 										</div>
 										<div
-											className="content-stretch flex flex-col gap-[8px] items-start relative shrink-0 w-full"
+											className="flex flex-col gap-2 items-start relative shrink-0 w-full"
 											data-name="Input">
-											<p className="font-['Rubik',sans-serif] font-medium leading-[1.5] not-italic relative shrink-0 text-[#0f251b] text-[12px] w-full">
+											<p className={`${typeStyles.caption} not-italic relative shrink-0 text-[#0f251b] w-full`}>
 												Business Category *
 											</p>
 											<div
@@ -258,12 +260,12 @@ export default function KenyanBuyers() {
 													className="absolute border border-[#e6e6e6] border-solid inset-[-1px] pointer-events-none rounded-[25px]"
 												/>
 												<div className="flex flex-row items-center size-full">
-													<div className="content-stretch flex gap-[16px] items-center p-[12px] relative size-full">
-														<p className="flex-[1_0_0] font-['Rubik',sans-serif] font-normal leading-[1.5] min-w-px not-italic relative text-[#1e4a35] text-[14px]">
+													<div className="flex gap-4 items-center p-[12px] relative size-full">
+														<p className={`flex-[1_0_0] ${typeStyles.caption} font-normal min-w-px not-italic relative text-green-500`}>
 															Select one...
 														</p>
 														<div
-															className="overflow-clip relative shrink-0 size-[24px]"
+															className="overflow-clip relative shrink-0 size-6"
 															data-name="keyboard_arrow_down">
 															<div
 																className="absolute inset-[35.51%_25.93%_36.66%_25.88%]"
@@ -276,11 +278,11 @@ export default function KenyanBuyers() {
 											</div>
 										</div>
 										<div
-											className="bg-[#1e4a35] relative rounded-[40px] shrink-0 w-full"
+											className="bg-green-500 relative rounded-[40px] shrink-0 w-full"
 											data-name="order">
 											<div className="flex flex-row justify-center size-full">
-												<div className="content-stretch flex items-start justify-center px-[16px] py-[11px] relative size-full">
-													<p className="font-['Rubik',sans-serif] font-normal leading-[1.68] not-italic relative shrink-0 text-[#eee] text-[16px] text-center tracking-[0.48px] whitespace-nowrap">
+												<div className="flex items-start justify-center px-4 py-[11px] relative size-full">
+													<p className={`${typeStyles.body} not-italic relative shrink-0 text-[#eee] text-center whitespace-nowrap`}>
 														Get in touch
 													</p>
 												</div>
@@ -310,34 +312,34 @@ export default function KenyanBuyers() {
 				</div>
 				<ContentContainer
 					size="wide"
-					className="relative z-10 flex flex-col items-center gap-12 pt-[120px] pb-[96px] md:pt-[164px] md:pb-[120px]">
-					<div className="content-stretch flex flex-col gap-[64px] items-center relative w-full max-w-[1280px]">
-						<div className="content-stretch flex flex-col gap-[32px] items-center max-w-[1052px] not-italic relative shrink-0 text-center w-full">
-							<p className="font-['Fraunces',serif] font-normal leading-[normal] relative shrink-0 text-[#0f251b] text-[36px] md:text-[48px] tracking-[1.44px] w-full">
+					className="relative z-10 flex flex-col items-center gap-12 pt-[120px] pb-[96px] md:pt-[164px] md:pb-30">
+					<div className="flex flex-col gap-16 items-center relative w-full max-w-7xl">
+						<div className="flex flex-col gap-8 items-center max-w-[1052px] not-italic relative shrink-0 text-center w-full">
+							<p className={`${typeStyles.sectionTitleLarge} relative shrink-0 text-[#0f251b] w-full`}>
 								Why choose Farm to Feed?
 							</p>
-							<p className="font-['Rubik',sans-serif] font-normal leading-[1.68] relative shrink-0 text-[#1e4a35] text-[16px] tracking-[0.48px] w-full">
+							<p className={`${typeStyles.body} relative shrink-0 text-green-500 w-full`}>
 								We are reshaping the food supply chain to
 								benefit everyone involved while protecting our
 								planet.
 							</p>
 						</div>
-						<div className="content-stretch flex flex-col gap-[32px] items-start relative shrink-0 w-full">
-							<div className="content-stretch flex flex-col items-start relative shrink-0 w-full">
-								<div className="content-stretch flex flex-col gap-[32px] items-start relative shrink-0 w-full lg:flex-row">
+						<div className="flex flex-col gap-8 items-start relative shrink-0 w-full">
+							<div className="flex flex-col items-start relative shrink-0 w-full">
+								<div className="flex flex-col gap-8 items-start relative shrink-0 w-full lg:flex-row">
 									<div className="bg-[#fbfafa] relative rounded-[30px] w-full lg:flex-1">
-										<div className="content-stretch flex flex-col gap-[27px] items-start p-[40px] relative size-full">
-											<div className="content-stretch flex flex-col gap-[32px] items-start justify-center relative shrink-0">
+										<div className="flex flex-col gap-[27px] items-start p-[40px] relative size-full">
+											<div className="flex flex-col gap-8 items-start justify-center relative shrink-0">
 												<div
 													className="h-[64px] relative shrink-0 w-[65.697px]"
 													data-name="Group">
 													<KenyanBuyersSvgs.KenyanBuyersSvg06 />
 												</div>
-												<p className="font-['Fraunces',serif] font-normal leading-[normal] not-italic relative shrink-0 text-[#0f251b] text-[24px] tracking-[0.72px]">
+												<p className={`${typeStyles.cardTitle} not-italic relative shrink-0 text-[#0f251b]`}>
 													One Stop Shop
 												</p>
 											</div>
-											<p className="font-['Rubik',sans-serif] font-normal leading-[1.68] not-italic relative shrink-0 text-[#1e4a35] text-[16px] tracking-[0.48px] w-full">
+											<p className={`${typeStyles.body} not-italic relative shrink-0 text-green-500 w-full`}>
 												All you need to run your food
 												business. From fresh to dry, and
 												ready-to-use products.
@@ -345,9 +347,9 @@ export default function KenyanBuyers() {
 										</div>
 									</div>
 									<div className="bg-[#fbfafa] relative rounded-[30px] w-full lg:flex-1">
-										<div className="content-stretch flex flex-col gap-[27px] items-start p-[40px] relative size-full">
-											<div className="content-stretch flex flex-col gap-[32px] items-start justify-center relative shrink-0">
-												<div className="grid-cols-[max-content] grid-rows-[max-content] inline-grid leading-[0] place-items-start relative shrink-0">
+										<div className="flex flex-col gap-[27px] items-start p-[40px] relative size-full">
+											<div className="flex flex-col gap-8 items-start justify-center relative shrink-0">
+												<div className="grid-cols-[max-content] grid-rows-[max-content] inline-grid leading-zero place-items-start relative shrink-0">
 													<div
 														className="col-1 h-[64px] ml-0 mt-0 relative row-1 w-[65.697px]"
 														data-name="Group">
@@ -359,11 +361,11 @@ export default function KenyanBuyers() {
 														<KenyanBuyersSvgs.KenyanBuyersSvg08 />
 													</div>
 												</div>
-												<p className="font-['Fraunces',serif] font-normal leading-[normal] not-italic relative shrink-0 text-[#0f251b] text-[24px] tracking-[0.72px]">
+												<p className={`${typeStyles.cardTitle} not-italic relative shrink-0 text-[#0f251b]`}>
 													Best Pricing
 												</p>
 											</div>
-											<p className="font-['Rubik',sans-serif] font-normal leading-[1.68] not-italic relative shrink-0 text-[#1e4a35] text-[16px] tracking-[0.48px] w-full">
+											<p className={`${typeStyles.body} not-italic relative shrink-0 text-green-500 w-full`}>
 												Products that make your store
 												stand out. Pay less, expect
 												better and grow your margins.
@@ -371,9 +373,9 @@ export default function KenyanBuyers() {
 										</div>
 									</div>
 									<div className="bg-[#fbfafa] relative rounded-[30px] w-full lg:flex-1">
-										<div className="content-stretch flex flex-col gap-[27px] items-start p-[40px] relative size-full">
-											<div className="content-stretch flex flex-col gap-[32px] items-start justify-center relative shrink-0">
-												<div className="grid-cols-[max-content] grid-rows-[max-content] inline-grid leading-[0] place-items-start relative shrink-0">
+										<div className="flex flex-col gap-[27px] items-start p-[40px] relative size-full">
+											<div className="flex flex-col gap-8 items-start justify-center relative shrink-0">
+												<div className="grid-cols-[max-content] grid-rows-[max-content] inline-grid leading-zero place-items-start relative shrink-0">
 													<div
 														className="col-1 h-[64px] ml-0 mt-0 relative row-1 w-[65.697px]"
 														data-name="Group">
@@ -385,11 +387,11 @@ export default function KenyanBuyers() {
 														<KenyanBuyersSvgs.KenyanBuyersSvg10 />
 													</div>
 												</div>
-												<p className="font-['Fraunces',serif] font-normal leading-[normal] not-italic relative shrink-0 text-[#0f251b] text-[24px] tracking-[0.72px]">
+												<p className={`${typeStyles.cardTitle} not-italic relative shrink-0 text-[#0f251b]`}>
 													Full Harvest
 												</p>
 											</div>
-											<p className="font-['Rubik',sans-serif] font-normal leading-[1.68] not-italic relative shrink-0 text-[#1e4a35] text-[16px] tracking-[0.48px] w-full">
+											<p className={`${typeStyles.body} not-italic relative shrink-0 text-green-500 w-full`}>
 												Choose from our range of rescue
 												produce or Grade 1 — we procure
 												full harvest from farmers so
@@ -399,12 +401,12 @@ export default function KenyanBuyers() {
 									</div>
 								</div>
 							</div>
-							<div className="content-stretch flex flex-col items-start relative shrink-0 w-full">
-								<div className="content-stretch flex flex-col gap-[32px] items-start relative shrink-0 w-full lg:flex-row">
+							<div className="flex flex-col items-start relative shrink-0 w-full">
+								<div className="flex flex-col gap-8 items-start relative shrink-0 w-full lg:flex-row">
 									<div className="bg-[#fbfafa] relative rounded-[30px] w-full lg:flex-1">
-										<div className="content-stretch flex flex-col gap-[27px] items-start p-[40px] relative size-full">
-											<div className="content-stretch flex flex-col gap-[32px] items-start justify-center relative shrink-0">
-												<div className="grid-cols-[max-content] grid-rows-[max-content] inline-grid leading-[0] place-items-start relative shrink-0">
+										<div className="flex flex-col gap-[27px] items-start p-[40px] relative size-full">
+											<div className="flex flex-col gap-8 items-start justify-center relative shrink-0">
+												<div className="grid-cols-[max-content] grid-rows-[max-content] inline-grid leading-zero place-items-start relative shrink-0">
 													<div
 														className="col-1 h-[64px] ml-0 mt-0 relative row-1 w-[65.697px]"
 														data-name="Group">
@@ -416,22 +418,22 @@ export default function KenyanBuyers() {
 														<KenyanBuyersSvgs.KenyanBuyersSvg12 />
 													</div>
 												</div>
-												<p className="font-['Fraunces',serif] font-normal leading-[normal] not-italic relative shrink-0 text-[#0f251b] text-[24px] tracking-[0.72px]">
+												<p className={`${typeStyles.cardTitle} not-italic relative shrink-0 text-[#0f251b]`}>
 													Customer Service
 												</p>
 											</div>
-											<p className="font-['Rubik',sans-serif] font-normal leading-[0] not-italic relative shrink-0 text-[#1e4a35] text-[16px] tracking-[0.48px] w-full">
-												<span className="leading-[1.68]">{`If your order is anything less than supreme, we'll fix it. Connect with our team on WhatsApp or call us at `}</span>
-												<span className="font-['Rubik',sans-serif] font-medium leading-[1.68]">
+											<p className={`${typeStyles.body} leading-zero not-italic relative shrink-0 text-green-500 w-full`}>
+												<span className="leading-copy">{`If your order is anything less than supreme, we'll fix it. Connect with our team on WhatsApp or call us at `}</span>
+												<span className="font-sans font-medium leading-copy">
 													0795851756.
 												</span>
 											</p>
 										</div>
 									</div>
 									<div className="bg-[#fbfafa] relative rounded-[30px] w-full lg:flex-1">
-										<div className="content-stretch flex flex-col gap-[27px] items-start p-[40px] relative size-full">
-											<div className="content-stretch flex flex-col gap-[32px] items-start justify-center relative shrink-0">
-												<div className="grid-cols-[max-content] grid-rows-[max-content] inline-grid leading-[0] place-items-start relative shrink-0">
+										<div className="flex flex-col gap-[27px] items-start p-[40px] relative size-full">
+											<div className="flex flex-col gap-8 items-start justify-center relative shrink-0">
+												<div className="grid-cols-[max-content] grid-rows-[max-content] inline-grid leading-zero place-items-start relative shrink-0">
 													<div
 														className="col-1 h-[64px] ml-0 mt-0 relative row-1 w-[65.697px]"
 														data-name="Group">
@@ -443,11 +445,11 @@ export default function KenyanBuyers() {
 														<KenyanBuyersSvgs.KenyanBuyersSvg14 />
 													</div>
 												</div>
-												<p className="font-['Fraunces',serif] font-normal leading-[normal] not-italic relative shrink-0 text-[#0f251b] text-[24px] tracking-[0.72px]">
+												<p className={`${typeStyles.cardTitle} not-italic relative shrink-0 text-[#0f251b]`}>
 													Measurable Impact
 												</p>
 											</div>
-											<p className="font-['Rubik',sans-serif] font-normal leading-[1.68] not-italic relative shrink-0 text-[#1e4a35] text-[16px] tracking-[0.48px] w-full">
+											<p className={`${typeStyles.body} not-italic relative shrink-0 text-green-500 w-full`}>
 												For every kg of odd-looking
 												produce you buy, you reduce your
 												carbon footprint and directly
@@ -456,9 +458,9 @@ export default function KenyanBuyers() {
 										</div>
 									</div>
 									<div className="bg-[#fbfafa] relative rounded-[30px] w-full lg:flex-1">
-										<div className="content-stretch flex flex-col gap-[27px] items-start p-[40px] relative size-full">
-											<div className="content-stretch flex flex-col gap-[32px] items-start justify-center relative shrink-0">
-												<div className="grid-cols-[max-content] grid-rows-[max-content] inline-grid leading-[0] place-items-start relative shrink-0">
+										<div className="flex flex-col gap-[27px] items-start p-[40px] relative size-full">
+											<div className="flex flex-col gap-8 items-start justify-center relative shrink-0">
+												<div className="grid-cols-[max-content] grid-rows-[max-content] inline-grid leading-zero place-items-start relative shrink-0">
 													<div
 														className="col-1 h-[64px] ml-0 mt-0 relative row-1 w-[65.697px]"
 														data-name="Group">
@@ -468,11 +470,11 @@ export default function KenyanBuyers() {
 														<KenyanBuyersSvgs.KenyanBuyersSvg16 />
 													</div>
 												</div>
-												<p className="font-['Fraunces',serif] font-normal leading-[normal] not-italic relative shrink-0 text-[#0f251b] text-[24px] tracking-[0.72px]">
+												<p className={`${typeStyles.cardTitle} not-italic relative shrink-0 text-[#0f251b]`}>
 													Flexible Delivery
 												</p>
 											</div>
-											<p className="font-['Rubik',sans-serif] font-normal leading-[1.68] not-italic relative shrink-0 text-[#1e4a35] text-[16px] tracking-[0.48px] w-full">{`Choose your delivery date and window and we'll get freshness delivered to you. On Time, In Full.`}</p>
+											<p className={`${typeStyles.body} not-italic relative shrink-0 text-green-500 w-full`}>{`Choose your delivery date and window and we'll get freshness delivered to you. On Time, In Full.`}</p>
 										</div>
 									</div>
 								</div>
@@ -538,48 +540,48 @@ export default function KenyanBuyers() {
 					fill="white"
 				/>
 				<ContentContainer size="wide" className="relative z-10">
-					<div className="grid gap-12 pt-[140px] pb-[96px] md:pt-[200px] lg:grid-cols-2 lg:items-start lg:pt-[241px] lg:pb-[120px]">
-						<div className="content-stretch flex flex-col gap-[64px] items-start relative w-full max-w-[624px]">
-							<div className="content-stretch flex flex-col items-start relative shrink-0 w-full">
-								<p className="font-['Fraunces',serif] font-normal leading-[normal] not-italic relative shrink-0 text-[#f5e091] text-[36px] md:text-[48px] tracking-[1.44px] w-full">
+					<div className="grid gap-12 pt-[140px] pb-[96px] md:pt-[200px] lg:grid-cols-2 lg:items-start lg:pt-[241px] lg:pb-30">
+						<div className="flex flex-col gap-16 items-start relative w-full max-w-[624px]">
+							<div className="flex flex-col items-start relative shrink-0 w-full">
+								<p className={`${typeStyles.sectionTitleLarge} not-italic relative shrink-0 text-[#f5e091] w-full`}>
 									Your One Stop Shop
 								</p>
 							</div>
-							<div className="content-stretch flex flex-col gap-[32px] items-start relative shrink-0">
-								<div className="content-stretch flex gap-[15px] items-start relative shrink-0 w-full max-w-[535px]">
+							<div className="flex flex-col gap-8 items-start relative shrink-0">
+								<div className="flex gap-[15px] items-start relative shrink-0 w-full max-w-[535px]">
 									<div className="relative shrink-0 size-[56px]">
 										<KenyanBuyersSvgs.KenyanBuyersSvg20 />
-										<p className="-translate-x-1/2 absolute font-['Rubik',sans-serif] font-semibold leading-[normal] left-1/2 not-italic text-[#eff6ef] text-[16px] text-center top-[calc(50%-6px)] tracking-[0.48px] whitespace-nowrap">
+										<p className={`-translate-x-1/2 absolute ${typeStyles.body} font-semibold leading-normal left-1/2 not-italic text-[#eff6ef] text-center top-[calc(50%-6px)] whitespace-nowrap`}>
 											1
 										</p>
 									</div>
-									<div className="content-stretch flex flex-[1_0_0] flex-col gap-[24px] items-start min-w-px relative self-stretch">
-										<div className="content-stretch flex flex-col gap-[16px] items-start leading-[normal] relative shrink-0 w-full">
-											<p className="font-['Fraunces',serif] font-medium not-italic relative shrink-0 text-[#fbf3e9] text-[24px] tracking-[0.72px] w-full">
+									<div className="flex flex-[1_0_0] flex-col gap-6 items-start min-w-px relative self-stretch">
+										<div className="flex flex-col gap-4 items-start leading-normal relative shrink-0 w-full">
+											<p className={`${typeStyles.cardTitle} font-medium not-italic relative shrink-0 text-[#fbf3e9] w-full`}>
 												Fresh Produce,
 											</p>
-											<p className="font-['Fraunces',serif] font-normal italic relative shrink-0 text-[#f5e091] text-[20px] tracking-[0.6px] w-full">{`From our farmers to you `}</p>
+											<p className={`${typeStyles.serifLead} italic relative shrink-0 text-[#f5e091] w-full`}>{`From our farmers to you `}</p>
 										</div>
-										<p className="font-['Rubik',sans-serif] font-normal leading-[1.68] not-italic relative shrink-0 text-[#f6eef2] text-[16px] tracking-[0.48px] w-full">{`We deliver the regular grade and our impactful and affordable grade rescue. `}</p>
+										<p className={`${typeStyles.body} not-italic relative shrink-0 text-[#f6eef2] w-full`}>{`We deliver the regular grade and our impactful and affordable grade rescue. `}</p>
 									</div>
 								</div>
-								<div className="content-stretch flex gap-[15px] items-start relative shrink-0 w-full max-w-[535px]">
+								<div className="flex gap-[15px] items-start relative shrink-0 w-full max-w-[535px]">
 									<div className="relative shrink-0 size-[56px]">
 										<KenyanBuyersSvgs.KenyanBuyersSvg21 />
-										<p className="-translate-x-1/2 absolute font-['Rubik',sans-serif] font-semibold leading-[normal] left-[calc(50%+0.5px)] not-italic text-[#eff6ef] text-[16px] text-center top-[calc(50%-6px)] tracking-[0.48px] whitespace-nowrap">
+										<p className={`-translate-x-1/2 absolute ${typeStyles.body} font-semibold leading-normal left-[calc(50%+0.5px)] not-italic text-[#eff6ef] text-center top-[calc(50%-6px)] whitespace-nowrap`}>
 											2
 										</p>
 									</div>
-									<div className="content-stretch flex flex-[1_0_0] flex-col gap-[24px] items-start min-w-px relative self-stretch">
-										<div className="content-stretch flex flex-col gap-[16px] items-start leading-[normal] relative shrink-0 w-full">
-											<p className="font-['Fraunces',serif] font-medium not-italic relative shrink-0 text-[#fbf3e9] text-[24px] tracking-[0.72px] w-full">
+									<div className="flex flex-[1_0_0] flex-col gap-6 items-start min-w-px relative self-stretch">
+										<div className="flex flex-col gap-4 items-start leading-normal relative shrink-0 w-full">
+											<p className={`${typeStyles.cardTitle} font-medium not-italic relative shrink-0 text-[#fbf3e9] w-full`}>
 												Prepped and Ready to Use,
 											</p>
-											<p className="font-['Fraunces',serif] font-normal italic relative shrink-0 text-[#f5e091] text-[20px] tracking-[0.6px] w-full">
+											<p className={`${typeStyles.serifLead} italic relative shrink-0 text-[#f5e091] w-full`}>
 												Made by us
 											</p>
 										</div>
-										<p className="font-['Rubik',sans-serif] font-normal leading-[1.68] not-italic relative shrink-0 text-[#f6eef2] text-[16px] tracking-[0.48px] w-full">
+										<p className={`${typeStyles.body} not-italic relative shrink-0 text-[#f6eef2] w-full`}>
 											We cut, peel, slice and process
 											fresh produce so you don’t have to.
 											Save time and storage space by
@@ -587,38 +589,38 @@ export default function KenyanBuyers() {
 										</p>
 									</div>
 								</div>
-								<div className="content-stretch flex gap-[15px] items-start relative shrink-0 w-full max-w-[535px]">
+								<div className="flex gap-[15px] items-start relative shrink-0 w-full max-w-[535px]">
 									<div className="relative shrink-0 size-[56px]">
 										<KenyanBuyersSvgs.KenyanBuyersSvg22 />
-										<p className="-translate-x-1/2 absolute font-['Rubik',sans-serif] font-semibold leading-[normal] left-[calc(50%+0.5px)] not-italic text-[#eff6ef] text-[16px] text-center top-[calc(50%-6px)] tracking-[0.48px] whitespace-nowrap">
+										<p className={`-translate-x-1/2 absolute ${typeStyles.body} font-semibold leading-normal left-[calc(50%+0.5px)] not-italic text-[#eff6ef] text-center top-[calc(50%-6px)] whitespace-nowrap`}>
 											3
 										</p>
 									</div>
-									<div className="content-stretch flex flex-[1_0_0] flex-col gap-[24px] items-start min-w-px relative self-stretch">
-										<div className="content-stretch flex flex-col gap-[16px] items-start leading-[normal] relative shrink-0 w-full">
-											<p className="font-['Fraunces',serif] font-medium not-italic relative shrink-0 text-[#fbf3e9] text-[24px] tracking-[0.72px] w-full">
+									<div className="flex flex-[1_0_0] flex-col gap-6 items-start min-w-px relative self-stretch">
+										<div className="flex flex-col gap-4 items-start leading-normal relative shrink-0 w-full">
+											<p className={`${typeStyles.cardTitle} font-medium not-italic relative shrink-0 text-[#fbf3e9] w-full`}>
 												Products from Partners
 											</p>
-											<p className="font-['Fraunces',serif] font-normal italic relative shrink-0 text-[#f5e091] text-[20px] tracking-[0.6px] w-full">
+											<p className={`${typeStyles.serifLead} italic relative shrink-0 text-[#f5e091] w-full`}>
 												Made by us
 											</p>
 										</div>
-										<p className="font-['Rubik',sans-serif] font-normal leading-[1.68] not-italic relative shrink-0 text-[#f6eef2] text-[16px] tracking-[0.48px] w-full">{`We offer a wide variety of product categories from top brands. `}</p>
-										<div className="content-stretch flex flex-col gap-[12px] items-start relative shrink-0 w-full">
-											<div className="content-stretch flex flex-col gap-[12px] items-start relative shrink-0 w-full">
+										<p className={`${typeStyles.body} not-italic relative shrink-0 text-[#f6eef2] w-full`}>{`We offer a wide variety of product categories from top brands. `}</p>
+										<div className="flex flex-col gap-[12px] items-start relative shrink-0 w-full">
+											<div className="flex flex-col gap-[12px] items-start relative shrink-0 w-full">
 												{partnerProductCategories.map(
 													(row, index) => (
 														<div
-															className={`content-stretch flex flex-wrap items-start relative shrink-0 ${index === 0 ? "gap-[12px]" : "gap-[16px]"}`}
+															className={`flex flex-wrap items-start relative shrink-0 ${index === 0 ? "gap-[12px]" : "gap-4"}`}
 															key={index}>
 															{row.map(
 																(category) => (
-																	<div className="bg-[#122c20] content-stretch flex items-start px-[16px] py-[8px] relative rounded-[40px] shrink-0">
+																	<div className="bg-[#122c20] flex items-start px-4 py-2 relative rounded-[40px] shrink-0">
 																		<div
 																			aria-hidden="true"
 																			className="absolute border border-[#0f251b] border-solid inset-0 pointer-events-none rounded-[40px]"
 																		/>
-																		<p className="font-['Rubik',sans-serif] font-normal leading-[1.68] relative shrink-0 text-[#f7f7f7] text-[16px] text-center tracking-[0.48px] whitespace-nowrap">
+																		<p className={`${typeStyles.body} relative shrink-0 text-[#f7f7f7] text-center whitespace-nowrap`}>
 																			{
 																				category
 																			}
@@ -635,7 +637,7 @@ export default function KenyanBuyers() {
 								</div>
 							</div>
 							<div
-								className="content-stretch flex gap-[32px] items-start justify-center overflow-clip relative shrink-0 w-full"
+								className="flex gap-8 items-start justify-center overflow-clip relative shrink-0 w-full"
 								data-name="Tab Horizontal">
 								<div
 									className="flex items-center justify-center relative self-stretch shrink-0 w-0"
@@ -657,36 +659,36 @@ export default function KenyanBuyers() {
 									</div>
 								</div>
 								<div
-									className="content-stretch flex flex-[1_0_0] flex-col items-start justify-center min-w-px overflow-clip relative"
+									className="flex flex-[1_0_0] flex-col items-start justify-center min-w-px overflow-clip relative"
 									data-name="Content">
-									<p className="font-['Rubik',sans-serif] font-normal leading-[0] not-italic relative shrink-0 text-[20px] text-white tracking-[0.6px] w-full">
-										<span className="leading-[1.68]">{`For customers outside of Nairobi, we offer a full basket including `}</span>
-										<span className="font-['Rubik',sans-serif] font-medium leading-[1.68] text-[#f5e091]">
+									<p className={`${typeStyles.bodyLead} leading-zero not-italic relative shrink-0 text-white w-full`}>
+										<span className="leading-copy">{`For customers outside of Nairobi, we offer a full basket including `}</span>
+										<span className="font-medium text-[#f5e091]">
 											meats, cheeses, and fish
 										</span>
-										<span className="font-['Rubik',sans-serif] font-medium leading-[1.68]">
+										<span className="font-medium">
 											.
 										</span>
 									</p>
 								</div>
 							</div>
 						</div>
-						<div className="content-stretch flex flex-col items-end relative w-full max-w-[625px] lg:justify-self-end">
+						<div className="flex flex-col items-end relative w-full max-w-[625px] lg:justify-self-end">
 							<div className="bg-white relative rounded-[30px] shrink-0 w-full">
 								<div
 									aria-hidden="true"
 									className="absolute border border-[#f7f7f7] border-solid inset-0 pointer-events-none rounded-[30px]"
 								/>
-								<div className="content-stretch flex flex-col gap-[27px] items-start p-[24px] md:p-[40px] relative size-full">
-									<div className="content-stretch flex flex-col items-start relative shrink-0 w-full">
-										<div className="content-stretch flex items-center relative shrink-0 w-full">
-											<p className="flex-[1_0_0] font-['Rubik',sans-serif] font-medium leading-[normal] min-w-px not-italic relative text-[24px] text-black tracking-[0.72px]">
+								<div className="flex flex-col gap-[27px] items-start p-6 md:p-[40px] relative size-full">
+									<div className="flex flex-col items-start relative shrink-0 w-full">
+										<div className="flex items-center relative shrink-0 w-full">
+											<p className={`flex-[1_0_0] ${typeStyles.cardTitle} font-medium min-w-px not-italic relative text-black`}>
 												Delivery Areas
 											</p>
 										</div>
 									</div>
 									<div
-										className="content-stretch flex flex-col gap-[64px] h-[340px] items-start relative shrink-0 w-full md:h-[462px]"
+										className="flex flex-col gap-16 h-[340px] items-start relative shrink-0 w-full md:h-[462px]"
 										data-name="Content">
 										<div
 											className="bg-white flex-[1_0_0] min-h-px overflow-clip relative w-full"
@@ -725,21 +727,21 @@ export default function KenyanBuyers() {
 												</div>
 											</div>
 											<div
-												className="absolute h-[53px] right-[8px] top-[8px] w-[28px]"
+												className="absolute h-[53px] right-[8px] top-2 w-[28px]"
 												data-name="Zoom control buttons">
 												<div className="absolute inset-[-3.77%_-10.71%_-7.55%_-10.71%]">
 													<KenyanBuyersSvgs.KenyanBuyersSvg25 />
 												</div>
 											</div>
 											<div
-												className="absolute h-[29px] left-[8px] top-[8px] w-[94px]"
+												className="absolute h-[29px] left-[8px] top-2 w-[94px]"
 												data-name="Map type button group">
 												<div
 													className="absolute bg-white inset-0 rounded-[2px] shadow-[0px_1px_3px_0px_rgba(0,0,0,0.2)]"
 													data-name="Rectangle"
 												/>
 												<p
-													className="absolute font-['Roboto:Regular',sans-serif] font-normal inset-[27.59%_8.51%_27.59%_48.94%] leading-[normal] text-[#565656] text-[11px] whitespace-nowrap"
+													className="absolute font-['Roboto:Regular',sans-serif] font-normal inset-[27.59%_8.51%_27.59%_48.94%] leading-normal text-[#565656] text-[11px] whitespace-nowrap"
 													style={{
 														fontVariationSettings:
 															"'wdth' 100",
@@ -762,7 +764,7 @@ export default function KenyanBuyers() {
 													</div>
 												</div>
 												<p
-													className="absolute font-['Roboto:Medium',sans-serif] font-medium inset-[27.59%_68.09%_27.59%_8.51%] leading-[normal] text-[11px] text-black whitespace-nowrap"
+													className="absolute font-['Roboto:Medium',sans-serif] font-medium inset-[27.59%_68.09%_27.59%_8.51%] leading-normal text-[11px] text-black whitespace-nowrap"
 													style={{
 														fontVariationSettings:
 															"'wdth' 100",
@@ -779,16 +781,16 @@ export default function KenyanBuyers() {
 											</div>
 										</div>
 									</div>
-									<p className="font-['Rubik',sans-serif] font-normal leading-[0] not-italic relative shrink-0 text-[#1e4a35] text-[0px] tracking-[0.6px] w-full">
-										<span className="leading-[1.68] text-[20px]">{`We deliver in & around`}</span>
-										<span className="font-['Rubik',sans-serif] font-medium leading-[1.68] text-[20px]">
+									<p className="font-sans font-normal leading-zero not-italic relative shrink-0 text-green-500 text-[0px] tracking-body-lg w-full">
+										<span className="leading-copy text-xl">{`We deliver in & around`}</span>
+										<span className="font-sans font-medium leading-copy text-xl">
 											&nbsp;
 										</span>
-										<span className="font-['Rubik',sans-serif] font-medium leading-[1.68] text-[#d78228] text-[20px]">
+										<span className="font-sans font-medium leading-copy text-orange-500 text-xl">
 											Nairobi
 										</span>
-										<span className="leading-[1.68] text-[20px]">{` and in the `}</span>
-										<span className="font-['Rubik',sans-serif] font-medium leading-[1.68] text-[#d78228] text-[20px]">
+										<span className="leading-copy text-xl">{` and in the `}</span>
+										<span className="font-sans font-medium leading-copy text-orange-500 text-xl">
 											Maasai Mara.
 										</span>
 									</p>
@@ -797,37 +799,37 @@ export default function KenyanBuyers() {
 											aria-hidden="true"
 											className="absolute border border-[#f7e6d4] border-solid inset-0 pointer-events-none rounded-[16px]"
 										/>
-										<div className="content-stretch flex flex-col items-start p-[16px] relative size-full">
-											<div className="content-stretch flex flex-col gap-[16px] items-start relative shrink-0 w-full sm:flex-row sm:items-center">
-												<div className="content-stretch flex flex-[1_0_0] gap-[8px] items-center min-w-px relative">
+										<div className="flex flex-col items-start p-[16px] relative size-full">
+											<div className="flex flex-col gap-4 items-start relative shrink-0 w-full sm:flex-row sm:items-center">
+												<div className="flex flex-[1_0_0] gap-2 items-center min-w-px relative">
 													<div
-														className="relative shrink-0 size-[24px]"
+														className="relative shrink-0 size-6"
 														data-name="prime:info-circle">
 														<KenyanBuyersSvgs.KenyanBuyersSvg28 />
 													</div>
-													<p className="flex-[1_0_0] font-['Rubik',sans-serif] font-normal italic leading-[0] min-w-px relative text-[#0f251b] text-[0px] tracking-[0.42px]">
-														<span className="leading-[normal] text-[#2b1a08] text-[14px]">
+													<p className="flex-[1_0_0] font-sans font-normal italic leading-zero min-w-px relative text-[#0f251b] text-[0px] tracking-caption">
+														<span className="leading-normal text-[#2b1a08] text-sm">
 															We are always
 														</span>
-														<span className="font-['Rubik',sans-serif] font-medium leading-[normal] text-[#1e4a35] text-[14px]">{` `}</span>
-														<span className="font-['Rubik',sans-serif] font-medium leading-[normal] text-[#d78228] text-[14px]">
+														<span className="font-sans font-medium leading-normal text-green-500 text-sm">{` `}</span>
+														<span className="font-sans font-medium leading-normal text-orange-500 text-sm">
 															expanding our reach!
 														</span>
-														<span className="leading-[normal] text-[#1e4a35] text-[14px]">{` `}</span>
-														<span className="leading-[normal] text-[#2b1a08] text-[14px]">
+														<span className="leading-normal text-green-500 text-sm">{` `}</span>
+														<span className="leading-normal text-[#2b1a08] text-sm">
 															Contact our sales
 															team
 														</span>
-														<span className="font-['Rubik',sans-serif] font-bold leading-[normal] text-[#2b1a08] text-[14px]">{` `}</span>
-														<span className="leading-[normal] text-[#2b1a08] text-[14px]">
+														<span className="font-sans font-bold leading-normal text-[#2b1a08] text-sm">{` `}</span>
+														<span className="leading-normal text-[#2b1a08] text-sm">
 															to hear more.
 														</span>
 													</p>
 												</div>
 												<div
-													className="bg-[#d78228] content-stretch flex items-start px-[16px] py-[8px] relative rounded-[40px] shrink-0"
+													className="bg-orange-500 flex items-start px-4 py-2 relative rounded-[40px] shrink-0"
 													data-name="order">
-													<p className="font-['Rubik',sans-serif] font-normal leading-[1.68] not-italic relative shrink-0 text-[#eee] text-[16px] text-center tracking-[0.48px] whitespace-nowrap">
+													<p className={`${typeStyles.body} not-italic relative shrink-0 text-[#eee] text-center whitespace-nowrap`}>
 														Contact Sales
 													</p>
 												</div>
@@ -846,21 +848,21 @@ export default function KenyanBuyers() {
 				data-name="Wireframe - 42">
 				<ContentContainer
 					size="wide"
-					className="relative z-10 py-[96px] md:py-[120px]">
-					<div className="mx-auto max-w-[592px] text-center ">
-						<p className="mt-30 font-['Fraunces',serif] font-normal leading-[normal] not-italic text-[#0f251b] text-[40px] md:text-[48px] tracking-[1.44px] w-full">
+					className={`relative z-10 ${sectionSpacing.default}`}>
+					<div className="mx-auto max-w-148 text-center ">
+						<p className={`${typeStyles.sectionTitleLarge} mt-30 not-italic text-[#0f251b] w-full`}>
 							How does it work?
 						</p>
-						<p className="font-['Rubik',sans-serif] font-normal leading-[1.68] mt-2 not-italic text-[#1e4a35] text-[16px] tracking-[0.48px] w-full">
+						<p className={`${typeStyles.body} mt-2 not-italic text-green-500 w-full`}>
 							Four simple steps to get fresh and sustainable
 							products delivered to you
 						</p>
 					</div>
 
-					<div className="lg:hidden mt-[56px] grid gap-[32px] sm:grid-cols-2">
+					<div className="lg:hidden mt-[56px] grid gap-8 sm:grid-cols-2">
 						{localBuyerHowItWorksSteps.map((step, index) => (
 							<div
-								className="content-stretch flex flex-col gap-[24px] items-center rounded-[24px] bg-white p-4 text-center"
+								className="flex flex-col gap-6 items-center rounded-[24px] bg-white p-4 text-center"
 								key={step.title}>
 								<div className="relative h-[180px] w-[185px] shrink-0">
 									{index === 0 ? (
@@ -876,20 +878,20 @@ export default function KenyanBuyers() {
 										<KenyanBuyersSvgs.KenyanBuyersSvg32 />
 									) : null}
 								</div>
-								<div className="content-stretch flex gap-[16px] items-start text-left w-full max-w-[280px]">
+								<div className="flex gap-4 items-start text-left w-full max-w-[280px]">
 									<div
-										className="flex size-[40px] shrink-0 items-center justify-center rounded-full font-['Rubik',sans-serif] text-[16px] font-medium tracking-[0.48px]"
+										className={`flex size-10 shrink-0 items-center justify-center rounded-full ${typeStyles.body} font-medium leading-normal`}
 										style={{
 											backgroundColor: step.color,
 											color: step.textColor,
 										}}>
 										{index + 1}
 									</div>
-									<div className="content-stretch flex flex-col gap-[12px] items-start not-italic relative w-full">
-										<p className="font-['Fraunces',serif] font-normal leading-[normal] relative shrink-0 text-[#0f251b] text-[22px] tracking-[0.66px] w-full">
+									<div className="flex flex-col gap-[12px] items-start not-italic relative w-full">
+										<p className={`${typeStyles.cardTitleSmall} leading-normal relative shrink-0 text-[#0f251b] tracking-card w-full`}>
 											{step.title}
 										</p>
-										<p className="font-['Rubik',sans-serif] font-normal leading-[1.68] relative shrink-0 text-[#1e4a35] text-[14px] tracking-[0.42px] w-full">
+										<p className={`${typeStyles.caption} relative shrink-0 text-green-500 w-full`}>
 											{step.body}
 										</p>
 									</div>
@@ -904,15 +906,15 @@ export default function KenyanBuyers() {
 							data-name="Group">
 							<KenyanBuyersSvgs.KenyanBuyersSvg29 />
 						</div>
-						<div className="absolute left-[35px] top-[370px] content-stretch flex gap-[16px] items-start">
-							<div className="flex size-[40px] shrink-0 items-center justify-center rounded-full bg-[#8c98ee] font-['Rubik',sans-serif] text-[16px] font-semibold tracking-[0.48px] text-[#e6e6e6]">
+						<div className="absolute left-[35px] top-[370px] flex gap-4 items-start">
+							<div className={`${typeStyles.body} flex size-10 shrink-0 items-center justify-center rounded-full bg-[#8c98ee] font-semibold leading-normal text-[#e6e6e6]`}>
 								1
 							</div>
-							<div className="content-stretch flex flex-col gap-[16px] items-start not-italic relative shrink-0 w-[204px]">
-								<p className="font-['Fraunces',serif] font-normal leading-[normal] relative shrink-0 text-[#0f251b] text-[22px] tracking-[0.66px] w-full">
+							<div className="flex flex-col gap-4 items-start not-italic relative shrink-0 w-[204px]">
+								<p className={`${typeStyles.cardTitleSmall} leading-normal relative shrink-0 text-[#0f251b] tracking-card w-full`}>
 									Connect with sales
 								</p>
-								<p className="font-['Rubik',sans-serif] font-normal leading-[1.68] relative shrink-0 text-[#1e4a35] text-[14px] tracking-[0.42px] w-full">
+								<p className={`${typeStyles.caption} relative shrink-0 text-green-500 w-full`}>
 									Our Sales team is ready to speak with you
 								</p>
 							</div>
@@ -921,15 +923,15 @@ export default function KenyanBuyers() {
 						<div className="absolute left-[290px] top-[15px] h-[198.445px] w-[203.707px]">
 							<KenyanBuyersSvgs.KenyanBuyersSvg30 />
 						</div>
-						<div className="absolute left-[520px] top-[10px] content-stretch flex gap-[16px] items-start">
-							<div className="flex size-[40px] shrink-0 items-center justify-center rounded-full bg-[#a35380] font-['Rubik',sans-serif] text-[16px] font-medium tracking-[0.48px] text-[#e6e6e6]">
+						<div className="absolute left-[520px] top-[10px] flex gap-4 items-start">
+							<div className={`${typeStyles.body} flex size-10 shrink-0 items-center justify-center rounded-full bg-[#a35380] font-medium leading-normal text-[#e6e6e6]`}>
 								2
 							</div>
-							<div className="content-stretch flex flex-col gap-[16px] items-start not-italic relative shrink-0 w-[204px]">
-								<p className="font-['Fraunces',serif] font-normal leading-[normal] relative shrink-0 text-[#0f251b] text-[22px] tracking-[0.66px] w-full">
+							<div className="flex flex-col gap-4 items-start not-italic relative shrink-0 w-[204px]">
+								<p className={`${typeStyles.cardTitleSmall} leading-normal relative shrink-0 text-[#0f251b] tracking-card w-full`}>
 									Browse the shop
 								</p>
-								<p className="font-['Rubik',sans-serif] font-normal leading-[1.68] relative shrink-0 text-[#1e4a35] text-[14px] tracking-[0.42px] w-full">
+								<p className={`${typeStyles.caption} relative shrink-0 text-green-500 w-full`}>
 									Explore our wide range of fresh and dry
 									products online
 								</p>
@@ -941,15 +943,15 @@ export default function KenyanBuyers() {
 							data-name="Group">
 							<KenyanBuyersSvgs.KenyanBuyersSvg31 />
 						</div>
-						<div className="absolute left-[690px] top-[440px] content-stretch flex gap-[16px] items-start">
-							<div className="flex size-[40px] shrink-0 items-center justify-center rounded-full bg-[#85a687] font-['Rubik',sans-serif] text-[16px] font-medium tracking-[0.48px] text-[#e6e6e6]">
+						<div className="absolute left-[690px] top-[440px] flex gap-4 items-start">
+							<div className={`${typeStyles.body} flex size-10 shrink-0 items-center justify-center rounded-full bg-[#85a687] font-medium leading-normal text-[#e6e6e6]`}>
 								3
 							</div>
-							<div className="content-stretch flex flex-col gap-[16px] items-start not-italic relative shrink-0 w-[204px]">
-								<p className="font-['Fraunces',serif] font-normal leading-[normal] relative shrink-0 text-[#0f251b] text-[22px] tracking-[0.66px] w-full">
+							<div className="flex flex-col gap-4 items-start not-italic relative shrink-0 w-[204px]">
+								<p className={`${typeStyles.cardTitleSmall} leading-normal relative shrink-0 text-[#0f251b] tracking-card w-full`}>
 									Place Order
 								</p>
-								<p className="font-['Rubik',sans-serif] font-normal leading-[1.68] relative shrink-0 text-[#1e4a35] text-[14px] tracking-[0.42px] w-full">
+								<p className={`${typeStyles.caption} relative shrink-0 text-green-500 w-full`}>
 									Select your delivery window and checkout
 									your cart
 								</p>
@@ -961,15 +963,15 @@ export default function KenyanBuyers() {
 							data-name="Vector">
 							<KenyanBuyersSvgs.KenyanBuyersSvg32 />
 						</div>
-						<div className="absolute right-[5px] top-[260px] content-stretch flex gap-[16px] items-start">
-							<div className="flex size-[40px] shrink-0 items-center justify-center rounded-full bg-[#ebc194] font-['Rubik',sans-serif] text-[16px] font-medium tracking-[0.48px] text-[#2b1a08]">
+						<div className="absolute right-[5px] top-[260px] flex gap-4 items-start">
+							<div className={`${typeStyles.body} flex size-10 shrink-0 items-center justify-center rounded-full bg-[#ebc194] font-medium leading-normal text-[#2b1a08]`}>
 								4
 							</div>
-							<div className="content-stretch flex flex-col gap-[16px] items-start not-italic relative shrink-0 w-[204px]">
-								<p className="font-['Fraunces',serif] font-normal leading-[normal] relative shrink-0 text-[#0f251b] text-[22px] tracking-[0.66px] w-full">
+							<div className="flex flex-col gap-4 items-start not-italic relative shrink-0 w-[204px]">
+								<p className={`${typeStyles.cardTitleSmall} leading-normal relative shrink-0 text-[#0f251b] tracking-card w-full`}>
 									Enjoy Delivery
 								</p>
-								<p className="font-['Rubik',sans-serif] font-normal leading-[1.68] relative shrink-0 text-[#1e4a35] text-[14px] tracking-[0.42px] w-full">
+								<p className={`${typeStyles.caption} relative shrink-0 text-green-500 w-full`}>
 									Receive fresh, high quality ingredients
 									directly to your doorstep
 								</p>
@@ -1037,11 +1039,11 @@ export default function KenyanBuyers() {
 				data-name="Testimonial">
 				<ContentContainer
 					size="wide"
-					className="relative z-10 flex flex-col items-center gap-[56px] pt-[120px] pb-[96px] md:gap-[80px] md:pt-[184px] md:pb-[120px]">
-					<p className="font-['Fraunces',serif] font-normal leading-[normal] not-italic text-[#0f251b] text-[36px] md:text-[48px] text-center tracking-[1.44px] w-full max-w-[800px]">
+					className={`relative z-10 flex flex-col items-center gap-[56px] md:gap-[80px] ${sectionSpacing.default}`}>
+					<p className={`${typeStyles.sectionTitleLarge} not-italic text-[#0f251b] text-center w-full max-w-[800px]`}>
 						Hear from businesses making an impact with Farm to Feed.
 					</p>
-					<div className="content-stretch flex flex-col gap-[24px] items-center justify-center relative w-full lg:flex-row lg:gap-[40px]">
+					<div className="flex flex-col gap-6 items-center justify-center relative w-full lg:flex-row lg:gap-10">
 						{localBuyerTestimonialControls.map((Control) => (
 							<Control key={Control.name} />
 						))}
@@ -1090,7 +1092,7 @@ export default function KenyanBuyers() {
 										className="absolute contents inset-[46.94%_-0.01%_5.53%_67.34%]"
 										data-name="Clip path group">
 										<div
-											className="absolute inset-[48.28%_18.79%_8.68%_66.58%] mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[-1.17px_-0.16px] mask-size-[122.51px_118.116px]"
+											className="absolute inset-[48.28%_18.79%_8.68%_66.58%] mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-[-1.17px_-0.16px] mask-size-[122.51px_118.116px]"
 											style={{
 												maskImage: `url('${imgGroup}')`,
 											}}

@@ -1,22 +1,41 @@
 import type { ReactNode } from "react";
 import { cx } from "./ContentContainer";
+import { typeStyles } from "./typography";
 
 type Align = "left" | "center";
+type TitleSize = "section" | "large" | "hero";
+type DescriptionSize = "body" | "large" | "lead";
+
+const titleClasses: Record<TitleSize, string> = {
+	section: typeStyles.sectionTitle,
+	large: typeStyles.sectionTitleLarge,
+	hero: typeStyles.heroTitle,
+};
+
+const descriptionClasses: Record<DescriptionSize, string> = {
+	body: typeStyles.body,
+	large: typeStyles.bodyLarge,
+	lead: typeStyles.bodyLead,
+};
 
 export function SectionHeader({
 	actions,
 	align = "left",
 	className,
 	description,
+	descriptionSize = "lead",
 	eyebrow,
 	title,
+	titleSize = "hero",
 }: {
 	actions?: ReactNode;
 	align?: Align;
 	className?: string;
 	description?: ReactNode;
+	descriptionSize?: DescriptionSize;
 	eyebrow?: ReactNode;
 	title: ReactNode;
+	titleSize?: TitleSize;
 }) {
 	const isCenter = align === "center";
 
@@ -27,16 +46,12 @@ export function SectionHeader({
 				isCenter && "mx-auto items-center text-center",
 				className,
 			)}>
-			{eyebrow ? (
-				<p className="font-['Rubik',sans-serif] text-sm font-medium leading-normal tracking-wide text-[#747c50]">
-					{eyebrow}
-				</p>
-			) : null}
-			<h1 className="font-['Fraunces',serif] text-4xl font-normal leading-normal tracking-wide text-[#0f251b] md:text-5xl lg:text-6xl">
+			{eyebrow ? <p className={typeStyles.eyebrow}>{eyebrow}</p> : null}
+			<h1 className={cx(titleClasses[titleSize], "text-[#0f251b]")}>
 				{title}
 			</h1>
 			{description ? (
-				<p className="font-['Rubik',sans-serif] text-base font-normal leading-[1.68] tracking-wide text-[#1e4a35] md:text-xl">
+				<p className={cx(descriptionClasses[descriptionSize], "text-green-500")}>
 					{description}
 				</p>
 			) : null}

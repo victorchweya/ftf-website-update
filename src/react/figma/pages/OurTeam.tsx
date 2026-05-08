@@ -32,6 +32,8 @@ import {
 	imgClaireVanEnkFounderManagingDirector,
 	imgAnoukBoertienCoFounderDirectorOfProductAndSustainability,
 } from "../imports/OurTeam/svg-1h0q8";
+import { sectionSpacing } from "../components/layout/spacing";
+import { typeStyles } from "../components/layout/typography";
 const teamFilters = [
 	{
 		label: "All",
@@ -128,7 +130,7 @@ const valueRows = [
 ];
 export default function OurTeam() {
 	return (
-		<div className="bg-white content-stretch flex flex-col items-start relative w-full">
+		<div className="bg-white flex flex-col items-start relative w-full">
 			{/* Hero */}
 			<div
 				className="bg-[#fcfdf9] min-h-[500px] md:min-h-[600px] lg:min-h-[742px] overflow-clip relative shrink-0 w-full"
@@ -136,9 +138,9 @@ export default function OurTeam() {
 				<Header />
 				<ContentContainer
 					size="wide"
-					className="flex justify-center pt-[180px] pb-[96px] md:pt-[240px] md:pb-[120px] lg:pt-[282px] lg:pb-[140px]">
-					<div className="content-stretch flex flex-col gap-12 items-center not-italic text-center relative w-full max-w-[624px]">
-						<p className="font-['Fraunces',serif] font-normal leading-normal relative shrink-0 text-[#0f251b] text-4xl md:text-5xl lg:text-6xl tracking-wide w-full">
+					className="flex justify-center pt-[180px] pb-[96px] md:pt-[240px] md:pb-30 lg:pt-[282px] lg:pb-[140px]">
+					<div className="flex flex-col gap-12 items-center not-italic text-center relative w-full max-w-[624px]">
+						<p className={`${typeStyles.heroTitleLarge} relative shrink-0 text-[#0f251b] w-full`}>
 							Meet the A-team
 						</p>
 						<p className="text-xl tracking-wide relative shrink-0 text-green-500  w-full whitespace-pre-wrap">
@@ -191,17 +193,17 @@ export default function OurTeam() {
 				<ContentContainer
 					size="wide"
 					className="py-[96px] md:py-[142px] lg:pt-[132px] lg:pb-[160px]">
-					<div className="flex flex-col gap-[56px] md:gap-[64px]">
-						<p className="relative font-['Fraunces',serif] font-normal leading-[0] not-italic text-[0px] text-white tracking-[1.44px] w-full max-w-[605px]">
-							<span className="leading-[normal] text-[#1e4a35] text-[40px] md:text-[48px]">
+					<div className="flex flex-col gap-[56px] md:gap-16">
+						<p className="relative font-serif font-normal leading-zero not-italic text-[0px] text-white tracking-section-lg w-full max-w-[605px]">
+							<span className="leading-normal text-green-500 text-section md:text-section-lg">
 								Global in perspective
 								<br aria-hidden="true" />
 								Local in expertise
 								<br aria-hidden="true" />
 								United by
 							</span>
-							<span className="leading-[normal] text-[40px] md:text-[48px]">{` `}</span>
-							<span className="font-['Fraunces',serif] font-normal italic leading-[normal] text-[#d78228] text-[40px] md:text-[48px]">
+							<span className="leading-normal text-section md:text-section-lg">{` `}</span>
+							<span className={`${typeStyles.sectionTitleLarge} italic text-orange-500`}>
 								impact
 							</span>
 						</p>
@@ -266,37 +268,37 @@ export default function OurTeam() {
 			<div
 				className="bg-white min-h-[800px] md:min-h-[1000px] overflow-clip relative shrink-0 w-full"
 				data-name="Wireframe - 31">
-				<ContentContainer size="wide" className="py-[66px]">
+				<ContentContainer size="wide" className={sectionSpacing.default}>
 					<div className="relative flex flex-col items-center gap-[92px]">
-						<div className="content-stretch flex flex-wrap gap-[25px] items-center relative py-[24px] w-full max-w-[1280px]">
+						<div className="flex flex-wrap gap-[25px] items-center relative py-[24px] w-full max-w-7xl">
 							<div
 								aria-hidden="true"
 								className="absolute border-[#dfeddf] border-b border-dashed inset-0 pointer-events-none"
 							/>
-							<div className="content-stretch flex items-start p-[8px] relative shrink-0">
-								<p className="font-['Rubik',sans-serif] font-normal leading-[24px] relative shrink-0 text-[16px] text-black text-center whitespace-nowrap">
+							<div className="flex items-start p-2 relative shrink-0">
+								<p className={`${typeStyles.body} leading-6 relative shrink-0 text-black text-center whitespace-nowrap`}>
 									Filter By:
 								</p>
 							</div>
 							{teamFilters.map((filter) => (
 								<div
-									className={`content-stretch flex items-start px-[16px] py-[8px] relative rounded-[40px] shrink-0 ${filter.active ? "bg-[#1e4a35]" : "bg-[#eff6ef]"}`}>
+									className={`flex items-start px-4 py-2 relative rounded-[40px] shrink-0 ${filter.active ? "bg-green-500" : "bg-[#eff6ef]"}`}>
 									<p
-										className={`font-['Rubik',sans-serif] font-normal leading-[1.68] relative shrink-0 text-[16px] text-center tracking-[0.48px] whitespace-nowrap ${filter.active ? "text-[#eee]" : "text-[#0f251b]"}`}>
+										className={`${typeStyles.body} relative shrink-0 text-center whitespace-nowrap ${filter.active ? "text-[#eee]" : "text-[#0f251b]"}`}>
 										{filter.label}
 									</p>
 								</div>
 							))}
 						</div>
-						<div className="content-stretch flex flex-col gap-[32px] items-start relative w-full max-w-[1276px]">
+						<div className="flex flex-col gap-8 items-start relative w-full max-w-[1276px]">
 							{teamMembers.map((row, index) => (
 								<div
-									className={`content-stretch flex flex-wrap items-start justify-center relative shrink-0 w-full ${index === 0 ? "gap-[32px]" : "gap-[32px] lg:gap-[108px]"}`}
+									className={`flex flex-wrap items-start justify-center relative shrink-0 w-full ${index === 0 ? "gap-8" : "gap-8 lg:gap-[108px]"}`}
 									key={index}>
 									{row.map((member) => (
-										<div className="content-stretch flex flex-col gap-[24px] items-center relative w-full max-w-[260px] sm:w-[calc(50%-16px)] lg:flex-[1_0_0] lg:min-w-px lg:max-w-none">
+										<div className="flex flex-col gap-6 items-center relative w-full max-w-[260px] sm:w-[calc(50%-16px)] lg:flex-[1_0_0] lg:min-w-px lg:max-w-none">
 											<member.Photo />
-											<div className="content-stretch flex flex-col font-['Rubik',sans-serif] font-normal min-h-[54px] items-center leading-[1.68] relative shrink-0 text-[16px] text-center tracking-[0.48px] w-full max-w-[220px]">
+											<div className={`${typeStyles.body} flex flex-col min-h-[54px] items-center relative shrink-0 text-center w-full max-w-[220px]`}>
 												<p className="relative shrink-0 text-black">
 													{member.name}
 												</p>
@@ -324,27 +326,27 @@ export default function OurTeam() {
 				data-name="Wireframe - 11">
 				<ContentContainer
 					size="wide"
-					className="py-[96px] md:py-[119px]">
+					className={sectionSpacing.default}>
 					<div className="relative flex flex-col items-center gap-12">
-						<div className="content-stretch flex flex-col gap-[64px] items-center relative w-full max-w-[1280px]">
-							<div className="content-stretch flex flex-col items-center relative shrink-0 w-full max-w-[1052px]">
-								<p className="font-['Fraunces',serif] font-normal leading-[normal] not-italic relative shrink-0 text-[#eff6ef] text-[40px] text-center tracking-[1.2px] w-full">
+						<div className="flex flex-col gap-16 items-center relative w-full max-w-7xl">
+							<div className="flex flex-col items-center relative shrink-0 w-full max-w-[1052px]">
+								<p className={`${typeStyles.sectionTitle} not-italic relative shrink-0 text-[#eff6ef] text-center w-full`}>
 									We live by our values
 								</p>
 							</div>
-							<div className="content-stretch flex flex-col gap-[32px] items-start relative shrink-0 w-full">
+							<div className="flex flex-col gap-8 items-start relative shrink-0 w-full">
 								{valueRows.map((row, index) => (
 									<div
-										className={`content-stretch flex flex-col gap-[32px] items-start relative shrink-0 w-full lg:flex-row ${index === 1 ? "lg:justify-center" : ""}`}
+										className={`flex flex-col gap-8 items-start relative shrink-0 w-full lg:flex-row ${index === 1 ? "lg:justify-center" : ""}`}
 										key={index}>
 										{row.map((value) =>
 											value.variant === "fixed" ? (
 												<div
-													className={`${value.color} content-stretch flex flex-col gap-[27px] items-start px-[24px] py-[36px] md:px-[32px] md:py-[48px] relative rounded-[30px] shrink-0 w-full lg:w-[405.333px]`}>
+													className={`${value.color} flex flex-col gap-[27px] items-start px-6 py-[36px] md:px-[32px] md:py-[48px] relative rounded-[30px] shrink-0 w-full lg:w-[405.333px]`}>
 													{
 														<>
 															<value.Header />
-															<p className="font-['Rubik',sans-serif] font-normal leading-[1.68] relative shrink-0 text-[#1e4a35] text-[16px] text-center tracking-[0.48px] w-full">
+															<p className={`${typeStyles.body} relative shrink-0 text-green-500 text-center w-full`}>
 																{value.body}
 															</p>
 														</>
@@ -353,11 +355,11 @@ export default function OurTeam() {
 											) : (
 												<div
 													className={`${value.color} relative rounded-[30px] w-full lg:flex-[1_0_0] lg:min-w-px`}>
-													<div className="content-stretch flex flex-col gap-[27px] items-start px-[24px] py-[36px] md:px-[32px] md:py-[48px] relative size-full">
+													<div className="flex flex-col gap-[27px] items-start px-6 py-[36px] md:px-[32px] md:py-[48px] relative size-full">
 														{
 															<>
 																<value.Header />
-																<p className="font-['Rubik',sans-serif] font-normal leading-[1.68] relative shrink-0 text-[#1e4a35] text-[16px] text-center tracking-[0.48px] w-full">
+																<p className={`${typeStyles.body} relative shrink-0 text-green-500 text-center w-full`}>
 																	{value.body}
 																</p>
 															</>
@@ -385,29 +387,29 @@ export default function OurTeam() {
 				</div>
 				<ContentContainer
 					size="wide"
-					className="flex justify-center py-[72px] md:pt-[56px] md:pb-[96px]">
+					className={`${sectionSpacing.cta} flex justify-center`}>
 					<div
-						className="bg-[#4c352b] min-h-[520px] max-w-[1216px] overflow-clip relative rounded-[32px] md:rounded-[40px] w-full flex items-center justify-center p-[28px] md:p-10"
+						className="bg-[#4c352b] min-h-[520px] max-w-[1216px] overflow-clip relative rounded-4xl md:rounded-[40px] w-full flex items-center justify-center p-[28px] md:p-10"
 						data-name="CTA">
 						<div
 							className="absolute hidden h-[663px] left-[7px] top-[-86px] w-[1205px] md:block"
 							data-name="Capa_1">
 							<OurTeamSvgs.OurTeamSvg08 />
 						</div>
-						<div className="content-stretch flex flex-col gap-[40px] items-center relative rounded-[40px] z-10 w-full">
-							<p className="font-['Fraunces',serif] font-normal leading-[0] not-italic relative shrink-0 text-[#d78228] text-[32px] md:text-[40px] text-center tracking-[1.2px] w-full max-w-[800px]">
-								<span className="leading-[normal] text-[#f5e091]">{`We’re always looking for like-minded people to join our `}</span>
-								<span className="font-['Fraunces',serif] font-normal italic leading-[normal]">
+						<div className="flex flex-col gap-10 items-center relative rounded-[40px] z-10 w-full">
+							<p className={`${typeStyles.sectionTitle} leading-zero not-italic relative shrink-0 text-orange-500 text-center w-full max-w-[800px]`}>
+								<span className="leading-normal text-[#f5e091]">{`We’re always looking for like-minded people to join our `}</span>
+								<span className="font-serif font-normal italic leading-normal">
 									odd
 								</span>
-								<span className="leading-[normal] text-[#f5e091]">{` team.`}</span>
+								<span className="leading-normal text-[#f5e091]">{` team.`}</span>
 							</p>
-							<p className="font-['Rubik',sans-serif] font-normal leading-[1.68] not-italic relative shrink-0 text-[16px] md:text-[20px] text-center text-white tracking-[0.6px] w-full max-w-[592px]">{`Come work with us if that sounds like you. `}</p>
+							<p className={`${typeStyles.bodyLarge} not-italic relative shrink-0 text-center text-white w-full max-w-148`}>{`Come work with us if that sounds like you. `}</p>
 							<div
 								className="bg-white relative rounded-[80px] shrink-0"
 								data-name="Button / Primary">
-								<div className="content-stretch flex items-center justify-center overflow-clip px-[20px] py-[12px] relative rounded-[inherit] size-full">
-									<p className="font-['Rubik',sans-serif] font-medium leading-[24px] not-italic relative shrink-0 text-[#122c20] text-[16px] whitespace-nowrap">
+								<div className="flex items-center justify-center overflow-clip px-[20px] py-3 relative rounded-[inherit] size-full">
+									<p className={`${typeStyles.body} font-medium leading-6 not-italic relative shrink-0 text-[#122c20] whitespace-nowrap`}>
 										Current openings
 									</p>
 								</div>

@@ -212,14 +212,14 @@ function Frame24() {
   return (
     <div className="content-stretch flex flex-col gap-[24px] items-center not-italic relative shrink-0 text-center w-full">
       <p className="font-['Rubik',sans-serif] font-normal leading-[1.68] relative shrink-0 text-[#85a687] text-[16px] tracking-[0.48px] whitespace-nowrap">Vision</p>
-      <p className="font-['Fraunces',serif] font-normal leading-[normal] min-w-full relative shrink-0 text-[#0f251b] text-[24px] tracking-[0.72px] w-[min-content]">{`Unlock Africa's potential to bring the world high-quality, impactful products`}</p>
+      <p className="font-['Fraunces',serif] font-normal leading-[normal] min-w-full relative shrink-0 text-[#0f251b] text-[24px] tracking-[0.72px] w-min">{`Unlock Africa's potential to bring the world high-quality, impactful products`}</p>
     </div>
   );
 }
 
 function Frame25() {
   return (
-    <div className="col-1 content-stretch flex flex-col gap-[48px] items-center ml-[46px] mt-0 relative row-1 w-[217px]">
+    <div className="col-1 content-stretch flex flex-col gap-12 items-center ml-11.5 mt-0 relative row-1 w-54.25">
       <Group12 />
       <Frame24 />
     </div>
@@ -229,7 +229,7 @@ function Frame25() {
 function Group4() {
   return (
     <div className="grid-cols-[max-content] grid-rows-[max-content] inline-grid place-items-start relative shrink-0">
-      <div className="col-1 h-[336px] ml-0 mt-[86px] relative row-1 w-[303px]" data-name="Vector">
+      <div className="col-1 h-[336px] ml-0 mt-21.5 relative row-1 w-75.75" data-name="Vector">
         <div className="absolute inset-[-1.19%_-7.92%_-13.1%_-7.92%]">
           <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 351 384">
             <g filter="url(#filter0_d_33_4679)" id="Vector">
@@ -289,14 +289,14 @@ function Frame27() {
   return (
     <div className="content-stretch flex flex-col gap-[24px] items-center not-italic relative shrink-0 text-center w-full">
       <p className="font-['Rubik',sans-serif] font-normal leading-[1.68] relative shrink-0 text-[#85a687] text-[16px] tracking-[0.48px] whitespace-nowrap">Mission</p>
-      <p className="font-['Fraunces',serif] font-normal leading-[normal] min-w-full relative shrink-0 text-[#0f251b] text-[24px] tracking-[0.72px] w-[min-content]">To build a food system that is sustainable and equitable</p>
+      <p className="font-['Fraunces',serif] font-normal leading-[normal] min-w-full relative shrink-0 text-[#0f251b] text-[24px] tracking-[0.72px] w-min">To build a food system that is sustainable and equitable</p>
     </div>
   );
 }
 
 function Frame26() {
   return (
-    <div className="col-1 content-stretch flex flex-col gap-[48px] items-center ml-[46px] mt-0 relative row-1 w-[217px]">
+    <div className="col-1 content-stretch flex flex-col gap-12 items-center ml-11.5 mt-0 relative row-1 w-54.25">
       <Group13 />
       <Frame27 />
     </div>
@@ -306,7 +306,7 @@ function Frame26() {
 function Group5() {
   return (
     <div className="grid-cols-[max-content] grid-rows-[max-content] inline-grid place-items-start relative shrink-0">
-      <div className="col-1 h-[336px] ml-0 mt-[92.5px] relative row-1 w-[303px]" data-name="Vector">
+      <div className="col-1 h-[336px] ml-0 mt-[92.5px] relative row-1 w-75.75" data-name="Vector">
         <div className="absolute inset-[-1.19%_-7.92%_-13.1%_-7.92%]">
           <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 351 384">
             <g filter="url(#filter0_d_33_4679)" id="Vector">

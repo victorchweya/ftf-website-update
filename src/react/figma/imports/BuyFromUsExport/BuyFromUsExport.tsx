@@ -291,7 +291,7 @@ function Wireframe5() {
       <Frame31 />
       <div className="absolute flex h-[555.649px] items-center justify-center left-[calc(50%+56.82px)] top-[125.68px] w-[574.366px]" style={{ "--transform-inner-width": "1185", "--transform-inner-height": "21" } as React.CSSProperties}>
         <div className="flex-none rotate-[9.87deg]">
-          <div className="h-[477px] relative w-[500px]" data-name="Vector">
+          <div className="h-119.25 relative w-125" data-name="Vector">
             <svg className="absolute block inset-0 size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 500 477">
               <path d={svgPaths.p33e26280} fill="var(--fill-0, #C2CE86)" id="Vector" />
             </svg>
@@ -309,7 +309,7 @@ function Frame38() {
   return (
     <div className="content-stretch flex flex-col gap-[32px] items-center not-italic relative shrink-0 text-center w-[1052px]">
       <p className="font-['Rubik',sans-serif] font-medium leading-[1.68] relative shrink-0 text-[#d78228] text-[16px] tracking-[0.48px] w-[718px]">{` We Source It`}</p>
-      <p className="font-['Fraunces',serif] font-normal leading-[normal] min-w-full relative shrink-0 text-[#0f251b] text-[48px] tracking-[1.44px] w-[min-content]">Your Partner in Flavour</p>
+      <p className="font-['Fraunces',serif] font-normal leading-[normal] min-w-full relative shrink-0 text-[#0f251b] text-[48px] tracking-[1.44px] w-min">Your Partner in Flavour</p>
       <p className="font-['Rubik',sans-serif] font-normal leading-[1.68] relative shrink-0 text-[#1e4a35] text-[16px] tracking-[0.48px] w-[718px]">With its rich agricultural diversity, Kenya offers exceptional potential for ingredient sourcing. We supply what you need.</p>
     </div>
   );
@@ -369,9 +369,9 @@ function Group27() {
 function Group21() {
   return (
     <div className="grid-cols-[max-content] grid-rows-[max-content] inline-grid leading-[0] place-items-start relative shrink-0">
-      <div className="col-1 flex h-[154px] items-center justify-center ml-0 mt-0 relative row-1 w-[158px]">
+      <div className="col-1 flex h-38.5 items-center justify-center ml-0 mt-0 relative row-1 w-39.5">
         <div className="-scale-y-100 flex-none rotate-180">
-          <div className="h-[154px] relative w-[158px]" data-name="Vector">
+          <div className="h-38.5 relative w-39.5" data-name="Vector">
             <svg className="absolute block inset-0 size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 158 154">
               <path d={svgPaths.p1d870880} fill="var(--fill-0, #DAE2B6)" id="Vector" />
             </svg>
@@ -450,9 +450,9 @@ function Group23() {
 function Group22() {
   return (
     <div className="grid-cols-[max-content] grid-rows-[max-content] inline-grid leading-[0] place-items-start relative shrink-0">
-      <div className="col-1 flex h-[154px] items-center justify-center ml-0 mt-0 relative row-1 w-[158px]">
+      <div className="col-1 flex h-38.5 items-center justify-center ml-0 mt-0 relative row-1 w-39.5">
         <div className="-scale-y-100 flex-none rotate-180">
-          <div className="h-[154px] relative w-[158px]" data-name="Vector">
+          <div className="h-38.5 relative w-39.5" data-name="Vector">
             <svg className="absolute block inset-0 size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 158 154">
               <path d={svgPaths.p1d870880} fill="var(--fill-0, #DAE2B6)" id="Vector" />
             </svg>
@@ -492,7 +492,7 @@ function Frame70() {
 
 function Group24() {
   return (
-    <div className="h-[154px] relative shrink-0 w-[158px]">
+    <div className="h-38.5 relative shrink-0 w-39.5">
       <svg className="absolute block inset-0 size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 158 154">
         <g id="Group 301">
           <path d={svgPaths.p1ed68a00} fill="var(--fill-0, #DAE2B6)" id="Vector" />
@@ -571,9 +571,9 @@ function Group26() {
 function Group25() {
   return (
     <div className="grid-cols-[max-content] grid-rows-[max-content] inline-grid leading-[0] place-items-start relative shrink-0">
-      <div className="col-1 flex h-[154px] items-center justify-center ml-0 mt-0 relative row-1 w-[158px]">
+      <div className="col-1 flex h-38.5 items-center justify-center ml-0 mt-0 relative row-1 w-39.5">
         <div className="-scale-y-100 flex-none rotate-180">
-          <div className="h-[154px] relative w-[158px]" data-name="Vector">
+          <div className="h-38.5 relative w-39.5" data-name="Vector">
             <svg className="absolute block inset-0 size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 158 154">
               <path d={svgPaths.p1d870880} fill="var(--fill-0, #DAE2B6)" id="Vector" />
             </svg>
@@ -679,7 +679,7 @@ function Frame40() {
   return (
     <div className="-translate-x-1/2 absolute content-stretch flex flex-col gap-[32px] items-center left-[calc(50%-7px)] not-italic text-center top-[50px] w-[1052px]">
       <p className="font-['Rubik',sans-serif] font-medium leading-[1.68] relative shrink-0 text-[#d78228] text-[16px] tracking-[0.48px] w-[718px]">We Connect It</p>
-      <p className="font-['Fraunces',serif] font-normal leading-[normal] min-w-full relative shrink-0 text-[#0f251b] text-[48px] tracking-[1.44px] w-[min-content]">From Kenyan farms to global buyers</p>
+      <p className="font-['Fraunces',serif] font-normal leading-[normal] min-w-full relative shrink-0 text-[#0f251b] text-[48px] tracking-[1.44px] w-min">From Kenyan farms to global buyers</p>
       <p className="font-['Rubik',sans-serif] font-normal leading-[1.68] relative shrink-0 text-[#1e4a35] text-[16px] tracking-[0.48px] w-[718px]">We build demand-driven supply chains. Our model matches your ingredient needs with reliable supply from our trusted network. We offer different product lines that harness dehydration and modern technology to capture peak season freshness.</p>
     </div>
   );
@@ -840,7 +840,7 @@ function Frame59() {
   return (
     <div className="-translate-x-1/2 absolute content-stretch flex flex-col gap-[32px] items-center left-[calc(50%+0.5px)] not-italic text-center top-[951px] w-[1052px]">
       <p className="font-['Rubik',sans-serif] font-medium leading-[1.68] relative shrink-0 text-[#d78228] text-[16px] tracking-[0.48px] w-[718px]">Global Readiness</p>
-      <p className="font-['Fraunces',serif] font-normal leading-[normal] min-w-full relative shrink-0 text-[#0f251b] text-[48px] tracking-[1.44px] w-[min-content]">Our Export Ready Products</p>
+      <p className="font-['Fraunces',serif] font-normal leading-[normal] min-w-full relative shrink-0 text-[#0f251b] text-[48px] tracking-[1.44px] w-min">Our Export Ready Products</p>
       <p className="font-['Rubik',sans-serif] font-normal leading-[1.68] relative shrink-0 text-[#1e4a35] text-[16px] tracking-[0.48px] w-[718px]">Our current batch is processed, certified, and ready for immediate global shipment to your facility.</p>
     </div>
   );
@@ -860,7 +860,7 @@ function Frame43() {
   return (
     <div className="content-stretch flex flex-col gap-[32px] items-center not-italic relative shrink-0 text-center w-[1052px]">
       <p className="font-['Rubik',sans-serif] font-medium leading-[1.68] relative shrink-0 text-[#d78228] text-[16px] tracking-[0.48px] w-[718px]">You Receive It</p>
-      <p className="font-['Fraunces',serif] font-normal leading-[normal] min-w-full relative shrink-0 text-[#0f251b] text-[48px] tracking-[1.44px] w-[min-content]">Quality You Can Trust</p>
+      <p className="font-['Fraunces',serif] font-normal leading-[normal] min-w-full relative shrink-0 text-[#0f251b] text-[48px] tracking-[1.44px] w-min">Quality You Can Trust</p>
       <p className="font-['Rubik',sans-serif] font-normal leading-[1.68] relative shrink-0 text-[#1e4a35] text-[16px] tracking-[0.48px] w-[718px]">We work closely with farmers and processors to ensure ingredients meet international quality standards.</p>
     </div>
   );
@@ -943,7 +943,7 @@ function Group3() {
 
 function Group4() {
   return (
-    <div className="absolute inset-[0_23.51%_0_0] mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[0.001px_-0.001px] mask-size-[33.312px_31px]" style={{ maskImage: `url('${imgGroup}')` }} data-name="Group">
+    <div className="absolute inset-[0_23.51%_0_0] mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-[0.001px_-0.001px] mask-size-[33.312px_31px]" style={{ maskImage: `url('${imgGroup}')` }} data-name="Group">
       <svg className="absolute block inset-0 size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 32.8904 30.9992">
         <g id="Group">
           <path d={svgPaths.p13d38d00} fill="var(--fill-0, #EFF6EF)" id="Vector" />
@@ -1163,7 +1163,7 @@ function Frame57() {
   return (
     <div className="absolute content-stretch flex flex-col gap-[32px] items-start left-[83px] not-italic top-[96px] w-[737px]">
       <p className="font-['Rubik',sans-serif] font-medium leading-[1.68] relative shrink-0 text-[#d78228] text-[15px] tracking-[0.45px] w-[624px]">You bring it to the World</p>
-      <p className="font-['Fraunces',serif] font-normal leading-[normal] min-w-full relative shrink-0 text-[#0f251b] text-[48px] tracking-[1.44px] w-[min-content]">Sourcing that strengthens the food system.</p>
+      <p className="font-['Fraunces',serif] font-normal leading-[normal] min-w-full relative shrink-0 text-[#0f251b] text-[48px] tracking-[1.44px] w-min">Sourcing that strengthens the food system.</p>
       <p className="font-['Rubik',sans-serif] font-normal leading-[1.68] relative shrink-0 text-[#1e4a35] text-[20px] tracking-[0.6px] w-[624px]">Our ingredients contribute to a more resilient and sustainable global food system. We operate on six core impact principles.</p>
     </div>
   );
@@ -1171,7 +1171,7 @@ function Frame57() {
 
 function Group18() {
   return (
-    <div className="col-1 h-[48px] ml-0 mt-0 relative row-1 w-[49.358px]">
+    <div className="col-1 h-12 ml-0 mt-0 relative row-1 w-[49.358px]">
       <div className="absolute inset-[-0.63%_-0.61%_-0.62%_-0.61%]">
         <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 49.9577 48.6">
           <g id="Group 193">

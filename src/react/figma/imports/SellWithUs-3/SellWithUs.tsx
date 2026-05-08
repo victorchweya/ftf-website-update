@@ -11,7 +11,7 @@ function Frame24() {
   return (
     <div className="content-stretch flex flex-col gap-[64px] items-center relative shrink-0">
       <Objects />
-      <div className="font-['Fraunces',serif] font-normal leading-[0] min-w-full not-italic relative shrink-0 text-[0px] text-black text-center tracking-[1.92px] w-[min-content]">
+      <div className="font-['Fraunces',serif] font-normal leading-[0] min-w-full not-italic relative shrink-0 text-[0px] text-black text-center tracking-[1.92px] w-min">
         <p className="leading-[normal] mb-0 text-[#0f251b] text-[64px]">Making farming</p>
         <p className="leading-[normal] text-[#1e4a35] text-[64px]">Fair and Rewarding</p>
       </div>
@@ -328,7 +328,7 @@ function Frame28() {
     <div className="bg-[#fbfafa] flex-[1_0_0] min-w-px relative rounded-[30px]">
       <div className="content-stretch flex flex-col gap-[27px] items-start p-[48px] relative size-full">
         <Frame26 />
-        <p className="font-['Rubik',sans-serif] font-normal leading-[1.68] min-w-full not-italic relative shrink-0 text-[#1e4a35] text-[16px] tracking-[0.48px] w-[min-content]">Since 2020, we have been giving farmers consistent market access for all fresh value chains.</p>
+        <p className="font-['Rubik',sans-serif] font-normal leading-[1.68] min-w-full not-italic relative shrink-0 text-[#1e4a35] text-[16px] tracking-[0.48px] w-min">Since 2020, we have been giving farmers consistent market access for all fresh value chains.</p>
       </div>
     </div>
   );
@@ -388,7 +388,7 @@ function Frame29() {
     <div className="bg-[#fbfafa] flex-[1_0_0] min-w-px relative rounded-[30px]">
       <div className="content-stretch flex flex-col gap-[27px] items-start p-[48px] relative size-full">
         <Frame27 />
-        <p className="font-['Rubik',sans-serif] font-normal leading-[1.68] min-w-full not-italic relative shrink-0 text-[#1e4a35] text-[16px] tracking-[0.48px] w-[min-content]">{` We pay within three days of accepting the produce.`}</p>
+        <p className="font-['Rubik',sans-serif] font-normal leading-[1.68] min-w-full not-italic relative shrink-0 text-[#1e4a35] text-[16px] tracking-[0.48px] w-min">{` We pay within three days of accepting the produce.`}</p>
       </div>
     </div>
   );
@@ -448,7 +448,7 @@ function Frame30() {
     <div className="bg-[#fbfafa] flex-[1_0_0] min-w-px relative rounded-[30px]">
       <div className="content-stretch flex flex-col gap-[27px] items-start p-[48px] relative size-full">
         <Frame31 />
-        <p className="font-['Rubik',sans-serif] font-normal leading-[1.68] min-w-full not-italic relative shrink-0 text-[#1e4a35] text-[16px] tracking-[0.48px] w-[min-content]">Whether grade 1, 2 or imperfect, we buy all your product grades, as long as they are fresh.</p>
+        <p className="font-['Rubik',sans-serif] font-normal leading-[1.68] min-w-full not-italic relative shrink-0 text-[#1e4a35] text-[16px] tracking-[0.48px] w-min">Whether grade 1, 2 or imperfect, we buy all your product grades, as long as they are fresh.</p>
       </div>
     </div>
   );
@@ -526,7 +526,7 @@ function Frame34() {
     <div className="bg-[#fbfafa] flex-[1_0_0] min-w-px relative rounded-[30px]">
       <div className="content-stretch flex flex-col gap-[27px] items-start p-[48px] relative size-full">
         <Frame35 />
-        <p className="font-['Rubik',sans-serif] font-normal leading-[1.68] min-w-full not-italic relative shrink-0 text-[#1e4a35] text-[16px] tracking-[0.48px] w-[min-content]">We work with our FTF aggregators, making us the most reliable partner, also for small quantities.</p>
+        <p className="font-['Rubik',sans-serif] font-normal leading-[1.68] min-w-full not-italic relative shrink-0 text-[#1e4a35] text-[16px] tracking-[0.48px] w-min">We work with our FTF aggregators, making us the most reliable partner, also for small quantities.</p>
       </div>
     </div>
   );
@@ -584,7 +584,7 @@ function Frame42() {
     <div className="bg-[#fbfafa] flex-[1_0_0] min-w-px relative rounded-[30px]">
       <div className="content-stretch flex flex-col gap-[27px] items-start p-[48px] relative size-full">
         <Frame43 />
-        <p className="font-['Rubik',sans-serif] font-normal leading-[1.68] min-w-full not-italic relative shrink-0 text-[#1e4a35] text-[16px] tracking-[0.48px] w-[min-content]">{` Our mobile app gives you full transparency into all your orders, including your transaction history.`}</p>
+        <p className="font-['Rubik',sans-serif] font-normal leading-[1.68] min-w-full not-italic relative shrink-0 text-[#1e4a35] text-[16px] tracking-[0.48px] w-min">{` Our mobile app gives you full transparency into all your orders, including your transaction history.`}</p>
       </div>
     </div>
   );
@@ -1122,7 +1122,7 @@ function Wireframe2() {
 
 function Group9() {
   return (
-    <div className="absolute inset-[48.28%_18.79%_8.68%_66.58%] mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[-1.17px_-0.16px] mask-size-[122.51px_118.116px]" style={{ maskImage: `url('${imgGroup}')` }} data-name="Group">
+    <div className="absolute inset-[48.28%_18.79%_8.68%_66.58%] mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-[-1.17px_-0.16px] mask-size-[122.51px_118.116px]" style={{ maskImage: `url('${imgGroup}')` }} data-name="Group">
       <svg className="absolute block inset-0 size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 44.4335 65.2025">
         <g id="Group">
           <path d={svgPaths.p4e2a440} fill="var(--fill-0, #DABACC)" id="Vector" />
@@ -1256,13 +1256,13 @@ function Frame2() {
 
 function Frame4() {
   return (
-    <div className="col-1 content-stretch flex flex-col gap-[24px] items-start ml-[40px] mt-[33px] relative row-1 w-[534px]">
+    <div className="col-1 content-stretch flex flex-col gap-[24px] items-start ml-[40px] mt-8.25 relative row-1 w-[534px]">
       <div className="h-[24.704px] relative shrink-0 w-[37.577px]" data-name="“">
         <svg className="absolute block inset-0 size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 37.5771 24.704">
           <path d={svgPaths.pd9b5300} fill="var(--fill-0, black)" id="â" />
         </svg>
       </div>
-      <div className="font-['Rubik',sans-serif] font-normal leading-[0] min-w-full not-italic relative shrink-0 text-[16px] text-black tracking-[0.48px] w-[min-content] whitespace-pre-wrap">
+      <div className="font-['Rubik',sans-serif] font-normal leading-[0] min-w-full not-italic relative shrink-0 text-[16px] text-black tracking-[0.48px] w-min whitespace-pre-wrap">
         <p className="leading-[1.68] mb-0">{`I am a farmer based in Nyandarua County. I've traded with Farm `}</p>
         <p className="leading-[1.68] mb-0">{`to Feed for the last 2 years. Last year I attended a training `}</p>
         <p className="leading-[1.68] mb-0">{`organised by FtF and this has helped me reduce on the quantity `}</p>
@@ -1327,13 +1327,13 @@ function Frame3() {
 
 function Frame5() {
   return (
-    <div className="col-1 content-stretch flex flex-col gap-[24px] items-start ml-[40px] mt-[33px] relative row-1 w-[534px]">
+    <div className="col-1 content-stretch flex flex-col gap-[24px] items-start ml-[40px] mt-8.25 relative row-1 w-[534px]">
       <div className="h-[24.704px] relative shrink-0 w-[37.577px]" data-name="“">
         <svg className="absolute block inset-0 size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 37.5771 24.704">
           <path d={svgPaths.pd9b5300} fill="var(--fill-0, #1E4A35)" id="â" />
         </svg>
       </div>
-      <div className="font-['Rubik',sans-serif] font-normal leading-[0] min-w-full not-italic relative shrink-0 text-[16px] text-black tracking-[0.48px] w-[min-content] whitespace-pre-wrap">
+      <div className="font-['Rubik',sans-serif] font-normal leading-[0] min-w-full not-italic relative shrink-0 text-[16px] text-black tracking-[0.48px] w-min whitespace-pre-wrap">
         <p className="leading-[1.68] mb-0">{`I am a farmer based in Nyandarua County. I've traded with Farm `}</p>
         <p className="leading-[1.68] mb-0">{`to Feed for the last 2 years. Last year I attended a training `}</p>
         <p className="leading-[1.68] mb-0">{`organised by FtF and this has helped me reduce on the quantity `}</p>
@@ -1404,7 +1404,7 @@ function Frame6() {
           <path d={svgPaths.pd9b5300} fill="var(--fill-0, #1E4A35)" id="â" />
         </svg>
       </div>
-      <div className="font-['Rubik',sans-serif] font-normal leading-[0] min-w-full not-italic relative shrink-0 text-[16px] text-black tracking-[0.48px] w-[min-content] whitespace-pre-wrap">
+      <div className="font-['Rubik',sans-serif] font-normal leading-[0] min-w-full not-italic relative shrink-0 text-[16px] text-black tracking-[0.48px] w-min whitespace-pre-wrap">
         <p className="leading-[1.68] mb-0">{`My collaboration with FTF has improved income, ensured market `}</p>
         <p className="leading-[1.68] mb-0">{`access, and offered fair prices to our fraternity of farmers, `}</p>
         <p className="leading-[1.68] mb-0">{`including me. Post-harvest losses have reduced through better `}</p>

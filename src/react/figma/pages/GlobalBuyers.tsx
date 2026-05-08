@@ -27,6 +27,8 @@ import imgRectangle2 from "../../../assets/figma/e315ff9f01b131cfc069e9c39ccb5f8
 import imgRectangle3 from "../../../assets/figma/505e0484d3766a8be242767e13dd74d89ee9ebfe.png?url";
 import { imgGroup } from "../imports/BuyFromUsExport/svg-9eed1";
 import { BorderTopKenyanBuyersSvg } from "../imports/BuyFromUsLocal-1/border-top-kenyan-buyers";
+import { sectionSpacing } from "../components/layout/spacing";
+import { typeStyles } from "../components/layout/typography";
 const exportProductCards = [Frame41, Frame44, Frame46, Frame47];
 const qualityCards = [Frame50, Frame52, Frame54];
 const impactPrincipleRows = [
@@ -37,7 +39,7 @@ const impactPrincipleRows = [
 export default function GlobalBuyers() {
 	return (
 		<div
-			className="bg-white content-stretch flex flex-col items-start relative w-full"
+			className="bg-white flex flex-col items-start relative w-full"
 			data-name="Buy from us - export">
 			{/* Hero */}
 			<div
@@ -62,31 +64,31 @@ export default function GlobalBuyers() {
 				</div>
 				<ContentContainer
 					size="wide"
-					className="pt-[180px] pb-[120px] md:pt-[214px]">
-					<div className="content-stretch flex flex-col gap-[40px] items-center relative">
-						<div className="content-stretch flex flex-col gap-[40px] items-center not-italic relative shrink-0 text-center">
-							<p className="font-['Fraunces',serif] font-normal leading-normal max-w-[688px] relative shrink-0 text-4xl md:text-5xl lg:text-6xl text-black tracking-wide w-full">
+					className="pt-[180px] pb-30 md:pt-53.5">
+					<div className="flex flex-col gap-10 items-center relative">
+						<div className="flex flex-col gap-10 items-center not-italic relative shrink-0 text-center">
+							<p className={`${typeStyles.heroTitleLarge} max-w-[688px] relative shrink-0 text-black w-full`}>
 								<span className="leading-normal text-[#0f251b]">
 									Global sourcing for
 								</span>
 								<span className="leading-normal">
 									<br aria-hidden="true" />
 								</span>
-								<span className="leading-normal text-[#1e4a35]">
+								<span className="leading-normal text-green-500">
 									Kenyan ingredients
 								</span>
 							</p>
-							<p className="font-['Rubik',sans-serif] font-normal leading-[1.68] max-w-[488px] relative shrink-0 text-[#1e4a35] text-[20px] tracking-[0.6px] w-full">
+							<p className={`${typeStyles.bodyLead} max-w-[488px] relative shrink-0 text-green-500 w-full`}>
 								Connect directly with reliable, sustainable
 								supply chains. From our farmers to your
 								processing facilities worldwide.
 							</p>
 						</div>
-						<div className="content-stretch flex flex-col items-center relative shrink-0">
+						<div className="flex flex-col items-center relative shrink-0">
 							<div className="bg-white h-[68px] relative rounded-[40px] shrink-0 w-full max-w-[620px]">
-								<div className="content-stretch flex gap-[8px] items-center overflow-clip px-[19px] py-[13px] relative rounded-[inherit] size-full">
+								<div className="flex gap-2 items-center overflow-clip px-[19px] py-[13px] relative rounded-[inherit] size-full">
 									<div
-										className="overflow-clip relative shrink-0 size-[24px]"
+										className="overflow-clip relative shrink-0 size-6"
 										data-name="credit_card">
 										<div
 											className="absolute left-[4px] size-[16px] top-[4px]"
@@ -94,13 +96,13 @@ export default function GlobalBuyers() {
 											<GlobalBuyersSvgs.GlobalBuyersSvg01 />
 										</div>
 									</div>
-									<p className="flex-[1_0_0] font-['Rubik',sans-serif] font-normal leading-[1.5] min-w-px not-italic pr-[220px] relative text-[#808080] text-[16px]">
+									<p className={`flex-[1_0_0] ${typeStyles.body} leading-normal min-w-px not-italic pr-[220px] relative text-[#808080]`}>
 										email@example.com
 									</p>
 									<div
-										className="absolute bg-[#1e4a35] content-stretch flex items-start justify-center px-[24px] py-[12px] right-[9px] rounded-[40px] top-[9px]"
+										className="absolute bg-green-500 flex items-start justify-center px-6 py-3 right-[9px] rounded-[40px] top-[9px]"
 										data-name="order">
-										<p className="font-['Rubik',sans-serif] font-normal leading-[1.68] not-italic relative shrink-0 text-[#eee] text-[16px] text-center tracking-[0.48px] whitespace-nowrap">
+										<p className={`${typeStyles.body} not-italic relative shrink-0 text-[#eee] text-center whitespace-nowrap`}>
 											Reach out to our team
 										</p>
 									</div>
@@ -170,18 +172,18 @@ export default function GlobalBuyers() {
 					size="wide"
 					className="relative z-10 py-[80px] lg:pt-[51px] lg:pb-[96px]">
 					<div className="grid gap-12 lg:grid-cols-2 lg:items-start">
-						<div className="content-stretch flex flex-col gap-[40px] items-start not-italic relative w-full max-w-[525px]">
-							<div className="content-stretch flex flex-col gap-[40px] items-start relative shrink-0">
-								<p className="font-['Rubik',sans-serif] font-normal leading-[1.68] relative shrink-0 text-[#d78228] text-[16px] tracking-[0.48px] whitespace-nowrap">
+						<div className="flex flex-col gap-10 items-start not-italic relative w-full max-w-[525px]">
+							<div className="flex flex-col gap-10 items-start relative shrink-0">
+								<p className={`${typeStyles.body} relative shrink-0 text-orange-500 whitespace-nowrap`}>
 									Kenya Grows It
 								</p>
-								<div className="font-['Fraunces',serif] font-normal leading-[0] relative shrink-0 text-[#c2ce86] text-[40px] md:text-[56px] tracking-[1.68px] w-full max-w-[519px] whitespace-pre-wrap">
-									<p className="leading-[normal] mb-0">{`Where great ingredients `}</p>
-									<p className="leading-[normal]">begin</p>
+								<div className={`${typeStyles.heroTitleLarge} leading-zero relative shrink-0 text-[#c2ce86] w-full max-w-[519px] whitespace-pre-wrap`}>
+									<p className="leading-normal mb-0">{`Where great ingredients `}</p>
+									<p className="leading-normal">begin</p>
 								</div>
-								<p className="font-['Rubik',sans-serif] font-normal leading-[1.68] relative shrink-0 text-[18px] md:text-[20px] text-white tracking-[0.6px] w-full max-w-[515px]">{`Kenya's diverse climates and fertile soils produce a rich variety of herbs, spices, fruits, and vegetables year-round. Yet much of this agricultural bounty leaves the country with little processing or value addition`}</p>
+								<p className={`${typeStyles.bodyLead} relative shrink-0 text-white w-full max-w-[515px]`}>{`Kenya's diverse climates and fertile soils produce a rich variety of herbs, spices, fruits, and vegetables year-round. Yet much of this agricultural bounty leaves the country with little processing or value addition`}</p>
 							</div>
-							<p className="font-['Rubik',sans-serif] font-normal leading-[1.68] relative shrink-0 text-[16px] text-white tracking-[0.48px] w-full max-w-[515px]">
+							<p className={`${typeStyles.body} relative shrink-0 text-white w-full max-w-[515px]`}>
 								Farm to Feed works with farmers and local
 								processors to bring Kenyan ingredients to global
 								markets — while ensuring more value stays where
@@ -199,14 +201,14 @@ export default function GlobalBuyers() {
 								}>
 								<div className="flex-none rotate-[9.87deg]">
 									<div
-										className="h-[320px] relative w-[335px] md:h-[477px] md:w-[500px]"
+										className="h-[320px] relative w-[335px] md:h-119.25 md:w-125"
 										data-name="Vector">
 										<GlobalBuyersSvgs.GlobalBuyersSvg05 />
 									</div>
 								</div>
 							</div>
 							<div
-								className="absolute h-[360px] left-0 top-0 w-full max-w-[517px] md:h-[552px]"
+								className="absolute h-[360px] left-0 top-0 w-full max-w-129.25 md:h-[552px]"
 								data-name="Vector">
 								<img
 									alt=""
@@ -226,21 +228,21 @@ export default function GlobalBuyers() {
 				data-name="Wireframe - 11">
 				<ContentContainer
 					size="wide"
-					className="py-[96px] md:py-[140px] lg:pt-[165px] lg:pb-[120px]">
-					<div className="content-stretch flex flex-col gap-[32px] items-center relative w-full">
-						<div className="content-stretch flex flex-col gap-[32px] items-center max-w-[1052px] not-italic relative shrink-0 text-center w-full">
-							<p className="font-['Rubik',sans-serif] font-medium leading-[1.68] relative shrink-0 text-[#d78228] text-[16px] tracking-[0.48px] w-full max-w-[718px]">{` We Source It`}</p>
-							<p className="font-['Fraunces',serif] font-normal leading-[normal] relative shrink-0 text-[#0f251b] text-[32px] md:text-[40px] lg:text-[48px] tracking-[1.44px] w-full">
+					className={sectionSpacing.roomy}>
+					<div className="flex flex-col gap-8 items-center relative w-full">
+						<div className="flex flex-col gap-8 items-center max-w-[1052px] not-italic relative shrink-0 text-center w-full">
+							<p className={`${typeStyles.body} font-medium relative shrink-0 text-orange-500 w-full max-w-[718px]`}>{` We Source It`}</p>
+							<p className={`${typeStyles.heroTitle} relative shrink-0 text-[#0f251b] w-full`}>
 								Your Partner in Flavour
 							</p>
-							<p className="font-['Rubik',sans-serif] font-normal leading-[1.68] relative shrink-0 text-[#1e4a35] text-[16px] tracking-[0.48px] w-full max-w-[718px]">
+							<p className={`${typeStyles.body} relative shrink-0 text-green-500 w-full max-w-[718px]`}>
 								With its rich agricultural diversity, Kenya
 								offers exceptional potential for ingredient
 								sourcing. We supply what you need.
 							</p>
 						</div>
-						<div className="content-stretch flex flex-col items-start justify-center relative shrink-0 w-full">
-							<div className="content-stretch flex flex-col gap-[40px] items-center justify-center relative shrink-0 w-full lg:flex-row lg:gap-[32px]">
+						<div className="flex flex-col items-start justify-center relative shrink-0 w-full">
+							<div className="flex flex-col gap-10 items-center justify-center relative shrink-0 w-full lg:flex-row lg:gap-8">
 								<div className="absolute hidden h-[319px] items-center justify-center left-[486px] top-[20px] w-[327px] lg:flex">
 									<div className="-scale-y-100 flex-none rotate-180">
 										<div
@@ -250,14 +252,14 @@ export default function GlobalBuyers() {
 										</div>
 									</div>
 								</div>
-								<div className="content-stretch flex flex-[1_0_0] flex-col gap-[32px] items-start justify-center min-w-px relative">
-									<div className="content-stretch flex flex-col items-center relative rounded-[30px] shrink-0 w-full">
-										<div className="content-stretch flex flex-col gap-[32px] items-center justify-center relative shrink-0">
-											<div className="grid-cols-[max-content] grid-rows-[max-content] inline-grid leading-[0] place-items-start relative shrink-0">
-												<div className="col-1 flex h-[154px] items-center justify-center ml-0 mt-0 relative row-1 w-[158px]">
+								<div className="flex flex-[1_0_0] flex-col gap-8 items-start justify-center min-w-px relative">
+									<div className="flex flex-col items-center relative rounded-[30px] shrink-0 w-full">
+										<div className="flex flex-col gap-8 items-center justify-center relative shrink-0">
+											<div className="grid-cols-[max-content] grid-rows-[max-content] inline-grid leading-zero place-items-start relative shrink-0">
+												<div className="col-1 flex h-38.5 items-center justify-center ml-0 mt-0 relative row-1 w-39.5">
 													<div className="-scale-y-100 flex-none rotate-180">
 														<div
-															className="h-[154px] relative w-[158px]"
+															className="h-38.5 relative w-39.5"
 															data-name="Vector">
 															<GlobalBuyersSvgs.GlobalBuyersSvg07 />
 														</div>
@@ -293,18 +295,18 @@ export default function GlobalBuyers() {
 													</div>
 												</div>
 											</div>
-											<p className="font-['Fraunces',serif] font-normal leading-[normal] not-italic relative shrink-0 text-[24px] text-black text-center tracking-[0.72px] whitespace-nowrap">
+											<p className={`${typeStyles.cardTitle} not-italic relative shrink-0 text-black text-center whitespace-nowrap`}>
 												Single origin
 											</p>
 										</div>
 									</div>
-									<div className="content-stretch flex flex-col items-center relative rounded-[30px] shrink-0 w-full">
-										<div className="content-stretch flex flex-col gap-[32px] items-center justify-center relative shrink-0">
-											<div className="grid-cols-[max-content] grid-rows-[max-content] inline-grid leading-[0] place-items-start relative shrink-0">
-												<div className="col-1 flex h-[154px] items-center justify-center ml-0 mt-0 relative row-1 w-[158px]">
+									<div className="flex flex-col items-center relative rounded-[30px] shrink-0 w-full">
+										<div className="flex flex-col gap-8 items-center justify-center relative shrink-0">
+											<div className="grid-cols-[max-content] grid-rows-[max-content] inline-grid leading-zero place-items-start relative shrink-0">
+												<div className="col-1 flex h-38.5 items-center justify-center ml-0 mt-0 relative row-1 w-39.5">
 													<div className="-scale-y-100 flex-none rotate-180">
 														<div
-															className="h-[154px] relative w-[158px]"
+															className="h-38.5 relative w-39.5"
 															data-name="Vector">
 															<GlobalBuyersSvgs.GlobalBuyersSvg10 />
 														</div>
@@ -336,7 +338,7 @@ export default function GlobalBuyers() {
 													</div>
 												</div>
 											</div>
-											<p className="font-['Fraunces',serif] font-normal leading-[normal] not-italic relative shrink-0 text-[24px] text-black text-center tracking-[0.72px] whitespace-nowrap">
+											<p className={`${typeStyles.cardTitle} not-italic relative shrink-0 text-black text-center whitespace-nowrap`}>
 												Sustainably sourced
 											</p>
 										</div>
@@ -349,24 +351,24 @@ export default function GlobalBuyers() {
 										src={imgRectangle5}
 									/>
 								</div>
-								<div className="content-stretch flex flex-[1_0_0] flex-col gap-[32px] items-start justify-center min-w-px relative">
-									<div className="content-stretch flex flex-col items-center relative rounded-[30px] shrink-0 w-full">
-										<div className="content-stretch flex flex-col gap-[32px] items-center justify-center relative shrink-0">
-											<div className="h-[154px] relative shrink-0 w-[158px]">
+								<div className="flex flex-[1_0_0] flex-col gap-8 items-start justify-center min-w-px relative">
+									<div className="flex flex-col items-center relative rounded-[30px] shrink-0 w-full">
+										<div className="flex flex-col gap-8 items-center justify-center relative shrink-0">
+											<div className="h-38.5 relative shrink-0 w-39.5">
 												<GlobalBuyersSvgs.GlobalBuyersSvg13 />
 											</div>
-											<p className="font-['Fraunces',serif] font-normal leading-[normal] not-italic relative shrink-0 text-[24px] text-black text-center tracking-[0.72px] whitespace-nowrap">
+											<p className={`${typeStyles.cardTitle} not-italic relative shrink-0 text-black text-center whitespace-nowrap`}>
 												Traceable to farmers
 											</p>
 										</div>
 									</div>
-									<div className="content-stretch flex flex-col items-center relative rounded-[30px] shrink-0 w-full">
-										<div className="content-stretch flex flex-col gap-[32px] items-center justify-center relative shrink-0">
-											<div className="grid-cols-[max-content] grid-rows-[max-content] inline-grid leading-[0] place-items-start relative shrink-0">
-												<div className="col-1 flex h-[154px] items-center justify-center ml-0 mt-0 relative row-1 w-[158px]">
+									<div className="flex flex-col items-center relative rounded-[30px] shrink-0 w-full">
+										<div className="flex flex-col gap-8 items-center justify-center relative shrink-0">
+											<div className="grid-cols-[max-content] grid-rows-[max-content] inline-grid leading-zero place-items-start relative shrink-0">
+												<div className="col-1 flex h-38.5 items-center justify-center ml-0 mt-0 relative row-1 w-39.5">
 													<div className="-scale-y-100 flex-none rotate-180">
 														<div
-															className="h-[154px] relative w-[158px]"
+															className="h-38.5 relative w-39.5"
 															data-name="Vector">
 															<GlobalBuyersSvgs.GlobalBuyersSvg14 />
 														</div>
@@ -393,7 +395,7 @@ export default function GlobalBuyers() {
 													</div>
 												</div>
 											</div>
-											<p className="font-['Fraunces',serif] font-normal leading-[normal] not-italic relative shrink-0 text-[24px] text-black text-center tracking-[0.72px] whitespace-nowrap">
+											<p className={`${typeStyles.cardTitle} not-italic relative shrink-0 text-black text-center whitespace-nowrap`}>
 												Local value addition
 											</p>
 										</div>
@@ -404,7 +406,7 @@ export default function GlobalBuyers() {
 					</div>
 				</ContentContainer>
 				<div className="hidden" data-name="order">
-					<p className="font-['Rubik',sans-serif] font-normal leading-[1.68] not-italic relative shrink-0 text-[#eee] text-[16px] text-center tracking-[0.48px] whitespace-nowrap">
+					<p className={`${typeStyles.body} not-italic relative shrink-0 text-[#eee] text-center whitespace-nowrap`}>
 						Learn More
 					</p>
 				</div>
@@ -426,15 +428,15 @@ export default function GlobalBuyers() {
 				data-name="Wireframe - 42">
 				<ContentContainer
 					size="wide"
-					className="flex flex-col items-center gap-[80px] py-[96px] lg:pt-[50px] lg:pb-[120px]">
-					<div className="content-stretch flex flex-col gap-[32px] items-center max-w-[1052px] not-italic relative text-center w-full">
-						<p className="font-['Rubik',sans-serif] font-medium leading-[1.68] relative shrink-0 text-[#d78228] text-[16px] tracking-[0.48px] w-full max-w-[718px]">
+					className={`flex flex-col items-center gap-[80px] ${sectionSpacing.default}`}>
+					<div className="flex flex-col gap-8 items-center max-w-[1052px] not-italic relative text-center w-full">
+						<p className={`${typeStyles.body} font-medium relative shrink-0 text-orange-500 w-full max-w-[718px]`}>
 							We Connect It
 						</p>
-						<p className="font-['Fraunces',serif] font-normal leading-[normal] relative shrink-0 text-[#0f251b] text-[32px] md:text-[40px] lg:text-[48px] tracking-[1.44px] w-full">
+						<p className={`${typeStyles.heroTitle} relative shrink-0 text-[#0f251b] w-full`}>
 							From Kenyan farms to global buyers
 						</p>
-						<p className="font-['Rubik',sans-serif] font-normal leading-[1.68] relative shrink-0 text-[#1e4a35] text-[16px] tracking-[0.48px] w-full max-w-[718px]">
+						<p className={`${typeStyles.body} relative shrink-0 text-green-500 w-full max-w-[718px]`}>
 							We build demand-driven supply chains. Our model
 							matches your ingredient needs with reliable supply
 							from our trusted network. We offer different product
@@ -442,19 +444,19 @@ export default function GlobalBuyers() {
 							to capture peak season freshness.
 						</p>
 					</div>
-					<div className="grid gap-[40px] relative w-full sm:grid-cols-2 lg:grid-cols-4 lg:gap-[32px]">
+					<div className="grid gap-10 relative w-full sm:grid-cols-2 lg:grid-cols-4 lg:gap-8">
 						{exportProductCards.map((ProductCard) => (
 							<ProductCard key={ProductCard.name} />
 						))}
 					</div>
-					<div className="content-stretch flex flex-col gap-[32px] items-center max-w-[1052px] not-italic relative text-center w-full">
-						<p className="font-['Rubik',sans-serif] font-medium leading-[1.68] relative shrink-0 text-[#d78228] text-[16px] tracking-[0.48px] w-full max-w-[718px]">
+					<div className="flex flex-col gap-8 items-center max-w-[1052px] not-italic relative text-center w-full">
+						<p className={`${typeStyles.body} font-medium relative shrink-0 text-orange-500 w-full max-w-[718px]`}>
 							Global Readiness
 						</p>
-						<p className="font-['Fraunces',serif] font-normal leading-[normal] relative shrink-0 text-[#0f251b] text-[32px] md:text-[40px] lg:text-[48px] tracking-[1.44px] w-full">
+						<p className={`${typeStyles.heroTitle} relative shrink-0 text-[#0f251b] w-full`}>
 							Our Export Ready Products
 						</p>
-						<p className="font-['Rubik',sans-serif] font-normal leading-[1.68] relative shrink-0 text-[#1e4a35] text-[16px] tracking-[0.48px] w-full max-w-[718px]">
+						<p className={`${typeStyles.body} relative shrink-0 text-green-500 w-full max-w-[718px]`}>
 							Our current batch is processed, certified, and ready
 							for immediate global shipment to your facility.
 						</p>
@@ -463,27 +465,27 @@ export default function GlobalBuyers() {
 			</div>
 			{/* Quality */}
 			<div
-				className="bg-[#dae2b6] min-h-[500px] md:min-h-[600px] overflow-clip relative shrink-0 w-full"
+				className="bg-olive-200 min-h-[500px] md:min-h-[600px] overflow-clip relative shrink-0 w-full"
 				data-name="Wireframe - 52">
 				<ContentContainer
 					size="wide"
-					className="py-[96px] md:pt-[178px] md:pb-[120px]">
-					<div className="content-stretch flex flex-col gap-[32px] items-center relative w-full">
-						<div className="content-stretch flex flex-col gap-[32px] items-center max-w-[1052px] not-italic relative shrink-0 text-center w-full">
-							<p className="font-['Rubik',sans-serif] font-medium leading-[1.68] relative shrink-0 text-[#d78228] text-[16px] tracking-[0.48px] w-full max-w-[718px]">
+					className={sectionSpacing.default}>
+					<div className="flex flex-col gap-8 items-center relative w-full">
+						<div className="flex flex-col gap-8 items-center max-w-[1052px] not-italic relative shrink-0 text-center w-full">
+							<p className={`${typeStyles.body} font-medium relative shrink-0 text-orange-500 w-full max-w-[718px]`}>
 								You Receive It
 							</p>
-							<p className="font-['Fraunces',serif] font-normal leading-[normal] relative shrink-0 text-[#0f251b] text-[32px] md:text-[40px] lg:text-[48px] tracking-[1.44px] w-full">
+							<p className={`${typeStyles.heroTitle} relative shrink-0 text-[#0f251b] w-full`}>
 								Quality You Can Trust
 							</p>
-							<p className="font-['Rubik',sans-serif] font-normal leading-[1.68] relative shrink-0 text-[#1e4a35] text-[16px] tracking-[0.48px] w-full max-w-[718px]">
+							<p className={`${typeStyles.body} relative shrink-0 text-green-500 w-full max-w-[718px]`}>
 								We work closely with farmers and processors to
 								ensure ingredients meet international quality
 								standards.
 							</p>
 						</div>
-						<div className="content-stretch flex flex-col items-start relative shrink-0 w-full">
-							<div className="content-stretch flex flex-col gap-[32px] items-stretch relative shrink-0 w-full lg:flex-row lg:items-start">
+						<div className="flex flex-col items-start relative shrink-0 w-full">
+							<div className="flex flex-col gap-8 items-stretch relative shrink-0 w-full lg:flex-row lg:items-start">
 								{qualityCards.map((QualityCard) => (
 									<QualityCard key={QualityCard.name} />
 								))}
@@ -492,7 +494,7 @@ export default function GlobalBuyers() {
 					</div>
 				</ContentContainer>
 				<div className="hidden" data-name="order">
-					<p className="font-['Rubik',sans-serif] font-normal leading-[1.68] not-italic relative shrink-0 text-[#eee] text-[16px] text-center tracking-[0.48px] whitespace-nowrap">
+					<p className={`${typeStyles.body} not-italic relative shrink-0 text-[#eee] text-center whitespace-nowrap`}>
 						Learn More
 					</p>
 				</div>
@@ -503,29 +505,29 @@ export default function GlobalBuyers() {
 			</div>
 			{/* Impact principles */}
 			<div
-				className="bg-[#dae2b6] overflow-clip relative shrink-0 w-full"
+				className="bg-olive-200 overflow-clip relative shrink-0 w-full"
 				data-name="Wireframe - 54">
 				<ContentContainer
 					size="wide"
-					className="flex flex-col gap-[64px] py-[96px] md:gap-[96px]">
-					<div className="content-stretch flex flex-col gap-[32px] items-start max-w-[737px] not-italic relative w-full">
-						<p className="font-['Rubik',sans-serif] font-medium leading-[1.68] relative shrink-0 text-[#d78228] text-[15px] tracking-[0.45px] w-full max-w-[624px]">
+					className={`flex flex-col gap-16 md:gap-[96px] ${sectionSpacing.default}`}>
+					<div className="flex flex-col gap-8 items-start max-w-[737px] not-italic relative w-full">
+						<p className={`${typeStyles.caption} relative shrink-0 text-orange-500 w-full max-w-[624px]`}>
 							You bring it to the World
 						</p>
-						<p className="font-['Fraunces',serif] font-normal leading-[normal] relative shrink-0 text-[#0f251b] text-[32px] md:text-[40px] lg:text-[48px] tracking-[1.44px] w-full">
+						<p className={`${typeStyles.heroTitle} relative shrink-0 text-[#0f251b] w-full`}>
 							Sourcing that strengthens the food system.
 						</p>
-						<p className="font-['Rubik',sans-serif] font-normal leading-[1.68] relative shrink-0 text-[#1e4a35] text-[18px] md:text-[20px] tracking-[0.6px] w-full max-w-[624px]">
+						<p className={`${typeStyles.bodyLead} relative shrink-0 text-green-500 text-lg md:text-xl w-full max-w-[624px]`}>
 							Our ingredients contribute to a more resilient and
 							sustainable global food system. We operate on six
 							core impact principles.
 						</p>
 					</div>
-					<div className="content-stretch flex flex-col items-start relative w-full max-w-[1274px]">
-						<div className="content-stretch flex flex-col gap-[32px] items-start relative shrink-0 w-full">
+					<div className="flex flex-col items-start relative w-full max-w-[1274px]">
+						<div className="flex flex-col gap-8 items-start relative shrink-0 w-full">
 							{impactPrincipleRows.map((row, index) => (
 								<div
-									className="content-stretch flex flex-col gap-[32px] items-stretch relative shrink-0 w-full lg:flex-row lg:items-center"
+									className="flex flex-col gap-8 items-stretch relative shrink-0 w-full lg:flex-row lg:items-center"
 									key={index}>
 									{row.map((Card) => (
 										<Card key={Card.name} />
@@ -538,7 +540,7 @@ export default function GlobalBuyers() {
 			</div>
 			{/* CTA */}
 			<div
-				className="bg-[#dae2b6] relative shrink-0 w-full"
+				className="bg-olive-200 relative shrink-0 w-full"
 				data-name="Wireframe - 36">
 				<ContentContainer
 					size="wide"
@@ -607,24 +609,24 @@ export default function GlobalBuyers() {
 								</div>
 							</div>
 						</div>
-						<div className="content-stretch flex flex-col gap-[40px] items-center relative rounded-[40px] w-full z-10">
-							<p className="font-['Fraunces',serif] font-normal leading-[normal] not-italic relative shrink-0 text-[#f9ecbd] text-[32px] md:text-[40px] lg:text-[48px] text-center tracking-[1.44px] w-full max-w-[800px]">
+						<div className="flex flex-col gap-10 items-center relative rounded-[40px] w-full z-10">
+							<p className={`${typeStyles.heroTitle} not-italic relative shrink-0 text-yellow-200 text-center w-full max-w-[800px]`}>
 								Ready to source differently?
 							</p>
-							<div className="font-['Rubik',sans-serif] font-normal leading-[0] not-italic relative shrink-0 text-[18px] md:text-[20px] text-center text-white tracking-[0.6px] w-full max-w-[592px] whitespace-pre-wrap">
-								<p className="leading-[1.68] mb-0">{`Farm to Feed partners with global buyers looking for reliable sourcing, transparent supply chains, and ingredients that deliver both quality and impact. `}</p>
+							<div className={`${typeStyles.bodyLead} leading-zero not-italic relative shrink-0 text-center text-white w-full max-w-148 whitespace-pre-wrap`}>
+								<p className="leading-copy mb-0">{`Farm to Feed partners with global buyers looking for reliable sourcing, transparent supply chains, and ingredients that deliver both quality and impact. `}</p>
 								<p>
-									<span className="leading-[1.68] text-[#d78228]">
+									<span className="leading-copy text-orange-500">
 										Read more
 									</span>
-									<span className="leading-[1.68]">{` on our impact page.`}</span>
+									<span className="leading-copy">{` on our impact page.`}</span>
 								</p>
 							</div>
-							<div className="content-stretch flex flex-col items-center relative shrink-0">
+							<div className="flex flex-col items-center relative shrink-0">
 								<div className="bg-white h-[68px] relative rounded-[40px] shrink-0 w-full max-w-[620px]">
-									<div className="content-stretch flex gap-[8px] items-center overflow-clip px-[19px] py-[13px] relative rounded-[inherit] size-full">
+									<div className="flex gap-2 items-center overflow-clip px-[19px] py-[13px] relative rounded-[inherit] size-full">
 										<div
-											className="overflow-clip relative shrink-0 size-[24px]"
+											className="overflow-clip relative shrink-0 size-6"
 											data-name="credit_card">
 											<div
 												className="absolute inset-[16.02%_7.69%_16.04%_7.71%]"
@@ -632,13 +634,13 @@ export default function GlobalBuyers() {
 												<GlobalBuyersSvgs.GlobalBuyersSvg21 />
 											</div>
 										</div>
-										<p className="flex-[1_0_0] font-['Rubik',sans-serif] font-normal leading-[1.5] min-w-px not-italic pr-[220px] relative text-[#808080] text-[16px]">
+										<p className={`flex-[1_0_0] ${typeStyles.body} leading-normal min-w-px not-italic pr-[220px] relative text-[#808080]`}>
 											email@example.com
 										</p>
 										<div
-											className="absolute bg-[#d78228] content-stretch flex items-start justify-center px-[24px] py-[12px] right-[9px] rounded-[40px] top-[9px]"
+											className="absolute bg-orange-500 flex items-start justify-center px-6 py-3 right-[9px] rounded-[40px] top-[9px]"
 											data-name="order">
-											<p className="font-['Rubik',sans-serif] font-normal leading-[1.68] not-italic relative shrink-0 text-[#f7f7f7] text-[16px] text-center tracking-[0.48px] whitespace-nowrap">
+											<p className={`${typeStyles.body} not-italic relative shrink-0 text-[#f7f7f7] text-center whitespace-nowrap`}>
 												Reach out to our team
 											</p>
 										</div>

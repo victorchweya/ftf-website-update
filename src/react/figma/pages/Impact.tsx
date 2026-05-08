@@ -38,6 +38,8 @@ import { Footer } from "../components/Footer";
 import { ContentContainer } from "../components/layout/ContentContainer";
 import { ResponsiveGrid } from "../components/layout/ResponsiveGrid";
 import { SectionShell } from "../components/layout/SectionShell";
+import { sectionSpacing } from "../components/layout/spacing";
+import { typeStyles } from "../components/layout/typography";
 const indirectSdgIcons = [
 	{
 		label: "Quality education",
@@ -65,7 +67,7 @@ const sdgTargetCards = [Frame51, Frame52, Frame53, Frame54, Frame55, Frame56];
 export default function Impact() {
 	return (
 		<div
-			className="bg-white content-stretch flex flex-col items-center relative w-full min-h-screen"
+			className="bg-white flex flex-col items-center relative w-full min-h-screen"
 			data-name="Impact">
 			{/* Hero */}
 			<div
@@ -84,9 +86,9 @@ export default function Impact() {
 				</div>
 				<ContentContainer size="wide" className="pt-[246px] pb-[128px]">
 					<div className="grid gap-[80px] lg:grid-cols-[minmax(0,515px)_minmax(0,624px)] lg:items-start lg:justify-between">
-						<div className="content-stretch flex flex-col gap-[40px] items-start not-italic relative">
-							<div className="content-stretch flex flex-col gap-[40px] items-start relative shrink-0">
-								<div className="font-['Fraunces',serif] font-normal leading-tight relative shrink-0 text-[#0f251b] text-4xl md:text-5xl lg:text-6xl tracking-wide w-[519px] whitespace-pre-wrap">
+						<div className="flex flex-col gap-10 items-start not-italic relative">
+							<div className="flex flex-col gap-10 items-start relative shrink-0">
+								<div className={`${typeStyles.heroTitleLarge} relative shrink-0 text-[#0f251b] w-[519px] whitespace-pre-wrap`}>
 									<p className="leading-tight mb-0">{`Building `}</p>
 									<p className="leading-tight">
 										resilient
@@ -94,14 +96,14 @@ export default function Impact() {
 										food systems
 									</p>
 								</div>
-								<p className="font-['Rubik',sans-serif] font-normal leading-[1.68] relative shrink-0 text-[#1e4a35] text-[20px] tracking-[0.6px] w-[515px]">
+								<p className={`${typeStyles.bodyLead} relative shrink-0 text-green-500 w-[515px]`}>
 									Agriculture is the backbone of Kenya’s rural
 									economy, yet 7.2 million smallholder farmers
 									remain economically vulnerable due to
 									fragmented markets and unreliable payments.
 								</p>
 							</div>
-							<p className="font-['Rubik',sans-serif] font-normal leading-[1.68] relative shrink-0 text-[#1e4a35] text-[16px] tracking-[0.48px] w-[515px]">
+							<p className={`${typeStyles.body} relative shrink-0 text-green-500 w-[515px]`}>
 								At the same time, up to 50% of fresh produce in
 								Sub-Saharan Africa is lost between harvest and
 								market. With Africa’s population projected to
@@ -110,19 +112,19 @@ export default function Impact() {
 								food systems has never been greater.
 							</p>
 						</div>
-						<div className="content-stretch flex flex-col gap-[64px] items-end relative w-full">
+						<div className="flex flex-col gap-16 items-end relative w-full">
 							<div className="bg-[#eff6ef] relative rounded-[30px] shrink-0 w-full">
 								<div
 									aria-hidden="true"
 									className="absolute border border-[#f7f7f7] border-solid inset-0 pointer-events-none rounded-[30px]"
 								/>
-								<div className="content-stretch flex flex-col gap-[27px] items-start px-[32px] py-[48px] relative size-full">
-									<div className="content-stretch flex items-center relative shrink-0">
-										<p className="font-['Fraunces',serif] font-normal leading-[normal] not-italic relative shrink-0 text-[24px] text-black tracking-[0.72px] w-[210px]">
+								<div className="flex flex-col gap-[27px] items-start px-[32px] py-[48px] relative size-full">
+									<div className="flex items-center relative shrink-0">
+										<p className={`${typeStyles.cardTitle} not-italic relative shrink-0 text-black w-[210px]`}>
 											Why
 										</p>
 									</div>
-									<p className="font-['Rubik',sans-serif] font-normal leading-[1.68] min-w-full not-italic relative shrink-0 text-[16px] text-black tracking-[0.48px] w-[min-content]">
+									<p className={`${typeStyles.body} min-w-full not-italic relative shrink-0 text-black w-min`}>
 										Inefficient supply chains cause
 										significant food loss, leading to lost
 										income, avoidable emissions, and wasted
@@ -154,13 +156,13 @@ export default function Impact() {
 									aria-hidden="true"
 									className="absolute border border-[#f7f7f7] border-solid inset-0 pointer-events-none rounded-[30px]"
 								/>
-								<div className="content-stretch flex flex-col gap-[27px] items-start px-[32px] py-[48px] relative size-full">
-									<div className="content-stretch flex items-center relative shrink-0">
-										<p className="font-['Fraunces',serif] font-normal leading-[normal] not-italic relative shrink-0 text-[24px] text-black tracking-[0.72px] w-[210px]">
+								<div className="flex flex-col gap-[27px] items-start px-[32px] py-[48px] relative size-full">
+									<div className="flex items-center relative shrink-0">
+										<p className={`${typeStyles.cardTitle} not-italic relative shrink-0 text-black w-[210px]`}>
 											How
 										</p>
 									</div>
-									<p className="font-['Rubik',sans-serif] font-normal leading-[1.68] min-w-full not-italic relative shrink-0 text-[16px] text-black tracking-[0.48px] w-[min-content]">
+									<p className={`${typeStyles.body} min-w-full not-italic relative shrink-0 text-black w-min`}>
 										Farm to Feed builds structured,
 										transparent, and demand-driven supply
 										chains. Using digital tools, farmer
@@ -216,23 +218,23 @@ export default function Impact() {
 						</div>
 					</div>
 				</div>
-				<ContentContainer size="wide" className="pt-[180px] pb-[120px] md:pt-[220px] lg:pt-[277px]">
-					<div className="content-stretch flex flex-col gap-[32px] items-center relative w-full">
-						<div className="content-stretch flex flex-col gap-[32px] items-center max-w-[1052px] not-italic relative shrink-0 text-center w-full">
-							<p className="font-['Fraunces',serif] font-normal leading-[normal] relative shrink-0 text-[#0f251b] text-[32px] md:text-[40px] tracking-[1.2px] w-full">
+				<ContentContainer size="wide" className="pt-[180px] pb-30 md:pt-[220px] lg:pt-[277px]">
+					<div className="flex flex-col gap-8 items-center relative w-full">
+						<div className="flex flex-col gap-8 items-center max-w-[1052px] not-italic relative shrink-0 text-center w-full">
+							<p className={`${typeStyles.sectionTitle} relative shrink-0 text-[#0f251b] w-full`}>
 								Our strategy is built on the conviction that
 								food systems only work when farmers, markets,
 								and the environment are strengthened together.
 							</p>
-							<p className="font-['Rubik',sans-serif] font-normal leading-[1.68] relative shrink-0 text-[#1e4a35] text-[16px] tracking-[0.48px] w-full">
+							<p className={`${typeStyles.body} relative shrink-0 text-green-500 w-full`}>
 								We translate this approach into five integrated
 								pillars
 							</p>
 						</div>
-						<div className="content-stretch flex flex-col gap-[32px] items-start relative shrink-0 w-full">
+						<div className="flex flex-col gap-8 items-start relative shrink-0 w-full">
 							{impactPillarRows.map((row, index) => (
 								<div
-									className={`content-stretch flex flex-col gap-[32px] relative shrink-0 w-full lg:flex-row ${index === 2 ? "items-stretch justify-center" : "items-stretch"}`}
+									className={`flex flex-col gap-8 relative shrink-0 w-full lg:flex-row ${index === 2 ? "items-stretch justify-center" : "items-stretch"}`}
 									key={index}>
 									{row.map((PillarCard) => (
 										<PillarCard key={PillarCard.name} />
@@ -247,8 +249,8 @@ export default function Impact() {
 			<div
 				className="bg-white overflow-clip relative shrink-0 w-full"
 				data-name="Wireframe - 10">
-				<div className="bg-[#f9ecbd] min-h-[651px] overflow-clip rounded-tl-[40px] rounded-tr-[40px] w-full">
-					<ContentContainer size="wide" className="py-[112px]">
+				<div className="bg-yellow-200 min-h-[651px] overflow-clip rounded-tl-[40px] rounded-tr-[40px] w-full">
+					<ContentContainer size="wide" className={sectionSpacing.default}>
 						<div className="grid gap-12 lg:grid-cols-[568px_minmax(0,1fr)] lg:items-center">
 							<div
 								className="absolute hidden lg:flex h-[525.083px] items-center justify-center left-[638.18px] top-[144.34px] w-[619.918px]"
@@ -266,12 +268,12 @@ export default function Impact() {
 									</div>
 								</div>
 							</div>
-							<div className="content-stretch flex flex-col gap-[43px] items-start relative max-w-[568px]">
-								<p className="font-['Fraunces',serif] font-normal leading-[normal] not-italic relative shrink-0 text-[#0f251b] text-[40px] tracking-[1.2px] w-[488px]">
+							<div className="flex flex-col gap-[43px] items-start relative max-w-[568px]">
+								<p className={`${typeStyles.sectionTitle} not-italic relative shrink-0 text-[#0f251b] w-[488px]`}>
 									Impact that travels from farm level to
 									customer counter
 								</p>
-								<p className="font-['Rubik',sans-serif] font-normal leading-[1.68] min-w-full not-italic relative shrink-0 text-[#1e4a35] text-[20px] tracking-[0.6px] w-[min-content]">
+								<p className={`${typeStyles.bodyLead} min-w-full not-italic relative shrink-0 text-green-500 w-min`}>
 									At Farm to Feed, we create impact throughout
 									the supply chain, from farm level to
 									customer counter. Our long-term outcomes
@@ -281,9 +283,9 @@ export default function Impact() {
 									the production of sustainable ingredients.
 								</p>
 								<div
-									className="bg-[#1e4a35] content-stretch flex items-start mb-[32px] px-[24px] py-[12px] relative rounded-[40px] shrink-0 lg:mb-0"
+									className="bg-green-500 flex items-start mb-[32px] px-6 py-3 relative rounded-[40px] shrink-0 lg:mb-0"
 									data-name="order">
-									<p className="font-['Rubik',sans-serif] font-normal leading-[1.68] not-italic relative shrink-0 text-[16px] text-center text-white tracking-[0.48px] whitespace-nowrap">
+									<p className={`${typeStyles.body} not-italic relative shrink-0 text-center text-white whitespace-nowrap`}>
 										Read Impact Report 2025
 									</p>
 								</div>
@@ -298,7 +300,7 @@ export default function Impact() {
 								}>
 								<div className="-rotate-90 flex-none">
 									<div
-										className="h-[615px] relative w-[500px]"
+										className="h-[615px] relative w-125"
 										data-name="Vector">
 										<img
 											alt=""
@@ -316,7 +318,8 @@ export default function Impact() {
 			</div>
 			{/* SDG metrics */}
 			<SectionShell
-				className="bg-[#f9ecbd] overflow-clip relative shrink-0 w-full pt-[80px] pb-[120px] md:pt-[96px] md:pb-[140px]"
+				className="bg-yellow-200 overflow-clip relative shrink-0 w-full"
+				spacing="roomy"
 				data-name="Wireframe - 54">
 				<div
 					className="absolute hidden h-[620.8px] items-center justify-center left-[77.85%] right-[-22.95%] top-[129px] lg:flex"
@@ -329,13 +332,13 @@ export default function Impact() {
 						</div>
 					</div>
 				</div>
-				<div className="relative z-10 flex flex-col gap-[48px] md:gap-[64px]">
+				<div className="relative z-10 flex flex-col gap-12 md:gap-16">
 					<div className="flex max-w-[737px] flex-col gap-8">
-						<p className="font-['Fraunces',serif] font-normal leading-[normal] not-italic text-[#0f251b] text-[32px] tracking-[1.2px] w-full md:text-[40px]">
+						<p className={`${typeStyles.sectionTitle} not-italic text-[#0f251b] w-full`}>
 							Our impact metrics align directly with the SDG
 							targets
 						</p>
-						<p className="font-['Rubik',sans-serif] font-normal leading-[1.68] not-italic text-[#1e4a35] text-[18px] tracking-[0.6px] w-full max-w-[624px] md:text-[20px]">
+						<p className={`${typeStyles.bodyLarge} not-italic text-green-500 w-full max-w-[624px]`}>
 							In line with the GRI reporting standards, this
 							provides transparency and accountability throughout
 							the supply chain.
@@ -347,12 +350,12 @@ export default function Impact() {
 						))}
 					</ResponsiveGrid>
 					<div
-						className="content-stretch flex flex-col gap-[26px] items-start relative"
+						className="flex flex-col gap-[26px] items-start relative"
 						data-name="sdg-extras">
-						<p className="font-['Rubik',sans-serif] font-normal leading-[normal] not-italic relative shrink-0 text-[18px] text-black tracking-[0.54px]">
+						<p className={`${typeStyles.bodyLarge} leading-normal not-italic relative shrink-0 text-black`}>
 							Farm to feed indirectly contributes to:
 						</p>
-						<div className="grid grid-cols-3 gap-[16px] relative shrink-0 sm:grid-cols-5">
+						<div className="grid grid-cols-3 gap-4 relative shrink-0 sm:grid-cols-5">
 							{indirectSdgIcons.map((icon) => (
 								<div
 									className="relative rounded-[4px] shrink-0 size-[89px]"

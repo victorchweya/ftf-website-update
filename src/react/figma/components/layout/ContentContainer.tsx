@@ -5,7 +5,7 @@ type ContainerSize = "narrow" | "default" | "wide";
 const sizeClasses: Record<ContainerSize, string> = {
   narrow: "max-w-[960px]",
   default: "max-w-[1184px]",
-  wide: "max-w-[1280px]",
+  wide: "max-w-7xl",
 };
 
 export function cx(...classes: Array<string | false | null | undefined>) {
@@ -49,4 +49,4 @@ export function Section({
 }
 
 export const absoluteWideContainerClass =
-  "left-1/2 -translate-x-1/2 w-[calc(100%-2.5rem)] sm:w-[calc(100%-4rem)] lg:w-[calc(100%-5rem)] max-w-[1280px]";
+  "left-1/2 -translate-x-1/2 w-[calc(100%-2.5rem)] sm:w-[calc(100%-4rem)] lg:w-[calc(100%-5rem)] max-w-7xl";

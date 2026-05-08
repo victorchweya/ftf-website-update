@@ -187,7 +187,7 @@ function Wireframe3() {
 function Frame36() {
   return (
     <div className="absolute bottom-[158.68px] h-[377.32px] left-[calc(8.33%+97.82px)] w-[1004.009px]">
-      <div className="absolute h-[816px] left-[-108.31px] mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[108.308px_200px] mask-size-[1004.009px_377.32px] top-[-200px] w-[1220.978px]" style={{ maskImage: `url('${imgTeamphoto}')` }} data-name="teamphoto">
+      <div className="absolute h-[816px] left-[-108.31px] mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-[108.308px_200px] mask-size-[1004.009px_377.32px] top-[-200px] w-[1220.978px]" style={{ maskImage: `url('${imgTeamphoto}')` }} data-name="teamphoto">
         <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgTeamphoto1} />
       </div>
     </div>
@@ -251,7 +251,7 @@ function TeamCta() {
 export function Frame39() {
   return (
     <div className="h-[198.445px] relative shrink-0 w-[203.707px]">
-      <div className="absolute left-[-48px] mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[48px_42.919px] mask-size-[203.707px_198.445px] size-[300px] top-[-42.92px]" style={{ maskImage: `url('${imgClaireVanEnkFounderManagingDirector}')` }} data-name="Claire van Enk - Founder _ Managing Director">
+      <div className="absolute left-[-48px] mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-[48px_42.919px] mask-size-[203.707px_198.445px] size-[300px] top-[-42.92px]" style={{ maskImage: `url('${imgClaireVanEnkFounderManagingDirector}')` }} data-name="Claire van Enk - Founder _ Managing Director">
         <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgClaireVanEnkFounderManagingDirector1} />
       </div>
     </div>
@@ -279,7 +279,7 @@ function Frame52() {
 export function Frame38() {
   return (
     <div className="h-[198.445px] relative shrink-0 w-[203.707px]">
-      <div className="absolute left-[-39px] mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[39px_37.919px] mask-size-[203.707px_198.445px] size-[300px] top-[-37.92px]" style={{ maskImage: `url('${imgAnoukBoertienCoFounderDirectorOfProductAndSustainability}')` }} data-name="Anouk Boertien - co-founder _ Director of Product and Sustainability">
+      <div className="absolute left-[-39px] mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-[39px_37.919px] mask-size-[203.707px_198.445px] size-[300px] top-[-37.92px]" style={{ maskImage: `url('${imgAnoukBoertienCoFounderDirectorOfProductAndSustainability}')` }} data-name="Anouk Boertien - co-founder _ Director of Product and Sustainability">
         <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgAnoukBoertienCoFounderDirectorOfProductAndSustainability1} />
       </div>
     </div>
@@ -307,7 +307,7 @@ function Frame51() {
 export function Frame37() {
   return (
     <div className="h-[198.445px] relative shrink-0 w-[203.707px]">
-      <div className="absolute left-[-40.71px] mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[40.707px_51px] mask-size-[203.707px_198.445px] size-[300px] top-[-51px]" style={{ maskImage: `url('${imgAnoukBoertienCoFounderDirectorOfProductAndSustainability}')` }} data-name="Zara Benosa - director business development">
+      <div className="absolute left-[-40.71px] mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-[40.707px_51px] mask-size-[203.707px_198.445px] size-[300px] top-[-51px]" style={{ maskImage: `url('${imgAnoukBoertienCoFounderDirectorOfProductAndSustainability}')` }} data-name="Zara Benosa - director business development">
         <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgZaraBenosaDirectorBusinessDevelopment} />
       </div>
     </div>
@@ -335,7 +335,7 @@ function Frame50() {
 export function Frame40() {
   return (
     <div className="h-[198.445px] relative shrink-0 w-[203.707px]">
-      <div className="absolute h-[278.91px] left-[-63px] mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[63px_5.919px] mask-size-[203.707px_198.445px] top-[-5.92px] w-[300px]" style={{ maskImage: `url('${imgClaireVanEnkFounderManagingDirector}')` }} data-name="Christine Kiraithe Pentinga - Director Operations">
+      <div className="absolute h-[278.91px] left-[-63px] mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-[63px_5.919px] mask-size-[203.707px_198.445px] top-[-5.92px] w-[300px]" style={{ maskImage: `url('${imgClaireVanEnkFounderManagingDirector}')` }} data-name="Christine Kiraithe Pentinga - Director Operations">
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           <img alt="" className="absolute h-full left-[0.16%] max-w-none top-[-12.81%] w-[105.28%]" src={imgChristineKiraithePentingaDirectorOperations} />
         </div>
@@ -376,7 +376,7 @@ function Frame65() {
 export function Frame41() {
   return (
     <div className="h-[198.445px] relative shrink-0 w-[203.707px]">
-      <div className="absolute h-[295.007px] left-[-48.15px] mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[48.146px_18.445px] mask-size-[203.707px_198.445px] top-[-18.45px] w-[300px]" style={{ maskImage: `url('${imgAnoukBoertienCoFounderDirectorOfProductAndSustainability}')` }} data-name="Lucy Wainaina - Finance officer">
+      <div className="absolute h-[295.007px] left-[-48.15px] mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-[48.146px_18.445px] mask-size-[203.707px_198.445px] top-[-18.45px] w-[300px]" style={{ maskImage: `url('${imgAnoukBoertienCoFounderDirectorOfProductAndSustainability}')` }} data-name="Lucy Wainaina - Finance officer">
         <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgLucyWainainaFinanceOfficer} />
       </div>
     </div>
@@ -404,7 +404,7 @@ function Frame54() {
 export function Frame42() {
   return (
     <div className="h-[198.445px] relative shrink-0 w-[203.707px]">
-      <div className="absolute h-[286.938px] left-[-39px] mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[39px_15.919px] mask-size-[203.707px_198.445px] top-[-15.92px] w-[300px]" style={{ maskImage: `url('${imgAnoukBoertienCoFounderDirectorOfProductAndSustainability}')` }} data-name="David Chege - Lead Supply Hub Coordinator">
+      <div className="absolute h-[286.938px] left-[-39px] mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-[39px_15.919px] mask-size-[203.707px_198.445px] top-[-15.92px] w-[300px]" style={{ maskImage: `url('${imgAnoukBoertienCoFounderDirectorOfProductAndSustainability}')` }} data-name="David Chege - Lead Supply Hub Coordinator">
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           <img alt="" className="absolute h-[104.94%] left-[-6.31%] max-w-none top-[-2.5%] w-full" src={imgDavidChegeLeadSupplyHubCoordinator} />
         </div>
@@ -434,7 +434,7 @@ function Frame55() {
 export function Frame43() {
   return (
     <div className="h-[198.445px] relative shrink-0 w-[203.707px]">
-      <div className="absolute h-[287.983px] left-[-33px] mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[33px_45px] mask-size-[203.707px_198.445px] top-[-45px] w-[300px]" style={{ maskImage: `url('${imgClaireVanEnkFounderManagingDirector}')` }} data-name="Stella Mbungu - Sales and Customer Care Manager">
+      <div className="absolute h-[287.983px] left-[-33px] mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-[33px_45px] mask-size-[203.707px_198.445px] top-[-45px] w-[300px]" style={{ maskImage: `url('${imgClaireVanEnkFounderManagingDirector}')` }} data-name="Stella Mbungu - Sales and Customer Care Manager">
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           <img alt="" className="absolute h-full left-[-6.55%] max-w-none top-[9.49%] w-[101.89%]" src={imgStellaMbunguSalesAndCustomerCareManager} />
         </div>
@@ -464,7 +464,7 @@ function Frame56() {
 export function Frame44() {
   return (
     <div className="h-[198.445px] relative shrink-0 w-[203.707px]">
-      <div className="absolute left-[-48px] mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[48px_31.919px] mask-size-[203.707px_198.445px] size-[300px] top-[-31.92px]" style={{ maskImage: `url('${imgClaireVanEnkFounderManagingDirector}')` }} data-name="Samuel Mburu - Sourcing lead">
+      <div className="absolute left-[-48px] mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-[48px_31.919px] mask-size-[203.707px_198.445px] size-[300px] top-[-31.92px]" style={{ maskImage: `url('${imgClaireVanEnkFounderManagingDirector}')` }} data-name="Samuel Mburu - Sourcing lead">
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           <img alt="" className="absolute left-[14.44%] max-w-none size-[70.2%] top-[10.24%]" src={imgSamuelMburuSourcingLead} />
         </div>
@@ -634,7 +634,7 @@ export function Frame25() {
           <Group1 />
         </div>
       </div>
-      <p className="font-['Fraunces',serif] font-normal leading-[normal] min-w-full not-italic relative shrink-0 text-[#0f251b] text-[24px] text-center tracking-[0.72px] w-[min-content]">Be the Difference</p>
+      <p className="font-['Fraunces',serif] font-normal leading-[normal] min-w-full not-italic relative shrink-0 text-[#0f251b] text-[24px] text-center tracking-[0.72px] w-min">Be the Difference</p>
     </div>
   );
 }
@@ -674,7 +674,7 @@ export function Frame28() {
           <Group2 />
         </div>
       </div>
-      <p className="font-['Fraunces',serif] font-normal leading-[normal] min-w-full not-italic relative shrink-0 text-[#0f251b] text-[24px] text-center tracking-[0.72px] w-[min-content]">It takes a village</p>
+      <p className="font-['Fraunces',serif] font-normal leading-[normal] min-w-full not-italic relative shrink-0 text-[#0f251b] text-[24px] text-center tracking-[0.72px] w-min">It takes a village</p>
     </div>
   );
 }
@@ -715,7 +715,7 @@ export function Frame24() {
           <Group3 />
         </div>
       </div>
-      <p className="font-['Fraunces',serif] font-normal leading-[normal] min-w-full not-italic relative shrink-0 text-[#0f251b] text-[24px] text-center tracking-[0.72px] w-[min-content]">Honesty always; an open box</p>
+      <p className="font-['Fraunces',serif] font-normal leading-[normal] min-w-full not-italic relative shrink-0 text-[#0f251b] text-[24px] text-center tracking-[0.72px] w-min">Honesty always; an open box</p>
     </div>
   );
 }
@@ -785,7 +785,7 @@ export function Frame33() {
           <Group6 />
         </div>
       </div>
-      <p className="font-['Fraunces',serif] font-normal leading-[normal] min-w-full not-italic relative shrink-0 text-[#0f251b] text-[24px] text-center tracking-[0.72px] w-[min-content]">The customer is key</p>
+      <p className="font-['Fraunces',serif] font-normal leading-[normal] min-w-full not-italic relative shrink-0 text-[#0f251b] text-[24px] text-center tracking-[0.72px] w-min">The customer is key</p>
     </div>
   );
 }
@@ -823,7 +823,7 @@ export function Frame49() {
           <Group5 />
         </div>
       </div>
-      <p className="font-['Fraunces',serif] font-normal leading-[normal] min-w-full not-italic relative shrink-0 text-[#0f251b] text-[24px] text-center tracking-[0.72px] w-[min-content]">Produce excellence at every step</p>
+      <p className="font-['Fraunces',serif] font-normal leading-[normal] min-w-full not-italic relative shrink-0 text-[#0f251b] text-[24px] text-center tracking-[0.72px] w-min">Produce excellence at every step</p>
     </div>
   );
 }

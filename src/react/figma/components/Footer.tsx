@@ -1,6 +1,18 @@
 import { Link } from "./Link";
 import { ContentContainer } from "./layout/ContentContainer";
+import { typeStyles } from "./layout/typography";
 import svgPaths from "../imports/Home/svg-6p5pyqd5kw";
+
+const footerColumnClass = "flex flex-col gap-4 items-start relative w-full max-w-[384px]";
+const footerGroupClass = "flex flex-col gap-[14px] items-start not-italic relative shrink-0 w-full";
+const footerHeadingClass = `${typeStyles.bodyLead} relative shrink-0 text-white whitespace-nowrap`;
+const footerCopyClass = `${typeStyles.body} font-light relative shrink-0 text-[#dfeddf] w-full max-w-[379px]`;
+const footerActionClass = "flex items-start px-6 py-3 relative rounded-[40px] shrink-0";
+const footerActionTextClass = `${typeStyles.button} not-italic relative shrink-0 text-center whitespace-nowrap`;
+const contactRowClass = "flex gap-4 items-start relative shrink-0 w-full";
+const footerLinkWrapperClass = "flex items-center justify-center p-2 relative shrink-0";
+const footerLinkTextClass = `${typeStyles.button} not-italic relative shrink-0 text-center text-white whitespace-nowrap`;
+const footerIconClass = "relative shrink-0 size-6";
 
 function Icon() {
   return (
@@ -73,24 +85,24 @@ function FarmToFeedLogo() {
 
 function Frame6() {
   return (
-    <div className="content-stretch flex flex-col gap-[14px] items-start leading-[1.68] not-italic relative shrink-0 w-full">
-      <p className="font-['Rubik',sans-serif] font-normal relative shrink-0 text-[20px] text-white tracking-[0.6px] whitespace-nowrap">Quick Actions</p>
-      <p className="font-['Rubik',sans-serif] font-light relative shrink-0 text-[#dfeddf] text-[16px] tracking-[0.48px] w-full max-w-[379px]">Buy or Sell produce that makes sense for your business and the planet</p>
+    <div className={footerGroupClass}>
+      <p className={footerHeadingClass}>Quick Actions</p>
+      <p className={footerCopyClass}>Buy or Sell produce that makes sense for your business and the planet</p>
     </div>
   );
 }
 
 function Order7() {
   return (
-    <div className="bg-[#eff6ef] content-stretch flex items-start px-[24px] py-[12px] relative rounded-[40px] shrink-0" data-name="order">
-      <p className="font-['Rubik',sans-serif] font-normal leading-[1.68] not-italic relative shrink-0 text-[#1e4a35] text-[16px] text-center tracking-[0.48px] whitespace-nowrap">Sell With Us</p>
+    <div className={`bg-[#eff6ef] ${footerActionClass}`} data-name="order">
+      <p className={`${footerActionTextClass} text-green-500`}>Sell With Us</p>
     </div>
   );
 }
 
 function Frame5() {
   return (
-    <div className="content-stretch flex items-center relative shrink-0 w-full">
+    <div className="flex items-center relative shrink-0 w-full">
       <Order7 />
     </div>
   );
@@ -98,15 +110,15 @@ function Frame5() {
 
 function Order8() {
   return (
-    <div className="bg-[#d78228] content-stretch flex items-start px-[24px] py-[12px] relative rounded-[40px] shrink-0" data-name="order">
-      <p className="font-['Rubik',sans-serif] font-normal leading-[1.68] not-italic relative shrink-0 text-[#eff6ef] text-[16px] text-center tracking-[0.48px] whitespace-nowrap">Log In</p>
+    <div className={`bg-orange-500 ${footerActionClass}`} data-name="order">
+      <p className={`${footerActionTextClass} text-[#eff6ef]`}>Log In</p>
     </div>
   );
 }
 
 function Frame7() {
   return (
-    <div className="content-stretch flex items-center relative shrink-0 w-full">
+    <div className="flex items-center relative shrink-0 w-full">
       <Order8 />
     </div>
   );
@@ -114,7 +126,7 @@ function Frame7() {
 
 function Frame23() {
   return (
-    <div className="content-stretch flex flex-col gap-[16px] items-start relative w-full max-w-[384px]">
+    <div className={footerColumnClass}>
       <Frame6 />
       <Frame5 />
       <Frame7 />
@@ -124,16 +136,16 @@ function Frame23() {
 
 function Frame9() {
   return (
-    <div className="content-stretch flex flex-col gap-[14px] items-start leading-[1.68] not-italic relative shrink-0 w-full">
-      <p className="font-['Rubik',sans-serif] font-normal relative shrink-0 text-[20px] text-white tracking-[0.6px] whitespace-nowrap">Get more information</p>
-      <p className="font-['Rubik',sans-serif] font-light relative shrink-0 text-[#dfeddf] text-[16px] tracking-[0.48px] w-full max-w-[379px]">Contact us in any of these channels</p>
+    <div className={footerGroupClass}>
+      <p className={footerHeadingClass}>Get more information</p>
+      <p className={footerCopyClass}>Contact us in any of these channels</p>
     </div>
   );
 }
 
 function PrimeEnvelope() {
   return (
-    <div className="relative shrink-0 size-[24px]" data-name="prime:envelope">
+    <div className={footerIconClass} data-name="prime:envelope">
       <svg className="absolute block inset-0 size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 24 24">
         <g id="prime:envelope">
           <path d={svgPaths.p21e8d370} fill="var(--fill-0, white)" id="Vector" />
@@ -145,16 +157,16 @@ function PrimeEnvelope() {
 
 function Frame11() {
   return (
-    <div className="content-stretch flex gap-[16px] items-start relative shrink-0 w-full">
+    <div className={contactRowClass}>
       <PrimeEnvelope />
-      <p className="font-['Rubik',sans-serif] font-light leading-[1.68] not-italic relative text-[16px] text-white tracking-[0.48px] break-words">info@farmtofeedkenya.com</p>
+      <p className={`${typeStyles.body} font-light not-italic relative text-white break-words`}>info@farmtofeedkenya.com</p>
     </div>
   );
 }
 
 function PrimePhone() {
   return (
-    <div className="relative shrink-0 size-[24px]" data-name="prime:phone">
+    <div className={footerIconClass} data-name="prime:phone">
       <svg className="absolute block inset-0 size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 24 24">
         <g id="prime:phone">
           <path d={svgPaths.p2a80e180} fill="var(--fill-0, white)" id="Vector" />
@@ -166,16 +178,16 @@ function PrimePhone() {
 
 function Frame12() {
   return (
-    <div className="content-stretch flex gap-[16px] items-start relative shrink-0 w-full">
+    <div className={contactRowClass}>
       <PrimePhone />
-      <p className="flex-[1_0_0] font-['Rubik',sans-serif] font-light leading-[1.68] min-w-px not-italic relative text-[16px] text-white tracking-[0.48px]">+254 795 851 756</p>
+      <p className={`flex-[1_0_0] ${typeStyles.body} font-light min-w-px not-italic relative text-white`}>+254 795 851 756</p>
     </div>
   );
 }
 
 function PrimeMapMarker() {
   return (
-    <div className="relative shrink-0 size-[24px]" data-name="prime:map-marker">
+    <div className={footerIconClass} data-name="prime:map-marker">
       <svg className="absolute block inset-0 size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 24 24">
         <g id="prime:map-marker">
           <path d={svgPaths.p1eac3c40} fill="var(--fill-0, white)" id="Vector" />
@@ -188,16 +200,16 @@ function PrimeMapMarker() {
 
 function Frame13() {
   return (
-    <div className="content-stretch flex gap-[16px] items-start relative shrink-0 w-full">
+    <div className={contactRowClass}>
       <PrimeMapMarker />
-      <p className="font-['Rubik',sans-serif] font-light leading-[1.68] not-italic relative text-[16px] text-white tracking-[0.48px]">Tilisi Business Park, Kiambu, Kenya</p>
+      <p className={`${typeStyles.body} font-light not-italic relative text-white`}>Tilisi Business Park, Kiambu, Kenya</p>
     </div>
   );
 }
 
 function Frame10() {
   return (
-    <div className="content-stretch flex flex-col gap-[24px] items-start justify-center relative shrink-0 w-full">
+    <div className="flex flex-col gap-6 items-start justify-center relative shrink-0 w-full">
       <Frame11 />
       <Frame12 />
       <Frame13 />
@@ -207,7 +219,7 @@ function Frame10() {
 
 function Frame8() {
   return (
-    <div className="content-stretch flex flex-col gap-[16px] items-start relative w-full max-w-[384px]">
+    <div className={footerColumnClass}>
       <Frame9 />
       <Frame10 />
     </div>
@@ -216,47 +228,47 @@ function Frame8() {
 
 function Solution1() {
   return (
-    <div className="content-stretch flex items-start p-[8px] relative shrink-0" data-name="solution">
-      <p className="font-['Rubik',sans-serif] font-normal leading-[1.68] not-italic relative shrink-0 text-[16px] text-center text-white tracking-[0.48px] whitespace-nowrap">Kenyan Buyers</p>
+    <div className={footerLinkWrapperClass} data-name="solution">
+      <p className={footerLinkTextClass}>Kenyan Buyers</p>
     </div>
   );
 }
 
 function AboutUs2() {
   return (
-    <div className="content-stretch flex items-center justify-center p-[8px] relative shrink-0" data-name="about-us">
-      <p className="font-['Rubik',sans-serif] font-normal leading-[1.68] not-italic relative shrink-0 text-[16px] text-center text-white tracking-[0.48px] whitespace-nowrap">Global Buyers</p>
+    <div className={footerLinkWrapperClass} data-name="about-us">
+      <p className={footerLinkTextClass}>Global Buyers</p>
     </div>
   );
 }
 
 function AboutUs3() {
   return (
-    <div className="content-stretch flex items-center justify-center p-[8px] relative shrink-0" data-name="about-us">
-      <p className="font-['Rubik',sans-serif] font-normal leading-[1.68] not-italic relative shrink-0 text-[16px] text-center text-white tracking-[0.48px] whitespace-nowrap">Careers</p>
+    <div className={footerLinkWrapperClass} data-name="about-us">
+      <p className={footerLinkTextClass}>Careers</p>
     </div>
   );
 }
 
 function AboutUs4() {
   return (
-    <Link to="/contact-us" className="content-stretch flex items-center justify-center p-[8px] relative shrink-0" data-name="about-us">
-      <p className="font-['Rubik',sans-serif] font-normal leading-[1.68] not-italic relative shrink-0 text-[16px] text-center text-white tracking-[0.48px] whitespace-nowrap">Contact Us</p>
+    <Link to="/contact-us" className={footerLinkWrapperClass} data-name="about-us">
+      <p className={footerLinkTextClass}>Contact Us</p>
     </Link>
   );
 }
 
 function AboutUs5() {
   return (
-    <Link to="/faqs" className="content-stretch flex items-center justify-center p-[8px] relative shrink-0" data-name="about-us">
-      <p className="font-['Rubik',sans-serif] font-normal leading-[1.68] not-italic relative shrink-0 text-[16px] text-center text-white tracking-[0.48px] whitespace-nowrap">FAQs</p>
+    <Link to="/faqs" className={footerLinkWrapperClass} data-name="about-us">
+      <p className={footerLinkTextClass}>FAQs</p>
     </Link>
   );
 }
 
 function Frame22() {
   return (
-    <div className="content-stretch flex flex-col items-start justify-center relative shrink-0">
+    <div className="flex flex-col items-start justify-center relative shrink-0">
       <Solution1 />
       <AboutUs2 />
       <AboutUs3 />
@@ -268,8 +280,8 @@ function Frame22() {
 
 function Frame15() {
   return (
-    <div className="content-stretch flex flex-col gap-[14px] items-start relative shrink-0 w-full">
-      <p className="font-['Rubik',sans-serif] font-normal leading-[1.68] not-italic relative shrink-0 text-[20px] text-white tracking-[0.6px] whitespace-nowrap">Explore</p>
+    <div className="flex flex-col gap-[14px] items-start relative shrink-0 w-full">
+      <p className={footerHeadingClass}>Explore</p>
       <Frame22 />
     </div>
   );
@@ -277,7 +289,7 @@ function Frame15() {
 
 function Frame14() {
   return (
-    <div className="content-stretch flex flex-col items-start relative w-full max-w-[384px]">
+    <div className={footerColumnClass}>
       <Frame15 />
     </div>
   );
@@ -285,8 +297,8 @@ function Frame14() {
 
 function Frame16() {
   return (
-    <div className="content-stretch flex gap-[32px] items-start relative">
-      <div className="overflow-clip relative shrink-0 size-[24px]" data-name="facebook">
+    <div className="flex gap-8 items-start relative">
+      <div className="overflow-clip relative shrink-0 size-6" data-name="facebook">
         <div className="absolute bottom-[8.33%] left-[29.17%] right-1/4 top-[8.33%]" data-name="Icon">
           <div className="absolute inset-[-5%_-9.09%]">
             <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 13 22">
@@ -295,7 +307,7 @@ function Frame16() {
           </div>
         </div>
       </div>
-      <div className="overflow-clip relative shrink-0 size-[24px]" data-name="instagram">
+      <div className="overflow-clip relative shrink-0 size-6" data-name="instagram">
         <div className="absolute inset-[8.33%]" data-name="Icon">
           <div className="absolute inset-[-5%]">
             <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 22 22">
@@ -304,7 +316,7 @@ function Frame16() {
           </div>
         </div>
       </div>
-      <div className="overflow-clip relative shrink-0 size-[24px]" data-name="linkedin">
+      <div className="overflow-clip relative shrink-0 size-6" data-name="linkedin">
         <div className="absolute inset-[8.33%_8.33%_12.5%_8.33%]" data-name="Icon">
           <div className="absolute inset-[-5.26%_-5%]">
             <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 22 21">
@@ -323,23 +335,23 @@ function Frame16() {
 
 function AboutUs6() {
   return (
-    <div className="content-stretch flex items-center justify-center p-[8px] relative shrink-0" data-name="about-us">
-      <p className="font-['Rubik',sans-serif] font-normal leading-[1.68] not-italic relative shrink-0 text-[16px] text-center text-white tracking-[0.48px] whitespace-nowrap">Privacy Policy</p>
+    <div className={footerLinkWrapperClass} data-name="about-us">
+      <p className={footerLinkTextClass}>Privacy Policy</p>
     </div>
   );
 }
 
 function AboutUs7() {
   return (
-    <div className="content-stretch flex items-center justify-center p-[8px] relative shrink-0" data-name="about-us">
-      <p className="font-['Rubik',sans-serif] font-normal leading-[1.68] not-italic relative shrink-0 text-[16px] text-center text-white tracking-[0.48px] whitespace-pre">{`Cookie  Policy`}</p>
+    <div className={footerLinkWrapperClass} data-name="about-us">
+      <p className={`${footerLinkTextClass} whitespace-pre`}>{`Cookie  Policy`}</p>
     </div>
   );
 }
 
 function Frame24() {
   return (
-    <div className="content-stretch flex gap-[24px] items-center relative">
+    <div className="flex gap-6 items-center relative">
       <AboutUs6 />
       <AboutUs7 />
     </div>
@@ -348,15 +360,15 @@ function Frame24() {
 
 function AboutUs8() {
   return (
-    <div className="content-stretch flex items-center justify-end p-[8px] relative" data-name="about-us">
-      <p className="font-['Rubik',sans-serif] font-normal leading-[1.68] not-italic relative shrink-0 text-[16px] text-right text-white tracking-[0.48px] whitespace-nowrap">&copy;2026 All right reserved</p>
+    <div className="flex items-center justify-end p-2 relative" data-name="about-us">
+      <p className={`${footerLinkTextClass} text-right`}>&copy;2026 All right reserved</p>
     </div>
   );
 }
 
 export function Footer() {
   return (
-    <footer className="bg-[#1e4a35] overflow-hidden relative shrink-0 w-full" data-name="Footer">
+    <footer className="bg-green-500 overflow-hidden relative shrink-0 w-full" data-name="Footer">
       <ContentContainer size="wide" className="py-12 md:py-16">
         <div className="grid gap-10 md:grid-cols-3 md:gap-8">
           <Frame23 />
@@ -368,7 +380,7 @@ export function Footer() {
             <FarmToFeedLogo />
             <Frame16 />
           </div>
-          <p className="font-['Fraunces',serif] font-normal leading-[1.05] not-italic text-[#f5e091] text-[40px] tracking-[1.2px] md:text-[56px] md:tracking-[1.68px]">Shaping the Future of Food</p>
+          <p className={`${typeStyles.footerTagline} not-italic text-[#f5e091]`}>Shaping the Future of Food</p>
         </div>
         <div className="mt-8 flex flex-col gap-4 border-t border-white/15 pt-6 md:flex-row md:items-center md:justify-between">
           <Frame24 />

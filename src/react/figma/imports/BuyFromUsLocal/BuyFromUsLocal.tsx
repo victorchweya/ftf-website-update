@@ -191,14 +191,14 @@ function Frame63() {
   return (
     <div className="content-stretch flex flex-col gap-[32px] items-start relative shrink-0 w-full">
       <Frame26 />
-      <p className="font-['Rubik',sans-serif] font-normal leading-[1.68] min-w-full not-italic relative shrink-0 text-[#1e4a35] text-[16px] tracking-[0.48px] w-[min-content]">Fill out the form and our sales team will contact you shortly.</p>
+      <p className="font-['Rubik',sans-serif] font-normal leading-[1.68] min-w-full not-italic relative shrink-0 text-[#1e4a35] text-[16px] tracking-[0.48px] w-min">Fill out the form and our sales team will contact you shortly.</p>
     </div>
   );
 }
 
 function TextInput() {
   return (
-    <div className="bg-[#fbfafa] h-[48px] relative rounded-[35px] shrink-0 w-full" data-name="Text input">
+    <div className="bg-[#fbfafa] h-12 relative rounded-[35px] shrink-0 w-full" data-name="Text input">
       <div aria-hidden="true" className="absolute border border-[#e6e6e6] border-solid inset-[-1px] pointer-events-none rounded-[36px]" />
       <div className="flex flex-row items-center size-full">
         <div className="content-stretch flex items-center p-[12px] relative size-full" />
@@ -269,7 +269,7 @@ function Input1() {
 
 function TextInput2() {
   return (
-    <div className="bg-[#fbfafa] h-[48px] relative rounded-[24px] shrink-0 w-full" data-name="Text input">
+    <div className="bg-[#fbfafa] h-12 relative rounded-[24px] shrink-0 w-full" data-name="Text input">
       <div aria-hidden="true" className="absolute border border-[#e6e6e6] border-solid inset-[-1px] pointer-events-none rounded-[25px]" />
       <div className="flex flex-row items-center size-full">
         <div className="content-stretch flex items-center p-[12px] relative size-full" />
@@ -298,7 +298,7 @@ function Inputs1() {
 
 function TextInput3() {
   return (
-    <div className="bg-[#fbfafa] h-[48px] relative rounded-[24px] shrink-0 w-full" data-name="Text input">
+    <div className="bg-[#fbfafa] h-12 relative rounded-[24px] shrink-0 w-full" data-name="Text input">
       <div aria-hidden="true" className="absolute border border-[#e6e6e6] border-solid inset-[-1px] pointer-events-none rounded-[25px]" />
       <div className="flex flex-row items-center size-full">
         <div className="content-stretch flex items-center p-[12px] relative size-full" />
@@ -318,7 +318,7 @@ function Input3() {
 
 function TextInput4() {
   return (
-    <div className="bg-[#fbfafa] h-[48px] relative rounded-[24px] shrink-0 w-full" data-name="Text input">
+    <div className="bg-[#fbfafa] h-12 relative rounded-[24px] shrink-0 w-full" data-name="Text input">
       <div aria-hidden="true" className="absolute border border-[#e6e6e6] border-solid inset-[-1px] pointer-events-none rounded-[25px]" />
       <div className="flex flex-row items-center size-full">
         <div className="content-stretch flex items-center p-[12px] relative size-full" />
@@ -483,7 +483,7 @@ function Frame28() {
     <div className="bg-[#fbfafa] flex-[1_0_0] min-w-px relative rounded-[30px]">
       <div className="content-stretch flex flex-col gap-[27px] items-start p-[40px] relative size-full">
         <Frame30 />
-        <p className="font-['Rubik',sans-serif] font-normal leading-[1.68] min-w-full not-italic relative shrink-0 text-[#1e4a35] text-[16px] tracking-[0.48px] w-[min-content]">All you need to run your food business. From fresh to dry, and ready-to-use products.</p>
+        <p className="font-['Rubik',sans-serif] font-normal leading-[1.68] min-w-full not-italic relative shrink-0 text-[#1e4a35] text-[16px] tracking-[0.48px] w-min">All you need to run your food business. From fresh to dry, and ready-to-use products.</p>
       </div>
     </div>
   );
@@ -544,7 +544,7 @@ function Frame31() {
     <div className="bg-[#fbfafa] flex-[1_0_0] min-w-px relative rounded-[30px]">
       <div className="content-stretch flex flex-col gap-[27px] items-start p-[40px] relative size-full">
         <Frame33 />
-        <p className="font-['Rubik',sans-serif] font-normal leading-[1.68] min-w-full not-italic relative shrink-0 text-[#1e4a35] text-[16px] tracking-[0.48px] w-[min-content]">Products that make your store stand out. Pay less, expect better and grow your margins.</p>
+        <p className="font-['Rubik',sans-serif] font-normal leading-[1.68] min-w-full not-italic relative shrink-0 text-[#1e4a35] text-[16px] tracking-[0.48px] w-min">Products that make your store stand out. Pay less, expect better and grow your margins.</p>
       </div>
     </div>
   );
@@ -604,7 +604,7 @@ function Frame34() {
     <div className="bg-[#fbfafa] flex-[1_0_0] min-w-px relative rounded-[30px]">
       <div className="content-stretch flex flex-col gap-[27px] items-start p-[40px] relative size-full">
         <Frame35 />
-        <p className="font-['Rubik',sans-serif] font-normal leading-[1.68] min-w-full not-italic relative shrink-0 text-[#1e4a35] text-[16px] tracking-[0.48px] w-[min-content]">Choose from our range of rescue produce or Grade 1 — we procure full harvest from farmers so that nothing goes to waste.</p>
+        <p className="font-['Rubik',sans-serif] font-normal leading-[1.68] min-w-full not-italic relative shrink-0 text-[#1e4a35] text-[16px] tracking-[0.48px] w-min">Choose from our range of rescue produce or Grade 1 — we procure full harvest from farmers so that nothing goes to waste.</p>
       </div>
     </div>
   );
@@ -683,7 +683,7 @@ function Frame41() {
     <div className="bg-[#fbfafa] flex-[1_0_0] min-w-px relative rounded-[30px]">
       <div className="content-stretch flex flex-col gap-[27px] items-start p-[40px] relative size-full">
         <Frame42 />
-        <p className="font-['Rubik',sans-serif] font-normal leading-[0] min-w-full not-italic relative shrink-0 text-[#1e4a35] text-[16px] tracking-[0.48px] w-[min-content]">
+        <p className="font-['Rubik',sans-serif] font-normal leading-[0] min-w-full not-italic relative shrink-0 text-[#1e4a35] text-[16px] tracking-[0.48px] w-min">
           <span className="leading-[1.68]">{`If your order is anything less than supreme, we'll fix it. Connect with our team on WhatsApp or call us at `}</span>
           <span className="font-['Rubik',sans-serif] font-medium leading-[1.68]">0795851756.</span>
         </p>
@@ -744,7 +744,7 @@ function Frame43() {
     <div className="bg-[#fbfafa] flex-[1_0_0] min-w-px relative rounded-[30px]">
       <div className="content-stretch flex flex-col gap-[27px] items-start p-[40px] relative size-full">
         <Frame44 />
-        <p className="font-['Rubik',sans-serif] font-normal leading-[1.68] min-w-full not-italic relative shrink-0 text-[#1e4a35] text-[16px] tracking-[0.48px] w-[min-content]">For every kg of odd-looking produce you buy, you reduce your carbon footprint and directly boost farmer incomes.</p>
+        <p className="font-['Rubik',sans-serif] font-normal leading-[1.68] min-w-full not-italic relative shrink-0 text-[#1e4a35] text-[16px] tracking-[0.48px] w-min">For every kg of odd-looking produce you buy, you reduce your carbon footprint and directly boost farmer incomes.</p>
       </div>
     </div>
   );
@@ -802,7 +802,7 @@ function Frame45() {
     <div className="bg-[#fbfafa] flex-[1_0_0] min-w-px relative rounded-[30px]">
       <div className="content-stretch flex flex-col gap-[27px] items-start p-[40px] relative size-full">
         <Frame46 />
-        <p className="font-['Rubik',sans-serif] font-normal leading-[1.68] min-w-full not-italic relative shrink-0 text-[#1e4a35] text-[16px] tracking-[0.48px] w-[min-content]">{`Choose your delivery date and window and we'll get freshness delivered to you. On Time, In Full.`}</p>
+        <p className="font-['Rubik',sans-serif] font-normal leading-[1.68] min-w-full not-italic relative shrink-0 text-[#1e4a35] text-[16px] tracking-[0.48px] w-min">{`Choose your delivery date and window and we'll get freshness delivered to you. On Time, In Full.`}</p>
       </div>
     </div>
   );
@@ -2084,7 +2084,7 @@ function Frame82() {
           <path d={svgPaths.pd9b5300} fill="var(--fill-0, #1E4A35)" id="â" />
         </svg>
       </div>
-      <p className="font-['Rubik',sans-serif] font-normal leading-[1.68] min-w-full not-italic relative shrink-0 text-[16px] text-black tracking-[0.48px] w-[min-content]">{` Farm to Feed has been supplying us with amazing veggies. We get an assortment each week and we love working with them on saving food where we can.`}</p>
+      <p className="font-['Rubik',sans-serif] font-normal leading-[1.68] min-w-full not-italic relative shrink-0 text-[16px] text-black tracking-[0.48px] w-min">{` Farm to Feed has been supplying us with amazing veggies. We get an assortment each week and we love working with them on saving food where we can.`}</p>
     </div>
   );
 }
@@ -2380,7 +2380,7 @@ function Capa5() {
 
 function Group16() {
   return (
-    <div className="absolute inset-[48.28%_18.79%_8.68%_66.58%] mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[-1.17px_-0.16px] mask-size-[122.51px_118.116px]" style={{ maskImage: `url('${imgGroup}')` }} data-name="Group">
+    <div className="absolute inset-[48.28%_18.79%_8.68%_66.58%] mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-[-1.17px_-0.16px] mask-size-[122.51px_118.116px]" style={{ maskImage: `url('${imgGroup}')` }} data-name="Group">
       <svg className="absolute block inset-0 size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 44.4335 65.2025">
         <g id="Group">
           <path d={svgPaths.p4e2a440} fill="var(--fill-0, #DABACC)" id="Vector" />
