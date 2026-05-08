@@ -1,8 +1,34 @@
 ---
 import FigmaPageLayout from "../layouts/FigmaPageLayout.astro";
 import OurTeam from "../react/figma/pages/OurTeam";
+import { getCollection } from "astro:content";
+
+const advisorEntries = import.meta.glob("../content/advisors/**/*.{md,mdx}");
+
+const teamMembers = (await getCollection("team", ({ data }) => data.published))
+	.sort((a, b) => a.data.number - b.data.number)
+	.map(({ body, data, id }) => ({
+		bio: data.bio ?? body?.trim() ?? "",
+		name: data.name,
+		photo: data.photo,
+		position: data.position,
+		slug: id,
+	}));
+
+const advisors = Object.keys(advisorEntries).length
+	? (await getCollection("advisors", ({ data }) => data.published))
+			.sort((a, b) => a.data.number - b.data.number)
+			.map(({ body, data, id }) => ({
+				bio: data.bio ?? body?.trim() ?? "",
+				name: data.name,
+				photo: data.photo,
+				position: data.position,
+				slug: id,
+			}))
+	: [];
+
 ---
 
 <FigmaPageLayout title="Our Team">
-	<OurTeam client:load />
+	<OurTeam teamMembers={teamMembers} advisors={advisors} client:load />
 </FigmaPageLayout>

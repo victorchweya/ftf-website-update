@@ -6,15 +6,28 @@ import { SectionHeader } from "../components/layout/SectionHeader";
 import { SectionShell } from "../components/layout/SectionShell";
 import { typeStyles } from "../components/layout/typography";
 const faqFilters = ["General", "Buyers", "Farmers"];
-const faqItems = [
-	"What is the effect of food loss and waste on the environment?",
-	"How does Farm to Feed tackle food loss?",
-	"How do you measure your environmental impact?",
-	"How can I get involved with Farm to Feed?",
-	"What is Farm to Feed's track record?",
-	"What is the impact of investing in Farm to Feed?",
+type FAQItem = {
+	answer?: string;
+	question: string;
+	slug?: string;
+};
+
+const faqItems: FAQItem[] = [
+	{ question: "What is the effect of food loss and waste on the environment?" },
+	{ question: "How does Farm to Feed tackle food loss?" },
+	{ question: "How do you measure your environmental impact?" },
+	{ question: "How can I get involved with Farm to Feed?" },
+	{ question: "What is Farm to Feed's track record?" },
+	{ question: "What is the impact of investing in Farm to Feed?" },
 ];
-export default function FAQs() {
+
+type FAQsProps = {
+	faqItems?: FAQItem[];
+};
+
+export default function FAQs({ faqItems: cmsFaqItems }: FAQsProps) {
+	const displayFaqItems = cmsFaqItems?.length ? cmsFaqItems : faqItems;
+
 	return (
 		<div className="bg-indigo-300 flex flex-col items-start relative w-full">
 			{/* FAQ */}
@@ -70,11 +83,11 @@ export default function FAQs() {
 							))}
 						</div>
 						<div className="flex flex-col gap-px items-start relative w-full">
-							{faqItems.map((question) => (
+							{displayFaqItems.map((item) => (
 								<div
 									className="flex gap-6 items-center py-4 relative shrink-0 w-full md:gap-16"
 									data-name="faq-card"
-									key={question}>
+									key={item.slug ?? item.question}>
 									<div
 										aria-hidden="true"
 										className="absolute border-[#f7f7f7] border-b border-solid border-t inset-[-1px_0] pointer-events-none"
@@ -82,7 +95,7 @@ export default function FAQs() {
 									<div className="flex flex-[1_0_0] flex-col gap-4 items-start min-w-px relative">
 										<p
 											className={`${typeStyles.cardTitle} leading-copy relative shrink-0 text-[#0f251b] w-full`}>
-											{question}
+											{item.question}
 										</p>
 									</div>
 									<div

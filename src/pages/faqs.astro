@@ -1,8 +1,17 @@
 ---
 import FigmaPageLayout from "../layouts/FigmaPageLayout.astro";
 import FAQs from "../react/figma/pages/FAQs";
+import { getCollection } from "astro:content";
+
+const faqItems = (await getCollection("faqs", ({ data }) => data.published))
+	.sort((a, b) => a.data.number - b.data.number)
+	.map(({ body, data, id }) => ({
+		answer: body?.trim() ?? "",
+		question: data.question,
+		slug: id,
+	}));
 ---
 
 <FigmaPageLayout title="FAQs">
-	<FAQs client:load />
+	<FAQs faqItems={faqItems} client:load />
 </FigmaPageLayout>

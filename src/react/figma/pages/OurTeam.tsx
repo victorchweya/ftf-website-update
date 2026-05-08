@@ -1,4 +1,5 @@
 import * as OurTeamSvgs from "../imports/OurTeam/ourTeam-inline-svgs";
+import { useMemo, useState } from "react";
 import {
 	Frame39,
 	Frame38,
@@ -35,37 +36,51 @@ import {
 } from "../imports/OurTeam/svg-1h0q8";
 import { sectionSpacing } from "../components/layout/spacing";
 import { typeStyles } from "../components/layout/typography";
-const teamFilters = [
-	{
-		label: "All",
-		active: true,
-	},
-	{
-		label: "Board",
-	},
-	{
-		label: "Leadership",
-	},
-];
-const teamMembers = [
+
+type TeamFilter = "all" | "team-members" | "advisors";
+type TeamGroup = Exclude<TeamFilter, "all">;
+
+type CmsTeamMember = {
+	bio?: string;
+	group?: TeamGroup;
+	name: string;
+	photo: string;
+	position: string;
+	slug?: string;
+};
+
+type StaticTeamMember = {
+	Photo: React.ComponentType;
+	group?: TeamGroup;
+	name: string;
+	role: string;
+};
+
+type DisplayTeamMember = CmsTeamMember | StaticTeamMember;
+
+const staticTeamRows: StaticTeamMember[][] = [
 	[
 		{
 			Photo: Frame39,
+			group: "team-members",
 			name: "Claire van Enk",
 			role: "Managing Director",
 		},
 		{
 			Photo: Frame38,
+			group: "team-members",
 			name: "Anouk Boertien",
 			role: "Director of Product and Sustainability",
 		},
 		{
 			Photo: Frame37,
+			group: "team-members",
 			name: "Zara Benosa",
 			role: "Director business development",
 		},
 		{
 			Photo: Frame40,
+			group: "team-members",
 			name: "Christine Kiraithe Pentinga",
 			role: "Director Operations",
 		},
@@ -73,26 +88,91 @@ const teamMembers = [
 	[
 		{
 			Photo: Frame41,
+			group: "team-members",
 			name: "Lucy Wainaina",
 			role: "Finance officer",
 		},
 		{
 			Photo: Frame42,
+			group: "team-members",
 			name: "David Chege",
 			role: "Lead Supply Hub Coordinator",
 		},
 		{
 			Photo: Frame43,
+			group: "team-members",
 			name: "Stella Mbungu",
 			role: "Sales and Customer Care Manager",
 		},
 		{
 			Photo: Frame44,
+			group: "team-members",
 			name: "Samuel Mburu",
 			role: "Sourcing lead",
 		},
 	],
 ];
+
+function chunkMembers(members: DisplayTeamMember[]) {
+	const rows: DisplayTeamMember[][] = [];
+
+	for (let index = 0; index < members.length; index += 4) {
+		rows.push(members.slice(index, index + 4));
+	}
+
+	return rows;
+}
+
+function TeamMemberPhoto({ member }: { member: DisplayTeamMember }) {
+	if ("Photo" in member) {
+		const Photo = member.Photo;
+		return <Photo />;
+	}
+
+	const maskId = `team-member-mask-${getTeamMemberKey(member).replace(/[^a-zA-Z0-9_-]/g, "-")}`;
+
+	return (
+		<svg
+			aria-label={member.name}
+			className="block aspect-[204/199] w-full"
+			fill="none"
+			role="img"
+			viewBox="0 0 204 199"
+			xmlns="http://www.w3.org/2000/svg">
+			<defs>
+				<clipPath id={maskId}>
+					<path d="M158.242 184.195L157.667 184.519L157.708 184.561C133.234 200.738 104.324 199.407 76.6727 195.189L76.6316 195.183L76.59 195.184C75.0281 195.207 73.2119 194.855 71.2734 194.323C69.6551 193.879 67.9801 193.318 66.3219 192.762C65.996 192.653 65.6707 192.544 65.3466 192.436C63.3852 191.783 61.4652 191.172 59.7647 190.836C58.202 190.528 56.7415 190.434 55.5782 190.821C50.9113 187.556 45.514 184.974 40.1545 182.41C38.8122 181.768 37.4722 181.126 36.1467 180.476C29.4332 177.182 23.0699 173.642 18.4157 168.489C11.4973 156.835 3.76174 143.259 1.18078 129.418C-1.36234 111.136 3.33043 84.9394 13.3977 61.6234C23.4725 38.2901 38.859 18.0023 57.5763 11.3583C77.2523 5.09241 102.809 -0.723599 126.066 0.723469C149.313 2.16993 170.17 10.8601 180.651 33.5199C182.461 37.7206 184.727 41.8454 187.093 45.951C187.779 47.1416 188.473 48.3297 189.167 49.5177C190.872 52.4364 192.576 55.3546 194.164 58.309C198.628 66.6186 202.107 75.1117 201.918 84.3534L201.917 84.393L201.923 84.4322C207.46 124.427 195.498 163.233 158.242 184.195Z" />
+				</clipPath>
+			</defs>
+			<rect
+				clipPath={`url(#${maskId})`}
+				fill="#eff6ef"
+				height="199"
+				width="204"
+			/>
+			<image
+				clipPath={`url(#${maskId})`}
+				height="199"
+				href={member.photo}
+				preserveAspectRatio="xMidYMid slice"
+				width="204"
+			/>
+		</svg>
+	);
+}
+
+function getTeamMemberRole(member: DisplayTeamMember) {
+	return "role" in member ? member.role : member.position;
+}
+
+function getTeamMemberKey(member: DisplayTeamMember) {
+	return "slug" in member && member.slug ? member.slug : member.name;
+}
+
+function getTeamMemberGroup(member: DisplayTeamMember) {
+	return member.group ?? "team-members";
+}
+
 const valueRows = [
 	[
 		{
@@ -129,7 +209,49 @@ const valueRows = [
 		},
 	],
 ];
-export default function OurTeam() {
+
+type OurTeamProps = {
+	advisors?: CmsTeamMember[];
+	teamMembers?: CmsTeamMember[];
+};
+
+export default function OurTeam({
+	advisors = [],
+	teamMembers: cmsTeamMembers,
+}: OurTeamProps) {
+	const [activeFilter, setActiveFilter] = useState<TeamFilter>("all");
+	const people = useMemo<DisplayTeamMember[]>(() => {
+		const cmsPeople: CmsTeamMember[] = [
+			...(cmsTeamMembers ?? []).map((member) => ({
+				...member,
+				group: "team-members" as const,
+			})),
+			...advisors.map((member) => ({
+				...member,
+				group: "advisors" as const,
+			})),
+		];
+
+		return cmsPeople.length ? cmsPeople : staticTeamRows.flat();
+	}, [advisors, cmsTeamMembers]);
+	const teamFilters = useMemo(() => {
+		const filters: { id: TeamFilter; label: string }[] = [
+			{ id: "all", label: "All" },
+			{ id: "team-members", label: "Team Members" },
+		];
+
+		if (people.some((member) => getTeamMemberGroup(member) === "advisors")) {
+			filters.push({ id: "advisors", label: "Advisors" });
+		}
+
+		return filters;
+	}, [people]);
+	const filteredPeople =
+		activeFilter === "all"
+			? people
+			: people.filter((member) => getTeamMemberGroup(member) === activeFilter);
+	const displayTeamRows = chunkMembers(filteredPeople);
+
 	return (
 		<div className="bg-white flex flex-col items-start relative w-full">
 			{/* Hero */}
@@ -284,28 +406,32 @@ export default function OurTeam() {
 							{teamFilters.map((filter) => (
 								<Button
 									type="button"
-									variant={filter.active ? "primary" : "none"}
+									aria-pressed={activeFilter === filter.id}
+									onClick={() => setActiveFilter(filter.id)}
+									variant={activeFilter === filter.id ? "primary" : "none"}
 									size="sm"
-									className={`relative shrink-0 ${filter.active ? "text-[#eee]" : "bg-[#eff6ef] text-[#0f251b]"}`}
-									key={filter.label}>
+									className={`relative shrink-0 ${activeFilter === filter.id ? "text-[#eee]" : "bg-[#eff6ef] text-[#0f251b]"}`}
+									key={filter.id}>
 									{filter.label}
 								</Button>
 							))}
 						</div>
 						<div className="flex flex-col gap-8 items-start relative w-full max-w-[1276px]">
-							{teamMembers.map((row, index) => (
+							{displayTeamRows.map((row, index) => (
 								<div
 									className={`flex flex-wrap items-start justify-center relative shrink-0 w-full ${index === 0 ? "gap-8" : "gap-8 lg:gap-[108px]"}`}
 									key={index}>
 									{row.map((member) => (
-										<div className="flex flex-col gap-6 items-center relative w-full max-w-[260px] sm:w-[calc(50%-16px)] lg:flex-[1_0_0] lg:min-w-px lg:max-w-none">
-											<member.Photo />
+										<div
+											className="flex flex-col gap-6 items-center relative w-full max-w-[260px] sm:w-[calc(50%-16px)] lg:flex-[1_0_0] lg:min-w-px lg:max-w-none"
+											key={getTeamMemberKey(member)}>
+											<TeamMemberPhoto member={member} />
 											<div className={`${typeStyles.body} flex flex-col min-h-[54px] items-center relative shrink-0 text-center w-full max-w-[220px]`}>
 												<p className="relative shrink-0 text-black">
 													{member.name}
 												</p>
 												<p className="relative shrink-0 text-[#916f96]">
-													{member.role}
+													{getTeamMemberRole(member)}
 												</p>
 											</div>
 										</div>

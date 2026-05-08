@@ -18,8 +18,27 @@ import { typeStyles } from "../components/layout/typography";
 
 type NewsItem = {
 	date: string;
+	excerpt?: string;
+	href?: string;
 	image: string;
+	slug?: string;
 	title: string;
+};
+
+type ImpactMetric = {
+	description?: string;
+	label: string;
+	metric?: string;
+	slug?: string;
+	unit?: string;
+	value: string;
+};
+
+type Testimonial = {
+	company: string;
+	name: string;
+	quote: string;
+	slug?: string;
 };
 
 const supplyChainBenefits = [
@@ -64,10 +83,40 @@ const newsItems: NewsItem[] = [
 	},
 ];
 
-export default function Home() {
+const fallbackImpactMetrics: ImpactMetric[] = [
+	{
+		label: "tonnes of CO2e avoided",
+		value: "1K",
+	},
+	{
+		label: "KG of food saved",
+		value: "920K",
+	},
+	{
+		label: "increase in farmers' incomes",
+		value: "37%",
+	},
+];
+
+type HomeProps = {
+	impactMetrics?: ImpactMetric[];
+	newsItems?: NewsItem[];
+	testimonials?: Testimonial[];
+};
+
+export default function Home({
+	impactMetrics: cmsImpactMetrics,
+	newsItems: cmsNewsItems,
+}: HomeProps) {
 	const supplyChainSectionRef = useRef<HTMLDivElement>(null);
 	const frameRef = useRef<number | null>(null);
 	const [activeBenefitIndex, setActiveBenefitIndex] = useState(0);
+	const displayImpactMetrics = fallbackImpactMetrics.map(
+		(fallbackMetric, index) => cmsImpactMetrics?.[index] ?? fallbackMetric,
+	);
+	const displayNewsItems = cmsNewsItems?.length
+		? cmsNewsItems.slice(0, 3)
+		: newsItems;
 
 	useEffect(() => {
 		const updateActiveBenefit = () => {
@@ -475,11 +524,11 @@ export default function Home() {
 							<div className="flex flex-col gap-6 items-center lg:items-start not-italic relative shrink-0 text-center lg:text-left w-full">
 								<p
 									className={`${typeStyles.statValue} relative shrink-0 text-[#4c352b] w-full`}>
-									1K
+									{displayImpactMetrics[0].value}
 								</p>
 								<p
 									className={`${typeStyles.body} relative shrink-0 text-[#7b6a62] w-full`}>
-									tonnes of CO2e avoided
+									{displayImpactMetrics[0].label}
 								</p>
 							</div>
 						</div>
@@ -510,11 +559,11 @@ export default function Home() {
 							<div className="flex flex-col gap-6 items-center lg:items-start not-italic relative shrink-0 text-center lg:text-left w-full">
 								<p
 									className={`${typeStyles.statValue} relative shrink-0 text-[#4c352b] w-full`}>
-									920K
+									{displayImpactMetrics[1].value}
 								</p>
 								<p
 									className={`${typeStyles.body} relative shrink-0 text-[#7b6a62] w-full`}>
-									KG of food saved
+									{displayImpactMetrics[1].label}
 								</p>
 							</div>
 						</div>
@@ -527,11 +576,11 @@ export default function Home() {
 							<div className="flex flex-col gap-6 items-center lg:items-start not-italic relative shrink-0 text-center lg:text-left w-full">
 								<p
 									className={`${typeStyles.statValue} relative shrink-0 text-[#4c352b] w-full`}>
-									37%
+									{displayImpactMetrics[2].value}
 								</p>
 								<p
 									className={`${typeStyles.body} relative shrink-0 text-[#7b6a62] w-full`}>
-									increase in farmers' incomes
+									{displayImpactMetrics[2].label}
 								</p>
 							</div>
 						</div>
@@ -572,9 +621,9 @@ export default function Home() {
 							</Button>
 						</div>
 						<div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3 relative shrink-0 w-full">
-							{newsItems.map((item) => (
+							{displayNewsItems.map((item) => (
 								<article
-									key={item.title}
+									key={item.slug ?? item.title}
 									className="flex flex-col items-start min-w-px overflow-clip relative rounded-[32px]">
 									<div className="aspect-[405/270] relative shrink-0 w-full">
 										<img
@@ -596,7 +645,7 @@ export default function Home() {
 										</div>
 										<a
 											className="flex gap-2 items-center justify-center relative shrink-0"
-											href="/news-events">
+											href={item.href ?? "/news-events"}>
 											<span
 												className={`${typeStyles.body} leading-normal not-italic relative shrink-0 text-[#916f96] whitespace-nowrap`}>
 												Read more
