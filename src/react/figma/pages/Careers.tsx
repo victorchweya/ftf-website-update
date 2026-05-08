@@ -5,10 +5,12 @@ import { SectionShell } from "../components/layout/SectionShell";
 import { typeStyles } from "../components/layout/typography";
 
 type CareerOpening = {
+	description?: string;
 	position: string;
 	location: string;
 	contract: string;
 	link: string;
+	slug?: string;
 };
 
 const careerOpenings: CareerOpening[] = [
@@ -59,7 +61,15 @@ function CareersBackground() {
 	);
 }
 
-export default function Careers() {
+type CareersProps = {
+	careerOpenings?: CareerOpening[];
+};
+
+export default function Careers({ careerOpenings: cmsCareerOpenings }: CareersProps) {
+	const displayCareerOpenings = cmsCareerOpenings?.length
+		? cmsCareerOpenings
+		: careerOpenings;
+
 	return (
 		<div className="bg-brown-50 flex flex-col items-start relative w-full">
 			<Header />
@@ -98,7 +108,7 @@ export default function Careers() {
 							List of openings
 						</p>
 
-						{careerOpenings.length ? (
+						{displayCareerOpenings.length ? (
 							<div className="overflow-x-auto">
 								<table className="w-full min-w-[720px] border-separate border-spacing-0 text-left">
 									<thead>
@@ -123,9 +133,9 @@ export default function Careers() {
 										</tr>
 									</thead>
 									<tbody>
-										{careerOpenings.map((opening) => (
+										{displayCareerOpenings.map((opening) => (
 											<tr
-												key={opening.position}
+												key={opening.slug ?? opening.position}
 												className="group">
 												<td
 													className={`${typeStyles.cardTitleSmall} border-b border-[#dfeddf] py-7 pr-6 text-[#0f251b]`}>

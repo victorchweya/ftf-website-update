@@ -10,9 +10,11 @@ import * as HomeSvgs from "../imports/Home/home-inline-svgs";
 
 type NewsEvent = {
 	date: string;
+	excerpt?: string;
+	href?: string;
 	image: string;
+	slug?: string;
 	title: string;
-	href: string;
 };
 
 const newsEvents: NewsEvent[] = [
@@ -36,7 +38,13 @@ const newsEvents: NewsEvent[] = [
 	},
 ];
 
-export default function NewsAndEvents() {
+type NewsAndEventsProps = {
+	newsEvents?: NewsEvent[];
+};
+
+export default function NewsAndEvents({ newsEvents: cmsNewsEvents }: NewsAndEventsProps) {
+	const displayNewsEvents = cmsNewsEvents?.length ? cmsNewsEvents : newsEvents;
+
 	return (
 		<div className="relative w-full bg-yellow-100">
 			<Header />
@@ -52,9 +60,9 @@ export default function NewsAndEvents() {
 							Read the latest from Farm to Feed
 						</h1>
 						<div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3 relative shrink-0 w-full">
-							{newsEvents.map((item) => (
+							{displayNewsEvents.map((item) => (
 								<article
-									key={item.title}
+									key={item.slug ?? item.title}
 									className="flex flex-col items-start min-w-px overflow-clip relative rounded-[32px]">
 									<div className="aspect-[405/270] relative shrink-0 w-full">
 										<img
@@ -76,7 +84,7 @@ export default function NewsAndEvents() {
 										</div>
 										<a
 											className="flex gap-2 items-center justify-center relative shrink-0"
-											href={item.href}>
+											href={item.href ?? "/news-events"}>
 											<span
 												className={`${typeStyles.body} leading-normal not-italic relative shrink-0 text-[#916f96] whitespace-nowrap`}>
 												Read more

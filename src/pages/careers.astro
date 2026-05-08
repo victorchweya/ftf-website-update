@@ -1,8 +1,20 @@
 ---
 import FigmaPageLayout from "../layouts/FigmaPageLayout.astro";
 import Careers from "../react/figma/pages/Careers";
+import { getCollection } from "astro:content";
+
+const careerOpenings = (await getCollection("careers", ({ data }) => data.published))
+	.sort((a, b) => b.data.postedDate.getTime() - a.data.postedDate.getTime())
+	.map(({ body, data, id }) => ({
+		contract: data.contract,
+		description: body?.trim() ?? "",
+		link: data.link,
+		location: data.location,
+		position: data.position,
+		slug: id,
+	}));
 ---
 
 <FigmaPageLayout title="Careers">
-	<Careers client:load />
+	<Careers careerOpenings={careerOpenings} client:load />
 </FigmaPageLayout>

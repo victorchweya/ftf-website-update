@@ -1,8 +1,53 @@
 ---
 import FigmaPageLayout from "../layouts/FigmaPageLayout.astro";
 import Home from "../react/figma/pages/Home";
+import { getCollection } from "astro:content";
+
+const dateFormatter = new Intl.DateTimeFormat("en-GB", {
+	day: "2-digit",
+	month: "short",
+	year: "numeric",
+});
+
+const newsItems = (await getCollection("news", ({ data }) => data.published))
+	.sort((a, b) => b.data.date.getTime() - a.data.date.getTime())
+	.slice(0, 3)
+	.map(({ body, data, id }) => ({
+		date: dateFormatter.format(data.date),
+		excerpt: body?.trim() ?? "",
+		href: data.link ?? "/news-events",
+		image: data.image,
+		title: data.title,
+		slug: id,
+	}));
+
+const impactMetrics = (await getCollection("impact"))
+	.sort((a, b) => a.data.order - b.data.order)
+	.slice(0, 3)
+	.map(({ body, data, id }) => ({
+		description: body?.trim() ?? "",
+		label: data.label,
+		metric: data.metric,
+		slug: id,
+		unit: data.unit,
+		value: data.value,
+	}));
+
+const testimonials = (await getCollection("testimonials", ({ data }) => data.published))
+	.sort((a, b) => (a.data.order ?? 0) - (b.data.order ?? 0))
+	.map(({ body, data, id }) => ({
+		company: data.company,
+		name: data.name,
+		quote: body?.trim() ?? "",
+		slug: id,
+	}));
 ---
 
 <FigmaPageLayout title="Home">
-	<Home client:load />
+	<Home
+		newsItems={newsItems}
+		impactMetrics={impactMetrics}
+		testimonials={testimonials}
+		client:load
+	/>
 </FigmaPageLayout>

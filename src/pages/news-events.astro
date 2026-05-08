@@ -1,8 +1,26 @@
 ---
 import FigmaPageLayout from "../layouts/FigmaPageLayout.astro";
 import NewsAndEvents from "../react/figma/pages/NewsAndEvents";
+import { getCollection } from "astro:content";
+
+const dateFormatter = new Intl.DateTimeFormat("en-GB", {
+	day: "2-digit",
+	month: "short",
+	year: "numeric",
+});
+
+const newsEvents = (await getCollection("news", ({ data }) => data.published))
+	.sort((a, b) => b.data.date.getTime() - a.data.date.getTime())
+	.map(({ body, data, id }) => ({
+		date: dateFormatter.format(data.date),
+		excerpt: body?.trim() ?? "",
+		href: data.link ?? "/news-events",
+		image: data.image,
+		title: data.title,
+		slug: id,
+	}));
 ---
 
 <FigmaPageLayout title="News & Events">
-	<NewsAndEvents client:load />
+	<NewsAndEvents newsEvents={newsEvents} client:load />
 </FigmaPageLayout>

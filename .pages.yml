@@ -1,0 +1,130 @@
+title: Farm to Feed CMS
+description: Content management for Farm to Feed website
+logo: /company-logo.svg
+
+media:
+  input: public
+  output: /
+
+content:
+  - name: faqs
+    label: FAQs
+    type: collection
+    path: src/content/faqs
+    view:
+      fields: [ question, number, published ]
+    fields:
+      - { name: question, label: Question, type: string, required: true }
+      - { name: number, label: Order Number, type: number, required: true }
+      - { name: published, label: Published, type: boolean, default: true }
+      - { name: body, label: Answer, type: rich-text }
+
+  - name: team
+    label: Team Members
+    type: collection
+    path: src/content/team
+    view:
+      fields: [ name, position, number, published ]
+    fields:
+      - { name: name, label: Name, type: string, required: true }
+      - { name: position, label: Position, type: string, required: true }
+      - { name: photo, label: Photo, type: image, required: true }
+      - { name: number, label: Display Order, type: number, required: true }
+      - { name: bio, label: Short Bio, type: string }
+      - { name: published, label: Published, type: boolean, default: true }
+      - { name: body, label: Extended Bio, type: rich-text }
+
+  - name: advisors
+    label: Advisors
+    type: collection
+    path: src/content/advisors
+    view:
+      fields: [ name, position, number, published ]
+    fields:
+      - { name: name, label: Name, type: string, required: true }
+      - { name: position, label: Position, type: string, required: true }
+      - { name: photo, label: Photo, type: image, required: true }
+      - { name: number, label: Display Order, type: number, required: true }
+      - { name: bio, label: Short Bio, type: string }
+      - { name: published, label: Published, type: boolean, default: true }
+      - { name: body, label: Extended Bio, type: rich-text }
+
+  - name: careers
+    label: Job Openings
+    type: collection
+    path: src/content/careers
+    view:
+      fields: [ position, location, contract, published ]
+    fields:
+      - { name: position, label: Position Title, type: string, required: true }
+      - { name: location, label: Location, type: string, required: true }
+      - name: contract
+        label: Contract Type
+        type: select
+        required: true
+        options:
+          values:
+            - { value: Full time, label: Full time }
+            - { value: Part time, label: Part time }
+            - { value: Contract, label: Contract }
+            - { value: Internship, label: Internship }
+      - { name: link, label: Application Link, type: string, required: true }
+      - { name: postedDate, label: Posted Date, type: date, required: true }
+      - { name: published, label: Published, type: boolean, default: true }
+      - { name: body, label: Job Description, type: rich-text }
+
+  - name: news
+    label: News & Events
+    type: collection
+    path: src/content/news
+    view:
+      fields: [ title, date, published ]
+    fields:
+      - { name: title, label: Title, type: string, required: true }
+      - { name: date, label: Date, type: date, required: true }
+      - { name: image, label: Featured Image, type: image, required: true }
+      - { name: link, label: External Link, type: string }
+      - { name: published, label: Published, type: boolean, default: true }
+      - { name: body, label: Excerpt, type: rich-text }
+
+  - name: impact
+    label: Impact Metrics
+    type: collection
+    path: src/content/impact
+    view:
+      fields: [ label, value, order ]
+    fields:
+      - { name: metric, label: Metric ID, type: string, required: true }
+      - { name: value, label: Value, type: string, required: true }
+      - { name: label, label: Display Label, type: string, required: true }
+      - { name: order, label: Display Order, type: number, required: true }
+      - { name: unit, label: Unit, type: string }
+      - { name: body, label: Description, type: rich-text }
+
+  - name: testimonials
+    label: Testimonials
+    type: collection
+    path: src/content/testimonials
+    view:
+      fields: [ name, company, order, published ]
+    fields:
+      - { name: name, label: Customer Name, type: string, required: true }
+      - { name: company, label: Company, type: string, required: true }
+      - { name: order, label: Display Order, type: number }
+      - { name: published, label: Published, type: boolean, default: true }
+      - { name: body, label: Testimonial, type: rich-text }
+
+  - name: blog
+    label: Blog Posts
+    type: collection
+    path: src/content/blog
+    view:
+      fields: [ title, pubDate, description ]
+    fields:
+      - { name: title, label: Title, type: string, required: true }
+      - { name: description, label: Description, type: string, required: true }
+      - { name: pubDate, label: Publication Date, type: date, required: true }
+      - { name: updatedDate, label: Updated Date, type: date }
+      - { name: heroImage, label: Hero Image, type: image }
+      - { name: body, label: Content, type: rich-text }
+
