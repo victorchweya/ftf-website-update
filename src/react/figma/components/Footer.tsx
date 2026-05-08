@@ -384,22 +384,28 @@ function AboutUs8() {
 export function Footer() {
   return (
     <footer className="bg-green-500 overflow-hidden relative shrink-0 w-full" data-name="Footer">
-      <ContentContainer size="wide" className="py-12 md:py-16">
-        <div className="grid gap-10 md:grid-cols-3 md:gap-8">
+      <ContentContainer size="wide" className="py-12 md:py-16 lg:py-20">
+        <div className="grid gap-10 md:grid-cols-3 md:gap-8 lg:grid-cols-[minmax(260px,1fr)_minmax(220px,0.85fr)_minmax(360px,1fr)] lg:gap-16">
           <Frame23 />
           <Frame14 />
           <Frame8 />
         </div>
-        <div className="mt-14 grid gap-8 md:grid-cols-[220px_1fr] md:items-end lg:mt-20">
-          <div className="flex flex-col gap-8">
+        <div className="mt-16 grid gap-x-8 gap-y-10 md:grid-cols-[220px_minmax(0,1fr)] md:items-end lg:mt-20 lg:grid-cols-[minmax(260px,1fr)_minmax(220px,0.85fr)_minmax(360px,1fr)] lg:gap-x-16">
+          <div className="flex items-start">
             <FarmToFeedLogo />
+          </div>
+          <p className={`${typeStyles.footerTagline} not-italic text-[#f5e091] md:col-start-2 lg:col-span-2 lg:col-start-2 lg:self-center`}>
+            Shaping the Future of Food
+          </p>
+          <div className="flex items-center md:col-start-1">
             <Frame16 />
           </div>
-          <p className={`${typeStyles.footerTagline} not-italic text-[#f5e091]`}>Shaping the Future of Food</p>
-        </div>
-        <div className="mt-8 flex flex-col gap-4 border-t border-white/15 pt-6 md:flex-row md:items-center md:justify-between">
-          <Frame24 />
-          <AboutUs8 />
+          <div className="flex items-center md:col-start-2 lg:col-start-2">
+            <Frame24 />
+          </div>
+          <div className="flex items-center md:col-span-2 md:justify-start lg:col-span-1 lg:col-start-3 lg:justify-end">
+            <AboutUs8 />
+          </div>
         </div>
       </ContentContainer>
     </footer>
