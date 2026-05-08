@@ -1,5 +1,6 @@
 ---
 question: "How does Farm to Feed ensure quality of produce?"
+category: buyers
 number: 8
 published: true
 ---

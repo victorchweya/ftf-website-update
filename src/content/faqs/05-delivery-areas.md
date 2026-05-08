@@ -1,5 +1,6 @@
 ---
 question: "Where does Farm to Feed deliver?"
+category: buyers
 number: 5
 published: true
 ---

@@ -1,5 +1,6 @@
 ---
 question: "How does Farm to Feed help farmers connect with markets?"
+category: farmers
 number: 11
 published: true
 ---

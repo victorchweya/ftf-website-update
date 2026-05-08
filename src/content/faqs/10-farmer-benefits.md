@@ -1,5 +1,6 @@
 ---
 question: "As a farmer, how do I benefit from working with Farm to Feed?"
+category: farmers
 number: 10
 published: true
 ---

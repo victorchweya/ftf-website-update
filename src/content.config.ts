@@ -24,6 +24,7 @@ const faqs = defineCollection({
 	loader: glob({ base: "./src/content/faqs", pattern: contentPattern }),
 	schema: z.object({
 		question: z.string(),
+		category: z.enum(["general", "buyers", "farmers"]),
 		number: z.number(),
 		published: z.boolean().default(true),
 	}),

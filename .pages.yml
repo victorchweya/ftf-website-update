@@ -12,9 +12,19 @@ content:
     type: collection
     path: src/content/faqs
     view:
-      fields: [ question, number, published ]
+      fields: [ question, category, number, published ]
     fields:
       - { name: question, label: Question, type: string, required: true }
+      - name: category
+        label: Category
+        type: select
+        required: true
+        default: general
+        options:
+          values:
+            - { value: general, label: General }
+            - { value: buyers, label: Buyers }
+            - { value: farmers, label: Farmers }
       - { name: number, label: Order Number, type: number, required: true }
       - { name: published, label: Published, type: boolean, default: true }
       - { name: body, label: Answer, type: rich-text }

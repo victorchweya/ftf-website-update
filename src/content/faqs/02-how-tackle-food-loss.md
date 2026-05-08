@@ -1,5 +1,6 @@
 ---
 question: "How does Farm to Feed tackle food loss?"
+category: general
 number: 2
 published: true
 ---
