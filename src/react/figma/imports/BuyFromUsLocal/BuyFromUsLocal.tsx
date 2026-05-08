@@ -2061,13 +2061,13 @@ function Wireframe1() {
 
 export function Order4() {
   return (
-    <div className="content-stretch flex items-start p-[12px] relative rounded-[40px] shrink-0" data-name="order">
-      <div aria-hidden="true" className="absolute border border-[#dae2b6] border-solid inset-0 pointer-events-none rounded-[40px]" />
+    <div className="content-stretch flex items-start p-[12px] relative rounded-[40px] shrink-0 transition-colors duration-200 group-hover:bg-white/60 group-focus-visible:bg-white/60" data-name="order">
+      <div aria-hidden="true" className="absolute border border-[#747c50] border-solid inset-0 pointer-events-none rounded-[40px] transition-colors duration-200 group-hover:border-[#0f251b] group-focus-visible:border-[#0f251b]" />
       <div className="overflow-clip relative shrink-0 size-[24px]" data-name="arrow-left">
         <div className="absolute inset-[20.83%]" data-name="Icon">
           <div className="absolute inset-[-7.14%]">
             <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 16 16">
-              <path d="M15 8H1M8 1L1 8L8 15" id="Icon" stroke="var(--stroke-0, #DAE2B6)" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" />
+              <path className="transition-colors duration-200 group-hover:stroke-[#0f251b] group-focus-visible:stroke-[#0f251b]" d="M15 8H1M8 1L1 8L8 15" id="Icon" stroke="var(--stroke-0, #747C50)" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" />
             </svg>
           </div>
         </div>
@@ -2076,7 +2076,20 @@ export function Order4() {
   );
 }
 
-function Frame82() {
+type TestimonialContent = {
+  quote?: string;
+  name?: string;
+  company?: string;
+};
+
+const defaultTestimonialContent = {
+  quote:
+    " Farm to Feed has been supplying us with amazing veggies. We get an assortment each week and we love working with them on saving food where we can.",
+  name: "Delia Sterling",
+  company: "Brown's food company",
+};
+
+function Frame82({ quote = defaultTestimonialContent.quote }: Pick<TestimonialContent, "quote">) {
   return (
     <div className="content-stretch flex flex-col gap-[16px] items-start relative shrink-0 w-full">
       <div className="h-[24.704px] relative shrink-0 w-[37.577px]" data-name="“">
@@ -2084,25 +2097,28 @@ function Frame82() {
           <path d={svgPaths.pd9b5300} fill="var(--fill-0, #1E4A35)" id="â" />
         </svg>
       </div>
-      <p className="font-['Rubik',sans-serif] font-normal leading-[1.68] min-w-full not-italic relative shrink-0 text-[16px] text-black tracking-[0.48px] w-min">{` Farm to Feed has been supplying us with amazing veggies. We get an assortment each week and we love working with them on saving food where we can.`}</p>
+      <p className="font-['Rubik',sans-serif] font-normal leading-[1.68] min-w-full not-italic relative shrink-0 text-[16px] text-black tracking-[0.48px] w-min">{quote}</p>
     </div>
   );
 }
 
-function Frame5() {
+function Frame5({
+  name = defaultTestimonialContent.name,
+  company = defaultTestimonialContent.company,
+}: Pick<TestimonialContent, "name" | "company">) {
   return (
     <div className="content-stretch flex flex-col items-start leading-[1.68] not-italic relative shrink-0 text-[#808080] text-[16px] tracking-[0.48px] w-full">
-      <p className="font-['Rubik',sans-serif] font-semibold relative shrink-0 w-full">Delia Sterling</p>
-      <p className="font-['Rubik',sans-serif] font-normal relative shrink-0 w-full">Brown’s food company</p>
+      <p className="font-['Rubik',sans-serif] font-semibold relative shrink-0 w-full">{name}</p>
+      <p className="font-['Rubik',sans-serif] font-normal relative shrink-0 w-full">{company}</p>
     </div>
   );
 }
 
-function Frame7() {
+function Frame7({ quote, name, company }: TestimonialContent) {
   return (
     <div className="absolute content-stretch flex flex-col inset-[40px_66px_49px_40px] items-start justify-between">
-      <Frame82 />
-      <Frame5 />
+      <Frame82 quote={quote} />
+      <Frame5 name={name} company={company} />
     </div>
   );
 }
@@ -2283,7 +2299,7 @@ function Group32() {
   );
 }
 
-export function Frame6() {
+export function Frame6({ quote, name, company }: TestimonialContent = {}) {
   return (
     <div className="h-[323px] relative shrink-0 w-full max-w-[640px]">
       <div className="absolute flex inset-0 items-center justify-center" style={{ containerType: "size" }}>
@@ -2318,7 +2334,7 @@ export function Frame6() {
           </div>
         </div>
       </div>
-      <Frame7 />
+      <Frame7 quote={quote} name={name} company={company} />
       <Capa4 />
       <Group32 />
     </div>
@@ -2327,13 +2343,13 @@ export function Frame6() {
 
 export function Order5() {
   return (
-    <div className="content-stretch flex items-start p-[12px] relative rounded-[40px] shrink-0" data-name="order">
-      <div aria-hidden="true" className="absolute border border-[#747c50] border-solid inset-0 pointer-events-none rounded-[40px]" />
+    <div className="content-stretch flex items-start p-[12px] relative rounded-[40px] shrink-0 transition-colors duration-200 group-hover:bg-white/60 group-focus-visible:bg-white/60" data-name="order">
+      <div aria-hidden="true" className="absolute border border-[#747c50] border-solid inset-0 pointer-events-none rounded-[40px] transition-colors duration-200 group-hover:border-[#0f251b] group-focus-visible:border-[#0f251b]" />
       <div className="overflow-clip relative shrink-0 size-[24px]" data-name="arrow-right">
         <div className="absolute inset-[20.83%]" data-name="Icon">
           <div className="absolute inset-[-7.14%]">
             <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 16 16">
-              <path d="M1 8H15M8 15L15 8L8 1" id="Icon" stroke="var(--stroke-0, #747C50)" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" />
+              <path className="transition-colors duration-200 group-hover:stroke-[#0f251b] group-focus-visible:stroke-[#0f251b]" d="M1 8H15M8 15L15 8L8 1" id="Icon" stroke="var(--stroke-0, #747C50)" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" />
             </svg>
           </div>
         </div>

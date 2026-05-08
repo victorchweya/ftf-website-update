@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import * as KenyanBuyersSvgs from "../imports/BuyFromUsLocal/kenyanBuyers-inline-svgs";
 import {
 	Order4,
@@ -45,8 +46,57 @@ const localBuyerHowItWorksSteps = [
 		title: "Enjoy Delivery",
 	},
 ];
-const localBuyerTestimonialControls = [Order4, Frame6, Order5];
+const localBuyerTestimonials = [
+	{
+		quote:
+			"Farm to Feed keeps our kitchen stocked with fresh produce while helping us reduce waste across our weekly menu planning.",
+		name: "Amina Odhiambo",
+		company: "Nairobi Catering Co.",
+	},
+	{
+		quote:
+			"The quality is consistent, the delivery team is reliable, and our customers love knowing their meals support local farmers.",
+		name: "Brian Mwangi",
+		company: "Green Plate Bistro",
+	},
+	{
+		quote:
+			"We can source the volumes we need without compromising on freshness, price, or the impact we want our business to make.",
+		name: "Lilian Wanjiku",
+		company: "Mara Hospitality Group",
+	},
+];
+
 export default function KenyanBuyers() {
+	const [activeTestimonialIndex, setActiveTestimonialIndex] = useState(0);
+	const activeTestimonial =
+		localBuyerTestimonials[activeTestimonialIndex] ??
+		localBuyerTestimonials[0];
+
+	const showPreviousTestimonial = () => {
+		setActiveTestimonialIndex((currentIndex) =>
+			currentIndex === 0
+				? localBuyerTestimonials.length - 1
+				: currentIndex - 1,
+		);
+	};
+
+	const showNextTestimonial = () => {
+		setActiveTestimonialIndex((currentIndex) =>
+			(currentIndex + 1) % localBuyerTestimonials.length,
+		);
+	};
+
+	useEffect(() => {
+		const autoplayTimer = window.setInterval(() => {
+			showNextTestimonial();
+		}, 3000);
+
+		return () => {
+			window.clearInterval(autoplayTimer);
+		};
+	}, [activeTestimonialIndex]);
+
 	return (
 		<div
 			className="bg-white flex flex-col items-start relative w-full"
@@ -1044,9 +1094,25 @@ export default function KenyanBuyers() {
 						Hear from businesses making an impact with Farm to Feed.
 					</p>
 					<div className="flex flex-col gap-6 items-center justify-center relative w-full lg:flex-row lg:gap-10">
-						{localBuyerTestimonialControls.map((Control) => (
-							<Control key={Control.name} />
-						))}
+						<button
+							aria-label="Show previous testimonial"
+							className="group rounded-[40px] bg-transparent border-0 p-0 transition-transform duration-200 hover:-translate-y-0.5 focus-visible:-translate-y-0.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#747c50]"
+							onClick={showPreviousTestimonial}
+							type="button">
+							<Order4 />
+						</button>
+						<Frame6
+							company={activeTestimonial.company}
+							name={activeTestimonial.name}
+							quote={activeTestimonial.quote}
+						/>
+						<button
+							aria-label="Show next testimonial"
+							className="group rounded-[40px] bg-transparent border-0 p-0 transition-transform duration-200 hover:-translate-y-0.5 focus-visible:-translate-y-0.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#747c50]"
+							onClick={showNextTestimonial}
+							type="button">
+							<Order5 />
+						</button>
 					</div>
 				</ContentContainer>
 				<div
