@@ -11,6 +11,7 @@ import { BackgroundBottomSvg } from "../imports/Home/background-bottom";
 import * as HomeSvgs from "../imports/Home/home-inline-svgs";
 import { Header } from "../components/Header";
 import { Footer } from "../components/Footer";
+import { Button } from "../components/Button";
 import { ContentContainer } from "../components/layout/ContentContainer";
 import { sectionSpacing } from "../components/layout/spacing";
 import { typeStyles } from "../components/layout/typography";
@@ -179,14 +180,13 @@ export default function Home() {
 									</p>
 								</div>
 							</div>
-							<div
-								className="bg-green-500 col-1 flex items-start ml-24.75 mt-88 px-4 py-2 relative rounded-full row-1"
+							<Button
+								href="/sell-with-us"
+								size="sm"
+								className="col-1 ml-24.75 mt-88 relative row-1 text-[#eee]"
 								data-name="order">
-								<p
-									className={`${typeStyles.body} not-italic relative shrink-0 text-[#eee] text-center whitespace-nowrap`}>
-									Sell with us
-								</p>
-							</div>
+								Sell with us
+							</Button>
 						</div>
 						<div className="grid-cols-[max-content] grid-rows-[max-content] inline-grid place-items-start relative shrink-0">
 							<div
@@ -223,14 +223,13 @@ export default function Home() {
 									</p>
 								</div>
 							</div>
-							<div
-								className="bg-green-500 col-1 flex items-start ml-24.75 mt-88 px-4 py-2 relative rounded-full row-1"
+							<Button
+								href="/kenyan-buyers"
+								size="sm"
+								className="col-1 ml-24.75 mt-88 relative row-1 text-[#eee]"
 								data-name="order">
-								<p
-									className={`${typeStyles.body} not-italic relative shrink-0 text-[#eee] text-center whitespace-nowrap`}>
-									Buy from us
-								</p>
-							</div>
+								Buy from us
+							</Button>
 						</div>
 						<div className="grid-cols-[max-content] grid-rows-[max-content] inline-grid place-items-start relative shrink-0">
 							<div
@@ -258,14 +257,13 @@ export default function Home() {
 									</p>
 								</div>
 							</div>
-							<div
-								className="bg-green-500 col-1 flex items-start ml-24.75 mt-88 px-4 py-2 relative rounded-full row-1"
+							<Button
+								href="/global-buys"
+								size="sm"
+								className="col-1 ml-24.75 mt-88 relative row-1 text-[#eee]"
 								data-name="order">
-								<p
-									className={`${typeStyles.body} not-italic relative shrink-0 text-[#eee] text-center whitespace-nowrap`}>
-									Learn more
-								</p>
-							</div>
+								Learn more
+							</Button>
 						</div>
 					</div>
 				</ContentContainer>
@@ -307,15 +305,13 @@ export default function Home() {
 								affordable food with confidence.
 							</p>
 						</div>
-						<div
-							className="bg-green-500 flex items-start px-6 py-3 relative rounded-[40px] shrink-0"
+						<Button
+							href="/our-impact"
+							size="lg"
+							className="relative shrink-0 text-white"
 							data-name="order">
-							<a
-								href="/impact"
-								className={`${typeStyles.body} not-italic relative shrink-0 text-center text-white whitespace-nowrap`}>
-								View Our Impact
-							</a>
-						</div>
+							View Our Impact
+						</Button>
 					</div>
 				</ContentContainer>
 				<div
@@ -434,14 +430,13 @@ export default function Home() {
 							We produce excellence for all actors in the supply
 							chain, from farmer to customer
 						</p>
-						<div
-							className="bg-green-500 flex items-start px-4 py-2 relative rounded-[40px] shrink-0"
+						<Button
+							href="/our-impact"
+							size="sm"
+							className="relative shrink-0 text-[#eee]"
 							data-name="order">
-							<p
-								className={`${typeStyles.body} not-italic relative shrink-0 text-[#eee] text-center whitespace-nowrap`}>
-								Learn More
-							</p>
-						</div>
+							Learn More
+						</Button>
 					</div>
 				</ContentContainer>
 
@@ -569,14 +564,12 @@ export default function Home() {
 									Check out our latest News!
 								</h2>
 							</div>
-							<a
-								className="bg-green-500 flex items-start justify-center px-4 py-2 relative rounded-[40px] shrink-0 w-fit"
-								href="/news-events">
-								<span
-									className={`${typeStyles.body} not-italic relative shrink-0 text-[#eee] text-center whitespace-nowrap`}>
-									View All
-								</span>
-							</a>
+							<Button
+								href="/news-events"
+								size="sm"
+								className="relative shrink-0 w-fit text-[#eee]">
+								View All
+							</Button>
 						</div>
 						<div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3 relative shrink-0 w-full">
 							{newsItems.map((item) => (

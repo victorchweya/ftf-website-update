@@ -18,6 +18,7 @@ import { imgGroup } from "../imports/SellWithUs-3/svg-hwxr2";
 import { BottomLandscapeSvg } from "../imports/SellWithUs-3/bottom-landscape";
 import { Header } from "../components/Header";
 import { Footer } from "../components/Footer";
+import { Button } from "../components/Button";
 import { ContentContainer } from "../components/layout/ContentContainer";
 import { sectionSpacing } from "../components/layout/spacing";
 import { typeStyles } from "../components/layout/typography";
@@ -236,14 +237,14 @@ export default function SellWithUs() {
 						</div>
 					</div>
 				</ContentContainer>
-				<div
-					className="absolute bg-black flex items-start left-[calc(41.67%+6px)] px-4 py-2 rounded-[40px] top-[1649px]"
+				<Button
+					href="/our-impact"
+					variant="none"
+					size="sm"
+					className="absolute left-[calc(41.67%+6px)] top-[1649px] bg-black text-[#eee]"
 					data-name="order">
-					<p
-						className={`${typeStyles.body} not-italic relative shrink-0 text-[#eee] text-center whitespace-nowrap`}>
-						Learn More
-					</p>
-				</div>
+					Learn More
+				</Button>
 			</div>
 			{/* How it works */}
 			<div

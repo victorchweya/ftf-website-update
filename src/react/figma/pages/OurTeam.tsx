@@ -16,6 +16,7 @@ import {
 } from "../imports/OurTeam/OurTeam-33-8151";
 import { Header } from "../components/Header";
 import { Footer } from "../components/Footer";
+import { Button } from "../components/Button";
 import { ContentContainer } from "../components/layout/ContentContainer";
 import svgPaths from "../imports/OurTeam/svg-jwjuc7xr3o";
 import { BottomLandscapeSvg } from "../imports/SellWithUs-3/bottom-landscape";
@@ -281,13 +282,14 @@ export default function OurTeam() {
 								</p>
 							</div>
 							{teamFilters.map((filter) => (
-								<div
-									className={`flex items-start px-4 py-2 relative rounded-[40px] shrink-0 ${filter.active ? "bg-green-500" : "bg-[#eff6ef]"}`}>
-									<p
-										className={`${typeStyles.body} relative shrink-0 text-center whitespace-nowrap ${filter.active ? "text-[#eee]" : "text-[#0f251b]"}`}>
-										{filter.label}
-									</p>
-								</div>
+								<Button
+									type="button"
+									variant={filter.active ? "primary" : "none"}
+									size="sm"
+									className={`relative shrink-0 ${filter.active ? "text-[#eee]" : "bg-[#eff6ef] text-[#0f251b]"}`}
+									key={filter.label}>
+									{filter.label}
+								</Button>
 							))}
 						</div>
 						<div className="flex flex-col gap-8 items-start relative w-full max-w-[1276px]">
@@ -405,19 +407,14 @@ export default function OurTeam() {
 								<span className="leading-normal text-[#f5e091]">{` team.`}</span>
 							</p>
 							<p className={`${typeStyles.bodyLarge} not-italic relative shrink-0 text-center text-white w-full max-w-148`}>{`Come work with us if that sounds like you. `}</p>
-							<div
-								className="bg-white relative rounded-[80px] shrink-0"
+							<Button
+								href="/careers"
+								variant="none"
+								size="lg"
+								className="relative shrink-0 bg-white text-[#122c20]"
 								data-name="Button / Primary">
-								<div className="flex items-center justify-center overflow-clip px-[20px] py-3 relative rounded-[inherit] size-full">
-									<p className={`${typeStyles.body} font-medium leading-6 not-italic relative shrink-0 text-[#122c20] whitespace-nowrap`}>
-										Current openings
-									</p>
-								</div>
-								<div
-									aria-hidden="true"
-									className="absolute border border-solid border-white inset-0 pointer-events-none rounded-[80px]"
-								/>
-							</div>
+								Current openings
+							</Button>
 						</div>
 					</div>
 				</ContentContainer>

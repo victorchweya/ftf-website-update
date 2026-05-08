@@ -1,4 +1,5 @@
 import { Link } from "./Link";
+import { Button } from "./Button";
 import { ContentContainer } from "./layout/ContentContainer";
 import { typeStyles } from "./layout/typography";
 import svgPaths from "../imports/Home/svg-6p5pyqd5kw";
@@ -7,12 +8,24 @@ const footerColumnClass = "flex flex-col gap-4 items-start relative w-full max-w
 const footerGroupClass = "flex flex-col gap-[14px] items-start not-italic relative shrink-0 w-full";
 const footerHeadingClass = `${typeStyles.bodyLead} relative shrink-0 text-white whitespace-nowrap`;
 const footerCopyClass = `${typeStyles.body} font-light relative shrink-0 text-[#dfeddf] w-full max-w-[379px]`;
-const footerActionClass = "flex items-start px-6 py-3 relative rounded-[40px] shrink-0";
-const footerActionTextClass = `${typeStyles.button} not-italic relative shrink-0 text-center whitespace-nowrap`;
 const contactRowClass = "flex gap-4 items-start relative shrink-0 w-full";
 const footerLinkWrapperClass = "flex items-center justify-center p-2 relative shrink-0";
 const footerLinkTextClass = `${typeStyles.button} not-italic relative shrink-0 text-center text-white whitespace-nowrap`;
 const footerIconClass = "relative shrink-0 size-6";
+
+const exploreLinks = [
+  { label: "Kenyan Buyers", to: "/kenyan-buyers" },
+  { label: "Global Buyers", to: "/global-buys" },
+  { label: "Careers", to: "/careers" },
+  { label: "Contact Us", to: "/contact-us" },
+  { label: "FAQs", to: "/faqs" },
+];
+
+const socialLinks = {
+  facebook: "https://www.facebook.com/farmtofeedkenya/",
+  instagram: "https://instagram.com/farm_to_feed_kenya?igshid=1gymo74ypgrj0",
+  linkedin: "https://www.linkedin.com/company/farm-to-feed-kenya/",
+};
 
 function Icon() {
   return (
@@ -94,9 +107,14 @@ function Frame6() {
 
 function Order7() {
   return (
-    <div className={`bg-[#eff6ef] ${footerActionClass}`} data-name="order">
-      <p className={`${footerActionTextClass} text-green-500`}>Sell With Us</p>
-    </div>
+    <Button
+      href="/sell-with-us"
+      variant="none"
+      size="lg"
+      className="relative shrink-0 bg-[#eff6ef] text-green-500"
+      data-name="order">
+      Sell With Us
+    </Button>
   );
 }
 
@@ -110,9 +128,16 @@ function Frame5() {
 
 function Order8() {
   return (
-    <div className={`bg-orange-500 ${footerActionClass}`} data-name="order">
-      <p className={`${footerActionTextClass} text-[#eff6ef]`}>Log In</p>
-    </div>
+    <Button
+      data-name="order"
+      href="https://shop.farmtofeedkenya.com/auth/login"
+      rel="noreferrer"
+      target="_blank"
+      variant="secondary"
+      size="lg"
+      className="relative shrink-0 text-[#eff6ef]">
+      Log In
+    </Button>
   );
 }
 
@@ -159,7 +184,11 @@ function Frame11() {
   return (
     <div className={contactRowClass}>
       <PrimeEnvelope />
-      <p className={`${typeStyles.body} font-light not-italic relative text-white break-words`}>info@farmtofeedkenya.com</p>
+      <a
+        className={`${typeStyles.body} font-light not-italic relative text-white break-words`}
+        href="mailto:info@farmtofeedkenya.com">
+        info@farmtofeedkenya.com
+      </a>
     </div>
   );
 }
@@ -180,7 +209,11 @@ function Frame12() {
   return (
     <div className={contactRowClass}>
       <PrimePhone />
-      <p className={`flex-[1_0_0] ${typeStyles.body} font-light min-w-px not-italic relative text-white`}>+254 795 851 756</p>
+      <a
+        className={`flex-[1_0_0] ${typeStyles.body} font-light min-w-px not-italic relative text-white`}
+        href="tel:+254795851756">
+        +254 795 851 756
+      </a>
     </div>
   );
 }
@@ -226,54 +259,18 @@ function Frame8() {
   );
 }
 
-function Solution1() {
-  return (
-    <div className={footerLinkWrapperClass} data-name="solution">
-      <p className={footerLinkTextClass}>Kenyan Buyers</p>
-    </div>
-  );
-}
-
-function AboutUs2() {
-  return (
-    <div className={footerLinkWrapperClass} data-name="about-us">
-      <p className={footerLinkTextClass}>Global Buyers</p>
-    </div>
-  );
-}
-
-function AboutUs3() {
-  return (
-    <div className={footerLinkWrapperClass} data-name="about-us">
-      <p className={footerLinkTextClass}>Careers</p>
-    </div>
-  );
-}
-
-function AboutUs4() {
-  return (
-    <Link to="/contact-us" className={footerLinkWrapperClass} data-name="about-us">
-      <p className={footerLinkTextClass}>Contact Us</p>
-    </Link>
-  );
-}
-
-function AboutUs5() {
-  return (
-    <Link to="/faqs" className={footerLinkWrapperClass} data-name="about-us">
-      <p className={footerLinkTextClass}>FAQs</p>
-    </Link>
-  );
-}
-
 function Frame22() {
   return (
     <div className="flex flex-col items-start justify-center relative shrink-0">
-      <Solution1 />
-      <AboutUs2 />
-      <AboutUs3 />
-      <AboutUs4 />
-      <AboutUs5 />
+      {exploreLinks.map((link) => (
+        <Link
+          className={footerLinkWrapperClass}
+          data-name="footer-link"
+          key={link.to}
+          to={link.to}>
+          <p className={footerLinkTextClass}>{link.label}</p>
+        </Link>
+      ))}
     </div>
   );
 }
@@ -298,7 +295,13 @@ function Frame14() {
 function Frame16() {
   return (
     <div className="flex gap-8 items-start relative">
-      <div className="overflow-clip relative shrink-0 size-6" data-name="facebook">
+      <a
+        aria-label="Farm to Feed on Facebook"
+        className="overflow-clip relative shrink-0 size-6"
+        data-name="facebook"
+        href={socialLinks.facebook}
+        rel="noreferrer"
+        target="_blank">
         <div className="absolute bottom-[8.33%] left-[29.17%] right-1/4 top-[8.33%]" data-name="Icon">
           <div className="absolute inset-[-5%_-9.09%]">
             <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 13 22">
@@ -306,8 +309,14 @@ function Frame16() {
             </svg>
           </div>
         </div>
-      </div>
-      <div className="overflow-clip relative shrink-0 size-6" data-name="instagram">
+      </a>
+      <a
+        aria-label="Farm to Feed on Instagram"
+        className="overflow-clip relative shrink-0 size-6"
+        data-name="instagram"
+        href={socialLinks.instagram}
+        rel="noreferrer"
+        target="_blank">
         <div className="absolute inset-[8.33%]" data-name="Icon">
           <div className="absolute inset-[-5%]">
             <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 22 22">
@@ -315,8 +324,14 @@ function Frame16() {
             </svg>
           </div>
         </div>
-      </div>
-      <div className="overflow-clip relative shrink-0 size-6" data-name="linkedin">
+      </a>
+      <a
+        aria-label="Farm to Feed on LinkedIn"
+        className="overflow-clip relative shrink-0 size-6"
+        data-name="linkedin"
+        href={socialLinks.linkedin}
+        rel="noreferrer"
+        target="_blank">
         <div className="absolute inset-[8.33%_8.33%_12.5%_8.33%]" data-name="Icon">
           <div className="absolute inset-[-5.26%_-5%]">
             <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 22 21">
@@ -328,7 +343,7 @@ function Frame16() {
             </svg>
           </div>
         </div>
-      </div>
+      </a>
     </div>
   );
 }
