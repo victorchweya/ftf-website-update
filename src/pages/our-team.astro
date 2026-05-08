@@ -1,13 +1,8 @@
 ---
-import Layout from "../layouts/Layout.astro";
+import FigmaPageLayout from "../layouts/FigmaPageLayout.astro";
+import OurTeam from "../react/figma/pages/OurTeam";
 ---
 
-<Layout title="Our Team">
-	<section class="space-y-4">
-		<h1 class="text-3xl font-bold">Our Team</h1>
-		<p>
-			Meet the people behind the business and the experts shaping our
-			strategy.
-		</p>
-	</section>
-</Layout>
+<FigmaPageLayout title="Our Team">
+	<OurTeam client:load />
+</FigmaPageLayout>

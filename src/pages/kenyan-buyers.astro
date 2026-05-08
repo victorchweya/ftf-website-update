@@ -1,13 +1,8 @@
 ---
-import Layout from "../layouts/Layout.astro";
+import FigmaPageLayout from "../layouts/FigmaPageLayout.astro";
+import KenyanBuyers from "../react/figma/pages/KenyanBuyers";
 ---
 
-<Layout title="Kenyan Buyers">
-	<section class="space-y-4">
-		<h1 class="text-3xl font-bold">Kenyan Buyers</h1>
-		<p>
-			Learn how we connect Kenyan buyers to high-quality products,
-			services, and trusted sellers.
-		</p>
-	</section>
-</Layout>
+<FigmaPageLayout title="Kenyan Buyers">
+	<KenyanBuyers client:load />
+</FigmaPageLayout>

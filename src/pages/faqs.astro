@@ -1,13 +1,8 @@
 ---
-import Layout from "../layouts/Layout.astro";
+import FigmaPageLayout from "../layouts/FigmaPageLayout.astro";
+import FAQs from "../react/figma/pages/FAQs";
 ---
 
-<Layout title="FAQs">
-	<section class="space-y-4">
-		<h1 class="text-3xl font-bold">FAQs</h1>
-		<p>
-			Frequently asked questions about our services, buying process, and
-			selling with us.
-		</p>
-	</section>
-</Layout>
+<FigmaPageLayout title="FAQs">
+	<FAQs client:load />
+</FigmaPageLayout>

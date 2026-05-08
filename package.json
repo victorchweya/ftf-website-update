@@ -12,8 +12,13 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@astrojs/react": "^5.0.4",
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
     "astro": "^6.2.2",
-    "primeicons": "^7.0.0"
+    "primeicons": "^7.0.0",
+    "react": "^19.2.6",
+    "react-dom": "^19.2.6"
   },
   "devDependencies": {
     "@fontsource/fraunces": "^5.2.9",

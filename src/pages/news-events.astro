@@ -1,12 +1,8 @@
 ---
-import Layout from "../layouts/Layout.astro";
+import FigmaPageLayout from "../layouts/FigmaPageLayout.astro";
+import NewsAndEvents from "../react/figma/pages/NewsAndEvents";
 ---
 
-<Layout title="News & Events">
-	<section class="space-y-4">
-		<h1 class="text-3xl font-bold">News & Events</h1>
-		<p>
-			Stay updated on the latest announcements, news, and upcoming events.
-		</p>
-	</section>
-</Layout>
+<FigmaPageLayout title="News & Events">
+	<NewsAndEvents client:load />
+</FigmaPageLayout>
