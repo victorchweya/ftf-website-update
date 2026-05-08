@@ -78,8 +78,8 @@ export default function Home() {
 				<Header />
 				<ContentContainer
 					size="wide"
-					className="relative z-10 flex flex-col items-center justify-center pt-48 pb-24">
-					<div className="flex flex-col gap-[30px] items-center max-w-[666px] not-italic text-center relative w-full">
+					className="relative z-10 flex flex-col items-center justify-center pt-40 xl::pt-48 pb-24">
+					<div className="flex flex-col gap-8 items-center max-w-xl not-italic text-center relative w-full">
 						<p
 							className={`${typeStyles.heroTitleXL} relative shrink-0 text-green-500 w-full`}>
 							Shaping the Future of Food
@@ -92,11 +92,11 @@ export default function Home() {
 					</div>
 				</ContentContainer>
 			</div>
-			<div className="-mt-64">
+			<div className="-mt-32 md:-mt-64 lg:-mt-72 relative z-10">
 				<ContentContainer
 					size="wide"
 					className="relative z-10 flex justify-center pb-30">
-					<div className="flex flex-col lg:flex-row gap-16 items-center justify-center  relative max-w-[1280px] w-full">
+					<div className="flex flex-col lg:flex-row gap-16 items-center justify-center  relative max-w-7xl w-full">
 						<div className="grid-cols-[max-content] grid-rows-[max-content] inline-grid place-items-start relative shrink-0">
 							<div
 								className="col-1 h-74.5 ml-0 mt-20 relative row-1 w-75.75"
@@ -105,16 +105,8 @@ export default function Home() {
 									<HomeSvgs.HeroSvg01 />
 								</div>
 							</div>
-							<div
-								className="bg-green-500 col-1 flex items-start ml-24.75 mt-91.75 px-4 py-2 relative rounded-full row-1"
-								data-name="order">
-								<p
-									className={`${typeStyles.body} not-italic relative shrink-0 text-[#eee] text-center whitespace-nowrap`}>
-									Sell with us
-								</p>
-							</div>
-							<div className="col-1 flex flex-col gap-8 items-center ml-[46px] mt-0 relative row-1 w-[217px]">
-								<div className="h-[154px] relative shrink-0 w-[158px]">
+							<div className="col-1 flex flex-col gap-8 items-center ml-11.5 mt-0 relative row-1 w-54.25">
+								<div className="h-38.5 relative shrink-0 w-39.5">
 									<HomeSvgs.HeroSvg02 />
 								</div>
 								<div className="flex flex-col gap-4 items-center not-italic relative shrink-0 text-center w-full">
@@ -126,42 +118,42 @@ export default function Home() {
 										</p>
 									</div>
 									<p
-										className={`${typeStyles.body} min-w-full relative shrink-0 text-green-500 w-[min-content]`}>
+										className={`${typeStyles.body} min-w-full relative shrink-0 text-green-500 w-min`}>
 										The future of food starts with you
 									</p>
 								</div>
 							</div>
+							<div
+								className="bg-green-500 col-1 flex items-start ml-24.75 mt-88 px-4 py-2 relative rounded-full row-1"
+								data-name="order">
+								<p
+									className={`${typeStyles.body} not-italic relative shrink-0 text-[#eee] text-center whitespace-nowrap`}>
+									Sell with us
+								</p>
+							</div>
 						</div>
 						<div className="grid-cols-[max-content] grid-rows-[max-content] inline-grid place-items-start relative shrink-0">
 							<div
-								className="col-1 h-[298px] ml-0 mt-[86px] relative row-1 w-[303px]"
+								className="col-1 h-74.5 ml-0 mt-20 relative row-1 w-75.75"
 								data-name="Vector">
 								<div className="absolute inset-[-1.34%_-7.92%_-14.77%_-7.92%]">
 									<HomeSvgs.HeroSvg03 />
 								</div>
 							</div>
-							<div
-								className="bg-green-500 col-1 flex items-start ml-[83px] mt-[363px] px-4 py-2 relative rounded-[40px] row-1"
-								data-name="order">
-								<p
-									className={`${typeStyles.body} not-italic relative shrink-0 text-center text-white whitespace-nowrap`}>
-									Buy from us
-								</p>
-							</div>
-							<div className="col-1 flex flex-col gap-[48px] items-center ml-[46px] mt-0 relative row-1 w-[217px]">
+							<div className="col-1 flex flex-col gap-8 items-center ml-11.5 mt-0 relative row-1 w-54.25">
 								<div className="grid-cols-[max-content] grid-rows-[max-content] inline-grid leading-zero place-items-start relative shrink-0">
 									<div
-										className="col-1 h-[154px] ml-0 mt-0 relative row-1 w-[158.083px]"
+										className="col-1 h-38.5 ml-0 mt-0 relative row-1 w-39.5"
 										data-name="Group">
 										<HomeSvgs.HeroSvg04 />
 									</div>
 									<div
-										className="col-1 h-[79.226px] ml-[37.73px] mt-[32.8px] relative row-1 w-[81.741px]"
+										className="col-1 h-19.75 ml-9.5 mt-8.25 relative row-1 w-20.5"
 										data-name="Capa_1">
 										<HomeSvgs.HeroSvg05 />
 									</div>
 								</div>
-								<div className="flex flex-col gap-8 items-center not-italic relative shrink-0 text-center w-full">
+								<div className="flex flex-col gap-4 items-center not-italic relative shrink-0 text-center w-full">
 									<div
 										className={`${typeStyles.cardTitle} relative shrink-0 text-[#0f251b] whitespace-nowrap`}>
 										<p className="leading-normal mb-0 whitespace-pre">{`For Kenyan `}</p>
@@ -170,33 +162,33 @@ export default function Home() {
 										</p>
 									</div>
 									<p
-										className={`${typeStyles.body} min-w-full relative shrink-0 text-green-500 w-[min-content]`}>
+										className={`${typeStyles.body} min-w-full relative shrink-0 text-green-500 w-min`}>
 										The future of food, delivered to you
 									</p>
 								</div>
 							</div>
+							<div
+								className="bg-green-500 col-1 flex items-start ml-24.75 mt-88 px-4 py-2 relative rounded-full row-1"
+								data-name="order">
+								<p
+									className={`${typeStyles.body} not-italic relative shrink-0 text-[#eee] text-center whitespace-nowrap`}>
+									Buy from us
+								</p>
+							</div>
 						</div>
 						<div className="grid-cols-[max-content] grid-rows-[max-content] inline-grid place-items-start relative shrink-0">
 							<div
-								className="col-1 h-[298px] ml-0 mt-[93px] relative row-1 w-[303px]"
+								className="col-1 h-74.5 ml-0 mt-20 relative row-1 w-75.75"
 								data-name="Vector">
 								<div className="absolute inset-[-1.34%_-7.92%_-14.77%_-7.92%]">
 									<HomeSvgs.HeroSvg06 />
 								</div>
 							</div>
-							<div
-								className="bg-green-500 col-1 flex items-start ml-[92px] mt-[366px] px-4 py-2 relative rounded-[40px] row-1"
-								data-name="order">
-								<p
-									className={`${typeStyles.body} not-italic relative shrink-0 text-center text-white whitespace-nowrap`}>
-									Learn more
-								</p>
-							</div>
-							<div className="col-1 flex flex-col gap-[48px] items-center ml-[46px] mt-0 relative row-1 w-[217px]">
-								<div className="h-[154px] relative shrink-0 w-[158px]">
+							<div className="col-1 flex flex-col gap-8 items-center ml-11.5 mt-0 relative row-1 w-54.25">
+								<div className="h-38.5 relative shrink-0 w-39.5">
 									<HomeSvgs.HeroSvg07 />
 								</div>
-								<div className="flex flex-col gap-8 items-center not-italic relative shrink-0 text-center w-full">
+								<div className="flex flex-col gap-4 items-center not-italic relative shrink-0 text-center w-full">
 									<div
 										className={`${typeStyles.cardTitle} relative shrink-0 text-[#0f251b] whitespace-nowrap`}>
 										<p className="leading-normal mb-0 whitespace-pre">{`For Global `}</p>
@@ -209,6 +201,14 @@ export default function Home() {
 										The future of food, supplied from Kenya
 									</p>
 								</div>
+							</div>
+							<div
+								className="bg-green-500 col-1 flex items-start ml-24.75 mt-88 px-4 py-2 relative rounded-full row-1"
+								data-name="order">
+								<p
+									className={`${typeStyles.body} not-italic relative shrink-0 text-[#eee] text-center whitespace-nowrap`}>
+									Learn more
+								</p>
 							</div>
 						</div>
 					</div>
