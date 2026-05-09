@@ -2,9 +2,11 @@
 import Layout from "../layouts/Layout.astro";
 import Button from "../components/Button.astro";
 import ContentContainer from "../components/layout/ContentContainer.astro";
+import BorderBottomKenyanBuyersSvg from "../components/figma/BorderBottomKenyanBuyersSvg.astro";
 import BorderTopKenyanBuyersSvg from "../components/figma/BorderTopKenyanBuyersSvg.astro";
 import * as KenyanBuyersSvgs from "../lib/figmaMarkup/kenyanBuyersSvgs";
-import { Order4, Order5 } from "../lib/figmaMarkup/buyFromUsLocal";
+import { Frame6, Order4, Order5 } from "../lib/figmaMarkup/buyFromUsLocal";
+import { supplierStoryMask } from "../lib/figmaMarkup/sellWithUsMask";
 import { sectionSpacing, typeStyles } from "../lib/figmaStyles";
 import browseIcon from "../assets/figma/kenyan-buyers/browse.svg?url";
 import connectIcon from "../assets/figma/kenyan-buyers/connect.svg?url";
@@ -159,6 +161,26 @@ const localBuyerTestimonials = [
 			"We can source the volumes we need without compromising on freshness, price, or the impact we want our business to make.",
 	},
 ];
+
+const testimonialQuoteClass =
+	'class="font-sans font-normal leading-[1.68] min-w-full not-italic relative shrink-0 text-[16px] text-black tracking-[0.48px] w-min"';
+const testimonialNameClass =
+	'class="font-sans font-semibold relative shrink-0 w-full"';
+const testimonialCompanyClass =
+	'class="font-sans font-normal relative shrink-0 w-full"';
+const localBuyerTestimonialCardHtml = Frame6
+	.replace(
+		`${testimonialQuoteClass}> Farm to Feed has been supplying us with amazing veggies. We get an assortment each week and we love working with them on saving food where we can.`,
+		`${testimonialQuoteClass} data-testimonial-quote>${localBuyerTestimonials[0].quote}`,
+	)
+	.replace(
+		`${testimonialNameClass}>Delia Sterling`,
+		`${testimonialNameClass} data-testimonial-name>${localBuyerTestimonials[0].name}`,
+	)
+	.replace(
+		`${testimonialCompanyClass}>Brown&#x27;s food company`,
+		`${testimonialCompanyClass} data-testimonial-company>${localBuyerTestimonials[0].company}`,
+	);
 ---
 
 <Layout title="Kenyan Buyers">
@@ -438,22 +460,49 @@ const localBuyerTestimonials = [
 				</div>
 
 				<div class="relative mx-auto mt-[64px] hidden h-[560px] max-w-[1180px] lg:block">
-					{localBuyerHowItWorksSteps.map((step, index) => (
-						<>
-							<div class={["absolute h-[198.445px] w-[203.707px]", ["left-[30px] top-[150px]", "left-[290px] top-[15px]", "left-[560px] top-[245px]", "right-[70px] top-[45px]"][index]]}>
-								<img alt="" aria-hidden="true" class="size-full object-contain" src={step.icon} />
-							</div>
-							<div class={["absolute flex gap-4 items-start", ["left-[35px] top-[370px]", "left-[520px] top-[10px]", "left-[690px] top-[440px]", "right-[5px] top-[260px]"][index]]}>
-								<div class={`${typeStyles.body} flex size-10 shrink-0 items-center justify-center rounded-full font-medium leading-normal`} style={`background-color: ${step.color}; color: ${step.textColor};`}>
-									{index + 1}
-								</div>
-								<div class="flex flex-col gap-4 items-start not-italic relative shrink-0 w-[204px]">
-									<p class={`${typeStyles.cardTitleSmall} leading-normal relative shrink-0 text-[#0f251b] tracking-card w-full`}>{step.title}</p>
-									<p class={`${typeStyles.caption} relative shrink-0 text-green-500 w-full`}>{step.body}</p>
-								</div>
-							</div>
-						</>
-					))}
+					<div class="absolute left-[30px] top-[150px] h-[200px] w-[205.303px]" data-name="Group">
+						<img alt="" aria-hidden="true" class="size-full object-contain" src={localBuyerHowItWorksSteps[0].icon} />
+					</div>
+					<div class="absolute left-[35px] top-[370px] flex gap-4 items-start">
+						<div class={`${typeStyles.body} flex size-10 shrink-0 items-center justify-center rounded-full bg-[#8c98ee] font-semibold leading-normal text-[#e6e6e6]`}>1</div>
+						<div class="flex flex-col gap-4 items-start not-italic relative shrink-0 w-[204px]">
+							<p class={`${typeStyles.cardTitleSmall} leading-normal relative shrink-0 text-[#0f251b] tracking-card w-full`}>Connect with sales</p>
+							<p class={`${typeStyles.caption} relative shrink-0 text-green-500 w-full`}>Our Sales team is ready to speak with you</p>
+						</div>
+					</div>
+
+					<div class="absolute left-[290px] top-[15px] h-[198.445px] w-[203.707px]">
+						<img alt="" aria-hidden="true" class="size-full object-contain" src={localBuyerHowItWorksSteps[1].icon} />
+					</div>
+					<div class="absolute left-[520px] top-[10px] flex gap-4 items-start">
+						<div class={`${typeStyles.body} flex size-10 shrink-0 items-center justify-center rounded-full bg-[#a35380] font-medium leading-normal text-[#e6e6e6]`}>2</div>
+						<div class="flex flex-col gap-4 items-start not-italic relative shrink-0 w-[204px]">
+							<p class={`${typeStyles.cardTitleSmall} leading-normal relative shrink-0 text-[#0f251b] tracking-card w-full`}>Browse the shop</p>
+							<p class={`${typeStyles.caption} relative shrink-0 text-green-500 w-full`}>Explore our wide range of fresh and dry products online</p>
+						</div>
+					</div>
+
+					<div class="absolute left-[560px] top-[245px] h-[200px] w-[205.303px]" data-name="Group">
+						<img alt="" aria-hidden="true" class="size-full object-contain" src={localBuyerHowItWorksSteps[2].icon} />
+					</div>
+					<div class="absolute left-[690px] top-[440px] flex gap-4 items-start">
+						<div class={`${typeStyles.body} flex size-10 shrink-0 items-center justify-center rounded-full bg-[#85a687] font-medium leading-normal text-[#e6e6e6]`}>3</div>
+						<div class="flex flex-col gap-4 items-start not-italic relative shrink-0 w-[204px]">
+							<p class={`${typeStyles.cardTitleSmall} leading-normal relative shrink-0 text-[#0f251b] tracking-card w-full`}>Place Order</p>
+							<p class={`${typeStyles.caption} relative shrink-0 text-green-500 w-full`}>Select your delivery window and checkout your cart</p>
+						</div>
+					</div>
+
+					<div class="absolute right-[70px] top-[45px] h-[198.445px] w-[203.707px]" data-name="Vector">
+						<img alt="" aria-hidden="true" class="size-full object-contain" src={localBuyerHowItWorksSteps[3].icon} />
+					</div>
+					<div class="absolute right-[5px] top-[260px] flex gap-4 items-start">
+						<div class={`${typeStyles.body} flex size-10 shrink-0 items-center justify-center rounded-full bg-[#ebc194] font-medium leading-normal text-[#2b1a08]`}>4</div>
+						<div class="flex flex-col gap-4 items-start not-italic relative shrink-0 w-[204px]">
+							<p class={`${typeStyles.cardTitleSmall} leading-normal relative shrink-0 text-[#0f251b] tracking-card w-full`}>Enjoy Delivery</p>
+							<p class={`${typeStyles.caption} relative shrink-0 text-green-500 w-full`}>Receive fresh, high quality ingredients directly to your doorstep</p>
+						</div>
+					</div>
 					<div class="absolute left-[120px] top-[55px] h-[145.923px] w-[143.362px]" style="--transform-inner-width: 1185; --transform-inner-height: 21;">
 						<div class="-scale-y-100 flex-none rotate-[132.38deg]">
 							<div class="h-[82.59px] relative w-[122.18px]" data-name="Design">
@@ -477,7 +526,7 @@ const localBuyerTestimonials = [
 					</div>
 				</div>
 			</ContentContainer>
-			<BorderTopKenyanBuyersSvg class="absolute inset-x-0 bottom-[-1px] rotate-180 w-full max-w-none pointer-events-none select-none" fill="#0F251B" />
+			<BorderBottomKenyanBuyersSvg class="absolute inset-x-0 top-0 w-full max-w-none pointer-events-none select-none" fill="#0F251B" />
 		</section>
 
 		<section class="bg-[#f3f5e7] min-h-[600px] md:min-h-[750px] overflow-clip relative rounded-bl-[40px] rounded-br-[40px] shrink-0 w-full" data-name="Testimonial" data-local-buyer-testimonials data-testimonials={JSON.stringify(localBuyerTestimonials)}>
@@ -489,19 +538,7 @@ const localBuyerTestimonials = [
 					<button aria-label="Show previous testimonial" class="group rounded-[40px] bg-transparent border-0 p-0 transition-transform duration-200 hover:-translate-y-0.5 focus-visible:-translate-y-0.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#747c50]" data-testimonial-previous type="button">
 						<Fragment set:html={Order4} />
 					</button>
-					<div class="relative w-full max-w-[640px] min-h-[323px]">
-						<div class="absolute inset-0 rounded-[30px] bg-white shadow-[0_20px_24px_rgba(16,24,40,0.10),0_8px_8px_rgba(16,24,40,0.04)]" />
-						<div class="relative flex min-h-[323px] flex-col justify-between gap-8 p-8 md:p-10">
-							<div class="flex flex-col gap-4">
-								<p class="font-serif text-[56px] leading-none text-green-500">&ldquo;</p>
-								<p class={`${typeStyles.body} text-black`} data-testimonial-quote>{localBuyerTestimonials[0].quote}</p>
-							</div>
-							<div class={`${typeStyles.body} text-[#808080]`}>
-								<p class="font-semibold" data-testimonial-name>{localBuyerTestimonials[0].name}</p>
-								<p data-testimonial-company>{localBuyerTestimonials[0].company}</p>
-							</div>
-						</div>
-					</div>
+					<Fragment set:html={localBuyerTestimonialCardHtml} />
 					<button aria-label="Show next testimonial" class="group rounded-[40px] bg-transparent border-0 p-0 transition-transform duration-200 hover:-translate-y-0.5 focus-visible:-translate-y-0.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#747c50]" data-testimonial-next type="button">
 						<Fragment set:html={Order5} />
 					</button>
@@ -514,10 +551,86 @@ const localBuyerTestimonials = [
 					</div>
 				</div>
 			</div>
+			<div class="absolute hidden h-[307.61px] items-center justify-center left-[31px] top-[160px] w-[332.171px] lg:flex" style="--transform-inner-width: 1185; --transform-inner-height: 252;">
+				<div class="flex-none rotate-[38.46deg]">
+					<div class="h-[151.494px] overflow-clip relative w-[303.868px]" data-name="Capa_1">
+						<div class="absolute contents inset-[46.94%_-0.01%_5.53%_67.34%]" data-name="Group">
+							<div class="absolute contents inset-[46.94%_-0.01%_5.53%_67.34%]" data-name="Group">
+								<div class="absolute inset-[46.94%_-0.01%_5.53%_67.34%]" data-name="Vector">
+									<Fragment set:html={KenyanBuyersSvgs.KenyanBuyersSvg74} />
+								</div>
+								<div class="absolute contents inset-[46.94%_-0.01%_5.53%_67.34%]" data-name="Clip path group">
+									<div
+										class="absolute inset-[48.28%_18.79%_8.68%_66.58%] mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-[-1.17px_-0.16px] mask-size-[122.51px_118.116px]"
+										style={`mask-image: url('${supplierStoryMask}');`}
+										data-name="Group">
+										<Fragment set:html={KenyanBuyersSvgs.KenyanBuyersSvg75} />
+									</div>
+								</div>
+							</div>
+							<div class="absolute inset-[53.61%_20.85%_13.05%_69.52%]" data-name="Vector">
+								<div class="absolute inset-[-0.99%_-1.71%]">
+									<Fragment set:html={KenyanBuyersSvgs.KenyanBuyersSvg76} />
+								</div>
+							</div>
+							<div class="absolute inset-[57.31%_23.09%_17.53%_71.61%]" data-name="Vector">
+								<div class="absolute inset-[-1.31%_-3.11%]">
+									<Fragment set:html={KenyanBuyersSvgs.KenyanBuyersSvg77} />
+								</div>
+							</div>
+						</div>
+						<div class="absolute inset-[39.79%_23.6%_0_58.17%]" data-name="Group">
+							<Fragment set:html={KenyanBuyersSvgs.KenyanBuyersSvg78} />
+						</div>
+						<div class="absolute inset-[0_71.17%_39.23%_0]" data-name="Vector">
+							<Fragment set:html={KenyanBuyersSvgs.KenyanBuyersSvg79} />
+						</div>
+						<div class="absolute inset-[45.69%_58.11%_38.2%_12.15%]" data-name="Vector">
+							<Fragment set:html={KenyanBuyersSvgs.KenyanBuyersSvg80} />
+						</div>
+						<div class="absolute inset-[21.92%_56.03%_50.52%_14.04%]" data-name="Vector">
+							<Fragment set:html={KenyanBuyersSvgs.KenyanBuyersSvg81} />
+						</div>
+						<div class="absolute inset-[22.12%_69.87%_48.92%_6.48%]" data-name="Vector">
+							<Fragment set:html={KenyanBuyersSvgs.KenyanBuyersSvg82} />
+						</div>
+						<div class="absolute inset-[33.5%_62.34%_50.52%_16.54%]" data-name="Vector">
+							<Fragment set:html={KenyanBuyersSvgs.KenyanBuyersSvg83} />
+						</div>
+						<div class="absolute inset-[30.28%_27.75%_11.86%_52.01%]" data-name="Group">
+							<Fragment set:html={KenyanBuyersSvgs.KenyanBuyersSvg84} />
+						</div>
+						<div class="absolute inset-[34.94%_41.44%_7.36%_30.22%]" data-name="Vector">
+							<Fragment set:html={KenyanBuyersSvgs.KenyanBuyersSvg85} />
+						</div>
+					</div>
+				</div>
+			</div>
 			<div class="absolute hidden h-[858px] items-center justify-center left-[-2.92%] right-[-1.39%] top-[-767px] lg:flex" style="container-type:size">
 				<div class="-scale-x-100 flex-none h-[100cqw] rotate-90 w-[100cqh]">
 					<div class="relative size-full" data-name="Vector">
 						<Fragment set:html={KenyanBuyersSvgs.KenyanBuyersSvg86} />
+					</div>
+				</div>
+			</div>
+			<div class="absolute hidden h-[203.64px] items-center justify-center left-[128px] top-[561px] w-[245.05px] lg:flex" style="--transform-inner-width: 1185; --transform-inner-height: 105;">
+				<div class="flex-none rotate-[34.14deg]">
+					<div class="h-[83.796px] overflow-clip relative w-[239.258px]" data-name="Capa_1">
+						<div class="absolute inset-[6.94%_64.93%_13.37%_0.68%]" data-name="Group">
+							<Fragment set:html={KenyanBuyersSvgs.KenyanBuyersSvg87} />
+						</div>
+						<div class="absolute inset-[5.45%_47.3%_7.78%_26.47%]" data-name="Group">
+							<Fragment set:html={KenyanBuyersSvgs.KenyanBuyersSvg88} />
+						</div>
+						<div class="absolute inset-[0_28.06%_2.86%_40.72%]" data-name="Group">
+							<Fragment set:html={KenyanBuyersSvgs.KenyanBuyersSvg89} />
+						</div>
+						<div class="absolute inset-[4.39%_13.86%_2.28%_57.71%]" data-name="Group">
+							<Fragment set:html={KenyanBuyersSvgs.KenyanBuyersSvg90} />
+						</div>
+						<div class="absolute inset-[0_0.75%_24.42%_74.76%]" data-name="Group">
+							<Fragment set:html={KenyanBuyersSvgs.KenyanBuyersSvg91} />
+						</div>
 					</div>
 				</div>
 			</div>
