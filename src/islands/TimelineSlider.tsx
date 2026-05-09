@@ -2,20 +2,36 @@ import { useRef, useState } from "react";
 
 const storySlides = [
 	{
-		label: "Then",
+		label: "The start",
 		body: "In April 2020, Farm to Feed started as a COVID food relief effort. We bought farmers' produce that was at risk of going to waste and donated to food insecure communities who were made more vulnerable at the height of the pandemic.",
 	},
 	{
 		label: "2020",
-		body: "We catered to ten reliable charities and provided additional income for up to 400 smallholder farmers. We soon realized that the problem of food loss was only exacerbated by the pandemic but existed before and will long outlast it.",
+		body: "We catered to 10 charities and provided additional income for up to 400 smallholder farmers. We soon realized that the problem of food loss was only exacerbated by the pandemic but existed before and will long outlast it.",
 	},
 	{
 		label: "2021",
-		body: "A few months later, we developed and piloted our scalable model with the purpose of transforming our food systems for the better.",
+		body: "In May 2021, we pivoted to our scalable model with the purpose of transforming our food systems for the better.",
+	},
+	{
+		label: "2022",
+		body: "Closed our pre-seed round. We quickly scaled our operations to 15,000 kgs of fresh produce per week and have onboarded thousands of farmers across Kenya.",
+	},
+	{
+		label: "2023",
+		body: "We launched our e-commerce platform providing easy and transparent buying for our customers.",
+	},
+	{
+		label: "2024",
+		body: "Our in-house built ERP system and farmer mobile app are live. We continue to grow the FTF team, hiring our 16th employee.",
+	},
+	{
+		label: "2025",
+		body: "We delivered our one millionth kg of rescued produce. We broadened our offering with value-added produce, such as peeled garlic, and started partnering with dry foods businesses to become the one-stop shop for all our customers.",
 	},
 	{
 		label: "Now",
-		body: "We now boast a network of thousands of farmers across Kenya and deliver up to 15,000 kgs of fresh food each week. And we're just getting started!",
+		body: "We are about to launch our export line of dried ingredients and have just moved into our new warehouse.",
 	},
 ];
 
@@ -64,7 +80,7 @@ export default function TimelineSlider() {
 						ref={trackRef}>
 						<div className="absolute inset-y-0 left-0 rounded-full bg-green-500" style={{ width: `${(activeStoryIndex / (storySlides.length - 1)) * 100}%` }} />
 					</div>
-					<div className="mt-5 grid grid-cols-4 gap-3">
+					<div className="mt-5 grid grid-cols-2 gap-3 sm:grid-cols-4 lg:grid-cols-8">
 						{storySlides.map((slide, index) => (
 							<button
 								className={`rounded-full px-3 py-2 font-sans text-caption transition-colors ${

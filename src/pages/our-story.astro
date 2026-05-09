@@ -10,26 +10,50 @@ import ourStoryHeroBottomUrl from "../assets/figma/our-story/hero-bottom.svg?url
 
 const storySlides = [
 	{
-		label: "Then",
+		label: "The start",
 		body: "In April 2020, Farm to Feed started as a COVID food relief effort. We bought farmers' produce that was at risk of going to waste and donated to food insecure communities who were made more vulnerable at the height of the pandemic.",
-		width: 34,
-		zIndex: 4,
+		width: 54,
+		zIndex: 8,
 	},
 	{
 		label: "2020",
-		body: "We catered to ten reliable charities and provided additional income for up to 400 smallholder farmers. We soon realized that the problem of food loss was only exacerbated by the pandemic but existed before and will long outlast it.",
+		body: "We catered to 10 charities and provided additional income for up to 400 smallholder farmers. We soon realized that the problem of food loss was only exacerbated by the pandemic but existed before and will long outlast it.",
 		width: 36,
-		zIndex: 3,
+		zIndex: 7,
 	},
 	{
 		label: "2021",
-		body: "A few months later, we developed and piloted our scalable model with the purpose of transforming our food systems for the better.",
+		body: "In May 2021, we pivoted to our scalable model with the purpose of transforming our food systems for the better.",
+		width: 33,
+		zIndex: 6,
+	},
+	{
+		label: "2022",
+		body: "Closed our pre-seed round. We quickly scaled our operations to 15,000 kgs of fresh produce per week and have onboarded thousands of farmers across Kenya.",
+		width: 33,
+		zIndex: 5,
+	},
+	{
+		label: "2023",
+		body: "We launched our e-commerce platform providing easy and transparent buying for our customers.",
+		width: 33,
+		zIndex: 4,
+	},
+	{
+		label: "2024",
+		body: "Our in-house built ERP system and farmer mobile app are live. We continue to grow the FTF team, hiring our 16th employee.",
+		width: 33,
+		zIndex: 3,
+	},
+	{
+		label: "2025",
+		body: "We delivered our one millionth kg of rescued produce. We broadened our offering with value-added produce, such as peeled garlic, and started partnering with dry foods businesses to become the one-stop shop for all our customers.",
 		width: 33,
 		zIndex: 2,
 	},
 	{
 		label: "Now",
-		body: "We now boast a network of thousands of farmers across Kenya and deliver up to 15,000 kgs of fresh food each week. And we're just getting started!",
+		body: "We are about to launch our export line of dried ingredients and have just moved into our new warehouse.",
 		width: 30,
 		zIndex: 1,
 	},
@@ -37,13 +61,13 @@ const storySlides = [
 
 const storyPrinciples = [
 	{
-		body: "Unlock Africa's potential to bring the world high-quality, impactful products",
+		body: "Unlock Africa's potential to bring high-quality impactful products to the world",
 		cardTop: "86px",
 		icon: "vision",
 		label: "Vision",
 	},
 	{
-		body: "To build a food system that is sustainable and equitable",
+		body: "To build a more sustainable and equitable food system.",
 		cardTop: "92.5px",
 		icon: "mission",
 		label: "Mission",
@@ -216,7 +240,7 @@ const activeStoryIndex = 0;
 						Farm to Feed began with a simple but urgent idea
 					</p>
 					<p class={`${typeStyles.bodyLarge} text-green-500`}>
-						Tackling food loss in Kenya's fresh produce supply
+						tackling food loss in Kenya's fresh produce supply
 						chain. We introduced grade rescue to the Nairobi market,
 						creating a pathway for vegetables that might otherwise
 						go to waste.
@@ -250,18 +274,19 @@ const activeStoryIndex = 0;
 						Connecting production to dependable demand...
 					</p>
 					<div
-						class={`${typeStyles.body} mt-[24px] md:mt-[55px] leading-zero not-italic text-[#0f251b] text-center w-full max-w-148 whitespace-pre-wrap`}>
-						<p class="leading-copy mb-0">
+						class={`${typeStyles.body} mt-[24px] md:mt-[55px]   not-italic text-[#0f251b] text-center w-full max-w-148`}>
+						<p class="leading-copy">
 							As we worked alongside our customers and farmers, we
 							quickly learned that food loss is one part of a much
 							larger challenge. Farmers needed more than a
-							solution for imperfect produce. They needed reliable
-							market access for their full harvest.
+							solution for imperfect and surplus produce. They
+							needed reliable market access for their full
+							harvest.
 						</p>
 						<p class="leading-copy">
 							Since those early days, Farm to Feed has grown into
 							a trusted off taker and partner for farmers, helping
-							to address one of Kenya's most persistent
+							to address one of Kenya’s most persistent
 							agricultural bottlenecks: connecting production to
 							dependable demand.
 						</p>
@@ -285,7 +310,7 @@ const activeStoryIndex = 0;
 									</div>
 									<div class="col-1 flex flex-col gap-12 items-center ml-11.5 mt-0 relative row-1 w-54.25">
 										{principle.icon === "vision" ? (
-											<div class="grid-cols-[max-content] grid-rows-[max-content] inline-grid leading-zero place-items-start relative shrink-0">
+											<div class="grid-cols-[max-content] grid-rows-[max-content] inline-grid   place-items-start relative shrink-0">
 												<div
 													class="col-1 h-[124px] ml-0 mt-0 relative row-1 w-[127.288px]"
 													data-name="Group">
@@ -306,7 +331,7 @@ const activeStoryIndex = 0;
 												</div>
 											</div>
 										) : (
-											<div class="grid-cols-[max-content] grid-rows-[max-content] inline-grid leading-zero place-items-start relative shrink-0">
+											<div class="grid-cols-[max-content] grid-rows-[max-content] inline-grid   place-items-start relative shrink-0">
 												<div class="col-1 flex h-[124px] items-center justify-center ml-0 mt-0 relative row-1 w-[127.221px]">
 													<div class="-scale-y-100 flex-none rotate-180">
 														<div
@@ -428,7 +453,7 @@ const activeStoryIndex = 0;
 											/>
 										</div>
 									) : (
-										<div class="grid-cols-[max-content] grid-rows-[max-content] inline-grid leading-zero place-items-start relative shrink-0">
+										<div class="grid-cols-[max-content] grid-rows-[max-content] inline-grid   place-items-start relative shrink-0">
 											<div
 												class="col-1 h-[198.445px] ml-0 mt-0 relative row-1 w-[203.707px]"
 												data-name="Vector">
