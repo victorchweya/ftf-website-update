@@ -1,8 +1,569 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import { pageHtml } from "../lib/figmaMarkup/kenyanBuyersPage";
+import Button from "../components/Button.astro";
+import ContentContainer from "../components/layout/ContentContainer.astro";
+import BorderTopKenyanBuyersSvg from "../components/figma/BorderTopKenyanBuyersSvg.astro";
+import * as KenyanBuyersSvgs from "../lib/figmaMarkup/kenyanBuyersSvgs";
+import { Order4, Order5 } from "../lib/figmaMarkup/buyFromUsLocal";
+import { sectionSpacing, typeStyles } from "../lib/figmaStyles";
+import browseIcon from "../assets/figma/kenyan-buyers/browse.svg?url";
+import connectIcon from "../assets/figma/kenyan-buyers/connect.svg?url";
+import deliveryLocationsIcon from "../assets/figma/kenyan-buyers/delivery-locations.svg?url";
+import enjoyIcon from "../assets/figma/kenyan-buyers/enjoy.svg?url";
+import orderIcon from "../assets/figma/kenyan-buyers/order.svg?url";
+
+const buyerFormRows = [
+	[{ label: "Your Name *", rounded: "rounded-[35px]", border: "rounded-[36px]" }],
+	[
+		{
+			icon: KenyanBuyersSvgs.KenyanBuyersSvg03,
+			label: "Your Email *",
+			placeholder: "email@example.com",
+		},
+		{ label: "Phone Number *" },
+	],
+	[{ label: "Company Name *" }, { label: "Job Title" }],
+	[
+		{
+			icon: KenyanBuyersSvgs.KenyanBuyersSvg04,
+			label: "Business Category *",
+			placeholder: "Select one...",
+			type: "select",
+		},
+	],
+];
+
+const partnerProductCategories = [
+	["Dairy", "Cereals, grains & pulses", "Tea & Coffee"],
+	["spices", "Snacks"],
+];
+
+const valueCards = [
+	{
+		body: "All you need to run your food business. From fresh ingredients to dry goods and our Ready-to-Use product range!",
+		icon: KenyanBuyersSvgs.KenyanBuyersSvg06,
+		title: "One Stop Shop",
+	},
+	{
+		accent: KenyanBuyersSvgs.KenyanBuyersSvg08,
+		accentClass:
+			"col-1 h-[33.97px] ml-[16.72px] mt-[14.15px] relative row-1 w-[33.448px]",
+		body: "Pay less, expect better and grow your margins.",
+		icon: KenyanBuyersSvgs.KenyanBuyersSvg07,
+		title: "Best Pricing",
+	},
+	{
+		accent: KenyanBuyersSvgs.KenyanBuyersSvg10,
+		accentClass:
+			"col-1 h-[32.925px] ml-[15.68px] mt-[13.63px] relative row-1 w-[33.97px]",
+		body: "Choose from our Grade Rescue or Grade 1 produce - we procure the full harvest from farmers so that nothing goes to waste.",
+		icon: KenyanBuyersSvgs.KenyanBuyersSvg09,
+		title: "Full Harvest",
+	},
+	{
+		accent: KenyanBuyersSvgs.KenyanBuyersSvg12,
+		accentClass:
+			"col-1 h-[31.357px] ml-[20.9px] mt-[16.77px] relative row-1 w-[25.086px]",
+		body: "If your delivery is anything less than supreme, we'll fix it. Connect with our team on WhatsApp or call us at 0795851756.",
+		icon: KenyanBuyersSvgs.KenyanBuyersSvg11,
+		title: "Customer Service",
+	},
+	{
+		accent: KenyanBuyersSvgs.KenyanBuyersSvg14,
+		accentClass:
+			"col-1 h-[32.402px] ml-[16.72px] mt-[13.63px] relative row-1 w-[35.016px]",
+		body: "For every kg of odd-looking produce you buy, you reduce your carbon footprint and directly boost farmer incomes.",
+		icon: KenyanBuyersSvgs.KenyanBuyersSvg13,
+		title: "Measurable Impact",
+	},
+	{
+		accent: KenyanBuyersSvgs.KenyanBuyersSvg16,
+		accentClass:
+			"col-1 h-[39.336px] ml-[15.15px] mt-[11.68px] relative row-1 w-[33.972px]",
+		body: "Choose your delivery date and window and we'll get freshness delivered to you. On Time. In Full.",
+		icon: KenyanBuyersSvgs.KenyanBuyersSvg15,
+		title: "Flexible Delivery",
+	},
+];
+
+const oneStopShopItems = [
+	{
+		body: "We deliver the regular grade and our impactful and affordable grade rescue.",
+		icon: KenyanBuyersSvgs.KenyanBuyersSvg20,
+		subtitle: "From our farmers to you",
+		title: "Fresh Produce,",
+	},
+	{
+		body: "We cut, peel, slice and process fresh produce so you don't have to. Save time and storage space by ordering our ready to use products.",
+		icon: KenyanBuyersSvgs.KenyanBuyersSvg21,
+		subtitle: "Made by us",
+		title: "Prepped and Ready to Use,",
+	},
+	{
+		body: "We offer a wide variety of product categories from top brands.",
+		categories: partnerProductCategories,
+		icon: KenyanBuyersSvgs.KenyanBuyersSvg22,
+		subtitle: "Made by us",
+		title: "Products from Partners",
+	},
+];
+
+const localBuyerHowItWorksSteps = [
+	{
+		body: "Our Sales team is ready to speak with you",
+		color: "#8C98EE",
+		icon: connectIcon,
+		textColor: "#e6e6e6",
+		title: "Connect with sales",
+	},
+	{
+		body: "Explore our wide range of fresh and dry products online",
+		color: "#A35380",
+		icon: browseIcon,
+		textColor: "#e6e6e6",
+		title: "Browse the shop",
+	},
+	{
+		body: "Select your delivery window and checkout your cart",
+		color: "#85A687",
+		icon: orderIcon,
+		textColor: "#e6e6e6",
+		title: "Place Order",
+	},
+	{
+		body: "Receive fresh, high quality ingredients directly to your doorstep",
+		color: "#EBC194",
+		icon: enjoyIcon,
+		textColor: "#2b1a08",
+		title: "Enjoy Delivery",
+	},
+];
+
+const localBuyerTestimonials = [
+	{
+		company: "Nairobi Catering Co.",
+		name: "Amina Odhiambo",
+		quote:
+			"Farm to Feed keeps our kitchen stocked with fresh produce while helping us reduce waste across our weekly menu planning.",
+	},
+	{
+		company: "Green Plate Bistro",
+		name: "Brian Mwangi",
+		quote:
+			"The quality is consistent, the delivery team is reliable, and our customers love knowing their meals support local farmers.",
+	},
+	{
+		company: "Mara Hospitality Group",
+		name: "Lilian Wanjiku",
+		quote:
+			"We can source the volumes we need without compromising on freshness, price, or the impact we want our business to make.",
+	},
+];
 ---
 
 <Layout title="Kenyan Buyers">
-	<Fragment set:html={pageHtml} />
+	<div class="bg-white flex flex-col items-start relative w-full" data-name="Buy from us - local">
+		<section class="bg-yellow-200 min-h-[600px] md:min-h-[800px] lg:min-h-[926px] overflow-clip relative shrink-0 w-full" data-name="Wireframe - 53">
+			<div class="absolute hidden md:flex h-[400px] lg:h-[620.8px] items-center justify-center right-[-10%] lg:right-[-24.34%] lg:left-[79.24%] top-[200px] md:top-[352px] opacity-50 lg:opacity-100" style="container-type:size">
+				<div class="flex-none h-[100cqw] rotate-90 w-[100cqh]">
+					<div class="relative size-full">
+						<Fragment set:html={KenyanBuyersSvgs.KenyanBuyersSvg01} />
+					</div>
+				</div>
+			</div>
+			<ContentContainer size="wide" class="pt-[160px] pb-[96px] md:pt-[211px] md:pb-30">
+				<div class="grid gap-12 items-center lg:grid-cols-[minmax(0,1fr)_minmax(0,563px)]">
+					<div class="flex flex-col gap-10 items-start relative">
+						<div class="flex flex-col gap-10 items-start relative shrink-0">
+							<div class="absolute hidden h-[14px] left-0 top-[160px] w-[443px] md:block" data-name="objects">
+								<Fragment set:html={KenyanBuyersSvgs.KenyanBuyersSvg02} />
+							</div>
+							<p class={`${typeStyles.heroTitleLarge} not-italic relative shrink-0 text-[#0f251b] w-full max-w-[519px]`}>
+								<span class="leading-tight">Good produce,<br aria-hidden="true" /></span>
+								<span class="leading-tight text-green-500">good margins,</span>
+								<span class="leading-tight"><br aria-hidden="true" />even better environment</span>
+							</p>
+							<p class={`${typeStyles.bodyLead} font-medium italic relative shrink-0 text-orange-500 w-full max-w-[515px]`}>
+								"Mboga bora, faida bora, mazingira bora zaidi"
+							</p>
+						</div>
+						<p class={`${typeStyles.body} not-italic relative shrink-0 text-green-500 w-full max-w-[515px]`}>
+							Built with farmers at the centre, our solution brings oddly good products to businesses, retailers, schools, feeding programmes, and event companies. Reliable quality, healthy margins, and less waste - all in one smarter supply chain.
+						</p>
+					</div>
+
+					<div class="flex flex-col items-center relative shrink-0 w-full max-w-[563px]">
+						<div class="bg-white relative rounded-[30px] shrink-0 w-full">
+							<div aria-hidden="true" class="absolute border border-[#f7f7f7] border-solid inset-0 pointer-events-none rounded-[30px]" />
+							<div class="flex flex-col gap-8 items-start p-6 md:p-[40px] relative size-full">
+								<div class="flex flex-col gap-8 items-start relative shrink-0 w-full">
+									<p class={`${typeStyles.cardTitle} font-medium not-italic relative shrink-0 text-[#0f251b] w-[210px]`}>Buy from us</p>
+									<p class={`${typeStyles.body} not-italic relative shrink-0 text-green-500 w-full`}>
+										Fill out the form and our sales team will contact you shortly.
+									</p>
+								</div>
+								<div class="flex flex-col gap-6 items-start relative shrink-0 w-full">
+									{buyerFormRows.map((row) => (
+										<div class={`flex flex-col gap-4 items-start relative shrink-0 w-full ${row.length > 1 ? "sm:flex-row" : ""}`} data-name="Inputs">
+											{row.map((field) => (
+												<div class="flex flex-col gap-2 items-start relative w-full sm:flex-[1_0_0] sm:min-w-px" data-name="Input">
+													<p class={`${typeStyles.caption} not-italic relative shrink-0 text-[#0f251b] w-full`}>{field.label}</p>
+													<div class={`bg-[#fbfafa] ${field.type === "select" ? "" : "h-12"} relative ${field.rounded ?? "rounded-[24px]"} shrink-0 w-full`} data-name={field.type === "select" ? "Select" : "Text input"}>
+														<div aria-hidden="true" class={`absolute border border-[#e6e6e6] border-solid inset-[-1px] pointer-events-none ${field.border ?? "rounded-[25px]"}`} />
+														<div class="flex flex-row items-center size-full">
+															<div class={`flex items-center p-[12px] relative size-full ${field.placeholder || field.icon ? "gap-2" : ""}`}>
+																{field.icon && field.type !== "select" && (
+																	<div class="overflow-clip relative shrink-0 size-6" data-name="credit_card">
+																		<div class="absolute left-[4px] size-[16px] top-[4px]" data-name="prime:envelope">
+																			<Fragment set:html={field.icon} />
+																		</div>
+																	</div>
+																)}
+																{field.placeholder && (
+																	<p class={`flex-[1_0_0] ${typeStyles.caption} font-normal min-w-px not-italic relative ${field.type === "select" ? "text-green-500" : "text-[#808080]"}`}>
+																		{field.placeholder}
+																	</p>
+																)}
+																{field.icon && field.type === "select" && (
+																	<div class="overflow-clip relative shrink-0 size-6" data-name="keyboard_arrow_down">
+																		<div class="absolute inset-[35.51%_25.93%_36.66%_25.88%]" data-name="Vector">
+																			<Fragment set:html={field.icon} />
+																		</div>
+																	</div>
+																)}
+															</div>
+														</div>
+													</div>
+												</div>
+											))}
+										</div>
+									))}
+									<Button type="button" size="md" class="relative shrink-0 w-full text-[#eee]" data-name="order">
+										Get in touch
+									</Button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</ContentContainer>
+		</section>
+
+		<section class="bg-white min-h-[600px] md:min-h-[900px] overflow-clip relative shrink-0 w-full" data-name="Wireframe - 11">
+			<div class="absolute flex inset-[-13.58%_-0.63%_91.95%_-3.75%] items-center justify-center" style="container-type:size">
+				<div class="flex-none h-[100cqw] rotate-90 w-[100cqh]">
+					<div class="relative size-full" data-name="Vector">
+						<Fragment set:html={KenyanBuyersSvgs.KenyanBuyersSvg05} />
+					</div>
+				</div>
+			</div>
+			<ContentContainer size="wide" class="relative z-10 flex flex-col items-center gap-12 pt-[120px] pb-[96px] md:pt-[164px] md:pb-30">
+				<div class="flex flex-col gap-16 items-center relative w-full max-w-7xl">
+					<div class="flex flex-col gap-8 items-center max-w-[1052px] not-italic relative shrink-0 text-center w-full">
+						<p class={`${typeStyles.sectionTitleLarge} relative shrink-0 text-[#0f251b] w-full`}>Why choose Farm to Feed?</p>
+						<p class={`${typeStyles.body} relative shrink-0 text-green-500 w-full`}>
+							We are reshaping the food supply chain to benefit everyone involved while protecting our planet.
+						</p>
+					</div>
+					<div class="grid gap-8 relative shrink-0 w-full md:grid-cols-2 lg:grid-cols-3">
+						{valueCards.map((card) => (
+							<div class="bg-[#fbfafa] relative rounded-[30px] w-full">
+								<div class="flex flex-col gap-[27px] items-start p-[40px] relative size-full">
+									<div class="flex flex-col gap-8 items-start justify-center relative shrink-0">
+										{card.accent ? (
+											<div class="grid-cols-[max-content] grid-rows-[max-content] inline-grid leading-zero place-items-start relative shrink-0">
+												<div class="col-1 h-[64px] ml-0 mt-0 relative row-1 w-[65.697px]" data-name="Group">
+													<Fragment set:html={card.icon} />
+												</div>
+												<div class={card.accentClass} data-name="Capa_1">
+													<Fragment set:html={card.accent} />
+												</div>
+											</div>
+										) : (
+											<div class="h-[64px] relative shrink-0 w-[65.697px]" data-name="Group">
+												<Fragment set:html={card.icon} />
+											</div>
+										)}
+										<p class={`${typeStyles.cardTitle} not-italic relative shrink-0 text-[#0f251b]`}>{card.title}</p>
+									</div>
+									<p class={`${typeStyles.body} not-italic relative shrink-0 text-green-500 w-full`}>{card.body}</p>
+								</div>
+							</div>
+						))}
+					</div>
+				</div>
+			</ContentContainer>
+		</section>
+
+		<section class="bg-[#0f251b] min-h-[600px] md:min-h-[900px] lg:min-h-[1085px] overflow-clip relative shrink-0 w-full" data-name="Wireframe - 51">
+			<div class="absolute bottom-[814.78px] hidden h-[223.22px] items-center justify-center right-[-330.48px] w-[838.475px] lg:flex" style="--transform-inner-width: 1185; --transform-inner-height: 21;">
+				<div class="-scale-y-100 flex-none rotate-[-93.75deg]">
+					<div class="h-[829.172px] relative w-[169.318px]" data-name="Vector">
+						<Fragment set:html={KenyanBuyersSvgs.KenyanBuyersSvg17} />
+					</div>
+				</div>
+			</div>
+			<div class="absolute bottom-[520.68px] hidden h-[169.318px] items-center justify-center left-[-548px] w-[829.172px] lg:flex" style="--transform-inner-width: 1185; --transform-inner-height: 21;">
+				<div class="-rotate-90 flex-none">
+					<div class="h-[829.172px] relative w-[169.318px]" data-name="Vector">
+						<Fragment set:html={KenyanBuyersSvgs.KenyanBuyersSvg18} />
+					</div>
+				</div>
+			</div>
+			<BorderTopKenyanBuyersSvg class="absolute inset-x-0 top-0 w-full max-w-none pointer-events-none select-none" fill="white" />
+			<ContentContainer size="wide" class="relative z-10">
+				<div class="grid gap-12 pt-[140px] pb-[96px] md:pt-[200px] lg:grid-cols-2 lg:items-start lg:pt-[241px] lg:pb-30">
+					<div class="flex flex-col gap-16 items-start relative w-full max-w-[624px]">
+						<p class={`${typeStyles.sectionTitleLarge} not-italic relative shrink-0 text-[#f5e091] w-full`}>Your One Stop Shop</p>
+						<div class="flex flex-col gap-8 items-start relative shrink-0">
+							{oneStopShopItems.map((item, index) => (
+								<div class="flex gap-[15px] items-start relative shrink-0 w-full max-w-[535px]">
+									<div class="relative shrink-0 size-[56px]">
+										<Fragment set:html={item.icon} />
+										<p class={`-translate-x-1/2 absolute ${typeStyles.body} font-semibold leading-normal left-1/2 not-italic text-[#eff6ef] text-center top-[calc(50%-6px)] whitespace-nowrap`}>
+											{index + 1}
+										</p>
+									</div>
+									<div class="flex flex-[1_0_0] flex-col gap-6 items-start min-w-px relative self-stretch">
+										<div class="flex flex-col gap-4 items-start leading-normal relative shrink-0 w-full">
+											<p class={`${typeStyles.cardTitle} font-medium not-italic relative shrink-0 text-[#fbf3e9] w-full`}>{item.title}</p>
+											<p class={`${typeStyles.serifLead} italic relative shrink-0 text-[#f5e091] w-full`}>{item.subtitle}</p>
+										</div>
+										<p class={`${typeStyles.body} not-italic relative shrink-0 text-[#f6eef2] w-full`}>{item.body}</p>
+										{item.categories && (
+											<div class="flex flex-col gap-[12px] items-start relative shrink-0 w-full">
+												{item.categories.map((row, rowIndex) => (
+													<div class={`flex flex-wrap items-start relative shrink-0 ${rowIndex === 0 ? "gap-[12px]" : "gap-4"}`}>
+														{row.map((category) => (
+															<div class="bg-[#122c20] flex items-start px-4 py-2 relative rounded-[40px] shrink-0">
+																<div aria-hidden="true" class="absolute border border-[#0f251b] border-solid inset-0 pointer-events-none rounded-[40px]" />
+																<p class={`${typeStyles.body} relative shrink-0 text-[#f7f7f7] text-center whitespace-nowrap`}>{category}</p>
+															</div>
+														))}
+													</div>
+												))}
+											</div>
+										)}
+									</div>
+								</div>
+							))}
+						</div>
+						<div class="flex gap-8 items-start justify-center overflow-clip relative shrink-0 w-full" data-name="Tab Horizontal">
+							<div class="flex items-center justify-center relative self-stretch shrink-0 w-0" style="container-type:size; --transform-inner-width: 1185; --transform-inner-height: 21;">
+								<div class="flex-none rotate-90 w-[100cqh]">
+									<div class="h-0 relative w-full" data-name="Border">
+										<div class="absolute inset-[-2px_0_0_0]">
+											<Fragment set:html={KenyanBuyersSvgs.KenyanBuyersSvg23} />
+										</div>
+									</div>
+								</div>
+							</div>
+							<p class={`${typeStyles.bodyLead} leading-zero not-italic relative shrink-0 text-white w-full`}>
+								<span class="leading-copy">For customers outside of Nairobi, we offer a full basket including </span>
+								<span class="font-medium text-[#f5e091]">meats, cheeses, and fish</span>
+								<span class="font-medium">.</span>
+							</p>
+						</div>
+					</div>
+
+					<div class="flex flex-col items-end relative w-full max-w-[625px] lg:justify-self-end">
+						<div class="bg-white relative rounded-[30px] shrink-0 w-full">
+							<div aria-hidden="true" class="absolute border border-[#f7f7f7] border-solid inset-0 pointer-events-none rounded-[30px]" />
+							<div class="flex flex-col gap-[27px] items-start p-6 md:p-[40px] relative size-full">
+								<p class={`flex-[1_0_0] ${typeStyles.cardTitle} font-medium min-w-px not-italic relative text-black`}>Delivery Areas</p>
+								<div class="flex flex-col gap-16 h-[340px] items-start relative shrink-0 w-full md:h-[462px]" data-name="Content">
+									<div class="bg-white flex flex-[1_0_0] items-center justify-center min-h-px overflow-clip relative w-full" data-name="Delivery locations">
+										<img alt="" aria-hidden="true" class="max-h-full max-w-full object-contain" src={deliveryLocationsIcon} />
+									</div>
+								</div>
+								<p class="font-sans font-normal leading-zero not-italic relative shrink-0 text-green-500 text-[0px] tracking-body-lg w-full">
+									<span class="leading-copy text-xl">We deliver in & around </span>
+									<span class="font-sans font-medium leading-copy text-orange-500 text-xl">Nairobi</span>
+									<span class="leading-copy text-xl"> and the </span>
+									<span class="font-sans font-medium leading-copy text-orange-500 text-xl">Maasai Mara.</span>
+								</p>
+								<div class="bg-[#fbf3e9] relative rounded-[16px] shrink-0 w-full">
+									<div aria-hidden="true" class="absolute border border-[#f7e6d4] border-solid inset-0 pointer-events-none rounded-[16px]" />
+									<div class="flex flex-col items-start p-[16px] relative size-full">
+										<div class="flex flex-col gap-4 items-start relative shrink-0 w-full sm:flex-row sm:items-center">
+											<div class="flex flex-[1_0_0] gap-2 items-center min-w-px relative">
+												<div class="relative shrink-0 size-6" data-name="prime:info-circle">
+													<Fragment set:html={KenyanBuyersSvgs.KenyanBuyersSvg28} />
+												</div>
+												<p class="flex-[1_0_0] font-sans font-normal italic leading-zero min-w-px relative text-[#0f251b] text-[0px] tracking-caption">
+													<span class="leading-normal text-[#2b1a08] text-sm">We are always </span>
+													<span class="font-sans font-medium leading-normal text-orange-500 text-sm">expanding our reach!</span>
+													<span class="leading-normal text-[#2b1a08] text-sm"> Contact our sales team to hear more.</span>
+												</p>
+											</div>
+											<Button href="/contact-us" variant="secondary" size="sm" class="relative shrink-0 text-[#eee]" data-name="order">
+												Contact Sales
+											</Button>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</ContentContainer>
+		</section>
+
+		<section class="bg-white overflow-clip relative shrink-0 w-full" data-name="Wireframe - 42">
+			<ContentContainer size="wide" class={`relative z-10 ${sectionSpacing.default}`}>
+				<div class="mx-auto max-w-148 text-center">
+					<p class={`${typeStyles.sectionTitleLarge} mt-30 not-italic text-[#0f251b] w-full`}>How does it work?</p>
+					<p class={`${typeStyles.body} mt-2 not-italic text-green-500 w-full`}>
+						Four simple steps to get fresh and sustainable products delivered to you
+					</p>
+				</div>
+
+				<div class="lg:hidden mt-[56px] grid gap-8 sm:grid-cols-2">
+					{localBuyerHowItWorksSteps.map((step, index) => (
+						<div class="flex flex-col gap-6 items-center rounded-[24px] bg-white p-4 text-center">
+							<div class="relative h-[180px] w-[185px] shrink-0">
+								<img alt="" aria-hidden="true" class="size-full object-contain" src={step.icon} />
+							</div>
+							<div class="flex gap-4 items-start text-left w-full max-w-[280px]">
+								<div class={`${typeStyles.body} flex size-10 shrink-0 items-center justify-center rounded-full font-medium leading-normal`} style={`background-color: ${step.color}; color: ${step.textColor};`}>
+									{index + 1}
+								</div>
+								<div class="flex flex-col gap-[12px] items-start not-italic relative w-full">
+									<p class={`${typeStyles.cardTitleSmall} leading-normal relative shrink-0 text-[#0f251b] tracking-card w-full`}>{step.title}</p>
+									<p class={`${typeStyles.caption} relative shrink-0 text-green-500 w-full`}>{step.body}</p>
+								</div>
+							</div>
+						</div>
+					))}
+				</div>
+
+				<div class="relative mx-auto mt-[64px] hidden h-[560px] max-w-[1180px] lg:block">
+					{localBuyerHowItWorksSteps.map((step, index) => (
+						<>
+							<div class={["absolute h-[198.445px] w-[203.707px]", ["left-[30px] top-[150px]", "left-[290px] top-[15px]", "left-[560px] top-[245px]", "right-[70px] top-[45px]"][index]]}>
+								<img alt="" aria-hidden="true" class="size-full object-contain" src={step.icon} />
+							</div>
+							<div class={["absolute flex gap-4 items-start", ["left-[35px] top-[370px]", "left-[520px] top-[10px]", "left-[690px] top-[440px]", "right-[5px] top-[260px]"][index]]}>
+								<div class={`${typeStyles.body} flex size-10 shrink-0 items-center justify-center rounded-full font-medium leading-normal`} style={`background-color: ${step.color}; color: ${step.textColor};`}>
+									{index + 1}
+								</div>
+								<div class="flex flex-col gap-4 items-start not-italic relative shrink-0 w-[204px]">
+									<p class={`${typeStyles.cardTitleSmall} leading-normal relative shrink-0 text-[#0f251b] tracking-card w-full`}>{step.title}</p>
+									<p class={`${typeStyles.caption} relative shrink-0 text-green-500 w-full`}>{step.body}</p>
+								</div>
+							</div>
+						</>
+					))}
+					<div class="absolute left-[120px] top-[55px] h-[145.923px] w-[143.362px]" style="--transform-inner-width: 1185; --transform-inner-height: 21;">
+						<div class="-scale-y-100 flex-none rotate-[132.38deg]">
+							<div class="h-[82.59px] relative w-[122.18px]" data-name="Design">
+								<Fragment set:html={KenyanBuyersSvgs.KenyanBuyersSvg70} />
+							</div>
+						</div>
+					</div>
+					<div class="absolute left-[430px] top-[250px] h-[138.813px] w-[110.247px]" style="--transform-inner-width: 1185; --transform-inner-height: 21;">
+						<div class="flex-none rotate-[-104.32deg]">
+							<div class="h-[82.59px] relative w-[122.18px]" data-name="Design">
+								<Fragment set:html={KenyanBuyersSvgs.KenyanBuyersSvg71} />
+							</div>
+						</div>
+					</div>
+					<div class="absolute left-[790px] top-[305px] h-[94.387px] w-[129.822px]" style="--transform-inner-width: 1185; --transform-inner-height: 21;">
+						<div class="flex-none rotate-[-174.26deg]">
+							<div class="h-[82.59px] relative w-[122.18px]" data-name="Design">
+								<Fragment set:html={KenyanBuyersSvgs.KenyanBuyersSvg72} />
+							</div>
+						</div>
+					</div>
+				</div>
+			</ContentContainer>
+			<BorderTopKenyanBuyersSvg class="absolute inset-x-0 bottom-[-1px] rotate-180 w-full max-w-none pointer-events-none select-none" fill="#0F251B" />
+		</section>
+
+		<section class="bg-[#f3f5e7] min-h-[600px] md:min-h-[750px] overflow-clip relative rounded-bl-[40px] rounded-br-[40px] shrink-0 w-full" data-name="Testimonial" data-local-buyer-testimonials data-testimonials={JSON.stringify(localBuyerTestimonials)}>
+			<ContentContainer size="wide" class={`relative z-10 flex flex-col items-center gap-[56px] md:gap-[80px] ${sectionSpacing.default}`}>
+				<p class={`${typeStyles.sectionTitleLarge} not-italic text-[#0f251b] text-center w-full max-w-[800px]`}>
+					Hear from businesses making an impact with Farm to Feed.
+				</p>
+				<div class="flex flex-col gap-6 items-center justify-center relative w-full lg:flex-row lg:gap-10">
+					<button aria-label="Show previous testimonial" class="group rounded-[40px] bg-transparent border-0 p-0 transition-transform duration-200 hover:-translate-y-0.5 focus-visible:-translate-y-0.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#747c50]" data-testimonial-previous type="button">
+						<Fragment set:html={Order4} />
+					</button>
+					<div class="relative w-full max-w-[640px] min-h-[323px]">
+						<div class="absolute inset-0 rounded-[30px] bg-white shadow-[0_20px_24px_rgba(16,24,40,0.10),0_8px_8px_rgba(16,24,40,0.04)]" />
+						<div class="relative flex min-h-[323px] flex-col justify-between gap-8 p-8 md:p-10">
+							<div class="flex flex-col gap-4">
+								<p class="font-serif text-[56px] leading-none text-green-500">&ldquo;</p>
+								<p class={`${typeStyles.body} text-black`} data-testimonial-quote>{localBuyerTestimonials[0].quote}</p>
+							</div>
+							<div class={`${typeStyles.body} text-[#808080]`}>
+								<p class="font-semibold" data-testimonial-name>{localBuyerTestimonials[0].name}</p>
+								<p data-testimonial-company>{localBuyerTestimonials[0].company}</p>
+							</div>
+						</div>
+					</div>
+					<button aria-label="Show next testimonial" class="group rounded-[40px] bg-transparent border-0 p-0 transition-transform duration-200 hover:-translate-y-0.5 focus-visible:-translate-y-0.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#747c50]" data-testimonial-next type="button">
+						<Fragment set:html={Order5} />
+					</button>
+				</div>
+			</ContentContainer>
+			<div class="absolute hidden h-[137.947px] items-center justify-center left-[calc(75%+23.37px)] top-[231.07px] w-[206.385px] lg:flex" style="--transform-inner-width: 1185; --transform-inner-height: 21;">
+				<div class="flex-none rotate-[-15.41deg]">
+					<div class="h-[91px] relative w-[189px]" data-name="Capa_1">
+						<Fragment set:html={KenyanBuyersSvgs.KenyanBuyersSvg73} />
+					</div>
+				</div>
+			</div>
+			<div class="absolute hidden h-[858px] items-center justify-center left-[-2.92%] right-[-1.39%] top-[-767px] lg:flex" style="container-type:size">
+				<div class="-scale-x-100 flex-none h-[100cqw] rotate-90 w-[100cqh]">
+					<div class="relative size-full" data-name="Vector">
+						<Fragment set:html={KenyanBuyersSvgs.KenyanBuyersSvg86} />
+					</div>
+				</div>
+			</div>
+		</section>
+	</div>
 </Layout>
+
+<script>
+	const testimonialSections = document.querySelectorAll("[data-local-buyer-testimonials]");
+
+	testimonialSections.forEach((section) => {
+		const testimonials = JSON.parse(section.getAttribute("data-testimonials") || "[]");
+		const quote = section.querySelector("[data-testimonial-quote]");
+		const name = section.querySelector("[data-testimonial-name]");
+		const company = section.querySelector("[data-testimonial-company]");
+		const previous = section.querySelector("[data-testimonial-previous]");
+		const next = section.querySelector("[data-testimonial-next]");
+		let index = 0;
+		let timer;
+
+		function render(nextIndex) {
+			if (!testimonials.length) return;
+
+			index = (nextIndex + testimonials.length) % testimonials.length;
+			const active = testimonials[index];
+			if (quote) quote.textContent = active.quote;
+			if (name) name.textContent = active.name;
+			if (company) company.textContent = active.company;
+		}
+
+		function restartAutoplay() {
+			window.clearInterval(timer);
+			timer = window.setInterval(() => render(index + 1), 3000);
+		}
+
+		previous?.addEventListener("click", () => {
+			render(index - 1);
+			restartAutoplay();
+		});
+
+		next?.addEventListener("click", () => {
+			render(index + 1);
+			restartAutoplay();
+		});
+
+		render(index);
+		restartAutoplay();
+	});
+</script>
