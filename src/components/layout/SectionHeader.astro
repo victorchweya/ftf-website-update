@@ -1,0 +1,38 @@
+---
+const {
+	actions,
+	eyebrow,
+	title,
+	description,
+	align = "left",
+	titleSize = "hero",
+	descriptionSize = "lead",
+	class: className = "",
+} = Astro.props;
+
+import { typeStyles } from "../../lib/figmaStyles";
+
+const titleClasses = {
+	section: typeStyles.sectionTitle,
+	large: typeStyles.sectionTitleLarge,
+	hero: typeStyles.heroTitle,
+};
+
+const descriptionClasses = {
+	body: typeStyles.body,
+	large: typeStyles.bodyLarge,
+	lead: typeStyles.bodyLead,
+};
+
+const isCenter = align === "center";
+const titleClass = titleClasses[titleSize as keyof typeof titleClasses] ?? titleClasses.hero;
+const descriptionClass = descriptionClasses[descriptionSize as keyof typeof descriptionClasses] ?? descriptionClasses.lead;
+---
+
+<div class:list={["flex flex-col gap-4", isCenter && "mx-auto items-center text-center", className]}>
+	{eyebrow ? <p class={typeStyles.eyebrow}>{eyebrow}</p> : null}
+	<h1 class={`${titleClass} text-[#0f251b]`}>{title}</h1>
+	{description ? <p class={`${descriptionClass} text-green-500`}>{description}</p> : null}
+	{actions}
+	<slot />
+</div>

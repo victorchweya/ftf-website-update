@@ -1,8 +1,132 @@
 ---
-import FigmaPageLayout from "../layouts/FigmaPageLayout.astro";
-import ContactUs from "../react/figma/pages/ContactUs";
+import Layout from "../layouts/Layout.astro";
+import SectionShell from "../components/layout/SectionShell.astro";
+import SectionHeader from "../components/layout/SectionHeader.astro";
+import * as ContactUsSvgs from "../lib/figmaMarkup/contactUs";
+import contactBottomLandscape from "../assets/figma/contact-us/bottom-landscape.svg?url";
+import { typeStyles } from "../lib/figmaStyles";
+
+const phoneContact = {
+	title: "Phone no.",
+	helper: "Call us or send a WhatsApp message to",
+	links: ["+254 795851756"],
+};
+
+const inquiryContacts = [
+	{
+		helper: "For general inquiries, send an email to",
+		links: ["info@farmtofeedkenya.com"],
+	},
+	{
+		helper: "For local purchases, send an email  or call us",
+		links: ["sales@farmtofeedkenya.com", "+254 795851756"],
+	},
+	{
+		helper: "For exports, send an email to",
+		links: ["exports@farmtofeedkenya.com"],
+	},
+	{
+		helper: "For farmers, reach out via phone or whatsapp",
+		links: ["+254 723 740 537"],
+	},
+];
 ---
 
-<FigmaPageLayout title="Contact Us">
-	<ContactUs client:load />
-</FigmaPageLayout>
+<Layout title="Contact Us">
+	<div
+		class="bg-yellow-100 flex flex-col items-start relative w-full"
+		data-name="Contact Us">
+		<div
+			class="bg-yellow-100 min-h-[800px] overflow-clip relative rounded-bl-[40px] rounded-br-[40px] shrink-0 w-full"
+			data-name="Contact">
+			<div class="absolute inset-[0_0_69.41%_0]">
+				<Fragment set:html={ContactUsSvgs.ContactUsSvg01} />
+			</div>
+			<div class="absolute flex h-[360px] items-center justify-center left-[-88px] top-[760px] w-[162px] opacity-40 md:h-[480px] md:left-[24px] md:top-[760px] md:w-[216px] md:opacity-70 lg:h-[589px] lg:left-[80px] lg:top-[698px] lg:w-[265px] lg:opacity-100">
+				<div class="-scale-y-100 flex-none rotate-180">
+					<div class="h-[589px] relative w-[265px]" data-name="Capa_1">
+						<Fragment set:html={ContactUsSvgs.ContactUsSvg02} />
+					</div>
+				</div>
+			</div>
+			<div class="absolute inset-x-0 bottom-0 w-full overflow-hidden">
+				<div class="relative bottom-0 left-0 aspect-[1440/158] w-[760px] md:w-[1100px] lg:w-full">
+					<img
+						alt=""
+						class="block size-full object-contain object-left-bottom"
+						src={contactBottomLandscape}
+					/>
+				</div>
+			</div>
+			<div class="absolute h-[140px] left-[-48px] top-[128px] w-[143px] opacity-45 md:h-[200px] md:left-[72px] md:top-[144.34px] md:w-[204px] md:opacity-70 lg:h-[244.47px] lg:left-[138.87px] lg:w-[249.332px] lg:opacity-100">
+				<Fragment set:html={ContactUsSvgs.ContactUsSvg04} />
+			</div>
+			<SectionShell
+				containerClass="grid gap-[72px] lg:grid-cols-[minmax(0,1fr)_minmax(420px,592px)] pt-56 pb-80"
+				size="wide"
+				spacing="none">
+				<div class="flex flex-col gap-16 md:gap-[118px] lg:pl-[120px] xl:pl-[160px]">
+					<SectionHeader
+						class="max-w-[664px]"
+						description="Our team works round the clock to respond to all incoming queries."
+						title="Contact us"
+					/>
+					<div
+						class="flex flex-col gap-10 items-start relative w-full max-w-[520px] lg:max-w-[320px]"
+						data-name="Contact details">
+						<div class="flex flex-col gap-2 items-start relative shrink-0 w-full">
+							<p class={`${typeStyles.body} font-medium leading-contact relative shrink-0 text-[#0f251b] w-full`}>
+								{phoneContact.title}
+							</p>
+							<div class="flex flex-col gap-2 items-start relative shrink-0 w-full">
+								<p class={`${typeStyles.body} relative shrink-0 text-[#8c8c8c] w-full`}>
+									{phoneContact.helper}
+								</p>
+								{
+									phoneContact.links.map((link) => (
+										<div class="flex gap-2 items-center justify-center relative shrink-0">
+											<p class={`${typeStyles.body} font-medium leading-contact relative shrink-0 text-green-500 break-words`}>
+												{link}
+											</p>
+										</div>
+									))
+								}
+							</div>
+						</div>
+						<div class="flex flex-col gap-4 items-start relative shrink-0 w-full">
+							<p class={`${typeStyles.body} font-medium leading-contact relative shrink-0 text-[#0f251b] w-full`}>
+								General inquiries
+							</p>
+							{
+								inquiryContacts.map((contact) => (
+									<div class="flex flex-col gap-2 items-start relative shrink-0 w-full">
+										<p class={`${typeStyles.body} relative shrink-0 text-[#8c8c8c] w-full`}>
+											{contact.helper}
+										</p>
+										{contact.links.map((link) => (
+											<div class="flex gap-2 items-center justify-center relative shrink-0">
+												<p class={`${typeStyles.body} font-medium leading-contact relative shrink-0 text-green-500 break-words`}>
+													{link}
+												</p>
+											</div>
+										))}
+									</div>
+								))
+							}
+						</div>
+					</div>
+				</div>
+				<div class="relative z-10 min-h-[360px] w-full overflow-hidden rounded-[30px] bg-white shadow-[0_24px_80px_rgba(15,37,27,0.12)] md:min-h-[460px] lg:min-h-[560px]">
+					<iframe
+						allowfullscreen
+						class="absolute inset-0 size-full border-0"
+						loading="lazy"
+						referrerpolicy="no-referrer-when-downgrade"
+						src="https://www.google.com/maps?q=tilisi+logistics+park&output=embed"
+						title="Map showing Tilisi Logistics Park"
+					></iframe>
+				</div>
+			</SectionShell>
+		</div>
+	</div>
+</Layout>

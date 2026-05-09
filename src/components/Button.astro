@@ -6,6 +6,7 @@ const {
 	iconOnly = false,
 	gap,
 	isLink = false,
+	href,
 	class: className,
 	...rest
 } = Astro.props;
@@ -80,15 +81,15 @@ const variantClass = {
 const iconSizeClass = iconSizes[iconSizeKey] || [];
 const sizeClass = iconOnly ? iconSizeClass : sizes[sizeKey] || [];
 const gapClass = !iconOnly && gapKey ? gapMap[gapKey] : [];
-const additionalClasses = className ? className.split(" ") : [];
 const chosenVariant = variantKey;
+const shouldRenderLink = Boolean(href) || isLink;
 
 const baseClass = [
 	"inline-flex",
 	"items-center",
 	"justify-center",
 	"gap-2",
-	"font-medium",
+	"font-regular",
 	"transition-all",
 	"rounded-full",
 	"duration-300",
@@ -99,15 +100,15 @@ const baseClass = [
 ---
 
 {
-	isLink ? (
+	shouldRenderLink ? (
 		<a
-			href={rest.href}
+			href={href}
 			class:list={[
 				...baseClass,
 				...(variantClass[chosenVariant] || []),
 				...sizeClass,
 				...gapClass,
-				...additionalClasses,
+				className,
 			]}
 			{...rest}>
 			{iconOnly ? (
@@ -127,7 +128,7 @@ const baseClass = [
 				...(variantClass[chosenVariant] || []),
 				...sizeClass,
 				...gapClass,
-				...additionalClasses,
+				className,
 			]}
 			{...rest}>
 			{iconOnly ? (
