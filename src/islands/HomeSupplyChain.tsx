@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
-import farmerImage from "../assets/figma/c2c2df3bbbb24de92cb6c214b6dae6d9ec8411a0.png?url";
-import businessImage from "../assets/figma/bde7cbc7ab76e8ddecbaf7d4c120dd2f2e62a08a.png?url";
-import foodSystemsImage from "../assets/figma/69ef415b99d59a8e413a8dec8a5799dcd5f264d5.png?url";
+import farmerImage from "../assets/figma/shared/supply-chain/farmer-market.png?url";
+import businessImage from "../assets/figma/shared/supply-chain/business-sourcing.png?url";
+import foodSystemsImage from "../assets/figma/shared/supply-chain/food-systems.png?url";
 
 const benefits = [
 	{
