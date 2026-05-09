@@ -5,12 +5,12 @@ import Button from "../components/Button.astro";
 import ContentContainer from "../components/layout/ContentContainer.astro";
 import heroHomeImage from "../assets/figma/home/hero.png?url";
 import supplyChainImage from "../assets/figma/home/supply-chain-diagram.svg?url";
-import imgVector1 from "../assets/figma/shared/supply-chain/farmer-market.png?url";
-import imgSupplyChainBusiness from "../assets/figma/shared/supply-chain/business-sourcing.png?url";
-import imgSupplyChainFoodSystems from "../assets/figma/shared/supply-chain/food-systems.png?url";
-import imgPlaceholderImage from "../assets/figma/shared/news/impact-report.png?url";
-import imgPlaceholderImage1 from "../assets/figma/shared/news/startup-award.png?url";
-import imgPlaceholderImage2 from "../assets/figma/shared/news/operations-region.png?url";
+import farmerMarketImage from "../assets/figma/shared/supply-chain/farmer-market.png?url";
+import businessSourcingImage from "../assets/figma/shared/supply-chain/business-sourcing.png?url";
+import foodSystemsImage from "../assets/figma/shared/supply-chain/food-systems.png?url";
+import newsImpactReportImage from "../assets/figma/shared/news/impact-report.png?url";
+import newsStartupAwardImage from "../assets/figma/shared/news/startup-award.png?url";
+import newsOperationsRegionImage from "../assets/figma/shared/news/operations-region.png?url";
 import BackgroundBottomSvg from "../components/figma/BackgroundBottomSvg.astro";
 import * as HomeSvgs from "../lib/figmaMarkup/home";
 import { sectionSpacing, typeStyles } from "../lib/figmaStyles";
@@ -19,19 +19,19 @@ const supplyChainBenefits = [
 	{
 		title: "Better Markets for Farmers",
 		description: "We connect farmers to reliable buyers, turning harvests into stable income and reducing unnecessary food loss.",
-		image: imgVector1,
+		image: farmerMarketImage,
 		imageAlt: "Produce being loaded for market delivery",
 	},
 	{
 		title: "Better Sourcing for Businesses",
 		description: "Hotels, caterers, processors, and global buyers access quality produce and ingredients with full transparency and consistent supply.",
-		image: imgSupplyChainBusiness,
+		image: businessSourcingImage,
 		imageAlt: "Fresh vegetables handed over in a commercial kitchen",
 	},
 	{
 		title: "Better Food Systems for Everyone",
 		description: "By efficiently matching supply and demand, we ensure more food is consumed rather than wasted. Food systems will shape our planet's future, with Africa leading the way. At Farm to Feed, we create the infrastructure for a more inclusive, resilient, and waste-free future.",
-		image: imgSupplyChainFoodSystems,
+		image: foodSystemsImage,
 		imageAlt: "Fresh ingredients arranged on a chopping board",
 	},
 ];
@@ -39,17 +39,17 @@ const supplyChainBenefits = [
 const defaultNewsItems = [
 	{
 		date: "09 Jan 2026",
-		image: imgPlaceholderImage,
+		image: newsImpactReportImage,
 		title: "Farm to Feed has published their first Impact Report",
 	},
 	{
 		date: "09 Jan 2026",
-		image: imgPlaceholderImage1,
+		image: newsStartupAwardImage,
 		title: "Farm to Feed Wins Global Startup Award and Secures New Investment",
 	},
 	{
 		date: "09 Jan 2026",
-		image: imgPlaceholderImage2,
+		image: newsOperationsRegionImage,
 		title: "Farm to Feed Expands Operations to New Region",
 	},
 ];

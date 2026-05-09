@@ -16,40 +16,40 @@ import {
 } from "../lib/figmaMarkup/globalBuyers";
 import BorderTopKenyanBuyersSvg from "../components/figma/BorderTopKenyanBuyersSvg.astro";
 import { sectionSpacing, typeStyles } from "../lib/figmaStyles";
-import imgVector from "../assets/figma/global-buyers/hero-illustration.png?url";
-import imgVector1 from "../assets/figma/shared/supply-chain/food-systems.png?url";
-import imgRectangle5 from "../assets/figma/global-buyers/market-produce.png?url";
-import imgSpices from "../assets/figma/global-buyers/product-spices.png?url";
-import imgPowerPowder from "../assets/figma/global-buyers/product-powders.png?url";
-import imgFruitFlakes from "../assets/figma/global-buyers/product-fruit-flakes.png?url";
-import imgFlour from "../assets/figma/global-buyers/product-flour.png?url";
+import globalBuyersHeroIllustration from "../assets/figma/global-buyers/hero-illustration.png?url";
+import supplyChainFoodSystemsImage from "../assets/figma/shared/supply-chain/food-systems.png?url";
+import marketProduceImage from "../assets/figma/global-buyers/market-produce.png?url";
+import productSpicesImage from "../assets/figma/global-buyers/product-spices.png?url";
+import productPowdersImage from "../assets/figma/global-buyers/product-powders.png?url";
+import productFruitFlakesImage from "../assets/figma/global-buyers/product-fruit-flakes.png?url";
+import productFlourImage from "../assets/figma/global-buyers/product-flour.png?url";
 
 const exportProductCards = [
 	{
 		body: "Single-origin chilis, herbs, aromatics and more.\nUsed for stand-alone seasonings, blends, and creating high quality flavour profiles for a wide range of formulations.",
 		color: "#5B3711",
-		image: imgSpices,
+		image: productSpicesImage,
 		imageClassName: "inset-[8%_0_9%_0]",
 		title: "Flavours + Spices",
 	},
 	{
 		body: "Leafy greens, roots, botanicals, and superfood ingredients.\nIdeal for boosting nutrition, adding natural colour, and enhancing flavour in food, beverage, and nutraceutical applications.",
 		color: "#C2CE86",
-		image: imgPowerPowder,
+		image: productPowdersImage,
 		imageClassName: "inset-[8%_-10%_6%_5%]",
 		title: "Power Powders",
 	},
 	{
 		body: "Crispy, tart tropical fruit flakes for snacks, cereals, dairy products and more.\nNatural sweetness, vibrant colour, no added sugar.",
 		color: "#D78228",
-		image: imgFruitFlakes,
+		image: productFruitFlakesImage,
 		imageClassName: "inset-[19%_0_18%_23%]",
 		title: "Fruitful Flakes",
 	},
 	{
 		body: "Clean-label flours made from fruits, tubers, and vegetables.\nSuitable for grain-free and gluten-free formulations, baking, thickening, and functional ingredient development.",
 		color: "#824266",
-		image: imgFlour,
+		image: productFlourImage,
 		imageClassName: "inset-[-6%_0_-6%_0]",
 		title: "Flours Free of Grain & Gluten",
 	},
@@ -73,7 +73,7 @@ const transformSizeStyle = "--transform-inner-width: 1185; --transform-inner-hei
 			<div class="absolute flex inset-[-19.8%_-5.56%_0_-41.25%] items-center justify-center" style="container-type: size;">
 				<div class="-rotate-90 flex-none h-[100cqw] w-[100cqh]">
 					<div class="relative size-full" data-name="Vector">
-						<img alt="" class="absolute block inset-0 max-w-none size-full" height="2114" src={imgVector} width="1109.355" />
+						<img alt="" class="absolute block inset-0 max-w-none size-full" height="2114" src={globalBuyersHeroIllustration} width="1109.355" />
 					</div>
 				</div>
 			</div>
@@ -162,7 +162,7 @@ const transformSizeStyle = "--transform-inner-width: 1185; --transform-inner-hei
 							</div>
 						</div>
 						<div class="absolute h-[360px] left-0 top-0 w-full max-w-129.25 md:h-[552px]" data-name="Vector">
-							<img alt="" class="absolute block inset-0 max-w-none size-full" height="552" src={imgVector1} width="517" />
+							<img alt="" class="absolute block inset-0 max-w-none size-full" height="552" src={supplyChainFoodSystemsImage} width="517" />
 						</div>
 					</div>
 				</div>
@@ -255,7 +255,7 @@ const transformSizeStyle = "--transform-inner-width: 1185; --transform-inner-hei
 								</div>
 							</div>
 							<div class="h-[320px] relative shrink-0 w-full max-w-[405px] md:h-[394px]">
-								<img alt="" class="absolute inset-0 max-w-none object-contain pointer-events-none size-full" src={imgRectangle5} />
+								<img alt="" class="absolute inset-0 max-w-none object-contain pointer-events-none size-full" src={marketProduceImage} />
 							</div>
 							<div class="flex flex-[1_0_0] flex-col gap-8 items-start justify-center min-w-px relative">
 								<div class="flex flex-col items-center relative rounded-[30px] shrink-0 w-full">

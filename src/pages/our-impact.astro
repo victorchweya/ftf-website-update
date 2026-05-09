@@ -20,38 +20,34 @@ import {
 } from "../lib/figmaMarkup/impact";
 import BackgroundBottomImpactSvg from "../components/figma/BackgroundBottomImpactSvg.astro";
 import { sectionSpacing, typeStyles } from "../lib/figmaStyles";
-import imgVector from "../assets/figma/our-impact/hero-produce.png?url";
-import imgVector2 from "../assets/figma/shared/supply-chain/business-sourcing.png?url";
-import imgEWeb011 from "../assets/figma/our-impact/sdg-01-no-poverty.png?url";
-import imgEWeb08 from "../assets/figma/our-impact/sdg-08-decent-work.png?url";
-import imgEWeb02 from "../assets/figma/our-impact/sdg-02-zero-hunger.png?url";
-import imgEWeb12 from "../assets/figma/our-impact/sdg-12-responsible-consumption.png?url";
-import imgEWeb05 from "../assets/figma/our-impact/sdg-05-gender-equality.png?url";
-import imgEWeb13 from "../assets/figma/our-impact/sdg-13-climate-action.png?url";
-import imgEWeb041 from "../assets/figma/our-impact/sdg-04-quality-education.png?url";
-import imgEWeb07 from "../assets/figma/our-impact/sdg-07-clean-energy.png?url";
-import imgEWeb15 from "../assets/figma/our-impact/sdg-15-life-on-land.png?url";
+import impactHeroProduceImage from "../assets/figma/our-impact/hero-produce.png?url";
+import impactBusinessSourcingImage from "../assets/figma/shared/supply-chain/business-sourcing.png?url";
+import sdg08DecentWorkImage from "../assets/figma/our-impact/sdg-08-decent-work.png?url";
+import sdg05GenderEqualityImage from "../assets/figma/our-impact/sdg-05-gender-equality.png?url";
+import sdg04QualityEducationImage from "../assets/figma/our-impact/sdg-04-quality-education.png?url";
+import sdg07CleanEnergyImage from "../assets/figma/our-impact/sdg-07-clean-energy.png?url";
+import sdg15LifeOnLandImage from "../assets/figma/our-impact/sdg-15-life-on-land.png?url";
 
 const indirectSdgIcons = [
 	{
 		label: "Quality education",
-		src: imgEWeb041,
+		src: sdg04QualityEducationImage,
 	},
 	{
 		label: "Gender equality",
-		src: imgEWeb05,
+		src: sdg05GenderEqualityImage,
 	},
 	{
 		label: "Affordable and clean energy",
-		src: imgEWeb07,
+		src: sdg07CleanEnergyImage,
 	},
 	{
 		label: "Decent work and economic growth",
-		src: imgEWeb08,
+		src: sdg08DecentWorkImage,
 	},
 	{
 		label: "Life on land",
-		src: imgEWeb15,
+		src: sdg15LifeOnLandImage,
 	},
 ];
 const impactPillarRows = [[Frame29, Frame33], [Frame41, Frame44], [Frame48]];
@@ -150,7 +146,7 @@ const transformSizeStyle = "--transform-inner-width: 1185; --transform-inner-hei
 			<div class="absolute flex inset-[0.33%_22.5%_87.76%_19.93%] items-center justify-center" style="container-type: size;">
 				<div class="flex-none h-[100cqw] rotate-90 w-[100cqh]">
 					<div class="relative size-full" data-name="Vector">
-						<img alt="" class="absolute block inset-0 max-w-none size-full" height="829" src={imgVector} width="234.69" />
+						<img alt="" class="absolute block inset-0 max-w-none size-full" height="829" src={impactHeroProduceImage} width="234.69" />
 					</div>
 				</div>
 			</div>
@@ -202,7 +198,7 @@ const transformSizeStyle = "--transform-inner-width: 1185; --transform-inner-hei
 						<div class="relative flex h-[360px] md:h-[500px] items-center justify-center w-full" style="--transform-inner-width: 1185; --transform-inner-height: 619;">
 							<div class="-rotate-90 flex-none">
 								<div class="h-[615px] relative w-125" data-name="Vector">
-									<img alt="" class="absolute block inset-0 max-w-none size-full" height="615" src={imgVector2} width="500" />
+									<img alt="" class="absolute block inset-0 max-w-none size-full" height="615" src={impactBusinessSourcingImage} width="500" />
 								</div>
 							</div>
 						</div>

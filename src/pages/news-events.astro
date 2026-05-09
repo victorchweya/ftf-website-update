@@ -3,9 +3,9 @@ import { getCollection } from "astro:content";
 import Layout from "../layouts/Layout.astro";
 import SectionShell from "../components/layout/SectionShell.astro";
 import { sectionSpacing, typeStyles } from "../lib/figmaStyles";
-import imgPlaceholderImage from "../assets/figma/shared/news/impact-report.png?url";
-import imgPlaceholderImage1 from "../assets/figma/shared/news/startup-award.png?url";
-import imgPlaceholderImage2 from "../assets/figma/shared/news/operations-region.png?url";
+import newsImpactReportImage from "../assets/figma/shared/news/impact-report.png?url";
+import newsStartupAwardImage from "../assets/figma/shared/news/startup-award.png?url";
+import newsOperationsRegionImage from "../assets/figma/shared/news/operations-region.png?url";
 import * as HomeSvgs from "../lib/figmaMarkup/home";
 
 const dateFormatter = new Intl.DateTimeFormat("en-GB", {
@@ -17,19 +17,19 @@ const dateFormatter = new Intl.DateTimeFormat("en-GB", {
 const defaultNewsEvents = [
 	{
 		date: "09 Jan 2026",
-		image: imgPlaceholderImage,
+		image: newsImpactReportImage,
 		title: "Farm to Feed has published their first Impact Report",
 		href: "/news-events",
 	},
 	{
 		date: "09 Jan 2026",
-		image: imgPlaceholderImage1,
+		image: newsStartupAwardImage,
 		title: "Farm to Feed Wins Global Startup Award and Secures New Investment",
 		href: "/news-events",
 	},
 	{
 		date: "09 Jan 2026",
-		image: imgPlaceholderImage2,
+		image: newsOperationsRegionImage,
 		title: "Farm to Feed Expands Operations to New Region",
 		href: "/news-events",
 	},
