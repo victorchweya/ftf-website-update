@@ -1,8 +1,169 @@
 ---
+import Button from "../components/Button.astro";
+import ContentContainer from "../components/layout/ContentContainer.astro";
+import SiteLogo from "../components/SiteLogo.astro";
+import { typeStyles } from "../lib/figmaStyles";
+import svgPaths from "../lib/homeSvgPaths";
 
+const footerColumnClass = "flex flex-col gap-4 items-start relative w-full max-w-[384px]";
+const footerGroupClass = "flex flex-col gap-[14px] items-start not-italic relative shrink-0 w-full";
+const footerHeadingClass = `${typeStyles.bodyLead} relative shrink-0 text-white whitespace-nowrap`;
+const footerCopyClass = `${typeStyles.body} font-light relative shrink-0 text-[#dfeddf] w-full max-w-[379px]`;
+const contactRowClass = "flex gap-4 items-start relative shrink-0 w-full";
+const footerLinkWrapperClass = "flex items-center justify-center p-2 relative shrink-0";
+const footerLinkTextClass = `${typeStyles.button} not-italic relative shrink-0 text-center text-white whitespace-nowrap`;
+const footerIconClass = "relative shrink-0 size-6";
+
+const exploreLinks = [
+	{ label: "Kenyan Buyers", href: "/kenyan-buyers" },
+	{ label: "Global Buyers", href: "/global-buys" },
+	{ label: "Careers", href: "/careers" },
+	{ label: "Contact Us", href: "/contact-us" },
+	{ label: "FAQs", href: "/faqs" },
+];
+
+const socialLinks = {
+	facebook: "https://www.facebook.com/farmtofeedkenya/",
+	instagram: "https://instagram.com/farm_to_feed_kenya?igshid=1gymo74ypgrj0",
+	linkedin: "https://www.linkedin.com/company/farm-to-feed-kenya/",
+};
 ---
 
-<footer
-	class="bg-white border-t border-slate-200 px-6 py-5 text-center text-sm text-slate-500">
-	<p>© {new Date().getFullYear()} FTF</p>
+<footer class="bg-green-500 overflow-hidden relative shrink-0 w-full" data-name="Footer">
+	<ContentContainer size="wide" class="py-12 md:py-16 lg:py-20">
+		<div class="grid gap-10 md:grid-cols-3 md:gap-8 lg:grid-cols-[minmax(260px,1fr)_minmax(220px,0.85fr)_minmax(360px,1fr)] lg:gap-16">
+			<div class={footerColumnClass}>
+				<div class={footerGroupClass}>
+					<p class={footerHeadingClass}>Quick Actions</p>
+					<p class={footerCopyClass}>Buy or Sell produce that makes sense for your business and the planet</p>
+				</div>
+				<div class="flex items-center relative shrink-0 w-full">
+					<Button href="/sell-with-us" variant="none" size="lg" class="relative shrink-0 bg-[#eff6ef] text-green-500" data-name="order">
+						Sell With Us
+					</Button>
+				</div>
+				<div class="flex items-center relative shrink-0 w-full">
+					<Button data-name="order" href="https://shop.farmtofeedkenya.com/auth/login" rel="noreferrer" target="_blank" variant="secondary" size="lg" class="relative shrink-0 text-[#eff6ef]">
+						Log In
+					</Button>
+				</div>
+			</div>
+
+			<div class={footerColumnClass}>
+				<div class="flex flex-col gap-[14px] items-start relative shrink-0 w-full">
+					<p class={footerHeadingClass}>Explore</p>
+					<nav class="flex flex-col items-start justify-center relative shrink-0" aria-label="Footer navigation">
+						{exploreLinks.map((link) => (
+							<a class={footerLinkWrapperClass} data-name="footer-link" href={link.href}>
+								<p class={footerLinkTextClass}>{link.label}</p>
+							</a>
+						))}
+					</nav>
+				</div>
+			</div>
+
+			<div class={footerColumnClass}>
+				<div class={footerGroupClass}>
+					<p class={footerHeadingClass}>Get more information</p>
+					<p class={footerCopyClass}>Contact us in any of these channels</p>
+				</div>
+				<div class="flex flex-col gap-6 items-start justify-center relative shrink-0 w-full">
+					<div class={contactRowClass}>
+						<div class={footerIconClass} data-name="prime:envelope">
+							<svg class="absolute block inset-0 size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 24 24">
+								<g id="prime:envelope">
+									<path d={svgPaths.p21e8d370} fill="var(--fill-0, white)" id="Vector" />
+								</g>
+							</svg>
+						</div>
+						<a class={`${typeStyles.body} font-light not-italic relative text-white break-words`} href="mailto:info@farmtofeedkenya.com">
+							info@farmtofeedkenya.com
+						</a>
+					</div>
+					<div class={contactRowClass}>
+						<div class={footerIconClass} data-name="prime:phone">
+							<svg class="absolute block inset-0 size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 24 24">
+								<g id="prime:phone">
+									<path d={svgPaths.p2a80e180} fill="var(--fill-0, white)" id="Vector" />
+								</g>
+							</svg>
+						</div>
+						<a class={`flex-[1_0_0] ${typeStyles.body} font-light min-w-px not-italic relative text-white`} href="tel:+254795851756">
+							+254 795 851 756
+						</a>
+					</div>
+					<div class={contactRowClass}>
+						<div class={footerIconClass} data-name="prime:map-marker">
+							<svg class="absolute block inset-0 size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 24 24">
+								<g id="prime:map-marker">
+									<path d={svgPaths.p1eac3c40} fill="var(--fill-0, white)" id="Vector" />
+									<path d={svgPaths.p2c253480} fill="var(--fill-0, white)" id="Vector_2" />
+								</g>
+							</svg>
+						</div>
+						<p class={`${typeStyles.body} font-light not-italic relative text-white`}>Tilisi Business Park, Kiambu, Kenya</p>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="mt-16 grid gap-x-8 gap-y-10 md:grid-cols-[220px_minmax(0,1fr)] md:items-end lg:mt-20 lg:grid-cols-[minmax(260px,1fr)_minmax(220px,0.85fr)_minmax(360px,1fr)] lg:gap-x-16">
+			<a href="/" class="flex items-start" aria-label="Farm to Feed home">
+				<SiteLogo tone="light" />
+			</a>
+			<p class={`${typeStyles.footerTagline} not-italic text-[#f5e091] md:col-start-2 lg:col-span-2 lg:col-start-2 lg:self-center`}>
+				Shaping the Future of Food
+			</p>
+			<div class="flex items-center md:col-start-1">
+				<div class="flex gap-8 items-start relative">
+					<a aria-label="Farm to Feed on Facebook" class="overflow-clip relative shrink-0 size-6" data-name="facebook" href={socialLinks.facebook} rel="noreferrer" target="_blank">
+						<div class="absolute bottom-[8.33%] left-[29.17%] right-1/4 top-[8.33%]" data-name="Icon">
+							<div class="absolute inset-[-5%_-9.09%]">
+								<svg class="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 13 22">
+									<path d={svgPaths.p2f694ec0} id="Icon" stroke="var(--stroke-0, white)" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" />
+								</svg>
+							</div>
+						</div>
+					</a>
+					<a aria-label="Farm to Feed on Instagram" class="overflow-clip relative shrink-0 size-6" data-name="instagram" href={socialLinks.instagram} rel="noreferrer" target="_blank">
+						<div class="absolute inset-[8.33%]" data-name="Icon">
+							<div class="absolute inset-[-5%]">
+								<svg class="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 22 22">
+									<path d={svgPaths.p37bc6180} id="Icon" stroke="var(--stroke-0, white)" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" />
+								</svg>
+							</div>
+						</div>
+					</a>
+					<a aria-label="Farm to Feed on LinkedIn" class="overflow-clip relative shrink-0 size-6" data-name="linkedin" href={socialLinks.linkedin} rel="noreferrer" target="_blank">
+						<div class="absolute inset-[8.33%_8.33%_12.5%_8.33%]" data-name="Icon">
+							<div class="absolute inset-[-5.26%_-5%]">
+								<svg class="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 22 21">
+									<g id="Icon">
+										<path d={svgPaths.p6a8300} stroke="var(--stroke-0, white)" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" />
+										<path d="M5 8H1V20H5V8Z" stroke="var(--stroke-0, white)" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" />
+										<path d={svgPaths.pafef4f0} stroke="var(--stroke-0, white)" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" />
+									</g>
+								</svg>
+							</div>
+						</div>
+					</a>
+				</div>
+			</div>
+			<div class="flex items-center md:col-start-2 lg:col-start-2">
+				<div class="flex gap-6 items-center relative">
+					<a href="/privacy-policy" class={footerLinkWrapperClass} data-name="about-us">
+						<p class={footerLinkTextClass}>Privacy Policy</p>
+					</a>
+					<a href="/cookie-policy" class={footerLinkWrapperClass} data-name="about-us">
+						<p class={`${footerLinkTextClass} whitespace-pre`}>Cookie  Policy</p>
+					</a>
+				</div>
+			</div>
+			<div class="flex items-center md:col-span-2 md:justify-start lg:col-span-1 lg:col-start-3 lg:justify-end">
+				<div class="flex items-center justify-end p-2 relative" data-name="about-us">
+					<p class={`${footerLinkTextClass} text-right`}>&copy;2026 All right reserved</p>
+				</div>
+			</div>
+		</div>
+	</ContentContainer>
 </footer>

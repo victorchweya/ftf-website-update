@@ -1,8 +1,247 @@
 ---
-import FigmaPageLayout from "../layouts/FigmaPageLayout.astro";
-import Impact from "../react/figma/pages/Impact";
+import Layout from "../layouts/Layout.astro";
+import Button from "../components/Button.astro";
+import ContentContainer from "../components/layout/ContentContainer.astro";
+import SectionShell from "../components/layout/SectionShell.astro";
+import ResponsiveGrid from "../components/layout/ResponsiveGrid.astro";
+import * as ImpactSvgs from "../lib/figmaMarkup/impactSvgs";
+import {
+	Frame29,
+	Frame33,
+	Frame41,
+	Frame44,
+	Frame48,
+	Frame51,
+	Frame52,
+	Frame53,
+	Frame54,
+	Frame55,
+	Frame56,
+} from "../lib/figmaMarkup/impact";
+import BackgroundBottomImpactSvg from "../components/figma/BackgroundBottomImpactSvg.astro";
+import { sectionSpacing, typeStyles } from "../lib/figmaStyles";
+import impactHeroProduceImage from "../assets/figma/our-impact/hero-produce.png?url";
+import impactBusinessSourcingImage from "../assets/figma/shared/supply-chain/business-sourcing.png?url";
+import sdg08DecentWorkImage from "../assets/figma/our-impact/sdg-08-decent-work.png?url";
+import sdg05GenderEqualityImage from "../assets/figma/our-impact/sdg-05-gender-equality.png?url";
+import sdg04QualityEducationImage from "../assets/figma/our-impact/sdg-04-quality-education.png?url";
+import sdg07CleanEnergyImage from "../assets/figma/our-impact/sdg-07-clean-energy.png?url";
+import sdg15LifeOnLandImage from "../assets/figma/our-impact/sdg-15-life-on-land.png?url";
+
+const indirectSdgIcons = [
+	{
+		label: "Quality education",
+		src: sdg04QualityEducationImage,
+	},
+	{
+		label: "Gender equality",
+		src: sdg05GenderEqualityImage,
+	},
+	{
+		label: "Affordable and clean energy",
+		src: sdg07CleanEnergyImage,
+	},
+	{
+		label: "Decent work and economic growth",
+		src: sdg08DecentWorkImage,
+	},
+	{
+		label: "Life on land",
+		src: sdg15LifeOnLandImage,
+	},
+];
+const impactPillarRows = [[Frame29, Frame33], [Frame41, Frame44], [Frame48]];
+const sdgTargetCards = [Frame51, Frame52, Frame53, Frame54, Frame55, Frame56];
+const transformSizeStyle = "--transform-inner-width: 1185; --transform-inner-height: 21;";
 ---
 
-<FigmaPageLayout title="Our Impact">
-	<Impact client:load />
-</FigmaPageLayout>
+<Layout title="Our Impact">
+	<div class="bg-white flex flex-col items-center relative w-full min-h-screen" data-name="Impact">
+		<div class="bg-[#eddde6] min-h-[986px] overflow-clip relative shrink-0 w-full" data-name="Wireframe - 53">
+			<div class="absolute flex h-[620.8px] items-center justify-center left-[79.24%] right-[-24.34%] top-[157px]" style="container-type: size;">
+				<div class="flex-none h-[100cqw] rotate-90 w-[100cqh]">
+					<div class="relative size-full">
+						<Fragment set:html={ImpactSvgs.ImpactSvg01} />
+					</div>
+				</div>
+			</div>
+			<ContentContainer size="wide" class="pt-[170px] pb-[96px] md:pt-[220px] md:pb-[128px]">
+				<div class="grid gap-12 lg:grid-cols-[minmax(0,515px)_minmax(0,624px)] lg:items-start lg:justify-between lg:gap-[80px]">
+					<div class="flex flex-col gap-10 items-start not-italic relative">
+						<div class="flex flex-col gap-10 items-start relative shrink-0">
+							<div class={`${typeStyles.heroTitleLarge} relative shrink-0 text-[#0f251b] w-full max-w-[519px] whitespace-pre-wrap`}>
+								<p class="leading-tight mb-0">{`Building `}</p>
+								<p class="leading-tight">
+									resilient
+									<br aria-hidden="true" />
+									food systems
+								</p>
+							</div>
+							<p class={`${typeStyles.bodyLead} relative shrink-0 text-green-500 w-full max-w-[515px]`}>
+								Agriculture is the backbone of Kenya's rural economy, yet 7.2 million smallholder farmers remain economically vulnerable due to fragmented markets and unreliable payments.
+							</p>
+						</div>
+						<p class={`${typeStyles.body} relative shrink-0 text-green-500 w-full max-w-[515px]`}>
+							At the same time, up to 50% of fresh produce in Sub-Saharan Africa is lost between harvest and market. With Africa's population projected to double by 2050 and climate change threatening productivity, the urgency to build inclusive food systems has never been greater.
+						</p>
+					</div>
+					<div class="flex flex-col gap-16 items-end relative w-full">
+						<div class="bg-[#eff6ef] relative rounded-[30px] shrink-0 w-full">
+							<div aria-hidden="true" class="absolute border border-[#f7f7f7] border-solid inset-0 pointer-events-none rounded-[30px]" />
+							<div class="flex flex-col gap-[27px] items-start px-6 py-8 relative size-full md:px-[32px] md:py-[48px]">
+								<div class="flex items-center relative shrink-0 w-full">
+									<p class={`${typeStyles.cardTitle} not-italic relative shrink-0 text-black w-full`}>
+										Why
+									</p>
+								</div>
+								<p class={`${typeStyles.body} not-italic relative shrink-0 text-black w-full`}>
+									Inefficient supply chains cause significant food loss, leading to lost income, avoidable emissions, and wasted resources. African produce remains under-utilised globally.
+								</p>
+								<div class="absolute contents left-[-32px] top-[-49px]">
+									<div class="absolute flex h-[80px] items-center justify-center left-[-32px] top-[-49px] w-[82px]">
+										<div class="-scale-y-100 flex-none rotate-180">
+											<div class="h-[80px] relative w-[82px]" data-name="Vector">
+												<Fragment set:html={ImpactSvgs.ImpactSvg02} />
+											</div>
+										</div>
+									</div>
+									<div class="absolute h-[32px] left-[-19px] top-[-25px] w-[56px]">
+										<div class="absolute h-[32px] left-0 top-0 w-[56px]" data-name="Capa_1">
+											<Fragment set:html={ImpactSvgs.ImpactSvg03} />
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="bg-[#eff6ef] relative rounded-[30px] shrink-0 w-full">
+							<div aria-hidden="true" class="absolute border border-[#f7f7f7] border-solid inset-0 pointer-events-none rounded-[30px]" />
+							<div class="flex flex-col gap-[27px] items-start px-6 py-8 relative size-full md:px-[32px] md:py-[48px]">
+								<div class="flex items-center relative shrink-0 w-full">
+									<p class={`${typeStyles.cardTitle} not-italic relative shrink-0 text-black w-full`}>
+										How
+									</p>
+								</div>
+								<p class={`${typeStyles.body} not-italic relative shrink-0 text-black w-full`}>
+									Farm to Feed builds structured, transparent, and demand-driven supply chains. Using digital tools, farmer training, and value addition, we create consistent markets for farmers while improving supply chain efficiency, extending product shelf life, and reducing environmental impact.
+								</p>
+								<div class="absolute h-[80px] left-[-32px] top-[-50.68px] w-[82px]">
+									<Fragment set:html={ImpactSvgs.ImpactSvg04} />
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</ContentContainer>
+		</div>
+
+		<div class="bg-white min-h-0 overflow-clip relative shrink-0 w-full lg:min-h-[1971px]" data-name="Wireframe - 11">
+			<BackgroundBottomImpactSvg className="absolute inset-x-0 top-0 w-full max-w-none pointer-events-none select-none" fill="#EDDDE6" />
+			<div class="absolute flex inset-[1.61%_31.62%_85.61%_20.85%] items-center justify-center" style="container-type: size;">
+				<div class="flex-none h-[hypot(-97.8483cqw,19.2264cqh)] rotate-[85.86deg] w-[hypot(2.1517cqw,80.7736cqh)]">
+					<div class="relative size-full" data-name="Vector">
+						<Fragment set:html={ImpactSvgs.ImpactSvg05} />
+					</div>
+				</div>
+			</div>
+			<div class="absolute flex inset-[0.33%_22.5%_87.76%_19.93%] items-center justify-center" style="container-type: size;">
+				<div class="flex-none h-[100cqw] rotate-90 w-[100cqh]">
+					<div class="relative size-full" data-name="Vector">
+						<img alt="" class="absolute block inset-0 max-w-none size-full" height="829" src={impactHeroProduceImage} width="234.69" />
+					</div>
+				</div>
+			</div>
+			<ContentContainer size="wide" class="pt-[180px] pb-30 md:pt-[220px] lg:pt-[277px]">
+				<div class="flex flex-col gap-8 items-center relative w-full">
+					<div class="hidden flex-col gap-8 items-center max-w-[1052px] not-italic relative shrink-0 text-center w-full md:flex">
+						<p class={`${typeStyles.sectionTitle} relative shrink-0 text-[#0f251b] w-full`}>
+							Our strategy is built on the conviction that food systems only work when farmers, markets, and the environment are strengthened together.
+						</p>
+						<p class={`${typeStyles.body} relative shrink-0 text-orange-500 w-full`}>
+							We translate this approach into five integrated pillars
+						</p>
+					</div>
+					<div class="flex flex-col gap-8 items-start relative shrink-0 w-full">
+						{
+							impactPillarRows.map((row, index) => (
+								<div class={`flex flex-col gap-8 relative shrink-0 w-full lg:flex-row ${index === 2 ? "items-stretch justify-center" : "items-stretch"}`}>
+									{row.map((PillarCard) => <Fragment set:html={PillarCard} />)}
+								</div>
+							))
+						}
+					</div>
+				</div>
+			</ContentContainer>
+		</div>
+
+		<div class="bg-white overflow-clip relative shrink-0 w-full" data-name="Wireframe - 10">
+			<div class="bg-yellow-200 min-h-[651px] overflow-clip rounded-tl-[40px] rounded-tr-[40px] w-full">
+				<ContentContainer size="wide" class={sectionSpacing.default}>
+					<div class="grid gap-12 lg:grid-cols-[568px_minmax(0,1fr)] lg:items-center">
+						<div class="absolute hidden lg:flex h-[525.083px] items-center justify-center left-[638.18px] top-[144.34px] w-[619.918px]" style={transformSizeStyle}>
+							<div class="flex-none rotate-[-83.81deg]">
+								<div class="h-[573px] relative w-[466px]" data-name="Vector">
+									<Fragment set:html={ImpactSvgs.ImpactSvg06} />
+								</div>
+							</div>
+						</div>
+						<div class="flex flex-col gap-[43px] items-start relative max-w-[568px]">
+							<p class={`${typeStyles.sectionTitle} not-italic relative shrink-0 text-[#0f251b] w-[488px]`}>
+								Impact that travels from farm level to customer counter
+							</p>
+							<p class={`${typeStyles.bodyLead} min-w-full not-italic relative shrink-0 text-green-500 w-min`}>
+								At Farm to Feed, we create impact throughout the supply chain, from farm level to customer counter. Our long-term outcomes lead to prosperous farmers, strong communities, and a climate-resilient food system that positions Africa as a leader in the production of sustainable ingredients.
+							</p>
+							<Button href="/reports/impact-report-2025.pdf" size="lg" class="relative mb-[32px] shrink-0 text-white lg:mb-0" data-name="order">
+								Read Impact Report 2025
+							</Button>
+						</div>
+						<div class="relative flex h-[360px] md:h-[500px] items-center justify-center w-full" style="--transform-inner-width: 1185; --transform-inner-height: 619;">
+							<div class="-rotate-90 flex-none">
+								<div class="h-[615px] relative w-125" data-name="Vector">
+									<img alt="" class="absolute block inset-0 max-w-none size-full" height="615" src={impactBusinessSourcingImage} width="500" />
+								</div>
+							</div>
+						</div>
+					</div>
+				</ContentContainer>
+			</div>
+		</div>
+
+		<SectionShell class="bg-yellow-200 overflow-clip relative shrink-0 w-full pb-24" data-name="Wireframe - 54">
+			<div class="absolute hidden h-[620.8px] items-center justify-center left-[77.85%] right-[-22.95%] top-[129px] lg:flex" style="container-type: size;">
+				<div class="flex-none h-[100cqw] rotate-90 w-[100cqh]">
+					<div class="relative size-full">
+						<Fragment set:html={ImpactSvgs.ImpactSvg07} />
+					</div>
+				</div>
+			</div>
+			<div class="relative z-10 flex flex-col gap-12 md:gap-16">
+				<div class="flex max-w-[737px] flex-col gap-8">
+					<p class={`${typeStyles.sectionTitle} not-italic text-[#0f251b] w-full`}>
+						Our impact metrics align directly with the SDG targets
+					</p>
+					<p class={`${typeStyles.bodyLarge} not-italic text-green-500 w-full max-w-[624px]`}>
+						In line with the GRI reporting standards, this provides transparency and accountability throughout the supply chain.
+					</p>
+				</div>
+				<ResponsiveGrid columns={3} class="items-stretch">
+					{sdgTargetCards.map((SdgCard) => <Fragment set:html={SdgCard} />)}
+				</ResponsiveGrid>
+				<div class="flex flex-col gap-[26px] items-start relative" data-name="sdg-extras">
+					<p class={`${typeStyles.bodyLarge} leading-normal not-italic relative shrink-0 text-black`}>
+						Farm to feed indirectly contributes to:
+					</p>
+					<div class="grid grid-cols-3 gap-4 relative shrink-0 sm:grid-cols-5">
+						{
+							indirectSdgIcons.map((icon) => (
+								<div class="relative rounded-[4px] shrink-0 size-[89px]">
+									<img alt={icon.label} class="absolute inset-0 max-w-none object-cover pointer-events-none rounded-[4px] size-full" src={icon.src} />
+								</div>
+							))
+						}
+					</div>
+				</div>
+			</div>
+		</SectionShell>
+	</div>
+</Layout>

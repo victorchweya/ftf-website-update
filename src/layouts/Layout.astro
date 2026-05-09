@@ -12,20 +12,11 @@ const { title = "FTF Website", description = "FTF Website" } = Astro.props;
 	<Header title={title} description={description} />
 
 	<body>
-		<div
-			class="min-h-screen grid grid-rows-[auto_1fr_auto] bg-slate-50 text-slate-900">
-			<header
-				class="site-header bg-white border-b border-slate-200 px-6 py-5">
-				<div class="brand">
-					<a href="/" class="text-slate-950 font-bold text-lg">FTF</a>
-				</div>
-				<Navigation />
-			</header>
-
-			<main class="site-main mx-auto w-full max-w-5xl px-6 py-10">
+		<div class="bg-orange-50 text-green-500">
+			<Navigation />
+			<main class="w-full">
 				<slot />
 			</main>
-
 			<Footer />
 		</div>
 	</body>
