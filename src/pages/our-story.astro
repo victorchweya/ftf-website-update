@@ -1,4 +1,4 @@
-ï»¿---
+---
 import Layout from "../layouts/Layout.astro";
 import ContentContainer from "../components/layout/ContentContainer.astro";
 import * as OurStorySvgs from "../lib/figmaMarkup/ourStorySvgs";
@@ -232,7 +232,7 @@ const activeStoryIndex = 0;
 	<div
 		class="bg-white flex flex-col items-start relative w-full"
 		data-name="Our Story">
-		<section class="relative shrink-0 w-full" data-name="Wireframe - 53">
+		<section class="relative w-full" data-name="Wireframe - 53">
 			<ContentContainer size="wide" class="h-full">
 				<div
 					class="relative grid w-full min-h-[540px] max-w-[913px] mt-20 mx-auto items-center gap-8 md:grid-cols-[minmax(0,570px)_279px] md:gap-16">
@@ -264,7 +264,7 @@ const activeStoryIndex = 0;
 		</section>
 
 		<section
-			class="bg-white overflow-clip relative shrink-0 w-full"
+			class="bg-white overflow-clip relative w-full"
 			data-name="Wireframe - 10">
 			<ContentContainer size="wide" class="h-full">
 				<div
@@ -280,13 +280,13 @@ const activeStoryIndex = 0;
 							quickly learned that food loss is one part of a much
 							larger challenge. Farmers needed more than a
 							solution for imperfect and surplus produce. They
-							neededÂ reliable market access for their full
+							needed reliable market access for their full
 							harvest.
 						</p>
 						<p class="leading-copy">
 							Since those early days, Farm to Feed has grown into
 							a trusted off taker and partner for farmers, helping
-							to address one of Kenyaâ€™s most persistent
+							to address one of Kenya’s most persistent
 							agricultural bottlenecks: connecting production to
 							dependable demand.
 						</p>
@@ -360,13 +360,13 @@ const activeStoryIndex = 0;
 												</div>
 											</div>
 										)}
-										<div class="flex flex-col gap-6 items-center not-italic relative shrink-0 text-center w-full">
+										<div class="flex flex-col gap-6 items-center not-italic relative text-center w-full">
 											<p
-												class={`${typeStyles.body} relative shrink-0 text-[#85a687] whitespace-nowrap`}>
+												class={`${typeStyles.body} relative text-[#85a687] whitespace-nowrap`}>
 												{principle.label}
 											</p>
 											<p
-												class={`${typeStyles.cardTitle} relative shrink-0 text-[#0f251b] w-full`}>
+												class={`${typeStyles.cardTitle} relative text-[#0f251b] w-full`}>
 												{principle.body}
 											</p>
 										</div>
@@ -407,7 +407,7 @@ const activeStoryIndex = 0;
 		</section>
 
 		<section
-			class="bg-white min-h-[500px] md:min-h-[580px] overflow-clip relative shrink-0 w-full mb-24"
+			class="bg-white min-h-[500px] md:min-h-[580px] overflow-clip relative w-full mb-24"
 			data-name="Wireframe - 54">
 			<ContentContainer size="wide">
 				<div
@@ -426,7 +426,7 @@ const activeStoryIndex = 0;
 					<div
 						class="flex flex-col items-center relative w-full max-w-[758px]">
 						<p
-							class={`${typeStyles.sectionTitle} not-italic relative shrink-0 text-[#030806] text-center w-full`}>
+							class={`${typeStyles.sectionTitle} not-italic relative text-[#030806] text-center w-full`}>
 							Farm to Feed is the tech-enabled platform
 						</p>
 					</div>
@@ -531,13 +531,13 @@ const activeStoryIndex = 0;
 										</div>
 									)}
 									{step.title && step.body && (
-										<div class="flex flex-col gap-6 items-start not-italic relative shrink-0 text-black text-center w-full">
+										<div class="flex flex-col gap-6 items-start not-italic relative text-black text-center w-full">
 											<p
-												class={`${typeStyles.cardTitle} relative shrink-0 w-full`}>
+												class={`${typeStyles.cardTitle} relative w-full`}>
 												{step.title}
 											</p>
 											<p
-												class={`${typeStyles.body} relative shrink-0 w-full`}>
+												class={`${typeStyles.body} relative w-full`}>
 												{step.body}
 											</p>
 										</div>
@@ -551,7 +551,7 @@ const activeStoryIndex = 0;
 		</section>
 
 		<section
-			class="min-h-[600px] md:min-h-[750px] overflow-clip relative shrink-0 w-full"
+			class="min-h-[600px] md:min-h-[750px] overflow-clip relative w-full"
 			data-name="Story"
 			data-story-timeline
 			data-slides={JSON.stringify(storySlides)}>
@@ -594,14 +594,14 @@ const activeStoryIndex = 0;
 													: undefined
 											}
 											aria-label={`Show ${milestone.label} story`}
-											class="cursor-pointer flex flex-col gap-[5px] items-center relative shrink-0 rounded-[8px] bg-transparent p-0 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#747c50]"
+											class="cursor-pointer flex flex-col gap-[5px] items-center relative rounded-[8px] bg-transparent p-0 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#747c50]"
 											data-name="milestone"
 											data-story-index={index}
 											style={`width: ${milestone.width}px; z-index: ${milestone.zIndex};`}
 											type="button">
 											<div class="bg-[#4c352b] h-[36px] relative rounded-[8px] shrink-0 w-[3px]" />
 											<p
-												class={`${typeStyles.caption} font-normal not-italic relative shrink-0 text-black whitespace-nowrap`}>
+												class={`${typeStyles.caption} font-normal not-italic relative text-black whitespace-nowrap`}>
 												{milestone.label}
 											</p>
 											<div
@@ -661,7 +661,7 @@ const activeStoryIndex = 0;
 							</div>
 							<p
 								aria-live="polite"
-								class={`${typeStyles.bodyLarge} min-h-[204px] not-italic relative shrink-0 text-black text-center w-full max-w-[467px]`}
+								class={`${typeStyles.bodyLarge} min-h-[204px] not-italic relative text-black text-center w-full max-w-[467px]`}
 								data-story-body>
 								{storySlides[activeStoryIndex].body}
 							</p>

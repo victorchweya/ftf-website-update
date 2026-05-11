@@ -61,11 +61,11 @@ function isExternalUrl(href?: string) {
 				containerClass="pt-24"
 				size="wide"
 				spacing="none">
-				<div class="flex flex-col gap-16 lg:gap-[88px] items-start max-w-[1280px] relative shrink-0 w-full">
-					<h1 class={`${typeStyles.heroTitleLarge} max-w-[720px] relative shrink-0 text-green-900`}>
+				<div class="flex flex-col gap-16 lg:gap-[88px] items-start max-w-[1280px] relative w-full">
+					<h1 class={`${typeStyles.heroTitleLarge} max-w-[720px] relative text-green-900`}>
 						Read the latest from Farm to Feed
 					</h1>
-					<div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3 relative shrink-0 w-full">
+					<div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3 relative w-full">
 						{
 							displayNewsEvents.map((item) => (
 								<article class="flex flex-col items-start min-w-px overflow-clip relative rounded-[32px]">
@@ -76,12 +76,12 @@ function isExternalUrl(href?: string) {
 											src={item.image}
 										/>
 									</div>
-									<div class="flex flex-col gap-6 items-start py-6 md:py-[32px] relative shrink-0 w-full">
-										<div class="flex flex-col gap-4 items-start relative shrink-0 w-full">
-											<p class={`${typeStyles.caption} not-italic relative shrink-0 text-green-500 whitespace-nowrap`}>
+									<div class="flex flex-col gap-6 items-start py-6 md:py-[32px] relative w-full">
+										<div class="flex flex-col gap-4 items-start relative w-full">
+											<p class={`${typeStyles.caption} not-italic relative text-green-500 whitespace-nowrap`}>
 												{item.date}
 											</p>
-											<h2 class={`${typeStyles.cardTitleSmall} not-italic relative shrink-0 text-[#0f251b] md:text-2xl w-full`}>
+											<h2 class={`${typeStyles.cardTitleSmall} not-italic relative text-[#0f251b] md:text-2xl w-full`}>
 												{item.title}
 											</h2>
 										</div>
@@ -90,7 +90,7 @@ function isExternalUrl(href?: string) {
 											href={item.href ?? "/news-events"}
 											rel={isExternalUrl(item.href) ? "noreferrer" : undefined}
 											target={isExternalUrl(item.href) ? "_blank" : undefined}>
-											<span class={`${typeStyles.body} leading-normal not-italic relative shrink-0 text-[#916f96] whitespace-nowrap`}>
+											<span class={`${typeStyles.body} leading-normal not-italic relative text-[#916f96] whitespace-nowrap`}>
 												Read more
 											</span>
 											<span class="overflow-clip relative shrink-0 size-6">

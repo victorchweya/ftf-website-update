@@ -166,11 +166,11 @@ const localBuyerTestimonials = [
 ];
 
 const testimonialQuoteClass =
-	'class="font-sans font-normal leading-[1.68] min-w-full not-italic relative shrink-0 text-[16px] text-black tracking-[0.48px] w-min"';
+	'class="font-sans font-normal leading-[1.68] min-w-full not-italic relative text-[16px] text-black tracking-[0.48px] w-min"';
 const testimonialNameClass =
-	'class="font-sans font-semibold relative shrink-0 w-full"';
+	'class="font-sans font-semibold relative w-full"';
 const testimonialCompanyClass =
-	'class="font-sans font-normal relative shrink-0 w-full"';
+	'class="font-sans font-normal relative w-full"';
 const localBuyerTestimonialCardHtml = Frame6.replace(
 	`${testimonialQuoteClass}> Farm to Feed has been supplying us with amazing veggies. We get an assortment each week and we love working with them on saving food where we can.`,
 	`${testimonialQuoteClass} data-testimonial-quote>${localBuyerTestimonials[0].quote}`,
@@ -190,7 +190,7 @@ const localBuyerTestimonialCardHtml = Frame6.replace(
 		class="bg-white flex flex-col items-start relative w-full"
 		data-name="Buy from us - local">
 		<section
-			class="bg-yellow-200 min-h-[600px] md:min-h-[800px] lg:min-h-[926px] overflow-clip relative shrink-0 w-full"
+			class="bg-yellow-200 min-h-[600px] md:min-h-[800px] lg:min-h-[926px] overflow-clip relative w-full"
 			data-name="Wireframe - 53">
 			<div
 				class="absolute hidden md:flex h-[400px] lg:h-[620.8px] items-center justify-center right-[-10%] lg:right-[-24.34%] lg:left-[79.24%] top-[200px] md:top-[352px] opacity-50 lg:opacity-100"
@@ -210,7 +210,7 @@ const localBuyerTestimonialCardHtml = Frame6.replace(
 					class="grid gap-8 items-center lg:grid-cols-[minmax(0,1fr)_minmax(0,563px)]">
 					<div class="flex flex-col gap-10 items-start relative">
 						<div
-							class="flex flex-col gap-10 items-start relative shrink-0">
+							class="flex flex-col gap-10 items-start relative">
 							<!-- <div
 								class="absolute hidden h-[14px] left-0 top-[160px] w-[443px] md:block"
 								data-name="objects">
@@ -219,7 +219,7 @@ const localBuyerTestimonialCardHtml = Frame6.replace(
 								/>
 							</div> -->
 							<p
-								class={`${typeStyles.heroTitleLarge} not-italic relative shrink-0 text-green-500 w-full`}>
+								class={`${typeStyles.heroTitleLarge} not-italic relative text-green-500 w-full`}>
 								<span class="leading-tight"
 									>Good for margins,<br
 										aria-hidden="true"
@@ -233,12 +233,12 @@ const localBuyerTestimonialCardHtml = Frame6.replace(
 								>
 							</p>
 							<p
-								class={`${typeStyles.bodyLead} font-medium italic relative shrink-0 text-orange-500 w-full max-w-[515px]`}>
+								class={`${typeStyles.bodyLead} font-medium italic relative text-orange-500 w-full max-w-[515px]`}>
 								"Faida bora, wakulima bora, mazingira bora."
 							</p>
 						</div>
 						<p
-							class={`${typeStyles.body} not-italic relative shrink-0 text-green-500 w-full max-w-[515px]`}>
+							class={`${typeStyles.body} not-italic relative text-green-500 w-full max-w-[515px]`}>
 							Built with farmers at the centre, our solution
 							brings oddly good products to businesses, retailers,
 							schools, feeding programmes, and event companies.
@@ -252,9 +252,9 @@ const localBuyerTestimonialCardHtml = Frame6.replace(
 					</div>
 
 					<div
-						class="flex flex-col items-center relative shrink-0 w-full max-w-[563px]">
+						class="flex flex-col items-center relative w-full max-w-[563px]">
 						<div
-							class="bg-white relative rounded-[30px] shrink-0 w-full">
+							class="bg-white relative rounded-[30px] w-full">
 							<div
 								aria-hidden="true"
 								class="absolute border border-[#f7f7f7] border-solid inset-0 pointer-events-none rounded-[30px]">
@@ -262,34 +262,34 @@ const localBuyerTestimonialCardHtml = Frame6.replace(
 							<div
 								class="flex flex-col gap-8 items-start p-6 md:p-[40px] relative size-full">
 								<div
-									class="flex flex-col gap-8 items-start relative shrink-0 w-full">
+									class="flex flex-col gap-8 items-start relative w-full">
 									<p
 										class={`${typeStyles.cardTitle} font-medium not-italic relative shrink-0 text-[#0f251b] w-[210px]`}>
 										Buy from us
 									</p>
 									<p
-										class={`${typeStyles.body} not-italic relative shrink-0 text-green-500 w-full`}>
+										class={`${typeStyles.body} not-italic relative text-green-500 w-full`}>
 										Fill out the form and our sales team
 										will contact you shortly.
 									</p>
 								</div>
 								<div
-									class="flex flex-col gap-6 items-start relative shrink-0 w-full">
+									class="flex flex-col gap-6 items-start relative w-full">
 									{
 										buyerFormRows.map((row) => (
 											<div
-												class={`flex flex-col gap-4 items-start relative shrink-0 w-full ${row.length > 1 ? "sm:flex-row" : ""}`}
+												class={`flex flex-col gap-4 items-start relative w-full ${row.length > 1 ? "sm:flex-row" : ""}`}
 												data-name="Inputs">
 												{row.map((field) => (
 													<div
 														class="flex flex-col gap-2 items-start relative w-full sm:flex-[1_0_0] sm:min-w-px"
 														data-name="Input">
 														<p
-															class={`${typeStyles.caption} not-italic relative shrink-0 text-[#0f251b] w-full`}>
+															class={`${typeStyles.caption} not-italic relative text-[#0f251b] w-full`}>
 															{field.label}
 														</p>
 														<div
-															class={`bg-[#fbfafa] ${field.type === "select" ? "" : "h-12"} relative ${field.rounded ?? "rounded-[24px]"} shrink-0 w-full`}
+															class={`bg-[#fbfafa] ${field.type === "select" ? "" : "h-12"} relative ${field.rounded ?? "rounded-[24px]"} w-full`}
 															data-name={
 																field.type ===
 																"select"
@@ -356,7 +356,7 @@ const localBuyerTestimonialCardHtml = Frame6.replace(
 									<Button
 										type="button"
 										size="md"
-										class="relative shrink-0 w-full text-[#eee]"
+										class="relative w-full text-[#eee]"
 										data-name="order">
 										Get in touch
 									</Button>
@@ -369,7 +369,7 @@ const localBuyerTestimonialCardHtml = Frame6.replace(
 		</section>
 
 		<section
-			class="bg-white min-h-[600px] md:min-h-[900px] overflow-clip relative shrink-0 w-full"
+			class="bg-white min-h-[600px] md:min-h-[900px] overflow-clip relative w-full"
 			data-name="Wireframe - 11">
 			<div
 				class="absolute flex inset-[-13.58%_-0.63%_91.95%_-3.75%] items-center justify-center"
@@ -388,24 +388,24 @@ const localBuyerTestimonialCardHtml = Frame6.replace(
 				<div
 					class="flex flex-col gap-16 items-center relative w-full max-w-7xl">
 					<div
-						class="flex flex-col gap-8 items-center max-w-[1052px] not-italic relative shrink-0 text-center w-full">
+						class="flex flex-col gap-8 items-center max-w-[1052px] not-italic relative text-center w-full">
 						<p
-							class={`${typeStyles.sectionTitleLarge} relative shrink-0 text-[#0f251b] w-full`}>
+							class={`${typeStyles.sectionTitleLarge} relative text-[#0f251b] w-full`}>
 							Why choose Farm to Feed?
 						</p>
 						<p
-							class={`${typeStyles.body} relative shrink-0 text-green-500 w-full`}>
+							class={`${typeStyles.body} relative text-green-500 w-full`}>
 							We are reshaping the food supply chain to benefit
 							everyone involved while protecting our planet.
 						</p>
 					</div>
 					<div
-						class="grid gap-8 relative shrink-0 w-full md:grid-cols-2 lg:grid-cols-3">
+						class="grid gap-8 relative w-full md:grid-cols-2 lg:grid-cols-3">
 						{
 							valueCards.map((card) => (
 								<div class="bg-[#fbfafa] relative rounded-[30px] w-full">
 									<div class="flex flex-col gap-[27px] items-start p-[40px] relative size-full">
-										<div class="flex flex-col gap-8 items-start justify-center relative shrink-0">
+										<div class="flex flex-col gap-8 items-start justify-center relative">
 											{card.accent ? (
 												<div class="grid-cols-[max-content] grid-rows-[max-content] inline-grid leading-zero place-items-start relative shrink-0">
 													<div
@@ -435,12 +435,12 @@ const localBuyerTestimonialCardHtml = Frame6.replace(
 												</div>
 											)}
 											<p
-												class={`${typeStyles.cardTitle} not-italic relative shrink-0 text-[#0f251b]`}>
+												class={`${typeStyles.cardTitle} not-italic relative text-[#0f251b]`}>
 												{card.title}
 											</p>
 										</div>
 										<p
-											class={`${typeStyles.body} not-italic relative shrink-0 text-green-500 w-full`}>
+											class={`${typeStyles.body} not-italic relative text-green-500 w-full`}>
 											{card.body}
 										</p>
 									</div>
@@ -453,7 +453,7 @@ const localBuyerTestimonialCardHtml = Frame6.replace(
 		</section>
 
 		<section
-			class="bg-[#0f251b] min-h-[600px] md:min-h-[900px] lg:min-h-[1085px] overflow-clip relative shrink-0 w-full"
+			class="bg-[#0f251b] min-h-[600px] md:min-h-[900px] lg:min-h-[1085px] overflow-clip relative w-full"
 			data-name="Wireframe - 51">
 			<div
 				class="absolute bottom-[814.78px] hidden h-[223.22px] items-center justify-center right-[-330.48px] w-[838.475px] lg:flex"
@@ -491,14 +491,14 @@ const localBuyerTestimonialCardHtml = Frame6.replace(
 					<div
 						class="flex flex-col gap-16 items-start relative w-full max-w-[624px]">
 						<p
-							class={`${typeStyles.sectionTitleLarge} not-italic relative shrink-0 text-[#f5e091] w-full`}>
+							class={`${typeStyles.sectionTitleLarge} not-italic relative text-[#f5e091] w-full`}>
 							Your One Stop Shop
 						</p>
 						<div
-							class="flex flex-col gap-8 items-start relative shrink-0">
+							class="flex flex-col gap-8 items-start relative">
 							{
 								oneStopShopItems.map((item, index) => (
-									<div class="flex gap-[15px] items-start relative shrink-0 w-full max-w-[535px]">
+									<div class="flex gap-[15px] items-start relative w-full max-w-[535px]">
 										<div class="relative shrink-0 size-[56px]">
 											<Fragment set:html={item.icon} />
 											<p
@@ -507,26 +507,26 @@ const localBuyerTestimonialCardHtml = Frame6.replace(
 											</p>
 										</div>
 										<div class="flex flex-[1_0_0] flex-col gap-6 items-start min-w-px relative self-stretch">
-											<div class="flex flex-col gap-4 items-start leading-normal relative shrink-0 w-full">
+											<div class="flex flex-col gap-4 items-start leading-normal relative w-full">
 												<p
-													class={`${typeStyles.cardTitle} font-medium not-italic relative shrink-0 text-[#fbf3e9] w-full`}>
+													class={`${typeStyles.cardTitle} font-medium not-italic relative text-[#fbf3e9] w-full`}>
 													{item.title}
 												</p>
 												<p
-													class={`${typeStyles.serifLead} italic relative shrink-0 text-[#f5e091] w-full`}>
+													class={`${typeStyles.serifLead} italic relative text-[#f5e091] w-full`}>
 													{item.subtitle}
 												</p>
 											</div>
 											<p
-												class={`${typeStyles.body} not-italic relative shrink-0 text-[#f6eef2] w-full`}>
+												class={`${typeStyles.body} not-italic relative text-[#f6eef2] w-full`}>
 												{item.body}
 											</p>
 											{item.categories && (
-												<div class="flex flex-col gap-[12px] items-start relative shrink-0 w-full">
+												<div class="flex flex-col gap-[12px] items-start relative w-full">
 													{item.categories.map(
 														(row, rowIndex) => (
 															<div
-																class={`flex flex-wrap items-start relative shrink-0 ${rowIndex === 0 ? "gap-[12px]" : "gap-4"}`}>
+																class={`flex flex-wrap items-start relative ${rowIndex === 0 ? "gap-[12px]" : "gap-4"}`}>
 																{row.map(
 																	(
 																		category,
@@ -537,7 +537,7 @@ const localBuyerTestimonialCardHtml = Frame6.replace(
 																				class="absolute border border-[#0f251b] border-solid inset-0 pointer-events-none rounded-[40px]"
 																			/>
 																			<p
-																				class={`${typeStyles.body} relative shrink-0 text-[#f7f7f7] text-center whitespace-nowrap`}>
+																				class={`${typeStyles.body} relative text-[#f7f7f7] text-center whitespace-nowrap`}>
 																				{
 																					category
 																				}
@@ -556,7 +556,7 @@ const localBuyerTestimonialCardHtml = Frame6.replace(
 							}
 						</div>
 						<div
-							class="flex gap-8 items-start justify-center overflow-clip relative shrink-0 w-full"
+							class="flex gap-8 items-start justify-center overflow-clip relative w-full"
 							data-name="Tab Horizontal">
 							<div
 								class="flex items-center justify-center relative self-stretch shrink-0 w-0"
@@ -575,7 +575,7 @@ const localBuyerTestimonialCardHtml = Frame6.replace(
 								</div>
 							</div>
 							<p
-								class={`${typeStyles.bodyLead} leading-zero not-italic relative shrink-0 text-white w-full`}>
+								class={`${typeStyles.bodyLead} leading-zero not-italic relative text-white w-full`}>
 								<span class="leading-copy text-yellow-300"
 									>For customer outside of Nairobi, <span
 										class="font-medium">Contact Us</span
@@ -588,7 +588,7 @@ const localBuyerTestimonialCardHtml = Frame6.replace(
 					<div
 						class="flex flex-col items-end relative w-full max-w-[625px] lg:justify-self-end">
 						<div
-							class="bg-white relative rounded-[30px] shrink-0 w-full">
+							class="bg-white relative rounded-[30px] w-full">
 							<div
 								aria-hidden="true"
 								class="absolute border border-[#f7f7f7] border-solid inset-0 pointer-events-none rounded-[30px]">
@@ -614,7 +614,7 @@ const localBuyerTestimonialCardHtml = Frame6.replace(
 									</div>
 								</div>
 								<p
-									class="font-sans font-normal leading-zero not-italic relative shrink-0 text-green-500 text-[0px] tracking-body-lg w-full">
+									class="font-sans font-normal leading-zero not-italic relative text-green-500 text-[0px] tracking-body-lg w-full">
 									<span class="leading-copy text-xl"
 										>We deliver in & around
 									</span>
@@ -631,7 +631,7 @@ const localBuyerTestimonialCardHtml = Frame6.replace(
 									>
 								</p>
 								<div
-									class="bg-[#fbf3e9] relative rounded-[16px] shrink-0 w-full">
+									class="bg-[#fbf3e9] relative rounded-[16px] w-full">
 									<div
 										aria-hidden="true"
 										class="absolute border border-[#f7e6d4] border-solid inset-0 pointer-events-none rounded-[16px]">
@@ -639,7 +639,7 @@ const localBuyerTestimonialCardHtml = Frame6.replace(
 									<div
 										class="flex flex-col items-start p-[16px] relative size-full">
 										<div
-											class="flex flex-col gap-4 items-start relative shrink-0 w-full sm:flex-row sm:items-center">
+											class="flex flex-col gap-4 items-start relative w-full sm:flex-row sm:items-center">
 											<div
 												class="flex flex-[1_0_0] gap-2 items-center min-w-px relative">
 												<div
@@ -685,7 +685,7 @@ const localBuyerTestimonialCardHtml = Frame6.replace(
 		</section>
 
 		<section
-			class="bg-white overflow-clip relative shrink-0 w-full"
+			class="bg-white overflow-clip relative w-full"
 			data-name="Wireframe - 42">
 			<ContentContainer
 				size="wide"
@@ -722,11 +722,11 @@ const localBuyerTestimonialCardHtml = Frame6.replace(
 									</div>
 									<div class="flex flex-col gap-[12px] items-start not-italic relative w-full">
 										<p
-											class={`${typeStyles.cardTitleSmall} leading-normal relative shrink-0 text-[#0f251b] tracking-card w-full`}>
+											class={`${typeStyles.cardTitleSmall} leading-normal relative text-[#0f251b] tracking-card w-full`}>
 											{step.title}
 										</p>
 										<p
-											class={`${typeStyles.caption} relative shrink-0 text-green-500 w-full`}>
+											class={`${typeStyles.caption} relative text-green-500 w-full`}>
 											{step.body}
 										</p>
 									</div>
@@ -757,11 +757,11 @@ const localBuyerTestimonialCardHtml = Frame6.replace(
 						<div
 							class="flex flex-col gap-4 items-start not-italic relative shrink-0 w-[204px]">
 							<p
-								class={`${typeStyles.cardTitleSmall} leading-normal relative shrink-0 text-[#0f251b] tracking-card w-full`}>
+								class={`${typeStyles.cardTitleSmall} leading-normal relative text-[#0f251b] tracking-card w-full`}>
 								Connect with sales
 							</p>
 							<p
-								class={`${typeStyles.caption} relative shrink-0 text-green-500 w-full`}>
+								class={`${typeStyles.caption} relative text-green-500 w-full`}>
 								Our Sales team is ready to speak with you
 							</p>
 						</div>
@@ -785,11 +785,11 @@ const localBuyerTestimonialCardHtml = Frame6.replace(
 						<div
 							class="flex flex-col gap-4 items-start not-italic relative shrink-0 w-[204px]">
 							<p
-								class={`${typeStyles.cardTitleSmall} leading-normal relative shrink-0 text-[#0f251b] tracking-card w-full`}>
+								class={`${typeStyles.cardTitleSmall} leading-normal relative text-[#0f251b] tracking-card w-full`}>
 								Browse the shop
 							</p>
 							<p
-								class={`${typeStyles.caption} relative shrink-0 text-green-500 w-full`}>
+								class={`${typeStyles.caption} relative text-green-500 w-full`}>
 								Explore our wide range of fresh and dry products
 								online
 							</p>
@@ -815,11 +815,11 @@ const localBuyerTestimonialCardHtml = Frame6.replace(
 						<div
 							class="flex flex-col gap-4 items-start not-italic relative shrink-0 w-[204px]">
 							<p
-								class={`${typeStyles.cardTitleSmall} leading-normal relative shrink-0 text-[#0f251b] tracking-card w-full`}>
+								class={`${typeStyles.cardTitleSmall} leading-normal relative text-[#0f251b] tracking-card w-full`}>
 								Place Order
 							</p>
 							<p
-								class={`${typeStyles.caption} relative shrink-0 text-green-500 w-full`}>
+								class={`${typeStyles.caption} relative text-green-500 w-full`}>
 								Select your delivery window and checkout your
 								cart
 							</p>
@@ -845,11 +845,11 @@ const localBuyerTestimonialCardHtml = Frame6.replace(
 						<div
 							class="flex flex-col gap-4 items-start not-italic relative shrink-0 w-[204px]">
 							<p
-								class={`${typeStyles.cardTitleSmall} leading-normal relative shrink-0 text-[#0f251b] tracking-card w-full`}>
+								class={`${typeStyles.cardTitleSmall} leading-normal relative text-[#0f251b] tracking-card w-full`}>
 								Enjoy Delivery
 							</p>
 							<p
-								class={`${typeStyles.caption} relative shrink-0 text-green-500 w-full`}>
+								class={`${typeStyles.caption} relative text-green-500 w-full`}>
 								Receive fresh, high quality ingredients directly
 								to your doorstep
 							</p>
@@ -903,7 +903,7 @@ const localBuyerTestimonialCardHtml = Frame6.replace(
 		</section>
 
 		<section
-			class="bg-[#f3f5e7] min-h-[600px] md:min-h-[750px] overflow-clip relative rounded-bl-[40px] rounded-br-[40px] shrink-0 w-full"
+			class="bg-[#f3f5e7] min-h-[600px] md:min-h-[750px] overflow-clip relative rounded-bl-[40px] rounded-br-[40px] w-full"
 			data-name="Testimonial"
 			data-local-buyer-testimonials
 			data-testimonials={JSON.stringify(localBuyerTestimonials)}>

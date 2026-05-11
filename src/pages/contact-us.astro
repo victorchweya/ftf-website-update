@@ -37,7 +37,7 @@ const inquiryContacts = [
 		class="bg-yellow-100 flex flex-col items-start relative w-full"
 		data-name="Contact Us">
 		<div
-			class="bg-yellow-100 min-h-[800px] overflow-clip relative rounded-bl-[40px] rounded-br-[40px] shrink-0 w-full"
+			class="bg-yellow-100 min-h-[800px] overflow-clip relative rounded-bl-[40px] rounded-br-[40px] w-full"
 			data-name="Contact">
 			<div class="absolute inset-[0_0_69.41%_0]">
 				<Fragment set:html={ContactUsSvgs.ContactUsSvg01} />
@@ -74,18 +74,18 @@ const inquiryContacts = [
 					<div
 						class="flex flex-col gap-10 items-start relative w-full max-w-[520px] lg:max-w-[320px]"
 						data-name="Contact details">
-						<div class="flex flex-col gap-2 items-start relative shrink-0 w-full">
-							<p class={`${typeStyles.body} font-medium leading-contact relative shrink-0 text-[#0f251b] w-full`}>
+						<div class="flex flex-col gap-2 items-start relative w-full">
+							<p class={`${typeStyles.body} font-medium leading-contact relative text-[#0f251b] w-full`}>
 								{phoneContact.title}
 							</p>
-							<div class="flex flex-col gap-2 items-start relative shrink-0 w-full">
-								<p class={`${typeStyles.body} relative shrink-0 text-[#8c8c8c] w-full`}>
+							<div class="flex flex-col gap-2 items-start relative w-full">
+								<p class={`${typeStyles.body} relative text-[#8c8c8c] w-full`}>
 									{phoneContact.helper}
 								</p>
 								{
 									phoneContact.links.map((link) => (
-										<div class="flex gap-2 items-center justify-center relative shrink-0">
-											<p class={`${typeStyles.body} font-medium leading-contact relative shrink-0 text-green-500 break-words`}>
+										<div class="flex gap-2 items-center justify-center relative">
+											<p class={`${typeStyles.body} font-medium leading-contact relative text-green-500 break-words`}>
 												{link}
 											</p>
 										</div>
@@ -93,19 +93,19 @@ const inquiryContacts = [
 								}
 							</div>
 						</div>
-						<div class="flex flex-col gap-4 items-start relative shrink-0 w-full">
-							<p class={`${typeStyles.body} font-medium leading-contact relative shrink-0 text-[#0f251b] w-full`}>
+						<div class="flex flex-col gap-4 items-start relative w-full">
+							<p class={`${typeStyles.body} font-medium leading-contact relative text-[#0f251b] w-full`}>
 								General inquiries
 							</p>
 							{
 								inquiryContacts.map((contact) => (
-									<div class="flex flex-col gap-2 items-start relative shrink-0 w-full">
-										<p class={`${typeStyles.body} relative shrink-0 text-[#8c8c8c] w-full`}>
+									<div class="flex flex-col gap-2 items-start relative w-full">
+										<p class={`${typeStyles.body} relative text-[#8c8c8c] w-full`}>
 											{contact.helper}
 										</p>
 										{contact.links.map((link) => (
-											<div class="flex gap-2 items-center justify-center relative shrink-0">
-												<p class={`${typeStyles.body} font-medium leading-contact relative shrink-0 text-green-500 break-words`}>
+											<div class="flex gap-2 items-center justify-center relative">
+												<p class={`${typeStyles.body} font-medium leading-contact relative text-green-500 break-words`}>
 													{link}
 												</p>
 											</div>

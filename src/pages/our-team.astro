@@ -181,16 +181,16 @@ const transformSizeStyle = "--transform-inner-width: 1185; --transform-inner-hei
 
 <Layout title="Our Team">
 	<div class="bg-white flex flex-col items-start relative w-full" data-team-root>
-		<div class="bg-[#fcfdf9] min-h-[500px] md:min-h-[600px] lg:min-h-[742px] overflow-clip relative shrink-0 w-full" data-name="Wireframe - 53">
+		<div class="bg-[#fcfdf9] min-h-[500px] md:min-h-[600px] lg:min-h-[742px] overflow-clip relative w-full" data-name="Wireframe - 53">
 			<ContentContainer size="wide" class="flex justify-center pt-[180px] pb-[96px] md:pt-[240px] md:pb-30 lg:pt-[282px] lg:pb-[140px]">
 				<div class="flex flex-col gap-12 items-center not-italic text-center relative w-full max-w-[624px]">
-					<p class={`${typeStyles.heroTitleLarge} relative shrink-0 text-[#0f251b] w-full`}>
+					<p class={`${typeStyles.heroTitleLarge} relative text-[#0f251b] w-full`}>
 						Meet the A-team
 					</p>
-					<p class="text-xl tracking-wide relative shrink-0 text-green-500  w-full whitespace-pre-wrap">
+					<p class="text-xl tracking-wide relative text-green-500  w-full whitespace-pre-wrap">
 						Our team is global, women-founded, and brought together by a shared drive for transformative impact and a bold vision to reshape food systems in Kenya and across Sub-Saharan Africa.
 					</p>
-					<p class="text-xl tracking-wide relative shrink-0 text-green-500  w-full whitespace-pre-wrap ">
+					<p class="text-xl tracking-wide relative text-green-500  w-full whitespace-pre-wrap ">
 						By combining international expertise with deep local knowledge, we continue to build and scale a business that delivers both commercial value and meaningful impact.
 					</p>
 				</div>
@@ -211,7 +211,7 @@ const transformSizeStyle = "--transform-inner-width: 1185; --transform-inner-hei
 			</div>
 		</div>
 
-		<div class="bg-[#f3f5e7] overflow-clip relative rounded-bl-[40px] rounded-br-[40px] shrink-0 w-full" data-name="Team CTA">
+		<div class="bg-[#f3f5e7] overflow-clip relative rounded-bl-[40px] rounded-br-[40px] w-full" data-name="Team CTA">
 			<ContentContainer size="wide" class="py-[96px] md:py-[142px] lg:pt-[132px] lg:pb-[160px]">
 				<div class="flex flex-col gap-[56px] md:gap-16">
 					<p class="relative font-serif font-normal leading-zero not-italic text-[0px] text-white tracking-section-lg w-full max-w-[605px]">
@@ -257,13 +257,13 @@ const transformSizeStyle = "--transform-inner-width: 1185; --transform-inner-hei
 			</div>
 		</div>
 
-		<div class="bg-white min-h-[800px] md:min-h-[1000px] overflow-clip relative shrink-0 w-full" data-name="Wireframe - 31">
+		<div class="bg-white min-h-[800px] md:min-h-[1000px] overflow-clip relative w-full" data-name="Wireframe - 31">
 			<ContentContainer size="wide" class={sectionSpacing.default}>
 				<div class="relative flex flex-col items-center gap-[92px]">
 					<div class="flex flex-wrap gap-[25px] items-center relative py-[24px] w-full max-w-7xl">
 						<div aria-hidden="true" class="absolute border-[#dfeddf] border-b border-dashed inset-0 pointer-events-none" />
 						<div class="flex items-start p-2 relative shrink-0">
-							<p class={`${typeStyles.body} leading-6 relative shrink-0 text-black text-center whitespace-nowrap`}>
+							<p class={`${typeStyles.body} leading-6 relative text-black text-center whitespace-nowrap`}>
 								Filter By:
 							</p>
 						</div>
@@ -288,7 +288,7 @@ const transformSizeStyle = "--transform-inner-width: 1185; --transform-inner-hei
 						{
 							displayTeamRows.map((row, index) => (
 								<div
-									class={`flex flex-wrap items-start justify-center relative shrink-0 w-full ${index === 0 ? "gap-8" : "gap-8 lg:gap-[108px]"}`}
+									class={`flex flex-wrap items-start justify-center relative w-full ${index === 0 ? "gap-8" : "gap-8 lg:gap-[108px]"}`}
 									data-team-row>
 									{row.map((member) => {
 										const Photo = "Photo" in member ? member.Photo : null;
@@ -320,9 +320,9 @@ const transformSizeStyle = "--transform-inner-width: 1185; --transform-inner-hei
 														</svg>
 													)
 												}
-												<div class={`${typeStyles.body} flex flex-col min-h-[54px] items-center relative shrink-0 text-center w-full max-w-[220px]`}>
-													<p class="relative shrink-0 text-black">{member.name}</p>
-													<p class="relative shrink-0 text-[#916f96]">{getTeamMemberRole(member)}</p>
+												<div class={`${typeStyles.body} flex flex-col min-h-[54px] items-center relative text-center w-full max-w-[220px]`}>
+													<p class="relative text-black">{member.name}</p>
+													<p class="relative text-[#916f96]">{getTeamMemberRole(member)}</p>
 												</div>
 											</div>
 										);
@@ -338,26 +338,26 @@ const transformSizeStyle = "--transform-inner-width: 1185; --transform-inner-hei
 			</div>
 		</div>
 
-		<div class="bg-[#122c20] min-h-[800px] md:min-h-[1000px] overflow-clip relative shrink-0 w-full" data-name="Wireframe - 11">
+		<div class="bg-[#122c20] min-h-[800px] md:min-h-[1000px] overflow-clip relative w-full" data-name="Wireframe - 11">
 			<ContentContainer size="wide" class={sectionSpacing.default}>
 				<div class="relative flex flex-col items-center gap-12">
 					<div class="flex flex-col gap-16 items-center relative w-full max-w-7xl">
-						<div class="flex flex-col items-center relative shrink-0 w-full max-w-[1052px]">
-							<p class={`${typeStyles.sectionTitle} not-italic relative shrink-0 text-[#eff6ef] text-center w-full`}>
+						<div class="flex flex-col items-center relative w-full max-w-[1052px]">
+							<p class={`${typeStyles.sectionTitle} not-italic relative text-[#eff6ef] text-center w-full`}>
 								We live by our values
 							</p>
 						</div>
-						<div class="flex flex-col gap-8 items-start relative shrink-0 w-full">
+						<div class="flex flex-col gap-8 items-start relative w-full">
 							{
 								valueRows.map((row, index) => (
-									<div class={`flex flex-col gap-8 items-start relative shrink-0 w-full lg:flex-row ${index === 1 ? "lg:justify-center" : ""}`}>
+									<div class={`flex flex-col gap-8 items-start relative w-full lg:flex-row ${index === 1 ? "lg:justify-center" : ""}`}>
 										{row.map((value) => {
 											const ValueHeader = value.Header;
 											const isFixed = value.variant === "fixed";
 											return isFixed ? (
 												<div class={`${value.color} flex flex-col gap-[27px] items-start px-6 py-[36px] md:px-[32px] md:py-[48px] relative rounded-[30px] shrink-0 w-full lg:w-[405.333px]`}>
 													<Fragment set:html={ValueHeader} />
-													<p class={`${typeStyles.body} relative shrink-0 text-green-500 text-center w-full`}>
+													<p class={`${typeStyles.body} relative text-green-500 text-center w-full`}>
 														{value.body}
 													</p>
 												</div>
@@ -365,7 +365,7 @@ const transformSizeStyle = "--transform-inner-width: 1185; --transform-inner-hei
 												<div class={`${value.color} relative rounded-[30px] w-full lg:flex-[1_0_0] lg:min-w-px`}>
 													<div class="flex flex-col gap-[27px] items-start px-6 py-[36px] md:px-[32px] md:py-[48px] relative size-full">
 														<Fragment set:html={ValueHeader} />
-														<p class={`${typeStyles.body} relative shrink-0 text-green-500 text-center w-full`}>
+														<p class={`${typeStyles.body} relative text-green-500 text-center w-full`}>
 															{value.body}
 														</p>
 													</div>
@@ -384,7 +384,7 @@ const transformSizeStyle = "--transform-inner-width: 1185; --transform-inner-hei
 			</div>
 		</div>
 
-		<div class="bg-[#122c20] min-h-[500px] md:min-h-[600px] lg:min-h-[696px] overflow-clip relative rounded-bl-[40px] rounded-br-[40px] shrink-0 w-full" data-name="Wireframe - 36">
+		<div class="bg-[#122c20] min-h-[500px] md:min-h-[600px] lg:min-h-[696px] overflow-clip relative rounded-bl-[40px] rounded-br-[40px] w-full" data-name="Wireframe - 36">
 			<div class="absolute inset-[94.25%_0_0_0]">
 				<Fragment set:html={OurTeamSvgs.OurTeamSvg07} />
 			</div>
@@ -394,12 +394,12 @@ const transformSizeStyle = "--transform-inner-width: 1185; --transform-inner-hei
 						<Fragment set:html={OurTeamSvgs.OurTeamSvg08} />
 					</div>
 					<div class="flex flex-col gap-10 items-center relative rounded-[40px] z-10 w-full">
-						<p class={`${typeStyles.sectionTitle} leading-zero not-italic relative shrink-0 text-orange-500 text-center w-full max-w-[800px]`}>
+						<p class={`${typeStyles.sectionTitle} leading-zero not-italic relative text-orange-500 text-center w-full max-w-[800px]`}>
 							<span class="leading-normal text-[#f5e091]">{`We're always looking for like-minded people to join our `}</span>
 							<span class="font-serif font-normal italic leading-normal">odd</span>
 							<span class="leading-normal text-[#f5e091]">{` team.`}</span>
 						</p>
-						<p class={`${typeStyles.bodyLarge} not-italic relative shrink-0 text-center text-white w-full max-w-148`}>
+						<p class={`${typeStyles.bodyLarge} not-italic relative text-center text-white w-full max-w-148`}>
 							Come work with us if that sounds like you.
 						</p>
 						<Button href="/careers" variant="none" size="lg" class="relative shrink-0 bg-white text-[#122c20]" data-name="Button / Primary">

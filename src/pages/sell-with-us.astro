@@ -97,25 +97,25 @@ const transformSizeStyle =
 		class="bg-olive-100 flex flex-col items-center relative w-full min-h-screen"
 		data-name="Sell with us">
 		<div
-			class="bg-olive-100 min-h-[600px] md:min-h-[1034px] overflow-clip relative shrink-0 w-full"
+			class="bg-olive-100 min-h-[600px] md:min-h-[1034px] overflow-clip relative w-full"
 			data-name="Wireframe - 44">
 			<ContentContainer
 				size="wide"
 				class="pt-[170px] pb-30 md:pt-[260px]">
 				<div class="flex flex-col gap-10 items-center relative">
 					<div
-						class="flex flex-col gap-8 md:gap-16 items-center relative shrink-0 px-4">
+						class="flex flex-col gap-8 md:gap-16 items-center relative px-4">
 						<div
 							class="absolute h-[36px] left-[6px] top-[124px] w-[633px]"
 							data-name="objects">
 						</div>
 						<div
-							class={`${typeStyles.heroTitleLarge} not-italic relative shrink-0 text-black text-center w-full`}>
+							class={`${typeStyles.heroTitleLarge} not-italic relative text-black text-center w-full`}>
 							<p class="mb-0 text-[#0f251b]">Making farming</p>
 							<p class="text-green-500">Fair and Rewarding</p>
 						</div>
 						<div
-							class={`${typeStyles.body} not-italic relative shrink-0 text-green-500 text-sm md:text-base text-center w-full max-w-[656px]`}>
+							class={`${typeStyles.body} not-italic relative text-green-500 text-sm md:text-base text-center w-full max-w-[656px]`}>
 							<p class="leading-copy mb-0">
 								{
 									`We want to keep your hard work in the human food chain, making sure nothing goes to waste. With us, it's easy to access the market and sell your entire harvest -including the odd-shaped and surplus produce- at fair price.`
@@ -169,29 +169,29 @@ const transformSizeStyle =
 		</div>
 
 		<div
-			class="bg-white overflow-clip relative shrink-0 w-full"
+			class="bg-white overflow-clip relative w-full"
 			data-name="Wireframe - 55">
 			<ContentContainer size="wide" class="py-24">
 				<div class="flex flex-col gap-8 items-center relative w-full">
 					<div
 						class="flex flex-col gap-8 items-center relative w-full">
 						<div
-							class="flex flex-col gap-8 items-center max-w-[1052px] not-italic relative shrink-0 text-center w-full">
+							class="flex flex-col gap-8 items-center max-w-[1052px] not-italic relative text-center w-full">
 							<p
-								class={`${typeStyles.heroTitle} relative shrink-0 text-[#0f251b] w-full`}>
+								class={`${typeStyles.heroTitle} relative text-[#0f251b] w-full`}>
 								Our Offering
 							</p>
 							<p
-								class={`${typeStyles.body} relative shrink-0 text-orange-500 w-full`}>
+								class={`${typeStyles.body} relative text-orange-500 w-full`}>
 								Farmers who supply to Farm to Feed enjoy:
 							</p>
 						</div>
 						{
 							offeringRows.map((row, rowIndex) => (
 								<div
-									class={`flex flex-col items-start relative shrink-0 w-full ${rowIndex === 1 ? "max-w-[842px]" : ""}`}>
+									class={`flex flex-col items-start relative w-full ${rowIndex === 1 ? "max-w-[842px]" : ""}`}>
 									<div
-										class={`flex flex-col gap-8 items-start relative shrink-0 w-full ${rowIndex === 0 ? "lg:flex-row" : "md:flex-row"}`}>
+										class={`flex flex-col gap-8 items-start relative w-full ${rowIndex === 0 ? "lg:flex-row" : "md:flex-row"}`}>
 										{row.map((offering) => {
 											const OfferingHeader =
 												offering.Header;
@@ -205,7 +205,7 @@ const transformSizeStyle =
 															}
 														/>
 														<p
-															class={`${typeStyles.body} relative shrink-0 text-green-500 w-full`}>
+															class={`${typeStyles.body} relative text-green-500 w-full`}>
 															{offering.body}
 														</p>
 													</div>
@@ -230,14 +230,14 @@ const transformSizeStyle =
 		</div>
 
 		<div
-			class="bg-white overflow-clip relative shrink-0 w-full"
+			class="bg-white overflow-clip relative w-full"
 			data-name="Wireframe - 42">
 			<ContentContainer size="wide" class="pb-24">
 				<div class="relative lg:min-h-[585px]">
 					<div
 						class="flex flex-col items-center max-w-[1052px] w-full mx-auto lg:-translate-x-1/2 lg:absolute lg:left-1/2 lg:top-[75px]">
 						<p
-							class={`${typeStyles.heroTitle} not-italic relative shrink-0 text-[#0f251b] text-center w-full`}>
+							class={`${typeStyles.heroTitle} not-italic relative text-[#0f251b] text-center w-full`}>
 							How Does it Work
 						</p>
 					</div>
@@ -246,7 +246,7 @@ const transformSizeStyle =
 		</div>
 
 		<div
-			class="bg-[#f3f5e7] min-h-[840px] overflow-clip relative shrink-0 w-full"
+			class="bg-[#f3f5e7] min-h-[840px] overflow-clip relative w-full"
 			data-name="Testimonial"
 			data-supplier-stories>
 			<script
@@ -495,7 +495,7 @@ const transformSizeStyle =
 		</div>
 
 		<div
-			class="bg-white relative shrink-0 w-full"
+			class="bg-white relative w-full"
 			data-name="Wireframe - 36">
 			<ContentContainer
 				size="wide"
@@ -564,11 +564,11 @@ const transformSizeStyle =
 					<div
 						class="flex flex-col gap-10 items-center relative rounded-[40px] z-10">
 						<p
-							class={`${typeStyles.sectionTitleLarge} not-italic relative shrink-0 text-yellow-200 text-center w-full max-w-[800px]`}>
+							class={`${typeStyles.sectionTitleLarge} not-italic relative text-yellow-200 text-center w-full max-w-[800px]`}>
 							Do you have questions?
 						</p>
 						<div
-							class={`${typeStyles.bodyLarge} not-italic relative shrink-0 text-center text-white w-full max-w-148   `}>
+							class={`${typeStyles.bodyLarge} not-italic relative text-center text-white w-full max-w-148   `}>
 							<p class="mb-0">
 								<span class="leading-copy"
 									>{
