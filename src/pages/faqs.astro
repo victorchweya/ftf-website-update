@@ -6,249 +6,278 @@ import SectionHeader from "../components/layout/SectionHeader.astro";
 import SectionShell from "../components/layout/SectionShell.astro";
 import * as FAQsSvgs from "../lib/figmaMarkup/faqs";
 import { typeStyles } from "../lib/figmaStyles";
-
 const faqFilters = [
-	{ id: "general", label: "General" },
-	{ id: "buyers", label: "Buyers" },
-	{ id: "farmers", label: "Farmers" },
+  { id: "general", label: "General" },
+  { id: "buyers", label: "Buyers" },
+  { id: "farmers", label: "Farmers" },
 ];
-
 const defaultFaqItems = [
-	{
-		category: "general",
-		question: "What is the effect of food loss and waste on the environment?",
-	},
-	{
-		category: "general",
-		question: "How does Farm to Feed tackle food loss?",
-	},
-	{
-		category: "general",
-		question: "How do you measure your environmental impact?",
-	},
-	{
-		category: "general",
-		question: "How can I get involved with Farm to Feed?",
-	},
-	{ category: "general", question: "What is Farm to Feed's track record?" },
-	{
-		category: "general",
-		question: "What is the impact of investing in Farm to Feed?",
-	},
+  {
+    category: "general",
+    question: "What is the effect of food loss and waste on the environment?",
+  },
+  { category: "general", question: "How does Farm to Feed tackle food loss?" },
+  {
+    category: "general",
+    question: "How do you measure your environmental impact?",
+  },
+  {
+    category: "general",
+    question: "How can I get involved with Farm to Feed?",
+  },
+  { category: "general", question: "What is Farm to Feed's track record?" },
+  {
+    category: "general",
+    question: "What is the impact of investing in Farm to Feed?",
+  },
 ];
-
 const cmsFaqItems = (await getCollection("faqs", ({ data }) => data.published))
-	.sort((a, b) => a.data.number - b.data.number)
-	.map(({ body, data, id, rendered }) => ({
-		answer: body?.trim() ?? "",
-		answerHtml: rendered?.html ?? "",
-		category: data.category,
-		question: data.question,
-		slug: id,
-	}));
-
+  .sort((a, b) => a.data.number - b.data.number)
+  .map(({ body, data, id, rendered }) => ({
+    answer: body?.trim() ?? "",
+    answerHtml: rendered?.html ?? "",
+    category: data.category,
+    question: data.question,
+    slug: id,
+  }));
 const displayFaqItems = cmsFaqItems.length ? cmsFaqItems : defaultFaqItems;
-
 function getFaqId(item: (typeof displayFaqItems)[number], index: number) {
-	return (item.slug ?? `${index}-${item.question}`)
-		.toLowerCase()
-		.replace(/[^a-z0-9_-]+/g, "-")
-		.replace(/^-|-$/g, "");
+  return (item.slug ?? `${index}-${item.question}`)
+    .toLowerCase()
+    .replace(/[^a-z0-9_-]+/g, "-")
+    .replace(/^-|-$/g, "");
 }
 ---
 
 <Layout title="FAQs">
-	<div class="bg-brown-50 flex flex-col items-start relative w-full">
-		<div class="bg-brown-50 overflow-clip relative shrink-0 w-full" data-faq-root>
-			<div class="absolute inset-[97.23%_0_0_0]">
-				<Fragment set:html={FAQsSvgs.FAQsSvg01} />
-			</div>
-			<SectionShell
-				class="bg-brown-50 min-h-[680px] pb-20 pt-40 md:pb-28 md:pt-44 lg:pb-24 lg:pt-[138px]"
-				containerClass="grid gap-10 lg:grid-cols-[170px_minmax(0,1fr)] lg:gap-12 xl:grid-cols-[220px_minmax(0,1fr)]"
-				size="wide"
-				spacing="none">
-				<aside class="relative order-2 flex flex-col gap-8 pt-2 lg:order-1 lg:min-h-[520px] lg:justify-end">
-					<div
-						aria-hidden="true"
-						class="pointer-events-none absolute -left-[250px] top-0 hidden h-[500px] w-[360px] items-center justify-center opacity-80 lg:flex xl:-left-[300px] xl:h-[540px] xl:w-[400px]"
-						style="container-type: size;">
-						<div class="flex-none h-[100cqw] rotate-90 w-[100cqh]">
-							<div class="relative size-full">
-								<Fragment set:html={FAQsSvgs.FAQsSvg03} />
-							</div>
-						</div>
-					</div>
-					<div class="relative z-10 flex flex-col gap-3 items-start">
-						<p class={`${typeStyles.bodyLead} font-medium leading-normal relative shrink-0 text-[#0f251b]`}>
-							Have more questions?
-						</p>
-						<Button href="/contact-us" size="sm" class="relative shrink-0 text-[#eee]">
-							Contact Us
-						</Button>
-					</div>
-				</aside>
-				<div class="order-1 flex flex-col lg:order-2 lg:max-w-[920px] xl:max-w-[980px]">
-					<SectionHeader class="max-w-[520px]" title="Frequently asked questions" />
-					<div class="mt-12 flex flex-wrap gap-3 items-center border-[#dfeddf] border-b border-dashed pb-5 md:mt-16 md:gap-5">
-						<div class="flex items-start py-2 pr-2 relative shrink-0">
-							<p class={`${typeStyles.body} leading-6 relative shrink-0 text-black text-center whitespace-nowrap`}>
-								Filter By:
-							</p>
-						</div>
-						{
-							faqFilters.map((filter) => {
-								const isActive = filter.id === "general";
-								return (
-									<Button
-										type="button"
-										aria-pressed={isActive ? "true" : "false"}
-										data-faq-filter={filter.id}
-										variant={isActive ? "primary" : "none"}
-										size="sm"
-										class={`relative shrink-0 ${isActive ? "text-[#eee]" : "bg-[#eff6ef] text-[#0f251b]"}`}>
-										{filter.label}
-									</Button>
-								);
-							})
-						}
-					</div>
-					<div class="flex flex-col items-start relative w-full pt-8 md:pt-9">
-						{
-							displayFaqItems.map((item, index) => {
-								const faqId = getFaqId(item, index);
-								const answerId = `${faqId}-answer`;
-								const category = item.category ?? "general";
-
-								return (
-									<article
-										class="relative shrink-0 w-full"
-										data-faq-card
-										data-faq-category={category}
-										data-name="faq-card"
-										hidden={category !== "general"}>
-										<div aria-hidden="true" class="absolute border-[#f7f7f7] border-b border-solid inset-x-0 bottom-0 pointer-events-none" />
-										<button
-											aria-controls={answerId}
-											aria-expanded="false"
-											class="flex gap-6 items-center py-3.5 relative w-full text-left md:gap-16 md:py-4"
-											data-faq-toggle
-											type="button">
-											<span class="flex flex-[1_0_0] flex-col gap-4 items-start min-w-px relative">
-												<span class={`${typeStyles.cardTitle} leading-copy relative shrink-0 text-[#0f251b] w-full`}>
-													{item.question}
-												</span>
-											</span>
-											<span class="overflow-clip relative shrink-0 size-6" data-name="plus">
-												<span class="absolute inset-[20.83%]" data-name="Icon">
-													<span class="absolute inset-[-7.14%]" data-faq-plus>
-														<Fragment set:html={FAQsSvgs.FAQsSvg02} />
-													</span>
-													<span class="absolute left-0 right-0 top-1/2 hidden h-0.5 -translate-y-1/2 rounded-full bg-[#85A687]" data-faq-minus></span>
-												</span>
-											</span>
-										</button>
-										<div
-											aria-hidden="true"
-											class="grid grid-rows-[0fr] transition-[grid-template-rows,padding-bottom] duration-200 ease-out"
-											data-faq-answer
-											id={answerId}>
-											<div class="overflow-hidden">
-												{
-													item.answerHtml ? (
-														<div
-															class={`${typeStyles.body} max-w-[760px] text-green-500 [&_a]:text-[#916f96] [&_a]:underline [&_ol]:list-decimal [&_ol]:pl-6 [&_p]:mb-4 [&_ul]:list-disc [&_ul]:pl-6`}
-															set:html={item.answerHtml}
-														/>
-													) : (
-														<p class={`${typeStyles.body} max-w-[760px] whitespace-pre-wrap text-green-500`}>
-															{item.answer}
-														</p>
-													)
-												}
-											</div>
-										</div>
-									</article>
-								);
-							})
-						}
-					</div>
-				</div>
-			</SectionShell>
-		</div>
-	</div>
-
-	<script>
-		const root = document.querySelector("[data-faq-root]");
-		if (root) {
-			const filters = Array.from(root.querySelectorAll("[data-faq-filter]"));
-			const cards = Array.from(root.querySelectorAll("[data-faq-card]"));
-			const activeClasses = ["text-white", "bg-green-500", "hover:bg-green-600", "focus:ring-green-500", "text-[#eee]"];
-			const inactiveClasses = ["bg-[#eff6ef]", "text-[#0f251b]"];
-
-			const closeCard = (card) => {
-				const toggle = card.querySelector("[data-faq-toggle]");
-				const answer = card.querySelector("[data-faq-answer]");
-				const plus = card.querySelector("[data-faq-plus]");
-				const minus = card.querySelector("[data-faq-minus]");
-
-				toggle?.setAttribute("aria-expanded", "false");
-				answer?.setAttribute("aria-hidden", "true");
-				answer?.classList.remove("grid-rows-[1fr]", "pb-6");
-				answer?.classList.add("grid-rows-[0fr]");
-				plus?.classList.remove("hidden");
-				minus?.classList.add("hidden");
-			};
-
-			const openCard = (card) => {
-				const toggle = card.querySelector("[data-faq-toggle]");
-				const answer = card.querySelector("[data-faq-answer]");
-				const plus = card.querySelector("[data-faq-plus]");
-				const minus = card.querySelector("[data-faq-minus]");
-
-				toggle?.setAttribute("aria-expanded", "true");
-				answer?.setAttribute("aria-hidden", "false");
-				answer?.classList.remove("grid-rows-[0fr]");
-				answer?.classList.add("grid-rows-[1fr]", "pb-6");
-				plus?.classList.add("hidden");
-				minus?.classList.remove("hidden");
-			};
-
-			const setFilter = (category) => {
-				filters.forEach((filter) => {
-					const isActive = filter.getAttribute("data-faq-filter") === category;
-					filter.setAttribute("aria-pressed", isActive ? "true" : "false");
-					filter.classList.toggle("bg-green-500", isActive);
-					filter.classList.toggle("hover:bg-green-600", isActive);
-					filter.classList.toggle("focus:ring-green-500", isActive);
-					filter.classList.toggle("text-white", isActive);
-					filter.classList.toggle("text-[#eee]", isActive);
-					filter.classList.toggle("bg-[#eff6ef]", !isActive);
-					filter.classList.toggle("text-[#0f251b]", !isActive);
-				});
-
-				cards.forEach((card) => {
-					closeCard(card);
-					card.hidden = card.getAttribute("data-faq-category") !== category;
-				});
-			};
-
-			filters.forEach((filter) => {
-				filter.addEventListener("click", () => {
-					setFilter(filter.getAttribute("data-faq-filter") || "general");
-				});
-			});
-
-			cards.forEach((card) => {
-				const toggle = card.querySelector("[data-faq-toggle]");
-				toggle?.addEventListener("click", () => {
-					const isOpen = toggle.getAttribute("aria-expanded") === "true";
-					cards.forEach(closeCard);
-					if (!isOpen) {
-						openCard(card);
-					}
-				});
-			});
-		}
-	</script>
+  <div class="bg-brown-50 flex flex-col items-start relative w-full">
+    <div class="bg-brown-50 overflow-clip relative w-full" data-faq-root>
+      <div class="absolute inset-[97.23%_0_0_0]">
+        <Fragment set:html={FAQsSvgs.FAQsSvg01} />
+      </div>
+      <SectionShell
+        class="bg-brown-50 min-h-[680px] pb-20 pt-40 md:pb-28 md:pt-44 lg:pb-24 lg:pt-[138px]"
+        containerClass="grid gap-10 lg:grid-cols-[170px_minmax(0,1fr)] lg:gap-12 xl:grid-cols-[220px_minmax(0,1fr)]"
+        size="wide"
+        spacing="none"
+      >
+        <aside
+          class="relative order-2 flex flex-col gap-8 pt-2 lg:order-1 lg:min-h-[520px] lg:justify-end"
+        >
+          <div
+            aria-hidden="true"
+            class="pointer-events-none absolute -left-[250px] top-0 hidden h-[500px] w-[360px] items-center justify-center opacity-80 lg:flex xl:-left-[300px] xl:h-[540px] xl:w-[400px]"
+            style="container-type: size;"
+          >
+            <div class="flex-none h-[100cqw] rotate-90 w-[100cqh]">
+              <div class="relative size-full">
+                <Fragment set:html={FAQsSvgs.FAQsSvg03} />
+              </div>
+            </div>
+          </div>
+          <div class="relative z-10 flex flex-col gap-3 items-start">
+            <p
+              class={`${typeStyles.bodyLead} font-medium leading-normal relative text-[#0f251b]`}
+            >
+              Have more questions?
+            </p>
+            <Button href="/contact-us" size="sm" class="relative text-[#eee]">
+              Contact Us
+            </Button>
+          </div>
+        </aside>
+        <div
+          class="order-1 flex flex-col lg:order-2 lg:max-w-[920px] xl:max-w-[980px]"
+        >
+          <SectionHeader
+            class="max-w-[520px]"
+            title="Frequently asked questions"
+          />
+          <div
+            class="mt-12 flex flex-wrap gap-3 items-center border-[#dfeddf] border-b border-dashed pb-5 md:mt-16 md:gap-5"
+          >
+            <div class="flex items-start py-2 pr-2 relative">
+              <p
+                class={`${typeStyles.body} leading-6 relative text-black text-center whitespace-nowrap`}
+              >
+                Filter By:
+              </p>
+            </div>
+            {
+              faqFilters.map((filter) => {
+                const isActive = filter.id === "general";
+                return (
+                  <Button
+                    type="button"
+                    aria-pressed={isActive ? "true" : "false"}
+                    data-faq-filter={filter.id}
+                    variant={isActive ? "primary" : "none"}
+                    size="sm"
+                    class={`relative ${isActive ? "text-[#eee]" : "bg-[#eff6ef] text-[#0f251b]"}`}
+                  >
+                    {" "}
+                    {filter.label}{" "}
+                  </Button>
+                );
+              })
+            }
+          </div>
+          <div class="flex flex-col items-start relative w-full pt-8 md:pt-9">
+            {
+              displayFaqItems.map((item, index) => {
+                const faqId = getFaqId(item, index);
+                const answerId = `${faqId}-answer`;
+                const category = item.category ?? "general";
+                return (
+                  <article
+                    class="relative w-full"
+                    data-faq-card
+                    data-faq-category={category}
+                    data-name="faq-card"
+                    hidden={category !== "general"}
+                  >
+                    {" "}
+                    <div
+                      aria-hidden="true"
+                      class="absolute border-[#f7f7f7] border-b border-solid inset-x-0 bottom-0 pointer-events-none"
+                    />{" "}
+                    <button
+                      aria-controls={answerId}
+                      aria-expanded="false"
+                      class="flex gap-6 items-center py-3.5 relative w-full text-left md:gap-16 md:py-4"
+                      data-faq-toggle
+                      type="button"
+                    >
+                      {" "}
+                      <span class="flex flex-[1_0_0] flex-col gap-4 items-start min-w-px relative">
+                        {" "}
+                        <span
+                          class={`${typeStyles.cardTitle} leading-copy relative text-[#0f251b] w-full`}
+                        >
+                          {" "}
+                          {item.question}{" "}
+                        </span>{" "}
+                      </span>{" "}
+                      <span
+                        class="overflow-clip relative size-6"
+                        data-name="plus"
+                      >
+                        {" "}
+                        <span class="absolute inset-[20.83%]" data-name="Icon">
+                          {" "}
+                          <span class="absolute inset-[-7.14%]" data-faq-plus>
+                            {" "}
+                            <Fragment set:html={FAQsSvgs.FAQsSvg02} />{" "}
+                          </span>{" "}
+                          <span
+                            class="absolute left-0 right-0 top-1/2 hidden h-0.5 -translate-y-1/2 rounded-full bg-[#85A687]"
+                            data-faq-minus
+                          />{" "}
+                        </span>{" "}
+                      </span>{" "}
+                    </button>{" "}
+                    <div
+                      aria-hidden="true"
+                      class="grid grid-rows-[0fr] transition-[grid-template-rows,padding-bottom] duration-200 ease-out"
+                      data-faq-answer
+                      id={answerId}
+                    >
+                      {" "}
+                      <div class="overflow-hidden">
+                        {" "}
+                        {item.answerHtml ? (
+                          <div
+                            class={`${typeStyles.body} max-w-[760px] text-green-500 [&_a]:text-[#916f96] [&_a]:underline [&_ol]:list-decimal [&_ol]:pl-6 [&_p]:mb-4 [&_ul]:list-disc [&_ul]:pl-6`}
+                            set:html={item.answerHtml}
+                          />
+                        ) : (
+                          <p
+                            class={`${typeStyles.body} max-w-[760px] whitespace-pre-wrap text-green-500`}
+                          >
+                            {" "}
+                            {item.answer}{" "}
+                          </p>
+                        )}{" "}
+                      </div>{" "}
+                    </div>{" "}
+                  </article>
+                );
+              })
+            }
+          </div>
+        </div>
+      </SectionShell>
+    </div>
+  </div>
+  <script>
+    const root = document.querySelector("[data-faq-root]");
+    if (root) {
+      const filters = Array.from(root.querySelectorAll("[data-faq-filter]"));
+      const cards = Array.from(root.querySelectorAll("[data-faq-card]"));
+      const activeClasses = [
+        "text-white",
+        "bg-green-500",
+        "hover:bg-green-600",
+        "focus:ring-green-500",
+        "text-[#eee]",
+      ];
+      const inactiveClasses = ["bg-[#eff6ef]", "text-[#0f251b]"];
+      const closeCard = (card) => {
+        const toggle = card.querySelector("[data-faq-toggle]");
+        const answer = card.querySelector("[data-faq-answer]");
+        const plus = card.querySelector("[data-faq-plus]");
+        const minus = card.querySelector("[data-faq-minus]");
+        toggle?.setAttribute("aria-expanded", "false");
+        answer?.setAttribute("aria-hidden", "true");
+        answer?.classList.remove("grid-rows-[1fr]", "pb-6");
+        answer?.classList.add("grid-rows-[0fr]");
+        plus?.classList.remove("hidden");
+        minus?.classList.add("hidden");
+      };
+      const openCard = (card) => {
+        const toggle = card.querySelector("[data-faq-toggle]");
+        const answer = card.querySelector("[data-faq-answer]");
+        const plus = card.querySelector("[data-faq-plus]");
+        const minus = card.querySelector("[data-faq-minus]");
+        toggle?.setAttribute("aria-expanded", "true");
+        answer?.setAttribute("aria-hidden", "false");
+        answer?.classList.remove("grid-rows-[0fr]");
+        answer?.classList.add("grid-rows-[1fr]", "pb-6");
+        plus?.classList.add("hidden");
+        minus?.classList.remove("hidden");
+      };
+      const setFilter = (category) => {
+        filters.forEach((filter) => {
+          const isActive = filter.getAttribute("data-faq-filter") === category;
+          filter.setAttribute("aria-pressed", isActive ? "true" : "false");
+          filter.classList.toggle("bg-green-500", isActive);
+          filter.classList.toggle("hover:bg-green-600", isActive);
+          filter.classList.toggle("focus:ring-green-500", isActive);
+          filter.classList.toggle("text-white", isActive);
+          filter.classList.toggle("text-[#eee]", isActive);
+          filter.classList.toggle("bg-[#eff6ef]", !isActive);
+          filter.classList.toggle("text-[#0f251b]", !isActive);
+        });
+        cards.forEach((card) => {
+          closeCard(card);
+          card.hidden = card.getAttribute("data-faq-category") !== category;
+        });
+      };
+      filters.forEach((filter) => {
+        filter.addEventListener("click", () => {
+          setFilter(filter.getAttribute("data-faq-filter") || "general");
+        });
+      });
+      cards.forEach((card) => {
+        const toggle = card.querySelector("[data-faq-toggle]");
+        toggle?.addEventListener("click", () => {
+          const isOpen = toggle.getAttribute("aria-expanded") === "true";
+          cards.forEach(closeCard);
+          if (!isOpen) {
+            openCard(card);
+          }
+        });
+      });
+    }
+  </script>
 </Layout>
