@@ -7,754 +7,773 @@ import storyIllustrationOneUrl from "../assets/figma/our-story/story-illustratio
 import storyIllustrationTwoUrl from "../assets/figma/our-story/story-illustration-2.png?url";
 import ourStoryDividerUrl from "../assets/figma/our-story/divider.png?url";
 import ourStoryHeroBottomUrl from "../assets/figma/our-story/hero-bottom.svg?url";
-
 const storySlides = [
-	{
-		label: "The start",
-		body: "In April 2020, Farm to Feed started as a COVID food relief effort. We bought farmers' produce that was at risk of going to waste and donated to food insecure communities who were made more vulnerable at the height of the pandemic.",
-		width: 54,
-		zIndex: 8,
-	},
-	{
-		label: "2020",
-		body: "We catered to 10 charities and provided additional income for up to 400 smallholder farmers. We soon realized that the problem of food loss was only exacerbated by the pandemic but existed before and will long outlast it.",
-		width: 36,
-		zIndex: 7,
-	},
-	{
-		label: "2021",
-		body: "In May 2021, we pivoted to our scalable model with the purpose of transforming our food systems for the better.",
-		width: 33,
-		zIndex: 6,
-	},
-	{
-		label: "2022",
-		body: "Closed our pre-seed round. We quickly scaled our operations to 15,000 kgs of fresh produce per week and have onboarded thousands of farmers across Kenya.",
-		width: 33,
-		zIndex: 5,
-	},
-	{
-		label: "2023",
-		body: "We launched our e-commerce platform providing easy and transparent buying for our customers.",
-		width: 33,
-		zIndex: 4,
-	},
-	{
-		label: "2024",
-		body: "Our in-house built ERP system and farmer mobile app are live. We continue to grow the FTF team, hiring our 16th employee.",
-		width: 33,
-		zIndex: 3,
-	},
-	{
-		label: "2025",
-		body: "We delivered our one millionth kg of rescued produce. We broadened our offering with value-added produce, such as peeled garlic, and started partnering with dry foods businesses to become the one-stop shop for all our customers.",
-		width: 33,
-		zIndex: 2,
-	},
-	{
-		label: "Now",
-		body: "We are about to launch our export line of dried ingredients and have just moved into our new warehouse.",
-		width: 30,
-		zIndex: 1,
-	},
+  {
+    label: "The start",
+    body: "In April 2020, Farm to Feed started as a COVID food relief effort. We bought farmers' produce that was at risk of going to waste and donated to food insecure communities who were made more vulnerable at the height of the pandemic.",
+    width: 54,
+    zIndex: 8,
+  },
+  {
+    label: "2020",
+    body: "We catered to 10 charities and provided additional income for up to 400 smallholder farmers. We soon realized that the problem of food loss was only exacerbated by the pandemic but existed before and will long outlast it.",
+    width: 36,
+    zIndex: 7,
+  },
+  {
+    label: "2021",
+    body: "In May 2021, we pivoted to our scalable model with the purpose of transforming our food systems for the better.",
+    width: 33,
+    zIndex: 6,
+  },
+  {
+    label: "2022",
+    body: "Closed our pre-seed round. We quickly scaled our operations to 15,000 kgs of fresh produce per week and have onboarded thousands of farmers across Kenya.",
+    width: 33,
+    zIndex: 5,
+  },
+  {
+    label: "2023",
+    body: "We launched our e-commerce platform providing easy and transparent buying for our customers.",
+    width: 33,
+    zIndex: 4,
+  },
+  {
+    label: "2024",
+    body: "Our in-house built ERP system and farmer mobile app are live. We continue to grow the FTF team, hiring our 16th employee.",
+    width: 33,
+    zIndex: 3,
+  },
+  {
+    label: "2025",
+    body: "We delivered our one millionth kg of rescued produce. We broadened our offering with value-added produce, such as peeled garlic, and started partnering with dry foods businesses to become the one-stop shop for all our customers.",
+    width: 33,
+    zIndex: 2,
+  },
+  {
+    label: "Now",
+    body: "We are about to launch our export line of dried ingredients and have just moved into our new warehouse.",
+    width: 30,
+    zIndex: 1,
+  },
 ];
-
 const storyPrinciples = [
-	{
-		body: "Unlock Africa's potential to bring high-quality impactful products to the world",
-		cardTop: "86px",
-		icon: "vision",
-		label: "Vision",
-	},
-	{
-		body: "To build a more sustainable and equitable food system.",
-		cardTop: "92.5px",
-		icon: "mission",
-		label: "Mission",
-	},
+  {
+    body: "Unlock Africa's potential to bring high-quality impactful products to the world",
+    cardTop: "86px",
+    icon: "vision",
+    label: "Vision",
+  },
+  {
+    body: "To build a more sustainable and equitable food system.",
+    cardTop: "92.5px",
+    icon: "mission",
+    label: "Mission",
+  },
 ];
-
 const platformSteps = [
-	{
-		body: "Aggregating full harvests and producing ingredients that strengthen farmer resilience",
-		illustration: "farmers",
-		title: "From farmers...",
-	},
-	{
-		illustration: "platform",
-	},
-	{
-		body: "Delivering traceable, sustainable ingredients to buyers through a tech-driven supply chain.",
-		illustration: "customers",
-		title: "...to B2B customers",
-	},
+  {
+    body: "Aggregating full harvests and producing ingredients that strengthen farmer resilience",
+    illustration: "farmers",
+    title: "From farmers...",
+  },
+  { illustration: "platform" },
+  {
+    body: "Delivering traceable, sustainable ingredients to buyers through a tech-driven supply chain.",
+    illustration: "customers",
+    title: "...to B2B customers",
+  },
 ];
-
 const customerIllustrationSvgs = [
-	{
-		class: "col-1 h-[5.411px] ml-[79.54px] mt-[35.57px] relative row-1 w-[2.257px]",
-		svg: OurStorySvgs.OurStorySvg09,
-	},
-	{
-		class: "col-1 h-[5.146px] ml-[99.54px] mt-[41.48px] relative row-1 w-[1.003px]",
-		svg: OurStorySvgs.OurStorySvg10,
-	},
-	{
-		class: "col-1 h-[7.402px] ml-[82.33px] mt-[31.93px] relative row-1 w-[2.534px]",
-		svg: OurStorySvgs.OurStorySvg11,
-	},
-	{
-		class: "col-1 h-[7.174px] ml-[96.71px] mt-[28.99px] relative row-1 w-[7.819px]",
-		svg: OurStorySvgs.OurStorySvg12,
-	},
-	{
-		class: "col-1 h-[43.893px] ml-[79.51px] mt-[36.8px] relative row-1 w-[23.996px]",
-		svg: OurStorySvgs.OurStorySvg13,
-	},
-	{
-		class: "col-1 h-[60.621px] ml-[77.69px] mt-[21.93px] relative row-1 w-[28.025px]",
-		svg: OurStorySvgs.OurStorySvg14,
-	},
-	{
-		class: "col-1 h-[10.264px] ml-[78.43px] mt-[30.79px] relative row-1 w-[7.732px]",
-		svg: OurStorySvgs.OurStorySvg15,
-	},
-	{
-		class: "col-1 h-[10.152px] ml-[93.81px] mt-[38.69px] relative row-1 w-[7.796px]",
-		svg: OurStorySvgs.OurStorySvg16,
-	},
-	{
-		class: "col-1 h-[8.116px] ml-[91.19px] mt-[47.35px] relative row-1 w-[8.775px]",
-		svg: OurStorySvgs.OurStorySvg17,
-	},
-	{
-		class: "col-1 h-[6.769px] ml-[76.05px] mt-[38.74px] relative row-1 w-[5.299px]",
-		svg: OurStorySvgs.OurStorySvg18,
-	},
-	{
-		class: "col-1 h-[6.447px] ml-[74.83px] mt-[43.99px] relative row-1 w-[3.121px]",
-		svg: OurStorySvgs.OurStorySvg19,
-	},
-	{
-		class: "col-1 h-[3.454px] ml-[73.46px] mt-[48.21px] relative row-1 w-[1.046px]",
-		svg: OurStorySvgs.OurStorySvg20,
-	},
-	{
-		class: "col-1 h-[24.46px] ml-[36.67px] mt-[49.15px] relative row-1 w-[19.718px]",
-		svg: OurStorySvgs.OurStorySvg21,
-	},
-	{
-		class: "col-1 h-[80px] ml-[26.36px] mt-[7.3px] relative row-1 w-[35px]",
-		svg: OurStorySvgs.OurStorySvg22,
-	},
-	{
-		class: "col-1 h-[14.643px] ml-[44.34px] mt-[52.57px] relative row-1 w-[5.328px]",
-		svg: OurStorySvgs.OurStorySvg23,
-	},
-	{
-		class: "col-1 h-[20.341px] ml-[44.78px] mt-[50.24px] relative row-1 w-[6.673px]",
-		svg: OurStorySvgs.OurStorySvg24,
-	},
-	{
-		class: "col-1 h-[16.853px] ml-[47.23px] mt-[50.93px] relative row-1 w-[6.549px]",
-		svg: OurStorySvgs.OurStorySvg25,
-	},
-	{
-		class: "col-1 h-[12.099px] ml-[37.75px] mt-[57.77px] relative row-1 w-[6.095px]",
-		svg: OurStorySvgs.OurStorySvg26,
-	},
-	{
-		class: "col-1 h-[17.947px] ml-[42.05px] mt-[50.62px] relative row-1 w-[6.145px]",
-		svg: OurStorySvgs.OurStorySvg27,
-	},
-	{
-		class: "col-1 h-[12.801px] ml-[40.75px] mt-[57.54px] relative row-1 w-[7.035px]",
-		svg: OurStorySvgs.OurStorySvg28,
-	},
-	{
-		class: "col-1 h-[89.044px] ml-[40.11px] mt-0 relative row-1 w-[29.711px]",
-		svg: OurStorySvgs.OurStorySvg29,
-	},
-	{
-		class: "col-1 h-[56.221px] ml-[45.8px] mt-[20.89px] relative row-1 w-[16.498px]",
-		svg: OurStorySvgs.OurStorySvg30,
-	},
-	{
-		class: "col-1 h-[6.815px] ml-[78.88px] mt-[70.83px] relative row-1 w-[3.58px]",
-		svg: OurStorySvgs.OurStorySvg31,
-	},
-	{
-		class: "col-1 h-[3.509px] ml-[83.02px] mt-[71.44px] relative row-1 w-[5.417px]",
-		svg: OurStorySvgs.OurStorySvg32,
-	},
-	{
-		class: "col-1 h-[0.007px] ml-[91.97px] mt-[75.21px] relative row-1 w-0",
-		svg: OurStorySvgs.OurStorySvg33,
-	},
-	{
-		class: "col-1 h-[54.75px] ml-[6.18px] mt-[19.8px] relative row-1 w-[40.737px]",
-		svg: OurStorySvgs.OurStorySvg35,
-	},
-	{
-		class: "col-1 h-[4.319px] ml-[21.02px] mt-[28.01px] relative row-1 w-[7.269px]",
-		svg: OurStorySvgs.OurStorySvg36,
-	},
-	{
-		class: "col-1 h-[2.896px] ml-[14.18px] mt-[32.24px] relative row-1 w-[3.279px]",
-		svg: OurStorySvgs.OurStorySvg37,
-	},
-	{
-		class: "col-1 h-[3.763px] ml-[9.26px] mt-[35.73px] relative row-1 w-[5.239px]",
-		svg: OurStorySvgs.OurStorySvg38,
-	},
-	{
-		class: "col-1 h-[32.622px] ml-[16.14px] mt-[36.21px] relative row-1 w-[19.745px]",
-		svg: OurStorySvgs.OurStorySvg39,
-	},
-	{
-		class: "col-1 h-[30.573px] ml-[26.73px] mt-[29.99px] relative row-1 w-[17.151px]",
-		svg: OurStorySvgs.OurStorySvg40,
-	},
-	{
-		class: "col-1 h-[14.102px] ml-[47.29px] mt-[47.29px] relative row-1 w-[6.979px]",
-		svg: OurStorySvgs.OurStorySvg42,
-	},
-	{
-		class: "col-1 h-[43.183px] ml-[6.1px] mt-[42.37px] relative row-1 w-[100.296px]",
-		svg: OurStorySvgs.OurStorySvg43,
-	},
+  {
+    class:
+      "col-1 h-[5.411px] ml-[79.54px] mt-[35.57px] relative row-1 w-[2.257px]",
+    svg: OurStorySvgs.OurStorySvg09,
+  },
+  {
+    class:
+      "col-1 h-[5.146px] ml-[99.54px] mt-[41.48px] relative row-1 w-[1.003px]",
+    svg: OurStorySvgs.OurStorySvg10,
+  },
+  {
+    class:
+      "col-1 h-[7.402px] ml-[82.33px] mt-[31.93px] relative row-1 w-[2.534px]",
+    svg: OurStorySvgs.OurStorySvg11,
+  },
+  {
+    class:
+      "col-1 h-[7.174px] ml-[96.71px] mt-[28.99px] relative row-1 w-[7.819px]",
+    svg: OurStorySvgs.OurStorySvg12,
+  },
+  {
+    class:
+      "col-1 h-[43.893px] ml-[79.51px] mt-[36.8px] relative row-1 w-[23.996px]",
+    svg: OurStorySvgs.OurStorySvg13,
+  },
+  {
+    class:
+      "col-1 h-[60.621px] ml-[77.69px] mt-[21.93px] relative row-1 w-[28.025px]",
+    svg: OurStorySvgs.OurStorySvg14,
+  },
+  {
+    class:
+      "col-1 h-[10.264px] ml-[78.43px] mt-[30.79px] relative row-1 w-[7.732px]",
+    svg: OurStorySvgs.OurStorySvg15,
+  },
+  {
+    class:
+      "col-1 h-[10.152px] ml-[93.81px] mt-[38.69px] relative row-1 w-[7.796px]",
+    svg: OurStorySvgs.OurStorySvg16,
+  },
+  {
+    class:
+      "col-1 h-[8.116px] ml-[91.19px] mt-[47.35px] relative row-1 w-[8.775px]",
+    svg: OurStorySvgs.OurStorySvg17,
+  },
+  {
+    class:
+      "col-1 h-[6.769px] ml-[76.05px] mt-[38.74px] relative row-1 w-[5.299px]",
+    svg: OurStorySvgs.OurStorySvg18,
+  },
+  {
+    class:
+      "col-1 h-[6.447px] ml-[74.83px] mt-[43.99px] relative row-1 w-[3.121px]",
+    svg: OurStorySvgs.OurStorySvg19,
+  },
+  {
+    class:
+      "col-1 h-[3.454px] ml-[73.46px] mt-[48.21px] relative row-1 w-[1.046px]",
+    svg: OurStorySvgs.OurStorySvg20,
+  },
+  {
+    class:
+      "col-1 h-[24.46px] ml-[36.67px] mt-[49.15px] relative row-1 w-[19.718px]",
+    svg: OurStorySvgs.OurStorySvg21,
+  },
+  {
+    class: "col-1 h-[80px] ml-[26.36px] mt-[7.3px] relative row-1 w-[35px]",
+    svg: OurStorySvgs.OurStorySvg22,
+  },
+  {
+    class:
+      "col-1 h-[14.643px] ml-[44.34px] mt-[52.57px] relative row-1 w-[5.328px]",
+    svg: OurStorySvgs.OurStorySvg23,
+  },
+  {
+    class:
+      "col-1 h-[20.341px] ml-[44.78px] mt-[50.24px] relative row-1 w-[6.673px]",
+    svg: OurStorySvgs.OurStorySvg24,
+  },
+  {
+    class:
+      "col-1 h-[16.853px] ml-[47.23px] mt-[50.93px] relative row-1 w-[6.549px]",
+    svg: OurStorySvgs.OurStorySvg25,
+  },
+  {
+    class:
+      "col-1 h-[12.099px] ml-[37.75px] mt-[57.77px] relative row-1 w-[6.095px]",
+    svg: OurStorySvgs.OurStorySvg26,
+  },
+  {
+    class:
+      "col-1 h-[17.947px] ml-[42.05px] mt-[50.62px] relative row-1 w-[6.145px]",
+    svg: OurStorySvgs.OurStorySvg27,
+  },
+  {
+    class:
+      "col-1 h-[12.801px] ml-[40.75px] mt-[57.54px] relative row-1 w-[7.035px]",
+    svg: OurStorySvgs.OurStorySvg28,
+  },
+  {
+    class: "col-1 h-[89.044px] ml-[40.11px] mt-0 relative row-1 w-[29.711px]",
+    svg: OurStorySvgs.OurStorySvg29,
+  },
+  {
+    class:
+      "col-1 h-[56.221px] ml-[45.8px] mt-[20.89px] relative row-1 w-[16.498px]",
+    svg: OurStorySvgs.OurStorySvg30,
+  },
+  {
+    class:
+      "col-1 h-[6.815px] ml-[78.88px] mt-[70.83px] relative row-1 w-[3.58px]",
+    svg: OurStorySvgs.OurStorySvg31,
+  },
+  {
+    class:
+      "col-1 h-[3.509px] ml-[83.02px] mt-[71.44px] relative row-1 w-[5.417px]",
+    svg: OurStorySvgs.OurStorySvg32,
+  },
+  {
+    class: "col-1 h-[0.007px] ml-[91.97px] mt-[75.21px] relative row-1 w-0",
+    svg: OurStorySvgs.OurStorySvg33,
+  },
+  {
+    class:
+      "col-1 h-[54.75px] ml-[6.18px] mt-[19.8px] relative row-1 w-[40.737px]",
+    svg: OurStorySvgs.OurStorySvg35,
+  },
+  {
+    class:
+      "col-1 h-[4.319px] ml-[21.02px] mt-[28.01px] relative row-1 w-[7.269px]",
+    svg: OurStorySvgs.OurStorySvg36,
+  },
+  {
+    class:
+      "col-1 h-[2.896px] ml-[14.18px] mt-[32.24px] relative row-1 w-[3.279px]",
+    svg: OurStorySvgs.OurStorySvg37,
+  },
+  {
+    class:
+      "col-1 h-[3.763px] ml-[9.26px] mt-[35.73px] relative row-1 w-[5.239px]",
+    svg: OurStorySvgs.OurStorySvg38,
+  },
+  {
+    class:
+      "col-1 h-[32.622px] ml-[16.14px] mt-[36.21px] relative row-1 w-[19.745px]",
+    svg: OurStorySvgs.OurStorySvg39,
+  },
+  {
+    class:
+      "col-1 h-[30.573px] ml-[26.73px] mt-[29.99px] relative row-1 w-[17.151px]",
+    svg: OurStorySvgs.OurStorySvg40,
+  },
+  {
+    class:
+      "col-1 h-[14.102px] ml-[47.29px] mt-[47.29px] relative row-1 w-[6.979px]",
+    svg: OurStorySvgs.OurStorySvg42,
+  },
+  {
+    class:
+      "col-1 h-[43.183px] ml-[6.1px] mt-[42.37px] relative row-1 w-[100.296px]",
+    svg: OurStorySvgs.OurStorySvg43,
+  },
 ];
-
 const activeStoryIndex = 0;
 ---
 
 <Layout title="Our Story">
-	<div
-		class="bg-white flex flex-col items-start relative w-full"
-		data-name="Our Story">
-		<section class="relative w-full" data-name="Wireframe - 53">
-			<ContentContainer size="wide" class="h-full">
-				<div
-					class="relative grid w-full min-h-[540px] max-w-[913px] mt-20 mx-auto items-center gap-8 md:grid-cols-[minmax(0,570px)_279px] md:gap-16">
-					<p class={`${typeStyles.heroTitleLarge} text-green-800`}>
-						Farm to Feed began with a simple but urgent idea
-					</p>
-					<p class={`${typeStyles.bodyLarge} text-green-500`}>
-						tackling food loss in Kenya's fresh produce supply
-						chain. We introduced grade rescue to the Nairobi market,
-						creating a pathway for vegetables that might otherwise
-						go to waste.
-					</p>
-				</div>
-			</ContentContainer>
-
-			<div class="relative" data-name="our-story-divider">
-				<img
-					alt=""
-					aria-hidden="true"
-					class="w-full h-full object-cover"
-					src={ourStoryDividerUrl}
-				/>
-				<div
-					class="absolute hidden h-[198px] right-50 top-0 w-[203.25px] md:block"
-					data-name="Group">
-					<Fragment set:html={OurStorySvgs.OurStorySvg46} />
-				</div>
-			</div>
-		</section>
-
-		<section
-			class="bg-white overflow-clip relative w-full"
-			data-name="Wireframe - 10">
-			<ContentContainer size="wide" class="h-full">
-				<div
-					class="relative flex h-full flex-col items-center min-h-[540px] max-w-[760px] mt-20 mx-auto gap-8 md:gap-16">
-					<p
-						class={`${typeStyles.sectionTitle} not-italic text-[#0f251b] text-center w-full max-w-148`}>
-						Connecting production to dependable demand...
-					</p>
-					<div
-						class={`${typeStyles.body} mt-[24px] md:mt-[55px]   not-italic text-[#0f251b] text-center w-full max-w-148`}>
-						<p class="leading-copy">
-							As we worked alongside our customers and farmers, we
-							quickly learned that food loss is one part of a much
-							larger challenge. Farmers needed more than a
-							solution for imperfect and surplus produce. They
-							needed reliable market access for their full
-							harvest.
-						</p>
-						<p class="leading-copy">
-							Since those early days, Farm to Feed has grown into
-							a trusted off taker and partner for farmers, helping
-							to address one of Kenya’s most persistent
-							agricultural bottlenecks: connecting production to
-							dependable demand.
-						</p>
-					</div>
-					<div
-						class="flex flex-col gap-12 mb-24 items-center md:flex-row md:gap-16 md:mb-40">
-						{
-							storyPrinciples.map((principle) => (
-								<div class="grid-cols-[max-content] grid-rows-[max-content] inline-grid place-items-start relative shrink-0">
-									<div
-										class="col-1 h-[336px] ml-0 relative row-1 w-75.75"
-										data-name="Vector"
-										style={`margin-top: ${principle.cardTop};`}>
-										<div class="absolute inset-[-1.19%_-7.92%_-13.1%_-7.92%]">
-											<Fragment
-												set:html={
-													OurStorySvgs.OurStorySvg47
-												}
-											/>
-										</div>
-									</div>
-									<div class="col-1 flex flex-col gap-12 items-center ml-11.5 mt-0 relative row-1 w-54.25">
-										{principle.icon === "vision" ? (
-											<div class="grid-cols-[max-content] grid-rows-[max-content] inline-grid   place-items-start relative shrink-0">
-												<div
-													class="col-1 h-[124px] ml-0 mt-0 relative row-1 w-[127.288px]"
-													data-name="Group">
-													<Fragment
-														set:html={
-															OurStorySvgs.OurStorySvg01
-														}
-													/>
-												</div>
-												<div
-													class="col-1 h-[64.416px] ml-[39.9px] mt-[29.59px] relative row-1 w-[57.169px]"
-													data-name="Isolation_Mode">
-													<Fragment
-														set:html={
-															OurStorySvgs.OurStorySvg02
-														}
-													/>
-												</div>
-											</div>
-										) : (
-											<div class="grid-cols-[max-content] grid-rows-[max-content] inline-grid   place-items-start relative shrink-0">
-												<div class="col-1 flex h-[124px] items-center justify-center ml-0 mt-0 relative row-1 w-[127.221px]">
-													<div class="-scale-y-100 flex-none rotate-180">
-														<div
-															class="h-[124px] relative w-[127.221px]"
-															data-name="Vector">
-															<Fragment
-																set:html={
-																	OurStorySvgs.OurStorySvg03
-																}
-															/>
-														</div>
-													</div>
-												</div>
-												<div
-													class="col-1 h-[51.532px] ml-[26.17px] mt-[41.87px] overflow-clip relative row-1 w-[74.883px]"
-													data-name="Isolation_Mode">
-													<div
-														class="absolute inset-[-0.01%_-0.02%_-0.02%_0]"
-														data-name="Vector">
-														<Fragment
-															set:html={
-																OurStorySvgs.OurStorySvg04
-															}
-														/>
-													</div>
-												</div>
-											</div>
-										)}
-										<div class="flex flex-col gap-6 items-center not-italic relative text-center w-full">
-											<p
-												class={`${typeStyles.body} relative text-[#85a687] whitespace-nowrap`}>
-												{principle.label}
-											</p>
-											<p
-												class={`${typeStyles.cardTitle} relative text-[#0f251b] w-full`}>
-												{principle.body}
-											</p>
-										</div>
-									</div>
-								</div>
-							))
-						}
-					</div>
-				</div>
-			</ContentContainer>
-			<div
-				class="-translate-x-1/2 -translate-y-1/2 absolute hidden h-[601px] left-[33.5px] top-[calc(20%+266px)] w-[441px] lg:block"
-				data-name="Vector">
-				<img
-					alt=""
-					class="absolute block inset-0 max-w-none size-full"
-					height="601"
-					src={storyIllustrationOneUrl}
-					width="441"
-				/>
-			</div>
-			<div
-				class="-translate-x-1/2 -translate-y-1/2 absolute hidden h-[601px] items-center justify-center left-[calc(100%-46.5px)] top-[calc(20%+369px)] w-[441px] lg:flex">
-				<div class="-scale-y-100 flex-none rotate-180">
-					<div
-						class="h-[601px] relative w-[441px]"
-						data-name="Vector">
-						<img
-							alt=""
-							class="absolute block inset-0 max-w-none size-full"
-							height="601"
-							src={storyIllustrationTwoUrl}
-							width="441"
-						/>
-					</div>
-				</div>
-			</div>
-		</section>
-
-		<section
-			class="bg-white min-h-[500px] md:min-h-[580px] overflow-clip relative w-full mb-24"
-			data-name="Wireframe - 54">
-			<ContentContainer size="wide">
-				<div
-					class="relative flex flex-col items-center gap-16 md:gap-[124px]">
-					<div
-						class="absolute hidden md:flex h-[87px] items-center justify-center left-1/2 -translate-x-1/2 top-58 w-[485px]"
-						style="container-type:size">
-						<div class="flex-none h-[100cqw] rotate-90 w-[100cqh]">
-							<div class="relative size-full" data-name="Vector">
-								<Fragment
-									set:html={OurStorySvgs.OurStorySvg48}
-								/>
-							</div>
-						</div>
-					</div>
-					<div
-						class="flex flex-col items-center relative w-full max-w-[758px]">
-						<p
-							class={`${typeStyles.sectionTitle} not-italic relative text-[#030806] text-center w-full`}>
-							Farm to Feed is the tech-enabled platform
-						</p>
-					</div>
-					<div
-						class="flex flex-col md:flex-row gap-12 md:gap-8 items-center md:items-start relative w-full max-w-[952px]">
-						{
-							platformSteps.map((step) => (
-								<div
-									class={`flex flex-col items-center relative w-full md:flex-[1_0_0] md:min-w-px ${step.title ? "gap-8 md:gap-14" : "pt-[25px]"}`}>
-									{step.illustration === "farmers" ? (
-										<div class="h-[198.445px] relative shrink-0 w-[203.707px]">
-											<Fragment
-												set:html={
-													OurStorySvgs.OurStorySvg05
-												}
-											/>
-										</div>
-									) : step.illustration === "platform" ? (
-										<div class="h-[198.445px] relative shrink-0 w-[203.707px]">
-											<Fragment
-												set:html={
-													OurStorySvgs.OurStorySvg06
-												}
-											/>
-										</div>
-									) : (
-										<div class="grid-cols-[max-content] grid-rows-[max-content] inline-grid   place-items-start relative shrink-0">
-											<div
-												class="col-1 h-[198.445px] ml-0 mt-0 relative row-1 w-[203.707px]"
-												data-name="Vector">
-												<Fragment
-													set:html={
-														OurStorySvgs.OurStorySvg07
-													}
-												/>
-											</div>
-											<div
-												class="col-1 h-[37.983px] ml-[93px] mt-[21px] relative row-1 w-[27px]"
-												data-name="Vector">
-												<Fragment
-													set:html={
-														OurStorySvgs.OurStorySvg08
-													}
-												/>
-											</div>
-											<div
-												class="col-1 grid-cols-[max-content] grid-rows-[max-content] inline-grid ml-[46.64px] mt-[63.7px] place-items-start relative row-1"
-												data-name="Group">
-												{customerIllustrationSvgs.map(
-													(item) => (
-														<div
-															class={item.class}
-															data-name="Vector">
-															<Fragment
-																set:html={
-																	item.svg
-																}
-															/>
-														</div>
-													),
-												)}
-												<div class="col-1 flex h-[57.474px] items-center justify-center ml-[70.36px] mt-[24.07px] relative row-1 w-[30.966px]">
-													<div class="-scale-y-100 flex-none rotate-180">
-														<div class="h-[57.474px] relative w-[30.966px]">
-															<Fragment
-																set:html={
-																	OurStorySvgs.OurStorySvg34
-																}
-															/>
-														</div>
-													</div>
-												</div>
-												<div
-													class="col-1 flex h-[60.714px] items-center justify-center ml-[46.36px] mt-[12.3px] relative row-1 w-[41.077px]"
-													style="--transform-inner-width: 1185; --transform-inner-height: 21;">
-													<div class="flex-none rotate-[-11.76deg]">
-														<div class="h-[55.694px] relative w-[30.361px]">
-															<Fragment
-																set:html={
-																	OurStorySvgs.OurStorySvg41
-																}
-															/>
-														</div>
-													</div>
-												</div>
-												<div
-													class="col-1 flex h-[26.716px] items-center justify-center ml-0 mt-[66.85px] relative row-1 w-[113.379px]"
-													style="--transform-inner-width: 1185; --transform-inner-height: 21;">
-													<div class="-scale-y-100 flex-none rotate-[177.8deg]">
-														<div
-															class="h-[22.402px] relative w-[112.601px]"
-															data-name="Vector">
-															<Fragment
-																set:html={
-																	OurStorySvgs.OurStorySvg44
-																}
-															/>
-														</div>
-													</div>
-												</div>
-											</div>
-										</div>
-									)}
-									{step.title && step.body && (
-										<div class="flex flex-col gap-6 items-start not-italic relative text-black text-center w-full">
-											<p
-												class={`${typeStyles.cardTitle} relative w-full`}>
-												{step.title}
-											</p>
-											<p
-												class={`${typeStyles.body} relative w-full`}>
-												{step.body}
-											</p>
-										</div>
-									)}
-								</div>
-							))
-						}
-					</div>
-				</div>
-			</ContentContainer>
-		</section>
-
-		<section
-			class="min-h-[600px] md:min-h-[750px] overflow-clip relative w-full"
-			data-name="Story"
-			data-story-timeline
-			data-slides={JSON.stringify(storySlides)}>
-			<ContentContainer size="wide" class="relative z-10 pb-64">
-				<div class="relative flex flex-col items-center gap-16">
-					<p
-						class={`${typeStyles.heroTitleLarge} text-green-800 text-center w-full max-w-[544px]`}>
-						Our story
-					</p>
-					<p
-						class={`${typeStyles.body} not-italic text-black text-center`}>
-						Slide the carrot across the timeline or tap to learn
-						about our journey
-					</p>
-					<div
-						class="relative flex flex-col items-center gap-20 w-full"
-						data-name="slider">
-						<div
-							class="relative h-[65px] w-full max-w-[607px]"
-							data-name="slider-field"
-							data-slider-field
-							style="touch-action: none;">
-							<div
-								class="absolute h-[32px] left-0 right-0 top-[3px]"
-								data-name="slider-base">
-								<Fragment
-									set:html={OurStorySvgs.OurStorySvg52}
-								/>
-							</div>
-							<div
-								class="-translate-x-1/2 absolute z-20 flex isolate items-start justify-between left-[calc(50%-4px)] top-0 w-[82%] max-w-[499px]"
-								data-name="milestones"
-								data-milestones>
-								{
-									storySlides.map((milestone, index) => (
-										<button
-											aria-current={
-												index === activeStoryIndex
-													? "step"
-													: undefined
-											}
-											aria-label={`Show ${milestone.label} story`}
-											class="cursor-pointer flex flex-col gap-[5px] items-center relative rounded-[8px] bg-transparent p-0 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#747c50]"
-											data-name="milestone"
-											data-story-index={index}
-											style={`width: ${milestone.width}px; z-index: ${milestone.zIndex};`}
-											type="button">
-											<div class="bg-[#4c352b] h-[36px] relative rounded-[8px] shrink-0 w-[3px]" />
-											<p
-												class={`${typeStyles.caption} font-normal not-italic relative text-black whitespace-nowrap`}>
-												{milestone.label}
-											</p>
-											<div
-												aria-hidden="true"
-												class="absolute flex h-[111.341px] items-center justify-center left-[-12.98px] top-[-31.63px] w-[51.555px]"
-												data-active-marker
-												hidden={
-													index !== activeStoryIndex
-												}
-												style="--transform-inner-width: 1185; --transform-inner-height: 21;">
-												<div class="flex-none rotate-[12.37deg]">
-													<div
-														class="h-[107.586px] relative w-[29.19px]"
-														data-name="Capa_1">
-														<Fragment
-															set:html={
-																OurStorySvgs.OurStorySvg45
-															}
-														/>
-													</div>
-												</div>
-											</div>
-										</button>
-									))
-								}
-							</div>
-							<input
-								aria-label="Story timeline"
-								class="pointer-events-none absolute inset-x-[9%] top-0 z-10 h-[65px] cursor-pointer opacity-0"
-								max={storySlides.length - 1}
-								min="0"
-								step="1"
-								type="range"
-								value={activeStoryIndex}
-								data-story-range
-							/>
-						</div>
-						<div
-							class="flex flex-col items-center justify-center mx-auto p-6 md:p-[40px] relative w-full max-w-[560px]"
-							data-name="Note">
-							<div
-								class="absolute flex inset-[0_0.24px_0_0] items-center justify-center"
-								style="container-type:size">
-								<div
-									class="flex-none h-[100cqh] rotate-180 w-[100cqw]">
-									<div
-										class="relative size-full"
-										data-name="Vector">
-										<div
-											class="absolute inset-[0_-3.66%_-14.08%_-3.66%]">
-											<Fragment
-												set:html={OurStorySvgs.OurStorySvg53}
-											/>
-										</div>
-									</div>
-								</div>
-							</div>
-							<p
-								aria-live="polite"
-								class={`${typeStyles.bodyLarge} min-h-[204px] not-italic relative text-black text-center w-full max-w-[467px]`}
-								data-story-body>
-								{storySlides[activeStoryIndex].body}
-							</p>
-						</div>
-					</div>
-				</div>
-			</ContentContainer>
-			<img
-				alt=""
-				aria-hidden="true"
-				class="pointer-events-none absolute inset-x-0 bottom-[-28px] z-0 w-full select-none"
-				src={ourStoryHeroBottomUrl}
-			/>
-		</section>
-	</div>
+  <div
+    class="bg-white flex flex-col items-start relative w-full"
+    data-name="Our Story"
+  >
+    <section class="relative w-full" data-name="Wireframe - 53">
+      <ContentContainer size="wide" class="h-full">
+        <div
+          class="relative grid w-full min-h-[540px] max-w-[913px] mt-20 mx-auto items-center gap-8 md:grid-cols-[minmax(0,570px)_279px] md:gap-16"
+        >
+          <p class={`${typeStyles.heroTitleLarge} text-green-800`}>
+            Farm to Feed began with a simple but urgent idea
+          </p>
+          <p class={`${typeStyles.bodyLarge} text-green-500`}>
+            tackling food loss in Kenya's fresh produce supply chain. We
+            introduced grade rescue to the Nairobi market, creating a pathway
+            for vegetables that might otherwise go to waste.
+          </p>
+        </div>
+      </ContentContainer>
+      <div class="relative" data-name="our-story-divider">
+        <img
+          alt=""
+          aria-hidden="true"
+          class="w-full h-full object-cover"
+          src={ourStoryDividerUrl}
+        />
+        <div
+          class="absolute hidden h-[198px] right-50 top-0 w-[203.25px] md:block"
+          data-name="Group"
+        >
+          <Fragment set:html={OurStorySvgs.OurStorySvg46} />
+        </div>
+      </div>
+    </section>
+    <section
+      class="bg-white overflow-clip relative w-full"
+      data-name="Wireframe - 10"
+    >
+      <ContentContainer size="wide" class="h-full">
+        <div
+          class="relative flex h-full flex-col items-center min-h-[540px] max-w-[760px] mt-20 mx-auto gap-8 md:gap-16"
+        >
+          <p
+            class={`${typeStyles.sectionTitle} not-italic text-[#0f251b] text-center w-full max-w-148`}
+          >
+            Connecting production to dependable demand...
+          </p>
+          <div
+            class={`${typeStyles.body} mt-[24px] md:mt-[55px] not-italic text-[#0f251b] text-center w-full max-w-148`}
+          >
+            <p class="leading-copy">
+              As we worked alongside our customers and farmers, we quickly
+              learned that food loss is one part of a much larger challenge.
+              Farmers needed more than a solution for imperfect and surplus
+              produce. They neededï¿½reliable market access for their full
+              harvest.
+            </p>
+            <p class="leading-copy">
+              Since those early days, Farm to Feed has grown into a trusted off
+              taker and partner for farmers, helping to address one of Kenyaï¿½s
+              most persistent agricultural bottlenecks: connecting production to
+              dependable demand.
+            </p>
+          </div>
+          <div
+            class="flex flex-col gap-12 mb-24 items-center md:flex-row md:gap-16 md:mb-40"
+          >
+            {
+              storyPrinciples.map((principle) => (
+                <div class="grid-cols-[max-content] grid-rows-[max-content] inline-grid place-items-start relative ">
+                  {" "}
+                  <div
+                    class="col-1 h-[336px] ml-0 relative row-1 w-75.75"
+                    data-name="Vector"
+                    style={`margin-top: ${principle.cardTop};`}
+                  >
+                    {" "}
+                    <div class="absolute inset-[-1.19%_-7.92%_-13.1%_-7.92%]">
+                      {" "}
+                      <Fragment set:html={OurStorySvgs.OurStorySvg47} />{" "}
+                    </div>{" "}
+                  </div>{" "}
+                  <div class="col-1 flex flex-col gap-12 items-center ml-11.5 mt-0 relative row-1 w-54.25">
+                    {" "}
+                    {principle.icon === "vision" ? (
+                      <div class="grid-cols-[max-content] grid-rows-[max-content] inline-grid place-items-start relative ">
+                        {" "}
+                        <div
+                          class="col-1 h-[124px] ml-0 mt-0 relative row-1 w-[127.288px]"
+                          data-name="Group"
+                        >
+                          {" "}
+                          <Fragment
+                            set:html={OurStorySvgs.OurStorySvg01}
+                          />{" "}
+                        </div>{" "}
+                        <div
+                          class="col-1 h-[64.416px] ml-[39.9px] mt-[29.59px] relative row-1 w-[57.169px]"
+                          data-name="Isolation_Mode"
+                        >
+                          {" "}
+                          <Fragment
+                            set:html={OurStorySvgs.OurStorySvg02}
+                          />{" "}
+                        </div>{" "}
+                      </div>
+                    ) : (
+                      <div class="grid-cols-[max-content] grid-rows-[max-content] inline-grid place-items-start relative ">
+                        {" "}
+                        <div class="col-1 flex h-[124px] items-center justify-center ml-0 mt-0 relative row-1 w-[127.221px]">
+                          {" "}
+                          <div class="-scale-y-100 flex-none rotate-180">
+                            {" "}
+                            <div
+                              class="h-[124px] relative w-[127.221px]"
+                              data-name="Vector"
+                            >
+                              {" "}
+                              <Fragment
+                                set:html={OurStorySvgs.OurStorySvg03}
+                              />{" "}
+                            </div>{" "}
+                          </div>{" "}
+                        </div>{" "}
+                        <div
+                          class="col-1 h-[51.532px] ml-[26.17px] mt-[41.87px] overflow-clip relative row-1 w-[74.883px]"
+                          data-name="Isolation_Mode"
+                        >
+                          {" "}
+                          <div
+                            class="absolute inset-[-0.01%_-0.02%_-0.02%_0]"
+                            data-name="Vector"
+                          >
+                            {" "}
+                            <Fragment
+                              set:html={OurStorySvgs.OurStorySvg04}
+                            />{" "}
+                          </div>{" "}
+                        </div>{" "}
+                      </div>
+                    )}{" "}
+                    <div class="flex flex-col gap-6 items-center not-italic relative text-center w-full">
+                      {" "}
+                      <p
+                        class={`${typeStyles.body} relative text-[#85a687] whitespace-nowrap`}
+                      >
+                        {" "}
+                        {principle.label}{" "}
+                      </p>{" "}
+                      <p
+                        class={`${typeStyles.cardTitle} relative text-[#0f251b] w-full`}
+                      >
+                        {" "}
+                        {principle.body}{" "}
+                      </p>{" "}
+                    </div>{" "}
+                  </div>{" "}
+                </div>
+              ))
+            }
+          </div>
+        </div>
+      </ContentContainer>
+      <div
+        class="-translate-x-1/2 -translate-y-1/2 absolute hidden h-[601px] left-[33.5px] top-[calc(20%+266px)] w-[441px] lg:block"
+        data-name="Vector"
+      >
+        <img
+          alt=""
+          class="absolute block inset-0 max-w-none size-full"
+          height="601"
+          src={storyIllustrationOneUrl}
+          width="441"
+        />
+      </div>
+      <div
+        class="-translate-x-1/2 -translate-y-1/2 absolute hidden h-[601px] items-center justify-center left-[calc(100%-46.5px)] top-[calc(20%+369px)] w-[441px] lg:flex"
+      >
+        <div class="-scale-y-100 flex-none rotate-180">
+          <div class="h-[601px] relative w-[441px]" data-name="Vector">
+            <img
+              alt=""
+              class="absolute block inset-0 max-w-none size-full"
+              height="601"
+              src={storyIllustrationTwoUrl}
+              width="441"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+    <section
+      class="bg-white min-h-[500px] md:min-h-[580px] overflow-clip relative w-full mb-24"
+      data-name="Wireframe - 54"
+    >
+      <ContentContainer size="wide">
+        <div class="relative flex flex-col items-center gap-16 md:gap-[124px]">
+          <div
+            class="absolute hidden md:flex h-[87px] items-center justify-center left-1/2 -translate-x-1/2 top-58 w-[485px]"
+            style="container-type:size"
+          >
+            <div class="flex-none h-[100cqw] rotate-90 w-[100cqh]">
+              <div class="relative size-full" data-name="Vector">
+                <Fragment set:html={OurStorySvgs.OurStorySvg48} />
+              </div>
+            </div>
+          </div>
+          <div class="flex flex-col items-center relative w-full max-w-[758px]">
+            <p
+              class={`${typeStyles.sectionTitle} not-italic relative text-[#030806] text-center w-full`}
+            >
+              Farm to Feed is the tech-enabled platform
+            </p>
+          </div>
+          <div
+            class="flex flex-col md:flex-row gap-12 md:gap-8 items-center md:items-start relative w-full max-w-[952px]"
+          >
+            {
+              platformSteps.map((step) => (
+                <div
+                  class={`flex flex-col items-center relative w-full md:flex-[1_0_0] md:min-w-px ${step.title ? "gap-8 md:gap-14" : "pt-[25px]"}`}
+                >
+                  {" "}
+                  {step.illustration === "farmers" ? (
+                    <div class="h-[198.445px] relative w-[203.707px]">
+                      {" "}
+                      <Fragment set:html={OurStorySvgs.OurStorySvg05} />{" "}
+                    </div>
+                  ) : step.illustration === "platform" ? (
+                    <div class="h-[198.445px] relative w-[203.707px]">
+                      {" "}
+                      <Fragment set:html={OurStorySvgs.OurStorySvg06} />{" "}
+                    </div>
+                  ) : (
+                    <div class="grid-cols-[max-content] grid-rows-[max-content] inline-grid place-items-start relative ">
+                      {" "}
+                      <div
+                        class="col-1 h-[198.445px] ml-0 mt-0 relative row-1 w-[203.707px]"
+                        data-name="Vector"
+                      >
+                        {" "}
+                        <Fragment set:html={OurStorySvgs.OurStorySvg07} />{" "}
+                      </div>{" "}
+                      <div
+                        class="col-1 h-[37.983px] ml-[93px] mt-[21px] relative row-1 w-[27px]"
+                        data-name="Vector"
+                      >
+                        {" "}
+                        <Fragment set:html={OurStorySvgs.OurStorySvg08} />{" "}
+                      </div>{" "}
+                      <div
+                        class="col-1 grid-cols-[max-content] grid-rows-[max-content] inline-grid ml-[46.64px] mt-[63.7px] place-items-start relative row-1"
+                        data-name="Group"
+                      >
+                        {" "}
+                        {customerIllustrationSvgs.map((item) => (
+                          <div class={item.class} data-name="Vector">
+                            {" "}
+                            <Fragment set:html={item.svg} />{" "}
+                          </div>
+                        ))}{" "}
+                        <div class="col-1 flex h-[57.474px] items-center justify-center ml-[70.36px] mt-[24.07px] relative row-1 w-[30.966px]">
+                          {" "}
+                          <div class="-scale-y-100 flex-none rotate-180">
+                            {" "}
+                            <div class="h-[57.474px] relative w-[30.966px]">
+                              {" "}
+                              <Fragment
+                                set:html={OurStorySvgs.OurStorySvg34}
+                              />{" "}
+                            </div>{" "}
+                          </div>{" "}
+                        </div>{" "}
+                        <div
+                          class="col-1 flex h-[60.714px] items-center justify-center ml-[46.36px] mt-[12.3px] relative row-1 w-[41.077px]"
+                          style="--transform-inner-width: 1185; --transform-inner-height: 21;"
+                        >
+                          {" "}
+                          <div class="flex-none rotate-[-11.76deg]">
+                            {" "}
+                            <div class="h-[55.694px] relative w-[30.361px]">
+                              {" "}
+                              <Fragment
+                                set:html={OurStorySvgs.OurStorySvg41}
+                              />{" "}
+                            </div>{" "}
+                          </div>{" "}
+                        </div>{" "}
+                        <div
+                          class="col-1 flex h-[26.716px] items-center justify-center ml-0 mt-[66.85px] relative row-1 w-[113.379px]"
+                          style="--transform-inner-width: 1185; --transform-inner-height: 21;"
+                        >
+                          {" "}
+                          <div class="-scale-y-100 flex-none rotate-[177.8deg]">
+                            {" "}
+                            <div
+                              class="h-[22.402px] relative w-[112.601px]"
+                              data-name="Vector"
+                            >
+                              {" "}
+                              <Fragment
+                                set:html={OurStorySvgs.OurStorySvg44}
+                              />{" "}
+                            </div>{" "}
+                          </div>{" "}
+                        </div>{" "}
+                      </div>{" "}
+                    </div>
+                  )}{" "}
+                  {step.title && step.body && (
+                    <div class="flex flex-col gap-6 items-start not-italic relative text-black text-center w-full">
+                      {" "}
+                      <p class={`${typeStyles.cardTitle} relative w-full`}>
+                        {" "}
+                        {step.title}{" "}
+                      </p>{" "}
+                      <p class={`${typeStyles.body} relative w-full`}>
+                        {" "}
+                        {step.body}{" "}
+                      </p>{" "}
+                    </div>
+                  )}{" "}
+                </div>
+              ))
+            }
+          </div>
+        </div>
+      </ContentContainer>
+    </section>
+    <section
+      class="min-h-[600px] md:min-h-[750px] overflow-clip relative w-full"
+      data-name="Story"
+      data-story-timeline
+      data-slides={JSON.stringify(storySlides)}
+    >
+      <ContentContainer size="wide" class="relative z-10 pb-64">
+        <div class="relative flex flex-col items-center gap-16">
+          <p
+            class={`${typeStyles.heroTitleLarge} text-green-800 text-center w-full max-w-[544px]`}
+          >
+            Our story
+          </p>
+          <p class={`${typeStyles.body} not-italic text-black text-center`}>
+            Slide the carrot across the timeline or tap to learn about our
+            journey
+          </p>
+          <div
+            class="relative flex flex-col items-center gap-20 w-full"
+            data-name="slider"
+          >
+            <div
+              class="relative h-[65px] w-full max-w-[607px]"
+              data-name="slider-field"
+              data-slider-field
+              style="touch-action: none;"
+            >
+              <div
+                class="absolute h-[32px] left-0 right-0 top-[3px]"
+                data-name="slider-base"
+              >
+                <Fragment set:html={OurStorySvgs.OurStorySvg52} />
+              </div>
+              <div
+                class="-translate-x-1/2 absolute z-20 flex isolate items-start justify-between left-[calc(50%-4px)] top-0 w-[82%] max-w-[499px]"
+                data-name="milestones"
+                data-milestones
+              >
+                {
+                  storySlides.map((milestone, index) => (
+                    <button
+                      aria-current={
+                        index === activeStoryIndex ? "step" : undefined
+                      }
+                      aria-label={`Show ${milestone.label} story`}
+                      class="cursor-pointer flex flex-col gap-[5px] items-center relative rounded-[8px] bg-transparent p-0 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#747c50]"
+                      data-name="milestone"
+                      data-story-index={index}
+                      style={`width: ${milestone.width}px; z-index: ${milestone.zIndex};`}
+                      type="button"
+                    >
+                      {" "}
+                      <div class="bg-[#4c352b] h-[36px] relative rounded-[8px] w-[3px]" />{" "}
+                      <p
+                        class={`${typeStyles.caption} font-normal not-italic relative text-black whitespace-nowrap`}
+                      >
+                        {" "}
+                        {milestone.label}{" "}
+                      </p>{" "}
+                      <div
+                        aria-hidden="true"
+                        class="absolute flex h-[111.341px] items-center justify-center left-[-12.98px] top-[-31.63px] w-[51.555px]"
+                        data-active-marker
+                        hidden={index !== activeStoryIndex}
+                        style="--transform-inner-width: 1185; --transform-inner-height: 21;"
+                      >
+                        {" "}
+                        <div class="flex-none rotate-[12.37deg]">
+                          {" "}
+                          <div
+                            class="h-[107.586px] relative w-[29.19px]"
+                            data-name="Capa_1"
+                          >
+                            {" "}
+                            <Fragment
+                              set:html={OurStorySvgs.OurStorySvg45}
+                            />{" "}
+                          </div>{" "}
+                        </div>{" "}
+                      </div>{" "}
+                    </button>
+                  ))
+                }
+              </div>
+              <input
+                aria-label="Story timeline"
+                class="pointer-events-none absolute inset-x-[9%] top-0 z-10 h-[65px] cursor-pointer opacity-0"
+                max={storySlides.length - 1}
+                min="0"
+                step="1"
+                type="range"
+                value={activeStoryIndex}
+                data-story-range
+              />
+            </div>
+            <div
+              class="flex flex-col items-center justify-center mx-auto p-6 md:p-[40px] relative w-full max-w-[560px]"
+              data-name="Note"
+            >
+              <div
+                class="absolute flex inset-[0_0.24px_0_0] items-center justify-center"
+                style="container-type:size"
+              >
+                <div class="flex-none h-[100cqh] rotate-180 w-[100cqw]">
+                  <div class="relative size-full" data-name="Vector">
+                    <div class="absolute inset-[0_-3.66%_-14.08%_-3.66%]">
+                      <Fragment set:html={OurStorySvgs.OurStorySvg53} />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <p
+                aria-live="polite"
+                class={`${typeStyles.bodyLarge} min-h-[204px] not-italic relative text-black text-center w-full max-w-[467px]`}
+                data-story-body
+              >
+                {storySlides[activeStoryIndex].body}
+              </p>
+            </div>
+          </div>
+        </div>
+      </ContentContainer>
+      <img
+        alt=""
+        aria-hidden="true"
+        class="pointer-events-none absolute inset-x-0 bottom-[-28px] z-0 w-full select-none"
+        src={ourStoryHeroBottomUrl}
+      />
+    </section>
+  </div>
 </Layout>
-
 <script>
-	const timelines = document.querySelectorAll("[data-story-timeline]");
-
-	timelines.forEach((timeline) => {
-		const slides = JSON.parse(timeline.getAttribute("data-slides") || "[]");
-		const buttons = Array.from(
-			timeline.querySelectorAll("[data-story-index]"),
-		);
-		const field = timeline.querySelector("[data-slider-field]");
-		const milestones = timeline.querySelector("[data-milestones]");
-		const range = timeline.querySelector("[data-story-range]");
-		const body = timeline.querySelector("[data-story-body]");
-		let activeIndex = 0;
-		let isDragging = false;
-
-		function setActive(index) {
-			activeIndex = Math.max(0, Math.min(slides.length - 1, index));
-
-			buttons.forEach((button, buttonIndex) => {
-				const marker = button.querySelector("[data-active-marker]");
-				if (buttonIndex === activeIndex) {
-					button.setAttribute("aria-current", "step");
-					marker?.removeAttribute("hidden");
-				} else {
-					button.removeAttribute("aria-current");
-					marker?.setAttribute("hidden", "");
-				}
-			});
-
-			if (range instanceof HTMLInputElement) {
-				range.value = String(activeIndex);
-			}
-
-			if (body) {
-				body.textContent = slides[activeIndex]?.body || "";
-			}
-		}
-
-		function updateFromPointer(clientX) {
-			if (!(milestones instanceof HTMLElement) || !slides.length) {
-				return;
-			}
-
-			const rect = milestones.getBoundingClientRect();
-			const progress = Math.min(
-				Math.max((clientX - rect.left) / rect.width, 0),
-				1,
-			);
-			setActive(Math.round(progress * (slides.length - 1)));
-		}
-
-		buttons.forEach((button) => {
-			button.addEventListener("click", () => {
-				setActive(Number(button.getAttribute("data-story-index")) || 0);
-			});
-		});
-
-		field?.addEventListener("pointerdown", (event) => {
-			isDragging = true;
-			field.setPointerCapture?.(event.pointerId);
-			updateFromPointer(event.clientX);
-		});
-
-		field?.addEventListener("pointermove", (event) => {
-			if (isDragging) {
-				updateFromPointer(event.clientX);
-			}
-		});
-
-		function stopDrag(event) {
-			isDragging = false;
-			field?.releasePointerCapture?.(event.pointerId);
-		}
-
-		field?.addEventListener("pointerup", stopDrag);
-		field?.addEventListener("pointercancel", stopDrag);
-		setActive(activeIndex);
-	});
+  const timelines = document.querySelectorAll("[data-story-timeline]");
+  timelines.forEach((timeline) => {
+    const slides = JSON.parse(timeline.getAttribute("data-slides") || "[]");
+    const buttons = Array.from(timeline.querySelectorAll("[data-story-index]"));
+    const field = timeline.querySelector("[data-slider-field]");
+    const milestones = timeline.querySelector("[data-milestones]");
+    const range = timeline.querySelector("[data-story-range]");
+    const body = timeline.querySelector("[data-story-body]");
+    let activeIndex = 0;
+    let isDragging = false;
+    function setActive(index) {
+      activeIndex = Math.max(0, Math.min(slides.length - 1, index));
+      buttons.forEach((button, buttonIndex) => {
+        const marker = button.querySelector("[data-active-marker]");
+        if (buttonIndex === activeIndex) {
+          button.setAttribute("aria-current", "step");
+          marker?.removeAttribute("hidden");
+        } else {
+          button.removeAttribute("aria-current");
+          marker?.setAttribute("hidden", "");
+        }
+      });
+      if (range instanceof HTMLInputElement) {
+        range.value = String(activeIndex);
+      }
+      if (body) {
+        body.textContent = slides[activeIndex]?.body || "";
+      }
+    }
+    function updateFromPointer(clientX) {
+      if (!(milestones instanceof HTMLElement) || !slides.length) {
+        return;
+      }
+      const rect = milestones.getBoundingClientRect();
+      const progress = Math.min(
+        Math.max((clientX - rect.left) / rect.width, 0),
+        1,
+      );
+      setActive(Math.round(progress * (slides.length - 1)));
+    }
+    buttons.forEach((button) => {
+      button.addEventListener("click", () => {
+        setActive(Number(button.getAttribute("data-story-index")) || 0);
+      });
+    });
+    field?.addEventListener("pointerdown", (event) => {
+      isDragging = true;
+      field.setPointerCapture?.(event.pointerId);
+      updateFromPointer(event.clientX);
+    });
+    field?.addEventListener("pointermove", (event) => {
+      if (isDragging) {
+        updateFromPointer(event.clientX);
+      }
+    });
+    function stopDrag(event) {
+      isDragging = false;
+      field?.releasePointerCapture?.(event.pointerId);
+    }
+    field?.addEventListener("pointerup", stopDrag);
+    field?.addEventListener("pointercancel", stopDrag);
+    setActive(activeIndex);
+  });
 </script>

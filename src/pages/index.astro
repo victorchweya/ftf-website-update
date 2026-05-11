@@ -14,726 +14,734 @@ import newsOperationsRegionImage from "../assets/figma/shared/news/operations-re
 import BackgroundBottomSvg from "../components/figma/BackgroundBottomSvg.astro";
 import * as HomeSvgs from "../lib/figmaMarkup/home";
 import { sectionSpacing, typeStyles } from "../lib/figmaStyles";
-
 const supplyChainBenefits = [
-	{
-		title: "Better Markets for Farmers",
-		description:
-			"We connect farmers to reliable buyers, turning harvests into stable income and reducing unnecessary food loss.",
-		image: farmerMarketImage,
-		imageAlt: "Produce being loaded for market delivery",
-	},
-	{
-		title: "Better Sourcing for Businesses",
-		description:
-			"Hotels, caterers, processors, and global buyers access quality produce and ingredients with full transparency and consistent supply.",
-		image: businessSourcingImage,
-		imageAlt: "Fresh vegetables handed over in a commercial kitchen",
-	},
-	{
-		title: "Better Food Systems for Everyone",
-		description:
-			"By efficiently matching supply and demand, we ensure more food is consumed rather than wasted. Food systems will shape our planet's future, with Africa leading the way. At Farm to Feed, we create the infrastructure for a more inclusive, resilient, and waste-free future.",
-		image: foodSystemsImage,
-		imageAlt: "Fresh ingredients arranged on a chopping board",
-	},
+  {
+    title: "Better Markets for Farmers",
+    description:
+      "We connect farmers to reliable buyers, turning harvests into stable income and reducing unnecessary food loss.",
+    image: farmerMarketImage,
+    imageAlt: "Produce being loaded for market delivery",
+  },
+  {
+    title: "Better Sourcing for Businesses",
+    description:
+      "Hotels, caterers, processors, and global buyers access quality produce and ingredients with full transparency and consistent supply.",
+    image: businessSourcingImage,
+    imageAlt: "Fresh vegetables handed over in a commercial kitchen",
+  },
+  {
+    title: "Better Food Systems for Everyone",
+    description:
+      "By efficiently matching supply and demand, we ensure more food is consumed rather than wasted. Food systems will shape our planet's future, with Africa leading the way. At Farm to Feed, we create the infrastructure for a more inclusive, resilient, and waste-free future.",
+    image: foodSystemsImage,
+    imageAlt: "Fresh ingredients arranged on a chopping board",
+  },
 ];
-
 const defaultNewsItems = [
-	{
-		date: "09 Jan 2026",
-		image: newsImpactReportImage,
-		title: "Farm to Feed has published their first Impact Report",
-	},
-	{
-		date: "09 Jan 2026",
-		image: newsStartupAwardImage,
-		title: "Farm to Feed Wins Global Startup Award and Secures New Investment",
-	},
-	{
-		date: "09 Jan 2026",
-		image: newsOperationsRegionImage,
-		title: "Farm to Feed Expands Operations to New Region",
-	},
+  {
+    date: "09 Jan 2026",
+    image: newsImpactReportImage,
+    title: "Farm to Feed has published their first Impact Report",
+  },
+  {
+    date: "09 Jan 2026",
+    image: newsStartupAwardImage,
+    title: "Farm to Feed Wins Global Startup Award and Secures New Investment",
+  },
+  {
+    date: "09 Jan 2026",
+    image: newsOperationsRegionImage,
+    title: "Farm to Feed Expands Operations to New Region",
+  },
 ];
-
 const fallbackImpactMetrics = [
-	{
-		label: "tonnes of CO2e avoided",
-		value: "1K",
-	},
-	{
-		label: "KG of food saved",
-		value: "920K",
-	},
-	{
-		label: "increase in farmers' incomes",
-		value: "37%",
-	},
+  { label: "tonnes of CO2e avoided", value: "1K" },
+  { label: "KG of food saved", value: "920K" },
+  { label: "increase in farmers' incomes", value: "37%" },
 ];
-
 const dateFormatter = new Intl.DateTimeFormat("en-GB", {
-	day: "2-digit",
-	month: "short",
-	year: "numeric",
+  day: "2-digit",
+  month: "short",
+  year: "numeric",
 });
-
 const cmsNewsItems = (await getCollection("news", ({ data }) => data.published))
-	.sort((a, b) => b.data.date.getTime() - a.data.date.getTime())
-	.slice(0, 3)
-	.map(({ body, data, id }) => ({
-		date: dateFormatter.format(data.date),
-		excerpt: body?.trim() ?? "",
-		href: data.link ?? "/news-events",
-		image: data.image,
-		title: data.title,
-		slug: id,
-	}));
-
+  .sort((a, b) => b.data.date.getTime() - a.data.date.getTime())
+  .slice(0, 3)
+  .map(({ body, data, id }) => ({
+    date: dateFormatter.format(data.date),
+    excerpt: body?.trim() ?? "",
+    href: data.link ?? "/news-events",
+    image: data.image,
+    title: data.title,
+    slug: id,
+  }));
 const cmsImpactMetrics = (await getCollection("impact"))
-	.sort((a, b) => a.data.order - b.data.order)
-	.slice(0, 3)
-	.map(({ body, data, id }) => ({
-		description: body?.trim() ?? "",
-		label: data.label,
-		metric: data.metric,
-		slug: id,
-		unit: data.unit,
-		value: data.value,
-	}));
-
+  .sort((a, b) => a.data.order - b.data.order)
+  .slice(0, 3)
+  .map(({ body, data, id }) => ({
+    description: body?.trim() ?? "",
+    label: data.label,
+    metric: data.metric,
+    slug: id,
+    unit: data.unit,
+    value: data.value,
+  }));
 const displayImpactMetrics = fallbackImpactMetrics.map(
-	(fallbackMetric, index) => cmsImpactMetrics[index] ?? fallbackMetric,
+  (fallbackMetric, index) => cmsImpactMetrics[index] ?? fallbackMetric,
 );
 const displayNewsItems = cmsNewsItems.length ? cmsNewsItems : defaultNewsItems;
-
 function isExternalUrl(href?: string) {
-	return href ? /^https?:\/\//.test(href) : false;
+  return href ? /^https?:\/\//.test(href) : false;
 }
 ---
 
 <Layout title="Home">
-	<div
-		class="bg-[#fbf3e9] flex flex-col items-center relative w-full min-h-screen"
-		data-name="home">
-		<div
-			class="bg-[#fbf3e9] min-h-screen relative w-full"
-			data-name="HeroSection">
-			<div
-				class="absolute inset-0 pointer-events-none select-none"
-				data-name="Hero artwork">
-				<img
-					alt=""
-					aria-hidden="true"
-					class="block size-full object-cover object-center"
-					fetchpriority="high"
-					src={heroHomeImage}
-				/>
-			</div>
-			<ContentContainer
-				size="wide"
-				class="relative z-10 flex flex-col items-center justify-center pt-40 xl::pt-48 pb-24">
-				<div
-					class="flex flex-col gap-8 items-center max-w-xl not-italic text-center relative w-full">
-					<p
-						class={`${typeStyles.heroTitleXL} relative text-green-500 w-full`}>
-						Shaping the Future of Food
-					</p>
-					<p
-						class={`${typeStyles.bodyLead} min-w-full relative text-orange-500 w-[min-content]`}>
-						Connecting farmers, markets, and ingredients through
-						smarter supply chains.
-					</p>
-				</div>
-			</ContentContainer>
-		</div>
-		<div class="-mt-32 md:-mt-64 lg:-mt-72 relative z-10">
-			<ContentContainer
-				size="wide"
-				class="relative z-10 flex justify-center pb-30">
-				<div
-					class="flex flex-col lg:flex-row gap-16 items-center justify-center relative max-w-7xl w-full">
-					<div
-						class="grid-cols-[max-content] grid-rows-[max-content] inline-grid place-items-start relative shrink-0">
-						<div
-							class="col-1 h-74.5 ml-0 mt-20 relative row-1 w-75.75"
-							data-name="Vector">
-							<div
-								class="absolute inset-[-1.34%_-7.92%_-14.77%_-7.92%]">
-								<Fragment set:html={HomeSvgs.HeroSvg01} />
-							</div>
-						</div>
-						<div
-							class="col-1 flex flex-col gap-8 items-center ml-11.5 mt-0 relative row-1 w-54.25">
-							<div class="h-38.5 relative shrink-0 w-39.5">
-								<Fragment set:html={HomeSvgs.HeroSvg02} />
-							</div>
-							<div
-								class="flex flex-col gap-4 items-center not-italic relative text-center w-full">
-								<div
-									class={`${typeStyles.cardTitle} relative text-[#0f251b]   `}>
-									<p class="leading-normal mb-0">
-										{`For Kenyan `}
-									</p>
-									<p class="leading-normal">Farmers</p>
-								</div>
-								<p
-									class={`${typeStyles.body} min-w-full relative text-green-500 w-min`}>
-									The future of food starts with you
-								</p>
-							</div>
-						</div>
-						<Button
-							href="/sell-with-us"
-							size="sm"
-							class="col-1 ml-24.75 mt-88 relative row-1 text-[#eee]"
-							data-name="order">
-							Sell with us
-						</Button>
-					</div>
-					<div
-						class="grid-cols-[max-content] grid-rows-[max-content] inline-grid place-items-start relative shrink-0">
-						<div
-							class="col-1 h-74.5 ml-0 mt-20 relative row-1 w-75.75"
-							data-name="Vector">
-							<div
-								class="absolute inset-[-1.34%_-7.92%_-14.77%_-7.92%]">
-								<Fragment set:html={HomeSvgs.HeroSvg03} />
-							</div>
-						</div>
-						<div
-							class="col-1 flex flex-col gap-8 items-center ml-11.5 mt-0 relative row-1 w-54.25">
-							<div
-								class="grid-cols-[max-content] grid-rows-[max-content] inline-grid place-items-start relative shrink-0">
-								<div
-									class="col-1 h-38.5 ml-0 mt-0 relative row-1 w-39.5"
-									data-name="Group">
-									<Fragment set:html={HomeSvgs.HeroSvg04} />
-								</div>
-								<div
-									class="col-1 h-19.75 ml-9.5 mt-8.25 relative row-1 w-20.5"
-									data-name="Capa_1">
-									<Fragment set:html={HomeSvgs.HeroSvg05} />
-								</div>
-							</div>
-							<div
-								class="flex flex-col gap-4 items-center not-italic relative text-center w-full">
-								<div
-									class={`${typeStyles.cardTitle} relative text-[#0f251b]   `}>
-									<p class="leading-normal mb-0">
-										{`For Kenyan `}
-									</p>
-									<p class="leading-normal">Buyers</p>
-								</div>
-								<p
-									class={`${typeStyles.body} min-w-full relative text-green-500 w-min`}>
-									The future of food, delivered to you
-								</p>
-							</div>
-						</div>
-						<Button
-							href="/kenyan-buyers"
-							size="sm"
-							class="col-1 ml-24.75 mt-88 relative row-1 text-[#eee]"
-							data-name="order">
-							Buy from us
-						</Button>
-					</div>
-					<div
-						class="grid-cols-[max-content] grid-rows-[max-content] inline-grid place-items-start relative shrink-0">
-						<div
-							class="col-1 h-74.5 ml-0 mt-20 relative row-1 w-75.75"
-							data-name="Vector">
-							<div
-								class="absolute inset-[-1.34%_-7.92%_-14.77%_-7.92%]">
-								<Fragment set:html={HomeSvgs.HeroSvg06} />
-							</div>
-						</div>
-						<div
-							class="col-1 flex flex-col gap-8 items-center ml-11.5 mt-0 relative row-1 w-54.25">
-							<div class="h-38.5 relative shrink-0 w-39.5">
-								<Fragment set:html={HomeSvgs.HeroSvg07} />
-							</div>
-							<div
-								class="flex flex-col gap-4 items-center not-italic relative text-center w-full">
-								<div
-									class={`${typeStyles.cardTitle} relative text-[#0f251b]   `}>
-									<p class="leading-normal mb-0">
-										{`For Global `}
-									</p>
-									<p class="leading-normal">Buyers</p>
-								</div>
-								<p
-									class={`${typeStyles.body} min-w-full relative text-green-500 w-min`}>
-									The future of food, supplied from Kenya
-								</p>
-							</div>
-						</div>
-						<Button
-							href="/global-buys"
-							size="sm"
-							class="col-1 ml-24.75 mt-88 relative row-1 text-[#eee]"
-							data-name="order">
-							Learn more
-						</Button>
-					</div>
-				</div>
-			</ContentContainer>
-		</div>
-
-		<div
-			class="bg-[#fbf3e9] overflow-clip relative w-full pb-40"
-			data-name="Wireframe - 11">
-			<ContentContainer
-				size="wide"
-				class="relative z-10 flex justify-center">
-				<div class="flex flex-col gap-16 items-center relative w-full">
-					<div
-						class={`${typeStyles.sectionTitle} min-w-full md:min-w-5xl not-italic relative text-green-700 text-center w-min`}>
-						<p>
-							At Farm to Feed, we believe a better food system
-							starts with a better supply chain. One that works
-							for farmers, businesses, and the planet alike.
-						</p>
-					</div>
-					<div
-						class={`${typeStyles.body}  max-w-xl not-italic relative text-green-500 text-center w-full`}>
-						<p class="leading-copy mb-2">
-							In Sub-Saharan Africa, nearly half of all fruits and
-							vegetables go to waste - driving emissions, hurting
-							farmers, and weakening food security. Meanwhile,
-							buyers face unreliable supply, high costs, and poor
-							traceability.
-						</p>
-
-						<p class="leading-copy">
-							Since 2021, Farm to Feed, a women-led Kenyan startup
-							has been closing this gap. We rescue imperfect and
-							surplus produce, extend shelf life, and connect
-							farmers to fair, reliable markets while offering
-							buyers a seamless platform to source fresh,
-							traceable, and affordable food with confidence.
-						</p>
-					</div>
-					<Button
-						href="/our-impact"
-						size="lg"
-						class="relative shrink-0 text-white"
-						data-name="order">
-						View Our Impact
-					</Button>
-				</div>
-			</ContentContainer>
-			<div
-				class="absolute flex inset-[86.19%_-14.03%_-53.63%_-20.21%] items-center justify-center"
-				style="container-type: size;">
-				<div
-					class="-scale-x-100 flex-none h-[100cqw] rotate-90 w-[100cqh]">
-					<div class="relative size-full" data-name="Vector">
-						<Fragment set:html={HomeSvgs.StorySvg01} />
-					</div>
-				</div>
-			</div>
-		</div>
-
-		<div
-			class="bg-olive-200 relative w-full lg:h-[300vh]"
-			data-name="Layout / 28 /"
-			data-supply-chain>
-			<ContentContainer
-				size="wide"
-				class={`${sectionSpacing.default} lg:sticky lg:top-0 lg:flex lg:min-h-screen lg:items-center`}>
-				<div
-					class="flex flex-col lg:flex-row gap-12 lg:gap-20 items-center w-full"
-					data-name="SupplyChainBenefitsContent">
-					<div
-						class="flex flex-col gap-8 md:gap-10 lg:gap-12 w-full lg:w-[579px]"
-						data-name="SupplyChainBenefitList">
-						{
-							supplyChainBenefits.map((benefit, index) => {
-								const isActive = index === 0;
-
-								return (
-									<article
-										class={`lg:border-l-2 lg:pl-8 lg:transition-[border-color,opacity] lg:duration-300 ${isActive ? "lg:border-green-500 lg:opacity-100" : "lg:border-transparent lg:opacity-70"}`}
-										data-supply-benefit
-										data-supply-index={index}>
-										<h3
-											class={`${typeStyles.featureTitle} font-medium text-green-800 lg:transition-colors lg:duration-300 ${isActive ? "lg:text-green-800" : "lg:text-green-700"}`}>
-											{benefit.title}
-										</h3>
-										<p
-											class={`mt-4 text-green-500 lg:transition-colors lg:duration-300 ${isActive ? "lg:text-green-500" : "lg:text-green-600"}`}>
-											{benefit.description}
-										</p>
-										<img
-											alt={benefit.imageAlt}
-											class="mt-8 block aspect-[517/552] w-full object-contain sm:mx-auto sm:w-[80%] lg:hidden"
-											height="552"
-											src={benefit.image}
-											width="517"
-										/>
-									</article>
-								);
-							})
-						}
-					</div>
-					<figure
-						class="relative hidden aspect-[517/552] w-full max-w-[517px] shrink-0 sm:w-[80%] lg:block lg:w-[517px]"
-						data-name="Vector">
-						{
-							supplyChainBenefits.map((benefit, index) => {
-								const isActive = index === 0;
-
-								return (
-									<img
-										alt={isActive ? benefit.imageAlt : ""}
-										aria-hidden={
-											isActive ? "false" : "true"
-										}
-										class={`absolute inset-0 block size-full object-contain transition-opacity duration-500 ease-out ${isActive ? "opacity-100" : "opacity-0"}`}
-										data-supply-alt={benefit.imageAlt}
-										data-supply-image
-										data-supply-index={index}
-										height="552"
-										src={benefit.image}
-										width="517"
-									/>
-								);
-							})
-						}
-						<figcaption class="sr-only" data-supply-caption>
-							{supplyChainBenefits[0].imageAlt}
-						</figcaption>
-					</figure>
-				</div>
-			</ContentContainer>
-		</div>
-
-		<div
-			class="bg-white overflow-clip relative w-full pt-48"
-			data-name="Wireframe - 10">
-			<BackgroundBottomSvg
-				className="absolute inset-x-0 top-0 w-full max-w-none pointer-events-none select-none"
-				fill="#DAE2B6"
-			/>
-			<div
-				class="mx-auto flex w-full items-center justify-center md:w-3/4"
-				data-name="SupplyChainImage">
-				<img
-					alt=""
-					aria-hidden="true"
-					class="block h-auto w-full"
-					src={supplyChainImage}
-				/>
-			</div>
-			<ContentContainer
-				size="wide"
-				class="relative z-10 flex justify-center py-24">
-				<div
-					class="flex flex-col gap-16 items-center relative max-w-3xl w-full">
-					<p
-						class={`${typeStyles.sectionTitle} min-w-full not-italic relative text-[#0f251b] text-center w-[min-content]`}>
-						We produce excellence for all actors in the supply
-						chain, from farmer to customer
-					</p>
-					<Button href="/our-impact" size="lg" data-name="order">
-						Learn More
-					</Button>
-				</div>
-			</ContentContainer>
-		</div>
-
-		<div class="bg-yellow-200 overflow-clip relative w-full">
-			<BackgroundBottomSvg
-				className="absolute inset-x-0 top-0 w-full max-w-none pointer-events-none select-none"
-				fill="#FFFFFF"
-			/>
-			<ContentContainer size="wide" class="relative z-10">
-				<div
-					class={`grid gap-10 sm:grid-cols-2 lg:grid-cols-[minmax(0,368px)_repeat(3,minmax(0,1fr))] ${sectionSpacing.roomy} lg:pt-[325px]`}>
-					<p
-						class={`${typeStyles.calloutTitle}  text-brown-800 text-center lg:text-left w-full sm:col-span-2 lg:col-span-1`}>
-						By keeping food in the human food supply chain, we have
-						an impact on various levels:
-					</p>
-					<div
-						class="flex flex-col gap-8 md:gap-[56px] items-center lg:items-start justify-self-center lg:justify-self-start relative w-full max-w-[214px]">
-						<div
-							class="grid-cols-[max-content] grid-rows-[max-content] inline-grid place-items-start relative shrink-0"
-							data-name="Group">
-							<div
-								class="col-1 h-[122.46px] ml-0 mt-0 relative row-1 w-[125.707px]"
-								data-name="Vector">
-								<Fragment set:html={HomeSvgs.ImpactSvg01} />
-							</div>
-							<div
-								class="col-1 grid-cols-[max-content] grid-rows-[max-content] inline-grid ml-[21px] mt-[33px] place-items-start relative row-1">
-								<div
-									class="col-1 h-[48px] ml-0 mt-0 relative row-1 w-[84px]"
-									data-name="Capa_1">
-									<Fragment set:html={HomeSvgs.ImpactSvg02} />
-								</div>
-							</div>
-						</div>
-						<div
-							class="flex flex-col gap-6 items-center lg:items-start not-italic relative text-center lg:text-left w-full">
-							<p
-								class={`${typeStyles.statValue} relative text-[#4c352b] w-full`}>
-								{displayImpactMetrics[0].value}
-							</p>
-							<p
-								class={`${typeStyles.body} relative text-[#7b6a62] w-full`}>
-								{displayImpactMetrics[0].label}
-							</p>
-						</div>
-					</div>
-					<div
-						class="flex flex-col gap-8 md:gap-[56px] items-center lg:items-start justify-self-center lg:justify-self-start relative w-full max-w-[214px]">
-						<div
-							class="grid-cols-[max-content] grid-rows-[max-content] inline-grid place-items-start relative shrink-0"
-							data-name="Group">
-							<div
-								class="col-1 h-[122.46px] ml-0 mt-0 relative row-1 w-[125.707px]"
-								data-name="Vector">
-								<Fragment set:html={HomeSvgs.ImpactSvg03} />
-							</div>
-							<div
-								class="col-1 grid-cols-[max-content] grid-rows-[max-content] inline-grid ml-[37.19px] mt-[28.03px] place-items-start relative row-1">
-								<div
-									class="col-1 h-[52.471px] ml-0 mt-[14.5px] relative row-1 w-[51.611px]"
-									data-name="Capa_1">
-									<Fragment set:html={HomeSvgs.ImpactSvg04} />
-								</div>
-								<div
-									class="col-1 grid-cols-[max-content] grid-rows-[max-content] inline-grid ml-[12.84px] mt-0 place-items-start relative row-1">
-									<div
-										class="col-1 h-[25.289px] ml-0 mt-0 relative row-1 w-[26.005px]">
-										<div
-											class="absolute inset-[-1.19%_-1.15%]">
-											<Fragment
-												set:html={HomeSvgs.ImpactSvg05}
-											/>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div
-							class="flex flex-col gap-6 items-center lg:items-start not-italic relative text-center lg:text-left w-full">
-							<p
-								class={`${typeStyles.statValue} relative text-[#4c352b] w-full`}>
-								{displayImpactMetrics[1].value}
-							</p>
-							<p
-								class={`${typeStyles.body} relative text-[#7b6a62] w-full`}>
-								{displayImpactMetrics[1].label}
-							</p>
-						</div>
-					</div>
-					<div
-						class="flex flex-col gap-8 md:gap-[56px] items-center lg:items-start justify-self-center lg:justify-self-start relative w-full max-w-[214px]">
-						<div
-							class="h-[122.46px] relative shrink-0 w-[125.707px]"
-							data-name="Group">
-							<Fragment set:html={HomeSvgs.ImpactSvg06} />
-						</div>
-						<div
-							class="flex flex-col gap-6 items-center lg:items-start not-italic relative text-center lg:text-left w-full">
-							<p
-								class={`${typeStyles.statValue} relative text-[#4c352b] w-full`}>
-								{displayImpactMetrics[2].value}
-							</p>
-							<p
-								class={`${typeStyles.body} relative text-[#7b6a62] w-full`}>
-								{displayImpactMetrics[2].label}
-							</p>
-						</div>
-					</div>
-				</div>
-			</ContentContainer>
-			<div
-				class="absolute flex inset-[94.81%_0_0_0] items-center justify-center"
-				style="container-type: size;">
-				<div class="-scale-x-100 flex-none h-[100cqh] w-[100cqw]">
-					<div class="relative size-full">
-						<Fragment set:html={HomeSvgs.ImpactSvg07} />
-					</div>
-				</div>
-			</div>
-		</div>
-
-		<div
-			class={`${sectionSpacing.default} bg-[#fbfafa] overflow-clip relative w-full`}
-			data-name="News">
-			<ContentContainer size="wide">
-				<div
-					class="flex flex-col gap-12 lg:gap-[80px] items-start max-w-[1280px] relative w-full">
-					<div
-						class="flex flex-col gap-8 sm:flex-row sm:items-end sm:justify-between relative w-full">
-						<div
-							class="flex flex-col gap-4 items-start max-w-[768px] min-w-px relative">
-							<p
-								class={`${typeStyles.bodyLarge} leading-7 not-italic relative text-[#b3b3b3]   `}>
-								News Stories
-							</p>
-							<h2
-								class={`${typeStyles.sectionTitleLarge} not-italic relative text-black w-full`}>
-								Check out our latest News!
-							</h2>
-						</div>
-						<Button
-							href="/news-events"
-							size="sm"
-							class="relative shrink-0 w-fit text-[#eee]">
-							View All
-						</Button>
-					</div>
-					<div
-						class="grid gap-8 md:grid-cols-2 lg:grid-cols-3 relative w-full">
-						{
-							displayNewsItems.map((item) => (
-								<article class="flex flex-col items-start min-w-px overflow-clip relative rounded-[32px]">
-									<div class="aspect-[405/270] relative shrink-0 w-full">
-										<img
-											alt={item.title}
-											class="absolute inset-0 max-w-none object-cover pointer-events-none size-full"
-											src={item.image}
-										/>
-									</div>
-									<div class="flex flex-col gap-6 items-start py-6 md:py-[32px] relative w-full">
-										<div class="flex flex-col gap-4 items-start relative w-full">
-											<p
-												class={`${typeStyles.caption} not-italic relative text-green-500   `}>
-												{item.date}
-											</p>
-											<h3
-												class={`${typeStyles.cardTitleSmall} not-italic relative text-[#0f251b] md:text-2xl w-full`}>
-												{item.title}
-											</h3>
-										</div>
-										<a
-											class="flex gap-2 items-center justify-center relative shrink-0"
-											href={item.href ?? "/news-events"}
-											rel={
-												isExternalUrl(item.href)
-													? "noreferrer"
-													: undefined
-											}
-											target={
-												isExternalUrl(item.href)
-													? "_blank"
-													: undefined
-											}>
-											<span
-												class={`${typeStyles.body} leading-normal not-italic relative text-[#916f96]   `}>
-												Read more
-											</span>
-											<span class="overflow-clip relative shrink-0 size-6">
-												<span class="absolute inset-[25.72%_36.66%_25.88%_35.46%]">
-													<Fragment
-														set:html={
-															HomeSvgs.NewsSvg01
-														}
-													/>
-												</span>
-											</span>
-										</a>
-									</div>
-								</article>
-							))
-						}
-					</div>
-				</div>
-			</ContentContainer>
-			<div class="absolute inset-[95.35%_0_-0.02%_0]">
-				<Fragment set:html={HomeSvgs.NewsSvg02} />
-			</div>
-		</div>
-	</div>
-
-	<script>
-		const supplyChain = document.querySelector("[data-supply-chain]");
-		if (supplyChain) {
-			const benefits = Array.from(
-				supplyChain.querySelectorAll("[data-supply-benefit]"),
-			);
-			const images = Array.from(
-				supplyChain.querySelectorAll("[data-supply-image]"),
-			);
-			const caption = supplyChain.querySelector("[data-supply-caption]");
-			let frame = null;
-
-			const setActive = (activeIndex) => {
-				benefits.forEach((benefit, index) => {
-					const isActive = index === activeIndex;
-					const title = benefit.querySelector("h3");
-					const copy = benefit.querySelector("p");
-					benefit.classList.toggle("lg:border-green-500", isActive);
-					benefit.classList.toggle("lg:opacity-100", isActive);
-					benefit.classList.toggle(
-						"lg:border-transparent",
-						!isActive,
-					);
-					benefit.classList.toggle("lg:opacity-70", !isActive);
-					title?.classList.toggle("lg:text-green-800", isActive);
-					title?.classList.toggle("lg:text-green-700", !isActive);
-					copy?.classList.toggle("lg:text-green-500", isActive);
-					copy?.classList.toggle("lg:text-green-600", !isActive);
-				});
-
-				images.forEach((image, index) => {
-					const isActive = index === activeIndex;
-					image.classList.toggle("opacity-100", isActive);
-					image.classList.toggle("opacity-0", !isActive);
-					image.setAttribute(
-						"aria-hidden",
-						isActive ? "false" : "true",
-					);
-					image.setAttribute(
-						"alt",
-						isActive
-							? image.getAttribute("data-supply-alt") || ""
-							: "",
-					);
-					if (isActive && caption) {
-						caption.textContent =
-							image.getAttribute("data-supply-alt") || "";
-					}
-				});
-			};
-
-			const updateActiveBenefit = () => {
-				if (window.innerWidth < 1024) {
-					setActive(0);
-					return;
-				}
-
-				const rect = supplyChain.getBoundingClientRect();
-				const scrollDistance =
-					supplyChain.offsetHeight - window.innerHeight;
-				const rawProgress =
-					scrollDistance > 0 ? -rect.top / scrollDistance : 0;
-				const progress = Math.min(Math.max(rawProgress, 0), 1);
-				const nextIndex = Math.min(
-					Math.floor(progress * benefits.length),
-					benefits.length - 1,
-				);
-				setActive(nextIndex);
-			};
-
-			const requestUpdate = () => {
-				if (frame !== null) return;
-
-				frame = window.requestAnimationFrame(() => {
-					frame = null;
-					updateActiveBenefit();
-				});
-			};
-
-			updateActiveBenefit();
-			window.addEventListener("scroll", requestUpdate, { passive: true });
-			window.addEventListener("resize", requestUpdate);
-		}
-	</script>
+  <div
+    class="bg-[#fbf3e9] flex flex-col items-center relative w-full min-h-screen"
+    data-name="home"
+  >
+    <div
+      class="bg-[#fbf3e9] min-h-screen relative w-full"
+      data-name="HeroSection"
+    >
+      <div
+        class="absolute inset-0 pointer-events-none select-none"
+        data-name="Hero artwork"
+      >
+        <img
+          alt=""
+          aria-hidden="true"
+          class="block size-full object-cover object-center"
+          fetchpriority="high"
+          src={heroHomeImage}
+        />
+      </div>
+      <ContentContainer
+        size="wide"
+        class="relative z-10 flex flex-col items-center justify-center pt-40 xl::pt-48 pb-24"
+      >
+        <div
+          class="flex flex-col gap-8 items-center max-w-xl not-italic text-center relative w-full"
+        >
+          <p class={`${typeStyles.heroTitleXL} relative text-green-500 w-full`}>
+            Shaping the Future of Food
+          </p>
+          <p
+            class={`${typeStyles.bodyLead} min-w-full relative text-orange-500 w-[min-content]`}
+          >
+            Connecting farmers, markets, and ingredients through smarter supply
+            chains.
+          </p>
+        </div>
+      </ContentContainer>
+    </div>
+    <div class="-mt-32 md:-mt-64 lg:-mt-72 relative z-10">
+      <ContentContainer
+        size="wide"
+        class="relative z-10 flex justify-center pb-30"
+      >
+        <div
+          class="flex flex-col lg:flex-row gap-16 items-center justify-center relative max-w-7xl w-full"
+        >
+          <div
+            class="grid-cols-[max-content] grid-rows-[max-content] inline-grid place-items-start relative"
+          >
+            <div
+              class="col-1 h-74.5 ml-0 mt-20 relative row-1 w-75.75"
+              data-name="Vector"
+            >
+              <div class="absolute inset-[-1.34%_-7.92%_-14.77%_-7.92%]">
+                <Fragment set:html={HomeSvgs.HeroSvg01} />
+              </div>
+            </div>
+            <div
+              class="col-1 flex flex-col gap-8 items-center ml-11.5 mt-0 relative row-1 w-54.25"
+            >
+              <div class="h-38.5 relative w-39.5">
+                <Fragment set:html={HomeSvgs.HeroSvg02} />
+              </div>
+              <div
+                class="flex flex-col gap-4 items-center not-italic relative text-center w-full"
+              >
+                <div class={`${typeStyles.cardTitle} relative text-[#0f251b]`}>
+                  <p class="leading-normal mb-0">{`For Kenyan`}</p>
+                  <p class="leading-normal">Farmers</p>
+                </div>
+                <p
+                  class={`${typeStyles.body} min-w-full relative text-green-500 w-min`}
+                >
+                  The future of food starts with you
+                </p>
+              </div>
+            </div>
+            <Button
+              href="/sell-with-us"
+              size="sm"
+              class="col-1 ml-24.75 mt-88 relative row-1 text-[#eee]"
+              data-name="order"
+            >
+              Sell with us
+            </Button>
+          </div>
+          <div
+            class="grid-cols-[max-content] grid-rows-[max-content] inline-grid place-items-start relative"
+          >
+            <div
+              class="col-1 h-74.5 ml-0 mt-20 relative row-1 w-75.75"
+              data-name="Vector"
+            >
+              <div class="absolute inset-[-1.34%_-7.92%_-14.77%_-7.92%]">
+                <Fragment set:html={HomeSvgs.HeroSvg03} />
+              </div>
+            </div>
+            <div
+              class="col-1 flex flex-col gap-8 items-center ml-11.5 mt-0 relative row-1 w-54.25"
+            >
+              <div
+                class="grid-cols-[max-content] grid-rows-[max-content] inline-grid place-items-start relative"
+              >
+                <div
+                  class="col-1 h-38.5 ml-0 mt-0 relative row-1 w-39.5"
+                  data-name="Group"
+                >
+                  <Fragment set:html={HomeSvgs.HeroSvg04} />
+                </div>
+                <div
+                  class="col-1 h-19.75 ml-9.5 mt-8.25 relative row-1 w-20.5"
+                  data-name="Capa_1"
+                >
+                  <Fragment set:html={HomeSvgs.HeroSvg05} />
+                </div>
+              </div>
+              <div
+                class="flex flex-col gap-4 items-center not-italic relative text-center w-full"
+              >
+                <div class={`${typeStyles.cardTitle} relative text-[#0f251b]`}>
+                  <p class="leading-normal mb-0">{`For Kenyan`}</p>
+                  <p class="leading-normal">Buyers</p>
+                </div>
+                <p
+                  class={`${typeStyles.body} min-w-full relative text-green-500 w-min`}
+                >
+                  The future of food, delivered to you
+                </p>
+              </div>
+            </div>
+            <Button
+              href="/kenyan-buyers"
+              size="sm"
+              class="col-1 ml-24.75 mt-88 relative row-1 text-[#eee]"
+              data-name="order"
+            >
+              Buy from us
+            </Button>
+          </div>
+          <div
+            class="grid-cols-[max-content] grid-rows-[max-content] inline-grid place-items-start relative"
+          >
+            <div
+              class="col-1 h-74.5 ml-0 mt-20 relative row-1 w-75.75"
+              data-name="Vector"
+            >
+              <div class="absolute inset-[-1.34%_-7.92%_-14.77%_-7.92%]">
+                <Fragment set:html={HomeSvgs.HeroSvg06} />
+              </div>
+            </div>
+            <div
+              class="col-1 flex flex-col gap-8 items-center ml-11.5 mt-0 relative row-1 w-54.25"
+            >
+              <div class="h-38.5 relative w-39.5">
+                <Fragment set:html={HomeSvgs.HeroSvg07} />
+              </div>
+              <div
+                class="flex flex-col gap-4 items-center not-italic relative text-center w-full"
+              >
+                <div class={`${typeStyles.cardTitle} relative text-[#0f251b]`}>
+                  <p class="leading-normal mb-0">{`For Global`}</p>
+                  <p class="leading-normal">Buyers</p>
+                </div>
+                <p
+                  class={`${typeStyles.body} min-w-full relative text-green-500 w-min`}
+                >
+                  The future of food, supplied from Kenya
+                </p>
+              </div>
+            </div>
+            <Button
+              href="/global-buys"
+              size="sm"
+              class="col-1 ml-24.75 mt-88 relative row-1 text-[#eee]"
+              data-name="order"
+            >
+              Learn more
+            </Button>
+          </div>
+        </div>
+      </ContentContainer>
+    </div>
+    <div
+      class="bg-[#fbf3e9] overflow-clip relative w-full pb-40"
+      data-name="Wireframe - 11"
+    >
+      <ContentContainer size="wide" class="relative z-10 flex justify-center">
+        <div class="flex flex-col gap-16 items-center relative w-full">
+          <div
+            class={`${typeStyles.sectionTitle} min-w-full md:min-w-5xl not-italic relative text-green-700 text-center w-min`}
+          >
+            <p>
+              At Farm to Feed, we believe a better food system starts with a
+              better supply chain. One that works for farmers, businesses, and
+              the planet alike.
+            </p>
+          </div>
+          <div
+            class={`${typeStyles.body} max-w-xl not-italic relative text-green-500 text-center w-full`}
+          >
+            <p class="leading-copy mb-2">
+              In Sub-Saharan Africa, nearly half of all fruits and vegetables go
+              to waste - driving emissions, hurting farmers, and weakening food
+              security. Meanwhile, buyers face unreliable supply, high costs,
+              and poor traceability.
+            </p>
+            <p class="leading-copy">
+              Since 2021, Farm to Feed, a women-led Kenyan startup has been
+              closing this gap. We rescue imperfect and surplus produce, extend
+              shelf life, and connect farmers to fair, reliable markets while
+              offering buyers a seamless platform to source fresh, traceable,
+              and affordable food with confidence.
+            </p>
+          </div>
+          <Button
+            href="/our-impact"
+            size="lg"
+            class="relative text-white"
+            data-name="order"
+          >
+            View Our Impact
+          </Button>
+        </div>
+      </ContentContainer>
+      <div
+        class="absolute flex inset-[86.19%_-14.03%_-53.63%_-20.21%] items-center justify-center"
+        style="container-type: size;"
+      >
+        <div class="-scale-x-100 flex-none h-[100cqw] rotate-90 w-[100cqh]">
+          <div class="relative size-full" data-name="Vector">
+            <Fragment set:html={HomeSvgs.StorySvg01} />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="bg-olive-200 relative w-full lg:h-[300vh]"
+      data-name="Layout / 28 /"
+      data-supply-chain
+    >
+      <ContentContainer
+        size="wide"
+        class={`${sectionSpacing.default} lg:sticky lg:top-0 lg:flex lg:min-h-screen lg:items-center`}
+      >
+        <div
+          class="flex flex-col lg:flex-row gap-12 lg:gap-20 items-center w-full"
+          data-name="SupplyChainBenefitsContent"
+        >
+          <div
+            class="flex flex-col gap-8 md:gap-10 lg:gap-12 w-full lg:w-[579px]"
+            data-name="SupplyChainBenefitList"
+          >
+            {
+              supplyChainBenefits.map((benefit, index) => {
+                const isActive = index === 0;
+                return (
+                  <article
+                    class={`lg:border-l-2 lg:pl-8 lg:transition-[border-color,opacity] lg:duration-300 ${isActive ? "lg:border-green-500 lg:opacity-100" : "lg:border-transparent lg:opacity-70"}`}
+                    data-supply-benefit
+                    data-supply-index={index}
+                  >
+                    {" "}
+                    <h3
+                      class={`${typeStyles.featureTitle} font-medium text-green-800 lg:transition-colors lg:duration-300 ${isActive ? "lg:text-green-800" : "lg:text-green-700"}`}
+                    >
+                      {" "}
+                      {benefit.title}{" "}
+                    </h3>{" "}
+                    <p
+                      class={`mt-4 text-green-500 lg:transition-colors lg:duration-300 ${isActive ? "lg:text-green-500" : "lg:text-green-600"}`}
+                    >
+                      {" "}
+                      {benefit.description}{" "}
+                    </p>{" "}
+                    <img
+                      alt={benefit.imageAlt}
+                      class="mt-8 block aspect-[517/552] w-full object-contain sm:mx-auto sm:w-[80%] lg:hidden"
+                      height="552"
+                      src={benefit.image}
+                      width="517"
+                    />{" "}
+                  </article>
+                );
+              })
+            }
+          </div>
+          <figure
+            class="relative hidden aspect-[517/552] w-full max-w-[517px] sm:w-[80%] lg:block lg:w-[517px]"
+            data-name="Vector"
+          >
+            {
+              supplyChainBenefits.map((benefit, index) => {
+                const isActive = index === 0;
+                return (
+                  <img
+                    alt={isActive ? benefit.imageAlt : ""}
+                    aria-hidden={isActive ? "false" : "true"}
+                    class={`absolute inset-0 block size-full object-contain transition-opacity duration-500 ease-out ${isActive ? "opacity-100" : "opacity-0"}`}
+                    data-supply-alt={benefit.imageAlt}
+                    data-supply-image
+                    data-supply-index={index}
+                    height="552"
+                    src={benefit.image}
+                    width="517"
+                  />
+                );
+              })
+            }
+            <figcaption class="sr-only" data-supply-caption>
+              {supplyChainBenefits[0].imageAlt}
+            </figcaption>
+          </figure>
+        </div>
+      </ContentContainer>
+    </div>
+    <div
+      class="bg-white overflow-clip relative w-full pt-48"
+      data-name="Wireframe - 10"
+    >
+      <BackgroundBottomSvg
+        className="absolute inset-x-0 top-0 w-full max-w-none pointer-events-none select-none"
+        fill="#DAE2B6"
+      />
+      <div
+        class="mx-auto flex w-full items-center justify-center md:w-3/4"
+        data-name="SupplyChainImage"
+      >
+        <img
+          alt=""
+          aria-hidden="true"
+          class="block h-auto w-full"
+          src={supplyChainImage}
+        />
+      </div>
+      <ContentContainer
+        size="wide"
+        class="relative z-10 flex justify-center py-24"
+      >
+        <div
+          class="flex flex-col gap-16 items-center relative max-w-3xl w-full"
+        >
+          <p
+            class={`${typeStyles.sectionTitle} min-w-full not-italic relative text-[#0f251b] text-center w-[min-content]`}
+          >
+            We produce excellence for all actors in the supply chain, from
+            farmer to customer
+          </p>
+          <Button href="/our-impact" size="lg" data-name="order">
+            Learn More
+          </Button>
+        </div>
+      </ContentContainer>
+    </div>
+    <div class="bg-yellow-200 overflow-clip relative w-full">
+      <BackgroundBottomSvg
+        className="absolute inset-x-0 top-0 w-full max-w-none pointer-events-none select-none"
+        fill="#FFFFFF"
+      />
+      <ContentContainer size="wide" class="relative z-10">
+        <div
+          class={`grid gap-10 sm:grid-cols-2 lg:grid-cols-[minmax(0,368px)_repeat(3,minmax(0,1fr))] ${sectionSpacing.roomy} lg:pt-[325px]`}
+        >
+          <p
+            class={`${typeStyles.calloutTitle} text-brown-800 text-center lg:text-left w-full sm:col-span-2 lg:col-span-1`}
+          >
+            By keeping food in the human food supply chain, we have an impact on
+            various levels:
+          </p>
+          <div
+            class="flex flex-col gap-8 md:gap-[56px] items-center lg:items-start justify-self-center lg:justify-self-start relative w-full max-w-[214px]"
+          >
+            <div
+              class="grid-cols-[max-content] grid-rows-[max-content] inline-grid place-items-start relative"
+              data-name="Group"
+            >
+              <div
+                class="col-1 h-[122.46px] ml-0 mt-0 relative row-1 w-[125.707px]"
+                data-name="Vector"
+              >
+                <Fragment set:html={HomeSvgs.ImpactSvg01} />
+              </div>
+              <div
+                class="col-1 grid-cols-[max-content] grid-rows-[max-content] inline-grid ml-[21px] mt-[33px] place-items-start relative row-1"
+              >
+                <div
+                  class="col-1 h-[48px] ml-0 mt-0 relative row-1 w-[84px]"
+                  data-name="Capa_1"
+                >
+                  <Fragment set:html={HomeSvgs.ImpactSvg02} />
+                </div>
+              </div>
+            </div>
+            <div
+              class="flex flex-col gap-6 items-center lg:items-start not-italic relative text-center lg:text-left w-full"
+            >
+              <p
+                class={`${typeStyles.statValue} relative text-[#4c352b] w-full`}
+              >
+                {displayImpactMetrics[0].value}
+              </p>
+              <p class={`${typeStyles.body} relative text-[#7b6a62] w-full`}>
+                {displayImpactMetrics[0].label}
+              </p>
+            </div>
+          </div>
+          <div
+            class="flex flex-col gap-8 md:gap-[56px] items-center lg:items-start justify-self-center lg:justify-self-start relative w-full max-w-[214px]"
+          >
+            <div
+              class="grid-cols-[max-content] grid-rows-[max-content] inline-grid place-items-start relative"
+              data-name="Group"
+            >
+              <div
+                class="col-1 h-[122.46px] ml-0 mt-0 relative row-1 w-[125.707px]"
+                data-name="Vector"
+              >
+                <Fragment set:html={HomeSvgs.ImpactSvg03} />
+              </div>
+              <div
+                class="col-1 grid-cols-[max-content] grid-rows-[max-content] inline-grid ml-[37.19px] mt-[28.03px] place-items-start relative row-1"
+              >
+                <div
+                  class="col-1 h-[52.471px] ml-0 mt-[14.5px] relative row-1 w-[51.611px]"
+                  data-name="Capa_1"
+                >
+                  <Fragment set:html={HomeSvgs.ImpactSvg04} />
+                </div>
+                <div
+                  class="col-1 grid-cols-[max-content] grid-rows-[max-content] inline-grid ml-[12.84px] mt-0 place-items-start relative row-1"
+                >
+                  <div
+                    class="col-1 h-[25.289px] ml-0 mt-0 relative row-1 w-[26.005px]"
+                  >
+                    <div class="absolute inset-[-1.19%_-1.15%]">
+                      <Fragment set:html={HomeSvgs.ImpactSvg05} />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="flex flex-col gap-6 items-center lg:items-start not-italic relative text-center lg:text-left w-full"
+            >
+              <p
+                class={`${typeStyles.statValue} relative text-[#4c352b] w-full`}
+              >
+                {displayImpactMetrics[1].value}
+              </p>
+              <p class={`${typeStyles.body} relative text-[#7b6a62] w-full`}>
+                {displayImpactMetrics[1].label}
+              </p>
+            </div>
+          </div>
+          <div
+            class="flex flex-col gap-8 md:gap-[56px] items-center lg:items-start justify-self-center lg:justify-self-start relative w-full max-w-[214px]"
+          >
+            <div class="h-[122.46px] relative w-[125.707px]" data-name="Group">
+              <Fragment set:html={HomeSvgs.ImpactSvg06} />
+            </div>
+            <div
+              class="flex flex-col gap-6 items-center lg:items-start not-italic relative text-center lg:text-left w-full"
+            >
+              <p
+                class={`${typeStyles.statValue} relative text-[#4c352b] w-full`}
+              >
+                {displayImpactMetrics[2].value}
+              </p>
+              <p class={`${typeStyles.body} relative text-[#7b6a62] w-full`}>
+                {displayImpactMetrics[2].label}
+              </p>
+            </div>
+          </div>
+        </div>
+      </ContentContainer>
+      <div
+        class="absolute flex inset-[94.81%_0_0_0] items-center justify-center"
+        style="container-type: size;"
+      >
+        <div class="-scale-x-100 flex-none h-[100cqh] w-[100cqw]">
+          <div class="relative size-full">
+            <Fragment set:html={HomeSvgs.ImpactSvg07} />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class={`${sectionSpacing.default} bg-[#fbfafa] overflow-clip relative w-full`}
+      data-name="News"
+    >
+      <ContentContainer size="wide">
+        <div
+          class="flex flex-col gap-12 lg:gap-[80px] items-start max-w-[1280px] relative w-full"
+        >
+          <div
+            class="flex flex-col gap-8 sm:flex-row sm:items-end sm:justify-between relative w-full"
+          >
+            <div
+              class="flex flex-col gap-4 items-start max-w-[768px] min-w-px relative"
+            >
+              <p
+                class={`${typeStyles.bodyLarge} leading-7 not-italic relative text-[#b3b3b3]`}
+              >
+                News Stories
+              </p>
+              <h2
+                class={`${typeStyles.sectionTitleLarge} not-italic relative text-black w-full`}
+              >
+                Check out our latest News!
+              </h2>
+            </div>
+            <Button
+              href="/news-events"
+              size="sm"
+              class="relative w-fit text-[#eee]"
+            >
+              View All
+            </Button>
+          </div>
+          <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3 relative w-full">
+            {
+              displayNewsItems.map((item) => (
+                <article class="flex flex-col items-start min-w-px overflow-clip relative rounded-[32px]">
+                  {" "}
+                  <div class="aspect-[405/270] relative w-full">
+                    {" "}
+                    <img
+                      alt={item.title}
+                      class="absolute inset-0 max-w-none object-cover pointer-events-none size-full"
+                      src={item.image}
+                    />{" "}
+                  </div>{" "}
+                  <div class="flex flex-col gap-6 items-start py-6 md:py-[32px] relative w-full">
+                    {" "}
+                    <div class="flex flex-col gap-4 items-start relative w-full">
+                      {" "}
+                      <p
+                        class={`${typeStyles.caption} not-italic relative text-green-500`}
+                      >
+                        {" "}
+                        {item.date}{" "}
+                      </p>{" "}
+                      <h3
+                        class={`${typeStyles.cardTitleSmall} not-italic relative text-[#0f251b] md:text-2xl w-full`}
+                      >
+                        {" "}
+                        {item.title}{" "}
+                      </h3>{" "}
+                    </div>{" "}
+                    <a
+                      class="flex gap-2 items-center justify-center relative "
+                      href={item.href ?? "/news-events"}
+                      rel={isExternalUrl(item.href) ? "noreferrer" : undefined}
+                      target={isExternalUrl(item.href) ? "_blank" : undefined}
+                    >
+                      {" "}
+                      <span
+                        class={`${typeStyles.body} leading-normal not-italic relative text-[#916f96]`}
+                      >
+                        {" "}
+                        Read more{" "}
+                      </span>{" "}
+                      <span class="overflow-clip relative size-6">
+                        {" "}
+                        <span class="absolute inset-[25.72%_36.66%_25.88%_35.46%]">
+                          {" "}
+                          <Fragment set:html={HomeSvgs.NewsSvg01} />{" "}
+                        </span>{" "}
+                      </span>{" "}
+                    </a>{" "}
+                  </div>{" "}
+                </article>
+              ))
+            }
+          </div>
+        </div>
+      </ContentContainer>
+      <div class="absolute inset-[95.35%_0_-0.02%_0]">
+        <Fragment set:html={HomeSvgs.NewsSvg02} />
+      </div>
+    </div>
+  </div>
+  <script>
+    const supplyChain = document.querySelector("[data-supply-chain]");
+    if (supplyChain) {
+      const benefits = Array.from(
+        supplyChain.querySelectorAll("[data-supply-benefit]"),
+      );
+      const images = Array.from(
+        supplyChain.querySelectorAll("[data-supply-image]"),
+      );
+      const caption = supplyChain.querySelector("[data-supply-caption]");
+      let frame = null;
+      const setActive = (activeIndex) => {
+        benefits.forEach((benefit, index) => {
+          const isActive = index === activeIndex;
+          const title = benefit.querySelector("h3");
+          const copy = benefit.querySelector("p");
+          benefit.classList.toggle("lg:border-green-500", isActive);
+          benefit.classList.toggle("lg:opacity-100", isActive);
+          benefit.classList.toggle("lg:border-transparent", !isActive);
+          benefit.classList.toggle("lg:opacity-70", !isActive);
+          title?.classList.toggle("lg:text-green-800", isActive);
+          title?.classList.toggle("lg:text-green-700", !isActive);
+          copy?.classList.toggle("lg:text-green-500", isActive);
+          copy?.classList.toggle("lg:text-green-600", !isActive);
+        });
+        images.forEach((image, index) => {
+          const isActive = index === activeIndex;
+          image.classList.toggle("opacity-100", isActive);
+          image.classList.toggle("opacity-0", !isActive);
+          image.setAttribute("aria-hidden", isActive ? "false" : "true");
+          image.setAttribute(
+            "alt",
+            isActive ? image.getAttribute("data-supply-alt") || "" : "",
+          );
+          if (isActive && caption) {
+            caption.textContent = image.getAttribute("data-supply-alt") || "";
+          }
+        });
+      };
+      const updateActiveBenefit = () => {
+        if (window.innerWidth < 1024) {
+          setActive(0);
+          return;
+        }
+        const rect = supplyChain.getBoundingClientRect();
+        const scrollDistance = supplyChain.offsetHeight - window.innerHeight;
+        const rawProgress = scrollDistance > 0 ? -rect.top / scrollDistance : 0;
+        const progress = Math.min(Math.max(rawProgress, 0), 1);
+        const nextIndex = Math.min(
+          Math.floor(progress * benefits.length),
+          benefits.length - 1,
+        );
+        setActive(nextIndex);
+      };
+      const requestUpdate = () => {
+        if (frame !== null) return;
+        frame = window.requestAnimationFrame(() => {
+          frame = null;
+          updateActiveBenefit();
+        });
+      };
+      updateActiveBenefit();
+      window.addEventListener("scroll", requestUpdate, { passive: true });
+      window.addEventListener("resize", requestUpdate);
+    }
+  </script>
 </Layout>

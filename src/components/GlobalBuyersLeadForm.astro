@@ -1,42 +1,39 @@
 ---
 import Button from "./Button.astro";
 import { typeStyles } from "../lib/figmaStyles";
-
-const {
-	formName,
-	inputId,
-} = Astro.props;
+const { formName, inputId } = Astro.props;
 ---
 
 <form
-	method="post"
-	name={formName}
-	class="bg-white relative rounded-full w-full">
-	<div class="flex gap-2 items-center p-2 size-full">
-		<label class="sr-only" for={inputId}>Email address</label>
-		<i
-			aria-hidden="true"
-			class="pi pi-envelope relative shrink-0 text-[#1f1f1f] ml-3">
-		</i>
-		<input
-			id={inputId}
-			name="email"
-			type="email"
-			autocomplete="email"
-			required
-			placeholder="Enter your email"
-			class={`flex-1 ${typeStyles.body} bg-transparent leading-normal min-w-0 outline-none relative text-[#1f1f1f] placeholder:text-[#808080]`}
-		/>
-		<Button
-			type="submit"
-			size="lg"
-			class="shrink-0 text-[#eee] whitespace-nowrap"
-			data-name="order">
-			Reach out to our team
-		</Button>
-	</div>
-	<div
-		aria-hidden="true"
-		class="absolute border border-[#e6e6e6] border-solid inset-0 pointer-events-none rounded-[40px]">
-	</div>
+  method="post"
+  name={formName}
+  class="bg-white relative rounded-full w-full"
+>
+  <div class="flex gap-2 items-center p-2 size-full">
+    <label class="sr-only" for={inputId}>Email address</label>
+    <i aria-hidden="true" class="pi pi-envelope relative text-[#1f1f1f] ml-3">
+    </i>
+    <input
+      id={inputId}
+      name="email"
+      type="email"
+      autocomplete="email"
+      required
+      placeholder="Enter your email"
+      class={`flex-1 ${typeStyles.body} bg-transparent leading-normal min-w-0 outline-none relative text-[#1f1f1f] placeholder:text-[#808080]`}
+    />
+    <Button
+      type="submit"
+      size="lg"
+      class="text-[#eee] whitespace-nowrap"
+      data-name="order"
+    >
+      Reach out to our team
+    </Button>
+  </div>
+  <div
+    aria-hidden="true"
+    class="absolute border border-[#e6e6e6] border-solid inset-0 pointer-events-none rounded-[40px]"
+  >
+  </div>
 </form>
