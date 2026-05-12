@@ -828,7 +828,7 @@ const localBuyerTestimonialCardHtml = Frame6.replace(
           Hear from businesses making an impact with Farm to Feed.
         </p>
         <div
-          class="grid gap-6 items-center justify-center relative w-full lg:grid-cols-[auto_minmax(0,1fr)_auto] lg:gap-10"
+          class="relative grid w-full justify-items-center gap-6 lg:mx-auto lg:w-fit lg:grid-cols-[auto_minmax(0,640px)_auto] lg:items-center lg:gap-10"
         >
           <button
             aria-label="Show previous testimonial"
@@ -838,7 +838,9 @@ const localBuyerTestimonialCardHtml = Frame6.replace(
           >
             <Fragment set:html={Order4} />
           </button>
-          <Fragment set:html={localBuyerTestimonialCardHtml} />
+          <div class="w-full max-w-[640px] justify-self-center">
+            <Fragment set:html={localBuyerTestimonialCardHtml} />
+          </div>
           <button
             aria-label="Show next testimonial"
             class="group rounded-[40px] bg-transparent border-0 p-0 transition-transform duration-200 hover:-translate-y-0.5 focus-visible:-translate-y-0.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#747c50]"
