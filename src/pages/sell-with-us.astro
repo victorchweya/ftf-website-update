@@ -18,6 +18,8 @@ import supplierStoryPrimaryImage from "../assets/figma/sell-with-us/supplier-sto
 import supplierStorySecondaryImage from "../assets/figma/sell-with-us/supplier-story-2.png?url";
 import { supplierStoryMask } from "../lib/figmaMarkup/sellWithUsMask";
 import BottomLandscapeSvg from "../components/figma/BottomLandscapeSvg.astro";
+import BackgroundBottomImpactSvg from "../components/figma/BackgroundBottomImpactSvg.astro";
+
 import { sectionSpacing, typeStyles } from "../lib/figmaStyles";
 const offeringRows = [
 	[
@@ -150,9 +152,7 @@ const transformSizeStyle =
 				className=" w-full max-w-none pointer-events-none select-none"
 			/>
 		</div>
-		<div
-			class="bg-white overflow-clip relative w-full"
-			data-name="Wireframe - 55">
+		<div class="bg-olive-100 relative w-full" data-name="Wireframe - 55">
 			<ContentContainer size="wide" class="py-24">
 				<div
 					class="grid gap-8 items-center justify-items-center relative w-full">
@@ -202,6 +202,7 @@ const transformSizeStyle =
 				</div>
 			</ContentContainer>
 		</div>
+		<BackgroundBottomImpactSvg className="w-full bg-white" fill="#f3f5e7" />
 		<div
 			class="bg-white overflow-clip relative w-full"
 			data-name="Wireframe - 42">
@@ -467,7 +468,7 @@ const transformSizeStyle =
 				<Fragment set:html={SellWithUsSvgs.SellWithUsSvg64} />
 			</div>
 		</div>
-		<div class="bg-white relative w-full" data-name="Wireframe - 36">
+		<div class="bg-olive-200 relative w-full" data-name="Wireframe - 36">
 			<ContentContainer
 				size="wide"
 				class={`flex justify-center ${sectionSpacing.cta}`}>

@@ -20,6 +20,8 @@ import {
 	Frame49,
 } from "../lib/figmaMarkup/ourTeam";
 import BottomLandscapeSvg from "../components/figma/BottomLandscapeSvg.astro";
+import BorderShape01Svg from "../components/figma/BorderShape01Svg.astro";
+import OurTeamIconSvg from "../components/figma/OurTeamIconSvg.astro";
 import teamHeroImage from "../assets/figma/our-team/team-hero.png?url";
 import { sectionSpacing, typeStyles } from "../lib/figmaStyles";
 const staticTeamRows = [
@@ -174,7 +176,7 @@ const transformSizeStyle =
 			data-name="Wireframe - 53">
 			<ContentContainer
 				size="wide"
-				class="flex justify-center pt-[180px] pb-[96px] md:pt-[240px] md:pb-30 lg:pt-[282px] lg:pb-[140px]">
+				class="flex justify-center py-32 mt-8 md:mt-24">
 				<div
 					class="flex flex-col gap-12 items-center not-italic text-center relative w-full max-w-[624px]">
 					<p
@@ -216,12 +218,23 @@ const transformSizeStyle =
 				</div>
 			</div>
 		</div>
-		<div
-			class="bg-[#f3f5e7] overflow-clip relative rounded-bl-[40px] rounded-br-[40px] w-full"
-			data-name="Team CTA">
-			<ContentContainer
-				size="wide"
-				class="py-[96px] md:py-[142px] lg:pt-[132px] lg:pb-[160px]">
+		<div class="bg-[#f3f5e7] relative w-full" data-name="Team CTA">
+			<ContentContainer size="wide" class="py-4 -mt-20">
+				<div class="relative mx-auto w-full max-w-[1004px]">
+					<div class="overflow-hidden w-full">
+						<img
+							alt=""
+							class="w-full object-cover"
+							src={teamHeroImage}
+						/>
+					</div>
+					<div
+						class="absolute -bottom-24 right-4 hidden h-[198px] w-[204px] md:block lg:-right-[78px]">
+						<OurTeamIconSvg class="size-full" />
+					</div>
+				</div>
+			</ContentContainer>
+			<ContentContainer size="wide" class="py-12">
 				<div class="flex flex-col gap-[56px] md:gap-16">
 					<p
 						class="relative font-serif font-normal leading-zero not-italic text-[0px] text-white tracking-section-lg w-full max-w-[605px]">
@@ -239,63 +252,12 @@ const transformSizeStyle =
 							>impact</span
 						>
 					</p>
-					<div
-						class="relative mx-auto w-full max-w-[1004px] lg:ml-[104px] lg:mr-0">
-						<div
-							class="overflow-hidden rounded-[8px_8px_32px_32px] w-full">
-							<img
-								alt=""
-								class="block aspect-[1004/377] w-full object-cover"
-								src={teamHeroImage}
-							/>
-						</div>
-						<div
-							class="absolute -bottom-[52px] right-[4%] hidden h-[198px] w-[204px] md:block lg:-right-[78px]">
-							<div
-								class="absolute h-[198.445px] left-0 top-0 w-[203.707px]"
-								data-name="Vector">
-								<Fragment set:html={OurTeamSvgs.OurTeamSvg03} />
-							</div>
-							<div
-								class="absolute flex items-center justify-center left-[67.71px] size-[68.586px] top-[64.71px]"
-								style={transformSizeStyle}>
-								<div class="flex-none rotate-165">
-									<div
-										class="overflow-clip relative size-[56px]"
-										data-name="arrow-up-right">
-										<div
-											class="absolute inset-[29.17%]"
-											data-name="Icon">
-											<div
-												class="absolute inset-[-4.29%]">
-												<Fragment
-													set:html={OurTeamSvgs.OurTeamSvg04}
-												/>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
 				</div>
 			</ContentContainer>
-			<div
-				class="absolute hidden h-[572.259px] items-center justify-center left-0 right-0 -top-121.5 w-full lg:flex"
-				style={transformSizeStyle}>
-				<div class="flex-none rotate-90">
-					<div
-						class="h-[1477px] relative w-[572.259px]"
-						data-name="Vector">
-						<Fragment set:html={OurTeamSvgs.OurTeamSvg05} />
-					</div>
-				</div>
-			</div>
 		</div>
-		<div
-			class="bg-white min-h-[800px] md:min-h-[1000px] overflow-clip relative w-full"
-			data-name="Wireframe - 31">
-			<ContentContainer size="wide" class={sectionSpacing.default}>
+		<div class="bg-white relative w-full" data-name="Wireframe - 31">
+			<BorderShape01Svg class="w-full" fill="#f3f5e7" />
+			<ContentContainer size="wide" class="py-4 pb-24">
 				<div class="relative flex flex-col items-center gap-[92px]">
 					<div
 						class="flex flex-wrap gap-[25px] items-center relative py-[24px] w-full max-w-7xl">
@@ -405,16 +367,12 @@ const transformSizeStyle =
 					</div>
 				</div>
 			</ContentContainer>
-			<div
-				class="absolute hidden inset-x-0 top-[906px] h-[362px] w-full lg:block">
-				<BottomLandscapeSvg
-					className="block size-full pointer-events-none select-none"
-					preserveAspectRatio="none"
-				/>
-			</div>
 		</div>
+		<BottomLandscapeSvg
+			className=" w-full max-w-none pointer-events-none select-none -mb-24"
+		/>
 		<div
-			class="bg-[#122c20] min-h-[800px] md:min-h-[1000px] overflow-clip relative w-full"
+			class="bg-green-500 min-h-[800px] md:min-h-[1000px] overflow-clip relative w-full"
 			data-name="Wireframe - 11">
 			<ContentContainer size="wide" class={sectionSpacing.default}>
 				<div class="relative flex flex-col items-center gap-12">
@@ -472,10 +430,6 @@ const transformSizeStyle =
 					</div>
 				</div>
 			</ContentContainer>
-			<div
-				class="absolute hidden h-[362px] left-0 top-[-271px] w-[1437px] lg:block">
-				<Fragment set:html={OurTeamSvgs.OurTeamSvg06} />
-			</div>
 		</div>
 		<div
 			class="bg-[#122c20] min-h-[500px] md:min-h-[600px] lg:min-h-[696px] overflow-clip relative rounded-bl-[40px] rounded-br-[40px] w-full"

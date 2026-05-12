@@ -636,10 +636,10 @@ const activeStoryIndex = 0;
 							/>
 						</div>
 						<div
-							class="flex flex-col items-center justify-center mx-auto p-6 md:p-[40px] relative w-full max-w-[560px]"
+							class="relative mx-auto grid w-full max-w-[560px] place-items-center px-8 py-10 md:px-12 md:py-14 min-h-[220px] md:min-h-[300px]"
 							data-name="Note">
 							<div
-								class="absolute flex inset-[0_0.24px_0_0] items-center justify-center"
+								class="absolute inset-[0_0.24px_0_0] flex items-center justify-center"
 								style="container-type:size">
 								<div
 									class="flex-none h-[100cqh] rotate-180 w-[100cqw]">
@@ -655,6 +655,11 @@ const activeStoryIndex = 0;
 									</div>
 								</div>
 							</div>
+							<p
+								class={`${typeStyles.body} relative z-10 mx-auto w-full max-w-[420px] text-center text-black`}
+								data-story-body>
+								{storySlides[activeStoryIndex].body}
+							</p>
 						</div>
 					</div>
 				</div>

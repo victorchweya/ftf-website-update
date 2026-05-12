@@ -39,10 +39,7 @@ const buyerFormRows = [
     },
   ],
 ];
-const partnerProductCategories = [
-  ["Dairy", "Cereals, grains & pulses", "Tea & Coffee"],
-  ["spices", "Snacks"],
-];
+
 const valueCards = [
   {
     body: "From fresh ingredients to dry goods and our Ready-to-Use product range!",
@@ -105,7 +102,7 @@ const oneStopShopItems = [
   },
   {
     body: "We offer a wide variety of product categories from top brands.",
-    categories: partnerProductCategories,
+   
     icon: KenyanBuyersSvgs.KenyanBuyersSvg22,
     subtitle: "Delivered by us",
     title: "Sustainably-sourced ingredients",
@@ -269,19 +266,16 @@ const localBuyerTestimonialCardHtml = Frame6.replace(
                         class={`flex flex-col gap-4 items-start relative w-full ${row.length > 1 ? "sm:flex-row" : ""}`}
                         data-name="Inputs"
                       >
-                        {" "}
                         {row.map((field) => (
                           <div
                             class="flex flex-col gap-2 items-start relative w-full sm:flex-[1_0_0] sm:min-w-px"
                             data-name="Input"
                           >
-                            {" "}
                             <p
                               class={`${typeStyles.caption} not-italic relative text-[#0f251b] w-full`}
                             >
-                              {" "}
-                              {field.label}{" "}
-                            </p>{" "}
+                              {field.label}
+                            </p>
                             <div
                               class={`bg-[#fbfafa] ${field.type === "select" ? "" : "h-12"} relative ${field.rounded ?? "rounded-[24px]"} w-full`}
                               data-name={
@@ -290,60 +284,52 @@ const localBuyerTestimonialCardHtml = Frame6.replace(
                                   : "Text input"
                               }
                             >
-                              {" "}
                               <div
                                 aria-hidden="true"
                                 class={`absolute border border-[#e6e6e6] border-solid inset-[-1px] pointer-events-none ${field.border ?? "rounded-[25px]"}`}
-                              />{" "}
+                              />
                               <div class="flex flex-row items-center size-full">
-                                {" "}
                                 <div
                                   class={`flex items-center p-[12px] relative size-full ${field.placeholder || field.icon ? "gap-2" : ""}`}
                                 >
-                                  {" "}
                                   {field.icon && field.type !== "select" && (
                                     <div
                                       class="overflow-clip relative size-6"
                                       data-name="credit_card"
                                     >
-                                      {" "}
                                       <div
                                         class="absolute left-[4px] size-[16px] top-[4px]"
                                         data-name="prime:envelope"
                                       >
-                                        {" "}
-                                        <Fragment set:html={field.icon} />{" "}
-                                      </div>{" "}
+                                        <Fragment set:html={field.icon} />
+                                      </div>
                                     </div>
-                                  )}{" "}
+                                  )}
                                   {field.placeholder && (
                                     <p
                                       class={`flex-[1_0_0] ${typeStyles.caption} font-normal min-w-px not-italic relative ${field.type === "select" ? "text-green-500" : "text-[#808080]"}`}
                                     >
-                                      {" "}
-                                      {field.placeholder}{" "}
+                                      {field.placeholder}
                                     </p>
-                                  )}{" "}
+                                  )}
                                   {field.icon && field.type === "select" && (
                                     <div
                                       class="overflow-clip relative size-6"
                                       data-name="keyboard_arrow_down"
                                     >
-                                      {" "}
                                       <div
                                         class="absolute inset-[35.51%_25.93%_36.66%_25.88%]"
                                         data-name="Vector"
                                       >
-                                        {" "}
-                                        <Fragment set:html={field.icon} />{" "}
-                                      </div>{" "}
+                                        <Fragment set:html={field.icon} />
+                                      </div>
                                     </div>
-                                  )}{" "}
-                                </div>{" "}
-                              </div>{" "}
-                            </div>{" "}
+                                  )}
+                                </div>
+                              </div>
+                            </div>
                           </div>
-                        ))}{" "}
+                        ))}
                       </div>
                     ))
                   }
@@ -473,68 +459,34 @@ const localBuyerTestimonialCardHtml = Frame6.replace(
               {
                 oneStopShopItems.map((item, index) => (
                   <div class="flex gap-[15px] items-start relative w-full max-w-[535px]">
-                    {" "}
                     <div class="relative size-[56px]">
-                      {" "}
-                      <Fragment set:html={item.icon} />{" "}
+                      <Fragment set:html={item.icon} />
                       <p
                         class={`-translate-x-1/2 absolute ${typeStyles.body} font-semibold leading-normal left-1/2 not-italic text-[#eff6ef] text-center top-[calc(50%-6px)] whitespace-nowrap`}
                       >
-                        {" "}
-                        {index + 1}{" "}
-                      </p>{" "}
-                    </div>{" "}
+                        {index + 1}
+                      </p>
+                    </div>
                     <div class="flex flex-[1_0_0] flex-col gap-6 items-start min-w-px relative self-stretch">
-                      {" "}
                       <div class="flex flex-col gap-4 items-start leading-normal relative w-full">
-                        {" "}
                         <p
                           class={`${typeStyles.cardTitle} font-medium not-italic relative text-[#fbf3e9] w-full`}
                         >
-                          {" "}
-                          {item.title}{" "}
-                        </p>{" "}
+                          {item.title}
+                        </p>
                         <p
                           class={`${typeStyles.serifLead} italic relative text-[#f5e091] w-full`}
                         >
-                          {" "}
-                          {item.subtitle}{" "}
-                        </p>{" "}
-                      </div>{" "}
+                          {item.subtitle}
+                        </p>
+                      </div>
                       <p
                         class={`${typeStyles.body} not-italic relative text-[#f6eef2] w-full`}
                       >
-                        {" "}
-                        {item.body}{" "}
-                      </p>{" "}
-                      {item.categories && (
-                        <div class="flex flex-col gap-[12px] items-start relative w-full">
-                          {" "}
-                          {item.categories.map((row, rowIndex) => (
-                            <div
-                              class={`flex flex-wrap items-start relative ${rowIndex === 0 ? "gap-[12px]" : "gap-4"}`}
-                            >
-                              {" "}
-                              {row.map((category) => (
-                                <div class="bg-[#122c20] flex items-start px-4 py-2 relative rounded-[40px] ">
-                                  {" "}
-                                  <div
-                                    aria-hidden="true"
-                                    class="absolute border border-[#0f251b] border-solid inset-0 pointer-events-none rounded-[40px]"
-                                  />{" "}
-                                  <p
-                                    class={`${typeStyles.body} relative text-[#f7f7f7] text-center whitespace-nowrap`}
-                                  >
-                                    {" "}
-                                    {category}{" "}
-                                  </p>{" "}
-                                </div>
-                              ))}{" "}
-                            </div>
-                          ))}{" "}
-                        </div>
-                      )}{" "}
-                    </div>{" "}
+                        {item.body}
+                      </p>
+                     
+                    </div>
                   </div>
                 ))
               }
@@ -694,41 +646,34 @@ const localBuyerTestimonialCardHtml = Frame6.replace(
           {
             localBuyerHowItWorksSteps.map((step, index) => (
               <div class="flex flex-col gap-6 items-center rounded-[24px] bg-white p-4 text-center">
-                {" "}
                 <div class="relative h-[180px] w-[185px] ">
-                  {" "}
                   <img
                     alt=""
                     aria-hidden="true"
                     class="size-full object-contain"
                     src={step.icon}
-                  />{" "}
-                </div>{" "}
+                  />
+                </div>
                 <div class="flex gap-4 items-start text-left w-full max-w-[280px]">
-                  {" "}
                   <div
                     class={`${typeStyles.body} flex size-10 items-center justify-center rounded-full font-medium leading-normal`}
                     style={`background-color: ${step.color}; color: ${step.textColor};`}
                   >
-                    {" "}
-                    {index + 1}{" "}
-                  </div>{" "}
+                    {index + 1}
+                  </div>
                   <div class="flex flex-col gap-[12px] items-start not-italic relative w-full">
-                    {" "}
                     <p
                       class={`${typeStyles.cardTitleSmall} leading-normal relative text-[#0f251b] tracking-card w-full`}
                     >
-                      {" "}
-                      {step.title}{" "}
-                    </p>{" "}
+                      {step.title}
+                    </p>
                     <p
                       class={`${typeStyles.caption} relative text-green-500 w-full`}
                     >
-                      {" "}
-                      {step.body}{" "}
-                    </p>{" "}
-                  </div>{" "}
-                </div>{" "}
+                      {step.body}
+                    </p>
+                  </div>
+                </div>
               </div>
             ))
           }
