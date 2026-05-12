@@ -52,7 +52,7 @@ const valueCards = [
   {
     accent: KenyanBuyersSvgs.KenyanBuyersSvg08,
     accentClass:
-      "col-1 h-[33.97px] ml-[16.72px] mt-[14.15px] relative row-1 w-[33.448px]",
+      "absolute left-[16.72px] top-[14.15px] h-[33.97px] w-[33.448px]",
     body: "Pay less, expect better and grow your margins.",
     icon: KenyanBuyersSvgs.KenyanBuyersSvg07,
     title: "Best Pricing",
@@ -60,7 +60,7 @@ const valueCards = [
   {
     accent: KenyanBuyersSvgs.KenyanBuyersSvg10,
     accentClass:
-      "col-1 h-[32.925px] ml-[15.68px] mt-[13.63px] relative row-1 w-[33.97px]",
+      "absolute left-[15.68px] top-[13.63px] h-[32.925px] w-[33.97px]",
     body: "Choose from our Grade Rescue or Grade 1 produce - we procure the full harvest from farmers so that nothing goes to waste.",
     icon: KenyanBuyersSvgs.KenyanBuyersSvg09,
     title: "Full Harvest",
@@ -68,7 +68,7 @@ const valueCards = [
   {
     accent: KenyanBuyersSvgs.KenyanBuyersSvg12,
     accentClass:
-      "col-1 h-[31.357px] ml-[20.9px] mt-[16.77px] relative row-1 w-[25.086px]",
+      "absolute left-[20.9px] top-[16.77px] h-[31.357px] w-[25.086px]",
     body: "If your delivery is anything less than supreme, we'll fix it. Connect with our team on WhatsApp or call us at 0795851756.",
     icon: KenyanBuyersSvgs.KenyanBuyersSvg11,
     title: "Customer Service",
@@ -76,7 +76,7 @@ const valueCards = [
   {
     accent: KenyanBuyersSvgs.KenyanBuyersSvg14,
     accentClass:
-      "col-1 h-[32.402px] ml-[16.72px] mt-[13.63px] relative row-1 w-[35.016px]",
+      "absolute left-[16.72px] top-[13.63px] h-[32.402px] w-[35.016px]",
     body: "For every kg of imperfect and surplus produce you buy, you reduce your carbon footprint and directly boost farmer incomes..",
     icon: KenyanBuyersSvgs.KenyanBuyersSvg13,
     title: "Measurable Impact",
@@ -84,7 +84,7 @@ const valueCards = [
   {
     accent: KenyanBuyersSvgs.KenyanBuyersSvg16,
     accentClass:
-      "col-1 h-[39.336px] ml-[15.15px] mt-[11.68px] relative row-1 w-[33.972px]",
+      "absolute left-[15.15px] top-[11.68px] h-[39.336px] w-[33.972px]",
     body: "Choose your delivery date and window and we'll get freshness delivered to you. On Time. In Full.",
     icon: KenyanBuyersSvgs.KenyanBuyersSvg15,
     title: "Flexible Delivery",
@@ -162,7 +162,7 @@ const localBuyerTestimonials = [
   },
 ];
 const testimonialQuoteClass =
-  'class="font-sans font-normal leading-[1.68] min-w-full not-italic relative text-[16px] text-black tracking-[0.48px] w-min"';
+  'class="font-sans font-normal leading-[1.68] not-italic relative text-[16px] text-black tracking-[0.48px] w-full"';
 const testimonialNameClass = 'class="font-sans font-semibold relative w-full"';
 const testimonialCompanyClass = 'class="font-sans font-normal relative w-full"';
 const localBuyerTestimonialCardHtml = Frame6.replace(
@@ -400,49 +400,28 @@ const localBuyerTestimonialCardHtml = Frame6.replace(
             {
               valueCards.map((card) => (
                 <div class="bg-[#fbfafa] relative rounded-[30px] w-full">
-                  {" "}
                   <div class="flex flex-col gap-[27px] items-start p-[40px] relative size-full">
-                    {" "}
                     <div class="flex flex-col gap-8 items-start justify-center relative">
-                      {" "}
-                      {card.accent ? (
-                        <div class="grid-cols-[max-content] grid-rows-[max-content] inline-grid leading-zero place-items-start relative ">
-                          {" "}
-                          <div
-                            class="col-1 h-[64px] ml-0 mt-0 relative row-1 w-[65.697px]"
-                            data-name="Group"
-                          >
-                            {" "}
-                            <Fragment set:html={card.icon} />{" "}
-                          </div>{" "}
-                          <div class={card.accentClass} data-name="Capa_1">
-                            {" "}
-                            <Fragment set:html={card.accent} />{" "}
-                          </div>{" "}
-                        </div>
-                      ) : (
-                        <div
-                          class="h-[64px] relative w-[65.697px]"
-                          data-name="Group"
-                        >
-                          {" "}
-                          <Fragment set:html={card.icon} />{" "}
-                        </div>
-                      )}{" "}
+                      <div class="relative h-[64px] w-[65.697px]" data-name="media">
+                        <Fragment set:html={card.icon} />
+                        {card.accent && (
+                          <div class={card.accentClass} data-name="accent">
+                            <Fragment set:html={card.accent} />
+                          </div>
+                        )}
+                      </div>
                       <p
                         class={`${typeStyles.cardTitle} not-italic relative text-[#0f251b]`}
                       >
-                        {" "}
-                        {card.title}{" "}
-                      </p>{" "}
-                    </div>{" "}
+                        {card.title}
+                      </p>
+                    </div>
                     <p
                       class={`${typeStyles.body} not-italic relative text-green-500 w-full`}
                     >
-                      {" "}
-                      {card.body}{" "}
-                    </p>{" "}
-                  </div>{" "}
+                      {card.body}
+                    </p>
+                  </div>
                 </div>
               ))
             }
@@ -754,156 +733,75 @@ const localBuyerTestimonialCardHtml = Frame6.replace(
             ))
           }
         </div>
-        <div
-          class="relative mx-auto mt-[64px] hidden h-[560px] max-w-[1180px] lg:block"
-        >
-          <div
-            class="absolute left-[30px] top-[150px] h-[200px] w-[205.303px]"
-            data-name="Group"
-          >
-            <img
-              alt=""
-              aria-hidden="true"
-              class="size-full object-contain"
-              src={localBuyerHowItWorksSteps[0].icon}
-            />
+        <div class="relative mx-auto mt-[64px] hidden max-w-[1180px] lg:block">
+          <div class="grid gap-8 xl:grid-cols-4">
+            {
+              localBuyerHowItWorksSteps.map((step, index) => (
+                <article
+                  class={`grid content-start gap-6 ${index % 2 === 1 ? "xl:pt-16" : ""}`}
+                >
+                  <div
+                    class="relative mx-auto h-[198.445px] w-[203.707px]"
+                    data-name="media"
+                  >
+                    <img
+                      alt=""
+                      aria-hidden="true"
+                      class="size-full object-contain"
+                      src={step.icon}
+                    />
+                  </div>
+                  <div class="flex gap-4 items-start">
+                    <div
+                      class={`${typeStyles.body} flex size-10 items-center justify-center rounded-full font-medium leading-normal`}
+                      style={`background-color: ${step.color}; color: ${step.textColor};`}
+                    >
+                      {index + 1}
+                    </div>
+                    <div class="flex flex-col gap-4 items-start not-italic relative w-full max-w-[204px]">
+                      <p
+                        class={`${typeStyles.cardTitleSmall} leading-normal relative text-[#0f251b] tracking-card w-full`}
+                      >
+                        {step.title}
+                      </p>
+                      <p class={`${typeStyles.caption} relative text-green-500 w-full`}>
+                        {step.body}
+                      </p>
+                    </div>
+                  </div>
+                </article>
+              ))
+            }
           </div>
-          <div class="absolute left-[35px] top-[370px] flex gap-4 items-start">
+          <div class="pointer-events-none absolute inset-x-0 top-[56px] hidden xl:block">
             <div
-              class={`${typeStyles.body} flex size-10 items-center justify-center rounded-full bg-[#8c98ee] font-semibold leading-normal text-[#e6e6e6]`}
+              class="absolute left-[12%] h-[145.923px] w-[143.362px]"
+              style="--transform-inner-width: 1185; --transform-inner-height: 21;"
             >
-              1
-            </div>
-            <div
-              class="flex flex-col gap-4 items-start not-italic relative w-[204px]"
-            >
-              <p
-                class={`${typeStyles.cardTitleSmall} leading-normal relative text-[#0f251b] tracking-card w-full`}
-              >
-                Connect with sales
-              </p>
-              <p class={`${typeStyles.caption} relative text-green-500 w-full`}>
-                Our Sales team is ready to speak with you
-              </p>
-            </div>
-          </div>
-          <div
-            class="absolute left-[290px] top-[15px] h-[198.445px] w-[203.707px]"
-          >
-            <img
-              alt=""
-              aria-hidden="true"
-              class="size-full object-contain"
-              src={localBuyerHowItWorksSteps[1].icon}
-            />
-          </div>
-          <div class="absolute left-[520px] top-[10px] flex gap-4 items-start">
-            <div
-              class={`${typeStyles.body} flex size-10 items-center justify-center rounded-full bg-[#a35380] font-medium leading-normal text-[#e6e6e6]`}
-            >
-              2
-            </div>
-            <div
-              class="flex flex-col gap-4 items-start not-italic relative w-[204px]"
-            >
-              <p
-                class={`${typeStyles.cardTitleSmall} leading-normal relative text-[#0f251b] tracking-card w-full`}
-              >
-                Browse the shop
-              </p>
-              <p class={`${typeStyles.caption} relative text-green-500 w-full`}>
-                Explore our wide range of fresh and dry products online
-              </p>
-            </div>
-          </div>
-          <div
-            class="absolute left-[560px] top-[245px] h-[200px] w-[205.303px]"
-            data-name="Group"
-          >
-            <img
-              alt=""
-              aria-hidden="true"
-              class="size-full object-contain"
-              src={localBuyerHowItWorksSteps[2].icon}
-            />
-          </div>
-          <div class="absolute left-[690px] top-[440px] flex gap-4 items-start">
-            <div
-              class={`${typeStyles.body} flex size-10 items-center justify-center rounded-full bg-[#85a687] font-medium leading-normal text-[#e6e6e6]`}
-            >
-              3
-            </div>
-            <div
-              class="flex flex-col gap-4 items-start not-italic relative w-[204px]"
-            >
-              <p
-                class={`${typeStyles.cardTitleSmall} leading-normal relative text-[#0f251b] tracking-card w-full`}
-              >
-                Place Order
-              </p>
-              <p class={`${typeStyles.caption} relative text-green-500 w-full`}>
-                Select your delivery window and checkout your cart
-              </p>
-            </div>
-          </div>
-          <div
-            class="absolute right-[70px] top-[45px] h-[198.445px] w-[203.707px]"
-            data-name="Vector"
-          >
-            <img
-              alt=""
-              aria-hidden="true"
-              class="size-full object-contain"
-              src={localBuyerHowItWorksSteps[3].icon}
-            />
-          </div>
-          <div class="absolute right-[5px] top-[260px] flex gap-4 items-start">
-            <div
-              class={`${typeStyles.body} flex size-10 items-center justify-center rounded-full bg-[#ebc194] font-medium leading-normal text-[#2b1a08]`}
-            >
-              4
-            </div>
-            <div
-              class="flex flex-col gap-4 items-start not-italic relative w-[204px]"
-            >
-              <p
-                class={`${typeStyles.cardTitleSmall} leading-normal relative text-[#0f251b] tracking-card w-full`}
-              >
-                Enjoy Delivery
-              </p>
-              <p class={`${typeStyles.caption} relative text-green-500 w-full`}>
-                Receive fresh, high quality ingredients directly to your
-                doorstep
-              </p>
-            </div>
-          </div>
-          <div
-            class="absolute left-[120px] top-[55px] h-[145.923px] w-[143.362px]"
-            style="--transform-inner-width: 1185; --transform-inner-height: 21;"
-          >
-            <div class="-scale-y-100 flex-none rotate-[132.38deg]">
-              <div class="h-[82.59px] relative w-[122.18px]" data-name="Design">
-                <Fragment set:html={KenyanBuyersSvgs.KenyanBuyersSvg70} />
+              <div class="-scale-y-100 flex-none rotate-[132.38deg]">
+                <div class="h-[82.59px] relative w-[122.18px]" data-name="Design">
+                  <Fragment set:html={KenyanBuyersSvgs.KenyanBuyersSvg70} />
+                </div>
               </div>
             </div>
-          </div>
-          <div
-            class="absolute left-[430px] top-[250px] h-[138.813px] w-[110.247px]"
-            style="--transform-inner-width: 1185; --transform-inner-height: 21;"
-          >
-            <div class="flex-none rotate-[-104.32deg]">
-              <div class="h-[82.59px] relative w-[122.18px]" data-name="Design">
-                <Fragment set:html={KenyanBuyersSvgs.KenyanBuyersSvg71} />
+            <div
+              class="absolute left-[41%] top-[150px] h-[138.813px] w-[110.247px]"
+              style="--transform-inner-width: 1185; --transform-inner-height: 21;"
+            >
+              <div class="flex-none rotate-[-104.32deg]">
+                <div class="h-[82.59px] relative w-[122.18px]" data-name="Design">
+                  <Fragment set:html={KenyanBuyersSvgs.KenyanBuyersSvg71} />
+                </div>
               </div>
             </div>
-          </div>
-          <div
-            class="absolute left-[790px] top-[305px] h-[94.387px] w-[129.822px]"
-            style="--transform-inner-width: 1185; --transform-inner-height: 21;"
-          >
-            <div class="flex-none rotate-[-174.26deg]">
-              <div class="h-[82.59px] relative w-[122.18px]" data-name="Design">
-                <Fragment set:html={KenyanBuyersSvgs.KenyanBuyersSvg72} />
+            <div
+              class="absolute right-[20%] top-[208px] h-[94.387px] w-[129.822px]"
+              style="--transform-inner-width: 1185; --transform-inner-height: 21;"
+            >
+              <div class="flex-none rotate-[-174.26deg]">
+                <div class="h-[82.59px] relative w-[122.18px]" data-name="Design">
+                  <Fragment set:html={KenyanBuyersSvgs.KenyanBuyersSvg72} />
+                </div>
               </div>
             </div>
           </div>
@@ -930,7 +828,7 @@ const localBuyerTestimonialCardHtml = Frame6.replace(
           Hear from businesses making an impact with Farm to Feed.
         </p>
         <div
-          class="flex flex-col gap-6 items-center justify-center relative w-full lg:flex-row lg:gap-10"
+          class="relative grid w-full justify-items-center gap-6 lg:mx-auto lg:w-fit lg:grid-cols-[auto_minmax(0,640px)_auto] lg:items-center lg:gap-10"
         >
           <button
             aria-label="Show previous testimonial"
@@ -940,7 +838,9 @@ const localBuyerTestimonialCardHtml = Frame6.replace(
           >
             <Fragment set:html={Order4} />
           </button>
-          <Fragment set:html={localBuyerTestimonialCardHtml} />
+          <div class="w-full max-w-[640px] justify-self-center">
+            <Fragment set:html={localBuyerTestimonialCardHtml} />
+          </div>
           <button
             aria-label="Show next testimonial"
             class="group rounded-[40px] bg-transparent border-0 p-0 transition-transform duration-200 hover:-translate-y-0.5 focus-visible:-translate-y-0.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#747c50]"

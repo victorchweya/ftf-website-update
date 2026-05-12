@@ -33,7 +33,7 @@ const inquiryContacts = [
 ---
 
 <Layout title="Contact Us">
-  <div
+  <section
     class="bg-yellow-100 flex flex-col items-start relative w-full"
     data-name="Contact Us"
   >
@@ -75,24 +75,24 @@ const inquiryContacts = [
         spacing="none"
       >
         <div
-          class="flex flex-col gap-16 md:gap-[118px] lg:pl-[120px] xl:pl-[160px]"
+          class="grid gap-16 md:gap-[118px] lg:pl-[120px] xl:pl-[160px]"
         >
           <SectionHeader
             class="max-w-[664px]"
             description="Our team works round the clock to respond to all incoming queries."
             title="Contact us"
           />
-          <div
-            class="flex flex-col gap-10 items-start relative w-full max-w-[520px] lg:max-w-[320px]"
+          <section
+            class="grid gap-10 items-start relative w-full max-w-[520px] lg:max-w-[320px]"
             data-name="Contact details"
           >
-            <div class="flex flex-col gap-2 items-start relative w-full">
+            <article class="grid gap-2 items-start relative w-full">
               <p
                 class={`${typeStyles.body} font-medium leading-contact relative text-[#0f251b] w-full`}
               >
                 {phoneContact.title}
               </p>
-              <div class="flex flex-col gap-2 items-start relative w-full">
+              <div class="grid gap-2 items-start relative w-full">
                 <p class={`${typeStyles.body} relative text-[#8c8c8c] w-full`}>
                   {phoneContact.helper}
                 </p>
@@ -108,8 +108,8 @@ const inquiryContacts = [
                   ))
                 }
               </div>
-            </div>
-            <div class="flex flex-col gap-4 items-start relative w-full">
+            </article>
+            <article class="grid gap-4 items-start relative w-full">
               <p
                 class={`${typeStyles.body} font-medium leading-contact relative text-[#0f251b] w-full`}
               >
@@ -117,7 +117,7 @@ const inquiryContacts = [
               </p>
               {
                 inquiryContacts.map((contact) => (
-                  <div class="flex flex-col gap-2 items-start relative w-full">
+                  <div class="grid gap-2 items-start relative w-full">
                     <p
                       class={`${typeStyles.body} relative text-[#8c8c8c] w-full`}
                     >
@@ -135,8 +135,8 @@ const inquiryContacts = [
                   </div>
                 ))
               }
-            </div>
-          </div>
+            </article>
+          </section>
         </div>
         <div
           class="relative z-10 min-h-[360px] w-full overflow-hidden rounded-[30px] bg-white shadow-[0_24px_80px_rgba(15,37,27,0.12)] md:min-h-[460px] lg:min-h-[560px]"
@@ -151,5 +151,5 @@ const inquiryContacts = [
         </div>
       </SectionShell>
     </div>
-  </div>
+  </section>
 </Layout>
