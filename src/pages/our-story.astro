@@ -7,6 +7,7 @@ import storyIllustrationOneUrl from "../assets/figma/our-story/story-illustratio
 import storyIllustrationTwoUrl from "../assets/figma/our-story/story-illustration-2.png?url";
 import ourStoryDividerUrl from "../assets/figma/our-story/divider.png?url";
 import ourStoryHeroBottomUrl from "../assets/figma/our-story/hero-bottom.svg?url";
+import BackgroundBottomImpactSvg from "../components/figma/BackgroundBottomImpactSvg.astro";
 const storySlides = [
 	{
 		label: "The start",
@@ -541,12 +542,15 @@ const activeStoryIndex = 0;
 				</div>
 			</ContentContainer>
 		</section>
+		<BackgroundBottomImpactSvg
+			className="w-full bg-purple-100"
+			fill="#ffffff"
+		/>
 		<section
-			class="min-h-[600px] md:min-h-[750px] overflow-clip relative w-full"
-			data-name="Story"
+			class="min-h-[600px] md:min-h-[750px] overflow-hidden relative w-full bg-purple-100"
 			data-story-timeline
 			data-slides={JSON.stringify(storySlides)}>
-			<ContentContainer size="wide" class="relative z-10 pb-64">
+			<ContentContainer size="wide" class="relative z-10 pb-64 pt-24">
 				<div class="relative flex flex-col items-center gap-16">
 					<p
 						class={`${typeStyles.heroTitleLarge} text-green-800 text-center w-full max-w-[544px]`}>
@@ -667,7 +671,7 @@ const activeStoryIndex = 0;
 			<img
 				alt=""
 				aria-hidden="true"
-				class="pointer-events-none absolute inset-x-0 bottom-[-28px] z-0 w-full select-none"
+				class="pointer-events-none absolute inset-x-0 bottom-[-36px] z-0 w-full select-none"
 				src={ourStoryHeroBottomUrl}
 			/>
 		</section>
