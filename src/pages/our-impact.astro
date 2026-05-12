@@ -5,27 +5,23 @@ import ContentContainer from "../components/layout/ContentContainer.astro";
 import SectionShell from "../components/layout/SectionShell.astro";
 import ResponsiveGrid from "../components/layout/ResponsiveGrid.astro";
 import * as ImpactSvgs from "../lib/figmaMarkup/impactSvgs";
-import {
-	Frame29,
-	Frame33,
-	Frame41,
-	Frame44,
-	Frame48,
-	Frame51,
-	Frame52,
-	Frame53,
-	Frame54,
-	Frame55,
-	Frame56,
-} from "../lib/figmaMarkup/impact";
 import BackgroundBottomImpactSvg from "../components/figma/BackgroundBottomImpactSvg.astro";
 import { sectionSpacing, typeStyles } from "../lib/figmaStyles";
 import impactHeroProduceImage from "../assets/figma/our-impact/hero-produce.png?url";
-import impactBusinessSourcingImage from "../assets/figma/shared/supply-chain/business-sourcing.png?url";
+import empowerFarmersIcon from "../assets/figma/our-impact/empower-farmers-communities.svg?url";
+import reliableMarketAccessIcon from "../assets/figma/our-impact/reliable-market-access.svg?url";
+import zeroWasteIcon from "../assets/figma/our-impact/zerp-waste.svg?url";
+import climateFriendlyIcon from "../assets/figma/our-impact/climate-friendly.svg?url";
+import impactIllustrationImage from "../assets/figma/our-impact/impact-illustration.png?url";
+import impactBusinessSourcingImage from "../assets/figma/our-impact/impact-illustration-2.png?url";
+import sdg01NoPovertyImage from "../assets/figma/our-impact/sdg-01-no-poverty.png?url";
+import sdg02ZeroHungerImage from "../assets/figma/our-impact/sdg-02-zero-hunger.png?url";
 import sdg08DecentWorkImage from "../assets/figma/our-impact/sdg-08-decent-work.png?url";
 import sdg05GenderEqualityImage from "../assets/figma/our-impact/sdg-05-gender-equality.png?url";
 import sdg04QualityEducationImage from "../assets/figma/our-impact/sdg-04-quality-education.png?url";
 import sdg07CleanEnergyImage from "../assets/figma/our-impact/sdg-07-clean-energy.png?url";
+import sdg12ResponsibleConsumptionImage from "../assets/figma/our-impact/sdg-12-responsible-consumption.png?url";
+import sdg13ClimateActionImage from "../assets/figma/our-impact/sdg-13-climate-action.png?url";
 import sdg15LifeOnLandImage from "../assets/figma/our-impact/sdg-15-life-on-land.png?url";
 const indirectSdgIcons = [
 	{ label: "Quality education", src: sdg04QualityEducationImage },
@@ -34,50 +30,59 @@ const indirectSdgIcons = [
 	{ label: "Decent work and economic growth", src: sdg08DecentWorkImage },
 	{ label: "Life on land", src: sdg15LifeOnLandImage },
 ];
-function normalizeImpactCard(html: string) {
-	return html
-		.replaceAll("whitespace-nowrap", "")
-		.replaceAll("justify-between", "justify-start")
-		.replaceAll("text-[64px]", "text-[48px] sm:text-[64px]")
-		.replaceAll("min-h-[550px]", "min-h-[420px] md:min-h-[550px]")
-		.replaceAll("min-h-[440px]", "min-h-[380px] md:min-h-[440px]")
-		.replaceAll("min-h-[428px]", "min-h-[372px] md:min-h-[428px]")
-		.replaceAll("min-h-[422px]", "min-h-[380px] md:min-h-[422px]")
-		.replaceAll("min-h-[347px]", "min-h-[320px] md:min-h-[347px]")
-		.replaceAll("min-h-[331px]", "min-h-[304px] md:min-h-[331px]")
-		.replaceAll(
-			"content-stretch flex h-[160px] items-start relative shrink-0",
-			"content-stretch flex h-auto min-h-[112px] items-start relative shrink-0 sm:min-h-[160px]",
-		)
-		.replaceAll(
-			"h-full items-start justify-end",
-			"h-auto items-start justify-start sm:h-full sm:justify-end",
-		)
-		.replaceAll("lg:w-[681px]", "lg:max-w-[681px]");
-}
-const impactPillarRows = [
-	[Frame29, Frame33],
-	[Frame41, Frame44],
-	[Frame48],
-].map((row) => row.map((card) => normalizeImpactCard(card)));
 const sdgTargetCards = [
-	Frame51,
-	Frame52,
-	Frame53,
-	Frame54,
-	Frame55,
-	Frame56,
-].map((card) => normalizeImpactCard(card));
+	{
+		label: "No poverty",
+		src: sdg01NoPovertyImage,
+		blobColor: "#E81F2D",
+		badgeNumber: "1",
+		text: "Through market acces, we generate additional income for smallholder farmers, who make up a large proportion of the rural poor and often live on less than $2 a day.",
+	},
+	{
+		label: "Zero hunger",
+		src: sdg02ZeroHungerImage,
+		blobColor: "#DDA83A",
+		text: "We contribute to food security by increasing the availability of safe and nutritious food through more efficient and sustainable agricultural supply chains.",
+	},
+	{
+		label: "Gender equality",
+		src: sdg05GenderEqualityImage,
+		blobColor: "#FF3A21",
+		text: "We remove barriers to market access, giving women — who form the majority of smallholder farmers — more time to invest in their businesses or education. We have also made gender diversity commitments across our workforce, leadership, governance, and supplier ecosystem.",
+	},
+	{
+		label: "Decent work and economic growth",
+		src: sdg08DecentWorkImage,
+		blobColor: "#A21942",
+		text: "Our growth and diversification strategy creates additional job and growth opportunities for young Kenyans.",
+	},
+	{
+		label: "Responsible consumption and production",
+		src: sdg12ResponsibleConsumptionImage,
+		blobColor: "#BF8B2E",
+		text: "We prevent food loss by creating market demand for the full harvest, including produce that does not meet traditional buyer requirements. By keeping more edible produce in the human food system, we reduce waste and improve resource efficiency across the supply chain.",
+	},
+	{
+		label: "Climate action",
+		src: sdg13ClimateActionImage,
+		blobColor: "#3F7E44",
+		intro: "We avoid greenhouse gas emissions in two ways:",
+		items: [
+			"Offsetting similar demand: if food is eaten instead of discarded, less food will have to be produced and fewer emissions result.",
+			"Avoiding food loss destination emissions: if food is eaten instead of discarded, emissions related to food loss destination (e.g. a landfill) are avoided.",
+		],
+	},
+];
 const transformSizeStyle =
 	"--transform-inner-width: 1185; --transform-inner-height: 21;";
 ---
 
 <Layout title="Our Impact">
 	<div
-		class="bg-white flex flex-col items-center relative w-full min-h-screen"
+		class="bg-white flex flex-col items-center relative w-full min-h-screen overflow-hidden"
 		data-name="Impact">
 		<div
-			class="bg-[#eddde6] min-h-[986px] overflow-clip relative w-full"
+			class="bg-[#eddde6] min-h-[986px] relative w-full"
 			data-name="Wireframe - 53">
 			<div
 				class="absolute flex h-[620.8px] items-center justify-center left-[79.24%] right-[-24.34%] top-[157px]"
@@ -208,7 +213,7 @@ const transformSizeStyle =
 			</ContentContainer>
 		</div>
 		<div
-			class="bg-white min-h-0 overflow-clip relative w-full lg:min-h-[1971px]"
+			class="bg-white min-h-0 relative w-full lg:min-h-[1971px]"
 			data-name="Wireframe - 11">
 			<BackgroundBottomImpactSvg
 				className="absolute inset-x-0 top-0 w-full max-w-none pointer-events-none select-none"
@@ -225,19 +230,14 @@ const transformSizeStyle =
 				</div>
 			</div>
 			<div
-				class="absolute hidden md:flex inset-[0.33%_22.5%_87.76%_19.93%] items-center justify-center"
-				style="container-type: size;">
-				<div class="flex-none h-[100cqw] rotate-90 w-[100cqh]">
-					<div class="relative size-full" data-name="Vector">
-						<img
-							alt=""
-							class="absolute block inset-0 max-w-none size-full"
-							height="829"
-							src={impactHeroProduceImage}
-							width="234.69"
-						/>
-					</div>
-				</div>
+				class="absolute hidden md:block inset-[0.33%_22.5%_87.76%_19.93%]">
+				<img
+					alt=""
+					class="block h-full w-full object-contain"
+					height="235"
+					src={impactHeroProduceImage}
+					width="829"
+				/>
 			</div>
 			<ContentContainer
 				size="wide"
@@ -259,25 +259,256 @@ const transformSizeStyle =
 					</div>
 					<div
 						class="flex flex-col gap-8 items-start relative w-full">
-						{
-							impactPillarRows.map((row, index) => (
+						<div class="grid gap-8 relative w-full lg:grid-cols-2">
+							<div
+								class="bg-[#dae2b6] content-stretch flex flex-col gap-[27px] items-start p-[32px] md:p-[48px] relative rounded-[30px] w-full lg:flex-[1.42_1_0]">
 								<div
-									class={`grid gap-8 relative w-full ${index === 2 ? "grid-cols-1" : "lg:grid-cols-2"}`}>
-									{row.map((PillarCard) => (
-										<Fragment set:html={PillarCard} />
-									))}
+									class="content-stretch flex flex-col gap-[24px] items-start justify-center relative shrink-0">
+									<img
+										alt=""
+										class="h-[80px] w-[85px] shrink-0"
+										height="80"
+										src={empowerFarmersIcon}
+										width="85"
+									/>
+									<p
+										class="font-serif font-normal leading-[normal] not-italic relative shrink-0 text-[#0f251b] text-[24px] tracking-[0.72px]">
+										Empower Farmers & Communities
+									</p>
 								</div>
-							))
-						}
+								<p
+									class="font-sans font-normal leading-copy not-italic relative shrink-0 text-[16px] text-black tracking-[0.48px] w-full">
+									We strengthen farmer capabilities and local
+									employment to build resilient livelihoods
+									across the supply chain.
+								</p>
+								<div
+									class="grid gap-8 items-start not-italic relative shrink-0 w-full sm:grid-cols-2">
+									<div
+										class="flex flex-col gap-[14px] items-start relative min-w-0 w-full md:gap-[18px]">
+										<p
+											class="font-serif font-normal leading-none relative shrink-0 text-[#1e4a35] text-[48px] tracking-[1.44px] w-full">
+											235
+										</p>
+										<p
+											class="font-sans font-normal leading-copy relative shrink-0 text-[#0f251b] text-[16px] tracking-[0.48px] w-full">
+											Farmers Trained
+										</p>
+									</div>
+									<div
+										class="flex flex-col gap-[14px] items-start relative min-w-0 w-full md:gap-[18px]">
+										<p
+											class="font-serif font-normal leading-none relative shrink-0 text-[#1e4a35] text-[48px] tracking-[1.44px] w-full">
+											1094
+										</p>
+										<p
+											class="font-sans font-normal leading-copy relative shrink-0 text-[#0f251b] text-[16px] tracking-[0.48px] w-full">
+											Jobs Created
+										</p>
+									</div>
+								</div>
+							</div>
+							<div
+								class="bg-[#ebc194] content-stretch flex flex-col gap-[27px] items-start p-[32px] md:p-[48px] relative rounded-[30px] w-full lg:flex-1">
+								<div
+									class="content-stretch flex flex-col gap-[24px] items-start justify-center relative shrink-0">
+									<img
+										alt=""
+										class="h-[80px] w-[79px] shrink-0"
+										height="80"
+										src={reliableMarketAccessIcon}
+										width="79"
+									/>
+									<p
+										class="font-serif font-normal leading-[normal] not-italic relative shrink-0 text-[#0f251b] text-[24px] tracking-[0.72px]">
+										Provide Reliable Market Access
+									</p>
+								</div>
+								<p
+									class="font-sans font-normal leading-copy not-italic relative shrink-0 text-[16px] text-black tracking-[0.48px] w-full">
+									We provide reliable market access that
+									reduces risk and stabilises farmer income.
+								</p>
+								<div
+									class="grid gap-8 items-start not-italic relative shrink-0 w-full sm:grid-cols-2">
+									<div
+										class="flex flex-col gap-[14px] items-start relative min-w-0 w-full md:gap-[18px]">
+										<p
+											class="font-serif font-normal leading-none relative shrink-0 text-[#1e4a35] text-[48px] tracking-[1.44px] w-full">
+											+294%
+										</p>
+										<p
+											class="font-sans font-normal leading-copy relative shrink-0 text-[#0f251b] text-[16px] tracking-[0.48px] w-full">
+											Farmer Income Increase
+										</p>
+									</div>
+									<div
+										class="flex flex-col gap-[14px] items-start relative min-w-0 w-full md:gap-[18px]">
+										<p
+											class="font-serif font-normal leading-none relative shrink-0 text-[#1e4a35] text-[48px] tracking-[1.44px] w-full">
+											$100
+										</p>
+										<p
+											class="font-sans font-normal leading-copy relative shrink-0 text-[#0f251b] text-[16px] tracking-[0.48px] w-full">
+											Total Income to Farmers
+										</p>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="grid gap-8 relative w-full lg:grid-cols-2">
+							<div
+								class="bg-[#f9ecbd] content-stretch flex flex-col gap-[27px] items-start p-[32px] md:p-[48px] relative rounded-[30px] w-full lg:flex-[1.42_1_0]">
+								<div
+									class="content-stretch flex flex-col gap-[24px] items-start justify-center relative shrink-0">
+									<img
+										alt=""
+										class="h-[80px] w-[75px] shrink-0"
+										height="80"
+										src={zeroWasteIcon}
+										width="75"
+									/>
+									<p
+										class="font-serif font-normal leading-[normal] not-italic relative shrink-0 text-[#0f251b] text-[24px] tracking-[0.72px]">
+										Build Zero-Waste Supply Chains
+									</p>
+								</div>
+								<p
+									class="font-sans font-normal leading-copy not-italic relative shrink-0 text-[16px] text-black tracking-[0.48px] w-full">
+									We reduce food loss by keeping more of the
+									harvest in the human food supply chain.
+								</p>
+								<div
+									class="grid gap-8 items-start not-italic relative shrink-0 w-full sm:grid-cols-3">
+									<div
+										class="flex flex-col gap-[14px] items-start relative min-w-0 w-full md:gap-[18px]">
+										<p
+											class="font-serif font-normal leading-none relative shrink-0 text-[#1e4a35] text-[48px] tracking-[1.44px] w-full">
+											1M
+										</p>
+										<p
+											class="font-sans font-normal leading-copy relative shrink-0 text-[#0f251b] text-[16px] tracking-[0.48px] w-full">
+											KGs Rescued
+										</p>
+									</div>
+									<div
+										class="flex flex-col gap-[14px] items-start relative min-w-0 w-full md:gap-[18px]">
+										<p
+											class="font-serif font-normal leading-none relative shrink-0 text-[#1e4a35] text-[48px] tracking-[1.44px] w-full">
+											2,410
+										</p>
+										<p
+											class="font-sans font-normal leading-copy relative shrink-0 text-[#0f251b] text-[16px] tracking-[0.48px] w-full">
+											tonnes CO2e avoided
+										</p>
+									</div>
+									<div
+										class="flex flex-col gap-[14px] items-start relative min-w-0 w-full md:gap-[18px]">
+										<p
+											class="font-serif font-normal leading-none relative shrink-0 text-[#1e4a35] text-[48px] tracking-[1.44px] w-full">
+											66M
+										</p>
+										<p
+											class="font-sans font-normal leading-copy relative shrink-0 text-[#0f251b] text-[16px] tracking-[0.48px] w-full">
+											blue water wastage avoided
+										</p>
+									</div>
+								</div>
+							</div>
+							<div
+								class="bg-[#dabacc] content-stretch flex flex-col gap-[27px] items-start p-[32px] md:p-[48px] relative rounded-[30px] w-full lg:flex-1">
+								<div
+									class="content-stretch flex flex-col gap-[24px] items-start justify-center relative shrink-0">
+									<img
+										alt=""
+										class="h-[80px] w-[97px] shrink-0"
+										height="80"
+										src={climateFriendlyIcon}
+										width="97"
+									/>
+									<p
+										class="font-serif font-normal leading-[normal] not-italic relative shrink-0 text-[#0f251b] text-[24px] tracking-[0.72px]">
+										Create Climate-Friendly Products
+									</p>
+								</div>
+								<p
+									class="font-sans font-normal leading-copy not-italic relative shrink-0 text-[16px] text-black tracking-[0.48px] w-full">
+									We strengthen climate resilience by
+									developing value-added pathways for
+									underutilised crops.
+								</p>
+								<div
+									class="grid gap-8 items-start not-italic relative shrink-0 w-full sm:grid-cols-2">
+									<div
+										class="flex flex-col gap-[14px] items-start relative min-w-0 w-full md:gap-[18px]">
+										<p
+											class="font-serif font-normal leading-none relative shrink-0 text-[#1e4a35] text-[48px] tracking-[1.44px] w-full">
+											6 Month
+										</p>
+										<p
+											class="font-sans font-normal leading-copy relative shrink-0 text-[#0f251b] text-[16px] tracking-[0.48px] w-full">
+											Shelf life extension on average
+										</p>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="grid grid-cols-1 gap-8 relative w-full">
+							<div
+								class="bg-[#bac1f5] content-stretch flex flex-col gap-[32px] min-h-[380px] items-start justify-start overflow-hidden p-[32px] md:p-[48px] relative rounded-[30px] w-full lg:flex-row lg:items-center lg:min-h-[422px]">
+								<div
+									aria-hidden="true"
+									class="absolute hidden h-[283.283px] items-center justify-center left-[50%] top-[108px] w-[594.766px] lg:flex">
+									<div class="flex-none rotate-[91.75deg]">
+										<div
+											class="h-[586.926px] relative w-[265.468px]">
+											<svg
+												class="absolute block inset-0 size-full"
+												fill="none"
+												preserveAspectRatio="none"
+												viewBox="0 0 265.468 586.926"
+												xmlns="http://www.w3.org/2000/svg">
+												<path
+													d="M55.4976 586.907C44.1879 587.473 34.4919 575.607 33.3106 559.741C21.1591 396.533 13.3968 221.815 0.702403 60.0188C-0.330119 46.8322 -1.06108 32.082 4.8427 21.7489C10.68 11.5383 20.9133 9.32606 30.1599 7.84888C63.8324 2.46832 158.339 2.19312 230.047 0.00616154C240.413 -0.310173 248.866 11.5952 248.679 26.2085C246.441 200.666 252.011 375.318 265.359 548.78C266.485 563.412 258.718 576.401 248.297 577.268L55.4976 586.907Z"
+													fill="#8C98EE"></path>
+											</svg>
+										</div>
+									</div>
+								</div>
+								<div
+									class="content-stretch flex flex-col gap-[27px] items-start relative shrink-0 w-full lg:max-w-[405px]">
+									<div
+										class="content-stretch flex flex-col gap-[24px] items-start justify-center relative shrink-0">
+										<p
+											class="font-serif font-normal leading-[normal] not-italic relative shrink-0 text-[24px] text-black tracking-[0.72px]">
+											Unlock Demand and Global Reach
+										</p>
+									</div>
+									<p
+										class="font-sans font-normal leading-copy not-italic relative shrink-0 text-[16px] text-black tracking-[0.48px] w-full">
+										We unlock regional and global demand for
+										locally produced ingredients.
+									</p>
+								</div>
+								<div
+									class="flex items-center justify-center relative shrink-0 w-full max-w-[681px] lg:max-w-[681px]">
+									<img
+										alt=""
+										class="block h-auto w-full max-w-[681px]"
+										height="351"
+										src={impactIllustrationImage}
+										width="681"
+									/>
+								</div>
+							</div>
+						</div>
 					</div>
 				</div>
 			</ContentContainer>
 		</div>
-		<div
-			class="bg-white overflow-clip relative w-full"
-			data-name="Wireframe - 10">
+		<div class="bg-white relative w-full" data-name="Wireframe - 10">
 			<div
-				class="bg-yellow-200 min-h-[651px] overflow-clip rounded-tl-[40px] rounded-tr-[40px] w-full">
+				class="bg-yellow-200 min-h-[651px] rounded-tl-[40px] rounded-tr-[40px] w-full">
 				<ContentContainer size="wide" class={sectionSpacing.default}>
 					<div
 						class="grid gap-12 lg:grid-cols-[568px_minmax(0,1fr)] lg:items-center">
@@ -297,7 +528,7 @@ const transformSizeStyle =
 						<div
 							class="flex flex-col gap-[43px] items-start relative max-w-[568px]">
 							<p
-								class={`${typeStyles.sectionTitle} not-italic relative text-[#0f251b] w-[488px]`}>
+								class={`${typeStyles.sectionTitle} not-italic relative text-[#0f251b] w-full max-w-[488px]`}>
 								Impact that travels from farm level to customer
 								counter
 							</p>
@@ -320,28 +551,21 @@ const transformSizeStyle =
 							</Button>
 						</div>
 						<div
-							class="relative flex h-[360px] md:h-[500px] items-center justify-center w-full"
-							style="--transform-inner-width: 1185; --transform-inner-height: 619;">
-							<div class="-rotate-90 flex-none">
-								<div
-									class="h-[615px] relative w-125"
-									data-name="Vector">
-									<img
-										alt=""
-										class="absolute block inset-0 max-w-none size-full"
-										height="615"
-										src={impactBusinessSourcingImage}
-										width="500"
-									/>
-								</div>
-							</div>
+							class="relative flex items-center justify-center w-full">
+							<img
+								alt=""
+								class="block h-auto w-full object-cover"
+								height="615"
+								src={impactBusinessSourcingImage}
+								width="500"
+							/>
 						</div>
 					</div>
 				</ContentContainer>
 			</div>
 		</div>
 		<SectionShell
-			class="bg-yellow-200 overflow-clip relative w-full pb-24"
+			class="bg-yellow-200 relative w-full pb-24"
 			data-name="Wireframe - 54">
 			<div
 				class="absolute hidden h-[620.8px] items-center justify-center left-[77.85%] right-[-22.95%] top-[129px] lg:flex"
@@ -365,10 +589,62 @@ const transformSizeStyle =
 						chain.
 					</p>
 				</div>
-				<ResponsiveGrid columns={3} class="items-stretch">
+				<ResponsiveGrid columns={3} class="items-start">
 					{
-						sdgTargetCards.map((SdgCard) => (
-							<Fragment set:html={SdgCard} />
+						sdgTargetCards.map((card) => (
+							<div class="bg-[#fefcf5] content-stretch flex flex-col gap-8 items-start justify-start   px-6 py-8 rounded-4xl w-full md:px-8 md:py-12">
+								<div
+									class="grid-cols-[max-content] grid-rows-[max-content] inline-grid  place-items-start relative shrink-0"
+									data-name="Group">
+									<div
+										class="col-1 h-[122.46px] ml-0 mt-0 relative row-1 w-[125.707px]"
+										data-name="Vector">
+										<svg
+											class="absolute block inset-0 size-full"
+											fill="none"
+											preserveAspectRatio="none"
+											viewBox="0 0 125.707 122.46"
+											xmlns="http://www.w3.org/2000/svg">
+											<path
+												d="M97.8019 113.935C120.935 100.92 128.34 76.8256 124.912 52.0606C125.147 40.4918 116.201 30.8652 111.761 20.559C98.6948 -7.69601 59.7446 -1.02656 35.4317 6.71671C12.0792 15.0011 -2.73933 57.2032 0.424037 79.9129C2.02889 88.5286 6.84344 96.964 11.1146 104.158C16.9485 110.638 27.0494 113.004 34.2523 118.101C36.8638 117.018 43.2369 120.815 47.268 120.756C64.458 123.378 82.5326 124.212 97.8061 113.94L97.8019 113.935Z"
+												fill={card.blobColor}
+											/>
+										</svg>
+									</div>
+									<div class="col-1 ml-5 mt-4 relative row-1 size-22">
+										<img
+											alt={card.label}
+											class="absolute inset-0 max-w-none object-cover pointer-events-none size-full"
+											src={card.src}
+										/>
+									</div>
+									{card.badgeNumber && (
+										<p class="col-1 font-serif font-normal leading-[normal] ml-[50px] mt-[21px] not-italic relative row-1 text-[48px] text-center text-white tracking-[1.92px] sm:text-[64px]">
+											{card.badgeNumber}
+										</p>
+									)}
+								</div>
+								{"items" in card ? (
+									<div class="font-sans font-normal not-italic relative shrink-0 text-[#1e4a35] text-[16px] tracking-[0.48px] w-full">
+										<p class="leading-[1.68] mb-0">
+											{card.intro}
+										</p>
+										<ul class="list-disc">
+											{card.items.map((item) => (
+												<li class="mb-0 ms-[24px]">
+													<span class="leading-[1.68]">
+														{item}
+													</span>
+												</li>
+											))}
+										</ul>
+									</div>
+								) : (
+									<p class="font-sans font-normal leading-[1.68] not-italic relative shrink-0 text-[#1e4a35] text-[16px] tracking-[0.48px] w-full">
+										{card.text}
+									</p>
+								)}
+							</div>
 						))
 					}
 				</ResponsiveGrid>
