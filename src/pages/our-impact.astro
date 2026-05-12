@@ -34,8 +34,34 @@ const indirectSdgIcons = [
   { label: "Decent work and economic growth", src: sdg08DecentWorkImage },
   { label: "Life on land", src: sdg15LifeOnLandImage },
 ];
-const impactPillarRows = [[Frame29, Frame33], [Frame41, Frame44], [Frame48]];
-const sdgTargetCards = [Frame51, Frame52, Frame53, Frame54, Frame55, Frame56];
+function normalizeImpactCard(html: string) {
+  return html
+    .replaceAll("whitespace-nowrap", "")
+    .replaceAll("justify-between", "justify-start")
+    .replaceAll("text-[64px]", "text-[48px] sm:text-[64px]")
+    .replaceAll("min-h-[550px]", "min-h-[420px] md:min-h-[550px]")
+    .replaceAll("min-h-[440px]", "min-h-[380px] md:min-h-[440px]")
+    .replaceAll("min-h-[428px]", "min-h-[372px] md:min-h-[428px]")
+    .replaceAll("min-h-[422px]", "min-h-[380px] md:min-h-[422px]")
+    .replaceAll("min-h-[347px]", "min-h-[320px] md:min-h-[347px]")
+    .replaceAll("min-h-[331px]", "min-h-[304px] md:min-h-[331px]")
+    .replaceAll(
+      "content-stretch flex h-[160px] items-start relative shrink-0",
+      "content-stretch flex h-auto min-h-[112px] items-start relative shrink-0 sm:min-h-[160px]",
+    )
+    .replaceAll(
+      "h-full items-start justify-end",
+      "h-auto items-start justify-start sm:h-full sm:justify-end",
+    )
+    .replaceAll("lg:w-[681px]", "lg:max-w-[681px]");
+}
+const impactPillarRows = [
+  [Frame29, Frame33],
+  [Frame41, Frame44],
+  [Frame48],
+].map((row) => row.map((card) => normalizeImpactCard(card)));
+const sdgTargetCards = [Frame51, Frame52, Frame53, Frame54, Frame55, Frame56]
+  .map((card) => normalizeImpactCard(card));
 const transformSizeStyle =
   "--transform-inner-width: 1185; --transform-inner-height: 21;";
 ---
@@ -189,7 +215,7 @@ const transformSizeStyle =
         fill="#EDDDE6"
       />
       <div
-        class="absolute flex inset-[1.61%_31.62%_85.61%_20.85%] items-center justify-center"
+        class="absolute hidden md:flex inset-[1.61%_31.62%_85.61%_20.85%] items-center justify-center"
         style="container-type: size;"
       >
         <div
@@ -201,7 +227,7 @@ const transformSizeStyle =
         </div>
       </div>
       <div
-        class="absolute flex inset-[0.33%_22.5%_87.76%_19.93%] items-center justify-center"
+        class="absolute hidden md:flex inset-[0.33%_22.5%_87.76%_19.93%] items-center justify-center"
         style="container-type: size;"
       >
         <div class="flex-none h-[100cqw] rotate-90 w-[100cqh]">
@@ -218,11 +244,11 @@ const transformSizeStyle =
       </div>
       <ContentContainer
         size="wide"
-        class="pt-[180px] pb-30 md:pt-[220px] lg:pt-[277px]"
+        class="pt-12 pb-24 md:pt-[220px] md:pb-30 lg:pt-[277px]"
       >
         <div class="flex flex-col gap-8 items-center relative w-full">
           <div
-            class="hidden flex-col gap-8 items-center max-w-[1052px] not-italic relative text-center w-full md:flex"
+            class="flex flex-col gap-6 items-center max-w-[1052px] not-italic relative text-center w-full md:gap-8"
           >
             <p
               class={`${typeStyles.sectionTitle} relative text-[#0f251b] w-full`}
@@ -239,12 +265,11 @@ const transformSizeStyle =
             {
               impactPillarRows.map((row, index) => (
                 <div
-                  class={`flex flex-col gap-8 relative w-full lg:flex-row ${index === 2 ? "items-stretch justify-center" : "items-stretch"}`}
+                  class={`grid gap-8 relative w-full ${index === 2 ? "grid-cols-1" : "lg:grid-cols-2"}`}
                 >
-                  {" "}
                   {row.map((PillarCard) => (
                     <Fragment set:html={PillarCard} />
-                  ))}{" "}
+                  ))}
                 </div>
               ))
             }
@@ -282,7 +307,7 @@ const transformSizeStyle =
                 Impact that travels from farm level to customer counter
               </p>
               <p
-                class={`${typeStyles.bodyLead} min-w-full not-italic relative text-green-500 w-min`}
+                class={`${typeStyles.bodyLead} not-italic relative text-green-500 w-full`}
               >
                 At Farm to Feed, we create impact throughout the supply chain,
                 from farm level to customer counter. Our long-term outcomes lead

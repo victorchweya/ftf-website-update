@@ -5,14 +5,14 @@ import SiteLogo from "../components/SiteLogo.astro";
 import { typeStyles } from "../lib/figmaStyles";
 import svgPaths from "../lib/homeSvgPaths";
 
-const footerColumnClass = "flex flex-col gap-4 items-start relative w-full max-w-[384px]";
-const footerGroupClass = "flex flex-col gap-[14px] items-start not-italic relative shrink-0 w-full";
-const footerHeadingClass = `${typeStyles.bodyLead} relative shrink-0 text-white whitespace-nowrap`;
-const footerCopyClass = `${typeStyles.body} font-light relative shrink-0 text-[#dfeddf] w-full max-w-[379px]`;
-const contactRowClass = "flex gap-4 items-start relative shrink-0 w-full";
-const footerLinkWrapperClass = "flex items-center justify-center p-2 relative shrink-0";
-const footerLinkTextClass = `${typeStyles.button} not-italic relative shrink-0 text-center text-white whitespace-nowrap`;
-const footerIconClass = "relative shrink-0 size-6";
+const footerSectionClass = "grid content-start gap-4 w-full max-w-[384px]";
+const footerGroupClass = "grid gap-[14px] w-full";
+const footerHeadingClass = `${typeStyles.bodyLead} text-white`;
+const footerCopyClass = `${typeStyles.body} font-light text-[#dfeddf] w-full max-w-[379px]`;
+const contactRowClass = "flex items-start gap-4 w-full";
+const footerLinkWrapperClass = "inline-flex items-center px-2 py-2";
+const footerLinkTextClass = `${typeStyles.button} not-italic text-center text-white whitespace-nowrap`;
+const footerIconClass = "relative size-6 shrink-0";
 
 const exploreLinks = [
 	{ label: "Kenyan Buyers", href: "/kenyan-buyers" },
@@ -32,42 +32,42 @@ const socialLinks = {
 <footer class="bg-green-500 overflow-hidden relative shrink-0 w-full" data-name="Footer">
 	<ContentContainer size="wide" class="py-12 md:py-16 lg:py-20">
 		<div class="grid gap-10 md:grid-cols-3 md:gap-8 lg:grid-cols-[minmax(260px,1fr)_minmax(220px,0.85fr)_minmax(360px,1fr)] lg:gap-16">
-			<div class={footerColumnClass}>
+			<section class={footerSectionClass}>
 				<div class={footerGroupClass}>
 					<p class={footerHeadingClass}>Quick Actions</p>
 					<p class={footerCopyClass}>Buy or Sell produce that makes sense for your business and the planet</p>
 				</div>
-				<div class="flex items-center relative shrink-0 w-full">
+				<div class="flex w-full items-center">
 					<Button href="/sell-with-us" variant="none" size="lg" class="relative shrink-0 bg-[#eff6ef] text-green-500" data-name="order">
 						Sell With Us
 					</Button>
 				</div>
-				<div class="flex items-center relative shrink-0 w-full">
+				<div class="flex w-full items-center">
 					<Button data-name="order" href="https://shop.farmtofeedkenya.com/auth/login" rel="noreferrer" target="_blank" variant="secondary" size="lg" class="relative shrink-0 text-[#eff6ef]">
 						Log In
 					</Button>
 				</div>
-			</div>
+			</section>
 
-			<div class={footerColumnClass}>
-				<div class="flex flex-col gap-[14px] items-start relative shrink-0 w-full">
+			<section class={footerSectionClass}>
+				<div class={footerGroupClass}>
 					<p class={footerHeadingClass}>Explore</p>
-					<nav class="flex flex-col items-start justify-center relative shrink-0" aria-label="Footer navigation">
+					<nav class="grid justify-items-start" aria-label="Footer navigation">
 						{exploreLinks.map((link) => (
 							<a class={footerLinkWrapperClass} data-name="footer-link" href={link.href}>
-								<p class={footerLinkTextClass}>{link.label}</p>
+								<span class={footerLinkTextClass}>{link.label}</span>
 							</a>
 						))}
 					</nav>
 				</div>
-			</div>
+			</section>
 
-			<div class={footerColumnClass}>
+			<section class={footerSectionClass}>
 				<div class={footerGroupClass}>
 					<p class={footerHeadingClass}>Get more information</p>
 					<p class={footerCopyClass}>Contact us in any of these channels</p>
 				</div>
-				<div class="flex flex-col gap-6 items-start justify-center relative shrink-0 w-full">
+				<div class="grid gap-6 w-full">
 					<div class={contactRowClass}>
 						<div class={footerIconClass} data-name="prime:envelope">
 							<svg class="absolute block inset-0 size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 24 24">
@@ -104,7 +104,7 @@ const socialLinks = {
 						<p class={`${typeStyles.body} font-light not-italic relative text-white`}>Tilisi Business Park, Kiambu, Kenya</p>
 					</div>
 				</div>
-			</div>
+			</section>
 		</div>
 
 		<div class="mt-16 grid gap-x-8 gap-y-10 md:grid-cols-[220px_minmax(0,1fr)] md:items-end lg:mt-20 lg:grid-cols-[minmax(260px,1fr)_minmax(220px,0.85fr)_minmax(360px,1fr)] lg:gap-x-16">
@@ -115,7 +115,7 @@ const socialLinks = {
 				Shaping the Future of Food
 			</p>
 			<div class="flex items-center md:col-start-1">
-				<div class="flex gap-8 items-start relative">
+				<div class="flex items-start gap-8">
 					<a aria-label="Farm to Feed on Facebook" class="overflow-clip relative shrink-0 size-6" data-name="facebook" href={socialLinks.facebook} rel="noreferrer" target="_blank">
 						<div class="absolute bottom-[8.33%] left-[29.17%] right-1/4 top-[8.33%]" data-name="Icon">
 							<div class="absolute inset-[-5%_-9.09%]">
@@ -150,17 +150,17 @@ const socialLinks = {
 				</div>
 			</div>
 			<div class="flex items-center md:col-start-2 lg:col-start-2">
-				<div class="flex gap-6 items-center relative">
+				<div class="flex items-center gap-6">
 					<a href="/privacy-policy" class={footerLinkWrapperClass} data-name="about-us">
-						<p class={footerLinkTextClass}>Privacy Policy</p>
+						<span class={footerLinkTextClass}>Privacy Policy</span>
 					</a>
 					<a href="/cookie-policy" class={footerLinkWrapperClass} data-name="about-us">
-						<p class={`${footerLinkTextClass} whitespace-pre`}>Cookie  Policy</p>
+						<span class={`${footerLinkTextClass} whitespace-pre`}>Cookie  Policy</span>
 					</a>
 				</div>
 			</div>
 			<div class="flex items-center md:col-span-2 md:justify-start lg:col-span-1 lg:col-start-3 lg:justify-end">
-				<div class="flex items-center justify-end p-2 relative" data-name="about-us">
+				<div class="flex items-center justify-end px-2 py-2" data-name="about-us">
 					<p class={`${footerLinkTextClass} text-right`}>&copy;2026 All right reserved</p>
 				</div>
 			</div>
