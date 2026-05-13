@@ -2,6 +2,7 @@
 import Layout from "../layouts/Layout.astro";
 import Button from "../components/Button.astro";
 import ContentContainer from "../components/layout/ContentContainer.astro";
+import OptimizedImage from "../components/OptimizedImage.astro";
 import KenyanBuyersArrow1Svg from "../components/figma/KenyanBuyersArrow1Svg.astro";
 import KenyanBuyersArrow2Svg from "../components/figma/KenyanBuyersArrow2Svg.astro";
 import KenyanBuyersArrow3Svg from "../components/figma/KenyanBuyersArrow3Svg.astro";
@@ -18,17 +19,17 @@ import {
 	Group23,
 } from "../lib/figmaMarkup/sellWithUs";
 import { Order4, Order5 } from "../lib/figmaMarkup/buyFromUsLocal";
-import supplierStoryPrimaryImage from "../assets/figma/sell-with-us/supplier-story-1.png?url";
-import supplierStorySecondaryImage from "../assets/figma/sell-with-us/supplier-story-2.png?url";
+import supplierStoryPrimaryImage from "../assets/figma/sell-with-us/supplier-story-1.png";
+import supplierStorySecondaryImage from "../assets/figma/sell-with-us/supplier-story-2.png";
 import { supplierStoryMask } from "../lib/figmaMarkup/sellWithUsMask";
 import BottomLandscapeSvg from "../components/figma/BottomLandscapeSvg.astro";
 import BackgroundBottomImpactSvg from "../components/figma/BackgroundBottomImpactSvg.astro";
 
 import { sectionSpacing, typeStyles } from "../lib/figmaStyles";
-import browseIcon from "../assets/figma/kenyan-buyers/browse.svg?url";
-import connectIcon from "../assets/figma/kenyan-buyers/connect.svg?url";
-import enjoyIcon from "../assets/figma/kenyan-buyers/enjoy.svg?url";
-import orderIcon from "../assets/figma/kenyan-buyers/order.svg?url";
+import paymentIcon from "../assets/figma/sell-with-us/payment.svg?url";
+import reachoutIcon from "../assets/figma/sell-with-us/reachout.svg?url";
+import sortedIcon from "../assets/figma/sell-with-us/sorted.svg?url";
+import sourceIcon from "../assets/figma/sell-with-us/source.svg?url";
 const offeringRows = [
 	[
 		{
@@ -86,25 +87,25 @@ const localBuyerHowItWorksSteps = [
 	{
 		body: "Reach out to our Sourcing team and download our mobile app to become a Farm to Feed supplier.",
 		color: "#8C98EE",
-		icon: connectIcon,
+		icon: reachoutIcon,
 		textColor: "#e6e6e6",
 	},
 	{
 		body: "We source your full fresh harvest, from grade 1 to imperfect produce. All orders are placed in our mobile app for full transparency.",
 		color: "#A35380",
-		icon: browseIcon,
+		icon: sourceIcon,
 		textColor: "#e6e6e6",
 	},
 	{
 		body: "All produce is received, sorted and graded in our warehouse. You can track the progress real time in your app.",
 		color: "#85A687",
-		icon: orderIcon,
+		icon: sortedIcon,
 		textColor: "#e6e6e6",
 	},
 	{
 		body: "Your payment is done within three days of receiving the produce. From the app, you can download your statement.",
 		color: "#EBC194",
-		icon: enjoyIcon,
+		icon: paymentIcon,
 		textColor: "#2b1a08",
 	},
 ];
@@ -180,11 +181,13 @@ const transformSizeStyle =
 			<div
 				class="absolute hidden h-[400px] md:block md:h-[601px] -left-[100px] md:-left-[150px] top-[calc(20%-150px)] md:top-[calc(20%-163.5px)] w-[300px] md:w-[441px] opacity-30 md:opacity-100"
 				data-name="Vector">
-				<img
+				<OptimizedImage
 					alt=""
 					class="absolute block inset-0 max-w-none size-full"
 					height="601"
+					sizes="441px"
 					src={supplierStoryPrimaryImage}
+					widths={[300, 441]}
 					width="441"
 				/>
 			</div>
@@ -194,11 +197,13 @@ const transformSizeStyle =
 					<div
 						class="h-[601px] relative w-[441px]"
 						data-name="Vector">
-						<img
+						<OptimizedImage
 							alt=""
 							class="absolute block inset-0 max-w-none size-full"
 							height="601"
+							sizes="441px"
 							src={supplierStorySecondaryImage}
+							widths={[300, 441]}
 							width="441"
 						/>
 					</div>

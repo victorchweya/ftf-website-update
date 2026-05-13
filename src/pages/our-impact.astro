@@ -4,25 +4,26 @@ import Button from "../components/Button.astro";
 import ContentContainer from "../components/layout/ContentContainer.astro";
 import SectionShell from "../components/layout/SectionShell.astro";
 import ResponsiveGrid from "../components/layout/ResponsiveGrid.astro";
+import OptimizedImage from "../components/OptimizedImage.astro";
 import * as ImpactSvgs from "../lib/figmaMarkup/impactSvgs";
 import BackgroundBottomImpactSvg from "../components/figma/BackgroundBottomImpactSvg.astro";
 import { sectionSpacing, typeStyles } from "../lib/figmaStyles";
-import impactHeroProduceImage from "../assets/figma/our-impact/hero-produce.png?url";
+import impactHeroProduceImage from "../assets/figma/our-impact/hero-produce.png";
 import empowerFarmersIcon from "../assets/figma/our-impact/empower-farmers-communities.svg?url";
 import reliableMarketAccessIcon from "../assets/figma/our-impact/reliable-market-access.svg?url";
 import zeroWasteIcon from "../assets/figma/our-impact/zerp-waste.svg?url";
 import climateFriendlyIcon from "../assets/figma/our-impact/climate-friendly.svg?url";
-import impactIllustrationImage from "../assets/figma/our-impact/impact-illustration.png?url";
-import impactBusinessSourcingImage from "../assets/figma/our-impact/impact-illustration-2.png?url";
-import sdg01NoPovertyImage from "../assets/figma/our-impact/sdg-01-no-poverty.png?url";
-import sdg02ZeroHungerImage from "../assets/figma/our-impact/sdg-02-zero-hunger.png?url";
-import sdg08DecentWorkImage from "../assets/figma/our-impact/sdg-08-decent-work.png?url";
-import sdg05GenderEqualityImage from "../assets/figma/our-impact/sdg-05-gender-equality.png?url";
-import sdg04QualityEducationImage from "../assets/figma/our-impact/sdg-04-quality-education.png?url";
-import sdg07CleanEnergyImage from "../assets/figma/our-impact/sdg-07-clean-energy.png?url";
-import sdg12ResponsibleConsumptionImage from "../assets/figma/our-impact/sdg-12-responsible-consumption.png?url";
-import sdg13ClimateActionImage from "../assets/figma/our-impact/sdg-13-climate-action.png?url";
-import sdg15LifeOnLandImage from "../assets/figma/our-impact/sdg-15-life-on-land.png?url";
+import impactIllustrationImage from "../assets/figma/our-impact/impact-illustration.png";
+import impactBusinessSourcingImage from "../assets/figma/our-impact/impact-illustration-2.png";
+import sdg01NoPovertyImage from "../assets/figma/our-impact/sdg-01-no-poverty.png";
+import sdg02ZeroHungerImage from "../assets/figma/our-impact/sdg-02-zero-hunger.png";
+import sdg08DecentWorkImage from "../assets/figma/our-impact/sdg-08-decent-work.png";
+import sdg05GenderEqualityImage from "../assets/figma/our-impact/sdg-05-gender-equality.png";
+import sdg04QualityEducationImage from "../assets/figma/our-impact/sdg-04-quality-education.png";
+import sdg07CleanEnergyImage from "../assets/figma/our-impact/sdg-07-clean-energy.png";
+import sdg12ResponsibleConsumptionImage from "../assets/figma/our-impact/sdg-12-responsible-consumption.png";
+import sdg13ClimateActionImage from "../assets/figma/our-impact/sdg-13-climate-action.png";
+import sdg15LifeOnLandImage from "../assets/figma/our-impact/sdg-15-life-on-land.png";
 const indirectSdgIcons = [
 	{ label: "Quality education", src: sdg04QualityEducationImage },
 	{ label: "Gender equality", src: sdg05GenderEqualityImage },
@@ -229,11 +230,13 @@ const transformSizeStyle =
 			</div>
 			<div
 				class="absolute hidden md:block inset-[0.33%_22.5%_87.76%_19.93%]">
-				<img
+				<OptimizedImage
 					alt=""
 					class="block h-full w-full object-contain"
 					height="235"
+					sizes="829px"
 					src={impactHeroProduceImage}
+					widths={[640, 829]}
 					width="829"
 				/>
 			</div>
@@ -490,11 +493,13 @@ const transformSizeStyle =
 								</div>
 								<div
 									class="flex items-center justify-center relative shrink-0 w-full max-w-[681px] lg:max-w-[681px]">
-									<img
+									<OptimizedImage
 										alt=""
 										class="block h-auto w-full max-w-[681px]"
 										height="351"
+										sizes="(max-width: 1024px) 100vw, 681px"
 										src={impactIllustrationImage}
+										widths={[360, 681]}
 										width="681"
 									/>
 								</div>
@@ -550,11 +555,13 @@ const transformSizeStyle =
 						</div>
 						<div
 							class="relative flex items-center justify-center w-full">
-							<img
+							<OptimizedImage
 								alt=""
 								class="block h-auto w-full object-cover"
 								height="615"
+								sizes="(max-width: 1024px) 100vw, 500px"
 								src={impactBusinessSourcingImage}
+								widths={[320, 500, 750]}
 								width="500"
 							/>
 						</div>
@@ -610,10 +617,12 @@ const transformSizeStyle =
 										</svg>
 									</div>
 									<div class="col-1 ml-5 mt-4 relative row-1 size-22">
-										<img
+										<OptimizedImage
 											alt={card.label}
 											class="absolute left-1 top-3 max-w-none size-full w-full"
+											sizes="88px"
 											src={card.src}
+											widths={[88, 176]}
 										/>
 									</div>
 									{card.badgeNumber && (
@@ -658,10 +667,12 @@ const transformSizeStyle =
 							indirectSdgIcons.map((icon) => (
 								<div class="relative rounded-[4px] size-[89px]">
 									{" "}
-									<img
+									<OptimizedImage
 										alt={icon.label}
 										class="absolute inset-0 max-w-none object-cover pointer-events-none rounded-[4px] size-full"
+										sizes="89px"
 										src={icon.src}
+										widths={[89, 178]}
 									/>{" "}
 								</div>
 							))

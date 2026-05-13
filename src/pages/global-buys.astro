@@ -2,6 +2,7 @@
 import Layout from "../layouts/Layout.astro";
 import ContentContainer from "../components/layout/ContentContainer.astro";
 import GlobalBuyersLeadForm from "../components/GlobalBuyersLeadForm.astro";
+import OptimizedImage from "../components/OptimizedImage.astro";
 import * as GlobalBuyersSvgs from "../lib/figmaMarkup/globalBuyersSvgs";
 import {
 	Frame50,
@@ -16,13 +17,13 @@ import {
 } from "../lib/figmaMarkup/globalBuyers";
 import BorderTopKenyanBuyersSvg from "../components/figma/BorderTopKenyanBuyersSvg.astro";
 import { sectionSpacing, typeStyles } from "../lib/figmaStyles";
-import globalBuyersHeroIllustration from "../assets/figma/global-buyers/hero-illustration.png?url";
-import supplyChainFoodSystemsImage from "../assets/figma/shared/supply-chain/food-systems.png?url";
-import marketProduceImage from "../assets/figma/global-buyers/market-produce.png?url";
-import productSpicesImage from "../assets/figma/global-buyers/product-spices.png?url";
-import productPowdersImage from "../assets/figma/global-buyers/product-powders.png?url";
-import productFruitFlakesImage from "../assets/figma/global-buyers/product-fruit-flakes.png?url";
-import productFlourImage from "../assets/figma/global-buyers/product-flour.png?url";
+import globalBuyersHeroIllustration from "../assets/figma/global-buyers/hero-illustration.png";
+import supplyChainFoodSystemsImage from "../assets/figma/shared/supply-chain/food-systems.png";
+import marketProduceImage from "../assets/figma/global-buyers/market-produce.png";
+import productSpicesImage from "../assets/figma/global-buyers/product-spices.png";
+import productPowdersImage from "../assets/figma/global-buyers/product-powders.png";
+import productFruitFlakesImage from "../assets/figma/global-buyers/product-fruit-flakes.png";
+import productFlourImage from "../assets/figma/global-buyers/product-flour.png";
 
 const exportProductCards = [
 	{
@@ -78,12 +79,14 @@ const transformSizeStyle =
 				style="container-type: size;">
 				<div class="-rotate-90 flex-none h-[100cqw] w-[100cqh]">
 					<div class="relative size-full" data-name="Vector">
-						<img
+						<OptimizedImage
 							alt=""
 							class="absolute block inset-0 max-w-none size-full"
 							height="2114"
+							sizes="100vw"
 							src={globalBuyersHeroIllustration}
-							width="1109.355"
+							widths={[640, 960, 1109]}
+							width="1109"
 						/>
 					</div>
 				</div>
@@ -218,11 +221,13 @@ const transformSizeStyle =
 						<div
 							class="absolute h-[360px] left-0 top-0 w-full max-w-129.25 md:h-[552px]"
 							data-name="Vector">
-							<img
+							<OptimizedImage
 								alt=""
 								class="absolute block inset-0 max-w-none size-full"
 								height="552"
+								sizes="517px"
 								src={supplyChainFoodSystemsImage}
+								widths={[320, 517]}
 								width="517"
 							/>
 						</div>
@@ -352,10 +357,12 @@ const transformSizeStyle =
 							</div>
 							<div
 								class="h-[320px] relative w-full max-w-[405px] md:h-[394px]">
-								<img
+								<OptimizedImage
 									alt=""
 									class="absolute inset-0 max-w-none object-contain pointer-events-none size-full"
+									sizes="405px"
 									src={marketProduceImage}
+									widths={[320, 405]}
 								/>
 							</div>
 							<div
@@ -462,10 +469,12 @@ const transformSizeStyle =
 									/>
 									<div
 										class={`absolute ${productCard.imageClassName}`}>
-										<img
+										<OptimizedImage
 											alt=""
 											class="block size-full object-contain"
+											sizes="271px"
 											src={productCard.image}
+											widths={[220, 271, 542]}
 										/>
 									</div>
 								</div>

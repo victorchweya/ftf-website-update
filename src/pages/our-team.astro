@@ -3,6 +3,7 @@ import { getCollection } from "astro:content";
 import Layout from "../layouts/Layout.astro";
 import Button from "../components/Button.astro";
 import ContentContainer from "../components/layout/ContentContainer.astro";
+import OptimizedImage from "../components/OptimizedImage.astro";
 import * as OurTeamSvgs from "../lib/figmaMarkup/ourTeamSvgs";
 import {
 	Frame39,
@@ -22,7 +23,7 @@ import {
 import BottomLandscapeSvg from "../components/figma/BottomLandscapeSvg.astro";
 import BorderShape01Svg from "../components/figma/BorderShape01Svg.astro";
 import OurTeamIconSvg from "../components/figma/OurTeamIconSvg.astro";
-import teamHeroImage from "../assets/figma/our-team/team-hero.png?url";
+import teamHeroImage from "../assets/figma/our-team/team-hero.png";
 import { sectionSpacing, typeStyles } from "../lib/figmaStyles";
 const staticTeamRows = [
 	[
@@ -222,10 +223,12 @@ const transformSizeStyle =
 			<ContentContainer size="wide" class="py-4 -mt-20">
 				<div class="relative mx-auto w-full max-w-[1004px]">
 					<div class="overflow-hidden w-full">
-						<img
+						<OptimizedImage
 							alt=""
 							class="w-full object-cover"
+							sizes="(max-width: 1024px) 100vw, 1004px"
 							src={teamHeroImage}
+							widths={[640, 1004, 1280]}
 						/>
 					</div>
 					<div
