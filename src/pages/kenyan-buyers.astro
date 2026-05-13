@@ -13,8 +13,8 @@ import { supplierStoryMask } from "../lib/figmaMarkup/sellWithUsMask";
 import { sectionSpacing, typeStyles } from "../lib/figmaStyles";
 import browseIcon from "../assets/figma/kenyan-buyers/browse.svg?url";
 import connectIcon from "../assets/figma/kenyan-buyers/connect.svg?url";
-import deliveryLocationsIcon from "../assets/figma/kenyan-buyers/delivery-locations.svg?url";
 import enjoyIcon from "../assets/figma/kenyan-buyers/enjoy.svg?url";
+import oneStopShopImage from "../assets/figma/kenyan-buyers/one-stop-shop.png?url";
 import orderIcon from "../assets/figma/kenyan-buyers/order.svg?url";
 const buyerFormRows = [
 	[
@@ -93,20 +93,16 @@ const valueCards = [
 const oneStopShopItems = [
 	{
 		body: "We deliver the regular grade and our impactful and affordable grade rescue.",
-		icon: KenyanBuyersSvgs.KenyanBuyersSvg20,
 		subtitle: "From our farmers to you",
 		title: "Fresh Produce",
 	},
 	{
 		body: "We cut, peel, slice and process fresh produce so you don't have to. Save time and storage space by ordering our Ready to Use products.",
-		icon: KenyanBuyersSvgs.KenyanBuyersSvg21,
 		subtitle: "Made by us",
 		title: "Prepped and Ready to Use",
 	},
 	{
 		body: "We offer a wide variety of product categories from top brands.",
-
-		icon: KenyanBuyersSvgs.KenyanBuyersSvg22,
 		subtitle: "Delivered by us",
 		title: "Sustainably-sourced ingredients",
 	},
@@ -489,15 +485,12 @@ const localBuyerTestimonialCardHtml = Frame6.replace(
 							{
 								oneStopShopItems.map((item, index) => (
 									<div class="flex gap-[15px] items-start relative w-full max-w-[535px]">
-										<div class="relative size-[56px]">
-											<Fragment set:html={item.icon} />
-											<p
-												class={`-translate-x-1/2 absolute ${typeStyles.body} font-semibold leading-normal left-1/2 not-italic text-[#eff6ef] text-center top-[calc(50%-6px)] whitespace-nowrap`}>
-												{index + 1}
-											</p>
+										<div
+											class={`${typeStyles.body} flex size-14 shrink-0 items-center justify-center rounded-full bg-[#122c20] font-semibold leading-none text-[#eff6ef]`}>
+											{index + 1}
 										</div>
 										<div class="flex flex-[1_0_0] flex-col gap-6 items-start min-w-px relative self-stretch">
-											<div class="flex flex-col gap-4 items-start leading-normal relative w-full">
+											<div class="flex flex-col gap-1 items-start leading-normal relative w-full">
 												<p
 													class={`${typeStyles.cardTitle} font-medium not-italic relative text-[#fbf3e9] w-full`}>
 													{item.title}
@@ -554,41 +547,13 @@ const localBuyerTestimonialCardHtml = Frame6.replace(
 							</div>
 							<div
 								class="flex flex-col gap-[27px] items-start p-6 md:p-[40px] relative size-full">
-								<p
-									class={`flex-[1_0_0] ${typeStyles.cardTitle} font-medium min-w-px not-italic relative text-black`}>
-									Delivery Areas
-								</p>
-								<div
-									class="flex flex-col gap-16 h-[340px] items-start relative w-full md:h-[462px]"
-									data-name="Content">
-									<div
-										class="bg-white flex flex-[1_0_0] items-center justify-center min-h-px overflow-clip relative w-full"
-										data-name="Delivery locations">
-										<img
-											alt=""
-											aria-hidden="true"
-											class="max-h-full max-w-full object-contain"
-											src={deliveryLocationsIcon}
-										/>
-									</div>
-								</div>
-								<p
-									class="font-sans font-normal leading-zero not-italic relative text-green-500 text-[0px] tracking-body-lg w-full">
-									<span class="leading-copy text-xl"
-										>We deliver in & around
-									</span>
-									<span
-										class="font-sans font-medium leading-copy text-orange-500 text-xl"
-										>Nairobi</span
-									>
-									<span class="leading-copy text-xl">
-										and the
-									</span>
-									<span
-										class="font-sans font-medium leading-copy text-orange-500 text-xl"
-										>Maasai Mara.</span
-									>
-								</p>
+								<img
+									alt=""
+									aria-hidden="true"
+									class="w-full object-contain"
+									src={oneStopShopImage}
+								/>
+
 								<div
 									class="bg-[#fbf3e9] relative rounded-[16px] w-full">
 									<div
