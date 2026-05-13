@@ -24,6 +24,10 @@ import supplierStorySecondaryImage from "../assets/figma/sell-with-us/supplier-s
 import { supplierStoryMask } from "../lib/figmaMarkup/sellWithUsMask";
 import BottomLandscapeSvg from "../components/figma/BottomLandscapeSvg.astro";
 import BackgroundBottomImpactSvg from "../components/figma/BackgroundBottomImpactSvg.astro";
+import SellWithUsDecorBlobSvg from "../components/figma/SellWithUsDecorBlobSvg.astro";
+import SellWithUsDecorPlantOneSvg from "../components/figma/SellWithUsDecorPlantOneSvg.astro";
+import SellWithUsDecorPlantTwoSvg from "../components/figma/SellWithUsDecorPlantTwoSvg.astro";
+import SellWithUsDecorPlantThreeSvg from "../components/figma/SellWithUsDecorPlantThreeSvg.astro";
 
 import { sectionSpacing, typeStyles } from "../lib/figmaStyles";
 import paymentIcon from "../assets/figma/sell-with-us/payment.svg?url";
@@ -171,11 +175,9 @@ const transformSizeStyle =
 							</p>
 						</div>
 					</div>
-					<div
-						class="h-[70.87px] relative w-[238.96px]"
-						data-name="GetItOnGooglePlay_Badge_Web_color_English 1">
-						<Fragment set:html={SellWithUsSvgs.SellWithUsSvg01} />
-					</div>
+					<Button href="#how-it-works" size="lg" variant="primary">
+						See how it works
+					</Button>
 				</div>
 			</ContentContainer>
 			<div
@@ -264,7 +266,9 @@ const transformSizeStyle =
 			</ContentContainer>
 		</div>
 		<BackgroundBottomImpactSvg className="w-full bg-white" fill="#f3f5e7" />
-		<section class="bg-white overflow-clip relative w-full">
+		<section
+			id="how-it-works"
+			class="bg-white overflow-clip relative w-full">
 			<ContentContainer size="wide" class="relative z-10 pb-24">
 				<div class="mx-auto max-w-148 text-center">
 					<p
@@ -280,8 +284,8 @@ const transformSizeStyle =
 				<div class="mt-[56px] grid gap-8 sm:grid-cols-2 xl:hidden">
 					{
 						localBuyerHowItWorksSteps.map((step, index) => (
-							<div class="flex flex-col gap-6 items-center rounded-[24px] bg-white p-4 text-center">
-								<div class="relative h-[180px] w-[185px] ">
+							<div class="flex flex-col gap-6 items-center rounded-3xl bg-white p-4 text-center">
+								<div class="relative h-45 w-46.25 ">
 									<img
 										alt=""
 										aria-hidden="true"
@@ -358,6 +362,13 @@ const transformSizeStyle =
 								<KenyanBuyersArrow3Svg class="size-full" />
 							</div>
 						</div>
+					</div>
+				</div>
+				<div class="mt-12 flex justify-center">
+					<div
+						class="h-[70.87px] relative w-[238.96px]"
+						data-name="GetItOnGooglePlay_Badge_Web_color_English 1">
+						<Fragment set:html={SellWithUsSvgs.SellWithUsSvg01} />
 					</div>
 				</div>
 			</ContentContainer>
@@ -613,71 +624,76 @@ const transformSizeStyle =
 				<Fragment set:html={SellWithUsSvgs.SellWithUsSvg64} />
 			</div>
 		</div>
-		<div class="bg-olive-200 relative w-full" data-name="Wireframe - 36">
+		<div
+			class="bg-green-500 relative overflow-hidden
+		w-full border-b border-dotted border-green-400 rounded-tl-4xl rounded-tr-4xl"
+			data-name="Wireframe - 36">
+			<div class="relative">
+				<div
+					class="absolute h-[265.41px] left-[calc(83.33%-80.33px)] opacity-28 top-[328px] w-[361.514px]">
+					<div
+						class="absolute bottom-0 h-[265.41px] right-0 w-[361.514px]"
+						data-name="Group">
+						<SellWithUsDecorBlobSvg
+							class="absolute block inset-0 size-full"
+						/>
+					</div>
+				</div>
+				<div
+					class="absolute h-[423.454px] left-[139px] opacity-28 top-[267px] w-[381.093px]">
+					<div
+						class="absolute bottom-0 flex h-[423.454px] items-center justify-center left-0 w-[381.093px]"
+						style={transformSizeStyle}>
+						<div class="flex-none rotate-[-29.12deg]">
+							<div
+								class="h-[350.48px] relative w-[240.979px]"
+								data-name="Group">
+								<SellWithUsDecorPlantOneSvg
+									class="absolute block inset-0 size-full"
+								/>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div
+					class="absolute h-[397.291px] left-[-95px] opacity-28 top-[-21px] w-[375.304px]">
+					<div
+						class="absolute flex h-[397.291px] items-center justify-center left-0 top-0 w-[375.304px]"
+						style={transformSizeStyle}>
+						<div class="flex-none rotate-[42.05deg]">
+							<div
+								class="h-[424.6px] relative w-[122.431px]"
+								data-name="Group">
+								<SellWithUsDecorPlantTwoSvg
+									class="absolute block inset-0 size-full"
+								/>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div
+					class="absolute h-[221.381px] left-[calc(75%+14px)] opacity-28 top-[-59px] w-[329.65px]">
+					<div
+						class="absolute flex h-[221.381px] items-center justify-center right-0 top-0 w-[329.65px]"
+						style={transformSizeStyle}>
+						<div class="flex-none rotate-[-76.09deg]">
+							<div
+								class="h-[301.627px] relative w-[153.391px]"
+								data-name="Group">
+								<SellWithUsDecorPlantThreeSvg
+									class="absolute block inset-0 size-full"
+								/>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
 			<ContentContainer
 				size="wide"
 				class={`flex justify-center ${sectionSpacing.cta}`}>
 				<div
-					class="bg-[#4c352b] min-h-[520px] max-w-[1216px] overflow-clip relative rounded-4xl md:rounded-[40px] w-full flex items-center justify-center p-[28px] md:p-10"
+					class="min-h-[520px] max-w-[1216px] overflow-clip relative rounded-4xl md:rounded-[40px] w-full flex items-center justify-center p-[28px] md:p-10"
 					data-name="Wireframe - 38">
-					<div
-						class="absolute h-[265.41px] left-[calc(83.33%-80.33px)] opacity-28 top-[328px] w-[361.514px]">
-						<div
-							class="absolute bottom-0 h-[265.41px] right-0 w-[361.514px]"
-							data-name="Group">
-							<Fragment
-								set:html={SellWithUsSvgs.SellWithUsSvg65}
-							/>
-						</div>
-					</div>
-					<div
-						class="absolute h-[423.454px] left-[139px] opacity-28 top-[267px] w-[381.093px]">
-						<div
-							class="absolute bottom-0 flex h-[423.454px] items-center justify-center left-0 w-[381.093px]"
-							style={transformSizeStyle}>
-							<div class="flex-none rotate-[-29.12deg]">
-								<div
-									class="h-[350.48px] relative w-[240.979px]"
-									data-name="Group">
-									<Fragment
-										set:html={SellWithUsSvgs.SellWithUsSvg66}
-									/>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div
-						class="absolute h-[397.291px] left-[-95px] opacity-28 top-[-21px] w-[375.304px]">
-						<div
-							class="absolute flex h-[397.291px] items-center justify-center left-0 top-0 w-[375.304px]"
-							style={transformSizeStyle}>
-							<div class="flex-none rotate-[42.05deg]">
-								<div
-									class="h-[424.6px] relative w-[122.431px]"
-									data-name="Group">
-									<Fragment
-										set:html={SellWithUsSvgs.SellWithUsSvg67}
-									/>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div
-						class="absolute h-[221.381px] left-[calc(75%+14px)] opacity-28 top-[-59px] w-[329.65px]">
-						<div
-							class="absolute flex h-[221.381px] items-center justify-center right-0 top-0 w-[329.65px]"
-							style={transformSizeStyle}>
-							<div class="flex-none rotate-[-76.09deg]">
-								<div
-									class="h-[301.627px] relative w-[153.391px]"
-									data-name="Group">
-									<Fragment
-										set:html={SellWithUsSvgs.SellWithUsSvg68}
-									/>
-								</div>
-							</div>
-						</div>
-					</div>
 					<div
 						class="flex flex-col gap-10 items-center relative rounded-[40px] z-10">
 						<p

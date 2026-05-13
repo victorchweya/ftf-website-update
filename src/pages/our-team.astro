@@ -22,6 +22,7 @@ import {
 } from "../lib/figmaMarkup/ourTeam";
 import BottomLandscapeSvg from "../components/figma/BottomLandscapeSvg.astro";
 import BorderShape01Svg from "../components/figma/BorderShape01Svg.astro";
+import OurTeamCtaBackgroundSvg from "../components/figma/OurTeamCtaBackgroundSvg.astro";
 import OurTeamIconSvg from "../components/figma/OurTeamIconSvg.astro";
 import teamHeroImage from "../assets/figma/our-team/team-hero.png";
 import { sectionSpacing, typeStyles } from "../lib/figmaStyles";
@@ -173,7 +174,7 @@ const transformSizeStyle =
 		class="bg-white flex flex-col items-start relative w-full"
 		data-team-root>
 		<div
-			class="bg-[#fcfdf9] min-h-[500px] md:min-h-[600px] lg:min-h-[742px] overflow-clip relative w-full"
+			class="bg-olive-100 min-h-[500px] md:min-h-[600px] lg:min-h-[742px] overflow-clip relative w-full"
 			data-name="Wireframe - 53">
 			<ContentContainer
 				size="wide"
@@ -435,19 +436,18 @@ const transformSizeStyle =
 			</ContentContainer>
 		</div>
 		<div
-			class="bg-[#122c20] min-h-[500px] md:min-h-[600px] lg:min-h-[696px] overflow-clip relative w-full"
+			class="bg-green-500 border-b border-dotted border-green-400 overflow-hidden relative w-full"
 			data-name="Wireframe - 36">
+			<OurTeamCtaBackgroundSvg
+				class="absolute inset-0 hidden size-full md:block"
+				data-name="Capa_1"
+			/>
 			<ContentContainer
 				size="wide"
-				class={`${sectionSpacing.cta} flex justify-center`}>
+				class={`${sectionSpacing.cta} relative z-10 flex justify-center`}>
 				<div
-					class="bg-[#4c352b] min-h-[520px] max-w-[1216px] overflow-clip relative rounded-4xl md:rounded-[40px] w-full flex items-center justify-center p-[28px] md:p-10"
+					class="min-h-[520px] max-w-[1216px] overflow-clip relative rounded-4xl md:rounded-[40px] w-full flex items-center justify-center p-[28px] md:p-10"
 					data-name="CTA">
-					<div
-						class="absolute hidden h-[663px] left-[7px] top-[-86px] w-[1205px] md:block"
-						data-name="Capa_1">
-						<Fragment set:html={OurTeamSvgs.OurTeamSvg08} />
-					</div>
 					<div
 						class="flex flex-col gap-10 items-center relative rounded-[40px] z-10 w-full">
 						<p
