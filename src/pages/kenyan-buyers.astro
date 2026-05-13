@@ -2,6 +2,9 @@
 import Layout from "../layouts/Layout.astro";
 import Button from "../components/Button.astro";
 import ContentContainer from "../components/layout/ContentContainer.astro";
+import KenyanBuyersArrow1Svg from "../components/figma/KenyanBuyersArrow1Svg.astro";
+import KenyanBuyersArrow2Svg from "../components/figma/KenyanBuyersArrow2Svg.astro";
+import KenyanBuyersArrow3Svg from "../components/figma/KenyanBuyersArrow3Svg.astro";
 import BorderBottomKenyanBuyersSvg from "../components/figma/BorderBottomKenyanBuyersSvg.astro";
 import BorderTopKenyanBuyersSvg from "../components/figma/BorderTopKenyanBuyersSvg.astro";
 import * as KenyanBuyersSvgs from "../lib/figmaMarkup/kenyanBuyersSvgs";
@@ -14,990 +17,996 @@ import deliveryLocationsIcon from "../assets/figma/kenyan-buyers/delivery-locati
 import enjoyIcon from "../assets/figma/kenyan-buyers/enjoy.svg?url";
 import orderIcon from "../assets/figma/kenyan-buyers/order.svg?url";
 const buyerFormRows = [
-  [
-    {
-      label: "Your Name *",
-      rounded: "rounded-[35px]",
-      border: "rounded-[36px]",
-    },
-  ],
-  [
-    {
-      icon: KenyanBuyersSvgs.KenyanBuyersSvg03,
-      label: "Your Email *",
-      placeholder: "email@example.com",
-    },
-    { label: "Phone Number *" },
-  ],
-  [{ label: "Company Name *" }, { label: "Job Title" }],
-  [
-    {
-      icon: KenyanBuyersSvgs.KenyanBuyersSvg04,
-      label: "Business Category *",
-      placeholder: "Select one...",
-      type: "select",
-    },
-  ],
+	[
+		{
+			label: "Your Name *",
+			rounded: "rounded-[35px]",
+			border: "rounded-[36px]",
+		},
+	],
+	[
+		{
+			icon: KenyanBuyersSvgs.KenyanBuyersSvg03,
+			label: "Your Email *",
+			placeholder: "email@example.com",
+		},
+		{ label: "Phone Number *" },
+	],
+	[{ label: "Company Name *" }, { label: "Job Title" }],
+	[
+		{
+			icon: KenyanBuyersSvgs.KenyanBuyersSvg04,
+			label: "Business Category *",
+			placeholder: "Select one...",
+			type: "select",
+		},
+	],
 ];
 
 const valueCards = [
-  {
-    body: "From fresh ingredients to dry goods and our Ready-to-Use product range!",
-    icon: KenyanBuyersSvgs.KenyanBuyersSvg06,
-    title: "One Stop Shop",
-  },
-  {
-    accent: KenyanBuyersSvgs.KenyanBuyersSvg08,
-    accentClass:
-      "absolute left-[16.72px] top-[14.15px] h-[33.97px] w-[33.448px]",
-    body: "Pay less, expect better and grow your margins.",
-    icon: KenyanBuyersSvgs.KenyanBuyersSvg07,
-    title: "Best Pricing",
-  },
-  {
-    accent: KenyanBuyersSvgs.KenyanBuyersSvg10,
-    accentClass:
-      "absolute left-[15.68px] top-[13.63px] h-[32.925px] w-[33.97px]",
-    body: "Choose from our Grade Rescue or Grade 1 produce - we procure the full harvest from farmers so that nothing goes to waste.",
-    icon: KenyanBuyersSvgs.KenyanBuyersSvg09,
-    title: "Full Harvest",
-  },
-  {
-    accent: KenyanBuyersSvgs.KenyanBuyersSvg12,
-    accentClass:
-      "absolute left-[20.9px] top-[16.77px] h-[31.357px] w-[25.086px]",
-    body: "If your delivery is anything less than supreme, we'll fix it. Connect with our team on WhatsApp or call us at 0795851756.",
-    icon: KenyanBuyersSvgs.KenyanBuyersSvg11,
-    title: "Customer Service",
-  },
-  {
-    accent: KenyanBuyersSvgs.KenyanBuyersSvg14,
-    accentClass:
-      "absolute left-[16.72px] top-[13.63px] h-[32.402px] w-[35.016px]",
-    body: "For every kg of imperfect and surplus produce you buy, you reduce your carbon footprint and directly boost farmer incomes..",
-    icon: KenyanBuyersSvgs.KenyanBuyersSvg13,
-    title: "Measurable Impact",
-  },
-  {
-    accent: KenyanBuyersSvgs.KenyanBuyersSvg16,
-    accentClass:
-      "absolute left-[15.15px] top-[11.68px] h-[39.336px] w-[33.972px]",
-    body: "Choose your delivery date and window and we'll get freshness delivered to you. On Time. In Full.",
-    icon: KenyanBuyersSvgs.KenyanBuyersSvg15,
-    title: "Flexible Delivery",
-  },
+	{
+		body: "From fresh ingredients to dry goods and our Ready-to-Use product range!",
+		icon: KenyanBuyersSvgs.KenyanBuyersSvg06,
+		title: "One Stop Shop",
+	},
+	{
+		accent: KenyanBuyersSvgs.KenyanBuyersSvg08,
+		accentClass:
+			"absolute left-[16.72px] top-[14.15px] h-[33.97px] w-[33.448px]",
+		body: "Pay less, expect better and grow your margins.",
+		icon: KenyanBuyersSvgs.KenyanBuyersSvg07,
+		title: "Best Pricing",
+	},
+	{
+		accent: KenyanBuyersSvgs.KenyanBuyersSvg10,
+		accentClass:
+			"absolute left-[15.68px] top-[13.63px] h-[32.925px] w-[33.97px]",
+		body: "Choose from our Grade Rescue or Grade 1 produce - we procure the full harvest from farmers so that nothing goes to waste.",
+		icon: KenyanBuyersSvgs.KenyanBuyersSvg09,
+		title: "Full Harvest",
+	},
+	{
+		accent: KenyanBuyersSvgs.KenyanBuyersSvg12,
+		accentClass:
+			"absolute left-[20.9px] top-[16.77px] h-[31.357px] w-[25.086px]",
+		body: "If your delivery is anything less than supreme, we'll fix it. Connect with our team on WhatsApp or call us at 0795851756.",
+		icon: KenyanBuyersSvgs.KenyanBuyersSvg11,
+		title: "Customer Service",
+	},
+	{
+		accent: KenyanBuyersSvgs.KenyanBuyersSvg14,
+		accentClass:
+			"absolute left-[16.72px] top-[13.63px] h-[32.402px] w-[35.016px]",
+		body: "For every kg of imperfect and surplus produce you buy, you reduce your carbon footprint and directly boost farmer incomes..",
+		icon: KenyanBuyersSvgs.KenyanBuyersSvg13,
+		title: "Measurable Impact",
+	},
+	{
+		accent: KenyanBuyersSvgs.KenyanBuyersSvg16,
+		accentClass:
+			"absolute left-[15.15px] top-[11.68px] h-[39.336px] w-[33.972px]",
+		body: "Choose your delivery date and window and we'll get freshness delivered to you. On Time. In Full.",
+		icon: KenyanBuyersSvgs.KenyanBuyersSvg15,
+		title: "Flexible Delivery",
+	},
 ];
 const oneStopShopItems = [
-  {
-    body: "We deliver the regular grade and our impactful and affordable grade rescue.",
-    icon: KenyanBuyersSvgs.KenyanBuyersSvg20,
-    subtitle: "From our farmers to you",
-    title: "Fresh Produce",
-  },
-  {
-    body: "We cut, peel, slice and process fresh produce so you don't have to. Save time and storage space by ordering our Ready to Use products.",
-    icon: KenyanBuyersSvgs.KenyanBuyersSvg21,
-    subtitle: "Made by us",
-    title: "Prepped and Ready to Use",
-  },
-  {
-    body: "We offer a wide variety of product categories from top brands.",
-   
-    icon: KenyanBuyersSvgs.KenyanBuyersSvg22,
-    subtitle: "Delivered by us",
-    title: "Sustainably-sourced ingredients",
-  },
+	{
+		body: "We deliver the regular grade and our impactful and affordable grade rescue.",
+		icon: KenyanBuyersSvgs.KenyanBuyersSvg20,
+		subtitle: "From our farmers to you",
+		title: "Fresh Produce",
+	},
+	{
+		body: "We cut, peel, slice and process fresh produce so you don't have to. Save time and storage space by ordering our Ready to Use products.",
+		icon: KenyanBuyersSvgs.KenyanBuyersSvg21,
+		subtitle: "Made by us",
+		title: "Prepped and Ready to Use",
+	},
+	{
+		body: "We offer a wide variety of product categories from top brands.",
+
+		icon: KenyanBuyersSvgs.KenyanBuyersSvg22,
+		subtitle: "Delivered by us",
+		title: "Sustainably-sourced ingredients",
+	},
 ];
 const localBuyerHowItWorksSteps = [
-  {
-    body: "Our Sales team is ready to speak with you",
-    color: "#8C98EE",
-    icon: connectIcon,
-    textColor: "#e6e6e6",
-    title: "Connect with sales",
-  },
-  {
-    body: "Explore our wide range of fresh and dry products online",
-    color: "#A35380",
-    icon: browseIcon,
-    textColor: "#e6e6e6",
-    title: "Browse the shop",
-  },
-  {
-    body: "Select your delivery window and checkout your cart",
-    color: "#85A687",
-    icon: orderIcon,
-    textColor: "#e6e6e6",
-    title: "Place Order",
-  },
-  {
-    body: "Receive fresh, high quality ingredients directly to your doorstep",
-    color: "#EBC194",
-    icon: enjoyIcon,
-    textColor: "#2b1a08",
-    title: "Enjoy Delivery",
-  },
+	{
+		body: "Our Sales team is ready to speak with you",
+		color: "#8C98EE",
+		icon: connectIcon,
+		textColor: "#e6e6e6",
+		title: "Connect with sales",
+	},
+	{
+		body: "Explore our wide range of fresh and dry products online",
+		color: "#A35380",
+		icon: browseIcon,
+		textColor: "#e6e6e6",
+		title: "Browse the shop",
+	},
+	{
+		body: "Select your delivery window and checkout your cart",
+		color: "#85A687",
+		icon: orderIcon,
+		textColor: "#e6e6e6",
+		title: "Place Order",
+	},
+	{
+		body: "Receive fresh, high quality ingredients directly to your doorstep",
+		color: "#EBC194",
+		icon: enjoyIcon,
+		textColor: "#2b1a08",
+		title: "Enjoy Delivery",
+	},
+];
+const localBuyerHowItWorksDesktopLayout = [
+	{
+		copyClass: "max-w-[205px]",
+		iconClass: "left-[0%] top-[128px] h-[200px] w-[206px]",
+		textClass: "left-[0%] top-[352px] w-[330px]",
+	},
+	{
+		copyClass: "max-w-[220px]",
+		iconClass: "left-[260px] top-0 h-[200px] w-[205px]",
+		textClass: "left-[500px] top-[0px] w-[320px]",
+	},
+	{
+		copyClass: "max-w-[245px]",
+		iconClass: "left-[508px] top-[222px] h-[202px] w-[207px]",
+		textClass: "left-[580px] top-[444px] w-[360px]",
+	},
+	{
+		copyClass: "max-w-[255px]",
+		iconClass: "right-[78px] top-[30px] h-[200px] w-[205px]",
+		textClass: "right-[0px] top-[252px] w-[300px]",
+	},
 ];
 const localBuyerTestimonials = [
-  {
-    company: "Nairobi Catering Co.",
-    name: "Amina Odhiambo",
-    quote:
-      "Farm to Feed keeps our kitchen stocked with fresh produce while helping us reduce waste across our weekly menu planning.",
-  },
-  {
-    company: "Green Plate Bistro",
-    name: "Brian Mwangi",
-    quote:
-      "The quality is consistent, the delivery team is reliable, and our customers love knowing their meals support local farmers.",
-  },
-  {
-    company: "Mara Hospitality Group",
-    name: "Lilian Wanjiku",
-    quote:
-      "We can source the volumes we need without compromising on freshness, price, or the impact we want our business to make.",
-  },
+	{
+		company: "Nairobi Catering Co.",
+		name: "Amina Odhiambo",
+		quote: "Farm to Feed keeps our kitchen stocked with fresh produce while helping us reduce waste across our weekly menu planning.",
+	},
+	{
+		company: "Green Plate Bistro",
+		name: "Brian Mwangi",
+		quote: "The quality is consistent, the delivery team is reliable, and our customers love knowing their meals support local farmers.",
+	},
+	{
+		company: "Mara Hospitality Group",
+		name: "Lilian Wanjiku",
+		quote: "We can source the volumes we need without compromising on freshness, price, or the impact we want our business to make.",
+	},
 ];
 const testimonialQuoteClass =
-  'class="font-sans font-normal leading-[1.68] not-italic relative text-[16px] text-black tracking-[0.48px] w-full"';
+	'class="font-sans font-normal leading-[1.68] not-italic relative text-[16px] text-black tracking-[0.48px] w-full"';
 const testimonialNameClass = 'class="font-sans font-semibold relative w-full"';
 const testimonialCompanyClass = 'class="font-sans font-normal relative w-full"';
 const localBuyerTestimonialCardHtml = Frame6.replace(
-  `${testimonialQuoteClass}> Farm to Feed has been supplying us with amazing veggies. We get an assortment each week and we love working with them on saving food where we can.`,
-  `${testimonialQuoteClass} data-testimonial-quote>${localBuyerTestimonials[0].quote}`,
+	`${testimonialQuoteClass}> Farm to Feed has been supplying us with amazing veggies. We get an assortment each week and we love working with them on saving food where we can.`,
+	`${testimonialQuoteClass} data-testimonial-quote>${localBuyerTestimonials[0].quote}`,
 )
-  .replace(
-    `${testimonialNameClass}>Delia Sterling`,
-    `${testimonialNameClass} data-testimonial-name>${localBuyerTestimonials[0].name}`,
-  )
-  .replace(
-    `${testimonialCompanyClass}>Brown&#x27;s food company`,
-    `${testimonialCompanyClass} data-testimonial-company>${localBuyerTestimonials[0].company}`,
-  );
+	.replace(
+		`${testimonialNameClass}>Delia Sterling`,
+		`${testimonialNameClass} data-testimonial-name>${localBuyerTestimonials[0].name}`,
+	)
+	.replace(
+		`${testimonialCompanyClass}>Brown&#x27;s food company`,
+		`${testimonialCompanyClass} data-testimonial-company>${localBuyerTestimonials[0].company}`,
+	);
 ---
 
 <Layout title="Kenyan Buyers">
-  <div
-    class="bg-white flex flex-col items-start relative w-full"
-    data-name="Buy from us - local"
-  >
-    <section
-      class="bg-yellow-200 min-h-[600px] md:min-h-[800px] lg:min-h-[926px] overflow-clip relative w-full"
-      data-name="Wireframe - 53"
-    >
-      <div
-        class="absolute hidden md:flex h-[400px] lg:h-[620.8px] items-center justify-center right-[-10%] lg:right-[-24.34%] lg:left-[79.24%] top-[200px] md:top-[352px] opacity-50 lg:opacity-100"
-        style="container-type:size"
-      >
-        <div class="flex-none h-[100cqw] rotate-90 w-[100cqh]">
-          <div class="relative size-full">
-            <Fragment set:html={KenyanBuyersSvgs.KenyanBuyersSvg01} />
-          </div>
-        </div>
-      </div>
-      <ContentContainer
-        size="wide"
-        class="pt-[160px] pb-[96px] md:pt-[211px] md:pb-30"
-      >
-        <div
-          class="grid gap-8 items-center lg:grid-cols-[minmax(0,1fr)_minmax(0,563px)]"
-        >
-          <div class="flex flex-col gap-10 items-start relative">
-            <div class="flex flex-col gap-10 items-start relative">
-              <!-- <div class="absolute hidden h-[14px] left-0 top-[160px] w-[443px] md:block" data-name="objects"> <Fragment set:html={KenyanBuyersSvgs.KenyanBuyersSvg02} /> </div> -->
-              <p
-                class={`${typeStyles.heroTitleLarge} not-italic relative text-green-500 w-full`}
-              >
-                <span class="leading-tight"
-                  >Good for margins,<br aria-hidden="true" /></span
-                >
-                <span class="leading-tight text-green-500"
-                  >Good for farmers</span
-                >
-                <span class="leading-tight"
-                  ><br aria-hidden="true" />Good for climate</span
-                >
-              </p>
-              <p
-                class={`${typeStyles.bodyLead} font-medium italic relative text-orange-500 w-full max-w-[515px]`}
-              >
-                "Faida bora, wakulima bora, mazingira bora."
-              </p>
-            </div>
-            <p
-              class={`${typeStyles.body} not-italic relative text-green-500 w-full max-w-[515px]`}
-            >
-              Built with farmers at the centre, our solution brings oddly good
-              products to businesses, retailers, schools, feeding programmes,
-              and event companies. Reliable quality, healthy margins, and less
-              waste - all in one smarter supply chain.
-            </p>
-            <p class="font-semibold text-green-500 w-full">
-              Try Farm to Feed today!
-            </p>
-          </div>
-          <div class="flex flex-col items-center relative w-full max-w-[563px]">
-            <div class="bg-white relative rounded-[30px] w-full">
-              <div
-                aria-hidden="true"
-                class="absolute border border-[#f7f7f7] border-solid inset-0 pointer-events-none rounded-[30px]"
-              >
-              </div>
-              <div
-                class="flex flex-col gap-8 items-start p-6 md:p-[40px] relative size-full"
-              >
-                <div class="flex flex-col gap-8 items-start relative w-full">
-                  <p
-                    class={`${typeStyles.cardTitle} font-medium not-italic relative text-[#0f251b] w-[210px]`}
-                  >
-                    Buy from us
-                  </p>
-                  <p
-                    class={`${typeStyles.body} not-italic relative text-green-500 w-full`}
-                  >
-                    Fill out the form and our sales team will contact you
-                    shortly.
-                  </p>
-                </div>
-                <div class="flex flex-col gap-6 items-start relative w-full">
-                  {
-                    buyerFormRows.map((row) => (
-                      <div
-                        class={`flex flex-col gap-4 items-start relative w-full ${row.length > 1 ? "sm:flex-row" : ""}`}
-                        data-name="Inputs"
-                      >
-                        {row.map((field) => (
-                          <div
-                            class="flex flex-col gap-2 items-start relative w-full sm:flex-[1_0_0] sm:min-w-px"
-                            data-name="Input"
-                          >
-                            <p
-                              class={`${typeStyles.caption} not-italic relative text-[#0f251b] w-full`}
-                            >
-                              {field.label}
-                            </p>
-                            <div
-                              class={`bg-[#fbfafa] ${field.type === "select" ? "" : "h-12"} relative ${field.rounded ?? "rounded-[24px]"} w-full`}
-                              data-name={
-                                field.type === "select"
-                                  ? "Select"
-                                  : "Text input"
-                              }
-                            >
-                              <div
-                                aria-hidden="true"
-                                class={`absolute border border-[#e6e6e6] border-solid inset-[-1px] pointer-events-none ${field.border ?? "rounded-[25px]"}`}
-                              />
-                              <div class="flex flex-row items-center size-full">
-                                <div
-                                  class={`flex items-center p-[12px] relative size-full ${field.placeholder || field.icon ? "gap-2" : ""}`}
-                                >
-                                  {field.icon && field.type !== "select" && (
-                                    <div
-                                      class="overflow-clip relative size-6"
-                                      data-name="credit_card"
-                                    >
-                                      <div
-                                        class="absolute left-[4px] size-[16px] top-[4px]"
-                                        data-name="prime:envelope"
-                                      >
-                                        <Fragment set:html={field.icon} />
-                                      </div>
-                                    </div>
-                                  )}
-                                  {field.placeholder && (
-                                    <p
-                                      class={`flex-[1_0_0] ${typeStyles.caption} font-normal min-w-px not-italic relative ${field.type === "select" ? "text-green-500" : "text-[#808080]"}`}
-                                    >
-                                      {field.placeholder}
-                                    </p>
-                                  )}
-                                  {field.icon && field.type === "select" && (
-                                    <div
-                                      class="overflow-clip relative size-6"
-                                      data-name="keyboard_arrow_down"
-                                    >
-                                      <div
-                                        class="absolute inset-[35.51%_25.93%_36.66%_25.88%]"
-                                        data-name="Vector"
-                                      >
-                                        <Fragment set:html={field.icon} />
-                                      </div>
-                                    </div>
-                                  )}
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        ))}
-                      </div>
-                    ))
-                  }
-                  <Button
-                    type="button"
-                    size="md"
-                    class="relative w-full text-[#eee]"
-                    data-name="order"
-                  >
-                    Get in touch
-                  </Button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </ContentContainer>
-    </section>
-    <section
-      class="bg-white min-h-[600px] md:min-h-[900px] overflow-clip relative w-full"
-      data-name="Wireframe - 11"
-    >
-      <div
-        class="absolute flex inset-[-13.58%_-0.63%_91.95%_-3.75%] items-center justify-center"
-        style="container-type:size"
-      >
-        <div class="flex-none h-[100cqw] rotate-90 w-[100cqh]">
-          <div class="relative size-full" data-name="Vector">
-            <Fragment set:html={KenyanBuyersSvgs.KenyanBuyersSvg05} />
-          </div>
-        </div>
-      </div>
-      <ContentContainer
-        size="wide"
-        class="relative z-10 flex flex-col items-center gap-12 pt-[120px] pb-[96px] md:pt-[164px] md:pb-30"
-      >
-        <div
-          class="flex flex-col gap-16 items-center relative w-full max-w-7xl"
-        >
-          <div
-            class="flex flex-col gap-8 items-center max-w-[1052px] not-italic relative text-center w-full"
-          >
-            <p
-              class={`${typeStyles.sectionTitleLarge} relative text-[#0f251b] w-full`}
-            >
-              Why choose Farm to Feed?
-            </p>
-            <p class={`${typeStyles.body} relative text-green-500 w-full`}>
-              We are reshaping the food supply chain to benefit everyone
-              involved while protecting our planet.
-            </p>
-          </div>
-          <div class="grid gap-8 relative w-full md:grid-cols-2 lg:grid-cols-3">
-            {
-              valueCards.map((card) => (
-                <div class="bg-[#fbfafa] relative rounded-[30px] w-full">
-                  <div class="flex flex-col gap-[27px] items-start p-[40px] relative size-full">
-                    <div class="flex flex-col gap-8 items-start justify-center relative">
-                      <div class="relative h-[64px] w-[65.697px]" data-name="media">
-                        <Fragment set:html={card.icon} />
-                        {card.accent && (
-                          <div class={card.accentClass} data-name="accent">
-                            <Fragment set:html={card.accent} />
-                          </div>
-                        )}
-                      </div>
-                      <p
-                        class={`${typeStyles.cardTitle} not-italic relative text-[#0f251b]`}
-                      >
-                        {card.title}
-                      </p>
-                    </div>
-                    <p
-                      class={`${typeStyles.body} not-italic relative text-green-500 w-full`}
-                    >
-                      {card.body}
-                    </p>
-                  </div>
-                </div>
-              ))
-            }
-          </div>
-        </div>
-      </ContentContainer>
-    </section>
-    <section
-      class="bg-[#0f251b] min-h-[600px] md:min-h-[900px] lg:min-h-[1085px] overflow-clip relative w-full"
-      data-name="Wireframe - 51"
-    >
-      <div
-        class="absolute bottom-[814.78px] hidden h-[223.22px] items-center justify-center right-[-330.48px] w-[838.475px] lg:flex"
-        style="--transform-inner-width: 1185; --transform-inner-height: 21;"
-      >
-        <div class="-scale-y-100 flex-none rotate-[-93.75deg]">
-          <div class="h-[829.172px] relative w-[169.318px]" data-name="Vector">
-            <Fragment set:html={KenyanBuyersSvgs.KenyanBuyersSvg17} />
-          </div>
-        </div>
-      </div>
-      <div
-        class="absolute bottom-[520.68px] hidden h-[169.318px] items-center justify-center left-[-548px] w-[829.172px] lg:flex"
-        style="--transform-inner-width: 1185; --transform-inner-height: 21;"
-      >
-        <div class="-rotate-90 flex-none">
-          <div class="h-[829.172px] relative w-[169.318px]" data-name="Vector">
-            <Fragment set:html={KenyanBuyersSvgs.KenyanBuyersSvg18} />
-          </div>
-        </div>
-      </div>
-      <BorderTopKenyanBuyersSvg
-        class="absolute inset-x-0 top-0 w-full max-w-none pointer-events-none select-none"
-        fill="white"
-      />
-      <ContentContainer size="wide" class="relative z-10">
-        <div
-          class="grid gap-12 pt-[140px] pb-[96px] md:pt-[200px] lg:grid-cols-2 lg:items-start lg:pt-[241px] lg:pb-30"
-        >
-          <div
-            class="flex flex-col gap-16 items-start relative w-full max-w-[624px]"
-          >
-            <p
-              class={`${typeStyles.sectionTitleLarge} not-italic relative text-[#f5e091] w-full`}
-            >
-              Your One Stop Shop
-            </p>
-            <div class="flex flex-col gap-8 items-start relative">
-              {
-                oneStopShopItems.map((item, index) => (
-                  <div class="flex gap-[15px] items-start relative w-full max-w-[535px]">
-                    <div class="relative size-[56px]">
-                      <Fragment set:html={item.icon} />
-                      <p
-                        class={`-translate-x-1/2 absolute ${typeStyles.body} font-semibold leading-normal left-1/2 not-italic text-[#eff6ef] text-center top-[calc(50%-6px)] whitespace-nowrap`}
-                      >
-                        {index + 1}
-                      </p>
-                    </div>
-                    <div class="flex flex-[1_0_0] flex-col gap-6 items-start min-w-px relative self-stretch">
-                      <div class="flex flex-col gap-4 items-start leading-normal relative w-full">
-                        <p
-                          class={`${typeStyles.cardTitle} font-medium not-italic relative text-[#fbf3e9] w-full`}
-                        >
-                          {item.title}
-                        </p>
-                        <p
-                          class={`${typeStyles.serifLead} italic relative text-[#f5e091] w-full`}
-                        >
-                          {item.subtitle}
-                        </p>
-                      </div>
-                      <p
-                        class={`${typeStyles.body} not-italic relative text-[#f6eef2] w-full`}
-                      >
-                        {item.body}
-                      </p>
-                     
-                    </div>
-                  </div>
-                ))
-              }
-            </div>
-            <div
-              class="flex gap-8 items-start justify-center overflow-clip relative w-full"
-              data-name="Tab Horizontal"
-            >
-              <div
-                class="flex items-center justify-center relative self-stretch w-0"
-                style="container-type:size; --transform-inner-width: 1185; --transform-inner-height: 21;"
-              >
-                <div class="flex-none rotate-90 w-[100cqh]">
-                  <div class="h-0 relative w-full" data-name="Border">
-                    <div class="absolute inset-[-2px_0_0_0]">
-                      <Fragment set:html={KenyanBuyersSvgs.KenyanBuyersSvg23} />
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <p
-                class={`${typeStyles.bodyLead} leading-zero not-italic relative text-white w-full`}
-              >
-                <span class="leading-copy text-yellow-300"
-                  >For customer outside of Nairobi, <span class="font-medium"
-                    >Contact Us</span
-                  > for full basket offering.
-                </span>
-              </p>
-            </div>
-          </div>
-          <div
-            class="flex flex-col items-end relative w-full max-w-[625px] lg:justify-self-end"
-          >
-            <div class="bg-white relative rounded-[30px] w-full">
-              <div
-                aria-hidden="true"
-                class="absolute border border-[#f7f7f7] border-solid inset-0 pointer-events-none rounded-[30px]"
-              >
-              </div>
-              <div
-                class="flex flex-col gap-[27px] items-start p-6 md:p-[40px] relative size-full"
-              >
-                <p
-                  class={`flex-[1_0_0] ${typeStyles.cardTitle} font-medium min-w-px not-italic relative text-black`}
-                >
-                  Delivery Areas
-                </p>
-                <div
-                  class="flex flex-col gap-16 h-[340px] items-start relative w-full md:h-[462px]"
-                  data-name="Content"
-                >
-                  <div
-                    class="bg-white flex flex-[1_0_0] items-center justify-center min-h-px overflow-clip relative w-full"
-                    data-name="Delivery locations"
-                  >
-                    <img
-                      alt=""
-                      aria-hidden="true"
-                      class="max-h-full max-w-full object-contain"
-                      src={deliveryLocationsIcon}
-                    />
-                  </div>
-                </div>
-                <p
-                  class="font-sans font-normal leading-zero not-italic relative text-green-500 text-[0px] tracking-body-lg w-full"
-                >
-                  <span class="leading-copy text-xl"
-                    >We deliver in & around
-                  </span>
-                  <span
-                    class="font-sans font-medium leading-copy text-orange-500 text-xl"
-                    >Nairobi</span
-                  >
-                  <span class="leading-copy text-xl"> and the </span>
-                  <span
-                    class="font-sans font-medium leading-copy text-orange-500 text-xl"
-                    >Maasai Mara.</span
-                  >
-                </p>
-                <div class="bg-[#fbf3e9] relative rounded-[16px] w-full">
-                  <div
-                    aria-hidden="true"
-                    class="absolute border border-[#f7e6d4] border-solid inset-0 pointer-events-none rounded-[16px]"
-                  >
-                  </div>
-                  <div
-                    class="flex flex-col items-start p-[16px] relative size-full"
-                  >
-                    <div
-                      class="flex flex-col gap-4 items-start relative w-full sm:flex-row sm:items-center"
-                    >
-                      <div
-                        class="flex flex-[1_0_0] gap-2 items-center min-w-px relative"
-                      >
-                        <div
-                          class="relative size-6"
-                          data-name="prime:info-circle"
-                        >
-                          <Fragment
-                            set:html={KenyanBuyersSvgs.KenyanBuyersSvg28}
-                          />
-                        </div>
-                        <p
-                          class="flex-[1_0_0] font-sans font-normal italic leading-zero min-w-px relative text-[#0f251b] text-[0px] tracking-caption"
-                        >
-                          <span class="leading-normal text-[#2b1a08] text-sm"
-                            >We are always
-                          </span>
-                          <span
-                            class="font-sans font-medium leading-normal text-orange-500 text-sm"
-                            >expanding our reach!</span
-                          >
-                          <span class="leading-normal text-[#2b1a08] text-sm">
-                            Contact our sales team to hear more.</span
-                          >
-                        </p>
-                      </div>
-                      <Button
-                        href="/contact-us"
-                        variant="secondary"
-                        size="sm"
-                        class="relative text-[#eee]"
-                        data-name="order"
-                      >
-                        Contact Sales
-                      </Button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </ContentContainer>
-    </section>
-    <section
-      class="bg-white overflow-clip relative w-full"
-      data-name="Wireframe - 42"
-    >
-      <ContentContainer
-        size="wide"
-        class={`relative z-10 ${sectionSpacing.default}`}
-      >
-        <div class="mx-auto max-w-148 text-center">
-          <p
-            class={`${typeStyles.sectionTitleLarge} mt-30 not-italic text-[#0f251b] w-full`}
-          >
-            How does it work?
-          </p>
-          <p class={`${typeStyles.body} mt-2 not-italic text-green-500 w-full`}>
-            Four simple steps to get fresh and sustainable products delivered to
-            you
-          </p>
-        </div>
-        <div class="lg:hidden mt-[56px] grid gap-8 sm:grid-cols-2">
-          {
-            localBuyerHowItWorksSteps.map((step, index) => (
-              <div class="flex flex-col gap-6 items-center rounded-[24px] bg-white p-4 text-center">
-                <div class="relative h-[180px] w-[185px] ">
-                  <img
-                    alt=""
-                    aria-hidden="true"
-                    class="size-full object-contain"
-                    src={step.icon}
-                  />
-                </div>
-                <div class="flex gap-4 items-start text-left w-full max-w-[280px]">
-                  <div
-                    class={`${typeStyles.body} flex size-10 items-center justify-center rounded-full font-medium leading-normal`}
-                    style={`background-color: ${step.color}; color: ${step.textColor};`}
-                  >
-                    {index + 1}
-                  </div>
-                  <div class="flex flex-col gap-[12px] items-start not-italic relative w-full">
-                    <p
-                      class={`${typeStyles.cardTitleSmall} leading-normal relative text-[#0f251b] tracking-card w-full`}
-                    >
-                      {step.title}
-                    </p>
-                    <p
-                      class={`${typeStyles.caption} relative text-green-500 w-full`}
-                    >
-                      {step.body}
-                    </p>
-                  </div>
-                </div>
-              </div>
-            ))
-          }
-        </div>
-        <div class="relative mx-auto mt-[64px] hidden max-w-[1180px] lg:block">
-          <div class="grid gap-8 xl:grid-cols-4">
-            {
-              localBuyerHowItWorksSteps.map((step, index) => (
-                <article
-                  class={`grid content-start gap-6 ${index % 2 === 1 ? "xl:pt-16" : ""}`}
-                >
-                  <div
-                    class="relative mx-auto h-[198.445px] w-[203.707px]"
-                    data-name="media"
-                  >
-                    <img
-                      alt=""
-                      aria-hidden="true"
-                      class="size-full object-contain"
-                      src={step.icon}
-                    />
-                  </div>
-                  <div class="flex gap-4 items-start">
-                    <div
-                      class={`${typeStyles.body} flex size-10 items-center justify-center rounded-full font-medium leading-normal`}
-                      style={`background-color: ${step.color}; color: ${step.textColor};`}
-                    >
-                      {index + 1}
-                    </div>
-                    <div class="flex flex-col gap-4 items-start not-italic relative w-full max-w-[204px]">
-                      <p
-                        class={`${typeStyles.cardTitleSmall} leading-normal relative text-[#0f251b] tracking-card w-full`}
-                      >
-                        {step.title}
-                      </p>
-                      <p class={`${typeStyles.caption} relative text-green-500 w-full`}>
-                        {step.body}
-                      </p>
-                    </div>
-                  </div>
-                </article>
-              ))
-            }
-          </div>
-          <div class="pointer-events-none absolute inset-x-0 top-[56px] hidden xl:block">
-            <div
-              class="absolute left-[12%] h-[145.923px] w-[143.362px]"
-              style="--transform-inner-width: 1185; --transform-inner-height: 21;"
-            >
-              <div class="-scale-y-100 flex-none rotate-[132.38deg]">
-                <div class="h-[82.59px] relative w-[122.18px]" data-name="Design">
-                  <Fragment set:html={KenyanBuyersSvgs.KenyanBuyersSvg70} />
-                </div>
-              </div>
-            </div>
-            <div
-              class="absolute left-[41%] top-[150px] h-[138.813px] w-[110.247px]"
-              style="--transform-inner-width: 1185; --transform-inner-height: 21;"
-            >
-              <div class="flex-none rotate-[-104.32deg]">
-                <div class="h-[82.59px] relative w-[122.18px]" data-name="Design">
-                  <Fragment set:html={KenyanBuyersSvgs.KenyanBuyersSvg71} />
-                </div>
-              </div>
-            </div>
-            <div
-              class="absolute right-[20%] top-[208px] h-[94.387px] w-[129.822px]"
-              style="--transform-inner-width: 1185; --transform-inner-height: 21;"
-            >
-              <div class="flex-none rotate-[-174.26deg]">
-                <div class="h-[82.59px] relative w-[122.18px]" data-name="Design">
-                  <Fragment set:html={KenyanBuyersSvgs.KenyanBuyersSvg72} />
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </ContentContainer>
-      <BorderBottomKenyanBuyersSvg
-        class="absolute inset-x-0 top-0 w-full max-w-none pointer-events-none select-none"
-        fill="#0F251B"
-      />
-    </section>
-    <section
-      class="bg-[#f3f5e7] min-h-[600px] md:min-h-[750px] overflow-clip relative rounded-bl-[40px] rounded-br-[40px] w-full"
-      data-name="Testimonial"
-      data-local-buyer-testimonials
-      data-testimonials={JSON.stringify(localBuyerTestimonials)}
-    >
-      <ContentContainer
-        size="wide"
-        class={`relative z-10 flex flex-col items-center gap-[56px] md:gap-[80px] ${sectionSpacing.default}`}
-      >
-        <p
-          class={`${typeStyles.sectionTitleLarge} not-italic text-[#0f251b] text-center w-full max-w-[800px]`}
-        >
-          Hear from businesses making an impact with Farm to Feed.
-        </p>
-        <div
-          class="relative grid w-full justify-items-center gap-6 lg:mx-auto lg:w-fit lg:grid-cols-[auto_minmax(0,640px)_auto] lg:items-center lg:gap-10"
-        >
-          <button
-            aria-label="Show previous testimonial"
-            class="group rounded-[40px] bg-transparent border-0 p-0 transition-transform duration-200 hover:-translate-y-0.5 focus-visible:-translate-y-0.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#747c50]"
-            data-testimonial-previous
-            type="button"
-          >
-            <Fragment set:html={Order4} />
-          </button>
-          <div class="w-full max-w-[640px] justify-self-center">
-            <Fragment set:html={localBuyerTestimonialCardHtml} />
-          </div>
-          <button
-            aria-label="Show next testimonial"
-            class="group rounded-[40px] bg-transparent border-0 p-0 transition-transform duration-200 hover:-translate-y-0.5 focus-visible:-translate-y-0.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#747c50]"
-            data-testimonial-next
-            type="button"
-          >
-            <Fragment set:html={Order5} />
-          </button>
-        </div>
-      </ContentContainer>
-      <div
-        class="absolute hidden h-[137.947px] items-center justify-center left-[calc(75%+23.37px)] top-[231.07px] w-[206.385px] lg:flex"
-        style="--transform-inner-width: 1185; --transform-inner-height: 21;"
-      >
-        <div class="flex-none rotate-[-15.41deg]">
-          <div class="h-[91px] relative w-[189px]" data-name="Capa_1">
-            <Fragment set:html={KenyanBuyersSvgs.KenyanBuyersSvg73} />
-          </div>
-        </div>
-      </div>
-      <div
-        class="absolute hidden h-[307.61px] items-center justify-center left-[31px] top-[160px] w-[332.171px] lg:flex"
-        style="--transform-inner-width: 1185; --transform-inner-height: 252;"
-      >
-        <div class="flex-none rotate-[38.46deg]">
-          <div
-            class="h-[151.494px] overflow-clip relative w-[303.868px]"
-            data-name="Capa_1"
-          >
-            <div
-              class="absolute contents inset-[46.94%_-0.01%_5.53%_67.34%]"
-              data-name="Group"
-            >
-              <div
-                class="absolute contents inset-[46.94%_-0.01%_5.53%_67.34%]"
-                data-name="Group"
-              >
-                <div
-                  class="absolute inset-[46.94%_-0.01%_5.53%_67.34%]"
-                  data-name="Vector"
-                >
-                  <Fragment set:html={KenyanBuyersSvgs.KenyanBuyersSvg74} />
-                </div>
-                <div
-                  class="absolute contents inset-[46.94%_-0.01%_5.53%_67.34%]"
-                  data-name="Clip path group"
-                >
-                  <div
-                    class="absolute inset-[48.28%_18.79%_8.68%_66.58%] mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-[-1.17px_-0.16px] mask-size-[122.51px_118.116px]"
-                    style={`mask-image: url('${supplierStoryMask}');`}
-                    data-name="Group"
-                  >
-                    <Fragment set:html={KenyanBuyersSvgs.KenyanBuyersSvg75} />
-                  </div>
-                </div>
-              </div>
-              <div
-                class="absolute inset-[53.61%_20.85%_13.05%_69.52%]"
-                data-name="Vector"
-              >
-                <div class="absolute inset-[-0.99%_-1.71%]">
-                  <Fragment set:html={KenyanBuyersSvgs.KenyanBuyersSvg76} />
-                </div>
-              </div>
-              <div
-                class="absolute inset-[57.31%_23.09%_17.53%_71.61%]"
-                data-name="Vector"
-              >
-                <div class="absolute inset-[-1.31%_-3.11%]">
-                  <Fragment set:html={KenyanBuyersSvgs.KenyanBuyersSvg77} />
-                </div>
-              </div>
-            </div>
-            <div
-              class="absolute inset-[39.79%_23.6%_0_58.17%]"
-              data-name="Group"
-            >
-              <Fragment set:html={KenyanBuyersSvgs.KenyanBuyersSvg78} />
-            </div>
-            <div class="absolute inset-[0_71.17%_39.23%_0]" data-name="Vector">
-              <Fragment set:html={KenyanBuyersSvgs.KenyanBuyersSvg79} />
-            </div>
-            <div
-              class="absolute inset-[45.69%_58.11%_38.2%_12.15%]"
-              data-name="Vector"
-            >
-              <Fragment set:html={KenyanBuyersSvgs.KenyanBuyersSvg80} />
-            </div>
-            <div
-              class="absolute inset-[21.92%_56.03%_50.52%_14.04%]"
-              data-name="Vector"
-            >
-              <Fragment set:html={KenyanBuyersSvgs.KenyanBuyersSvg81} />
-            </div>
-            <div
-              class="absolute inset-[22.12%_69.87%_48.92%_6.48%]"
-              data-name="Vector"
-            >
-              <Fragment set:html={KenyanBuyersSvgs.KenyanBuyersSvg82} />
-            </div>
-            <div
-              class="absolute inset-[33.5%_62.34%_50.52%_16.54%]"
-              data-name="Vector"
-            >
-              <Fragment set:html={KenyanBuyersSvgs.KenyanBuyersSvg83} />
-            </div>
-            <div
-              class="absolute inset-[30.28%_27.75%_11.86%_52.01%]"
-              data-name="Group"
-            >
-              <Fragment set:html={KenyanBuyersSvgs.KenyanBuyersSvg84} />
-            </div>
-            <div
-              class="absolute inset-[34.94%_41.44%_7.36%_30.22%]"
-              data-name="Vector"
-            >
-              <Fragment set:html={KenyanBuyersSvgs.KenyanBuyersSvg85} />
-            </div>
-          </div>
-        </div>
-      </div>
-      <div
-        class="absolute hidden h-[858px] items-center justify-center left-[-2.92%] right-[-1.39%] top-[-767px] lg:flex"
-        style="container-type:size"
-      >
-        <div class="-scale-x-100 flex-none h-[100cqw] rotate-90 w-[100cqh]">
-          <div class="relative size-full" data-name="Vector">
-            <Fragment set:html={KenyanBuyersSvgs.KenyanBuyersSvg86} />
-          </div>
-        </div>
-      </div>
-      <div
-        class="absolute hidden h-[203.64px] items-center justify-center left-[128px] top-[561px] w-[245.05px] lg:flex"
-        style="--transform-inner-width: 1185; --transform-inner-height: 105;"
-      >
-        <div class="flex-none rotate-[34.14deg]">
-          <div
-            class="h-[83.796px] overflow-clip relative w-[239.258px]"
-            data-name="Capa_1"
-          >
-            <div
-              class="absolute inset-[6.94%_64.93%_13.37%_0.68%]"
-              data-name="Group"
-            >
-              <Fragment set:html={KenyanBuyersSvgs.KenyanBuyersSvg87} />
-            </div>
-            <div
-              class="absolute inset-[5.45%_47.3%_7.78%_26.47%]"
-              data-name="Group"
-            >
-              <Fragment set:html={KenyanBuyersSvgs.KenyanBuyersSvg88} />
-            </div>
-            <div
-              class="absolute inset-[0_28.06%_2.86%_40.72%]"
-              data-name="Group"
-            >
-              <Fragment set:html={KenyanBuyersSvgs.KenyanBuyersSvg89} />
-            </div>
-            <div
-              class="absolute inset-[4.39%_13.86%_2.28%_57.71%]"
-              data-name="Group"
-            >
-              <Fragment set:html={KenyanBuyersSvgs.KenyanBuyersSvg90} />
-            </div>
-            <div
-              class="absolute inset-[0_0.75%_24.42%_74.76%]"
-              data-name="Group"
-            >
-              <Fragment set:html={KenyanBuyersSvgs.KenyanBuyersSvg91} />
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  </div>
+	<div
+		class="bg-white flex flex-col items-start relative w-full"
+		data-name="Buy from us - local">
+		<section
+			class="bg-yellow-200 min-h-[600px] md:min-h-[800px] lg:min-h-[926px] overflow-clip relative w-full"
+			data-name="Wireframe - 53">
+			<div
+				class="absolute hidden md:flex h-[400px] lg:h-[620.8px] items-center justify-center right-[-10%] lg:right-[-24.34%] lg:left-[79.24%] top-[200px] md:top-[352px] opacity-50 lg:opacity-100"
+				style="container-type:size">
+				<div class="flex-none h-[100cqw] rotate-90 w-[100cqh]">
+					<div class="relative size-full">
+						<Fragment
+							set:html={KenyanBuyersSvgs.KenyanBuyersSvg01}
+						/>
+					</div>
+				</div>
+			</div>
+			<ContentContainer
+				size="wide"
+				class="pt-[160px] pb-[96px] md:pt-[211px] md:pb-30">
+				<div
+					class="grid gap-8 items-center lg:grid-cols-[minmax(0,1fr)_minmax(0,563px)]">
+					<div class="flex flex-col gap-10 items-start relative">
+						<div class="flex flex-col gap-10 items-start relative">
+							<!-- <div class="absolute hidden h-[14px] left-0 top-[160px] w-[443px] md:block" data-name="objects"> <Fragment set:html={KenyanBuyersSvgs.KenyanBuyersSvg02} /> </div> -->
+							<p
+								class={`${typeStyles.heroTitleLarge} not-italic relative text-green-500 w-full`}>
+								<span class="leading-tight"
+									>Good for margins,<br
+										aria-hidden="true"
+									/></span
+								>
+								<span class="leading-tight text-green-500"
+									>Good for farmers</span
+								>
+								<span class="leading-tight"
+									><br aria-hidden="true" />Good for climate</span
+								>
+							</p>
+							<p
+								class={`${typeStyles.bodyLead} font-medium italic relative text-orange-500 w-full max-w-[515px]`}>
+								"Faida bora, wakulima bora, mazingira bora."
+							</p>
+						</div>
+						<p
+							class={`${typeStyles.body} not-italic relative text-green-500 w-full max-w-[515px]`}>
+							Built with farmers at the centre, our solution
+							brings oddly good products to businesses, retailers,
+							schools, feeding programmes, and event companies.
+							Reliable quality, healthy margins, and less waste -
+							all in one smarter supply chain.
+						</p>
+						<p class="font-semibold text-green-500 w-full">
+							Try Farm to Feed today!
+						</p>
+					</div>
+					<div
+						class="flex flex-col items-center relative w-full max-w-[563px]">
+						<div class="bg-white relative rounded-[30px] w-full">
+							<div
+								aria-hidden="true"
+								class="absolute border border-[#f7f7f7] border-solid inset-0 pointer-events-none rounded-[30px]">
+							</div>
+							<div
+								class="flex flex-col gap-8 items-start p-6 md:p-[40px] relative size-full">
+								<div
+									class="flex flex-col gap-8 items-start relative w-full">
+									<p
+										class={`${typeStyles.cardTitle} font-medium not-italic relative text-[#0f251b] w-[210px]`}>
+										Buy from us
+									</p>
+									<p
+										class={`${typeStyles.body} not-italic relative text-green-500 w-full`}>
+										Fill out the form and our sales team
+										will contact you shortly.
+									</p>
+								</div>
+								<div
+									class="flex flex-col gap-6 items-start relative w-full">
+									{
+										buyerFormRows.map((row) => (
+											<div
+												class={`flex flex-col gap-4 items-start relative w-full ${row.length > 1 ? "sm:flex-row" : ""}`}
+												data-name="Inputs">
+												{row.map((field) => (
+													<div
+														class="flex flex-col gap-2 items-start relative w-full sm:flex-[1_0_0] sm:min-w-px"
+														data-name="Input">
+														<p
+															class={`${typeStyles.caption} not-italic relative text-[#0f251b] w-full`}>
+															{field.label}
+														</p>
+														<div
+															class={`bg-[#fbfafa] ${field.type === "select" ? "" : "h-12"} relative ${field.rounded ?? "rounded-[24px]"} w-full`}
+															data-name={
+																field.type ===
+																"select"
+																	? "Select"
+																	: "Text input"
+															}>
+															<div
+																aria-hidden="true"
+																class={`absolute border border-[#e6e6e6] border-solid inset-[-1px] pointer-events-none ${field.border ?? "rounded-[25px]"}`}
+															/>
+															<div class="flex flex-row items-center size-full">
+																<div
+																	class={`flex items-center p-[12px] relative size-full ${field.placeholder || field.icon ? "gap-2" : ""}`}>
+																	{field.icon &&
+																		field.type !==
+																			"select" && (
+																			<div
+																				class="overflow-clip relative size-6"
+																				data-name="credit_card">
+																				<div
+																					class="absolute left-[4px] size-[16px] top-[4px]"
+																					data-name="prime:envelope">
+																					<Fragment
+																						set:html={
+																							field.icon
+																						}
+																					/>
+																				</div>
+																			</div>
+																		)}
+																	{field.placeholder && (
+																		<p
+																			class={`flex-[1_0_0] ${typeStyles.caption} font-normal min-w-px not-italic relative ${field.type === "select" ? "text-green-500" : "text-[#808080]"}`}>
+																			{
+																				field.placeholder
+																			}
+																		</p>
+																	)}
+																	{field.icon &&
+																		field.type ===
+																			"select" && (
+																			<div
+																				class="overflow-clip relative size-6"
+																				data-name="keyboard_arrow_down">
+																				<div
+																					class="absolute inset-[35.51%_25.93%_36.66%_25.88%]"
+																					data-name="Vector">
+																					<Fragment
+																						set:html={
+																							field.icon
+																						}
+																					/>
+																				</div>
+																			</div>
+																		)}
+																</div>
+															</div>
+														</div>
+													</div>
+												))}
+											</div>
+										))
+									}
+									<Button
+										type="button"
+										size="md"
+										class="relative w-full text-[#eee]"
+										data-name="order">
+										Get in touch
+									</Button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</ContentContainer>
+		</section>
+		<section
+			class="bg-white min-h-[600px] md:min-h-[900px] overflow-clip relative w-full"
+			data-name="Wireframe - 11">
+			<div
+				class="absolute flex inset-[-13.58%_-0.63%_91.95%_-3.75%] items-center justify-center"
+				style="container-type:size">
+				<div class="flex-none h-[100cqw] rotate-90 w-[100cqh]">
+					<div class="relative size-full" data-name="Vector">
+						<Fragment
+							set:html={KenyanBuyersSvgs.KenyanBuyersSvg05}
+						/>
+					</div>
+				</div>
+			</div>
+			<ContentContainer
+				size="wide"
+				class="relative z-10 flex flex-col items-center gap-12 pt-[120px] pb-[96px] md:pt-[164px] md:pb-30">
+				<div
+					class="flex flex-col gap-16 items-center relative w-full max-w-7xl">
+					<div
+						class="flex flex-col gap-8 items-center max-w-[1052px] not-italic relative text-center w-full">
+						<p
+							class={`${typeStyles.sectionTitleLarge} relative text-[#0f251b] w-full`}>
+							Why choose Farm to Feed?
+						</p>
+						<p
+							class={`${typeStyles.body} relative text-green-500 w-full`}>
+							We are reshaping the food supply chain to benefit
+							everyone involved while protecting our planet.
+						</p>
+					</div>
+					<div
+						class="grid gap-8 relative w-full md:grid-cols-2 lg:grid-cols-3">
+						{
+							valueCards.map((card) => (
+								<div class="bg-[#fbfafa] relative rounded-[30px] w-full">
+									<div class="flex flex-col gap-[27px] items-start p-[40px] relative size-full">
+										<div class="flex flex-col gap-8 items-start justify-center relative">
+											<div
+												class="relative h-[64px] w-[65.697px]"
+												data-name="media">
+												<Fragment
+													set:html={card.icon}
+												/>
+												{card.accent && (
+													<div
+														class={card.accentClass}
+														data-name="accent">
+														<Fragment
+															set:html={
+																card.accent
+															}
+														/>
+													</div>
+												)}
+											</div>
+											<p
+												class={`${typeStyles.cardTitle} not-italic relative text-[#0f251b]`}>
+												{card.title}
+											</p>
+										</div>
+										<p
+											class={`${typeStyles.body} not-italic relative text-green-500 w-full`}>
+											{card.body}
+										</p>
+									</div>
+								</div>
+							))
+						}
+					</div>
+				</div>
+			</ContentContainer>
+		</section>
+		<section
+			class="bg-[#0f251b] min-h-[600px] md:min-h-[900px] lg:min-h-[1085px] overflow-clip relative w-full"
+			data-name="Wireframe - 51">
+			<div
+				class="absolute bottom-[814.78px] hidden h-[223.22px] items-center justify-center right-[-330.48px] w-[838.475px] lg:flex"
+				style="--transform-inner-width: 1185; --transform-inner-height: 21;">
+				<div class="-scale-y-100 flex-none rotate-[-93.75deg]">
+					<div
+						class="h-[829.172px] relative w-[169.318px]"
+						data-name="Vector">
+						<Fragment
+							set:html={KenyanBuyersSvgs.KenyanBuyersSvg17}
+						/>
+					</div>
+				</div>
+			</div>
+			<div
+				class="absolute bottom-[520.68px] hidden h-[169.318px] items-center justify-center left-[-548px] w-[829.172px] lg:flex"
+				style="--transform-inner-width: 1185; --transform-inner-height: 21;">
+				<div class="-rotate-90 flex-none">
+					<div
+						class="h-[829.172px] relative w-[169.318px]"
+						data-name="Vector">
+						<Fragment
+							set:html={KenyanBuyersSvgs.KenyanBuyersSvg18}
+						/>
+					</div>
+				</div>
+			</div>
+			<BorderTopKenyanBuyersSvg
+				class="absolute inset-x-0 top-0 w-full max-w-none pointer-events-none select-none"
+				fill="white"
+			/>
+			<ContentContainer size="wide" class="relative z-10">
+				<div
+					class="grid gap-12 pt-[140px] pb-[96px] md:pt-[200px] lg:grid-cols-2 lg:items-start lg:pt-[241px] lg:pb-30">
+					<div
+						class="flex flex-col gap-16 items-start relative w-full max-w-[624px]">
+						<p
+							class={`${typeStyles.sectionTitleLarge} not-italic relative text-[#f5e091] w-full`}>
+							Your One Stop Shop
+						</p>
+						<div class="flex flex-col gap-8 items-start relative">
+							{
+								oneStopShopItems.map((item, index) => (
+									<div class="flex gap-[15px] items-start relative w-full max-w-[535px]">
+										<div class="relative size-[56px]">
+											<Fragment set:html={item.icon} />
+											<p
+												class={`-translate-x-1/2 absolute ${typeStyles.body} font-semibold leading-normal left-1/2 not-italic text-[#eff6ef] text-center top-[calc(50%-6px)] whitespace-nowrap`}>
+												{index + 1}
+											</p>
+										</div>
+										<div class="flex flex-[1_0_0] flex-col gap-6 items-start min-w-px relative self-stretch">
+											<div class="flex flex-col gap-4 items-start leading-normal relative w-full">
+												<p
+													class={`${typeStyles.cardTitle} font-medium not-italic relative text-[#fbf3e9] w-full`}>
+													{item.title}
+												</p>
+												<p
+													class={`${typeStyles.serifLead} italic relative text-[#f5e091] w-full`}>
+													{item.subtitle}
+												</p>
+											</div>
+											<p
+												class={`${typeStyles.body} not-italic relative text-[#f6eef2] w-full`}>
+												{item.body}
+											</p>
+										</div>
+									</div>
+								))
+							}
+						</div>
+						<div
+							class="flex gap-8 items-start justify-center overflow-clip relative w-full"
+							data-name="Tab Horizontal">
+							<div
+								class="flex items-center justify-center relative self-stretch w-0"
+								style="container-type:size; --transform-inner-width: 1185; --transform-inner-height: 21;">
+								<div class="flex-none rotate-90 w-[100cqh]">
+									<div
+										class="h-0 relative w-full"
+										data-name="Border">
+										<div
+											class="absolute inset-[-2px_0_0_0]">
+											<Fragment
+												set:html={KenyanBuyersSvgs.KenyanBuyersSvg23}
+											/>
+										</div>
+									</div>
+								</div>
+							</div>
+							<p
+								class={`${typeStyles.bodyLead} leading-zero not-italic relative text-white w-full`}>
+								<span class="leading-copy text-yellow-300"
+									>For customer outside of Nairobi, <span
+										class="font-medium">Contact Us</span
+									> for full basket offering.
+								</span>
+							</p>
+						</div>
+					</div>
+					<div
+						class="flex flex-col items-end relative w-full max-w-[625px] lg:justify-self-end">
+						<div class="bg-white relative rounded-[30px] w-full">
+							<div
+								aria-hidden="true"
+								class="absolute border border-[#f7f7f7] border-solid inset-0 pointer-events-none rounded-[30px]">
+							</div>
+							<div
+								class="flex flex-col gap-[27px] items-start p-6 md:p-[40px] relative size-full">
+								<p
+									class={`flex-[1_0_0] ${typeStyles.cardTitle} font-medium min-w-px not-italic relative text-black`}>
+									Delivery Areas
+								</p>
+								<div
+									class="flex flex-col gap-16 h-[340px] items-start relative w-full md:h-[462px]"
+									data-name="Content">
+									<div
+										class="bg-white flex flex-[1_0_0] items-center justify-center min-h-px overflow-clip relative w-full"
+										data-name="Delivery locations">
+										<img
+											alt=""
+											aria-hidden="true"
+											class="max-h-full max-w-full object-contain"
+											src={deliveryLocationsIcon}
+										/>
+									</div>
+								</div>
+								<p
+									class="font-sans font-normal leading-zero not-italic relative text-green-500 text-[0px] tracking-body-lg w-full">
+									<span class="leading-copy text-xl"
+										>We deliver in & around
+									</span>
+									<span
+										class="font-sans font-medium leading-copy text-orange-500 text-xl"
+										>Nairobi</span
+									>
+									<span class="leading-copy text-xl">
+										and the
+									</span>
+									<span
+										class="font-sans font-medium leading-copy text-orange-500 text-xl"
+										>Maasai Mara.</span
+									>
+								</p>
+								<div
+									class="bg-[#fbf3e9] relative rounded-[16px] w-full">
+									<div
+										aria-hidden="true"
+										class="absolute border border-[#f7e6d4] border-solid inset-0 pointer-events-none rounded-[16px]">
+									</div>
+									<div
+										class="flex flex-col items-start p-[16px] relative size-full">
+										<div
+											class="flex flex-col gap-4 items-start relative w-full sm:flex-row sm:items-center">
+											<div
+												class="flex flex-[1_0_0] gap-2 items-center min-w-px relative">
+												<div
+													class="relative size-6"
+													data-name="prime:info-circle">
+													<Fragment
+														set:html={KenyanBuyersSvgs.KenyanBuyersSvg28}
+													/>
+												</div>
+												<p
+													class="flex-[1_0_0] font-sans font-normal italic leading-zero min-w-px relative text-[#0f251b] text-[0px] tracking-caption">
+													<span
+														class="leading-normal text-[#2b1a08] text-sm"
+														>We are always
+													</span>
+													<span
+														class="font-sans font-medium leading-normal text-orange-500 text-sm"
+														>expanding our reach!</span
+													>
+													<span
+														class="leading-normal text-[#2b1a08] text-sm">
+														Contact our sales team
+														to hear more.</span
+													>
+												</p>
+											</div>
+											<Button
+												href="/contact-us"
+												variant="secondary"
+												size="sm"
+												class="relative text-[#eee]"
+												data-name="order">
+												Contact Sales
+											</Button>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</ContentContainer>
+		</section>
+		<section
+			class="bg-white overflow-clip relative w-full"
+			data-name="Wireframe - 42">
+			<ContentContainer
+				size="wide"
+				class={`relative z-10 ${sectionSpacing.default}`}>
+				<div class="mx-auto max-w-148 text-center">
+					<p
+						class={`${typeStyles.sectionTitleLarge} mt-30 not-italic text-[#0f251b] w-full`}>
+						How does it work?
+					</p>
+					<p
+						class={`${typeStyles.body} mt-2 not-italic text-green-500 w-full`}>
+						Four simple steps to get fresh and sustainable products
+						delivered to you
+					</p>
+				</div>
+				<div class="mt-[56px] grid gap-8 sm:grid-cols-2 xl:hidden">
+					{
+						localBuyerHowItWorksSteps.map((step, index) => (
+							<div class="flex flex-col gap-6 items-center rounded-[24px] bg-white p-4 text-center">
+								<div class="relative h-[180px] w-[185px] ">
+									<img
+										alt=""
+										aria-hidden="true"
+										class="size-full object-contain"
+										src={step.icon}
+									/>
+								</div>
+								<div class="flex gap-4 items-start text-left w-full max-w-[280px]">
+									<div
+										class={`${typeStyles.body} flex size-10 items-center justify-center rounded-full font-medium leading-normal`}
+										style={`background-color: ${step.color}; color: ${step.textColor};`}>
+										{index + 1}
+									</div>
+									<div class="flex flex-col gap-[12px] items-start not-italic relative w-full">
+										<p
+											class={`${typeStyles.cardTitleSmall} leading-normal relative text-[#0f251b] tracking-card w-full`}>
+											{step.title}
+										</p>
+										<p
+											class={`${typeStyles.caption} relative text-green-500 w-full`}>
+											{step.body}
+										</p>
+									</div>
+								</div>
+							</div>
+						))
+					}
+				</div>
+				<div
+					class="relative mx-auto mt-[64px] hidden min-h-[540px] max-w-[1180px] xl:block">
+					<div class="relative min-h-[540px] w-full">
+						{
+							localBuyerHowItWorksSteps.map((step, index) => {
+								const layout =
+									localBuyerHowItWorksDesktopLayout[index];
+								return (
+									<article class="contents">
+										<div
+											class={`absolute ${layout.iconClass}`}
+											data-name="media">
+											<img
+												alt=""
+												aria-hidden="true"
+												class="size-full object-contain"
+												src={step.icon}
+											/>
+										</div>
+										<div
+											class={`absolute flex gap-4 items-start ${layout.textClass}`}>
+											<div
+												class={`${typeStyles.body} flex size-10 shrink-0 items-center justify-center rounded-full font-medium leading-normal`}
+												style={`background-color: ${step.color}; color: ${step.textColor};`}>
+												{index + 1}
+											</div>
+											<div
+												class={`flex flex-col gap-4 items-start not-italic relative w-full ${layout.copyClass}`}>
+												<p
+													class={`${typeStyles.cardTitleSmall} leading-normal relative text-[#0f251b] tracking-card w-full`}>
+													{step.title}
+												</p>
+												<p
+													class={`${typeStyles.caption} relative text-green-500 w-full`}>
+													{step.body}
+												</p>
+											</div>
+										</div>
+									</article>
+								);
+							})
+						}
+						<div class="pointer-events-none absolute inset-0">
+							<div
+								class="absolute left-[108px] top-[16px] h-[145.923px] w-[143.362px]">
+								<KenyanBuyersArrow1Svg class="size-full" />
+							</div>
+							<div
+								class="absolute left-[385px] top-[218px] h-[138.813px] w-[110.247px]">
+								<KenyanBuyersArrow2Svg class="size-full" />
+							</div>
+							<div
+								class="absolute right-80 top-40 h-[94.387px] w-[129.822px]">
+								<KenyanBuyersArrow3Svg class="size-full" />
+							</div>
+						</div>
+					</div>
+				</div>
+			</ContentContainer>
+			<BorderBottomKenyanBuyersSvg
+				class="absolute inset-x-0 top-0 w-full max-w-none pointer-events-none select-none"
+				fill="#0F251B"
+			/>
+		</section>
+		<section
+			class="bg-[#f3f5e7] min-h-[600px] md:min-h-[750px] overflow-clip relative rounded-bl-[40px] rounded-br-[40px] w-full"
+			data-name="Testimonial"
+			data-local-buyer-testimonials
+			data-testimonials={JSON.stringify(localBuyerTestimonials)}>
+			<ContentContainer
+				size="wide"
+				class={`relative z-10 flex flex-col items-center gap-[56px] md:gap-[80px] ${sectionSpacing.default}`}>
+				<p
+					class={`${typeStyles.sectionTitleLarge} not-italic text-[#0f251b] text-center w-full max-w-[800px]`}>
+					Hear from businesses making an impact with Farm to Feed.
+				</p>
+				<div
+					class="relative grid w-full justify-items-center gap-6 lg:mx-auto lg:w-fit lg:grid-cols-[auto_minmax(0,640px)_auto] lg:items-center lg:gap-10">
+					<button
+						aria-label="Show previous testimonial"
+						class="group rounded-[40px] bg-transparent border-0 p-0 transition-transform duration-200 hover:-translate-y-0.5 focus-visible:-translate-y-0.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#747c50]"
+						data-testimonial-previous
+						type="button">
+						<Fragment set:html={Order4} />
+					</button>
+					<div class="w-full max-w-[640px] justify-self-center">
+						<Fragment set:html={localBuyerTestimonialCardHtml} />
+					</div>
+					<button
+						aria-label="Show next testimonial"
+						class="group rounded-[40px] bg-transparent border-0 p-0 transition-transform duration-200 hover:-translate-y-0.5 focus-visible:-translate-y-0.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#747c50]"
+						data-testimonial-next
+						type="button">
+						<Fragment set:html={Order5} />
+					</button>
+				</div>
+			</ContentContainer>
+			<div
+				class="absolute hidden h-[137.947px] items-center justify-center left-[calc(75%+23.37px)] top-[231.07px] w-[206.385px] lg:flex"
+				style="--transform-inner-width: 1185; --transform-inner-height: 21;">
+				<div class="flex-none rotate-[-15.41deg]">
+					<div class="h-[91px] relative w-[189px]" data-name="Capa_1">
+						<Fragment
+							set:html={KenyanBuyersSvgs.KenyanBuyersSvg73}
+						/>
+					</div>
+				</div>
+			</div>
+			<div
+				class="absolute hidden h-[307.61px] items-center justify-center left-[31px] top-[160px] w-[332.171px] lg:flex"
+				style="--transform-inner-width: 1185; --transform-inner-height: 252;">
+				<div class="flex-none rotate-[38.46deg]">
+					<div
+						class="h-[151.494px] overflow-clip relative w-[303.868px]"
+						data-name="Capa_1">
+						<div
+							class="absolute contents inset-[46.94%_-0.01%_5.53%_67.34%]"
+							data-name="Group">
+							<div
+								class="absolute contents inset-[46.94%_-0.01%_5.53%_67.34%]"
+								data-name="Group">
+								<div
+									class="absolute inset-[46.94%_-0.01%_5.53%_67.34%]"
+									data-name="Vector">
+									<Fragment
+										set:html={KenyanBuyersSvgs.KenyanBuyersSvg74}
+									/>
+								</div>
+								<div
+									class="absolute contents inset-[46.94%_-0.01%_5.53%_67.34%]"
+									data-name="Clip path group">
+									<div
+										class="absolute inset-[48.28%_18.79%_8.68%_66.58%] mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-[-1.17px_-0.16px] mask-size-[122.51px_118.116px]"
+										style={`mask-image: url('${supplierStoryMask}');`}
+										data-name="Group">
+										<Fragment
+											set:html={KenyanBuyersSvgs.KenyanBuyersSvg75}
+										/>
+									</div>
+								</div>
+							</div>
+							<div
+								class="absolute inset-[53.61%_20.85%_13.05%_69.52%]"
+								data-name="Vector">
+								<div class="absolute inset-[-0.99%_-1.71%]">
+									<Fragment
+										set:html={KenyanBuyersSvgs.KenyanBuyersSvg76}
+									/>
+								</div>
+							</div>
+							<div
+								class="absolute inset-[57.31%_23.09%_17.53%_71.61%]"
+								data-name="Vector">
+								<div class="absolute inset-[-1.31%_-3.11%]">
+									<Fragment
+										set:html={KenyanBuyersSvgs.KenyanBuyersSvg77}
+									/>
+								</div>
+							</div>
+						</div>
+						<div
+							class="absolute inset-[39.79%_23.6%_0_58.17%]"
+							data-name="Group">
+							<Fragment
+								set:html={KenyanBuyersSvgs.KenyanBuyersSvg78}
+							/>
+						</div>
+						<div
+							class="absolute inset-[0_71.17%_39.23%_0]"
+							data-name="Vector">
+							<Fragment
+								set:html={KenyanBuyersSvgs.KenyanBuyersSvg79}
+							/>
+						</div>
+						<div
+							class="absolute inset-[45.69%_58.11%_38.2%_12.15%]"
+							data-name="Vector">
+							<Fragment
+								set:html={KenyanBuyersSvgs.KenyanBuyersSvg80}
+							/>
+						</div>
+						<div
+							class="absolute inset-[21.92%_56.03%_50.52%_14.04%]"
+							data-name="Vector">
+							<Fragment
+								set:html={KenyanBuyersSvgs.KenyanBuyersSvg81}
+							/>
+						</div>
+						<div
+							class="absolute inset-[22.12%_69.87%_48.92%_6.48%]"
+							data-name="Vector">
+							<Fragment
+								set:html={KenyanBuyersSvgs.KenyanBuyersSvg82}
+							/>
+						</div>
+						<div
+							class="absolute inset-[33.5%_62.34%_50.52%_16.54%]"
+							data-name="Vector">
+							<Fragment
+								set:html={KenyanBuyersSvgs.KenyanBuyersSvg83}
+							/>
+						</div>
+						<div
+							class="absolute inset-[30.28%_27.75%_11.86%_52.01%]"
+							data-name="Group">
+							<Fragment
+								set:html={KenyanBuyersSvgs.KenyanBuyersSvg84}
+							/>
+						</div>
+						<div
+							class="absolute inset-[34.94%_41.44%_7.36%_30.22%]"
+							data-name="Vector">
+							<Fragment
+								set:html={KenyanBuyersSvgs.KenyanBuyersSvg85}
+							/>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div
+				class="absolute hidden h-[858px] items-center justify-center left-[-2.92%] right-[-1.39%] top-[-767px] lg:flex"
+				style="container-type:size">
+				<div
+					class="-scale-x-100 flex-none h-[100cqw] rotate-90 w-[100cqh]">
+					<div class="relative size-full" data-name="Vector">
+						<Fragment
+							set:html={KenyanBuyersSvgs.KenyanBuyersSvg86}
+						/>
+					</div>
+				</div>
+			</div>
+			<div
+				class="absolute hidden h-[203.64px] items-center justify-center left-[128px] top-[561px] w-[245.05px] lg:flex"
+				style="--transform-inner-width: 1185; --transform-inner-height: 105;">
+				<div class="flex-none rotate-[34.14deg]">
+					<div
+						class="h-[83.796px] overflow-clip relative w-[239.258px]"
+						data-name="Capa_1">
+						<div
+							class="absolute inset-[6.94%_64.93%_13.37%_0.68%]"
+							data-name="Group">
+							<Fragment
+								set:html={KenyanBuyersSvgs.KenyanBuyersSvg87}
+							/>
+						</div>
+						<div
+							class="absolute inset-[5.45%_47.3%_7.78%_26.47%]"
+							data-name="Group">
+							<Fragment
+								set:html={KenyanBuyersSvgs.KenyanBuyersSvg88}
+							/>
+						</div>
+						<div
+							class="absolute inset-[0_28.06%_2.86%_40.72%]"
+							data-name="Group">
+							<Fragment
+								set:html={KenyanBuyersSvgs.KenyanBuyersSvg89}
+							/>
+						</div>
+						<div
+							class="absolute inset-[4.39%_13.86%_2.28%_57.71%]"
+							data-name="Group">
+							<Fragment
+								set:html={KenyanBuyersSvgs.KenyanBuyersSvg90}
+							/>
+						</div>
+						<div
+							class="absolute inset-[0_0.75%_24.42%_74.76%]"
+							data-name="Group">
+							<Fragment
+								set:html={KenyanBuyersSvgs.KenyanBuyersSvg91}
+							/>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+	</div>
 </Layout>
 <script>
-  const testimonialSections = document.querySelectorAll(
-    "[data-local-buyer-testimonials]",
-  );
-  testimonialSections.forEach((section) => {
-    const testimonials = JSON.parse(
-      section.getAttribute("data-testimonials") || "[]",
-    );
-    const quote = section.querySelector("[data-testimonial-quote]");
-    const name = section.querySelector("[data-testimonial-name]");
-    const company = section.querySelector("[data-testimonial-company]");
-    const previous = section.querySelector("[data-testimonial-previous]");
-    const next = section.querySelector("[data-testimonial-next]");
-    let index = 0;
-    let timer;
-    function render(nextIndex) {
-      if (!testimonials.length) return;
-      index = (nextIndex + testimonials.length) % testimonials.length;
-      const active = testimonials[index];
-      if (quote) quote.textContent = active.quote;
-      if (name) name.textContent = active.name;
-      if (company) company.textContent = active.company;
-    }
-    function restartAutoplay() {
-      window.clearInterval(timer);
-      timer = window.setInterval(() => render(index + 1), 3000);
-    }
-    previous?.addEventListener("click", () => {
-      render(index - 1);
-      restartAutoplay();
-    });
-    next?.addEventListener("click", () => {
-      render(index + 1);
-      restartAutoplay();
-    });
-    render(index);
-    restartAutoplay();
-  });
+	const testimonialSections = document.querySelectorAll(
+		"[data-local-buyer-testimonials]",
+	);
+	testimonialSections.forEach((section) => {
+		const testimonials = JSON.parse(
+			section.getAttribute("data-testimonials") || "[]",
+		);
+		const quote = section.querySelector("[data-testimonial-quote]");
+		const name = section.querySelector("[data-testimonial-name]");
+		const company = section.querySelector("[data-testimonial-company]");
+		const previous = section.querySelector("[data-testimonial-previous]");
+		const next = section.querySelector("[data-testimonial-next]");
+		let index = 0;
+		let timer;
+		function render(nextIndex) {
+			if (!testimonials.length) return;
+			index = (nextIndex + testimonials.length) % testimonials.length;
+			const active = testimonials[index];
+			if (quote) quote.textContent = active.quote;
+			if (name) name.textContent = active.name;
+			if (company) company.textContent = active.company;
+		}
+		function restartAutoplay() {
+			window.clearInterval(timer);
+			timer = window.setInterval(() => render(index + 1), 3000);
+		}
+		previous?.addEventListener("click", () => {
+			render(index - 1);
+			restartAutoplay();
+		});
+		next?.addEventListener("click", () => {
+			render(index + 1);
+			restartAutoplay();
+		});
+		render(index);
+		restartAutoplay();
+	});
 </script>

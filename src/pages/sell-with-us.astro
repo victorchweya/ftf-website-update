@@ -2,6 +2,10 @@
 import Layout from "../layouts/Layout.astro";
 import Button from "../components/Button.astro";
 import ContentContainer from "../components/layout/ContentContainer.astro";
+import KenyanBuyersArrow1Svg from "../components/figma/KenyanBuyersArrow1Svg.astro";
+import KenyanBuyersArrow2Svg from "../components/figma/KenyanBuyersArrow2Svg.astro";
+import KenyanBuyersArrow3Svg from "../components/figma/KenyanBuyersArrow3Svg.astro";
+import BorderBottomKenyanBuyersSvg from "../components/figma/BorderBottomKenyanBuyersSvg.astro";
 import * as SellWithUsSvgs from "../lib/figmaMarkup/sellWithUsSvgs";
 import {
 	Frame26,
@@ -21,6 +25,10 @@ import BottomLandscapeSvg from "../components/figma/BottomLandscapeSvg.astro";
 import BackgroundBottomImpactSvg from "../components/figma/BackgroundBottomImpactSvg.astro";
 
 import { sectionSpacing, typeStyles } from "../lib/figmaStyles";
+import browseIcon from "../assets/figma/kenyan-buyers/browse.svg?url";
+import connectIcon from "../assets/figma/kenyan-buyers/connect.svg?url";
+import enjoyIcon from "../assets/figma/kenyan-buyers/enjoy.svg?url";
+import orderIcon from "../assets/figma/kenyan-buyers/order.svg?url";
 const offeringRows = [
 	[
 		{
@@ -74,6 +82,54 @@ const supplierStoryClientData = supplierStories.map(({ id, StoryCard }) => ({
 	id,
 	html: StoryCard,
 }));
+const localBuyerHowItWorksSteps = [
+	{
+		body: "Reach out to our Sourcing team and download our mobile app to become a Farm to Feed supplier.",
+		color: "#8C98EE",
+		icon: connectIcon,
+		textColor: "#e6e6e6",
+	},
+	{
+		body: "We source your full fresh harvest, from grade 1 to imperfect produce. All orders are placed in our mobile app for full transparency.",
+		color: "#A35380",
+		icon: browseIcon,
+		textColor: "#e6e6e6",
+	},
+	{
+		body: "All produce is received, sorted and graded in our warehouse. You can track the progress real time in your app.",
+		color: "#85A687",
+		icon: orderIcon,
+		textColor: "#e6e6e6",
+	},
+	{
+		body: "Your payment is done within three days of receiving the produce. From the app, you can download your statement.",
+		color: "#EBC194",
+		icon: enjoyIcon,
+		textColor: "#2b1a08",
+	},
+];
+const localBuyerHowItWorksDesktopLayout = [
+	{
+		copyClass: "max-w-[205px]",
+		iconClass: "left-[0%] top-[128px] h-[200px] w-[206px]",
+		textClass: "left-[0%] top-[352px] w-[330px]",
+	},
+	{
+		copyClass: "max-w-[220px]",
+		iconClass: "left-[260px] top-0 h-[200px] w-[205px]",
+		textClass: "left-[500px] top-[0px] w-[320px]",
+	},
+	{
+		copyClass: "max-w-[245px]",
+		iconClass: "left-[508px] top-[222px] h-[202px] w-[207px]",
+		textClass: "left-[580px] top-[444px] w-[360px]",
+	},
+	{
+		copyClass: "max-w-[255px]",
+		iconClass: "right-[78px] top-[30px] h-[200px] w-[205px]",
+		textClass: "right-[0px] top-[252px] w-[300px]",
+	},
+];
 const transformSizeStyle =
 	"--transform-inner-width: 1185; --transform-inner-height: 21;";
 ---
@@ -203,21 +259,104 @@ const transformSizeStyle =
 			</ContentContainer>
 		</div>
 		<BackgroundBottomImpactSvg className="w-full bg-white" fill="#f3f5e7" />
-		<div
-			class="bg-white overflow-clip relative w-full"
-			data-name="Wireframe - 42">
-			<ContentContainer size="wide" class="pb-24">
-				<div class="relative lg:min-h-[585px]">
-					<div
-						class="flex flex-col items-center max-w-[1052px] w-full mx-auto lg:-translate-x-1/2 lg:absolute lg:left-1/2 lg:top-[75px]">
-						<p
-							class={`${typeStyles.heroTitle} not-italic relative text-[#0f251b] text-center w-full`}>
-							How Does it Work
-						</p>
+		<section class="bg-white overflow-clip relative w-full">
+			<ContentContainer size="wide" class="relative z-10 pb-24">
+				<div class="mx-auto max-w-148 text-center">
+					<p
+						class={`${typeStyles.sectionTitleLarge} mt-30 not-italic text-[#0f251b] w-full`}>
+						How does it work?
+					</p>
+					<p
+						class={`${typeStyles.body} mt-2 not-italic text-green-500 w-full`}>
+						From joining as a supplier to getting paid, here’s how
+						farmers sell their harvest with Farm to Feed.
+					</p>
+				</div>
+				<div class="mt-[56px] grid gap-8 sm:grid-cols-2 xl:hidden">
+					{
+						localBuyerHowItWorksSteps.map((step, index) => (
+							<div class="flex flex-col gap-6 items-center rounded-[24px] bg-white p-4 text-center">
+								<div class="relative h-[180px] w-[185px] ">
+									<img
+										alt=""
+										aria-hidden="true"
+										class="size-full object-contain"
+										src={step.icon}
+									/>
+								</div>
+								<div class="flex gap-4 items-start text-left w-full max-w-[280px]">
+									<div
+										class={`${typeStyles.body} flex size-10 items-center justify-center rounded-full font-medium leading-normal`}
+										style={`background-color: ${step.color}; color: ${step.textColor};`}>
+										{index + 1}
+									</div>
+									<div class="flex flex-col gap-[12px] items-start not-italic relative w-full">
+										<p
+											class={`${typeStyles.caption} relative text-green-500 w-full`}>
+											{step.body}
+										</p>
+									</div>
+								</div>
+							</div>
+						))
+					}
+				</div>
+				<div
+					class="relative mx-auto mt-[64px] hidden min-h-[540px] max-w-[1180px] xl:block">
+					<div class="relative min-h-[540px] w-full">
+						{
+							localBuyerHowItWorksSteps.map((step, index) => {
+								const layout =
+									localBuyerHowItWorksDesktopLayout[index];
+								return (
+									<article class="contents">
+										<div
+											class={`absolute ${layout.iconClass}`}
+											data-name="media">
+											<img
+												alt=""
+												aria-hidden="true"
+												class="size-full object-contain"
+												src={step.icon}
+											/>
+										</div>
+										<div
+											class={`absolute flex gap-4 items-start ${layout.textClass}`}>
+											<div
+												class={`${typeStyles.body} flex size-10 shrink-0 items-center justify-center rounded-full font-medium leading-normal`}
+												style={`background-color: ${step.color}; color: ${step.textColor};`}>
+												{index + 1}
+											</div>
+											<div
+												class={`flex flex-col gap-4 items-start not-italic relative w-full ${layout.copyClass}`}>
+												<p
+													class={`${typeStyles.caption} relative text-green-500 w-full`}>
+													{step.body}
+												</p>
+											</div>
+										</div>
+									</article>
+								);
+							})
+						}
+						<div class="pointer-events-none absolute inset-0">
+							<div
+								class="absolute left-[108px] top-[16px] h-[145.923px] w-[143.362px]">
+								<KenyanBuyersArrow1Svg class="size-full" />
+							</div>
+							<div
+								class="absolute left-[385px] top-[218px] h-[138.813px] w-[110.247px]">
+								<KenyanBuyersArrow2Svg class="size-full" />
+							</div>
+							<div
+								class="absolute right-80 top-40 h-[94.387px] w-[129.822px]">
+								<KenyanBuyersArrow3Svg class="size-full" />
+							</div>
+						</div>
 					</div>
 				</div>
 			</ContentContainer>
-		</div>
+		</section>
 		<div
 			class="bg-[#f3f5e7] min-h-[840px] overflow-clip relative w-full"
 			data-name="Testimonial"
