@@ -2,10 +2,11 @@
 import { getCollection } from "astro:content";
 import Layout from "../layouts/Layout.astro";
 import SectionShell from "../components/layout/SectionShell.astro";
+import OptimizedImage from "../components/OptimizedImage.astro";
 import { sectionSpacing, typeStyles } from "../lib/figmaStyles";
-import newsImpactReportImage from "../assets/figma/shared/news/impact-report.png?url";
-import newsStartupAwardImage from "../assets/figma/shared/news/startup-award.png?url";
-import newsOperationsRegionImage from "../assets/figma/shared/news/operations-region.png?url";
+import newsImpactReportImage from "../assets/figma/shared/news/impact-report.png";
+import newsStartupAwardImage from "../assets/figma/shared/news/startup-award.png";
+import newsOperationsRegionImage from "../assets/figma/shared/news/operations-region.png";
 import * as HomeSvgs from "../lib/figmaMarkup/home";
 const dateFormatter = new Intl.DateTimeFormat("en-GB", {
   day: "2-digit",
@@ -72,10 +73,12 @@ function isExternalUrl(href?: string) {
           displayNewsEvents.map((item) => (
             <article class="flex flex-col items-start min-w-px overflow-clip relative rounded-[32px]">
               <div class="aspect-[405/270] relative w-full">
-                <img
+                <OptimizedImage
                   alt={item.title}
                   class="absolute inset-0 max-w-none object-cover pointer-events-none size-full"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 405px"
                   src={item.image}
+                  widths={[320, 405, 640, 810]}
                 />
               </div>
               <div class="flex flex-col gap-6 items-start py-6 md:py-[32px] relative w-full">

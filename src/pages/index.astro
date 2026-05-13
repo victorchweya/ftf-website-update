@@ -3,14 +3,15 @@ import { getCollection } from "astro:content";
 import Layout from "../layouts/Layout.astro";
 import Button from "../components/Button.astro";
 import ContentContainer from "../components/layout/ContentContainer.astro";
-import heroHomeImage from "../assets/figma/home/hero.png?url";
+import OptimizedImage from "../components/OptimizedImage.astro";
+import heroHomeImage from "../assets/figma/home/hero.png";
 import supplyChainImage from "../assets/figma/home/supply-chain-diagram.svg?url";
-import farmerMarketImage from "../assets/figma/shared/supply-chain/farmer-market.png?url";
-import businessSourcingImage from "../assets/figma/home/farm-to-feed-produce.png?url";
-import foodSystemsImage from "../assets/figma/home/better-food-systems-everyone.png?url";
-import newsImpactReportImage from "../assets/figma/shared/news/impact-report.png?url";
-import newsStartupAwardImage from "../assets/figma/shared/news/startup-award.png?url";
-import newsOperationsRegionImage from "../assets/figma/shared/news/operations-region.png?url";
+import farmerMarketImage from "../assets/figma/shared/supply-chain/farmer-market.png";
+import businessSourcingImage from "../assets/figma/home/farm-to-feed-produce.png";
+import foodSystemsImage from "../assets/figma/home/better-food-systems-everyone.png";
+import newsImpactReportImage from "../assets/figma/shared/news/impact-report.png";
+import newsStartupAwardImage from "../assets/figma/shared/news/startup-award.png";
+import newsOperationsRegionImage from "../assets/figma/shared/news/operations-region.png";
 import BackgroundBottomSvg from "../components/figma/BackgroundBottomSvg.astro";
 import * as HomeSvgs from "../lib/figmaMarkup/home";
 import { sectionSpacing, typeStyles } from "../lib/figmaStyles";
@@ -165,12 +166,16 @@ function isExternalUrl(href?: string) {
 			<div
 				class="absolute inset-0 pointer-events-none select-none"
 				data-name="Hero artwork">
-				<img
+				<OptimizedImage
 					alt=""
 					aria-hidden="true"
 					class="block size-full object-cover object-center"
 					fetchpriority="high"
+					loading="eager"
+					quality={88}
+					sizes="100vw"
 					src={heroHomeImage}
+					widths={[640, 960, 1280, 1600, 1920]}
 				/>
 			</div>
 			<ContentContainer
@@ -325,11 +330,13 @@ function isExternalUrl(href?: string) {
 											{" "}
 											{benefit.description}{" "}
 										</p>{" "}
-										<img
+										<OptimizedImage
 											alt={benefit.imageAlt}
 											class="mt-8 block aspect-[517/552] w-full object-contain sm:mx-auto sm:w-[80%] lg:hidden"
 											height="552"
+											sizes="(max-width: 640px) 100vw, 80vw"
 											src={benefit.image}
+											widths={[320, 517, 768]}
 											width="517"
 										/>{" "}
 									</article>
@@ -344,7 +351,7 @@ function isExternalUrl(href?: string) {
 							supplyChainBenefits.map((benefit, index) => {
 								const isActive = index === 0;
 								return (
-									<img
+									<OptimizedImage
 										alt={isActive ? benefit.imageAlt : ""}
 										aria-hidden={
 											isActive ? "false" : "true"
@@ -354,7 +361,9 @@ function isExternalUrl(href?: string) {
 										data-supply-image
 										data-supply-index={index}
 										height="552"
+										sizes="517px"
 										src={benefit.image}
+										widths={[320, 517]}
 										width="517"
 									/>
 								);
@@ -492,10 +501,12 @@ function isExternalUrl(href?: string) {
 							displayNewsItems.map((item) => (
 								<article class="flex flex-col items-start min-w-px overflow-clip rounded-4xl">
 									<div class="aspect-405/270 relative w-full">
-										<img
+										<OptimizedImage
 											alt={item.title}
 											class="absolute inset-0 max-w-none object-cover pointer-events-none size-full"
+											sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 405px"
 											src={item.image}
+											widths={[320, 405, 640, 810]}
 										/>
 									</div>
 									<div class="flex flex-col gap-6 items-start py-6 md:py-[32px] w-full">

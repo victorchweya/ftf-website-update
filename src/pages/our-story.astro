@@ -1,11 +1,12 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import ContentContainer from "../components/layout/ContentContainer.astro";
+import OptimizedImage from "../components/OptimizedImage.astro";
 import * as OurStorySvgs from "../lib/figmaMarkup/ourStorySvgs";
 import { typeStyles } from "../lib/figmaStyles";
-import storyIllustrationOneUrl from "../assets/figma/our-story/story-illustration-1.png?url";
-import storyIllustrationTwoUrl from "../assets/figma/our-story/story-illustration-2.png?url";
-import ourStoryDividerUrl from "../assets/figma/our-story/divider.png?url";
+import storyIllustrationOneUrl from "../assets/figma/our-story/story-illustration-1.png";
+import storyIllustrationTwoUrl from "../assets/figma/our-story/story-illustration-2.png";
+import ourStoryDividerUrl from "../assets/figma/our-story/divider.png";
 import ourStoryHeroBottomUrl from "../assets/figma/our-story/hero-bottom.svg?url";
 import BackgroundBottomImpactSvg from "../components/figma/BackgroundBottomImpactSvg.astro";
 const storySlides = [
@@ -242,11 +243,13 @@ const activeStoryIndex = 0;
 				</div>
 			</ContentContainer>
 			<div class="relative" data-name="our-story-divider">
-				<img
+				<OptimizedImage
 					alt=""
 					aria-hidden="true"
 					class="w-full h-full object-cover"
+					sizes="100vw"
 					src={ourStoryDividerUrl}
+					widths={[640, 960, 1280, 1600]}
 				/>
 				<div
 					class="absolute hidden h-[198px] right-50 top-0 w-[203.25px] md:block"
@@ -373,11 +376,13 @@ const activeStoryIndex = 0;
 			<div
 				class="-translate-x-1/2 -translate-y-1/2 absolute hidden h-[601px] left-[33.5px] top-[calc(20%+266px)] w-[441px] lg:block"
 				data-name="Vector">
-				<img
+				<OptimizedImage
 					alt=""
 					class="absolute block inset-0 max-w-none size-full"
 					height="601"
+					sizes="441px"
 					src={storyIllustrationOneUrl}
+					widths={[300, 441]}
 					width="441"
 				/>
 			</div>
@@ -387,11 +392,13 @@ const activeStoryIndex = 0;
 					<div
 						class="h-[601px] relative w-[441px]"
 						data-name="Vector">
-						<img
+						<OptimizedImage
 							alt=""
 							class="absolute block inset-0 max-w-none size-full"
 							height="601"
+							sizes="441px"
 							src={storyIllustrationTwoUrl}
+							widths={[300, 441]}
 							width="441"
 						/>
 					</div>
