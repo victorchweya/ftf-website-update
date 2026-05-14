@@ -7,9 +7,12 @@ import KenyanBuyersArrow2Svg from "../components/figma/KenyanBuyersArrow2Svg.ast
 import KenyanBuyersArrow3Svg from "../components/figma/KenyanBuyersArrow3Svg.astro";
 import BorderBottomKenyanBuyersSvg from "../components/figma/BorderBottomKenyanBuyersSvg.astro";
 import BorderTopKenyanBuyersSvg from "../components/figma/BorderTopKenyanBuyersSvg.astro";
+import KenyanBuyersTestimonialBackgroundSvg from "../components/figma/KenyanBuyersTestimonialBackgroundSvg.astro";
+import KenyanBuyersTestimonialBeansSvg from "../components/figma/KenyanBuyersTestimonialBeansSvg.astro";
+import KenyanBuyersTestimonialProduceSvg from "../components/figma/KenyanBuyersTestimonialProduceSvg.astro";
+import KenyanBuyersTestimonialProductBundleSvg from "../components/figma/KenyanBuyersTestimonialProductBundleSvg.astro";
+import LocalBuyerTestimonialCard from "../components/LocalBuyerTestimonialCard.astro";
 import * as KenyanBuyersSvgs from "../lib/figmaMarkup/kenyanBuyersSvgs";
-import { Frame6, Order4, Order5 } from "../lib/figmaMarkup/buyFromUsLocal";
-import { supplierStoryMask } from "../lib/figmaMarkup/sellWithUsMask";
 import { sectionSpacing, typeStyles } from "../lib/figmaStyles";
 import browseIcon from "../assets/figma/kenyan-buyers/browse.svg?url";
 import connectIcon from "../assets/figma/kenyan-buyers/connect.svg?url";
@@ -176,22 +179,6 @@ const localBuyerTestimonials = [
 		quote: "We can source the volumes we need without compromising on freshness, price, or the impact we want our business to make.",
 	},
 ];
-const testimonialQuoteClass =
-	'class="font-sans font-normal leading-[1.68] not-italic relative text-[16px] text-black tracking-[0.48px] w-full"';
-const testimonialNameClass = 'class="font-sans font-semibold relative w-full"';
-const testimonialCompanyClass = 'class="font-sans font-normal relative w-full"';
-const localBuyerTestimonialCardHtml = Frame6.replace(
-	`${testimonialQuoteClass}> Farm to Feed has been supplying us with amazing veggies. We get an assortment each week and we love working with them on saving food where we can.`,
-	`${testimonialQuoteClass} data-testimonial-quote>${localBuyerTestimonials[0].quote}`,
-)
-	.replace(
-		`${testimonialNameClass}>Delia Sterling`,
-		`${testimonialNameClass} data-testimonial-name>${localBuyerTestimonials[0].name}`,
-	)
-	.replace(
-		`${testimonialCompanyClass}>Brown&#x27;s food company`,
-		`${testimonialCompanyClass} data-testimonial-company>${localBuyerTestimonials[0].company}`,
-	);
 ---
 
 <Layout title="Kenyan Buyers">
@@ -724,11 +711,10 @@ const localBuyerTestimonialCardHtml = Frame6.replace(
 		<section
 			class="bg-[#f3f5e7] min-h-[600px] md:min-h-[750px] overflow-clip relative rounded-bl-[40px] rounded-br-[40px] w-full"
 			data-name="Testimonial"
-			data-local-buyer-testimonials
-			data-testimonials={JSON.stringify(localBuyerTestimonials)}>
+			data-local-buyer-testimonials>
 			<ContentContainer
 				size="wide"
-				class={`relative z-10 flex flex-col items-center gap-[56px] md:gap-[80px] ${sectionSpacing.default}`}>
+				class="py-54 relative z-10 flex flex-col items-center gap-[56px] md:gap-[80px]">
 				<p
 					class={`${typeStyles.sectionTitleLarge} not-italic text-[#0f251b] text-center w-full max-w-[800px]`}>
 					Hear from businesses making an impact with Farm to Feed.
@@ -740,17 +726,101 @@ const localBuyerTestimonialCardHtml = Frame6.replace(
 						class="group rounded-[40px] bg-transparent border-0 p-0 transition-transform duration-200 hover:-translate-y-0.5 focus-visible:-translate-y-0.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#747c50]"
 						data-testimonial-previous
 						type="button">
-						<Fragment set:html={Order4} />
+						<div
+							class="content-stretch flex items-start p-[12px] relative rounded-[40px] shrink-0 transition-colors duration-200 group-hover:bg-white/60 group-focus-visible:bg-white/60"
+							data-name="order">
+							<div
+								aria-hidden="true"
+								class="absolute border border-[#747c50] border-solid inset-0 pointer-events-none rounded-[40px] transition-colors duration-200 group-hover:border-[#0f251b] group-focus-visible:border-[#0f251b]">
+							</div>
+							<div
+								class="overflow-clip relative shrink-0 size-[24px]"
+								data-name="arrow-left">
+								<div
+									class="absolute inset-[20.83%]"
+									data-name="Icon">
+									<div class="absolute inset-[-7.14%]">
+										<svg
+											aria-hidden="true"
+											class="block size-full"
+											fill="none"
+											preserveAspectRatio="none"
+											viewBox="0 0 16 16">
+											<path
+												class="transition-colors duration-200 group-hover:stroke-[#0f251b] group-focus-visible:stroke-[#0f251b]"
+												d="M15 8H1M8 1L1 8L8 15"
+												stroke="var(--stroke-0, #747C50)"
+												stroke-linecap="round"
+												stroke-linejoin="round"
+												stroke-width="2">
+											</path>
+										</svg>
+									</div>
+								</div>
+							</div>
+						</div>
 					</button>
 					<div class="w-full max-w-[640px] justify-self-center">
-						<Fragment set:html={localBuyerTestimonialCardHtml} />
+						<div
+							class="swiper w-full !overflow-visible"
+							data-local-buyer-testimonial-swiper>
+							<div class="swiper-wrapper">
+								{
+									localBuyerTestimonials.map(
+										(testimonial) => (
+											<div class="swiper-slide !h-auto">
+												<LocalBuyerTestimonialCard
+													company={
+														testimonial.company
+													}
+													name={testimonial.name}
+													quote={testimonial.quote}
+												/>
+											</div>
+										),
+									)
+								}
+							</div>
+						</div>
 					</div>
 					<button
 						aria-label="Show next testimonial"
 						class="group rounded-[40px] bg-transparent border-0 p-0 transition-transform duration-200 hover:-translate-y-0.5 focus-visible:-translate-y-0.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#747c50]"
 						data-testimonial-next
 						type="button">
-						<Fragment set:html={Order5} />
+						<div
+							class="content-stretch flex items-start p-[12px] relative rounded-[40px] shrink-0 transition-colors duration-200 group-hover:bg-white/60 group-focus-visible:bg-white/60"
+							data-name="order">
+							<div
+								aria-hidden="true"
+								class="absolute border border-[#747c50] border-solid inset-0 pointer-events-none rounded-[40px] transition-colors duration-200 group-hover:border-[#0f251b] group-focus-visible:border-[#0f251b]">
+							</div>
+							<div
+								class="overflow-clip relative shrink-0 size-[24px]"
+								data-name="arrow-right">
+								<div
+									class="absolute inset-[20.83%]"
+									data-name="Icon">
+									<div class="absolute inset-[-7.14%]">
+										<svg
+											aria-hidden="true"
+											class="block size-full"
+											fill="none"
+											preserveAspectRatio="none"
+											viewBox="0 0 16 16">
+											<path
+												class="transition-colors duration-200 group-hover:stroke-[#0f251b] group-focus-visible:stroke-[#0f251b]"
+												d="M1 8H15M8 15L15 8L8 1"
+												stroke="var(--stroke-0, #747C50)"
+												stroke-linecap="round"
+												stroke-linejoin="round"
+												stroke-width="2">
+											</path>
+										</svg>
+									</div>
+								</div>
+							</div>
+						</div>
 					</button>
 				</div>
 			</ContentContainer>
@@ -759,8 +829,8 @@ const localBuyerTestimonialCardHtml = Frame6.replace(
 				style="--transform-inner-width: 1185; --transform-inner-height: 21;">
 				<div class="flex-none rotate-[-15.41deg]">
 					<div class="h-[91px] relative w-[189px]" data-name="Capa_1">
-						<Fragment
-							set:html={KenyanBuyersSvgs.KenyanBuyersSvg73}
+						<KenyanBuyersTestimonialBeansSvg
+							class="absolute block inset-0 size-full"
 						/>
 					</div>
 				</div>
@@ -769,111 +839,9 @@ const localBuyerTestimonialCardHtml = Frame6.replace(
 				class="absolute hidden h-[307.61px] items-center justify-center left-[31px] top-[160px] w-[332.171px] lg:flex"
 				style="--transform-inner-width: 1185; --transform-inner-height: 252;">
 				<div class="flex-none rotate-[38.46deg]">
-					<div
-						class="h-[151.494px] overflow-clip relative w-[303.868px]"
-						data-name="Capa_1">
-						<div
-							class="absolute contents inset-[46.94%_-0.01%_5.53%_67.34%]"
-							data-name="Group">
-							<div
-								class="absolute contents inset-[46.94%_-0.01%_5.53%_67.34%]"
-								data-name="Group">
-								<div
-									class="absolute inset-[46.94%_-0.01%_5.53%_67.34%]"
-									data-name="Vector">
-									<Fragment
-										set:html={KenyanBuyersSvgs.KenyanBuyersSvg74}
-									/>
-								</div>
-								<div
-									class="absolute contents inset-[46.94%_-0.01%_5.53%_67.34%]"
-									data-name="Clip path group">
-									<div
-										class="absolute inset-[48.28%_18.79%_8.68%_66.58%] mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-[-1.17px_-0.16px] mask-size-[122.51px_118.116px]"
-										style={`mask-image: url('${supplierStoryMask}');`}
-										data-name="Group">
-										<Fragment
-											set:html={KenyanBuyersSvgs.KenyanBuyersSvg75}
-										/>
-									</div>
-								</div>
-							</div>
-							<div
-								class="absolute inset-[53.61%_20.85%_13.05%_69.52%]"
-								data-name="Vector">
-								<div class="absolute inset-[-0.99%_-1.71%]">
-									<Fragment
-										set:html={KenyanBuyersSvgs.KenyanBuyersSvg76}
-									/>
-								</div>
-							</div>
-							<div
-								class="absolute inset-[57.31%_23.09%_17.53%_71.61%]"
-								data-name="Vector">
-								<div class="absolute inset-[-1.31%_-3.11%]">
-									<Fragment
-										set:html={KenyanBuyersSvgs.KenyanBuyersSvg77}
-									/>
-								</div>
-							</div>
-						</div>
-						<div
-							class="absolute inset-[39.79%_23.6%_0_58.17%]"
-							data-name="Group">
-							<Fragment
-								set:html={KenyanBuyersSvgs.KenyanBuyersSvg78}
-							/>
-						</div>
-						<div
-							class="absolute inset-[0_71.17%_39.23%_0]"
-							data-name="Vector">
-							<Fragment
-								set:html={KenyanBuyersSvgs.KenyanBuyersSvg79}
-							/>
-						</div>
-						<div
-							class="absolute inset-[45.69%_58.11%_38.2%_12.15%]"
-							data-name="Vector">
-							<Fragment
-								set:html={KenyanBuyersSvgs.KenyanBuyersSvg80}
-							/>
-						</div>
-						<div
-							class="absolute inset-[21.92%_56.03%_50.52%_14.04%]"
-							data-name="Vector">
-							<Fragment
-								set:html={KenyanBuyersSvgs.KenyanBuyersSvg81}
-							/>
-						</div>
-						<div
-							class="absolute inset-[22.12%_69.87%_48.92%_6.48%]"
-							data-name="Vector">
-							<Fragment
-								set:html={KenyanBuyersSvgs.KenyanBuyersSvg82}
-							/>
-						</div>
-						<div
-							class="absolute inset-[33.5%_62.34%_50.52%_16.54%]"
-							data-name="Vector">
-							<Fragment
-								set:html={KenyanBuyersSvgs.KenyanBuyersSvg83}
-							/>
-						</div>
-						<div
-							class="absolute inset-[30.28%_27.75%_11.86%_52.01%]"
-							data-name="Group">
-							<Fragment
-								set:html={KenyanBuyersSvgs.KenyanBuyersSvg84}
-							/>
-						</div>
-						<div
-							class="absolute inset-[34.94%_41.44%_7.36%_30.22%]"
-							data-name="Vector">
-							<Fragment
-								set:html={KenyanBuyersSvgs.KenyanBuyersSvg85}
-							/>
-						</div>
-					</div>
+					<KenyanBuyersTestimonialProduceSvg
+						class="h-[151.494px] overflow-clip w-[303.868px]"
+					/>
 				</div>
 			</div>
 			<div
@@ -882,8 +850,8 @@ const localBuyerTestimonialCardHtml = Frame6.replace(
 				<div
 					class="-scale-x-100 flex-none h-[100cqw] rotate-90 w-[100cqh]">
 					<div class="relative size-full" data-name="Vector">
-						<Fragment
-							set:html={KenyanBuyersSvgs.KenyanBuyersSvg86}
+						<KenyanBuyersTestimonialBackgroundSvg
+							class="absolute block inset-0 size-full"
 						/>
 					</div>
 				</div>
@@ -892,86 +860,14 @@ const localBuyerTestimonialCardHtml = Frame6.replace(
 				class="absolute hidden h-[203.64px] items-center justify-center left-[128px] top-[561px] w-[245.05px] lg:flex"
 				style="--transform-inner-width: 1185; --transform-inner-height: 105;">
 				<div class="flex-none rotate-[34.14deg]">
-					<div
-						class="h-[83.796px] overflow-clip relative w-[239.258px]"
-						data-name="Capa_1">
-						<div
-							class="absolute inset-[6.94%_64.93%_13.37%_0.68%]"
-							data-name="Group">
-							<Fragment
-								set:html={KenyanBuyersSvgs.KenyanBuyersSvg87}
-							/>
-						</div>
-						<div
-							class="absolute inset-[5.45%_47.3%_7.78%_26.47%]"
-							data-name="Group">
-							<Fragment
-								set:html={KenyanBuyersSvgs.KenyanBuyersSvg88}
-							/>
-						</div>
-						<div
-							class="absolute inset-[0_28.06%_2.86%_40.72%]"
-							data-name="Group">
-							<Fragment
-								set:html={KenyanBuyersSvgs.KenyanBuyersSvg89}
-							/>
-						</div>
-						<div
-							class="absolute inset-[4.39%_13.86%_2.28%_57.71%]"
-							data-name="Group">
-							<Fragment
-								set:html={KenyanBuyersSvgs.KenyanBuyersSvg90}
-							/>
-						</div>
-						<div
-							class="absolute inset-[0_0.75%_24.42%_74.76%]"
-							data-name="Group">
-							<Fragment
-								set:html={KenyanBuyersSvgs.KenyanBuyersSvg91}
-							/>
-						</div>
-					</div>
+					<KenyanBuyersTestimonialProductBundleSvg
+						class="h-[83.796px] overflow-clip w-[239.258px]"
+					/>
 				</div>
 			</div>
 		</section>
 	</div>
 </Layout>
 <script>
-	const testimonialSections = document.querySelectorAll(
-		"[data-local-buyer-testimonials]",
-	);
-	testimonialSections.forEach((section) => {
-		const testimonials = JSON.parse(
-			section.getAttribute("data-testimonials") || "[]",
-		);
-		const quote = section.querySelector("[data-testimonial-quote]");
-		const name = section.querySelector("[data-testimonial-name]");
-		const company = section.querySelector("[data-testimonial-company]");
-		const previous = section.querySelector("[data-testimonial-previous]");
-		const next = section.querySelector("[data-testimonial-next]");
-		let index = 0;
-		let timer;
-		function render(nextIndex) {
-			if (!testimonials.length) return;
-			index = (nextIndex + testimonials.length) % testimonials.length;
-			const active = testimonials[index];
-			if (quote) quote.textContent = active.quote;
-			if (name) name.textContent = active.name;
-			if (company) company.textContent = active.company;
-		}
-		function restartAutoplay() {
-			window.clearInterval(timer);
-			timer = window.setInterval(() => render(index + 1), 3000);
-		}
-		previous?.addEventListener("click", () => {
-			render(index - 1);
-			restartAutoplay();
-		});
-		next?.addEventListener("click", () => {
-			render(index + 1);
-			restartAutoplay();
-		});
-		render(index);
-		restartAutoplay();
-	});
+	import "../scripts/swiper-testimonials.js";
 </script>

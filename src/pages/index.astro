@@ -318,17 +318,14 @@ function isExternalUrl(href?: string) {
 										class={`lg:border-l-2 lg:pl-8 lg:transition-[border-color,opacity] lg:duration-300 ${isActive ? "lg:border-green-500 lg:opacity-100" : "lg:border-transparent lg:opacity-70"}`}
 										data-supply-benefit
 										data-supply-index={index}>
-										{" "}
 										<h3
 											class={`${typeStyles.featureTitle} font-medium text-green-800 lg:transition-colors lg:duration-300 ${isActive ? "lg:text-green-800" : "lg:text-green-700"}`}>
-											{" "}
-											{benefit.title}{" "}
-										</h3>{" "}
+											{benefit.title}
+										</h3>
 										<p
 											class={`mt-4 text-green-500 lg:transition-colors lg:duration-300 ${isActive ? "lg:text-green-500" : "lg:text-green-600"}`}>
-											{" "}
-											{benefit.description}{" "}
-										</p>{" "}
+											{benefit.description}
+										</p>
 										<OptimizedImage
 											alt={benefit.imageAlt}
 											class="mt-8 block aspect-[517/552] w-full object-contain sm:mx-auto sm:w-[80%] lg:hidden"
@@ -337,7 +334,7 @@ function isExternalUrl(href?: string) {
 											src={benefit.image}
 											widths={[320, 517, 768]}
 											width="517"
-										/>{" "}
+										/>
 									</article>
 								);
 							})
