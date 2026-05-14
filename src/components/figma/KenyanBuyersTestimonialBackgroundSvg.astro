@@ -1,0 +1,21 @@
+---
+const {
+  class: className = "",
+  className: legacyClassName = "",
+  ...rest
+} = Astro.props;
+---
+
+<svg
+  aria-hidden="true"
+  class:list={[className, legacyClassName]}
+  fill="none"
+  preserveAspectRatio="none"
+  viewBox="0 0 858 1502"
+  xmlns="http://www.w3.org/2000/svg"
+  {...rest}
+>
+  
+									<path d="M807.83 1390.92C775.034 926.776 807.83 466.763 858 5.79576C818.807 17.9398 95.279 -31.9082 110.835 39.1761C89.6222 97.0354 83.898 161.634 78.3085 221.02C-3.64736 626.861 77.116 1045.61 2.63512 1453.68C6.33896 1485.91 -20.4633 1501.11 41.896 1495.2C79.4058 1505.75 407.08 1499.39 444.86 1492.65C487.285 1496.72 835.777 1523.55 809.85 1462.39C817.412 1438.99 816.703 1413.9 807.83 1390.92Z" fill="var(--fill-0, white)" id="Vector"></path>
+								
+</svg>

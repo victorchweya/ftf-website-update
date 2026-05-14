@@ -7,6 +7,11 @@ import KenyanBuyersArrow1Svg from "../components/figma/KenyanBuyersArrow1Svg.ast
 import KenyanBuyersArrow2Svg from "../components/figma/KenyanBuyersArrow2Svg.astro";
 import KenyanBuyersArrow3Svg from "../components/figma/KenyanBuyersArrow3Svg.astro";
 import BorderBottomKenyanBuyersSvg from "../components/figma/BorderBottomKenyanBuyersSvg.astro";
+import KenyanBuyersTestimonialBackgroundSvg from "../components/figma/KenyanBuyersTestimonialBackgroundSvg.astro";
+import KenyanBuyersTestimonialBeansSvg from "../components/figma/KenyanBuyersTestimonialBeansSvg.astro";
+import KenyanBuyersTestimonialProduceSvg from "../components/figma/KenyanBuyersTestimonialProduceSvg.astro";
+import KenyanBuyersTestimonialProductBundleSvg from "../components/figma/KenyanBuyersTestimonialProductBundleSvg.astro";
+import LocalBuyerTestimonialCard from "../components/LocalBuyerTestimonialCard.astro";
 import * as SellWithUsSvgs from "../lib/figmaMarkup/sellWithUsSvgs";
 import {
 	Frame26,
@@ -14,14 +19,9 @@ import {
 	Frame31,
 	Frame35,
 	Frame43,
-	Group22,
-	Group24,
-	Group23,
 } from "../lib/figmaMarkup/sellWithUs";
-import { Order4, Order5 } from "../lib/figmaMarkup/buyFromUsLocal";
 import supplierStoryPrimaryImage from "../assets/figma/sell-with-us/supplier-story-1.png";
 import supplierStorySecondaryImage from "../assets/figma/sell-with-us/supplier-story-2.png";
-import { supplierStoryMask } from "../lib/figmaMarkup/sellWithUsMask";
 import BottomLandscapeSvg from "../components/figma/BottomLandscapeSvg.astro";
 import BackgroundBottomImpactSvg from "../components/figma/BackgroundBottomImpactSvg.astro";
 import SellWithUsDecorBlobSvg from "../components/figma/SellWithUsDecorBlobSvg.astro";
@@ -60,33 +60,23 @@ const offeringRows = [
 		},
 	],
 ];
-const supplierStories = [
-	{ id: "peter", StoryCard: Group22 },
-	{ id: "jane-training", StoryCard: Group24 },
-	{ id: "jane-market-access", StoryCard: Group23 },
-	{ id: "supplier-community-impact", StoryCard: Group24 },
+const supplierTestimonials = [
+	{
+		company: "Farmer",
+		name: "Peter",
+		quote: "I've traded with Farm to Feed for the last two years. Their training, app transparency, and reliable payments have helped me reduce rejected produce and track every order.",
+	},
+	{
+		company: "Farmer",
+		name: "Jane",
+		quote: "My collaboration with Farm to Feed has improved income, strengthened market access, and offered fair prices to our farmer community.",
+	},
+	{
+		company: "Farmer",
+		name: "Jane",
+		quote: "The partnership has reduced post-harvest losses, created youth jobs, empowered women farmers, and strengthened local food security.",
+	},
 ];
-const activeStoryIndex = 1;
-const getStoryAtOffset = (offset: number, activeIndex = activeStoryIndex) => {
-	const storyCount = supplierStories.length;
-	const storyIndex = (activeIndex + offset + storyCount) % storyCount;
-	return supplierStories[storyIndex];
-};
-const visibleSupplierStories = [-1, 0, 1].map((offset) => {
-	const story = getStoryAtOffset(offset);
-	return {
-		...story,
-		offset,
-		storyLeft:
-			offset === 0 ? "50%" : offset < 0 ? "-320px" : "calc(100% - 320px)",
-		storyTransform: offset === 0 ? "translateX(-50%)" : "none",
-	};
-});
-const activeSupplierStory = getStoryAtOffset(0);
-const supplierStoryClientData = supplierStories.map(({ id, StoryCard }) => ({
-	id,
-	html: StoryCard,
-}));
 const localBuyerHowItWorksSteps = [
 	{
 		body: "Reach out to our Sourcing team and download our mobile app to become a Farm to Feed supplier.",
@@ -373,257 +363,160 @@ const transformSizeStyle =
 				</div>
 			</ContentContainer>
 		</section>
-		<div
-			class="bg-[#f3f5e7] min-h-[840px] overflow-clip relative w-full"
+		<section
+			class="bg-[#f3f5e7] min-h-[600px] md:min-h-[750px] overflow-clip relative rounded-bl-[40px] rounded-br-[40px] w-full"
 			data-name="Testimonial"
-			data-supplier-stories>
-			<script
-				type="application/json"
-				data-supplier-story-data
-				set:html={JSON.stringify(supplierStoryClientData)}
-			/>
+			data-supplier-testimonials>
+			<ContentContainer
+				size="wide"
+				class="py-54 relative z-10 flex flex-col items-center gap-[56px] md:gap-[80px]">
+				<p
+					class={`${typeStyles.sectionTitleLarge} not-italic text-[#0f251b] text-center w-full max-w-[800px]`}>
+					Discover how farmers are transforming communities
+				</p>
+				<div
+					class="relative grid w-full justify-items-center gap-6 lg:mx-auto lg:w-fit lg:grid-cols-[auto_minmax(0,640px)_auto] lg:items-center lg:gap-10">
+					<button
+						aria-label="Show previous farmer story"
+						class="group rounded-[40px] bg-transparent border-0 p-0 transition-transform duration-200 hover:-translate-y-0.5 focus-visible:-translate-y-0.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#747c50]"
+						data-story-prev
+						type="button">
+						<div
+							class="content-stretch flex items-start p-[12px] relative rounded-[40px] shrink-0 transition-colors duration-200 group-hover:bg-white/60 group-focus-visible:bg-white/60"
+							data-name="order">
+							<div
+								aria-hidden="true"
+								class="absolute border border-[#747c50] border-solid inset-0 pointer-events-none rounded-[40px] transition-colors duration-200 group-hover:border-[#0f251b] group-focus-visible:border-[#0f251b]">
+							</div>
+							<div
+								class="overflow-clip relative shrink-0 size-[24px]"
+								data-name="arrow-left">
+								<div
+									class="absolute inset-[20.83%]"
+									data-name="Icon">
+									<div class="absolute inset-[-7.14%]">
+										<svg
+											aria-hidden="true"
+											class="block size-full"
+											fill="none"
+											preserveAspectRatio="none"
+											viewBox="0 0 16 16">
+											<path
+												class="transition-colors duration-200 group-hover:stroke-[#0f251b] group-focus-visible:stroke-[#0f251b]"
+												d="M15 8H1M8 1L1 8L8 15"
+												stroke="var(--stroke-0, #747C50)"
+												stroke-linecap="round"
+												stroke-linejoin="round"
+												stroke-width="2">
+											</path>
+										</svg>
+									</div>
+								</div>
+							</div>
+						</div>
+					</button>
+					<div class="w-full max-w-[640px] justify-self-center">
+						<div
+							class="swiper w-full !overflow-visible"
+							data-supplier-testimonial-swiper>
+							<div class="swiper-wrapper">
+								{
+									supplierTestimonials.map((testimonial) => (
+										<div class="swiper-slide !h-auto">
+											<LocalBuyerTestimonialCard
+												company={testimonial.company}
+												name={testimonial.name}
+												quote={testimonial.quote}
+											/>
+										</div>
+									))
+								}
+							</div>
+						</div>
+					</div>
+					<button
+						aria-label="Show next farmer story"
+						class="group rounded-[40px] bg-transparent border-0 p-0 transition-transform duration-200 hover:-translate-y-0.5 focus-visible:-translate-y-0.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#747c50]"
+						data-story-next
+						type="button">
+						<div
+							class="content-stretch flex items-start p-[12px] relative rounded-[40px] shrink-0 transition-colors duration-200 group-hover:bg-white/60 group-focus-visible:bg-white/60"
+							data-name="order">
+							<div
+								aria-hidden="true"
+								class="absolute border border-[#747c50] border-solid inset-0 pointer-events-none rounded-[40px] transition-colors duration-200 group-hover:border-[#0f251b] group-focus-visible:border-[#0f251b]">
+							</div>
+							<div
+								class="overflow-clip relative shrink-0 size-[24px]"
+								data-name="arrow-right">
+								<div
+									class="absolute inset-[20.83%]"
+									data-name="Icon">
+									<div class="absolute inset-[-7.14%]">
+										<svg
+											aria-hidden="true"
+											class="block size-full"
+											fill="none"
+											preserveAspectRatio="none"
+											viewBox="0 0 16 16">
+											<path
+												class="transition-colors duration-200 group-hover:stroke-[#0f251b] group-focus-visible:stroke-[#0f251b]"
+												d="M1 8H15M8 15L15 8L8 1"
+												stroke="var(--stroke-0, #747C50)"
+												stroke-linecap="round"
+												stroke-linejoin="round"
+												stroke-width="2">
+											</path>
+										</svg>
+									</div>
+								</div>
+							</div>
+						</div>
+					</button>
+				</div>
+			</ContentContainer>
+			<div
+				class="absolute hidden h-[137.947px] items-center justify-center left-[calc(75%+23.37px)] top-[231.07px] w-[206.385px] lg:flex"
+				style="--transform-inner-width: 1185; --transform-inner-height: 21;">
+				<div class="flex-none rotate-[-15.41deg]">
+					<div class="h-[91px] relative w-[189px]" data-name="Capa_1">
+						<KenyanBuyersTestimonialBeansSvg
+							class="absolute block inset-0 size-full"
+						/>
+					</div>
+				</div>
+			</div>
 			<div
 				class="absolute hidden h-[307.61px] items-center justify-center left-[31px] top-[160px] w-[332.171px] lg:flex"
 				style="--transform-inner-width: 1185; --transform-inner-height: 252;">
 				<div class="flex-none rotate-[38.46deg]">
-					<div
-						class="h-[151.494px] overflow-clip relative w-[303.868px]"
-						data-name="Capa_1">
-						<div
-							class="absolute contents inset-[46.94%_-0.01%_5.53%_67.34%]"
-							data-name="Group">
-							<div
-								class="absolute contents inset-[46.94%_-0.01%_5.53%_67.34%]"
-								data-name="Group">
-								<div
-									class="absolute inset-[46.94%_-0.01%_5.53%_67.34%]"
-									data-name="Vector">
-									<Fragment
-										set:html={SellWithUsSvgs.SellWithUsSvg45}
-									/>
-								</div>
-								<div
-									class="absolute contents inset-[46.94%_-0.01%_5.53%_67.34%]"
-									data-name="Clip path group">
-									<div
-										class="absolute inset-[48.28%_18.79%_8.68%_66.58%] mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-[-1.17px_-0.16px] mask-size-[122.51px_118.116px]"
-										style={`mask-image: url('${supplierStoryMask}');`}
-										data-name="Group">
-										<Fragment
-											set:html={SellWithUsSvgs.SellWithUsSvg46}
-										/>
-									</div>
-								</div>
-							</div>
-							<div
-								class="absolute inset-[53.61%_20.85%_13.05%_69.52%]"
-								data-name="Vector">
-								<div class="absolute inset-[-0.99%_-1.71%]">
-									<Fragment
-										set:html={SellWithUsSvgs.SellWithUsSvg47}
-									/>
-								</div>
-							</div>
-							<div
-								class="absolute inset-[57.31%_23.09%_17.53%_71.61%]"
-								data-name="Vector">
-								<div class="absolute inset-[-1.31%_-3.11%]">
-									<Fragment
-										set:html={SellWithUsSvgs.SellWithUsSvg48}
-									/>
-								</div>
-							</div>
-						</div>
-						<div
-							class="absolute inset-[39.79%_23.6%_0_58.17%]"
-							data-name="Group">
-							<Fragment
-								set:html={SellWithUsSvgs.SellWithUsSvg49}
-							/>
-						</div>
-						<div
-							class="absolute inset-[0_71.17%_39.23%_0]"
-							data-name="Vector">
-							<Fragment
-								set:html={SellWithUsSvgs.SellWithUsSvg50}
-							/>
-						</div>
-						<div
-							class="absolute inset-[45.69%_58.11%_38.2%_12.15%]"
-							data-name="Vector">
-							<Fragment
-								set:html={SellWithUsSvgs.SellWithUsSvg51}
-							/>
-						</div>
-						<div
-							class="absolute inset-[21.92%_56.03%_50.52%_14.04%]"
-							data-name="Vector">
-							<Fragment
-								set:html={SellWithUsSvgs.SellWithUsSvg52}
-							/>
-						</div>
-						<div
-							class="absolute inset-[22.12%_69.87%_48.92%_6.48%]"
-							data-name="Vector">
-							<Fragment
-								set:html={SellWithUsSvgs.SellWithUsSvg53}
-							/>
-						</div>
-						<div
-							class="absolute inset-[33.5%_62.34%_50.52%_16.54%]"
-							data-name="Vector">
-							<Fragment
-								set:html={SellWithUsSvgs.SellWithUsSvg54}
-							/>
-						</div>
-						<div
-							class="absolute inset-[30.28%_27.75%_11.86%_52.01%]"
-							data-name="Group">
-							<Fragment
-								set:html={SellWithUsSvgs.SellWithUsSvg55}
-							/>
-						</div>
-						<div
-							class="absolute inset-[34.94%_41.44%_7.36%_30.22%]"
-							data-name="Vector">
-							<Fragment
-								set:html={SellWithUsSvgs.SellWithUsSvg56}
-							/>
-						</div>
-					</div>
-				</div>
-			</div>
-			<ContentContainer
-				size="wide"
-				class="relative z-10 flex flex-col items-center gap-[56px] md:gap-[104px] py-48">
-				<div
-					class={`${typeStyles.sectionTitleLarge}  text-[#0f251b] text-center w-full max-w-[769px]`}>
-					<p class="leading-normal mb-0">
-						Discover how farmers are transforming communities
-					</p>
-				</div>
-				<div class="relative">
-					<div class="relative w-screen overflow-hidden pb-4 pt-2">
-						<div
-							class="relative hidden h-[438px] leading-zero md:block">
-							{
-								visibleSupplierStories.map((story) => {
-									const StoryCard = story.StoryCard;
-									return (
-										<div
-											aria-hidden={story.offset !== 0}
-											class={`absolute top-0 h-[422px] w-[640px] overflow-visible transition-transform duration-300 [&>*]:origin-top-left [&>*]:scale-100 ${story.offset === 0 ? "" : "hidden lg:block"}`}
-											data-story-card
-											data-story-offset={story.offset}
-											style={`left: ${story.storyLeft}; transform: ${story.storyTransform};`}>
-											{" "}
-											<Fragment
-												set:html={StoryCard}
-											/>{" "}
-										</div>
-									);
-								})
-							}
-						</div>
-						<div class="flex justify-center leading-zero md:hidden">
-							<div
-								class="relative h-[230px] w-[320px] overflow-visible [&>*]:origin-top-left [&>*]:scale-50"
-								data-mobile-story-card>
-								<Fragment
-									set:html={activeSupplierStory.StoryCard}
-								/>
-							</div>
-						</div>
-					</div>
-					<div
-						class="relative z-20 mt-2 flex items-center justify-center gap-4">
-						<button
-							aria-label="Show previous farmer story"
-							class="group rounded-[40px] bg-transparent border-0 p-0 transition-transform duration-200 hover:-translate-y-0.5 focus-visible:-translate-y-0.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#747c50]"
-							data-story-prev
-							type="button">
-							<Fragment set:html={Order4} />
-						</button>
-						<button
-							aria-label="Show next farmer story"
-							class="group rounded-[40px] bg-transparent border-0 p-0 transition-transform duration-200 hover:-translate-y-0.5 focus-visible:-translate-y-0.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#747c50]"
-							data-story-next
-							type="button">
-							<Fragment set:html={Order5} />
-						</button>
-					</div>
-				</div>
-			</ContentContainer>
-			<div
-				class="absolute hidden h-[137.947px] items-center justify-center left-[calc(83.33%-39px)] top-[176px] w-[206.385px] lg:flex"
-				style={transformSizeStyle}>
-				<div class="flex-none rotate-[-15.41deg]">
-					<div class="h-[91px] relative w-[189px]" data-name="Capa_1">
-						<Fragment set:html={SellWithUsSvgs.SellWithUsSvg57} />
-					</div>
+					<KenyanBuyersTestimonialProduceSvg
+						class="h-[151.494px] overflow-clip w-[303.868px]"
+					/>
 				</div>
 			</div>
 			<div
 				class="absolute hidden h-[858px] items-center justify-center left-[-2.92%] right-[-1.39%] top-[-767px] lg:flex"
-				style="container-type: size;">
+				style="container-type:size">
 				<div
 					class="-scale-x-100 flex-none h-[100cqw] rotate-90 w-[100cqh]">
 					<div class="relative size-full" data-name="Vector">
-						<Fragment set:html={SellWithUsSvgs.SellWithUsSvg58} />
+						<KenyanBuyersTestimonialBackgroundSvg
+							class="absolute block inset-0 size-full"
+						/>
 					</div>
 				</div>
 			</div>
 			<div
-				class="absolute hidden h-[203.64px] items-center justify-center left-[143px] top-[638px] w-[245.05px] lg:flex"
+				class="absolute hidden h-[203.64px] items-center justify-center left-[128px] top-[561px] w-[245.05px] lg:flex"
 				style="--transform-inner-width: 1185; --transform-inner-height: 105;">
 				<div class="flex-none rotate-[34.14deg]">
-					<div
-						class="h-[83.796px] overflow-clip relative w-[239.258px]"
-						data-name="Capa_1">
-						<div
-							class="absolute inset-[6.94%_64.93%_13.37%_0.68%]"
-							data-name="Group">
-							<Fragment
-								set:html={SellWithUsSvgs.SellWithUsSvg59}
-							/>
-						</div>
-						<div
-							class="absolute inset-[5.45%_47.3%_7.78%_26.47%]"
-							data-name="Group">
-							<Fragment
-								set:html={SellWithUsSvgs.SellWithUsSvg60}
-							/>
-						</div>
-						<div
-							class="absolute inset-[0_28.06%_2.86%_40.72%]"
-							data-name="Group">
-							<Fragment
-								set:html={SellWithUsSvgs.SellWithUsSvg61}
-							/>
-						</div>
-						<div
-							class="absolute inset-[4.39%_13.86%_2.28%_57.71%]"
-							data-name="Group">
-							<Fragment
-								set:html={SellWithUsSvgs.SellWithUsSvg62}
-							/>
-						</div>
-						<div
-							class="absolute inset-[0_0.75%_24.42%_74.76%]"
-							data-name="Group">
-							<Fragment
-								set:html={SellWithUsSvgs.SellWithUsSvg63}
-							/>
-						</div>
-					</div>
+					<KenyanBuyersTestimonialProductBundleSvg
+						class="h-[83.796px] overflow-clip w-[239.258px]"
+					/>
 				</div>
 			</div>
-			<div
-				class="absolute hidden h-[146px] left-[calc(75%-51px)] top-[659px] w-[209px] lg:block"
-				data-name="Capa_1">
-				<Fragment set:html={SellWithUsSvgs.SellWithUsSvg64} />
-			</div>
-		</div>
+		</section>
 		<div
 			class="bg-green-500 relative overflow-hidden
 		w-full border-b border-dotted border-green-400 rounded-tl-4xl rounded-tr-4xl"
@@ -737,77 +630,6 @@ const transformSizeStyle =
 		</div>
 	</div>
 	<script>
-		const storyRoot = document.querySelector("[data-supplier-stories]");
-		if (storyRoot) {
-			const storyData = storyRoot.querySelector(
-				"[data-supplier-story-data]",
-			);
-			const stories = JSON.parse(storyData?.textContent || "[]");
-			const desktopCards = Array.from(
-				storyRoot.querySelectorAll("[data-story-card]"),
-			);
-			const mobileCard = storyRoot.querySelector(
-				"[data-mobile-story-card]",
-			);
-			const total = stories.length;
-			let activeIndex = 1;
-			let timer = null;
-			const getStoryAtOffset = (offset) => {
-				const storyIndex = (activeIndex + offset + total) % total;
-				return stories[storyIndex];
-			};
-			const render = () => {
-				if (!total) return;
-				desktopCards.forEach((card) => {
-					const offset = Number(
-						card.getAttribute("data-story-offset") || "0",
-					);
-					const story = getStoryAtOffset(offset);
-					card.setAttribute(
-						"aria-hidden",
-						offset !== 0 ? "true" : "false",
-					);
-					card.classList.toggle("hidden", offset !== 0);
-					card.classList.toggle("lg:block", offset !== 0);
-					card.style.left =
-						offset === 0
-							? "50%"
-							: offset < 0
-								? "-320px"
-								: "calc(100% - 320px)";
-					card.style.transform =
-						offset === 0 ? "translateX(-50%)" : "none";
-					if (story) {
-						card.innerHTML = story.html;
-					}
-				});
-				if (mobileCard) {
-					const story = getStoryAtOffset(0);
-					mobileCard.innerHTML = story?.html || "";
-				}
-			};
-			const go = (direction) => {
-				activeIndex = (activeIndex + direction + total) % total;
-				render();
-			};
-			const restartAutoplay = () => {
-				if (timer) window.clearInterval(timer);
-				timer = window.setInterval(() => go(1), 3000);
-			};
-			storyRoot
-				.querySelector("[data-story-prev]")
-				?.addEventListener("click", () => {
-					go(-1);
-					restartAutoplay();
-				});
-			storyRoot
-				.querySelector("[data-story-next]")
-				?.addEventListener("click", () => {
-					go(1);
-					restartAutoplay();
-				});
-			render();
-			restartAutoplay();
-		}
+		import "../scripts/swiper-testimonials.js";
 	</script>
 </Layout>
