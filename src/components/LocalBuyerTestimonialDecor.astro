@@ -1,0 +1,15 @@
+---
+import { Frame6 } from "../lib/figmaMarkup/buyFromUsLocal";
+---
+
+<div
+	aria-hidden="true"
+	class="pointer-events-none absolute inset-0 z-20 hidden lg:block testimonial-card-decor">
+	<Fragment set:html={Frame6} />
+</div>
+
+<style is:global>
+	.testimonial-card-decor > div > :nth-child(-n + 2) {
+		display: none;
+	}
+</style>
