@@ -12,6 +12,7 @@ import KenyanBuyersTestimonialBeansSvg from "../components/figma/KenyanBuyersTes
 import KenyanBuyersTestimonialProduceSvg from "../components/figma/KenyanBuyersTestimonialProduceSvg.astro";
 import KenyanBuyersTestimonialProductBundleSvg from "../components/figma/KenyanBuyersTestimonialProductBundleSvg.astro";
 import LocalBuyerTestimonialCard from "../components/LocalBuyerTestimonialCard.astro";
+import LocalBuyerTestimonialDecor from "../components/LocalBuyerTestimonialDecor.astro";
 import * as KenyanBuyersSvgs from "../lib/figmaMarkup/kenyanBuyersSvgs";
 import { sectionSpacing, typeStyles } from "../lib/figmaStyles";
 import browseIcon from "../assets/figma/kenyan-buyers/browse.svg?url";
@@ -714,16 +715,16 @@ const localBuyerTestimonials = [
 			data-local-buyer-testimonials>
 			<ContentContainer
 				size="wide"
-				class="py-54 relative z-10 flex flex-col items-center gap-[56px] md:gap-[80px]">
+				class="py-24 md:py-54 relative z-10 flex flex-col items-center gap-14 md:gap-20">
 				<p
 					class={`${typeStyles.sectionTitleLarge} not-italic text-[#0f251b] text-center w-full max-w-[800px]`}>
 					Hear from businesses making an impact with Farm to Feed.
 				</p>
 				<div
-					class="relative grid w-full justify-items-center gap-6 lg:mx-auto lg:w-fit lg:grid-cols-[auto_minmax(0,640px)_auto] lg:items-center lg:gap-10">
+					class="relative grid w-full max-w-[calc(100vw-40px)] grid-cols-2 justify-items-center gap-6 sm:max-w-[640px] lg:mx-auto lg:w-fit lg:max-w-none lg:grid-cols-[auto_minmax(0,640px)_auto] lg:items-center lg:gap-10">
 					<button
 						aria-label="Show previous testimonial"
-						class="group rounded-[40px] bg-transparent border-0 p-0 transition-transform duration-200 hover:-translate-y-0.5 focus-visible:-translate-y-0.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#747c50]"
+						class="group order-2 justify-self-end rounded-[40px] bg-transparent border-0 p-0 transition-transform duration-200 hover:-translate-y-0.5 focus-visible:-translate-y-0.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#747c50] lg:order-none lg:justify-self-auto"
 						data-testimonial-previous
 						type="button">
 						<div
@@ -760,9 +761,10 @@ const localBuyerTestimonials = [
 							</div>
 						</div>
 					</button>
-					<div class="w-full max-w-[640px] justify-self-center">
+					<div
+						class="relative order-1 col-span-2 w-full min-w-0 max-w-[calc(100vw-40px)] justify-self-center sm:max-w-[640px] lg:order-none lg:col-span-1">
 						<div
-							class="swiper w-full !overflow-visible"
+							class="swiper w-full overflow-hidden lg:!overflow-visible"
 							data-local-buyer-testimonial-swiper>
 							<div class="swiper-wrapper">
 								{
@@ -782,10 +784,11 @@ const localBuyerTestimonials = [
 								}
 							</div>
 						</div>
+						<LocalBuyerTestimonialDecor />
 					</div>
 					<button
 						aria-label="Show next testimonial"
-						class="group rounded-[40px] bg-transparent border-0 p-0 transition-transform duration-200 hover:-translate-y-0.5 focus-visible:-translate-y-0.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#747c50]"
+						class="group order-3 justify-self-start rounded-[40px] bg-transparent border-0 p-0 transition-transform duration-200 hover:-translate-y-0.5 focus-visible:-translate-y-0.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#747c50] lg:order-none lg:justify-self-auto"
 						data-testimonial-next
 						type="button">
 						<div
